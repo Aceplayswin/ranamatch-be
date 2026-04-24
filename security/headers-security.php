@@ -158,37 +158,37 @@ class RequestHeaders
     if (strtolower($ip) === 'unknown')
       return false;
 
-    // Generate IPv4 network address
-    $ip = ip2long($ip);
-
-    // Do additional filtering on IP
+    // 1. Validate the string FIRST
     if (!filter_var($ip, FILTER_VALIDATE_IP))
       return false;
 
+    // 2. Convert to long for range checking (IPv4 only)
+    $ip_long = ip2long($ip);
+
     // If the IP address is set and not equivalent to 255.255.255.255
-    if ($ip !== false && $ip !== -1) {
+    if ($ip_long !== false && $ip_long !== -1) {
 
       // Make sure to get unsigned long representation of IP address
       // due to discrepancies between 32 and 64 bit OSes and
       // signed numbers (ints default to signed in PHP)
-      $ip = sprintf('%u', $ip);
+      $ip_long = sprintf('%u', $ip_long);
 
       // Do private network range checking
-      if ($ip >= 0 && $ip <= 50331647)
+      if ($ip_long >= 0 && $ip_long <= 50331647)
         return false;
-      if ($ip >= 167772160 && $ip <= 184549375)
+      if ($ip_long >= 167772160 && $ip_long <= 184549375)
         return false;
-      if ($ip >= 2130706432 && $ip <= 2147483647)
+      if ($ip_long >= 2130706432 && $ip_long <= 2147483647)
         return false;
-      if ($ip >= 2851995648 && $ip <= 2852061183)
+      if ($ip_long >= 2851995648 && $ip_long <= 2852061183)
         return false;
-      if ($ip >= 2886729728 && $ip <= 2887778303)
+      if ($ip_long >= 2886729728 && $ip_long <= 2887778303)
         return false;
-      if ($ip >= 3221225984 && $ip <= 3221226239)
+      if ($ip_long >= 3221225984 && $ip_long <= 3221226239)
         return false;
-      if ($ip >= 3232235520 && $ip <= 3232301055)
+      if ($ip_long >= 3232235520 && $ip_long <= 3232301055)
         return false;
-      if ($ip >= 4294967040)
+      if ($ip_long >= 4294967040)
         return false;
     }
     return true;
