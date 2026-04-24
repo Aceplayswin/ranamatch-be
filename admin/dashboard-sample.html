@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Admin Dashboard Concept</title>
+    <!-- Modern Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Boxicons for modern icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Chart.js for data visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        :root {
+            /* Sleek Dark Mode Palette */
+            --bg-color: #0f172a;
+            --surface-color: rgba(30, 41, 59, 0.7);
+            --surface-border: rgba(255, 255, 255, 0.08);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            
+            /* Vibrant Accents */
+            --accent-primary: #3b82f6;
+            --accent-success: #10b981;
+            --accent-danger: #ef4444;
+            --accent-warning: #f59e0b;
+            --accent-purple: #8b5cf6;
+            
+            /* Gradients */
+            --grad-primary: linear-gradient(135deg, #3b82f6 0%, #2dd4bf 100%);
+            --grad-success: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+            --grad-danger: linear-gradient(135deg, #ef4444 0%, #f43f5e 100%);
+            --grad-purple: linear-gradient(135deg, #8b5cf6 0%, #d946ef 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.15) 0%, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        /* Glassmorphism Utilities */
+        .glass-panel {
+            background: var(--surface-color);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--surface-border);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Sidebar Dummy */
+        .sidebar {
+            width: 80px;
+            padding: 24px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 32px;
+            border-right: 1px solid var(--surface-border);
+            background: rgba(15, 23, 42, 0.8);
+            z-index: 10;
+        }
+
+        .sidebar .logo {
+            font-size: 28px;
+            background: var(--grad-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+
+        .sidebar .nav-item {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            color: var(--text-muted);
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar .nav-item:hover, .sidebar .nav-item.active {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--accent-primary);
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            padding: 32px 48px;
+            overflow-y: auto;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+        
+        .header p {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-top: 4px;
+        }
+
+        .profile-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 16px;
+            border-radius: 24px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .profile-btn:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .profile-btn img {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 2px solid var(--accent-primary);
+        }
+
+        /* Dashboard Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .stat-card {
+            padding: 24px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Glowing accents on cards */
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+        }
+
+        .stat-card.blue::before { background: var(--grad-primary); }
+        .stat-card.green::before { background: var(--grad-success); }
+        .stat-card.red::before { background: var(--grad-danger); }
+        .stat-card.purple::before { background: var(--grad-purple); }
+
+        .stat-icon {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            font-size: 24px;
+            padding: 12px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.03);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .blue .stat-icon { color: var(--accent-primary); }
+        .green .stat-icon { color: var(--accent-success); }
+        .red .stat-icon { color: var(--accent-danger); }
+        .purple .stat-icon { color: var(--accent-purple); }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .stat-value {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        /* Two Column Layout */
+        .two-columns {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 24px;
+        }
+
+        /* Chart Section */
+        .chart-section {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        /* Table Section */
+        .table-section {
+            padding: 24px;
+        }
+
+        .modern-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .modern-table th {
+            text-align: left;
+            padding: 16px;
+            color: var(--text-muted);
+            font-size: 13px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--surface-border);
+        }
+
+        .modern-table td {
+            padding: 16px;
+            font-size: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.02);
+            transition: background 0.2s;
+        }
+
+        .modern-table tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        /* Status Pills */
+        .status-pill {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .status-profit {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--accent-success);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .status-loss {
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--accent-danger);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+
+        /* Micro animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-up {
+            animation: fadeIn 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Simplified Collapsible Sidebar -->
+    <div class="sidebar">
+        <div class="logo">W</div>
+        <div class="nav-item active"><i class='bx bx-grid-alt'></i></div>
+        <div class="nav-item"><i class='bx bx-group'></i></div>
+        <div class="nav-item"><i class='bx bx-wallet-alt'></i></div>
+        <div class="nav-item"><i class='bx bx-line-chart'></i></div>
+        <div class="nav-item"><i class='bx bx-cog'></i></div>
+    </div>
+
+    <div class="main-content">
+        <!-- Header -->
+        <div class="header animate-up" style="animation-delay: 0.1s;">
+            <div>
+                <h1>Dashboard Overview</h1>
+                <p id="currentDate">Loading date...</p>
+            </div>
+            <div class="profile-btn glass-panel">
+                <span>Admin</span>
+                <img src="https://ui-avatars.com/api/?name=Admin&background=3b82f6&color=fff" alt="Profile">
+            </div>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid animate-up" style="animation-delay: 0.2s;">
+            <div class="stat-card glass-panel blue">
+                <div class="stat-icon"><i class='bx bx-user-circle'></i></div>
+                <span class="stat-label">Total Active Users</span>
+                <div class="stat-value" data-target="1245">0</div>
+            </div>
+            
+            <div class="stat-card glass-panel green">
+                <div class="stat-icon"><i class='bx bx-trending-up'></i></div>
+                <span class="stat-label">24H Deposit</span>
+                <div class="stat-value">₹<span class="counter" data-target="86400">0</span></div>
+            </div>
+
+            <div class="stat-card glass-panel red">
+                <div class="stat-icon"><i class='bx bx-money-withdraw'></i></div>
+                <span class="stat-label">24H Withdrawal</span>
+                <div class="stat-value">₹<span class="counter" data-target="32150">0</span></div>
+            </div>
+
+            <div class="stat-card glass-panel purple">
+                <div class="stat-icon"><i class='bx bx-line-chart-down'></i></div>
+                <span class="stat-label">Net Profit (Today)</span>
+                <div class="stat-value">₹<span class="counter" data-target="54250">0</span></div>
+            </div>
+        </div>
+
+        <!-- Charts and Tables -->
+        <div class="two-columns animate-up" style="animation-delay: 0.3s;">
+            
+            <!-- Chart Area -->
+            <div class="chart-section glass-panel">
+                <div class="section-header">
+                    <h3>Revenue Flow (7 Days)</h3>
+                    <select style="background: rgba(255,255,255,0.05); color: white; border: 1px solid rgba(255,255,255,0.1); padding: 5px 10px; border-radius: 6px; outline: none;">
+                        <option>This Week</option>
+                        <option>This Month</option>
+                    </select>
+                </div>
+                <div style="position: relative; height:300px; width:100%">
+                    <canvas id="revenueChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Recent Activity Table -->
+            <div class="table-section glass-panel">
+                <div class="section-header">
+                    <h3>Recent Matches</h3>
+                    <i class='bx bx-refresh' style="font-size: 20px; color: var(--text-muted); cursor: pointer;"></i>
+                </div>
+                
+                <table class="modern-table">
+                    <thead>
+                        <tr>
+                            <th>User ID</th>
+                            <th>Game</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>9876543210</td>
+                            <td>Saba Sports</td>
+                            <td><span class="status-pill status-profit"><i class='bx bx-up-arrow-alt'></i> Profit</span></td>
+                        </tr>
+                        <tr>
+                            <td>8877665544</td>
+                            <td>LuckSport</td>
+                            <td><span class="status-pill status-loss"><i class='bx bx-down-arrow-alt'></i> Loss</span></td>
+                        </tr>
+                        <tr>
+                            <td>9988776655</td>
+                            <td>Casino</td>
+                            <td><span class="status-pill status-profit"><i class='bx bx-up-arrow-alt'></i> Profit</span></td>
+                        </tr>
+                        <tr>
+                            <td>7766554433</td>
+                            <td>Saba Sports</td>
+                            <td><span class="status-pill status-loss"><i class='bx bx-down-arrow-alt'></i> Loss</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Logic for Interactions -->
+    <script>
+        // Set Current Date
+        const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('currentDate').textContent = new Date().toLocaleDateString('en-US', dateOptions);
+
+        // Animated Number Counters
+        const counters = document.querySelectorAll('.stat-value[data-target], .counter[data-target]');
+        const speed = 200; // The lower the slower
+
+        counters.forEach(counter => {
+            const updateCount = () => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText.replace(/,/g, '');
+                const inc = target / speed;
+
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + inc).toLocaleString();
+                    setTimeout(updateCount, 15);
+                } else {
+                    counter.innerText = target.toLocaleString();
+                }
+            };
+            updateCount();
+        });
+
+        // Initialize Chart.js
+        const ctx = document.getElementById('revenueChart').getContext('2d');
+        
+        // Custom gradients for chart
+        const gradientDeposit = ctx.createLinearGradient(0, 0, 0, 300);
+        gradientDeposit.addColorStop(0, 'rgba(16, 185, 129, 0.5)'); // Green fade
+        gradientDeposit.addColorStop(1, 'rgba(16, 185, 129, 0.01)');
+        
+        const gradientWithdraw = ctx.createLinearGradient(0, 0, 0, 300);
+        gradientWithdraw.addColorStop(0, 'rgba(239, 68, 68, 0.5)'); // Red fade
+        gradientWithdraw.addColorStop(1, 'rgba(239, 68, 68, 0.01)');
+
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                datasets: [
+                    {
+                        label: 'Deposits',
+                        data: [12000, 19000, 15000, 25000, 22000, 30000, 28000],
+                        borderColor: '#10b981',
+                        backgroundColor: gradientDeposit,
+                        borderWidth: 2,
+                        tension: 0.4, // Smooth curvy lines
+                        fill: true,
+                        pointBackgroundColor: '#0f172a',
+                        pointBorderColor: '#10b981',
+                        pointBorderWidth: 2,
+                        pointRadius: 4
+                    },
+                    {
+                        label: 'Withdrawals',
+                        data: [8000, 10000, 12000, 11000, 15000, 18000, 14000],
+                        borderColor: '#ef4444',
+                        backgroundColor: gradientWithdraw,
+                        borderWidth: 2,
+                        tension: 0.4,
+                        fill: true,
+                        pointBackgroundColor: '#0f172a',
+                        pointBorderColor: '#ef4444',
+                        pointBorderWidth: 2,
+                        pointRadius: 4
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: { color: '#94a3b8', font: { family: "'Outfit', sans-serif" } }
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: { color: 'rgba(255, 255, 255, 0.05)', drawBorder: false },
+                        ticks: { color: '#94a3b8' }
+                    },
+                    y: {
+                        grid: { color: 'rgba(255, 255, 255, 0.05)', drawBorder: false },
+                        ticks: { 
+                            color: '#94a3b8',
+                            callback: function(value) { return '₹' + value / 1000 + 'k'; }
+                        }
+                    }
+                },
+                interaction: {
+                    intersect: false,
+                    mode: 'index',
+                },
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+dashboard/
+webalizer/
+xampp/
+php/
+mysql/
+apache/
+*.zip
+*.tar.gz
+*.rar
+*old/
+api-backup/
+new/
+info.php
+test_db.php
+list_cols.php
+tblusersdata_cols.txt
+composer.lock
+vendor/
+node_modules/
+.php.txt
+
+# Security and Credentials
+security/config.php
+security/license.php
+security/setup-database.php
+security/auth-secret.php
+
+# Debug and Temporary Files
+debug_*.php
+check_*.php
+test_*.php
+create_*.php
+cleanup_*.php
+api_debug.log
+.gemini/

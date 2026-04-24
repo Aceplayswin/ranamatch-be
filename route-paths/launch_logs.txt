@@ -1,0 +1,27 @@
+2026-04-17 19:58:44 - Launch Req: {"USER_ID":"1111111","GAME_NAME":"9 Wickets","GAME_UID":"48341a3bf62b6dd0814d7129e7e0834b"}
+2026-04-17 19:58:44 - Game: 9 Wickets | UID: 48341a3bf62b6dd0814d7129e7e0834b | API Response: {"code":10022,"msg":"9wicket is not currently supported. Please contact customer service."}
+2026-04-21 13:06:15 - Launch Req: {"USER_ID":"1111111","GAME_NAME":"Esports","GAME_UID":"4ee8e0051a035b463b47c3c473ce317d"}
+2026-04-21 13:06:24 - Launch Req: {"USER_ID":"1111111","GAME_NAME":"Esports","GAME_UID":"4ee8e0051a035b463b47c3c473ce317d"}
+2026-04-21 13:06:26 - Game: Esports | UID: 4ee8e0051a035b463b47c3c473ce317d | API Response: {"msg":"Your IP address is「2.50.167.63」，Access has been banned by the system, please contact the administrator to add a whitelist!","code":403}
+2026-04-21 13:06:28 - Launch Req: {"USER_ID":"1111111","GAME_NAME":"Esports","GAME_UID":"4ee8e0051a035b463b47c3c473ce317d"}
+2026-04-21 13:06:29 - Game: Esports | UID: 4ee8e0051a035b463b47c3c473ce317d | API Response: {"msg":"Your IP address is「2.50.167.63」，Access has been banned by the system, please contact the administrator to add a whitelist!","code":403}
+2026-04-21 13:06:29 - Launch Req: {"USER_ID":"1111111","GAME_NAME":"SABA Sports","GAME_UID":"08ced9dd788aed11ff3c7f387ae0f063"}
+2026-04-21 13:06:30 - Game: SABA Sports | UID: 08ced9dd788aed11ff3c7f387ae0f063 | API Response: {"msg":"Your IP address is「2.50.167.63」，Access has been banned by the system, please contact the administrator to add a whitelist!","code":403}
+2026-04-21 13:06:30 - Launch Req: {"USER_ID":"1111111","GAME_NAME":"SABA Sports","GAME_UID":"08ced9dd788aed11ff3c7f387ae0f063"}
+2026-04-21 13:06:31 - Game: SABA Sports | UID: 08ced9dd788aed11ff3c7f387ae0f063 | API Response: {"msg":"Your IP address is「2.50.167.63」，Access has been banned by the system, please contact the administrator to add a whitelist!","code":403}
+2026-04-21 13:06:31 - Launch Req: {"USER_ID":"1111111","GAME_NAME":"SABA Sports","GAME_UID":"08ced9dd788aed11ff3c7f387ae0f063"}
+2026-04-21 13:06:32 - Game: SABA Sports | UID: 08ced9dd788aed11ff3c7f387ae0f063 | API Response: {"msg":"Your IP address is「2.50.167.63」，Access has been banned by the system, please contact the administrator to add a whitelist!","code":403}
+2026-04-22 19:10:22 - Launch Req: {"USER_ID":"9657967","GAME_NAME":"SABA Sports","GAME_UID":"08ced9dd788aed11ff3c7f387ae0f063"}
+2026-04-22 19:10:23 - Game: SABA Sports | UID: 08ced9dd788aed11ff3c7f387ae0f063 | API Response: {"msg":"Your IP address is「2.50.167.63」，Access has been banned by the system, please contact the administrator to add a whitelist!","code":403}
+2026-04-22 20:00:37 - Launch Req: {"USER_ID":null,"GAME_NAME":"","GAME_UID":"4ee8e0051a035b463b47c3c473ce317d"}
+2026-04-22 20:38:08 - Launch Req: {"USER_ID":"1111111","GAME_NAME":"","GAME_UID":"4ee8e0051a035b463b47c3c473ce317d"}
+2026-04-22 20:38:13 - Launch Req: {"USER_ID":"1111111","GAME_NAME":"","GAME_UID":"4ee8e0051a035b463b47c3c473ce317d"}
+2026-04-22 20:38:14 - Launch Req: {"USER_ID":"1111111","GAME_NAME":"","GAME_UID":"4ee8e0051a035b463b47c3c473ce317d"}
+2026-04-22 21:14:35 - Launch Req: {"USER_ID":"8213022","GAME_NAME":"SABA Sports","GAME_UID":"08ced9dd788aed11ff3c7f387ae0f063"}
+2026-04-22 21:14:37 - Game: SABA Sports | UID: 08ced9dd788aed11ff3c7f387ae0f063 | API Response: {"msg":"Your IP address is「2.50.167.63」，Access has been banned by the system, please contact the administrator to add a whitelist!","code":403}
+2026-04-23 15:19:14 - Launch Req: {"USER_ID":"8213022","GAME_NAME":"Esports","GAME_UID":"4ee8e0051a035b463b47c3c473ce317d"}
+2026-04-23 15:19:15 - Game: Esports | UID: 4ee8e0051a035b463b47c3c473ce317d | API Response: {"msg":"Your IP address is「2.50.167.63」，Access has been banned by the system, please contact the administrator to add a whitelist!","code":403}
+2026-04-23 15:19:23 - Launch Req: {"USER_ID":"8213022","GAME_NAME":"Aviator","GAME_UID":"a04d1f3eb8ccec8a4823bdf18e3f0e84"}
+2026-04-23 15:19:24 - Game: Aviator | UID: a04d1f3eb8ccec8a4823bdf18e3f0e84 | API Response: {"msg":"Your IP address is「2.50.167.63」，Access has been banned by the system, please contact the administrator to add a whitelist!","code":403}
+2026-04-23 20:44:35 - Launch Req: {"USER_ID":"1111111","GAME_NAME":"Andar Bahar","GAME_UID":"6f48b3aa0b64c79a2dc320ea021148b5"}
+2026-04-23 20:44:36 - Game: Andar Bahar | UID: 6f48b3aa0b64c79a2dc320ea021148b5 | API Response: {"msg":"Your IP address is「2.50.167.63」，Access has been banned by the system, please contact the administrator to add a whitelist!","code":403}

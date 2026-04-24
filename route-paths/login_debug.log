@@ -1,0 +1,681 @@
+2026-04-22 13:27:22 - Attempting login for ID: 123456
+2026-04-22 13:27:22 - Returning status: user_not_exist
+2026-04-22 13:27:27 - Attempting login for ID: 1234567890
+2026-04-22 13:27:27 - User found in DB
+2026-04-22 13:27:28 - Password verified
+2026-04-22 13:27:47 - Attempting login for ID: 1234567890
+2026-04-22 13:27:47 - User found in DB
+2026-04-22 13:27:48 - Password verified
+2026-04-22 13:27:58 - Attempting login for ID: 1234567890
+2026-04-22 13:27:58 - User found in DB
+2026-04-22 13:27:58 - Password verified
+2026-04-22 13:28:28 - Attempting login for ID: 1234567890
+2026-04-22 13:28:28 - User found in DB
+2026-04-22 13:28:28 - Password verified
+2026-04-22 13:30:57 - Attempting login for ID: 1234567890
+2026-04-22 13:30:57 - User found in DB
+2026-04-22 13:30:57 - Password verified
+2026-04-22 13:33:28 - Attempting login for ID: 1234567890
+2026-04-22 13:33:28 - User found in DB
+2026-04-22 13:33:29 - Password verified
+2026-04-22 13:33:29 - Uniq ID: 1111111
+2026-04-22 13:33:29 - Auth Secret Generated
+2026-04-22 13:33:29 - Update prepared
+2026-04-22 13:33:29 - Update executed
+2026-04-22 13:33:29 - Update successful
+2026-04-22 13:33:29 - New activity ID generated
+2026-04-22 13:33:29 - Insert activity prepared
+2026-04-22 13:36:43 - Attempting login for ID: 1234567890
+2026-04-22 13:36:43 - User found in DB
+2026-04-22 13:36:43 - Password verified
+2026-04-22 13:36:43 - Uniq ID: 1111111
+2026-04-22 13:36:43 - Auth Secret Generated
+2026-04-22 13:36:43 - Update prepared
+2026-04-22 13:36:43 - Update executed
+2026-04-22 13:36:43 - Update successful
+2026-04-22 13:36:43 - New activity ID generated
+2026-04-22 13:36:43 - Insert activity prepared
+2026-04-22 13:36:49 - Attempting login for ID: 1234567890
+2026-04-22 13:36:49 - User found in DB
+2026-04-22 13:36:49 - Password verified
+2026-04-22 13:36:49 - Uniq ID: 1111111
+2026-04-22 13:36:49 - Auth Secret Generated
+2026-04-22 13:36:49 - Update prepared
+2026-04-22 13:36:49 - Update executed
+2026-04-22 13:36:49 - Update successful
+2026-04-22 13:36:49 - New activity ID generated
+2026-04-22 13:36:49 - Insert activity prepared
+2026-04-22 13:38:06 - Attempting login for ID: 1234567890
+2026-04-22 13:38:06 - User found in DB
+2026-04-22 13:38:06 - Password verified
+2026-04-22 13:38:06 - Uniq ID: 1111111
+2026-04-22 13:38:06 - Auth Secret Generated
+2026-04-22 13:38:06 - Update prepared
+2026-04-22 13:38:06 - Update executed
+2026-04-22 13:38:06 - Update successful
+2026-04-22 13:38:06 - New activity ID generated
+2026-04-22 13:38:06 - Insert activity prepared
+2026-04-22 13:38:40 - Attempting login for ID: 1234567890
+2026-04-22 13:38:40 - User found in DB
+2026-04-22 13:38:40 - Password verified
+2026-04-22 13:38:40 - Uniq ID: 1111111
+2026-04-22 13:38:40 - Auth Secret Generated
+2026-04-22 13:38:40 - Update prepared
+2026-04-22 13:38:40 - Update executed
+2026-04-22 13:38:40 - Update successful
+2026-04-22 13:38:40 - New activity ID generated
+2026-04-22 13:38:40 - Insert activity prepared
+2026-04-22 13:38:50 - Attempting login for ID: 1234567890
+2026-04-22 13:38:50 - User found in DB
+2026-04-22 13:38:51 - Password verified
+2026-04-22 13:38:51 - Uniq ID: 1111111
+2026-04-22 13:38:51 - Auth Secret Generated
+2026-04-22 13:38:51 - Update prepared
+2026-04-22 13:38:51 - Update executed
+2026-04-22 13:38:51 - Update successful
+2026-04-22 13:38:51 - New activity ID generated
+2026-04-22 13:38:51 - Insert activity prepared
+2026-04-22 13:39:42 - Attempting login for ID: 1234567890
+2026-04-22 13:39:42 - User found in DB
+2026-04-22 13:39:42 - Password verified
+2026-04-22 13:39:42 - Uniq ID: 1111111
+2026-04-22 13:39:42 - Auth Secret Generated
+2026-04-22 13:39:42 - Update prepared
+2026-04-22 13:39:42 - Update executed
+2026-04-22 13:39:42 - Update successful
+2026-04-22 13:39:42 - New activity ID generated
+2026-04-22 13:39:42 - Insert activity prepared
+2026-04-22 13:40:05 - Attempting login for ID: 1234567890
+2026-04-22 13:40:05 - User found in DB
+2026-04-22 13:40:05 - Password verified
+2026-04-22 13:40:05 - Uniq ID: 1111111
+2026-04-22 13:40:05 - Auth Secret Generated
+2026-04-22 13:40:05 - Update prepared
+2026-04-22 13:40:05 - Update executed
+2026-04-22 13:40:05 - Update successful
+2026-04-22 13:40:05 - New activity ID generated
+2026-04-22 13:40:05 - Insert activity prepared
+2026-04-22 13:41:57 - Attempting login for ID: 1234567890
+2026-04-22 13:41:57 - User found in DB
+2026-04-22 13:41:57 - Password verified
+2026-04-22 13:41:57 - Uniq ID: 1111111
+2026-04-22 13:41:57 - Auth Secret Generated
+2026-04-22 13:41:57 - Update prepared
+2026-04-22 13:41:57 - Update executed
+2026-04-22 13:41:57 - Update successful
+2026-04-22 13:41:57 - New activity ID generated
+2026-04-22 13:41:57 - Insert activity prepared
+2026-04-22 13:41:57 - CRITICAL ERROR: Duplicate entry '0' for key 'PRIMARY' in D:\xampp\htdocs\route-paths\request-login.php on line 104
+2026-04-22 13:41:57 - Returning status: critical_error
+2026-04-22 13:41:59 - Attempting login for ID: 1234567890
+2026-04-22 13:41:59 - User found in DB
+2026-04-22 13:42:00 - Password verified
+2026-04-22 13:42:00 - Uniq ID: 1111111
+2026-04-22 13:42:00 - Auth Secret Generated
+2026-04-22 13:42:00 - Update prepared
+2026-04-22 13:42:00 - Update executed
+2026-04-22 13:42:00 - Update successful
+2026-04-22 13:42:00 - New activity ID generated
+2026-04-22 13:42:00 - Insert activity prepared
+2026-04-22 13:42:00 - CRITICAL ERROR: Duplicate entry '0' for key 'PRIMARY' in D:\xampp\htdocs\route-paths\request-login.php on line 104
+2026-04-22 13:42:00 - Returning status: critical_error
+2026-04-22 13:42:00 - Attempting login for ID: 1234567890
+2026-04-22 13:42:00 - User found in DB
+2026-04-22 13:42:00 - Password verified
+2026-04-22 13:42:00 - Uniq ID: 1111111
+2026-04-22 13:42:00 - Auth Secret Generated
+2026-04-22 13:42:00 - Update prepared
+2026-04-22 13:42:00 - Update executed
+2026-04-22 13:42:00 - Update successful
+2026-04-22 13:42:00 - New activity ID generated
+2026-04-22 13:42:00 - Insert activity prepared
+2026-04-22 13:42:00 - CRITICAL ERROR: Duplicate entry '0' for key 'PRIMARY' in D:\xampp\htdocs\route-paths\request-login.php on line 104
+2026-04-22 13:42:00 - Returning status: critical_error
+2026-04-22 13:42:00 - Attempting login for ID: 1234567890
+2026-04-22 13:42:00 - User found in DB
+2026-04-22 13:42:00 - Password verified
+2026-04-22 13:42:00 - Uniq ID: 1111111
+2026-04-22 13:42:00 - Auth Secret Generated
+2026-04-22 13:42:00 - Update prepared
+2026-04-22 13:42:00 - Update executed
+2026-04-22 13:42:00 - Update successful
+2026-04-22 13:42:00 - New activity ID generated
+2026-04-22 13:42:00 - Insert activity prepared
+2026-04-22 13:42:00 - CRITICAL ERROR: Duplicate entry '0' for key 'PRIMARY' in D:\xampp\htdocs\route-paths\request-login.php on line 104
+2026-04-22 13:42:00 - Returning status: critical_error
+2026-04-22 13:43:17 - Attempting login for ID: 123456
+2026-04-22 13:43:17 - Returning status: user_not_exist
+2026-04-22 13:43:22 - Attempting login for ID: 1234567890
+2026-04-22 13:43:22 - User found in DB
+2026-04-22 13:43:22 - Password verified
+2026-04-22 13:43:22 - Uniq ID: 1111111
+2026-04-22 13:43:22 - Auth Secret Generated
+2026-04-22 13:43:22 - Update prepared
+2026-04-22 13:43:22 - Update executed
+2026-04-22 13:43:22 - Update successful
+2026-04-22 13:43:22 - New activity ID generated
+2026-04-22 13:43:22 - Insert activity prepared
+2026-04-22 13:43:22 - CRITICAL ERROR: Duplicate entry '0' for key 'PRIMARY' in D:\xampp\htdocs\route-paths\request-login.php on line 104
+2026-04-22 13:43:22 - Returning status: critical_error
+2026-04-22 13:43:44 - Attempting login for ID: 8888888888
+2026-04-22 13:43:44 - Returning status: user_not_exist
+2026-04-22 13:43:51 - Attempting login for ID: 9999999999
+2026-04-22 13:43:51 - User found in DB
+2026-04-22 13:43:51 - Password verified
+2026-04-22 13:43:51 - Uniq ID: 9988776
+2026-04-22 13:43:51 - Auth Secret Generated
+2026-04-22 13:43:51 - Update prepared
+2026-04-22 13:43:51 - Update executed
+2026-04-22 13:43:51 - Update successful
+2026-04-22 13:43:51 - New activity ID generated
+2026-04-22 13:43:51 - Insert activity prepared
+2026-04-22 13:43:51 - Insert activity executed
+2026-04-22 13:43:51 - Select activity prepared
+2026-04-22 13:43:51 - Select activity executed
+2026-04-22 13:43:51 - Finalizing result array
+2026-04-22 13:43:51 - Success status set
+2026-04-22 13:43:51 - Returning status: success
+2026-04-22 13:44:08 - Attempting login for ID: 1234567890
+2026-04-22 13:44:08 - User found in DB
+2026-04-22 13:44:08 - Password verified
+2026-04-22 13:44:08 - Uniq ID: 1111111
+2026-04-22 13:44:08 - Auth Secret Generated
+2026-04-22 13:44:08 - Update prepared
+2026-04-22 13:44:08 - Update executed
+2026-04-22 13:44:08 - Update successful
+2026-04-22 13:44:08 - New activity ID generated
+2026-04-22 13:44:08 - Insert activity prepared
+2026-04-22 13:44:08 - Insert activity executed
+2026-04-22 13:44:08 - Select activity prepared
+2026-04-22 13:44:08 - Select activity executed
+2026-04-22 13:44:08 - Deleting old activity
+2026-04-22 13:44:08 - Finalizing result array
+2026-04-22 13:44:08 - Success status set
+2026-04-22 13:44:08 - Returning status: success
+2026-04-22 13:45:36 - Attempting login for ID: 1234567890
+2026-04-22 13:45:36 - User found in DB
+2026-04-22 13:45:36 - Password verified
+2026-04-22 13:45:36 - Uniq ID: 1111111
+2026-04-22 13:45:36 - Auth Secret Generated
+2026-04-22 13:45:36 - Update prepared
+2026-04-22 13:45:36 - Update executed
+2026-04-22 13:45:36 - Update successful
+2026-04-22 13:45:36 - New activity ID generated
+2026-04-22 13:45:36 - Insert activity prepared
+2026-04-22 13:45:36 - Insert activity executed
+2026-04-22 13:45:36 - Select activity prepared
+2026-04-22 13:45:36 - Select activity executed
+2026-04-22 13:45:36 - Deleting old activity
+2026-04-22 13:45:36 - Finalizing result array
+2026-04-22 13:45:36 - Success status set
+2026-04-22 13:45:36 - Returning status: success
+2026-04-22 13:45:58 - Attempting login for ID: IRSHAD11
+2026-04-22 13:45:58 - User found in DB
+2026-04-22 13:45:58 - Password verified
+2026-04-22 13:45:58 - Uniq ID: 4623767
+2026-04-22 13:45:58 - Auth Secret Generated
+2026-04-22 13:45:58 - Update prepared
+2026-04-22 13:45:58 - Update executed
+2026-04-22 13:45:58 - Update successful
+2026-04-22 13:45:58 - New activity ID generated
+2026-04-22 13:45:58 - Insert activity prepared
+2026-04-22 13:45:58 - Insert activity executed
+2026-04-22 13:45:58 - Select activity prepared
+2026-04-22 13:45:58 - Select activity executed
+2026-04-22 13:45:58 - Finalizing result array
+2026-04-22 13:45:58 - Success status set
+2026-04-22 13:45:58 - Returning status: success
+2026-04-22 13:46:21 - Attempting login for ID: IRSHAD11
+2026-04-22 13:46:21 - User found in DB
+2026-04-22 13:46:22 - Returning status: password_error
+2026-04-22 13:46:26 - Attempting login for ID: IRSHAD11
+2026-04-22 13:46:26 - User found in DB
+2026-04-22 13:46:26 - Password verified
+2026-04-22 13:46:26 - Uniq ID: 4623767
+2026-04-22 13:46:26 - Auth Secret Generated
+2026-04-22 13:46:26 - Update prepared
+2026-04-22 13:46:26 - Update executed
+2026-04-22 13:46:26 - Update successful
+2026-04-22 13:46:26 - New activity ID generated
+2026-04-22 13:46:26 - Insert activity prepared
+2026-04-22 13:46:26 - Insert activity executed
+2026-04-22 13:46:26 - Select activity prepared
+2026-04-22 13:46:26 - Select activity executed
+2026-04-22 13:46:26 - Finalizing result array
+2026-04-22 13:46:26 - Success status set
+2026-04-22 13:46:26 - Returning status: success
+2026-04-22 13:46:48 - Attempting login for ID: 8884858585
+2026-04-22 13:46:48 - User found in DB
+2026-04-22 13:46:48 - Password verified
+2026-04-22 13:46:48 - Uniq ID: 4623767
+2026-04-22 13:46:48 - Auth Secret Generated
+2026-04-22 13:46:48 - Update prepared
+2026-04-22 13:46:48 - Update executed
+2026-04-22 13:46:48 - Update successful
+2026-04-22 13:46:48 - New activity ID generated
+2026-04-22 13:46:48 - Insert activity prepared
+2026-04-22 13:46:48 - Insert activity executed
+2026-04-22 13:46:48 - Select activity prepared
+2026-04-22 13:46:48 - Select activity executed
+2026-04-22 13:46:48 - Finalizing result array
+2026-04-22 13:46:48 - Success status set
+2026-04-22 13:46:48 - Returning status: success
+2026-04-22 13:47:06 - Attempting login for ID: 8884858585
+2026-04-22 13:47:06 - User found in DB
+2026-04-22 13:47:06 - Returning status: password_error
+2026-04-22 13:47:10 - Attempting login for ID: 8884858585
+2026-04-22 13:47:10 - User found in DB
+2026-04-22 13:47:10 - Password verified
+2026-04-22 13:47:10 - Uniq ID: 4623767
+2026-04-22 13:47:10 - Auth Secret Generated
+2026-04-22 13:47:10 - Update prepared
+2026-04-22 13:47:10 - Update executed
+2026-04-22 13:47:10 - Update successful
+2026-04-22 13:47:10 - New activity ID generated
+2026-04-22 13:47:10 - Insert activity prepared
+2026-04-22 13:47:10 - Insert activity executed
+2026-04-22 13:47:10 - Select activity prepared
+2026-04-22 13:47:10 - Select activity executed
+2026-04-22 13:47:10 - Finalizing result array
+2026-04-22 13:47:10 - Success status set
+2026-04-22 13:47:10 - Returning status: success
+2026-04-22 13:49:38 - Attempting login for ID: 1234567890
+2026-04-22 13:49:38 - User found in DB
+2026-04-22 13:49:38 - Password verified
+2026-04-22 13:49:38 - Uniq ID: 1111111
+2026-04-22 13:49:38 - Auth Secret Generated
+2026-04-22 13:49:38 - Update prepared
+2026-04-22 13:49:38 - Update executed
+2026-04-22 13:49:38 - Update successful
+2026-04-22 13:49:38 - New activity ID generated
+2026-04-22 13:49:38 - Insert activity prepared
+2026-04-22 13:49:38 - Insert activity executed
+2026-04-22 13:49:38 - Select activity prepared
+2026-04-22 13:49:38 - Select activity executed
+2026-04-22 13:49:38 - Deleting old activity
+2026-04-22 13:49:38 - Finalizing result array
+2026-04-22 13:49:38 - Success status set
+2026-04-22 13:49:38 - Returning status: success
+2026-04-22 13:54:40 - Attempting login for ID: ROBIN
+2026-04-22 13:54:40 - User found in DB
+2026-04-22 13:54:40 - Password verified
+2026-04-22 13:54:40 - Uniq ID: 3182645
+2026-04-22 13:54:40 - Auth Secret Generated
+2026-04-22 13:54:40 - Update prepared
+2026-04-22 13:54:40 - Update executed
+2026-04-22 13:54:40 - Update successful
+2026-04-22 13:54:40 - New activity ID generated
+2026-04-22 13:54:40 - Insert activity prepared
+2026-04-22 13:54:40 - Insert activity executed
+2026-04-22 13:54:40 - Select activity prepared
+2026-04-22 13:54:40 - Select activity executed
+2026-04-22 13:54:40 - Finalizing result array
+2026-04-22 13:54:40 - Success status set
+2026-04-22 13:54:40 - Returning status: success
+2026-04-22 14:02:16 - Attempting login for ID: ROBIN
+2026-04-22 14:02:16 - User found in DB
+2026-04-22 14:02:17 - Password verified
+2026-04-22 14:02:17 - Uniq ID: 3182645
+2026-04-22 14:02:17 - Auth Secret Generated
+2026-04-22 14:02:17 - Update prepared
+2026-04-22 14:02:17 - Update executed
+2026-04-22 14:02:17 - Update successful
+2026-04-22 14:02:17 - New activity ID generated
+2026-04-22 14:02:17 - Insert activity prepared
+2026-04-22 14:02:17 - Insert activity executed
+2026-04-22 14:02:17 - Select activity prepared
+2026-04-22 14:02:17 - Select activity executed
+2026-04-22 14:02:17 - Finalizing result array
+2026-04-22 14:02:17 - Success status set
+2026-04-22 14:02:17 - Returning status: success
+2026-04-22 14:42:22 - Attempting login for ID: 1234567890
+2026-04-22 14:42:22 - User found in DB
+2026-04-22 14:42:22 - Password verified
+2026-04-22 14:42:22 - Uniq ID: 1111111
+2026-04-22 14:42:22 - Auth Secret Generated
+2026-04-22 14:42:22 - Update prepared
+2026-04-22 14:42:22 - Update executed
+2026-04-22 14:42:22 - Update successful
+2026-04-22 14:42:22 - New activity ID generated
+2026-04-22 14:42:22 - Insert activity prepared
+2026-04-22 14:42:22 - Insert activity executed
+2026-04-22 14:42:22 - Select activity prepared
+2026-04-22 14:42:22 - Select activity executed
+2026-04-22 14:42:22 - Deleting old activity
+2026-04-22 14:42:22 - Finalizing result array
+2026-04-22 14:42:22 - Success status set
+2026-04-22 14:42:22 - Returning status: success
+2026-04-22 14:47:52 - Attempting login for ID: 1234567890
+2026-04-22 14:47:52 - User found in DB
+2026-04-22 14:47:52 - Password verified
+2026-04-22 14:47:52 - Uniq ID: 1111111
+2026-04-22 14:47:52 - Auth Secret Generated
+2026-04-22 14:47:52 - Update prepared
+2026-04-22 14:47:52 - Update executed
+2026-04-22 14:47:52 - Update successful
+2026-04-22 14:47:52 - New activity ID generated
+2026-04-22 14:47:52 - Insert activity prepared
+2026-04-22 14:47:52 - Insert activity executed
+2026-04-22 14:47:52 - Select activity prepared
+2026-04-22 14:47:52 - Select activity executed
+2026-04-22 14:47:52 - Deleting old activity
+2026-04-22 14:47:52 - Finalizing result array
+2026-04-22 14:47:52 - Success status set
+2026-04-22 14:47:52 - Returning status: success
+2026-04-22 14:48:15 - Attempting login for ID: ROBIN
+2026-04-22 14:48:15 - User found in DB
+2026-04-22 14:48:15 - Password verified
+2026-04-22 14:48:15 - Uniq ID: 3182645
+2026-04-22 14:48:15 - Auth Secret Generated
+2026-04-22 14:48:15 - Update prepared
+2026-04-22 14:48:15 - Update executed
+2026-04-22 14:48:15 - Update successful
+2026-04-22 14:48:15 - New activity ID generated
+2026-04-22 14:48:15 - Insert activity prepared
+2026-04-22 14:48:15 - Insert activity executed
+2026-04-22 14:48:15 - Select activity prepared
+2026-04-22 14:48:15 - Select activity executed
+2026-04-22 14:48:15 - Finalizing result array
+2026-04-22 14:48:15 - Success status set
+2026-04-22 14:48:15 - Returning status: success
+2026-04-22 16:30:00 - Attempting login for ID: 1234567890
+2026-04-22 16:30:00 - CRITICAL ERROR: Unknown column 'tbl_user_name' in 'where clause' in D:\xampp\htdocs\route-paths\request-login.php on line 54
+2026-04-22 16:30:00 - Returning status: critical_error
+2026-04-22 16:30:45 - Attempting login for ID: 1234567890
+2026-04-22 16:30:45 - CRITICAL ERROR: Unknown column 'tbl_user_name' in 'where clause' in D:\xampp\htdocs\route-paths\request-login.php on line 54
+2026-04-22 16:30:45 - Returning status: critical_error
+2026-04-22 16:32:12 - Attempting login for ID: 1234567890
+2026-04-22 16:32:12 - CRITICAL ERROR: Unknown column 'tbl_user_name' in 'where clause' in D:\xampp\htdocs\route-paths\request-login.php on line 54
+2026-04-22 16:32:12 - Returning status: critical_error
+2026-04-22 16:33:54 - Attempting login for ID: 1234567890
+2026-04-22 16:33:54 - tbl_user_name column missing, falling back to mobile/full_name search
+2026-04-22 16:33:54 - User found in DB
+2026-04-22 16:33:55 - Password verified
+2026-04-22 16:33:55 - Uniq ID: 1111111
+2026-04-22 16:33:55 - Auth Secret Generated
+2026-04-22 16:33:55 - Update prepared
+2026-04-22 16:33:55 - Update executed
+2026-04-22 16:33:55 - Update successful
+2026-04-22 16:33:55 - New activity ID generated
+2026-04-22 16:33:55 - Insert activity prepared
+2026-04-22 16:33:55 - Insert activity executed
+2026-04-22 16:33:55 - Select activity prepared
+2026-04-22 16:33:55 - Select activity executed
+2026-04-22 16:33:55 - Deleting old activity
+2026-04-22 16:33:55 - Finalizing result array
+2026-04-22 16:33:55 - Success status set
+2026-04-22 16:33:55 - Returning status: success
+2026-04-22 16:40:01 - Attempting login for ID: 1234567890
+2026-04-22 16:40:01 - User found in DB
+2026-04-22 16:40:01 - Password verified
+2026-04-22 16:40:01 - Uniq ID: 1111111
+2026-04-22 16:40:01 - Auth Secret Generated
+2026-04-22 16:40:01 - Update prepared
+2026-04-22 16:40:01 - Update executed
+2026-04-22 16:40:01 - Update successful
+2026-04-22 16:40:01 - New activity ID generated
+2026-04-22 16:40:01 - Insert activity prepared
+2026-04-22 16:40:01 - Insert activity executed
+2026-04-22 16:40:01 - Select activity prepared
+2026-04-22 16:40:01 - Select activity executed
+2026-04-22 16:40:01 - Deleting old activity
+2026-04-22 16:40:01 - Finalizing result array
+2026-04-22 16:40:01 - Success status set
+2026-04-22 16:40:01 - Returning status: success
+2026-04-22 19:21:27 - Attempting login for ID: 1234567890
+2026-04-22 19:21:27 - User found in DB
+2026-04-22 19:21:28 - Password verified
+2026-04-22 19:21:28 - Uniq ID: 1111111
+2026-04-22 19:21:28 - Auth Secret Generated
+2026-04-22 19:21:28 - Update prepared
+2026-04-22 19:21:28 - Update executed
+2026-04-22 19:21:28 - Update successful
+2026-04-22 19:21:28 - New activity ID generated
+2026-04-22 19:21:28 - Insert activity prepared
+2026-04-22 19:21:28 - Insert activity executed
+2026-04-22 19:21:28 - Select activity prepared
+2026-04-22 19:21:28 - Select activity executed
+2026-04-22 19:21:28 - Deleting old activity
+2026-04-22 19:21:28 - Finalizing result array
+2026-04-22 19:21:28 - Success status set
+2026-04-22 19:21:28 - Returning status: success
+2026-04-22 19:27:55 - Attempting login for ID: 1234567890
+2026-04-22 19:27:55 - User found in DB
+2026-04-22 19:27:55 - Password verified
+2026-04-22 19:27:55 - Uniq ID: 1111111
+2026-04-22 19:27:55 - Auth Secret Generated
+2026-04-22 19:27:55 - Update prepared
+2026-04-22 19:27:55 - Update executed
+2026-04-22 19:27:55 - Update successful
+2026-04-22 19:27:55 - New activity ID generated
+2026-04-22 19:27:55 - Insert activity prepared
+2026-04-22 19:27:55 - Insert activity executed
+2026-04-22 19:27:55 - Select activity prepared
+2026-04-22 19:27:55 - Select activity executed
+2026-04-22 19:27:55 - Deleting old activity
+2026-04-22 19:27:55 - Finalizing result array
+2026-04-22 19:27:55 - Success status set
+2026-04-22 19:27:55 - Returning status: success
+2026-04-22 19:39:31 - Attempting login for ID: 1234567890
+2026-04-22 19:39:32 - User found in DB
+2026-04-22 19:39:32 - Password verified
+2026-04-22 19:39:32 - Uniq ID: 1111111
+2026-04-22 19:39:32 - Auth Secret Generated
+2026-04-22 19:39:32 - Update prepared
+2026-04-22 19:39:32 - Update executed
+2026-04-22 19:39:32 - Update successful
+2026-04-22 19:39:32 - New activity ID generated
+2026-04-22 19:39:32 - Insert activity prepared
+2026-04-22 19:39:32 - Insert activity executed
+2026-04-22 19:39:32 - Select activity prepared
+2026-04-22 19:39:32 - Select activity executed
+2026-04-22 19:39:32 - Deleting old activity
+2026-04-22 19:39:32 - Finalizing result array
+2026-04-22 19:39:32 - Success status set
+2026-04-22 19:39:32 - Returning status: success
+2026-04-22 20:07:31 - Attempting login for ID: 1234567890
+2026-04-22 20:07:31 - User found in DB
+2026-04-22 20:07:31 - Password verified
+2026-04-22 20:07:31 - Uniq ID: 1111111
+2026-04-22 20:07:31 - Auth Secret Generated
+2026-04-22 20:07:31 - Update prepared
+2026-04-22 20:07:31 - Update executed
+2026-04-22 20:07:31 - Update successful
+2026-04-22 20:07:31 - New activity ID generated
+2026-04-22 20:07:31 - Insert activity prepared
+2026-04-22 20:07:31 - Insert activity executed
+2026-04-22 20:07:31 - Select activity prepared
+2026-04-22 20:07:31 - Select activity executed
+2026-04-22 20:07:31 - Deleting old activity
+2026-04-22 20:07:31 - Finalizing result array
+2026-04-22 20:07:31 - Success status set
+2026-04-22 20:07:31 - Returning status: success
+2026-04-22 20:10:22 - Attempting login for ID: 1234567890
+2026-04-22 20:10:22 - User found in DB
+2026-04-22 20:10:22 - Password verified
+2026-04-22 20:10:22 - Uniq ID: 1111111
+2026-04-22 20:10:22 - Auth Secret Generated
+2026-04-22 20:10:22 - Update prepared
+2026-04-22 20:10:22 - Update executed
+2026-04-22 20:10:22 - Update successful
+2026-04-22 20:10:22 - New activity ID generated
+2026-04-22 20:10:22 - Insert activity prepared
+2026-04-22 20:10:22 - Insert activity executed
+2026-04-22 20:10:22 - Select activity prepared
+2026-04-22 20:10:22 - Select activity executed
+2026-04-22 20:10:22 - Deleting old activity
+2026-04-22 20:10:22 - Finalizing result array
+2026-04-22 20:10:22 - Success status set
+2026-04-22 20:10:22 - Returning status: success
+2026-04-22 20:45:51 - Attempting login for ID: 9072130225
+2026-04-22 20:45:51 - User found in DB
+2026-04-22 20:45:52 - Password verified
+2026-04-22 20:45:52 - Uniq ID: 8213022
+2026-04-22 20:45:52 - Auth Secret Generated
+2026-04-22 20:45:52 - Update prepared
+2026-04-22 20:45:52 - Update executed
+2026-04-22 20:45:52 - Update successful
+2026-04-22 20:45:52 - New activity ID generated
+2026-04-22 20:45:52 - Insert activity prepared
+2026-04-22 20:45:52 - Insert activity executed
+2026-04-22 20:45:52 - Select activity prepared
+2026-04-22 20:45:52 - Select activity executed
+2026-04-22 20:45:52 - Deleting old activity
+2026-04-22 20:45:52 - Finalizing result array
+2026-04-22 20:45:52 - Success status set
+2026-04-22 20:45:52 - Returning status: success
+2026-04-22 20:46:17 - Attempting login for ID: ROBIN
+2026-04-22 20:46:17 - Returning status: user_not_exist
+2026-04-22 20:46:46 - Attempting login for ID: IRSHAD DEV
+2026-04-22 20:46:46 - User found in DB
+2026-04-22 20:46:46 - Password verified
+2026-04-22 20:46:46 - Uniq ID: 8213022
+2026-04-22 20:46:46 - Auth Secret Generated
+2026-04-22 20:46:46 - Update prepared
+2026-04-22 20:46:46 - Update executed
+2026-04-22 20:46:46 - Update successful
+2026-04-22 20:46:46 - New activity ID generated
+2026-04-22 20:46:46 - Insert activity prepared
+2026-04-22 20:46:46 - Insert activity executed
+2026-04-22 20:46:46 - Select activity prepared
+2026-04-22 20:46:46 - Select activity executed
+2026-04-22 20:46:46 - Deleting old activity
+2026-04-22 20:46:46 - Finalizing result array
+2026-04-22 20:46:46 - Success status set
+2026-04-22 20:46:46 - Returning status: success
+2026-04-22 21:05:10 - Attempting login for ID: 9072130225
+2026-04-22 21:05:10 - User found in DB
+2026-04-22 21:05:10 - Password verified
+2026-04-22 21:05:10 - Uniq ID: 8213022
+2026-04-22 21:05:10 - Auth Secret Generated
+2026-04-22 21:05:10 - Update prepared
+2026-04-22 21:05:10 - Update executed
+2026-04-22 21:05:10 - Update successful
+2026-04-22 21:05:10 - New activity ID generated
+2026-04-22 21:05:10 - Insert activity prepared
+2026-04-22 21:05:10 - Insert activity executed
+2026-04-22 21:05:10 - Select activity prepared
+2026-04-22 21:05:10 - Select activity executed
+2026-04-22 21:05:10 - Deleting old activity
+2026-04-22 21:05:10 - Finalizing result array
+2026-04-22 21:05:10 - Success status set
+2026-04-22 21:05:10 - Returning status: success
+2026-04-22 21:10:33 - Attempting login for ID: 9072130225
+2026-04-22 21:10:33 - User found in DB
+2026-04-22 21:10:33 - Password verified
+2026-04-22 21:10:33 - Uniq ID: 8213022
+2026-04-22 21:10:33 - Auth Secret Generated
+2026-04-22 21:10:33 - Update prepared
+2026-04-22 21:10:33 - Update executed
+2026-04-22 21:10:33 - Update successful
+2026-04-22 21:10:33 - New activity ID generated
+2026-04-22 21:10:33 - Insert activity prepared
+2026-04-22 21:10:33 - Insert activity executed
+2026-04-22 21:10:33 - Select activity prepared
+2026-04-22 21:10:33 - Select activity executed
+2026-04-22 21:10:33 - Deleting old activity
+2026-04-22 21:10:33 - Finalizing result array
+2026-04-22 21:10:33 - Success status set
+2026-04-22 21:10:33 - Returning status: success
+2026-04-22 21:14:33 - Attempting login for ID: 9072130225
+2026-04-22 21:14:33 - User found in DB
+2026-04-22 21:14:33 - Password verified
+2026-04-22 21:14:33 - Uniq ID: 8213022
+2026-04-22 21:14:33 - Auth Secret Generated
+2026-04-22 21:14:33 - Update prepared
+2026-04-22 21:14:33 - Update executed
+2026-04-22 21:14:33 - Update successful
+2026-04-22 21:14:33 - New activity ID generated
+2026-04-22 21:14:33 - Insert activity prepared
+2026-04-22 21:14:33 - Insert activity executed
+2026-04-22 21:14:33 - Select activity prepared
+2026-04-22 21:14:33 - Select activity executed
+2026-04-22 21:14:33 - Deleting old activity
+2026-04-22 21:14:33 - Finalizing result array
+2026-04-22 21:14:33 - Success status set
+2026-04-22 21:14:33 - Returning status: success
+2026-04-23 16:42:33 - Attempting login for ID: 1234567890
+2026-04-23 16:42:34 - User found in DB
+2026-04-23 16:42:34 - Password verified
+2026-04-23 16:42:34 - Uniq ID: 1111111
+2026-04-23 16:42:34 - Auth Secret Generated
+2026-04-23 16:42:34 - Update prepared
+2026-04-23 16:42:34 - Update executed
+2026-04-23 16:42:34 - Update successful
+2026-04-23 16:42:34 - New activity ID generated
+2026-04-23 16:42:34 - Insert activity prepared
+2026-04-23 16:42:34 - Insert activity executed
+2026-04-23 16:42:34 - Select activity prepared
+2026-04-23 16:42:34 - Select activity executed
+2026-04-23 16:42:34 - Deleting old activity
+2026-04-23 16:42:34 - Finalizing result array
+2026-04-23 16:42:34 - Success status set
+2026-04-23 16:42:34 - Returning status: success
+2026-04-23 17:19:57 - Attempting login for ID: 1234567890
+2026-04-23 17:19:57 - User found in DB
+2026-04-23 17:19:58 - Password verified
+2026-04-23 17:19:58 - Uniq ID: 1111111
+2026-04-23 17:19:58 - Auth Secret Generated
+2026-04-23 17:19:58 - Update prepared
+2026-04-23 17:19:58 - Update executed
+2026-04-23 17:19:58 - Update successful
+2026-04-23 17:19:58 - New activity ID generated
+2026-04-23 17:19:58 - Insert activity prepared
+2026-04-23 17:19:58 - Insert activity executed
+2026-04-23 17:19:58 - Select activity prepared
+2026-04-23 17:19:58 - Select activity executed
+2026-04-23 17:19:58 - Deleting old activity
+2026-04-23 17:19:58 - Finalizing result array
+2026-04-23 17:19:58 - Success status set
+2026-04-23 17:19:58 - Returning status: success
+2026-04-23 17:29:59 - Attempting login for ID: 1234567890
+2026-04-23 17:29:59 - User found in DB
+2026-04-23 17:29:59 - Password verified
+2026-04-23 17:29:59 - Uniq ID: 1111111
+2026-04-23 17:29:59 - Auth Secret Generated
+2026-04-23 17:29:59 - Update prepared
+2026-04-23 17:29:59 - Update executed
+2026-04-23 17:29:59 - Update successful
+2026-04-23 17:29:59 - New activity ID generated
+2026-04-23 17:29:59 - Insert activity prepared
+2026-04-23 17:29:59 - Insert activity executed
+2026-04-23 17:29:59 - Select activity prepared
+2026-04-23 17:29:59 - Select activity executed
+2026-04-23 17:29:59 - Deleting old activity
+2026-04-23 17:29:59 - Finalizing result array
+2026-04-23 17:29:59 - Success status set
+2026-04-23 17:29:59 - Returning status: success
+2026-04-23 18:57:31 - Attempting login for ID: 1234567890
+2026-04-23 18:57:31 - User found in DB
+2026-04-23 18:57:32 - Password verified
+2026-04-23 18:57:32 - Uniq ID: 1111111
+2026-04-23 18:57:32 - Auth Secret Generated
+2026-04-23 18:57:32 - Update prepared
+2026-04-23 18:57:32 - Update executed
+2026-04-23 18:57:32 - Update successful
+2026-04-23 18:57:32 - New activity ID generated
+2026-04-23 18:57:32 - Insert activity prepared
+2026-04-23 18:57:32 - Insert activity executed
+2026-04-23 18:57:32 - Select activity prepared
+2026-04-23 18:57:32 - Select activity executed
+2026-04-23 18:57:32 - Deleting old activity
+2026-04-23 18:57:32 - Finalizing result array
+2026-04-23 18:57:32 - Success status set
+2026-04-23 18:57:32 - Returning status: success
+2026-04-23 20:04:35 - Attempting login for ID: 1234567890
+2026-04-23 20:04:35 - User found in DB
+2026-04-23 20:04:35 - Password verified
+2026-04-23 20:04:35 - Uniq ID: 1111111
+2026-04-23 20:04:35 - Auth Secret Generated
+2026-04-23 20:04:35 - Update prepared
+2026-04-23 20:04:35 - Update executed
+2026-04-23 20:04:35 - Update successful
+2026-04-23 20:04:35 - New activity ID generated
+2026-04-23 20:04:35 - Insert activity prepared
+2026-04-23 20:04:35 - Insert activity executed
+2026-04-23 20:04:35 - Select activity prepared
+2026-04-23 20:04:35 - Select activity executed
+2026-04-23 20:04:35 - Deleting old activity
+2026-04-23 20:04:35 - Finalizing result array
+2026-04-23 20:04:35 - Success status set
+2026-04-23 20:04:35 - Returning status: success

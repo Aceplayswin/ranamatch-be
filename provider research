@@ -1,0 +1,20 @@
+Connected Game Providers:
+PG Soft (PG) — Powering the majority of modern slot games (e.g., Mahjong Ways, Treasures of Aztec).
+JILI (GILIgaming) — Extensively integrated across Slots, Fish Games, and Indian Poker (Teen Patti, Rummy).
+Evolution Gaming — The primary provider for Premium Live Casino Lobbies and Game Shows (Crazy Time, Monopoly Live).
+Spribe — Providing popular "Turbo" and "Crash" games, including Aviator, Mines, and Plinko.
+JDB Gaming — Supporting Fish Games and Slot titles.
+Microgaming — Connected for Live Casino and Table game lobbies.
+Ezugi — Providing Live Dealer solutions and specialized Roulette lobbies.
+Playtech — Integrated for Live Casino and specialized Game Show lobbies.
+SABA Sports — The core provider for the main Sportsbook and Live Sports betting.
+Luck Sports — Providing additional sports betting markets.
+9 Wickets — Specialized Exchange/Sports provider.
+TF Gaming (Esports) — Powering the dedicated Esports betting section.
+CQ9 — Connected for specialized Asian-themed slot games.
+iDeal (YesGaming) — Integrated for specific high-performance slot titles.
+PgsGaming — Providing a subset of high-density slot games.
+Additional Observations:
+Evoplay: Configuration exists in the code but is currently commented out in cusinolive.js.
+TADA Gaming: Mentioned in comments within the fishgame.js file but appears to be deactivated in favor of JILI and JDB.
+Integrated Types: The connections are well-distributed across Casino Live, Sports, Slots, Fish Games, Indian Poker, and Turbo/Crash Games.
