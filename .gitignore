@@ -27,10 +27,14 @@ security/auth-secret.php
 security/constants.php
 
 # Debug and Temporary Files
+services/smtp/get_oauth_token.php
 debug_*.php
 check_*.php
 test_*.php
 create_*.php
 cleanup_*.php
+migrate_*.php
+update_*.php
+*_db.php
 api_debug.log
 .gemini/
