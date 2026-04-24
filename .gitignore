@@ -24,6 +24,7 @@ security/config.php
 security/license.php
 security/setup-database.php
 security/auth-secret.php
+security/constants.php
 
 # Debug and Temporary Files
 debug_*.php
