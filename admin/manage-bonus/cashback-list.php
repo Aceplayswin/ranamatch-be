@@ -328,7 +328,7 @@ function processCashback(id) {
             Swal.fire({ title: 'Processing...', allowOutsideClick: false, didOpen: () => { Swal.showLoading(); } });
             
             $.ajax({
-                url: '../../api/cron/process-cashback.php' + (id > 0 ? '?id=' + id : ''),
+                url: 'ajax_process_cashback.php' + (id > 0 ? '?id=' + id : ''),
                 type: 'GET',
                 success: function(response) {
                     Swal.fire({

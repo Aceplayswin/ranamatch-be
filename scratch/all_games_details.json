@@ -1,0 +1,2434 @@
+[
+    {
+        "game_name": "Baccarat B",
+        "game_uid": "0ea8519b837ebd62f5a8978acca33e1d",
+        "game_category": "casino",
+        "game_provider": "CasinoLive",
+        "game_image": "https:\/\/i.postimg.cc\/k4tt9PxR\/baccat-b.jpg",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Blackjack Silver B",
+        "game_uid": "8de1993b371ce298b85584d21e5d2106",
+        "game_category": "casino",
+        "game_provider": "CasinoLive",
+        "game_image": "https:\/\/i.postimg.cc\/MHmyVYM6\/blackjack-silver-b.webp",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Caribbean Stud Poker",
+        "game_uid": "724eebd5cbe7555b01ed60279cb59e5a",
+        "game_category": "casino",
+        "game_provider": "CasinoLive",
+        "game_image": "https:\/\/i.postimg.cc\/bvsycNqN\/carribean-stud.webp",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Craps",
+        "game_uid": "689dd8e8f17dae910dba9fdd4990d41e",
+        "game_category": "casino",
+        "game_provider": "CasinoLive",
+        "game_image": "https:\/\/i.postimg.cc\/pLbMSX3b\/craps.jpg",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Crazy Pachinko",
+        "game_uid": "911a32ad38d77f86baf29a2cdb95da05",
+        "game_category": "casino",
+        "game_provider": "CasinoLive",
+        "game_image": "https:\/\/i.postimg.cc\/43XCBf8k\/Crazy-Pachinko.jpg",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Crazy Time",
+        "game_uid": "917c0c51d248c33eb058e3210a2e7371",
+        "game_category": "casino",
+        "game_provider": "CasinoLive",
+        "game_image": "https:\/\/i.postimg.cc\/tJ9Vx1Yj\/Screenshot-2025-03-21-153400.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Dead or Alive: Saloon",
+        "game_uid": "eda1a2c5edb8370f8df58dcf8e1381b9",
+        "game_category": "casino",
+        "game_provider": "CasinoLive",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/evoplay\/Dead or Alive: Saloon.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Dream Catcher",
+        "game_uid": "7f50a6fbfcd9257299303b5757d43525",
+        "game_category": "casino",
+        "game_provider": "CasinoLive",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/evoplay\/Dream%20Catcher.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Evolution Lobby",
+        "game_uid": "8ef39602e589bf9f32fc351b1cbb338b",
+        "game_category": "casino",
+        "game_provider": "CasinoLive",
+        "game_image": "https:\/\/i.postimg.cc\/13tCGfSS\/102835-evolution-lobby-thumbnailx2.jpg",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Ezugi Lobby",
+        "game_uid": "d0e052b031dfcdb08d1803f4bcc618ef",
+        "game_category": "casino",
+        "game_provider": "CasinoLive",
+        "game_image": "https:\/\/i.postimg.cc\/nVNBRrB3\/Roulette-Lobby.webp",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Fan Tan",
+        "game_uid": "5cb6aa4e2ce1c775c568561401ffdfca",
+        "game_category": "casino",
+        "game_provider": "CasinoLive",
+        "game_image": "https:\/\/i.postimg.cc\/Y25PrDRM\/fan-tan.jpg",
+        "game_status": "1"
+    },
+    {
+        "game_name": "First Person American Roulette",
+        "game_uid": "88b2d98462fbc45d6d31e95083e183df",
+        "game_category": "casino",
+        "game_provider": "CasinoLive",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/evoplay\/First%20Person%20American%20Roulette.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "First Person Blackjack",
+        "game_uid": "4ac0e874a4d5fc55bcdba5302b43bc96",
+        "game_category": "casino",
+        "game_provider": "CasinoLive",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/evoplay\/First%20Person%20Blackjack.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "First Person Deal or No Deal",
+        "game_uid": "c715eb06391fabe5275d0b56440f49f3",
+        "game_category": "casino",
+        "game_provider": "CasinoLive",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/evoplay\/First%20Person%20Deal%20or%20No%20Deal.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "First Person Lightning Blackjack",
+        "game_uid": "74914b065a9e6b9c7cb8a0e4b17294ed",
+        "game_category": "casino",
+        "game_provider": "CasinoLive",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/evoplay\/First%20Person%20Lightning%20Blackjack.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "First Person Lightning Roulette",
+        "game_uid": "f5ee6fce16d369d1a656f3b227fc7236",
+        "game_category": "casino",
+        "game_provider": "CasinoLive",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/evoplay\/First%20Person%20Lightning%20Roulette.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "First Person Roulette",
+        "game_uid": "a82670530f49a6b3445dc1a592a2eb9e",
+        "game_category": "casino",
+        "game_provider": "CasinoLive",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/evoplay\/First%20Person%20Roulette.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Football Studio",
+        "game_uid": "392e13e38b3cec5ad259254a206d343a",
+        "game_category": "casino",
+        "game_provider": "CasinoLive",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/evoplay\/Football%20Studio.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Football Studio Dice",
+        "game_uid": "1909b4e3380dc37654f8e3997e63ec1b",
+        "game_category": "casino",
+        "game_provider": "CasinoLive",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/evoplay\/Football%20Studio%20Dice.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "HILO",
+        "game_uid": "bd8a2bb2dd63503b93cf6ac9492786ce",
+        "game_category": "turbo",
+        "game_provider": "CasinoLive",
+        "game_image": "https:\/\/ossimg.tirangaagent.com\/Tiranga\/gamelogo\/JILI\/235.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Immersive Roulette",
+        "game_uid": "3b43390eebe1f1a84b15f1251a253b24",
+        "game_category": "casino",
+        "game_provider": "CasinoLive",
+        "game_image": "https:\/\/i.postimg.cc\/G2nmFn1L\/immersive-roulette-poster-600x840.jpg",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Infinite blackjack ",
+        "game_uid": "58d7089aa20bce7f70e0e2ce81e888f4",
+        "game_category": "casino",
+        "game_provider": "CasinoLive",
+        "game_image": "https:\/\/i.postimg.cc\/26YBzZyd\/infinite-blackjack-poster-600x840.jpg",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Lightning Roulette",
+        "game_uid": "4a858d6b74c05260d3ea2762838798c7",
+        "game_category": "casino",
+        "game_provider": "CasinoLive",
+        "game_image": "https:\/\/i.postimg.cc\/HLRHXq7m\/7611-lightning-roulette.webp",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Limbo",
+        "game_uid": "eabf08253165b6bb2646e403de625d1a",
+        "game_category": "turbo",
+        "game_provider": "CasinoLive",
+        "game_image": "https:\/\/ossimg.tirangaagent.com\/Tiranga\/gamelogo\/JILI\/236.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Microgaming Lobby",
+        "game_uid": "4e58131adb95bb061a40e6e309116c19",
+        "game_category": "casino",
+        "game_provider": "CasinoLive",
+        "game_image": "https:\/\/i.postimg.cc\/KvHTkzvW\/1731053941552.jpg",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Mines",
+        "game_uid": "72ce7e04ce95ee94eef172c0dfd6dc17",
+        "game_category": "turbo",
+        "game_provider": "CasinoLive",
+        "game_image": "https:\/\/ossimg.tirangaagent.com\/Tiranga\/gamelogo\/JILI\/232.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "MONOPOLY Live",
+        "game_uid": "d496ac5fd91702331133e44b6bd12b26",
+        "game_category": "casino",
+        "game_provider": "CasinoLive",
+        "game_image": "https:\/\/i.postimg.cc\/nLfmHP0Y\/monopoly-live-poster.jpg",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Playtech Lobby",
+        "game_uid": "c38efc51028bd65f42396fa079c125d6",
+        "game_category": "casino",
+        "game_provider": "CasinoLive",
+        "game_image": "https:\/\/i.postimg.cc\/T2jTjs2N\/game-show.jpg",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Power Blackjack",
+        "game_uid": "1d1c0d3ec98deb128bdd5acdef0f157e",
+        "game_category": "casino",
+        "game_provider": "CasinoLive",
+        "game_image": "https:\/\/i.postimg.cc\/VNM9VrFD\/power-blackjack-pid-11.jpg",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Speed Roulette",
+        "game_uid": "b4af506243cafae52908e8fa266f8ff6",
+        "game_category": "casino",
+        "game_provider": "CasinoLive",
+        "game_image": "https:\/\/i.postimg.cc\/4yfmVQbc\/speed-roulette.jpg",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Super Andar Bahar",
+        "game_uid": "f7b98e899461bdd49f92afc36b4c0db5",
+        "game_category": "casino",
+        "game_provider": "CasinoLive",
+        "game_image": "https:\/\/i.postimg.cc\/nzJXysKD\/Screenshot-2025-03-21-153431.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Tower",
+        "game_uid": "8e939551b9e785001fcb5b0a32f88aba",
+        "game_category": "turbo",
+        "game_provider": "CasinoLive",
+        "game_image": "https:\/\/ossimg.tirangaagent.com\/Tiranga\/gamelogo\/JILI\/233.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Trump Card",
+        "game_uid": "96c010fc4a95792401e903213d7add44",
+        "game_category": "turbo",
+        "game_provider": "CasinoLive",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Trump-Card.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Wheel",
+        "game_uid": "6e19e03c50f035ddd9ffd804c30f8c80",
+        "game_category": "turbo",
+        "game_provider": "CasinoLive",
+        "game_image": "https:\/\/ossimg.tirangaagent.com\/Tiranga\/gamelogo\/JILI\/229.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "XXXtreme Lightning Roulette",
+        "game_uid": "394fe6a2cde24bc487767236cc6eccd6",
+        "game_category": "casino",
+        "game_provider": "CasinoLive",
+        "game_image": "https:\/\/i.postimg.cc\/rmDXpQh1\/first-person-xxxtreme-lightning-roulette-thumbnail-600x840-2023-05.jpg",
+        "game_status": "1"
+    },
+    {
+        "game_name": "First Person Baccarat",
+        "game_uid": "e18dfa4a5dd4a0f2d8b45337bd6abb9d",
+        "game_category": "casino",
+        "game_provider": "Evolution Live",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/evoplay\/First%20Person%20Baccarat.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "First Person Craps",
+        "game_uid": "823245918aa2afd108a5912e363c083c",
+        "game_category": "casino",
+        "game_provider": "Evolution Live",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/evoplay\/First%20Person%20Craps.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "First Person Golden Wealth Baccarat",
+        "game_uid": "88e49e3fb9a9883f01f167d03f5efdcb",
+        "game_category": "casino",
+        "game_provider": "Evolution Live",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/evoplay\/First%20Person%20Golden%20Wealth%20Baccarat.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "First Person Lightning Baccarat",
+        "game_uid": "fec1b730e804bf14bd471a1e9b82bf44",
+        "game_category": "casino",
+        "game_provider": "Evolution Live",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/evoplay\/First%20Person%20Lightning%20Baccarat.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Cai Shen Fishing",
+        "game_uid": "6df463eabe5fcdaa033e1c89b9ffd162",
+        "game_category": "fishing",
+        "game_provider": "Fish Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Cai-Shen-Fishing.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Dragon Fishing",
+        "game_uid": "1145d7cd96518a5ba2f77cb14cb363c4",
+        "game_category": "fishing",
+        "game_provider": "Fish Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Dragon-Fishing.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Dragon Fishing II",
+        "game_uid": "6cef8d8ea517d86602db60fe9781b01b",
+        "game_category": "fishing",
+        "game_provider": "Fish Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Dragon-Fishing-Ii.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Dragon Master",
+        "game_uid": "f691d904ea681ce449263f7e9cc47c35",
+        "game_category": "fishing",
+        "game_provider": "Fish Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Dragon-Master.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Fishing Disco",
+        "game_uid": "e453b811fd1782fd2ade1f93ee0dee32",
+        "game_category": "fishing",
+        "game_provider": "Fish Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Fishing-Disco.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Fishing Yilufa",
+        "game_uid": "877c97367d24925a11d342726eb0320f",
+        "game_category": "fishing",
+        "game_provider": "Fish Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Fishing-Yilufa.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Ocean King Jackpot",
+        "game_uid": "564c48d53fcddd2bcf0bf3602d86c958",
+        "game_category": "slots",
+        "game_provider": "Fish Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Ocean-King-Jackpot.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Shade Dragons Fishing",
+        "game_uid": "89e967a8336fb8caad2c1b6d735588fe",
+        "game_category": "fishing",
+        "game_provider": "Fish Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Shade-Dragons-Fishing.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "All-star Fishing",
+        "game_uid": "9ec2a18752f83e45ccedde8dfeb0f6a7",
+        "game_category": "fishing",
+        "game_provider": "GILIgaming",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/All-star-Fishing.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Bombing Fishing",
+        "game_uid": "e333695bcff28acdbecc641ae6ee2b23",
+        "game_category": "fishing",
+        "game_provider": "GILIgaming",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Bombing-Fishing.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Boom Legend",
+        "game_uid": "f02ede19c5953fce22c6098d860dadf4",
+        "game_category": "fishing",
+        "game_provider": "GILIgaming",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Boom-Legend.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Dinosaur Tycoon",
+        "game_uid": "eef3e28f0e3e7b72cbca61e7924d00f1",
+        "game_category": "fishing",
+        "game_provider": "GILIgaming",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Dinosaur-Tycoon.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Dinosaur Tycoon II",
+        "game_uid": "bbae6016f79f3df74e453eda164c08a4",
+        "game_category": "fishing",
+        "game_provider": "GILIgaming",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Dinosaur-Tycoon-II.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Dragon Fortune",
+        "game_uid": "1200b82493e4788d038849bca884d773",
+        "game_category": "fishing",
+        "game_provider": "GILIgaming",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Dragon-Fortune.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Happy Fishing",
+        "game_uid": "71c68a4ddb63bdc8488114a08e603f1c",
+        "game_category": "fishing",
+        "game_provider": "GILIgaming",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Happy-Fishing.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Jackpot Fishing",
+        "game_uid": "3cf4a85cb6dcf4d8836c982c359cd72d",
+        "game_category": "fishing",
+        "game_provider": "GILIgaming",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Jackpot-Fishing.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Mega Fishing",
+        "game_uid": "caacafe3f64a6279e10a378ede09ff38",
+        "game_category": "fishing",
+        "game_provider": "GILIgaming",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Mega-Fishing.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Royal Fishing",
+        "game_uid": "e794bf5717aca371152df192341fe68b",
+        "game_category": "fishing",
+        "game_provider": "GILIgaming",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Royal-Fishing.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Arctic King",
+        "game_uid": "8249b0e703ceb0816f3645dbac0a83ce",
+        "game_category": "slots",
+        "game_provider": "iDeal",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/yesgaming\/ht-arcticking.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Cracker",
+        "game_uid": "b6668f2abcfff3f7f78ae92fe908f99f",
+        "game_category": "slots",
+        "game_provider": "iDeal",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/yesgaming\/ht-cracker.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Emperor Qin",
+        "game_uid": "d58b1c2dd6456da42b2c1a33c70c1630",
+        "game_category": "slots",
+        "game_provider": "iDeal",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/yesgaming\/ht-emperorqin.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "FaFaFa",
+        "game_uid": "017c1edeaf54d4684d675055c44a6f7e",
+        "game_category": "slots",
+        "game_provider": "iDeal",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/yesgaming\/ht-fafafa.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Goblin's Gold",
+        "game_uid": "697993800419bf160901aa9133cde524",
+        "game_category": "slots",
+        "game_provider": "iDeal",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/yesgaming\/ht-goblingold.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Gold Toad",
+        "game_uid": "654155802c34cee717e943c4e2bb6bfe",
+        "game_category": "slots",
+        "game_provider": "iDeal",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/yesgaming\/ht-goldtoad.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Ice Age Mammoths",
+        "game_uid": "484025f23c821e32fc6ac31ff75613d6",
+        "game_category": "slots",
+        "game_provider": "iDeal",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/yesgaming\/ht-iceagemammoths.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Jalapeno",
+        "game_uid": "f23ad5acc6c690a45f1280ba49d28266",
+        "game_category": "slots",
+        "game_provider": "iDeal",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/yesgaming\/ht-jalapeno.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Lion Legend",
+        "game_uid": "eb8dd621ea38d742ff846362a9b1085d",
+        "game_category": "slots",
+        "game_provider": "iDeal",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/yesgaming\/ht-lionlegend.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "The Unsurpassed Grace",
+        "game_uid": "bf0ae3c404807429451d088725ae5377",
+        "game_category": "slots",
+        "game_provider": "iDeal",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/yesgaming\/ht-theunsurpassedgrace.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "AK47",
+        "game_uid": "488c377662cad37a551bde18e2fbe785",
+        "game_category": "poker",
+        "game_provider": "India Poker Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/AK47.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Andar Bahar",
+        "game_uid": "6f48b3aa0b64c79a2dc320ea021148b5",
+        "game_category": "poker",
+        "game_provider": "India Poker Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Andar-Bahar.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Blackjack",
+        "game_uid": "3b502aee6c9e1ef0f698332ee1b76634",
+        "game_category": "poker",
+        "game_provider": "India Poker Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Blackjack.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Blackjack Lucky Ladies",
+        "game_uid": "d0d1c20062e28493e1750f27a1730c48",
+        "game_category": "poker",
+        "game_provider": "India Poker Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Blackjack-Lucky-Ladies.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Callbreak",
+        "game_uid": "9092b5a56e001c60850c4c1184c53e07",
+        "game_category": "poker",
+        "game_provider": "India Poker Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Callbreak.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Callbreak Quick",
+        "game_uid": "aa9a9916d6e48ba50afa3c2246b6dacb",
+        "game_category": "poker",
+        "game_provider": "India Poker Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Callbreak-Quick.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Caribbean Stud Poker",
+        "game_uid": "04c9784b0b1b162b2c86f9ce353da8b7",
+        "game_category": "poker",
+        "game_provider": "India Poker Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Caribbean-Stud-Poker.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Ludo Quick",
+        "game_uid": "bb1f14d788d37b06dc8f6701ed57ed0d",
+        "game_category": "poker",
+        "game_provider": "India Poker Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Ludo-Quick.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "MINI FLUSH",
+        "game_uid": "07afefc388ab6af8cf26f85286f83fae",
+        "game_category": "poker",
+        "game_provider": "India Poker Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/MINI-FLUSH.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Pool Rummy",
+        "game_uid": "43e7df819bf57722a8917bb328640b30",
+        "game_category": "poker",
+        "game_provider": "India Poker Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Pool-Rummy.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Pusoy Go",
+        "game_uid": "f2879a3f20f305eadad13448e11c052e",
+        "game_category": "poker",
+        "game_provider": "India Poker Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Pusoy-Go.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Rummy",
+        "game_uid": "ae632f32c3a1e6803f9a6fbec16be28e",
+        "game_category": "poker",
+        "game_provider": "India Poker Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Rummy.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "TeenPatti",
+        "game_uid": "f743cb55c2c4b737727ef144413937f4",
+        "game_category": "poker",
+        "game_provider": "India Poker Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/TeenPatti.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "TeenPatti 20-20",
+        "game_uid": "1afa7db588d05de7b9abca4664542765",
+        "game_category": "poker",
+        "game_provider": "India Poker Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/TeenPatti-20-20.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "TeenPatti Joker",
+        "game_uid": "1a4eaca67612e65fdcae43f4c8a667a4",
+        "game_category": "poker",
+        "game_provider": "India Poker Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/TeenPatti-Joker.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Tongits Go",
+        "game_uid": "26fbfab92a3837b7dbf767e783b173af",
+        "game_category": "poker",
+        "game_provider": "India Poker Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Tongits-Go.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Luck Sports",
+        "game_uid": "92b24e4c25107367a80e0fe1a97c24e4",
+        "game_category": "live",
+        "game_provider": "LuckSportsGame",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/LuckySports\/Lucky Sports_Logo 01.jpg",
+        "game_status": "1"
+    },
+    {
+        "game_name": "CaribbeanTreasure",
+        "game_uid": "186ceb140e9248012244381fc169640b",
+        "game_category": "slots",
+        "game_provider": "PgsGaming",
+        "game_image": "https:\/\/dl.kz344.net\/game-icon\/agg_ht-caribbeantreasure.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Cracker",
+        "game_uid": "4415afc357ffd90adfae34b7fc3217d0",
+        "game_category": "slots",
+        "game_provider": "PgsGaming",
+        "game_image": "https:\/\/dl.kz344.net\/game-icon\/agg_ht-cracker.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "EstateRichman",
+        "game_uid": "99aa40727eebf03285f0b41492ad3200",
+        "game_category": "slots",
+        "game_provider": "PgsGaming",
+        "game_image": "https:\/\/dl.kz344.net\/game-icon\/agg_ht-estaterichman.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "FlameWolves",
+        "game_uid": "6ed7442a8144c29321d95168ef6cb3de",
+        "game_category": "slots",
+        "game_provider": "PgsGaming",
+        "game_image": "https:\/\/dl.kz344.net\/game-icon\/agg_ht-flamewolves.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "GoldenMaitreya",
+        "game_uid": "19565e4f0152c29bc3c05d44ffe316d2",
+        "game_category": "slots",
+        "game_provider": "PgsGaming",
+        "game_image": "https:\/\/dl.kz344.net\/game-icon\/agg_ht-goldenmaitreya.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "GoldenWuZeTian",
+        "game_uid": "e5e9c0eae20cdecc45c9287b93e00d4d",
+        "game_category": "slots",
+        "game_provider": "PgsGaming",
+        "game_image": "https:\/\/dl.kz344.net\/game-icon\/agg_ht-goldenwuzetian.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Heracles",
+        "game_uid": "3be4c3abed248df43bee04af55c7894e",
+        "game_category": "slots",
+        "game_provider": "PgsGaming",
+        "game_image": "https:\/\/dl.kz344.net\/game-icon\/agg_ht-heracles.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "LittleWitch",
+        "game_uid": "f41dd1fabc4700025036ffd090358402",
+        "game_category": "slots",
+        "game_provider": "PgsGaming",
+        "game_image": "https:\/\/dl.kz344.net\/game-icon\/agg_ht-thelittlewitch.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "PersianEmpire",
+        "game_uid": "b4a0d38bac2760d3b2539430b3d65c6b",
+        "game_category": "slots",
+        "game_provider": "PgsGaming",
+        "game_image": "https:\/\/dl.kz344.net\/game-icon\/agg_ht-persianempire.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Poseidon",
+        "game_uid": "7b5698f1ab2aef819bea060ae5836c6d",
+        "game_category": "slots",
+        "game_provider": "PgsGaming",
+        "game_image": "https:\/\/dl.kz344.net\/game-icon\/agg_ht-poseidon.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Aviamasters",
+        "game_uid": "d3c7985229b2e4651fa7889445a5bfd8",
+        "game_category": "slots",
+        "game_provider": "Slot",
+        "game_image": "https:\/\/mediumrare.imgix.net\/202834625f09f92dc0213a6f046d5111bcbba4aec9abf2d1b896839b592c657d?w=180&h=236&fit=min&auto=format",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Donny Dough",
+        "game_uid": "173c3e7cb587af08a8aa2026e490b832",
+        "game_category": "slots",
+        "game_provider": "Slot",
+        "game_image": "https:\/\/mediumrare.imgix.net\/d0da486c2ef84196c52198fce55b4566303ef3d73d94c675179a8f6c4c5a3781?w=180&h=236&fit=min&auto=format",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Fortune Rabbit",
+        "game_uid": "e175cdd3215a02f5539cc8354a149b75",
+        "game_category": "slots",
+        "game_provider": "Slot",
+        "game_image": "https:\/\/mediumrare.imgix.net\/8f495d55e1cdbef9a5995b7133d6f4ad1b9a332493ade8b29a82f048ecda7388?w=180&h=236&fit=min&auto=format",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Fortune Tiger",
+        "game_uid": "9a8482565ce343ad3ea7fc4bc42cb043",
+        "game_category": "slots",
+        "game_provider": "Slot",
+        "game_image": "https:\/\/mediumrare.imgix.net\/38cdf7e275e87c2530ee926bb2f5c811d9cb6ffccdad7717bed7ca43aa88eb38?w=180&h=236&fit=min&auto=format",
+        "game_status": "1"
+    },
+    {
+        "game_name": "FRKN Bananas",
+        "game_uid": "7e6130a781f047045e7b92638d8e3fca",
+        "game_category": "slots",
+        "game_provider": "Slot",
+        "game_image": "https:\/\/mediumrare.imgix.net\/d4c903b8aa3bcbcd3e7cfdd46e14fa5ff3f056922cd470a109438ee41184990e?w=180&h=236&fit=min&auto=format",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Gates of Olympus 1000",
+        "game_uid": "4ae52ed2e1a8c353878ba65ed7791ac4",
+        "game_category": "slots",
+        "game_provider": "Slot",
+        "game_image": "https:\/\/mediumrare.imgix.net\/2a83b2bfe89f30834cda26834e0715500c2c2885024069091fe7964ac3fa8adf?w=180&h=236&fit=min&auto=format",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Le Bandit",
+        "game_uid": "2fbd2533b1bb03d5e03bfa80dd5da0bf",
+        "game_category": "slots",
+        "game_provider": "Slot",
+        "game_image": "https:\/\/mediumrare.imgix.net\/8ade942d35d2cdbddf7888f303be4cf4bda8c650a112b3c53f7c6f3ccad81254?w=180&h=236&fit=min&auto=format",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Le Pharaoh",
+        "game_uid": "fd4d50fd42d7453c20776398269ee6c5",
+        "game_category": "slots",
+        "game_provider": "Slot",
+        "game_image": "https:\/\/mediumrare.imgix.net\/293b2337d4d5cfda999ca423e34518a1a6682062340f1f1c5a669a26e7927c79?w=180&h=236&fit=min&auto=format",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Magic Piggy",
+        "game_uid": "a1686de737ae9cd841d500c825720778",
+        "game_category": "slots",
+        "game_provider": "Slot",
+        "game_image": "https:\/\/mediumrare.imgix.net\/b18560b8631fc3b27c06d41e9729f7774048864ad7c4a16d1a20b1a953883943?w=180&h=236&fit=min&auto=format",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Phoenix DuelReels",
+        "game_uid": "32776cbf601015f626a96ccecb1137d9",
+        "game_category": "slots",
+        "game_provider": "Slot",
+        "game_image": "https:\/\/mediumrare.imgix.net\/7ac7169ca980177d2f7843face3046fb42c001bf4dd7356becb037e92fc07ff1?w=180&h=236&fit=min&auto=format",
+        "game_status": "1"
+    },
+    {
+        "game_name": "RIP City",
+        "game_uid": "784f4587c36ec560939eef1b85c639e4",
+        "game_category": "slots",
+        "game_provider": "Slot",
+        "game_image": "https:\/\/mediumrare.imgix.net\/c55c2ec37c310140617b75c9e490faca98090292991840dce959d93649efbfa5?w=180&h=236&fit=min&auto=format",
+        "game_status": "1"
+    },
+    {
+        "game_name": "SixSixSix",
+        "game_uid": "3752490080e5e310b5a3f823de33deed",
+        "game_category": "slots",
+        "game_provider": "Slot",
+        "game_image": "https:\/\/mediumrare.imgix.net\/30be38fdc2b4d9a6c76194314dfb7814a66d6905287ade354a0e5f2a79b1ab27?w=180&h=236&fit=min&auto=format",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Sugar Rush Xmas",
+        "game_uid": "8170339cc716c66d5b52779119fd718f",
+        "game_category": "slots",
+        "game_provider": "Slot",
+        "game_image": "https:\/\/mediumrare.imgix.net\/cafad5a2680956ba8bdc5f7ef147d23a8300f7debf44bb76510cd4ee97505aa4?w=180&h=236&fit=min&auto=format",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Sweet Bonanza 1000",
+        "game_uid": "e3f45e2f03388056aba660b7e737ecf0",
+        "game_category": "slots",
+        "game_provider": "Slot",
+        "game_image": "https:\/\/mediumrare.imgix.net\/a77d914f12935f85ca574c3b52989b13cb48901ab8c55bdf326e1f2a177cbd97?w=180&h=236&fit=min&auto=format",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Vampy Party",
+        "game_uid": "0ab1d901b6cc731b48bc3b2cd07b3cf1",
+        "game_category": "slots",
+        "game_provider": "Slot",
+        "game_image": "https:\/\/mediumrare.imgix.net\/857e57fe97696eb3cdbd5c226b87b4357ef8e2926c75571e7e7ee70b082155b2?w=180&h=236&fit=min&auto=format",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Agent Ace",
+        "game_uid": "8a4b4929e796fda657a2d38264346509",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Agent-Ace.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Alchemy Gold",
+        "game_uid": "9860c865264dcacad1ef37176cdefc1a",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Alchemy-Gold_1024_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Ali Baba",
+        "game_uid": "cc686634b4f953754b306317799f1f39",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Ali-Baba.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Asgardian Rising",
+        "game_uid": "08d92dc2ca14f42c681b44297386d600",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Asgardian-Rising_appicon_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Aztec Priestess",
+        "game_uid": "6acff19b2d911a8c695ba24371964807",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Aztec-Priestess.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Bakery Bonanza",
+        "game_uid": "d0fe7aa2f7ed5778190b1e60d94e6773",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Bakery-Bonanza_app-Icon_1024_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Bangla Beauty",
+        "game_uid": "6b60d159f0939a45f7b4c88a9b57499a",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Bangla-Beauty.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Bao boon chin",
+        "game_uid": "8c4ebb3dc5dcf7b7fe6a26d5aadd2c3d",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Bao-boon-chin.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Battleground Royale",
+        "game_uid": "e9f92f6edc2dac2d08bc345ee036260c",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Battleground-Royale_icon_1024_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Big Three Dragons",
+        "game_uid": "600c338d3fca2da208f1bba2c9d29059",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Big-Three-Dragons.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Birdsparty Deluxe",
+        "game_uid": "786d1cd7f4fa9905c825378292f1204c",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Birdsparty-Deluxe.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Blossom Of Wealth",
+        "game_uid": "ed6fbaeb7a104dd7ed96fa1683a48669",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Blossom-Of-Wealth.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Bone Fortune",
+        "game_uid": "aab3048abc6a88e0759679fbe26e6a8d",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Bone-Fortune.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Bonus Hunter",
+        "game_uid": "39775cdc4170e56c5f768bdee8b4fa00",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Bonus-Hunter.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Book of Gold",
+        "game_uid": "6b283c434fd44250d83b7c2420f164f9",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Book-of-Gold.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Book Of Mystery",
+        "game_uid": "13072a6eb2111c1b5202fe6155227e94",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Book-Of-Mystery.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Boom Fiesta",
+        "game_uid": "1ffb31ff605f1a7862a138f5cd712056",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Boom-Fiesta.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Bubble Beauty",
+        "game_uid": "a78d2ed972aab8ba06181cc43c54a425",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Bubble-Beauty.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Buffalo Win",
+        "game_uid": "818a7add6e10b2ec5f938d7ae0efb04",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Buffalo-Win_icon_1024_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Butterfly Blossom",
+        "game_uid": "116989bb267a72035bd01818c5496126",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Butterfly-Blossom_1024_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Caishen Coming",
+        "game_uid": "45ecec5dd5077785e7a09988b95bbd24",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Caishen-Coming.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Captain's Bounty",
+        "game_uid": "cd29b9906a852ce26b53b6d6d81037d4",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Captains-Bounty_Icon_Rounded_1024.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Cash Maniac",
+        "game_uid": "8bbb41367b3971ed3467c2f0c2627a4",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Cash-Mania_appicon_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Charge Buffalo",
+        "game_uid": "984615c9385c42b3dad0db4a9ef89070",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Charge-Buffalo.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Charge Buffalo Ascent",
+        "game_uid": "28bc4a33c985ddce6acd92422626b76f",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Charge-Buffalo-Ascent.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Chin Shi Huang",
+        "game_uid": "24da72b49b0dd0e5cbef9579d09d8981",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Chin-Shi-Huang.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Coocoo Farm",
+        "game_uid": "d1f17fd51e474b0e72892332ea551ba1",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Coocoo-Farm.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Crazy FaFaFa",
+        "game_uid": "a57a8d5176b54d4c825bd1eee8ab34df",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Crazy-FaFaFa.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Crazy Hunter",
+        "game_uid": "69082f28fcd46cbfd10ce7a0051f24b6",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Crazy-Hunter.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Crazy Pusher",
+        "game_uid": "00d92d5cec10cf85623938222a6c2bb6",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Crazy-Pusher.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Crazy777",
+        "game_uid": "8c62471fd4e28c084a61811a3958f7a1",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Crazy777.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Cricket King 18",
+        "game_uid": "dcf220f4e3ecca0278911a55e6f11c77",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Cricket-King-18.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Cricket Sah 75",
+        "game_uid": "6720a0ce1d06648ff390fbea832798a9",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Cricket-Sah-75.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Cruise Royale",
+        "game_uid": "8489d662ccc07a2e9677729f76e26ae8",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Cruise-Royale_icon_1024_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Dabanggg",
+        "game_uid": "5404a45b06826911c3537fdf935c281f",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Dabanggg.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Destiny of Sun & Moon",
+        "game_uid": "617ca04ffcffbc543a1a30cacdac98fa",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Destiny-of-Sun-and-Moon_icon_1024_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Devil Fire",
+        "game_uid": "1b4c5865131b4967513c1ee90cba4472",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Devil-Fire.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "DiamondParty",
+        "game_uid": "48d598e922e8c60643218ccda302af08",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/DiamondParty.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Double Wilds",
+        "game_uid": "7bd5233c83de0669336ee649e6c8d2b5",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Double-Wilds.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Dragon Hatch",
+        "game_uid": "4afef91d3addb9ce5107abaf3342b9a5",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Dragon-Hatch_rounded_1024.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Dragon Hatch 2",
+        "game_uid": "910f25689073d17680be453d7ed90ce2",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Dragon-Hatch2_icon_1024_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Dragon Soar",
+        "game_uid": "9341a18d096ad901ef77338998f29098",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Dragon-Soar.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Dragon Treasure",
+        "game_uid": "c6955c14f6c28a6c2a0c28274fec7520",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Dragon-Treasure.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Dragons Gate",
+        "game_uid": "feaba603992f26633116fb54562e3693",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Dragons-Gate.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Dragons World",
+        "game_uid": "00b886803f3d067f7028872468e84745",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Dragons-World.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Egypt Treasure",
+        "game_uid": "b7f39e861e2e02633cb5cb08958f1041",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Egypt-Treasure.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Elemental Link Fire",
+        "game_uid": "46016a772b92c7f47dfdc5873f184ef1",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Elemental-Link-Fire.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Elemental Link Water",
+        "game_uid": "b84274cdfa5731945a34bfd0db1ddeea",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Elemental-Link-Water.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Elf Bingo",
+        "game_uid": "5cec2b309a8845b38f8e9b4e6d649ea2",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Elf-Bingo.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Emoji Riches",
+        "game_uid": "101ca3ff83b149dcf3439309e9b32142",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Emoji-Riches_app-Icon_1024_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Fa Fa Fa",
+        "game_uid": "54c41adcf43fdb6d385e38bc09cd77ca",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Fa-Fa-Fa.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Fengshen",
+        "game_uid": "09699fd0de13edbb6c4a194d7494640b",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Fengshen.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "FlyOut",
+        "game_uid": "afddbebb27c4b7408bda624aa9354aa7",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/cq9\/FlyOut.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Fortune Dragon",
+        "game_uid": "c5435a8a73707a3a8bb4fe8baaaef3d2",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/mediumrare.imgix.net\/13e8f3e599761b56b46dd50d579de529b0173c35fd90127e841c2abdc04020da?w=180&h=236&fit=min&auto=format",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Fortune Gems",
+        "game_uid": "a990de177577a2e6a889aaac5f57b429",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Fortune-Gems.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Fortune Gems 2",
+        "game_uid": "664fba4da609ee82b78820b1f570f4ad",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Fortune-Gems-2.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Fortune Monkey",
+        "game_uid": "add95fc40f1ef0d56f5716ce45a56946",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Fortune-Monkey.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Fortune Neko",
+        "game_uid": "49b706ccfe7c53727ee6760cd9a8721a",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Fortune-Neko.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Fortune Treasure",
+        "game_uid": "5a55a19d9cfbead5e64b8169e96bd27a",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Fortune-Treasure.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Fortune Tree",
+        "game_uid": "6a7e156ceec5c581cd6b9251854fe504",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Fortune-Tree.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "FortunePig",
+        "game_uid": "8488c76ee2afb8077fbd7eec62721215",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/FortunePig.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Fruity Bonanza",
+        "game_uid": "f5d6b418b755f3aefe3b9828f3112c9c",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Fruity-Bonanza.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Fruity Candy",
+        "game_uid": "9f2c89ae5b7c0894c9ee9e223e3fd9d8",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Fruity-Candy_1024_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Funky King Kong",
+        "game_uid": "cdea2d0670bc40309b4a9b6f942a218a",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Funky-King-Kong.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Garuda Gems",
+        "game_uid": "aa609892f551de2053e92427dc4ae17f",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Garuda-Gems_1024_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Gem Party",
+        "game_uid": "756cf3c73a323b4bfec8d14864e3fada",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Gem-Party.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Gemstones Gold",
+        "game_uid": "877c9b2ec1c5e0505129315948f9bbfa",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Gemstones-Gold_appicon_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Gladiator's Glory",
+        "game_uid": "2454dc7cfdc651b7318950453bc3f617",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Gladiators-Glory_appicon_1024_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Glamorous Girl",
+        "game_uid": "2663e14e5b455525252a25d9bd99e840",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Glamorous-Girl.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Go Lai Fu",
+        "game_uid": "a3584394182e8abce362d90c2f048c75",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Go-Lai-Fu.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "God Of Martial",
+        "game_uid": "21ef8a7ddd39836979170a2e7584e333",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/God-Of-Martial.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "God of War",
+        "game_uid": "f4b6484dc2b96fc339604446cd042534",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/cq9\/God-of-War.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Gold Rush",
+        "game_uid": "2a5d731e0fd60f52873a24ece11f2c0b",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Gold-Rush.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Golden Bank",
+        "game_uid": "c3f86b78938eab1b7f34159d98796e88",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Golden-Bank.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Golden Disco",
+        "game_uid": "dfb8a198ce0e821560cf543387a2acc2",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Golden-Disco.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Golden Joker",
+        "game_uid": "f301fe0b22d1540b1f215d282b20c642",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Golden-Joker.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Golden Queen",
+        "game_uid": "8de99455c2f23f6827666fd798eb80ef",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Golden-Queen.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Golden Temple",
+        "game_uid": "976c5497256c020ac012005f6bb166ad",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Golden-Temple.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Good Fortune M",
+        "game_uid": "50568ba2a8da9f30dded83dbbd3655d6",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/cq9\/Good-Fortune-M.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Happy Taxi",
+        "game_uid": "1ed896aae4bdc78c984021307b1dd177",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Happy-Taxi.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Hawaiian Tiki",
+        "game_uid": "35d6743ae5d73a3359f143cbb44ede09",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Hawaiian-Tiki_icon_1024_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Hot Chilli",
+        "game_uid": "c845960c81d27d7880a636424e53964d",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Hot-Chilli.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Hyper Burst",
+        "game_uid": "a47b17970036b37c1347484cf6956920",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Hyper-Burst.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "JILI CAISHEN",
+        "game_uid": "11e330c2b23f106815f3b726d04e4316",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/JILI-CAISHEN.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Jump High 2",
+        "game_uid": "8d57ec6274960fe2f2c252f4a49adf7f",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/cq9\/Jump-High-2.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "JumpHigh",
+        "game_uid": "630a841b4cf75a38e2e657040f785e63",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/cq9\/JumpHigh.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Jumping Mobile",
+        "game_uid": "1282953e9452fe2852cb1724b4b9d617",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/cq9\/Jumping-mobile.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Jungle Jungle",
+        "game_uid": "6c5fe548bd6e09b683566298b29510ea",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Jungle-Jungle.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Jungle King",
+        "game_uid": "4db0ec24ff55a685573c888efed47d7f",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Jungle-King.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "King Arthur",
+        "game_uid": "fafab1a17a237d0fc0e50c20d2c2bf4c",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/King-Arthur.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Lantern Wealth",
+        "game_uid": "f2f2eae301311f0320ef669b68935546",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Lantern-Wealth.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Legendary Monkey King",
+        "game_uid": "5cdeba2ab48d6ba345b1a4de8e2776b5",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Legendary-Monkey-King_icon_1024_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Leprechaun Riches",
+        "game_uid": "fb2a2ac51303c0a0801dbe6a72d936f7",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Leprechaun-Riches_rounded_1024.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Lucky Ball",
+        "game_uid": "893669898cd25d9da589a384f1d004df",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Lucky-Ball.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Lucky Clover Lady",
+        "game_uid": "288f290554746bb32322a79b96ecdcbb",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Lucky-Clover-Lady_1024_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Lucky Diamond",
+        "game_uid": "6f6867ad1956a04b174c92629cab7f54",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Lucky-Diamond.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Lucky Goldbricks",
+        "game_uid": "d84ef530121953240116e3b2e93f6af4",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Lucky-Goldbricks.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Lucky Neko",
+        "game_uid": "e1b4c6b95746d519228744771f15fe4b",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Lucky-Neko_icon_1024_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Lucky Piggy",
+        "game_uid": "66fadac68ed45e23def86c06cc811820",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Lucky-Piggy_icon_1024_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Mafia Mayhem",
+        "game_uid": "c7b3016c70a06ddbb2355a3aee4179d0",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Mafia-Mayhem_1024_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Magic Lamp",
+        "game_uid": "582a58791928760c28ec4cef3392a49f",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Magic-Lamp.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Mahjong Ways",
+        "game_uid": "1189baca156e1bbbecc3b26651a63565",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Mahjong-Ways_rounded_1024.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Mahjong Ways 2",
+        "game_uid": "ba2adf72179e1ead9e3dae8f0a7d4c07",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Mahjong-Ways2_rounded_1024.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Marvelous Iv",
+        "game_uid": "126cf2bfe8a8e606b362d23de02c0d5e",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Marvelous-Iv.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Mask Carnival",
+        "game_uid": "adf297c2666c69b3abc3b61618d593b8",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Mask-Carnival_app-icon_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Master Tiger",
+        "game_uid": "d2b48fe98ac2956eeefd2bc4f7e0335a",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Master-Tiger.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Mayagoldcrazy",
+        "game_uid": "6c8009d165293759bb218b72ba3c380f",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Mayagoldcrazy.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Mayan Empire",
+        "game_uid": "5c2383ef253f9c36dacec4b463d61622",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Mayan-Empire.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Medusa",
+        "game_uid": "2c17b7c4e2ce5b8bebf4bd10e3e958d7",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Medusa.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Mega Ace",
+        "game_uid": "eba92b1d3abd5f0d37dfbe112abdf0e2",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Mega-Ace.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Mermaid Riches",
+        "game_uid": "a9d7a5af417a94caf554170e6b345e57",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Mermaid-Riches-icon_1024_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Midas Fortune",
+        "game_uid": "a2fd6b0cadc8fefccfb0d063b1f81d85",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Midas-Fortune_appicon_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Miner Babe",
+        "game_uid": "e705514fdd4f9bea5f82bbd0b2c0a353",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Miner-Babe.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Mjolnir",
+        "game_uid": "e270f0674dff538b181499d18ab47845",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Mjolnir.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Money Coming",
+        "game_uid": "db249defce63610fccabfa829a405232",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Money-Coming.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Moneybags Man",
+        "game_uid": "c4fdebb24ff26fffb3a65d018da8ae92",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Moneybags-Man.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Moneybags Man 2",
+        "game_uid": "33c862e7db9e0e59ab3f8fe770f797da",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Moneybags-Man-2.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Monkey Party",
+        "game_uid": "fd369a4a7486ff303beea267ec5c8eff",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Monkey-Party.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Mystic Potion",
+        "game_uid": "e61bde75d590e943d2c5c6d432b29b46",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Mystic-Potion.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Mystical Spirits",
+        "game_uid": "3b2d4d1ae24b1c3ad29556a6cf875f11",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Mystical-Spirits_icon_1024_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Neko Fortune",
+        "game_uid": "9a391758f755cb30ff973e08b2df6089",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Neko-Fortune.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Night City",
+        "game_uid": "78e29705f7c6084114f46a0aeeea1372",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Night-City.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Ninja Racoon Frenzy",
+        "game_uid": "6d1937d2e7f87306333443c99ac2c03f",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Ninja-Racoon-Frenzy_1024_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Open Sesame Mega",
+        "game_uid": "cb5e57be0354264c6c7ea0cdf4eb18b3",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Open-Sesame-Mega.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Oriental Prosperity",
+        "game_uid": "23b43b58e11aadb1f27fd05ba41e9819",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Oriental-Prosperity_icon_1024_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Party Night",
+        "game_uid": "d505541d522aa5ca01fc5e97cfcf2116",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Party-Night.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Pinata Wins",
+        "game_uid": "f08cc025e23ee049b570517867c74be0",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Pinata-Wins_1024_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Pirate Queen",
+        "game_uid": "70999d5bcf2a1d1f1fb8c82e357317f4",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Pirate-Queen.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Pirate Treasure",
+        "game_uid": "bfb3241e64953f731e72bc833f2fa79a",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Pirate-Treasure.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Pop Pop Candy",
+        "game_uid": "fde142e65f14da39f784e9e5325e0a77",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Pop-Pop-Candy.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Prosperitytiger",
+        "game_uid": "1d704bbb187a113229f3fdaa3b5406fe",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Prosperitytiger.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Queen of Bounty",
+        "game_uid": "83a6890cf84e4c5a6bacf96d5355d472",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Queen-of-Bounty_1024_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Raider Jane's Crypt of Fortune",
+        "game_uid": "24d8e1dbc5cface0907f5a21ecd56753",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Raider-Janes-Crypt-of-Fortune_1024_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Rave Jump",
+        "game_uid": "b602205d6a56d999df188e17ecc2bc91",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/cq9\/Rave-Jump.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Rooster Rumble",
+        "game_uid": "5c371d9fca6109c954de93ac7986c5db",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Rooster-Rumble_app-icon_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Safari Wilds",
+        "game_uid": "97c6f05ef6a0a34cad10d5e00edc909c",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Safari-Wilds_appicon_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Samba",
+        "game_uid": "6d35789b2f419c1db3926350d57c58d8",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Samba.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "SevenSevenSeven",
+        "game_uid": "61d46add6841aad4758288d68015eca6",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/SevenSevenSeven.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Shanghai Beauty",
+        "game_uid": "795d0cae623cbf34d7f1aa93bbcded28",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Shanghai-Beauty.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Sin City",
+        "game_uid": "830cac2f5da6cc1fb91cfae04b85b1e2",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Sin-City.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Songkran Splash",
+        "game_uid": "894b1c7609629cf9b3d127d9dbaa372c",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Songkran-Splash_appicon_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Spindrift",
+        "game_uid": "b624d1917ef5a740c151e4904a7cf0dd",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Spindrift.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Spindrift 2",
+        "game_uid": "5dc8c7a43305c3fcb43574c570d6378",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Spindrift-2.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Spirited Wonders",
+        "game_uid": "87a05c81af5635bed41765bfd076ee15",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Spirited-Wonders_app-icon_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Super Ace",
+        "game_uid": "bdfb23c974a2517198c5443adeea77a8",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Super-Ace.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Super Golf Drive",
+        "game_uid": "d37dde2adb52e0ea708c0ccd6877b1b3",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Super-Golf-Drive_icon_1024_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Super Niubi",
+        "game_uid": "4042e5d0c777e1d3c3bd481dac0a867e",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Super-Niubi.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Super Niubi Deluxe",
+        "game_uid": "5d940d11c48b64ec1e6a3c8be5228250",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Super-Niubi-Deluxe.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Supermarket Spree",
+        "game_uid": "7ef03497fc0b21c34b137e85b1e409cd",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Supermarket-Spree_rounded_1024.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Sweet Land",
+        "game_uid": "91250a55f75a3c67ed134b99bf587225",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Sweet-Land.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "The Queen's Banquet",
+        "game_uid": "1b317b5f8bf2ca0cc609307810407426",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/The-Queens-Banquet_icon_1024_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Thor X",
+        "game_uid": "7e6aa773fa802aaa9cb1f2fac464736e",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Thor-X.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Totem Wonders",
+        "game_uid": "a03c6e7a918132b50f9caa297df1752d",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Totem-Wonders_icon_1024_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Treasure Bowl",
+        "game_uid": "0651af3e73c7600633522ffe15cc175b",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Treasure-Bowl.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Treasures of Aztec",
+        "game_uid": "2fa9a84d096d6ff0bab53f81b79876c8",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Treasures-of-Aztec_rounded_1024.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Tsar Treasures",
+        "game_uid": "1eb6a959aadf0491f4a648762d8d262a",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Tsar-Treasures_icon_1024_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "TWIN WINS",
+        "game_uid": "c74b3cbda5d16f77523e41c25104e602",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/TWIN-WINS.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Ultimate Striker",
+        "game_uid": "4415d83cd9c74299814c1473db83bf7f",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Ultimate-Striker_appicon_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "War Of Dragons",
+        "game_uid": "4b1d7ffaf9f66e6152ea93a6d0e4215b",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/War-Of-Dragons.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Ways of the Qilin",
+        "game_uid": "fedfca553a97a791a3a41c4f1e3bff58",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Ways-of-the-Qilin_icon_1024_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Werewolf Hunt",
+        "game_uid": "2ac70bee7b47c172381e55f7e644d92e",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Werewolfs-Hunt_icon_1024_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Wild Ace",
+        "game_uid": "9a3b65e2ae5343df349356d548f3fc4b",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Wild-Ace.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Wild Ape #",
+        "game_uid": "2589b93cb0dc46d847864c87ed42a3428bb",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Wild-Ape_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Wild Bandito",
+        "game_uid": "95fc290bb05c07b5aad1a054eba4dcc4",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/mediumrare.imgix.net\/7dbec5678181612dc2ea2257b42e7244836a24f7758cb48786bd59dd6cde0d8b?w=180&h=236&fit=min&auto=format",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Wild Coaster",
+        "game_uid": "a06f1a154698243bf2484853d38e5fbb",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Wild-Coaster_app-icon_rounded.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Wild Racer",
+        "game_uid": "2f0c5f96cda3c6e16b3929dd6103df8e",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Wild-Racer.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Win Win Fish Prawn Crab",
+        "game_uid": "9b344f0b2a9bda427684be60597d2fc6",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/pg\/Win-Win-Fish-Prawn-Crab_rounded_1024.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Witches Night",
+        "game_uid": "82c5c404cf4c0790deb42a2b5653533c",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/Witches-Night.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Wonder Elephant",
+        "game_uid": "540da2ba4c849fc1c315f43ae74df220",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jdb\/Wonder-Elephant.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "World Cup",
+        "game_uid": "28374b7ad7c91838a46404f1df046e5a",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/World-Cup.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "XiYangYang",
+        "game_uid": "5a962d0e31e0d4c0798db5f331327e4f",
+        "game_category": "slots",
+        "game_provider": "Slot Game",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/jili\/XiYangYang.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "9 Wickets",
+        "game_uid": "48341a3bf62b6dd0814d7129e7e0834b",
+        "game_category": "live",
+        "game_provider": "Sports",
+        "game_image": "https:\/\/encrypted-tbn0.gstatic.com\/images?q=tbn:ANd9GcQG2IDp8bHMOvKsg6bDCd9ashW15IDmIkoyjkGokPdFEg&s",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Esports",
+        "game_uid": "4ee8e0051a035b463b47c3c473ce317d",
+        "game_category": "live",
+        "game_provider": "SportsGame",
+        "game_image": "https:\/\/i.postimg.cc\/FHHg66F4\/Screenshot-2025-03-21-153241.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "SABA Sports",
+        "game_uid": "08ced9dd788aed11ff3c7f387ae0f063",
+        "game_category": "live",
+        "game_provider": "SportsGame",
+        "game_image": "https:\/\/ossimg.tirangaagent.com\/Tiranga\/vendorlogo\/vendorlogo_20240814202959vsy1.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Aviator",
+        "game_uid": "a04d1f3eb8ccec8a4823bdf18e3f0e84",
+        "game_category": "turbo",
+        "game_provider": "Spribe",
+        "game_image": "https:\/\/ossimg.tirangaagent.com\/Tiranga\/gamelogo\/TB_Chess\/800.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Balloon",
+        "game_uid": "de88f202c5a8beeaccabbd944f8acfbf",
+        "game_category": "turbo",
+        "game_provider": "Spribe",
+        "game_image": "https:\/\/cms-ui-data-prd.sahara.editec-online.com\/images\/media-items\/en\/044721e4-bd1c-421d-b640-14347b43206b_180.jpg",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Dice",
+        "game_uid": "8a87aae7a3624d284306e9c6fe1b3e9c",
+        "game_category": "turbo",
+        "game_provider": "Spribe",
+        "game_image": "https:\/\/ossimg.tirangaagent.com\/Tiranga\/gamelogo\/TB_Chess\/102.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Goal",
+        "game_uid": "c68a515f0b3b10eec96cf6d33299f4e2",
+        "game_category": "turbo",
+        "game_provider": "Spribe",
+        "game_image": "https:\/\/ossimg.tirangaagent.com\/Tiranga\/gamelogo\/TB_Chess\/105.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Hi Lo",
+        "game_uid": "a669c993b0e1f1b7da100fcf95516bdf",
+        "game_category": "turbo",
+        "game_provider": "Spribe",
+        "game_image": "https:\/\/ossimg.tirangaagent.com\/Tiranga\/gamelogo\/TB_Chess\/101.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Hotline",
+        "game_uid": "b31720b3cd65d917a1a96ef61a72b672",
+        "game_category": "turbo",
+        "game_provider": "Spribe",
+        "game_image": "https:\/\/ossimg.tirangaagent.com\/Tiranga\/gamelogo\/TB_Chess\/107.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Keno",
+        "game_uid": "c311eb4bbba03b105d150504931f2479",
+        "game_category": "turbo",
+        "game_provider": "Spribe",
+        "game_image": "https:\/\/ossimg.tirangaagent.com\/Tiranga\/gamelogo\/TB_Chess\/106.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Mines",
+        "game_uid": "5c4a12fb0a9b296d9b0d5f9e1cd41d65",
+        "game_category": "turbo",
+        "game_provider": "Spribe",
+        "game_image": "https:\/\/ossimg.tirangaagent.com\/Tiranga\/gamelogo\/SPRIBE\/22005.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Mini Roulette",
+        "game_uid": "9dc7ac6155c5a19c1cc204853e426367",
+        "game_category": "turbo",
+        "game_provider": "Spribe",
+        "game_image": "https:\/\/ossimg.tirangaagent.com\/Tiranga\/gamelogo\/TB_Chess\/104.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Plinko",
+        "game_uid": "6ab7a4fe5161936012d6b06143918223",
+        "game_category": "turbo",
+        "game_provider": "Spribe",
+        "game_image": "https:\/\/ossimg.tirangaagent.com\/Tiranga\/gamelogo\/SPRIBE\/22004.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "All-star Fishing",
+        "game_uid": "bb0c86c376c785e0133af2fe88faaadd",
+        "game_category": "fishing",
+        "game_provider": "TADAgaming",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/tada\/All-star-Fishing.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Bombing Fishing",
+        "game_uid": "386cd7d395614ff0e15e6c832211ecd1",
+        "game_category": "fishing",
+        "game_provider": "TADAgaming",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/tada\/Bombing-Fishing.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Boom Legend",
+        "game_uid": "fc537dbfab0fcfa7ade4bcb9210e78e0",
+        "game_category": "fishing",
+        "game_provider": "TADAgaming",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/tada\/Boom-Legend.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Dinosaur Tycoon",
+        "game_uid": "dff81bd0bba33f59adf64ca1ba80b63b",
+        "game_category": "fishing",
+        "game_provider": "TADAgaming",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/tada\/Dinosaur-Tycoon.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Dinosaur Tycoon II",
+        "game_uid": "d96a6188227cfe71995feadc70f03c06",
+        "game_category": "fishing",
+        "game_provider": "TADAgaming",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/tada\/Dinosaur-Tycoon-II.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Dragon Fortune",
+        "game_uid": "5c35435c71eb4674e79b1cd8068ba430",
+        "game_category": "fishing",
+        "game_provider": "TADAgaming",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/tada\/Dragon-Fortune.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Happy Fishing",
+        "game_uid": "11055f0bc7f35b34bcfa966b529dba63",
+        "game_category": "fishing",
+        "game_provider": "TADAgaming",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/tada\/Happy-Fishing.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Jackpot Fishing",
+        "game_uid": "599dc6e567e3cf3bc75c19318812bdbb",
+        "game_category": "fishing",
+        "game_provider": "TADAgaming",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/tada\/Jackpot-Fishing.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Mega Fishing",
+        "game_uid": "5b4c3acdabc8ac8f234d6864d2ee3a8a",
+        "game_category": "fishing",
+        "game_provider": "TADAgaming",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/tada\/Mega-Fishing.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Ocean King Jackpot",
+        "game_uid": "2cccbb53dc31457d0fda2b1af7b87f90",
+        "game_category": "fishing",
+        "game_provider": "TADAgaming",
+        "game_image": "https:\/\/huidu-bucket.s3.ap-southeast-1.amazonaws.com\/api\/tada\/Ocean-King-Jackpot.png",
+        "game_status": "1"
+    },
+    {
+        "game_name": "Go Rush",
+        "game_uid": "edef29b5eda8e2eaf721d7315491c51d",
+        "game_category": "turbo",
+        "game_provider": "Unknown",
+        "game_image": "https:\/\/ossimg.tirangaagent.com\/Tiranga\/gamelogo\/JILI\/224.png",
+        "game_status": "1"
+    }
+]

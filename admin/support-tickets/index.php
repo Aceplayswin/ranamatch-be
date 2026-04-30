@@ -60,9 +60,16 @@ foreach ($create_tables as $sql) {
     mysqli_query($conn, $sql);
 }
 
-// Check for missing columns (migration)
-mysqli_query($conn, "ALTER TABLE tbl_support_tickets ADD COLUMN IF NOT EXISTS priority VARCHAR(20) DEFAULT 'Medium' AFTER message");
-mysqli_query($conn, "ALTER TABLE tbl_support_tickets ADD COLUMN IF NOT EXISTS profile_id VARCHAR(100) AFTER user_id");
+// Check for missing columns (migration - compatible with older MySQL versions)
+$checkPriority = mysqli_query($conn, "SHOW COLUMNS FROM `tbl_support_tickets` LIKE 'priority'");
+if (mysqli_num_rows($checkPriority) == 0) {
+    mysqli_query($conn, "ALTER TABLE tbl_support_tickets ADD COLUMN priority VARCHAR(20) DEFAULT 'Medium' AFTER message");
+}
+
+$checkProfile = mysqli_query($conn, "SHOW COLUMNS FROM `tbl_support_tickets` LIKE 'profile_id'");
+if (mysqli_num_rows($checkProfile) == 0) {
+    mysqli_query($conn, "ALTER TABLE tbl_support_tickets ADD COLUMN profile_id VARCHAR(100) AFTER user_id");
+}
 
 $where_clauses = [];
 if (!empty($status_filter)) $where_clauses[] = "t.status = '$status_filter'";

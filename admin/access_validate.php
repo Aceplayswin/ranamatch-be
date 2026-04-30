@@ -1,6 +1,7 @@
 <?php
 
 class AccessValidate {
+  public $accessList;
   function __construct(){
       $this->accessList = "";
   }

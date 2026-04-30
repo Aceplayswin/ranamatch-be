@@ -270,9 +270,10 @@ $offset = ($page_num - 1) * $content;
                         <thead>
                             <tr>
                                 <th width="60">No</th>
-                                <th>Provider / Game</th>
+                                <th>Provider</th>
+                                <th>Game</th>
                                 <th>username </th>
-                                <th>Round ID</th>
+                                <th>Transaction ID</th>
                                 <th>Date & Time</th>
                                 <th>Description</th>
                                 <th width="80">Type</th>
@@ -360,15 +361,16 @@ $offset = ($page_num - 1) * $content;
                                     ?>
                                     <tr>
                                         <td style="font-size: 11px; color: var(--text-dim);"><?php echo $indexVal + $offset; ?></td>
-                                        <td style="font-weight: 700; color: white;"><?php echo htmlspecialchars($row['tbl_project_name']); ?></td>
+                                        <td style="font-weight: 700; color: white;"><?php echo htmlspecialchars($row['tbl_match_details'] ?: $row['tbl_selection'] ?: 'N/A'); ?></td>
+                                        <td style="font-weight: 600; color: var(--text-dim);"><?php echo htmlspecialchars($row['tbl_project_name']); ?></td>
                                         <td style="font-weight: 600; color: var(--accent-blue);">
                                             <a href="../users-data/view-activities.php?user-id=<?php echo urlencode($row['tbl_user_id']); ?>#casino_section" style="color: inherit; text-decoration: none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
                                                 <?php echo htmlspecialchars($row['tbl_user_name'] ?? 'N/A'); ?>
                                             </a>
                                             <div style="font-size: 9px; color: var(--text-dim);"><?php echo htmlspecialchars($row['tbl_user_id']); ?></div>
                                         </td>
-                                        <td style="font-family: monospace; font-size: 11px; color: var(--accent-blue); cursor: pointer; text-decoration: underline;" onclick="ShowRoundDetails('<?php echo $row['tbl_period_id']; ?>', 'casino')">
-                                            <?php echo htmlspecialchars($row['tbl_period_id']); ?>
+                                        <td style="font-family: monospace; font-size: 11px; color: var(--accent-blue); cursor: pointer; text-decoration: underline;" onclick="ShowRoundDetails('<?php echo $row['tbl_uniq_id']; ?>', 'casino')">
+                                            <?php echo htmlspecialchars($row['tbl_uniq_id']); ?>
                                         </td>
                                         <td style="white-space: nowrap; font-size: 12px;"><?php echo htmlspecialchars($row['tbl_time_stamp']); ?></td>
                                         <td style="font-size: 12px;"><?php echo htmlspecialchars($description); ?></td>
@@ -467,15 +469,18 @@ function ShowRoundDetails(id, type) {
         didOpen: () => { Swal.showLoading(); }
     });
 
-    fetch(`../reports/get-bet-details.php?id=${id}&type=${type}`)
+    fetch(`../reports/get-bet-details.php?id=${id}&type=${type}&t=${new Date().getTime()}`)
         .then(response => response.json())
         .then(data => {
             if(data.error) return Swal.fire('Data Error', data.error, 'error');
 
-            const isProfit = (data.tbl_match_status.toLowerCase() === 'profit');
-            const isLoss = (data.tbl_match_status.toLowerCase() === 'loss' || (data.tbl_match_result && data.tbl_match_result.toLowerCase() === 'loss'));
+            const isProfit = (data.tbl_match_status.toLowerCase() === 'profit' || data.tbl_match_result.toLowerCase() === 'win' || data.tbl_match_result.toLowerCase() === 'won');
+            const isLoss = (data.tbl_match_status.toLowerCase() === 'loss' || data.tbl_match_result.toLowerCase() === 'loss' || data.tbl_match_result.toLowerCase() === 'lost');
+            const isPending = (data.tbl_match_status.toLowerCase() === 'wait' || data.tbl_match_result.toLowerCase() === 'pending');
             const isCashout = (data.tbl_match_result.toLowerCase().includes('cashout') || data.tbl_match_status.toLowerCase().includes('cashout'));
             const netAmount = parseFloat(data.tbl_match_profit) - parseFloat(data.tbl_match_cost);
+            
+            const statusColorClass = isProfit ? 'text-success' : (isPending ? 'text-warning' : (netAmount === 0 ? 'text-white' : 'text-danger'));
 
                     const html = `
                     <div class="round-details-v2" style="background: #121212; padding: 0px; font-family: 'DM Sans', sans-serif; color: #fff;">
@@ -505,7 +510,7 @@ function ShowRoundDetails(id, type) {
                                     <div class="data-row"><i class='bx bx-info-circle'></i> <span class="lbl">MATCH DETAILS</span> <span class="val">${data.tbl_selection || data.tbl_match_details || data.tbl_project_name}</span></div>
                                     <div class="data-row"><i class='bx bx-calendar'></i> <span class="lbl">BET PLACED AT</span> <span class="val">${data.tbl_time_stamp}</span></div>
                                     <div class="data-row"><i class='bx bx-time'></i> <span class="lbl">SETTLED AT</span> <span class="val">${data.tbl_updated_at}</span></div>
-                                    <div class="data-row"><i class='bx bx-check-circle'></i> <span class="lbl">STATUS</span> <span class="val text-uppercase ${isProfit ? 'text-success' : 'text-danger'}">${(data.tbl_match_result == '0' || data.tbl_match_result == 'loss') ? 'LOSS' : (data.tbl_match_result == '1' || data.tbl_match_result == 'profit' ? 'WON' : data.tbl_match_result)}</span></div>
+                                    <div class="data-row"><i class='bx bx-check-circle'></i> <span class="lbl">STATUS</span> <span class="val text-uppercase ${statusColorClass}">${netAmount === 0 ? 'TIE / REFUND' : ((data.tbl_match_result == '0' || data.tbl_match_status.toLowerCase() == 'loss') ? 'LOSS' : (data.tbl_match_result == '1' || data.tbl_match_status.toLowerCase() == 'profit' ? 'WON' : (data.tbl_match_result || data.tbl_match_status)))}</span></div>
                                     <div class="data-row"><i class='bx bx-hash'></i> <span class="lbl">BETS TRANSACTIONID</span> <span class="val" style="font-size: 9px;">${data.tbl_uniq_id}</span></div>
                                     <div class="data-row"><i class='bx bx-play-circle'></i> <span class="lbl">BETS PLAYMODE</span> <span class="val">RealMoney</span></div>
                                     <div class="data-row"><i class='bx bx-devices'></i> <span class="lbl">BETS CHANNEL</span> <span class="val">Desktop/Mobile</span></div>
@@ -541,18 +546,28 @@ function ShowRoundDetails(id, type) {
                                     <div class="data-row border-b"><i class='bx bx-trending-down text-danger'></i> <span class="lbl">AMOUNT LOST</span> <span class="val">₹${Math.max(0, parseFloat(data.tbl_match_cost) - parseFloat(data.tbl_match_profit)).toFixed(2)}</span></div>
                                     
                                     <div style="margin-top: auto; padding: 20px 0;">
-                                        ${(data.tbl_match_result.toLowerCase().includes('cashout') || data.tbl_match_status.toLowerCase().includes('cashout')) ? `
+                                        ${isCashout ? `
                                             <div class="cashout-box">
                                                 <div class="cashout-lbl">CASHOUT PAYOUT</div>
                                                 <div class="cashout-val">₹${parseFloat(data.tbl_match_profit).toFixed(2)}</div>
                                                 <div class="cashout-net-loss">NET LOSS: -₹${Math.abs(netAmount).toFixed(2)}</div>
+                                            </div>
+                                        ` : (isPending ? `
+                                            <div class="net-badge" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
+                                                <span class="net-lbl" style="color: #94a3b8;">STATUS:</span>
+                                                <span class="net-val" style="color: #fbbf24;">WAITING FOR RESULT</span>
+                                            </div>
+                                        ` : (netAmount === 0 ? `
+                                            <div class="net-badge" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
+                                                <span class="net-lbl" style="color: #94a3b8;">RESULT:</span>
+                                                <span class="net-val" style="color: #ffffff;">TIE / REFUND</span>
                                             </div>
                                         ` : `
                                             <div class="net-badge ${isProfit ? 'bg-profit' : 'bg-loss'}">
                                                 <span class="net-lbl">${isProfit ? 'NET PROFIT' : 'NET LOSS'}:</span>
                                                 <span class="net-val">${isProfit ? '+' : '-'}₹${Math.abs(netAmount).toFixed(2)}</span>
                                             </div>
-                                        `}
+                                        `))}
                                     </div>
                                 </div>
                             </div>

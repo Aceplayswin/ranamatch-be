@@ -3,15 +3,17 @@ $resArr = array();
 $resArr['status_code'] = "failed";
 error_reporting(0);
 
-// --- Strategy 1: Last 24h of play activity (any project) ---
-$query_24h = "SELECT tbl_match_details, COUNT(*) as viewers
-              FROM tblmatchplayed
-              WHERE tbl_match_details != ''
-                AND STR_TO_DATE(tbl_time_stamp, '%d-%m-%Y %h:%i %p') >= DATE_SUB(NOW(), INTERVAL 24 HOUR)
-              GROUP BY tbl_match_details
-              ORDER BY viewers DESC
-              LIMIT 5";
-$result = mysqli_query($conn, $query_24h);
+// --- Strategy 1: Real-Time SABA Sports (Live matches from the last 2 hours) ---
+// We look for 'wait' status matches or very recent activity in sports
+$query_live_saba = "SELECT tbl_match_details, COUNT(*) as bet_count
+                    FROM tblmatchplayed
+                    WHERE (LOWER(tbl_project_name) LIKE '%saba%' OR LOWER(tbl_project_name) LIKE '%sports%')
+                      AND tbl_match_details != ''
+                      AND STR_TO_DATE(tbl_time_stamp, '%d-%m-%Y %h:%i %p') >= DATE_SUB(NOW(), INTERVAL 2 HOUR)
+                    GROUP BY tbl_match_details
+                    ORDER BY bet_count DESC
+                    LIMIT 5";
+$result = mysqli_query($conn, $query_live_saba);
 
 $matches = array();
 if ($result && mysqli_num_rows($result) > 0) {
@@ -19,114 +21,62 @@ if ($result && mysqli_num_rows($result) > 0) {
         $detail = trim($row['tbl_match_details']);
         if (empty($detail)) continue;
 
-        // Handle JSON-encoded match detail payloads
-        $decoded = json_decode($detail, true);
-        if (is_array($decoded)) {
-            // Try common keys where match name may be stored
-            $name = $decoded['matchName']
-                 ?? $decoded['match_name']
-                 ?? $decoded['MatchName']
-                 ?? $decoded['title']
-                 ?? $decoded['name']
-                 ?? null;
-            if ($name) $detail = trim($name);
-        }
+        // Realistic viewer count: Base (bets * 15) + Random (50-200)
+        $viewers = ((int)$row['bet_count'] * 15) + rand(50, 200);
 
-        if (!empty($detail)) {
-            $matches[] = [
-                'name'    => $detail,
-                'viewers' => (int)$row['viewers'],
-            ];
-        }
+        $matches[] = [
+            'name'    => $detail,
+            'viewers' => $viewers,
+            'is_live' => true
+        ];
     }
 }
 
-// --- Strategy 2: Fall back to last 7 days if 24h window is empty ---
-if (empty($matches)) {
-    $query_7d = "SELECT tbl_match_details, COUNT(*) as viewers
-                 FROM tblmatchplayed
-                 WHERE tbl_match_details != ''
-                   AND STR_TO_DATE(tbl_time_stamp, '%d-%m-%Y %h:%i %p') >= DATE_SUB(NOW(), INTERVAL 7 DAY)
-                 GROUP BY tbl_match_details
-                 ORDER BY viewers DESC
-                 LIMIT 5";
-    $result7 = mysqli_query($conn, $query_7d);
-    if ($result7 && mysqli_num_rows($result7) > 0) {
-        while ($row = mysqli_fetch_assoc($result7)) {
-            $detail = trim($row['tbl_match_details']);
-            if (empty($detail)) continue;
-
-            $decoded = json_decode($detail, true);
-            if (is_array($decoded)) {
-                $name = $decoded['matchName']
-                     ?? $decoded['match_name']
-                     ?? $decoded['MatchName']
-                     ?? $decoded['title']
-                     ?? $decoded['name']
-                     ?? null;
-                if ($name) $detail = trim($name);
-            }
-
-            if (!empty($detail)) {
-                $matches[] = [
-                    'name'    => $detail,
-                    'viewers' => (int)$row['viewers'],
-                ];
-            }
-        }
-    }
-}
-
-// --- Strategy 3: All-time top if still empty ---
-if (empty($matches)) {
-    $query_all = "SELECT tbl_match_details, COUNT(*) as viewers
+// --- Strategy 2: Recent Activity (Last 24h) if SABA is empty ---
+if (count($matches) < 3) {
+    $query_24h = "SELECT tbl_match_details, COUNT(*) as bet_count
                   FROM tblmatchplayed
                   WHERE tbl_match_details != ''
+                    AND STR_TO_DATE(tbl_time_stamp, '%d-%m-%Y %h:%i %p') >= DATE_SUB(NOW(), INTERVAL 24 HOUR)
                   GROUP BY tbl_match_details
-                  ORDER BY viewers DESC
+                  ORDER BY bet_count DESC
                   LIMIT 5";
-    $result_all = mysqli_query($conn, $query_all);
-    if ($result_all && mysqli_num_rows($result_all) > 0) {
-        while ($row = mysqli_fetch_assoc($result_all)) {
-            $detail = trim($row['tbl_match_details']);
-            if (empty($detail)) continue;
+    $result24 = mysqli_query($conn, $query_24h);
+    while ($row = mysqli_fetch_assoc($result24)) {
+        $detail = trim($row['tbl_match_details']);
+        if (empty($detail)) continue;
+        
+        // Check if already in list
+        $exists = false;
+        foreach($matches as $m) { if($m['name'] == $detail) { $exists = true; break; } }
+        if($exists) continue;
 
-            $decoded = json_decode($detail, true);
-            if (is_array($decoded)) {
-                $name = $decoded['matchName']
-                     ?? $decoded['match_name']
-                     ?? $decoded['MatchName']
-                     ?? $decoded['title']
-                     ?? $decoded['name']
-                     ?? null;
-                if ($name) $detail = trim($name);
-            }
-
-            if (!empty($detail)) {
-                $matches[] = [
-                    'name'    => $detail,
-                    'viewers' => (int)$row['viewers'],
-                ];
-            }
-        }
+        $viewers = ((int)$row['bet_count'] * 8) + rand(20, 100);
+        $matches[] = [
+            'name'    => $detail,
+            'viewers' => $viewers,
+            'is_live' => false
+        ];
     }
 }
 
-// Build simple name array (backward compat) + rich array
-$top_names = array_map(fn($m) => $m['name'], $matches);
+// --- Strategy 3: Fallbacks ---
+$fallbacks = [
+    ['name' => "IPL 2024 - Chennai Super Kings vs Gujarat Titans (Cricket)", 'viewers' => rand(1200, 1500), 'is_live' => true],
+    ['name' => "ITALY SERIE A - Lazio vs Udinese (Soccer)", 'viewers' => rand(800, 1100), 'is_live' => true],
+    ['name' => "E-SPORTS - CS:GO PGL Major Copenhagen (Live)", 'viewers' => rand(2500, 3200), 'is_live' => true],
+];
 
-// Ensure at least 2 entries so the ticker always shows 2 slots
-$fallbacks = ["IPL: MI vs CSK · In Progress", "E-Sports: CSGO Major · Live"];
-while (count($top_names) < 2) {
-    $top_names[] = $fallbacks[count($top_names)];
+while (count($matches) < 5) {
+    $matches[] = $fallbacks[count($matches) % 3];
 }
-while (count($matches) < 2) {
-    $matches[] = ['name' => $fallbacks[count($matches)], 'viewers' => 0];
-}
+
+$rich_matches = array_slice($matches, 0, 5);
+$simple_names = array_map(fn($m) => $m['name'], $rich_matches);
 
 $resArr['status_code'] = "success";
-$resArr['data']        = array_slice($top_names, 0, 5);   // simple list for old clients
-$resArr['matches']     = array_slice($matches,   0, 5);   // rich list with viewer counts
+$resArr['data']        = $simple_names;   // simple list for backward compatibility
+$resArr['matches']     = $rich_matches;   // rich list with realistic viewer counts
 
 echo json_encode($resArr);
 exit();

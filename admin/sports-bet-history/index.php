@@ -701,15 +701,18 @@ $offset = ($page_num - 1) * $content;
                 didOpen: () => { Swal.showLoading(); }
             });
 
-            fetch(`../reports/get-bet-details.php?id=${id}&type=${type}`)
+            fetch(`../reports/get-bet-details.php?id=${id}&type=${type}&t=${new Date().getTime()}`)
                 .then(response => response.json())
                 .then(data => {
                     if(data.error) return Swal.fire('Data Error', data.error, 'error');
 
-                    const isProfit = (data.tbl_match_status.toLowerCase() === 'profit');
-                    const isLoss = (data.tbl_match_status.toLowerCase() === 'loss' || (data.tbl_match_result && data.tbl_match_result.toLowerCase() === 'loss'));
+                    const isProfit = (data.tbl_match_status.toLowerCase() === 'profit' || data.tbl_match_result.toLowerCase() === 'win' || data.tbl_match_result.toLowerCase() === 'won');
+                    const isLoss = (data.tbl_match_status.toLowerCase() === 'loss' || data.tbl_match_result.toLowerCase() === 'loss' || data.tbl_match_result.toLowerCase() === 'lost');
+                    const isPending = (data.tbl_match_status.toLowerCase() === 'wait' || data.tbl_match_result.toLowerCase() === 'pending');
                     const isCashout = (data.tbl_match_result.toLowerCase().includes('cashout') || data.tbl_match_status.toLowerCase().includes('cashout'));
                     const netAmount = parseFloat(data.tbl_match_profit) - parseFloat(data.tbl_match_cost);
+                    
+                    const statusColorClass = isProfit ? 'text-success' : (isPending ? 'text-warning' : (netAmount === 0 ? 'text-white' : 'text-danger'));
 
                     const html = `
                     <div class="round-details-v2" style="background: #121212; padding: 0px; font-family: 'DM Sans', sans-serif; color: #fff;">
@@ -740,7 +743,7 @@ $offset = ($page_num - 1) * $content;
                                     <div class="data-row"><i class='bx bx-target-lock'></i> <span class="lbl">SELECTION</span> <span class="val" style="word-break: break-word; white-space: normal; height: auto; color: #3b82f6;">${data.tbl_bet_type || data.tbl_selection || '-'}</span></div>
                                     <div class="data-row"><i class='bx bx-calendar'></i> <span class="lbl">BET PLACED AT</span> <span class="val">${data.tbl_time_stamp}</span></div>
                                     <div class="data-row"><i class='bx bx-time'></i> <span class="lbl">SETTLED AT</span> <span class="val">${data.tbl_updated_at}</span></div>
-                                    <div class="data-row"><i class='bx bx-check-circle'></i> <span class="lbl">STATUS</span> <span class="val text-uppercase ${isProfit ? 'text-success' : 'text-danger'}">${(data.tbl_match_result == '0' || data.tbl_match_result == 'loss') ? 'LOSS' : (data.tbl_match_result == '1' || data.tbl_match_result == 'profit' ? 'WON' : data.tbl_match_result)}</span></div>
+                                    <div class="data-row"><i class='bx bx-check-circle'></i> <span class="lbl">STATUS</span> <span class="val text-uppercase ${statusColorClass}">${netAmount === 0 ? 'TIE / REFUND' : ((data.tbl_match_result == '0' || data.tbl_match_status.toLowerCase() == 'loss') ? 'LOSS' : (data.tbl_match_result == '1' || data.tbl_match_status.toLowerCase() == 'profit' ? 'WON' : (data.tbl_match_result || data.tbl_match_status)))}</span></div>
                                     <div class="data-row"><i class='bx bx-hash'></i> <span class="lbl">BETS TRANSACTIONID</span> <span class="val" style="font-size: 9px; word-break: break-all; white-space: normal; height: auto;">${data.tbl_uniq_id}</span></div>
                                     <div class="data-row"><i class='bx bx-play-circle'></i> <span class="lbl">BETS PLAYMODE</span> <span class="val">RealMoney</span></div>
                                     <div class="data-row"><i class='bx bx-devices'></i> <span class="lbl">BETS CHANNEL</span> <span class="val">Desktop/Mobile</span></div>
@@ -777,18 +780,29 @@ $offset = ($page_num - 1) * $content;
                                     <div class="data-row border-b"><i class='bx bx-trending-down text-danger'></i> <span class="lbl">AMOUNT LOST</span> <span class="val">₹${Math.max(0, parseFloat(data.tbl_match_cost) - parseFloat(data.tbl_match_profit)).toFixed(2)}</span></div>
                                     
                                     <div style="margin-top: auto; padding: 20px 0;">
-                                        ${(data.tbl_match_result.toLowerCase().includes('cashout') || data.tbl_match_status.toLowerCase().includes('cashout')) ? `
+                                        ${isCashout ? `
                                             <div class="cashout-box">
                                                 <div class="cashout-lbl">CASHOUT PAYOUT</div>
                                                 <div class="cashout-val">₹${parseFloat(data.tbl_match_profit).toFixed(2)}</div>
                                                 <div class="cashout-net-loss">NET LOSS: -₹${Math.abs(netAmount).toFixed(2)}</div>
+                                            </div>
+                                        ` : (isPending ? `
+                                            <div class="net-badge" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
+                                                <span class="net-lbl" style="color: #94a3b8;">STATUS:</span>
+                                                <span class="net-val" style="color: #fbbf24;">WAITING FOR RESULT</span>
+                                            </div>
+                                        ` : (netAmount === 0 ? `
+                                            <div class="net-badge" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
+                                                <span class="net-lbl" style="color: #94a3b8;">RESULT:</span>
+                                                <span class="net-val" style="color: #ffffff;">TIE / REFUND</span>
                                             </div>
                                         ` : `
                                             <div class="net-badge ${isProfit ? 'bg-profit' : 'bg-loss'}">
                                                 <span class="net-lbl">${isProfit ? 'NET PROFIT' : 'NET LOSS'}:</span>
                                                 <span class="net-val">${isProfit ? '+' : '-'}₹${Math.abs(netAmount).toFixed(2)}</span>
                                             </div>
-                                        `}
+                                        `))}
+                                    </div>
                                     </div>
                                 </div>
                             </div>

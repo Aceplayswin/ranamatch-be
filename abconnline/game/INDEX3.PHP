@@ -213,6 +213,47 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $net_win_change = max(0, $win_amount - $previous_profit);
             }
 
+            // --- SPORTS: MAX ODDS LIMIT ---
+            $is_saba_sport = (stripos($const_game_name, "SABA") !== false);
+            $is_luck_sport = (stripos($const_game_name, "Luck") !== false || $const_game_uid == "92b24e4c25107367a80e0fe1a97c24e4");
+
+            if ($is_sports || $is_saba_sport || $is_luck_sport) {
+                $saba_action = strtolower($data["action"] ?? $sports_data["action"] ?? "");
+                $is_placement = in_array($saba_action, ["bet", "confirmbet", "placebet", "place_exchange_order", "place_order"]);
+
+                // Odds Extraction Strategy
+                $check_odds = $odds;
+                if (empty($check_odds)) {
+                    $check_odds = $sports_data["betslip"]["k"] ?? $sports_data["k"] ?? $sports_data["txns"][0]["odds"] ?? "";
+                }
+
+                if ($is_placement && !empty($check_odds) && floatval($check_odds) > $SABA_MAX_ODDS) {
+                    // Trigger Frontend Notification
+                    $n_title = "Bet Rejected";
+                    $n_msg = "Maximum odds limit for Sports is {$SABA_MAX_ODDS}x. Your bet with odds {$check_odds}x was rejected. (Ref: " . date("His") . ")";
+                    $n_time = date("d-m-Y h:i:s a");
+                    $e_uid = mysqli_real_escape_string($conn, $const_user_id);
+                    $e_title = mysqli_real_escape_string($conn, $n_title);
+                    $e_msg = mysqli_real_escape_string($conn, $n_msg);
+                    $e_time = mysqli_real_escape_string($conn, $n_time);
+                    
+                    mysqli_query($conn, "INSERT INTO tblallnotices (tbl_user_id, tbl_notice_title, tbl_notice_note, tbl_notice_status, tbl_time_stamp) VALUES ('$e_uid', '$e_title', '$e_msg', 'true', '$e_time')");
+
+                    // IMPORTANT: We MUST return the current balance in the payload, otherwise SABA shows 0 balance
+                    $payloadData = json_encode(["credit_amount" => $total_avail_bal, "timestamp" => round(microtime(true) * 1000)]);
+                    $payload = encrypt($payloadData, $AES_KEY);
+
+                    // Return code 6 (Generic Error) instead of code 1 to avoid "Insufficient balance" message
+                    echo json_encode([
+                        "code" => 6,
+                        "msg" => "Max odds limit is {$SABA_MAX_ODDS}",
+                        "payload" => $payload
+                    ]);
+                    exit;
+                }
+            }
+            // --- END SPORTS LIMIT ---
+
             // Check balance against net change
             if ($net_bet_change > 0 && $total_avail_bal < $net_bet_change) {
                 echo json_encode(["code" => 1, "msg" => "Insufficient balance"]);

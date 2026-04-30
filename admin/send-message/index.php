@@ -139,11 +139,33 @@ else {
         <div class="row justify-content-center">
             <div class="col-md-10">
                 <div class="glass-card">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h5 class="m-0 font-black uppercase tracking-widest text-accent-blue">Schedule New Broadcast</h5>
+                        <a href="history.php" class="btn btn-sm btn-outline-primary" style="font-size: 11px; font-weight: 800; border-radius: 8px;">
+                            <i class='bx bx-history'></i> VIEW HISTORY
+                        </a>
+                    </div>
+                    
                     <div class="form-group">
                         <label class="form-label">Title</label>
                         <input type="text" id="m_heading" class="cus-inp" placeholder="Enter title...">
                     </div>
                     
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Start Time</label>
+                                <input type="datetime-local" id="start_time" class="cus-inp">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">End Time</label>
+                                <input type="datetime-local" id="end_time" class="cus-inp">
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="form-group">
                         <label class="form-label">Send To</label>
                         <select id="m_to" class="cus-inp">
@@ -175,7 +197,15 @@ else {
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
+    window.onload = () => {
+        const now = new Date();
+        const tomorrow = new Date(now.getTime() + (24 * 60 * 60 * 1000));
+        document.getElementById('start_time').value = new Date(now.getTime() - now.getTimezoneOffset() * 60000).toISOString().slice(0, 16);
+        document.getElementById('end_time').value = new Date(tomorrow.getTime() - tomorrow.getTimezoneOffset() * 60000).toISOString().slice(0, 16);
+    };
+
     document.getElementById('m_to').addEventListener('change', function() {
         document.getElementById('specific_user_area').style.display = (this.value === 'specific') ? 'block' : 'none';
         if(this.value !== 'specific') $('#hint_box').hide();
@@ -186,7 +216,6 @@ else {
             $('#hint_box').hide();
             return;
         }
-
         $.ajax({
             url: 'search-users.php',
             type: 'GET',
@@ -212,63 +241,27 @@ else {
     function selectUser(id, name) {
         $('#target_id').val(id);
         $('#hint_box').hide();
-        Swal.fire({
-            title: 'User Verified',
-            text: 'Selected: ' + name + ' (' + id + ')',
-            icon: 'success',
-            timer: 1500,
-            showConfirmButton: false
-        });
+        Swal.fire({ title: 'User Verified', text: 'Selected: ' + name, icon: 'success', timer: 1000, showConfirmButton: false });
     }
-
-    // Close hints when clicking outside
-    $(document).click(function(e) {
-        if (!$(e.target).closest('#specific_user_area').length) {
-            $('#hint_box').hide();
-        }
-    });
 
     function BroadcastMessage() {
         const head = $('#m_heading').val();
+        const start = $('#start_time').val();
+        const end = $('#end_time').val();
         const to = $('#m_to').val();
         const uid = $('#target_id').val();
         const msg = $('#m_content').val();
-        const portal = $('#status_portal');
 
-        if(!head || !msg) return Swal.fire('Error', 'Please fill all fields', 'error');
-        if(to === 'specific' && !uid) return Swal.fire('Error', 'Please enter User ID', 'error');
+        if(!head || !msg || !start || !end) return Swal.fire('Error', 'Please fill all fields', 'error');
 
-        portal.css({'display': 'block', 'background': 'rgba(59, 130, 246, 0.1)', 'color': '#3b82f6'}).text('Sending...');
-
-        $.ajax({
-            url: 'manage-notice.php',
-            type: 'POST',
-            data: {
-                submit: true,
-                m_heading: head,
-                m_to: to,
-                target_id: uid,
-                m_content: msg
-            },
-            success: function(resp) {
-                if(resp.includes('success')) {
-                    portal.css({'background': 'rgba(16, 185, 129, 0.1)', 'color': '#10b981'}).html("<i class='bx bx-check'></i> Sent Successfully!");
-                    $('#m_heading, #m_content, #target_id').val('');
-                    Swal.fire({
-                        title: 'Sent!',
-                        text: 'Your broadcast has been dispatched successfully.',
-                        icon: 'success',
-                        confirmButtonColor: 'var(--accent-blue)',
-                        background: 'var(--panel-bg)',
-                        color: 'var(--text-main)'
-                    });
-                } else {
-                    portal.css({'background': 'rgba(244, 63, 94, 0.1)', 'color': '#f43f5e'}).text('Error: ' + resp);
-                    Swal.fire('Failed', resp, 'error');
-                }
-            },
-            error: function() {
-                portal.css({'background': 'rgba(244, 63, 94, 0.1)', 'color': '#f43f5e'}).text('Server Error');
+        $.post('manage-notice.php', {
+            m_heading: head, start_time: start, end_time: end, m_to: to, target_id: uid, m_content: msg
+        }, function(resp) {
+            if(resp.includes('success')) {
+                Swal.fire('Success', 'Broadcast Scheduled!', 'success');
+                $('#m_heading, #m_content, #target_id').val('');
+            } else {
+                Swal.fire('Error', resp, 'error');
             }
         });
     }

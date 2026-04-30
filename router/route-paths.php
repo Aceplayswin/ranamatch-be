@@ -33,7 +33,8 @@ $routes = [
     '/route-get-primary-bankcard' => 'route-paths/load-primary-bankcard.php',
     
     '/route-play-games' => 'route-paths/request-play-games.php',
-    '/route-mygame-records' => 'route-paths/load-mygame-records.php',  
+    '/route-mygame-records' => 'route-paths/load-mygame-records.php',
+    '/route-game-notifications' => 'route-paths/load-game-notifications.php',
     '/route-submit-ticket' => 'route-paths/request-submit-ticket.php',
     '/route-active-promotions' => 'route-paths/request-active-promotions.php',
     '/request-bonus-details' => 'route-paths/request-bonus-details.php',
@@ -44,6 +45,8 @@ $routes = [
     '/route-offer-promotions' => 'route-paths/request-offers.php',
     '/route-trending-matches' => 'route-paths/load-trending-matches.php',
     '/route-get-user-tickets' => 'route-paths/load-user-tickets.php',
+    '/route-get-games' => 'route-paths/request-get-games.php',
+    '/route-mark-broadcast-seen' => 'route-paths/request-mark-broadcast-seen.php',
 ];
 
 ?>

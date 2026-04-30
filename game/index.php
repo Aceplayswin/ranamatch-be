@@ -39,11 +39,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $data = json_decode(decrypt($payload, $AES_KEY), true);
     }
 
-    // Diagnostic logging
-    $log_data = date('Y-m-d H:i:s') . " - Req: " . $json . " - Decoded: " . json_encode($data) . "\n";
-    file_put_contents(__DIR__ . "/bet_logs.txt", $log_data, FILE_APPEND);
-
     if (!$data) {
+        // Log failed decryption attempt
+        file_put_contents(__DIR__ . "/bet_logs.txt", date('Y-m-d H:i:s') . " - Req: " . $json . " - ERR: Decryption Failed\n", FILE_APPEND);
         exit;
     }
 
@@ -51,6 +49,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $win_amount = floatval($data["win_amount"]);
     $bet_amount = floatval($data["bet_amount"]);
     $m_order_id = $data["game_round"] ?? $data["serial_number"] ?? ("API" . bin2hex(random_bytes(6)));
+
+    // Robust User ID Extraction (Optimized for SABA/Luck Sports)
+    $raw_member = $data["member_account"] ?? "";
+    $const_user_id = "";
+    
+    // Primary: Database lookup by account name/mobile
+    $e_raw = mysqli_real_escape_string($conn, $raw_member);
+    $u_lookup = mysqli_query($conn, "SELECT tbl_uniq_id FROM tblusersdata WHERE tbl_user_name='$e_raw' OR tbl_mobile_num='$e_raw' OR tbl_uniq_id='$e_raw' LIMIT 1");
+    if ($u_row_lk = mysqli_fetch_assoc($u_lookup)) {
+        $const_user_id = $u_row_lk['tbl_uniq_id'];
+    } else {
+        // Fallback: Prefix removal (Legacy)
+        $account_clean = explode('_', $raw_member)[0];
+        // Strip common prefixes like hd86cd or winco
+        $const_user_id = str_replace($PREFIX, "", $account_clean);
+        // If it's still not found, try to find a user where the uniq_id is a substring
+        if (strlen($const_user_id) > 10) { // If it's a long account name
+             $u_lookup2 = mysqli_query($conn, "SELECT tbl_uniq_id FROM tblusersdata WHERE '$e_raw' LIKE CONCAT('%', tbl_uniq_id, '%') LIMIT 1");
+             if ($row2 = mysqli_fetch_assoc($u_lookup2)) {
+                 $const_user_id = $row2['tbl_uniq_id'];
+             }
+        }
+    }
+    
+    if (empty($const_user_id)) {
+        $const_user_id = "N/A";
+    }
 
     // Standardized Parsing
     $match_details = "";
@@ -65,11 +90,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     // 1. Dynamic Auto-Sync (Learn names from incoming requests)
-    if ($const_game_name != "" && $const_game_uid != "N/A") {
-        $sync_stmt = $conn->prepare("INSERT INTO tbl_game_names (tbl_game_id, tbl_game_name) VALUES (?, ?) ON DUPLICATE KEY UPDATE tbl_game_name = VALUES(tbl_game_name)");
-        $sync_stmt->bind_param("ss", $const_game_uid, $const_game_name);
-        $sync_stmt->execute();
-        $sync_stmt->close();
+    if ($const_game_uid != "N/A" && $const_game_uid != "") {
+        // Log that we received a request for discovery debugging
+        file_put_contents(__DIR__ . "/discovery_debug.txt", date('H:i:s') . " - Processing UID: " . $const_game_uid . " Name: " . $const_game_name . "\n", FILE_APPEND);
+
+        if ($const_game_name != "") {
+            $sync_stmt = $conn->prepare("INSERT INTO tbl_game_names (tbl_game_id, tbl_game_name) VALUES (?, ?) ON DUPLICATE KEY UPDATE tbl_game_name = VALUES(tbl_game_name)");
+            $sync_stmt->bind_param("ss", $const_game_uid, $const_game_name);
+            $sync_stmt->execute();
+            $sync_stmt->close();
+        }
+
+        // --- Lobby Game Discovery Logger ---
+        $discovery_file = __DIR__ . "/discovered_lobby_games.json";
+        $current_discoveries = [];
+        if (file_exists($discovery_file)) {
+            $current_discoveries = json_decode(file_get_contents($discovery_file), true) ?: [];
+        }
+
+        $found = false;
+        foreach ($current_discoveries as $idx => $game) {
+            if ($game['uid'] === $const_game_uid) {
+                // If we already have the UID but now we found a name, update it
+                if (empty($game['name']) && !empty($const_game_name)) {
+                    $current_discoveries[$idx]['name'] = $const_game_name;
+                    file_put_contents($discovery_file, json_encode($current_discoveries, JSON_PRETTY_PRINT));
+                }
+                $found = true;
+                break;
+            }
+        }
+
+        if (!$found) {
+            $current_discoveries[] = [
+                'uid' => $const_game_uid,
+                'name' => $const_game_name ?: "Unknown Name (Play again)",
+                'discovered_at' => date('Y-m-d H:i:s'),
+                'raw_data' => $data
+            ];
+            file_put_contents($discovery_file, json_encode($current_discoveries, JSON_PRETTY_PRINT));
+        }
     }
 
     // 2. Dynamic Database Lookup (Recover names for requests that are missing them)
@@ -122,6 +182,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $const_game_name = $game_mappings[$const_game_uid];
     }
 
+    // Enrich non-sports data for consistent logging (Satisfies user request for "all details")
+    if (!isset($data["data"])) {
+        $data["data"] = [
+            "game_name" => $const_game_name,
+            "userId" => $const_user_id,
+            "betAmount" => $bet_amount,
+            "winAmount" => $win_amount,
+            "action" => ($bet_amount > 0) ? "PlaceBet" : (($win_amount > 0) ? "Settlement" : "CheckStatus"),
+            "timestamp" => date('Y-m-d H:i:s'),
+            "is_casino" => true
+        ];
+    }
+
+    // Diagnostic logging (Moved here to ensure game name and user ID are enriched)
+    $log_data = date('Y-m-d H:i:s') . " - Req: " . $json . " - Decoded: " . json_encode($data) . "\n";
+    file_put_contents(__DIR__ . "/bet_logs.txt", $log_data, FILE_APPEND);
+
     // Explicit Sports Provider Detection by Game UID
     $sports_game_uids = [
         "92b24e4c25107367a80e0fe1a97c24e4", // Luck Sports
@@ -138,8 +215,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sports_data = is_string($data["data"]) ? json_decode($data["data"], true) : $data["data"];
         if ($sports_data) {
             // SABA-style extraction
-            $match_details = $sports_data["leagueName_en"] ?? $sports_data["sportTypeName_en"] ?? "";
-            $bet_type = $sports_data["betChoice_en"] ?? $sports_data["marketName_en"] ?? "";
+            $s_home = $sports_data["homeName_en"] ?? $sports_data["homeName"] ?? "";
+            $s_away = $sports_data["awayName_en"] ?? $sports_data["awayName"] ?? "";
+            $s_league = $sports_data["leagueName_en"] ?? $sports_data["leagueName"] ?? "";
+            $s_sport = $sports_data["sportTypeName_en"] ?? $sports_data["sportTypeName"] ?? "";
+
+            if (!empty($s_home) && !empty($s_away)) {
+                $match_details = (!empty($s_league)) ? "$s_league - $s_home vs $s_away" : "$s_home vs $s_away";
+            } else {
+                $match_details = $s_league ?: $s_sport ?: "";
+            }
+            if (!empty($s_sport) && stripos($match_details, $s_sport) === false) {
+                $match_details .= " ($s_sport)";
+            }
+
+            $s_market = $sports_data["betTypeName_en"] ?? $sports_data["marketName_en"] ?? "";
+            $s_choice = $sports_data["betChoice_en"] ?? $sports_data["betChoice"] ?? "";
+            if (!empty($s_market) && !empty($s_choice) && strcasecmp($s_market, $s_choice) !== 0) {
+                $bet_type = "$s_market - $s_choice";
+            } else {
+                $bet_type = $s_choice ?: $s_market ?: "";
+            }
+
             $odds = $sports_data["odds"] ?? "";
 
             // Luck Sports betslip extraction
@@ -202,6 +299,84 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     }
                 }
             }
+            // Robust Sports Data Extraction
+            $sports_data = $data["data"] ?? [];
+            if (is_string($sports_data)) {
+                $sports_data = json_decode($sports_data, true) ?? [];
+            }
+            
+            // --- SPORTS: MAX ODDS LIMIT (SABA & LUCK SPORTS) ---
+            $is_sports_engine = ($const_game_uid == "92b24e4c25107367a80e0fe1a97c24e4") || // Luck Sports
+                                ($const_game_uid == "08ced9dd788aed11ff3c7f387ae0f063") || // SABA Sports
+                                (stripos($const_game_name, "Luck") !== false) || 
+                                (stripos($const_game_name, "SABA") !== false);
+
+            if ($is_sports_engine) {
+                // For Luck Sports, we treat ANY request with a bet_amount as a placement attempt
+                $saba_action = strtolower($data["action"] ?? $sports_data["action"] ?? $sports_data["transaction"]["operation"] ?? "");
+                $is_placement = in_array($saba_action, ["bet", "confirmbet", "placebet", "place_exchange_order", "place_order", "place-bet", "place"]) || ($bet_amount > 0);
+                
+                // Multi-Level Odds Extraction (Prioritize 'k' for Luck)
+                $check_odds = 0;
+                if (isset($sports_data["betslip"]["k"])) {
+                    $check_odds = floatval($sports_data["betslip"]["k"]);
+                } elseif (isset($sports_data["odds"])) {
+                    $check_odds = floatval($sports_data["odds"]);
+                } elseif (isset($sports_data["txns"][0]["odds"])) {
+                    $check_odds = floatval($sports_data["txns"][0]["odds"]);
+                } else {
+                    // Regex fallback
+                    $raw_json = json_encode($data);
+                    if (preg_match('/"(odds|rate|k)"\s*:\s*"?([\d\.-]+)"?/', $raw_json, $matches)) {
+                        $check_odds = floatval($matches[2]);
+                    }
+                }
+
+                // Fail-safe limit loading
+                $limit_val = floatval($SABA_MAX_ODDS > 0 ? $SABA_MAX_ODDS : 4.0);
+
+                // Final Diagnostic Log
+                file_put_contents(__DIR__ . "/sports_debug.log", date('Y-m-d H:i:s') . " | RESULT | User: $const_user_id | Placement: " . ($is_placement ? "YES" : "NO") . " | Odds: $check_odds | Limit: $limit_val\n", FILE_APPEND);
+
+                if ($is_placement && $check_odds > $limit_val) {
+                    // Trigger Frontend Notification via tblmatchplayed (Fastest & Most Reliable)
+                    $m_time = date("d-m-Y h:i a");
+                    $rejected_status = "rejected";
+                    $rejected_result = "lost";
+                    $rejection_reason = "Maximum odds limit for Sports is {$limit_val}x. Your bet with odds {$check_odds}x was rejected.";
+                    
+                    // Fetch latest balance for the record
+                    $b_res = mysqli_query($conn, "SELECT tbl_balance, tbl_bonus_balance, tbl_sports_bonus FROM tblusersdata WHERE tbl_uniq_id='$const_user_id' LIMIT 1");
+                    $b_row = mysqli_fetch_assoc($b_res);
+                    $cur_bal = floatval($b_row["tbl_balance"] ?? 0) + floatval($b_row["tbl_bonus_balance"] ?? 0) + floatval($b_row["tbl_sports_bonus"] ?? 0);
+
+                    $istmt = $conn->prepare("INSERT INTO tblmatchplayed (tbl_user_id, tbl_uniq_id, tbl_period_id, tbl_invested_on, tbl_match_cost, tbl_match_invested, tbl_match_profit, tbl_match_result, tbl_last_acbalance, tbl_match_status, tbl_project_name, tbl_match_details, tbl_bet_type, tbl_odds, tbl_time_stamp, tbl_result_time, tbl_notified, tbl_notify_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, NOW())");
+                    $istmt->bind_param("ssssdddsssssssss", $const_user_id, $m_order_id, $const_game_uid, $const_game_name, $bet_amount, $bet_amount, $win_amount, $rejected_result, $cur_bal, $rejected_status, $const_game_name, $rejection_reason, $bet_type, $check_odds, $m_time, $m_time);
+                    $istmt->execute();
+                    $istmt->close();
+
+                    // Still insert into tblallnotices for backup/global visibility
+                    $n_title = "Bet Rejected";
+                    $n_msg = "Maximum odds limit for Sports is {$limit_val}x. Your bet with odds {$check_odds}x was rejected. (Ref: {$m_order_id})";
+                    $n_time = date("d-m-Y h:i:s a");
+                    $e_uid = mysqli_real_escape_string($conn, $const_user_id);
+                    $e_title = mysqli_real_escape_string($conn, $n_title);
+                    $e_msg = mysqli_real_escape_string($conn, $n_msg);
+                    $e_time = mysqli_real_escape_string($conn, $n_time);
+                    mysqli_query($conn, "INSERT INTO tblallnotices (tbl_user_id, tbl_notice_title, tbl_notice_note, tbl_notice_status, tbl_time_stamp) VALUES ('$e_uid', '$e_title', '$e_msg', 'true', '$e_time')");
+
+                    $payloadData = json_encode(["credit_amount" => $cur_bal, "timestamp" => round(microtime(true) * 1000)]);
+                    $payload = encrypt($payloadData, $AES_KEY);
+
+                    echo json_encode([
+                        "code" => 1, // Generic failure to prevent "Insufficient Funds" popup
+                        "msg" => "Max odds limit is {$limit_val}",
+                        "payload" => $payload
+                    ]);
+                    exit;
+                }
+            }
+            // --- END SPORTS LIMIT ---
         }
     } else if (isset($data["bet_data"])) {
         $match_details = $data["bet_data"]["leagueName_en"] ?? "";
@@ -312,9 +487,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         }
     }
-
-    $account_clean = explode('_', $data["member_account"])[0];
-    $const_user_id = str_replace($PREFIX, "", $account_clean);
 
     // Row Lock for transaction safety
     $u_res = mysqli_query($conn, "SELECT * FROM tblusersdata WHERE tbl_uniq_id='$const_user_id' FOR UPDATE");
@@ -518,6 +690,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     "d7e5f6258dd0dfdd29b3798f124b6b9d"  // Unknown Live Game
                 ]) ||
                 (strpos($lower_name, "lobby") !== false) ||
+                (strpos($lower_name, "casino") !== false) ||
                 (strpos($lower_name, "roulette") !== false) ||
                 (strpos($lower_name, "rulet") !== false) ||
                 (strpos($lower_name, "ruleta") !== false) ||
@@ -555,7 +728,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 (strpos($lower_name, "ak47") !== false) ||
                 (count(explode("-", $m_order_id)) > 1) ||
                 !empty($match_details)) &&
-                !(isset($data["provider"]) && (stripos($data["provider"], "jili") !== false || stripos($data["provider"], "cq9") !== false || stripos($data["provider"], "jdb") !== false));
+                    // Exclude known slot providers (JILI, CQ9, JDB) ONLY for named games.
+                    // Unknown games (Game UID format) must ALWAYS wait for the result callback.
+                ($is_unknown_game || !(isset($data["provider"]) && (stripos($data["provider"], "jili") !== false || stripos($data["provider"], "cq9") !== false || stripos($data["provider"], "jdb") !== false)));
 
             // Log decision for debugging
             $const_provider = $data["provider"] ?? "N/A";
@@ -602,7 +777,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $existing_res_time = $merged_record['tbl_result_time'] ?? null;
                 $final_res_time = (strtolower($new_status) == "wait") ? $existing_res_time : $m_time;
 
-                $ustmt = $conn->prepare("UPDATE tblmatchplayed SET tbl_match_cost = ?, tbl_match_invested = ?, tbl_match_profit = ?, tbl_last_acbalance = ?, tbl_match_status = ?, tbl_match_result = ?, tbl_result_time = ? WHERE id = ?");
+                $ustmt = $conn->prepare("UPDATE tblmatchplayed SET tbl_match_cost = ?, tbl_match_invested = ?, tbl_match_profit = ?, tbl_last_acbalance = ?, tbl_match_status = ?, tbl_match_result = ?, tbl_result_time = ?, tbl_notified = 0, tbl_notify_at = NOW() WHERE id = ?");
                 $ustmt->bind_param("ddddsssi", $new_cost, $new_cost, $new_profit, $e_bal, $new_status, $new_result, $final_res_time, $rid);
                 $ustmt->execute();
                 $ustmt->close();
@@ -638,7 +813,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // If it's an instant result (not wait), we store it as result time too
                 $r_time_val = (strtolower($m_status) == "wait") ? null : $m_time;
 
-                $istmt = $conn->prepare("INSERT IGNORE INTO tblmatchplayed (tbl_user_id, tbl_uniq_id, tbl_period_id, tbl_invested_on, tbl_match_cost, tbl_match_invested, tbl_match_profit, tbl_match_result, tbl_last_acbalance, tbl_match_status, tbl_project_name, tbl_match_details, tbl_bet_type, tbl_odds, tbl_time_stamp, tbl_result_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                $istmt = $conn->prepare("INSERT IGNORE INTO tblmatchplayed (tbl_user_id, tbl_uniq_id, tbl_period_id, tbl_invested_on, tbl_match_cost, tbl_match_invested, tbl_match_profit, tbl_match_result, tbl_last_acbalance, tbl_match_status, tbl_project_name, tbl_match_details, tbl_bet_type, tbl_odds, tbl_time_stamp, tbl_result_time, tbl_notified, tbl_notify_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, NOW())");
                 $istmt->bind_param("ssssdddsssssssss", $const_user_id, $m_order_id, $const_game_uid, $const_game_name, $bet_amount, $bet_amount, $win_amount, $m_result, $real_bal, $m_status, $const_game_name, $match_details, $bet_type, $odds, $m_time, $r_time_val);
                 if ($istmt->execute()) {
                     $log_ins = date("Y-m-d H:i:s") . " | INS | New Record Created | Status: $m_status | ID: $m_order_id\n";

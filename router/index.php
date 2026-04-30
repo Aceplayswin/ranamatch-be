@@ -4,8 +4,6 @@ file_put_contents(__DIR__ . "/router_hit.log", date('Y-m-d H:i:s') . " - HIT: " 
  Don't edit this file without developer permission.
  For any help please contact developer here: abcd@gmail.com
 */
-header("Access-Control-Allow-Origin: *");
-
 define("ACCESS_SECURITY", "true");
 file_put_contents(__DIR__ . "/router_debug.log", date('Y-m-d H:i:s') . " - REQ: " . $_SERVER['REQUEST_URI'] . " - Headers: " . json_encode(getallheaders()) . "\n", FILE_APPEND);
 include '../security/headers-security.php';
@@ -15,7 +13,7 @@ include '../security/headers-security.php';
 $headerObj = new RequestHeaders();
 $headerObj->checkCorsPolicy("GET,POST,OPTIONS");
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-    exit;
+  exit;
 }
 $headerObj->checkAllHeaders();
 
@@ -43,19 +41,16 @@ $curr_date_time = $curr_date . ' ' . $curr_time;
 // $licenseObj = new RequestLicense();
 // if($licenseObj -> validateLicense()==="true"){
 
-// Get the requested URL
-$base_url = parse_url($_SERVER['REQUEST_URI'])['path'];
+// Debug all requests
 $route_path = $headerObj->getRoute();
 $request_uri = '/' . $route_path;
-
-// Debug all requests
-$req_log = date('Y-m-d H:i:s') . " | REQ | URI: " . $_SERVER['REQUEST_URI'] . " | Route: $request_uri | User: " . ($_GET['USER_ID'] ?? 'N/A') . "\n";
+$req_log = date('Y-m-d H:i:s') . " | ROUTER | URI: " . $_SERVER['REQUEST_URI'] . " | Route_Path: $route_path | Final_URI: $request_uri | User: " . ($_GET['USER_ID'] ?? 'N/A') . "\n";
 file_put_contents(__DIR__ . "/play_debug.txt", $req_log, FILE_APPEND);
 
 // Check if the requested route exists
-file_put_contents(__DIR__ . "/route_mapping.log", date('Y-m-d H:i:s') . " - Requested URI: $request_uri - Available Routes: " . implode(', ', array_keys($routes)) . "\n", FILE_APPEND);
 if (array_key_exists($request_uri, $routes)) {
   $request_path = $routes[$request_uri];
+  file_put_contents(__DIR__ . "/play_debug.txt", "   -> Matched: $request_path\n", FILE_APPEND);
 
   if ($request_path == "default") {
     echo "invalid_route_request";
@@ -72,11 +67,15 @@ if (array_key_exists($request_uri, $routes)) {
       $inc_path = '../' . $request_path;
       file_put_contents(__DIR__ . "/router_final.log", date('Y-m-d H:i:s') . " - Including: $inc_path\n", FILE_APPEND);
       if (file_exists($inc_path)) {
-          file_put_contents(__DIR__ . "/router_final.log", date('Y-m-d H:i:s') . " - File exists, including now...\n", FILE_APPEND);
-          include $inc_path;
-          file_put_contents(__DIR__ . "/router_final.log", date('Y-m-d H:i:s') . " - Include finished.\n", FILE_APPEND);
+        ob_start();
+        include $inc_path;
+        $output = ob_get_clean();
+        if ($route_path === 'route-game-notifications') {
+          file_put_contents(__DIR__ . "/play_debug.txt", "   -> Response: $output\n", FILE_APPEND);
+        }
+        echo $output;
       } else {
-          file_put_contents(__DIR__ . "/router_final.log", date('Y-m-d H:i:s') . " - FILE NOT FOUND: $inc_path\n", FILE_APPEND);
+        file_put_contents(__DIR__ . "/router_final.log", date('Y-m-d H:i:s') . " - FILE NOT FOUND: $inc_path\n", FILE_APPEND);
       }
       break;
   }

@@ -1,0 +1,31 @@
+DATABASE CONNECTED: YES
+--- SERVICES TABLE ---
+APP_STATUS => true
+COMISSION_BONUS => 2,2,2,2
+WITHDRAW_TAX => 0.00
+MIN_WITHDRAW => 100
+MIN_RECHARGE => 100
+RECHARGE_OPTIONS => 500,1000,5000,7000,25000,50000,75000,100000,500000
+TELEGRAM_URL => https://t.me/wincocc
+SMS_TOKEN => RLl0icmryM
+OTP_ALLOWED => false
+SALLARY_PERCENT => 5
+SIGNUP_ALLOWED => true
+SIGNUP_BONUS => 20
+IMP_MESSAGE => WELCOME !!!
+Immerse into the place of money making.
+IMP_ALERT => hai,hai
+GAME_STATUS => true
+DEPOSIT_BONUS_OPTIONS => 100/10,100/5,100/2
+DEPOSIT_BONUS => true
+SITE_LOGO_URL => admin/uploads/branding/logo_1776854180.png
+SITE_ADDRESS => 33 rd floor , business bay Dubai,UAE 
+SITE_TAGLINE => play win
+SITE_MARQUEE => New Live Casino Games launching in 7 days | Mega Slots Tournament starts in 10 days | Weekly Cashback update version 2.0 releasing soon | New Bonus System upgrade in 15 days
+SITE_NAME => Winco
+SITE_SOCIAL_LINKS => [{"platform":"WhatsApp","value":"555"}]
+
+--- CONSTANTS ---
+APP_NAME: Winco
+APP_LOGO: admin/uploads/branding/logo_1776854180.png
+APP_FAVICON: favicon.png

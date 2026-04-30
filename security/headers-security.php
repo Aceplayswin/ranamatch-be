@@ -17,7 +17,9 @@ class RequestHeaders
 
   function checkCorsPolicy($allowedMethod)
   {
-    header("Access-Control-Allow-Origin: *");
+    if (isset($_SERVER['HTTP_ORIGIN'])) {
+      header("Access-Control-Allow-Origin: " . $_SERVER['HTTP_ORIGIN']);
+    }
     header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
     header("Access-Control-Allow-Headers: Origin, Content-Type, Accept, Route, route, AuthToken, authToken, Authtoken, authtoken");
     header("Access-Control-Allow-Credentials: true");
@@ -39,20 +41,40 @@ class RequestHeaders
       }
     }
 
-    // Fallback to $_SERVER if headers are missing (Common in Nginx/FastCGI)
-    if (empty($this->Authorization)) {
-      if (isset($_SERVER['HTTP_AUTHTOKEN'])) {
-        $this->Authorization = $_SERVER['HTTP_AUTHTOKEN'];
-      } else if (isset($_SERVER['AuthToken'])) {
-        $this->Authorization = $_SERVER['AuthToken'];
+    // Fallback to $_SERVER/$_REQUEST if headers are missing (Common in Nginx/FastCGI/Proxy)
+    $variations = ['HTTP_AUTHTOKEN', 'HTTP_AUTH_TOKEN', 'AuthToken', 'authToken', 'authtoken'];
+    if (empty($this->Authorization) || $this->Authorization === "guest") {
+      foreach ($variations as $v) {
+        if (!empty($_SERVER[$v])) {
+          $this->Authorization = $_SERVER[$v];
+          break;
+        }
+        if (!empty($_GET[$v])) {
+          $this->Authorization = $_GET[$v];
+          break;
+        }
+        if (!empty($_POST[$v])) {
+          $this->Authorization = $_POST[$v];
+          break;
+        }
       }
     }
 
+    $routeVariations = ['HTTP_ROUTE', 'Route', 'route'];
     if (empty($this->Route)) {
-      if (isset($_SERVER['HTTP_ROUTE'])) {
-        $this->Route = $_SERVER['HTTP_ROUTE'];
-      } else if (isset($_SERVER['Route'])) {
-        $this->Route = $_SERVER['Route'];
+      foreach ($routeVariations as $v) {
+        if (!empty($_SERVER[$v])) {
+          $this->Route = $_SERVER[$v];
+          break;
+        }
+        if (!empty($_GET[$v])) {
+          $this->Route = $_GET[$v];
+          break;
+        }
+        if (!empty($_POST[$v])) {
+          $this->Route = $_POST[$v];
+          break;
+        }
       }
     }
 
@@ -158,37 +180,37 @@ class RequestHeaders
     if (strtolower($ip) === 'unknown')
       return false;
 
-    // 1. Validate the string FIRST
+    // Generate IPv4 network address
+    $ip = ip2long($ip);
+
+    // Do additional filtering on IP
     if (!filter_var($ip, FILTER_VALIDATE_IP))
       return false;
 
-    // 2. Convert to long for range checking (IPv4 only)
-    $ip_long = ip2long($ip);
-
     // If the IP address is set and not equivalent to 255.255.255.255
-    if ($ip_long !== false && $ip_long !== -1) {
+    if ($ip !== false && $ip !== -1) {
 
       // Make sure to get unsigned long representation of IP address
       // due to discrepancies between 32 and 64 bit OSes and
       // signed numbers (ints default to signed in PHP)
-      $ip_long = sprintf('%u', $ip_long);
+      $ip = sprintf('%u', $ip);
 
       // Do private network range checking
-      if ($ip_long >= 0 && $ip_long <= 50331647)
+      if ($ip >= 0 && $ip <= 50331647)
         return false;
-      if ($ip_long >= 167772160 && $ip_long <= 184549375)
+      if ($ip >= 167772160 && $ip <= 184549375)
         return false;
-      if ($ip_long >= 2130706432 && $ip_long <= 2147483647)
+      if ($ip >= 2130706432 && $ip <= 2147483647)
         return false;
-      if ($ip_long >= 2851995648 && $ip_long <= 2852061183)
+      if ($ip >= 2851995648 && $ip <= 2852061183)
         return false;
-      if ($ip_long >= 2886729728 && $ip_long <= 2887778303)
+      if ($ip >= 2886729728 && $ip <= 2887778303)
         return false;
-      if ($ip_long >= 3221225984 && $ip_long <= 3221226239)
+      if ($ip >= 3221225984 && $ip <= 3221226239)
         return false;
-      if ($ip_long >= 3232235520 && $ip_long <= 3232301055)
+      if ($ip >= 3232235520 && $ip <= 3232301055)
         return false;
-      if ($ip_long >= 4294967040)
+      if ($ip >= 4294967040)
         return false;
     }
     return true;
