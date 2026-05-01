@@ -1,11 +1,15 @@
 <?php
-file_put_contents(__DIR__ . "/router_hit.log", date('Y-m-d H:i:s') . " - HIT: " . $_SERVER['REQUEST_URI'] . " - Method: " . $_SERVER['REQUEST_METHOD'] . " - Headers: " . json_encode(getallheaders()) . "\n", FILE_APPEND);
+if (function_exists('getallheaders')) {
+    file_put_contents(__DIR__ . "/router_hit.log", date('Y-m-d H:i:s') . " - HIT: " . $_SERVER['REQUEST_URI'] . " - Method: " . $_SERVER['REQUEST_METHOD'] . " - Headers: " . json_encode(getallheaders()) . "\n", FILE_APPEND);
+}
 /*
  Don't edit this file without developer permission.
  For any help please contact developer here: abcd@gmail.com
 */
 define("ACCESS_SECURITY", "true");
-file_put_contents(__DIR__ . "/router_debug.log", date('Y-m-d H:i:s') . " - REQ: " . $_SERVER['REQUEST_URI'] . " - Headers: " . json_encode(getallheaders()) . "\n", FILE_APPEND);
+if (function_exists('getallheaders')) {
+    file_put_contents(__DIR__ . "/router_debug.log", date('Y-m-d H:i:s') . " - REQ: " . $_SERVER['REQUEST_URI'] . " - Headers: " . json_encode(getallheaders()) . "\n", FILE_APPEND);
+}
 include '../security/headers-security.php';
 
 
