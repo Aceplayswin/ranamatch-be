@@ -111,3 +111,5 @@
 2026-04-30 19:29:47 - Game: SABA Sports | UID: 08ced9dd788aed11ff3c7f387ae0f063 | API Response: {"msg":"Your IP address is「83.110.23.170」，Access has been banned by the system, please contact the administrator to add a whitelist!","code":403}
 2026-04-30 19:39:04 - Launch Req: {"USER_ID":"8213022","GAME_NAME":"SABA Sports","GAME_UID":"08ced9dd788aed11ff3c7f387ae0f063"}
 2026-04-30 19:39:05 - Game: SABA Sports | UID: 08ced9dd788aed11ff3c7f387ae0f063 | API Response: {"msg":"Your IP address is「83.110.23.170」，Access has been banned by the system, please contact the administrator to add a whitelist!","code":403}
+2026-05-09 18:57:08 - Launch Req: {"GAME_NAME":"Poison Teenpatti 20 20","GAME_UID":"3845e907ece3ec94443a6aa3e49b51a8","USER_ID":"5496998"}
+2026-05-09 18:57:10 - Game: Poison Teenpatti 20 20 | UID: 3845e907ece3ec94443a6aa3e49b51a8 | API Response: {"msg":"Your IP address is「148.113.0.104」，Access has been banned by the system, please contact the administrator to add a whitelist!","code":403}

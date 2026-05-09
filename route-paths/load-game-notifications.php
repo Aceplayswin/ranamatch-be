@@ -22,7 +22,7 @@ $user_id = "";
 if (isset($_GET['USER_ID'])) {
     $user_id = mysqli_real_escape_string($conn, $_GET['USER_ID']);
 }
-
+@
 if ($user_id == "") {
     $resArr['status_code'] = "invalid_params";
     echo json_encode($resArr);
@@ -72,6 +72,17 @@ mysqli_query($conn, "UPDATE tblmatchplayed
     AND tbl_notify_at IS NULL");
 
 // ---------------------------------------------------------------
+// STAGE 1.5: Dead 'Wait' Resolution
+// If a record has been in 'wait' for >30s (e.g. slot games that don't send a 0-win callback),
+// automatically transition it to a 'loss' so the user receives their loss notification.
+// ---------------------------------------------------------------
+mysqli_query($conn, "UPDATE tblmatchplayed 
+    SET tbl_match_status = 'loss', tbl_match_result = 'lost', tbl_notify_at = NOW() 
+    WHERE tbl_user_id = '{$user_id}' 
+    AND tbl_match_status = 'wait' 
+    AND tbl_notify_at < NOW() - INTERVAL 30 SECOND");
+
+// ---------------------------------------------------------------
 // STAGE 2: Fire
 // ---------------------------------------------------------------
 
@@ -83,6 +94,7 @@ $notify_sql = "SELECT *
                AND tbl_match_status NOT IN ('wait')
                AND tbl_notified = 0
                AND tbl_notify_at IS NOT NULL
+               AND tbl_notify_at >= NOW() - INTERVAL 15 SECOND
                ORDER BY id ASC LIMIT 1";
 
 $notify_result = mysqli_query($conn, $notify_sql);
@@ -111,11 +123,14 @@ if ($notify_result) {
     }
 }
 
-// Mark as notified — never shows again
+// Mark ONLY the returned records as notified
 if (!empty($ids_to_mark)) {
     $ids_str = implode(',', $ids_to_mark);
     mysqli_query($conn, "UPDATE tblmatchplayed SET tbl_notified = 1 WHERE id IN ({$ids_str})");
 }
+
+// Expire old unnotified records to prevent stale queue buildup (older than 15s)
+mysqli_query($conn, "UPDATE tblmatchplayed SET tbl_notified = 1 WHERE tbl_user_id = '{$user_id}' AND tbl_notified = 0 AND tbl_notify_at < NOW() - INTERVAL 15 SECOND");
 
 if (!empty($notifications)) {
     $resArr['status_code'] = "success";

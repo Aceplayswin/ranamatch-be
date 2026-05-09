@@ -1,0 +1,114 @@
+[
+  {
+    "gameName": "aviatrix",
+    "gameUid": "6f652ee587522116739db9ed5a8d529f",
+    "category": "Slots",
+    "provider": "aviatrix",
+    "iconUrl": ""
+  },
+  {
+    "gameName": "Penalty Unlimited",
+    "gameUid": "66d311ff6cf531e40b61c483dd34c5c9",
+    "category": "Casino",
+    "provider": "InOut Minigames",
+    "iconUrl": ""
+  },
+  {
+    "gameName": "Chicken Road 2.0",
+    "gameUid": "562b299961b0ec40f252a832453c67b0",
+    "category": "Casino",
+    "provider": "InOut Minigames",
+    "iconUrl": ""
+  },
+  {
+    "gameName": "Forest Arrow",
+    "gameUid": "458bd34bc83e34501df7e7f96626df6b",
+    "category": "Casino",
+    "provider": "InOut Minigames",
+    "iconUrl": ""
+  },
+  {
+    "gameName": "JetX",
+    "gameUid": "2e815f80a5a87b0255c130c00d95a71e",
+    "category": "Slots",
+    "provider": "Smartsoft",
+    "iconUrl": ""
+  },
+  {
+    "gameName": "Balloon",
+    "gameUid": "b869a83fc241533c5422dad27340a0ea",
+    "category": "Slots",
+    "provider": "Smartsoft",
+    "iconUrl": ""
+  },
+  {
+    "gameName": "FootballX",
+    "gameUid": "0487c9d22cea1278b01503a7d15ba699",
+    "category": "Slots",
+    "provider": "Smartsoft",
+    "iconUrl": ""
+  },
+  {
+    "gameName": "GOD OF WEALTH",
+    "gameUid": "c44dc56b33f2f501d5e0ce24abbe1345",
+    "category": "Slots",
+    "provider": "2J",
+    "iconUrl": ""
+  },
+  {
+    "gameName": "ELVES",
+    "gameUid": "8c1c484262be6d9a972e7c6bd705e788",
+    "category": "Slots",
+    "provider": "2J",
+    "iconUrl": ""
+  },
+  {
+    "gameName": "777 FRUIT",
+    "gameUid": "48d221f9239f3602b2b2bf63d6ec39c4",
+    "category": "Slots",
+    "provider": "2J",
+    "iconUrl": ""
+  },
+  {
+    "gameName": "CrashX",
+    "gameUid": "2d66114ff4a5575d2f6534f48d4f76e6",
+    "category": "Slots",
+    "provider": "Turbogames World",
+    "iconUrl": ""
+  },
+  {
+    "gameName": "Dice Twice",
+    "gameUid": "c17dd26c288586092f507a2216d07dc8",
+    "category": "Slots",
+    "provider": "Turbogames World",
+    "iconUrl": ""
+  },
+  {
+    "gameName": "Mines",
+    "gameUid": "aac8e2584b1e769338d8f2f73d7623a6",
+    "category": "Slots",
+    "provider": "Turbogames World",
+    "iconUrl": ""
+  },
+  {
+    "gameName": "Rocketon",
+    "gameUid": "0b880e4904c700af5fdd4eb7dc388e80",
+    "category": "Slots",
+    "provider": "Galaxsys",
+    "iconUrl": ""
+  },
+  {
+    "gameName": "Keno 10 (1 Minute)",
+    "gameUid": "5dbad5d6886163b0e8b1e7b3d2857019",
+    "category": "Slots",
+    "provider": "Galaxsys",
+    "iconUrl": ""
+  },
+  {
+    "gameName": "Keno 10 (2 Minute)",
+    "gameUid": "3f10050e070b97a74ff3571dc823a79b",
+    "category": "Slots",
+    "provider": "Galaxsys",
+    "iconUrl": ""
+  }
+]

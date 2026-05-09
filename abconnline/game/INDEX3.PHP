@@ -236,7 +236,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $e_title = mysqli_real_escape_string($conn, $n_title);
                     $e_msg = mysqli_real_escape_string($conn, $n_msg);
                     $e_time = mysqli_real_escape_string($conn, $n_time);
-                    
+
                     mysqli_query($conn, "INSERT INTO tblallnotices (tbl_user_id, tbl_notice_title, tbl_notice_note, tbl_notice_status, tbl_time_stamp) VALUES ('$e_uid', '$e_title', '$e_msg', 'true', '$e_time')");
 
                     // IMPORTANT: We MUST return the current balance in the payload, otherwise SABA shows 0 balance

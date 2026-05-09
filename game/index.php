@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Robust User ID Extraction (Optimized for SABA/Luck Sports)
     $raw_member = $data["member_account"] ?? "";
     $const_user_id = "";
-    
+
     // Primary: Database lookup by account name/mobile
     $e_raw = mysqli_real_escape_string($conn, $raw_member);
     $u_lookup = mysqli_query($conn, "SELECT tbl_uniq_id FROM tblusersdata WHERE tbl_user_name='$e_raw' OR tbl_mobile_num='$e_raw' OR tbl_uniq_id='$e_raw' LIMIT 1");
@@ -66,13 +66,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $const_user_id = str_replace($PREFIX, "", $account_clean);
         // If it's still not found, try to find a user where the uniq_id is a substring
         if (strlen($const_user_id) > 10) { // If it's a long account name
-             $u_lookup2 = mysqli_query($conn, "SELECT tbl_uniq_id FROM tblusersdata WHERE '$e_raw' LIKE CONCAT('%', tbl_uniq_id, '%') LIMIT 1");
-             if ($row2 = mysqli_fetch_assoc($u_lookup2)) {
-                 $const_user_id = $row2['tbl_uniq_id'];
-             }
+            $u_lookup2 = mysqli_query($conn, "SELECT tbl_uniq_id FROM tblusersdata WHERE '$e_raw' LIKE CONCAT('%', tbl_uniq_id, '%') LIMIT 1");
+            if ($row2 = mysqli_fetch_assoc($u_lookup2)) {
+                $const_user_id = $row2['tbl_uniq_id'];
+            }
         }
     }
-    
+
     if (empty($const_user_id)) {
         $const_user_id = "N/A";
     }
@@ -199,14 +199,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $log_data = date('Y-m-d H:i:s') . " - Req: " . $json . " - Decoded: " . json_encode($data) . "\n";
     file_put_contents(__DIR__ . "/bet_logs.txt", $log_data, FILE_APPEND);
 
-    // Explicit Sports Provider Detection by Game UID
+    // Explicit Sports Provider Detection by Game UID or Provider Name
     $sports_game_uids = [
         "92b24e4c25107367a80e0fe1a97c24e4", // Luck Sports
         "08ced9dd788aed11ff3c7f387ae0f063", // SABA Sports
         "4ee8e0051a035b463b47c3c473ce317d", // Esports
         "48341a3bf62b6dd0814d7129e7e0834b", // 9 Wickets
     ];
-    if (in_array($const_game_uid, $sports_game_uids)) {
+    
+    $const_provider = $data["provider"] ?? "";
+    if (in_array($const_game_uid, $sports_game_uids) || 
+        stripos($const_provider, "SABA") !== false || 
+        stripos($const_provider, "Luck") !== false ||
+        stripos($const_game_name, "Sports") !== false) {
         $is_sports = true;
     }
 
@@ -304,18 +309,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (is_string($sports_data)) {
                 $sports_data = json_decode($sports_data, true) ?? [];
             }
-            
+
             // --- SPORTS: MAX ODDS LIMIT (SABA & LUCK SPORTS) ---
             $is_sports_engine = ($const_game_uid == "92b24e4c25107367a80e0fe1a97c24e4") || // Luck Sports
-                                ($const_game_uid == "08ced9dd788aed11ff3c7f387ae0f063") || // SABA Sports
-                                (stripos($const_game_name, "Luck") !== false) || 
-                                (stripos($const_game_name, "SABA") !== false);
+                ($const_game_uid == "08ced9dd788aed11ff3c7f387ae0f063") || // SABA Sports
+                (stripos($const_game_name, "Luck") !== false) ||
+                (stripos($const_game_name, "SABA") !== false);
 
             if ($is_sports_engine) {
                 // For Luck Sports, we treat ANY request with a bet_amount as a placement attempt
                 $saba_action = strtolower($data["action"] ?? $sports_data["action"] ?? $sports_data["transaction"]["operation"] ?? "");
                 $is_placement = in_array($saba_action, ["bet", "confirmbet", "placebet", "place_exchange_order", "place_order", "place-bet", "place"]) || ($bet_amount > 0);
-                
+
                 // Multi-Level Odds Extraction (Prioritize 'k' for Luck)
                 $check_odds = 0;
                 if (isset($sports_data["betslip"]["k"])) {
@@ -344,7 +349,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $rejected_status = "rejected";
                     $rejected_result = "lost";
                     $rejection_reason = "Maximum odds limit for Sports is {$limit_val}x. Your bet with odds {$check_odds}x was rejected.";
-                    
+
                     // Fetch latest balance for the record
                     $b_res = mysqli_query($conn, "SELECT tbl_balance, tbl_bonus_balance, tbl_sports_bonus FROM tblusersdata WHERE tbl_uniq_id='$const_user_id' LIMIT 1");
                     $b_row = mysqli_fetch_assoc($b_res);
@@ -530,7 +535,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $is_bet_action = in_array($incoming_action, ["bet", "confirmbet"]);
             $is_settle_action = in_array($incoming_action, ["settle", "settlement", "result", "credit"]);
 
-            $is_settlement = ($is_settle_action || ($win_amount > 0 && !$is_bet_action) || ($bet_amount == 0 && $win_amount == 0 && !$is_bet_action));
+            $is_settlement = ($is_settle_action || ($win_amount > 0 && !$is_bet_action) || ($bet_amount == 0 && $win_amount == 0 && !$is_bet_action && !$is_sports));
 
             // 3. IDEMPOTENT BALANCE CALCULATION
             // We only deduct if it's a NEW bet amount. We only credit if it's NEW win amount.
@@ -574,6 +579,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $sports_bonus -= $ded;
                 $rem_bet -= $ded;
             }
+
+
+
+
 
             // 3. Deduct from Casino Bonus (if any still remains)
             if ($bonus_bal > 0 && $rem_bet > 0) {
@@ -758,7 +767,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 } else if ($is_sports && $new_profit > 0 && $new_profit < $new_cost) {
                     $new_status = "cashout";
                     $new_result = "won";
-                } else if ($is_settlement || ($merged_record["tbl_match_status"] == "wait" && $bet_amount == 0 && !$is_sports)) {
+                } else if (($is_settlement || ($merged_record["tbl_match_status"] == "wait" && $bet_amount == 0 && !$is_sports)) && !$is_sports) {
                     // Settle if it's a settlement action OR if we're follow-up result for a waiting slot/casino game
                     if ($new_profit > 0) {
                         $new_status = "profit";
@@ -798,14 +807,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $m_status = "profit";
                     }
                 } else {
-                    // Fallback to "wait" ONLY for explicitly identified delayed/asynchronous games 
-                    // (e.g. Live Casino Roulette, Baccarat, Sportsbook, etc).
-                    // For slots (like PG Soft / JILI) the response is fully resolved in the first callback;
-                    // if win_amount is 0, it unequivocally means a loss.
-                    if ($bet_amount > 0) {
-                        $m_status = ($is_delayed) ? "wait" : "loss";
+                    // PHANTOM PREVENTION: For Sports, if it's a zero-bet request and no match found, skip insertion
+                    if ($is_sports && $bet_amount <= 0 && $win_amount <= 0) {
+                        // Skip - likely a re-sync ping for a round we couldn't match
                     } else {
-                        $m_status = "loss";
+                        // Fallback to "wait" ONLY for explicitly identified delayed games 
+                        if ($bet_amount > 0) {
+                            $m_status = ($is_delayed || $is_sports) ? "wait" : "loss";
+                        } else {
+                            $m_status = "loss";
+                        }
                     }
                 }
 

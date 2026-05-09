@@ -4,20 +4,20 @@ header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
 session_cache_limiter("private_no_expire");
 
-define("ACCESS_SECURITY","true");
+define("ACCESS_SECURITY", "true");
 include '../../security/config.php';
 include '../../security/constants.php';
 include '../access_validate.php';
 
 session_start();
 $accessObj = new AccessValidate();
-if($accessObj->validate()!="true"){
+if ($accessObj->validate() != "true") {
     header('location:../logout-account');
 }
 
-$searched="";
-if (isset($_POST['submit'])){
-  $searched = mysqli_real_escape_string($conn, $_POST['searchinp']);
+$searched = "";
+if (isset($_POST['submit'])) {
+    $searched = mysqli_real_escape_string($conn, $_POST['searchinp']);
 }
 
 $f_username = mysqli_real_escape_string($conn, $_POST['f_username'] ?? $_GET['f_username'] ?? '');
@@ -26,49 +26,83 @@ $f_date_to = mysqli_real_escape_string($conn, $_POST['f_date_to'] ?? $_GET['f_da
 $f_status = mysqli_real_escape_string($conn, $_POST['f_status'] ?? $_GET['f_status'] ?? '');
 
 $content = 15;
-$page_num = (int)(isset($_GET['page_num']) ? $_GET['page_num'] : 1);
-if ($page_num < 1) $page_num = 1;
+$page_num = (int) (isset($_GET['page_num']) ? $_GET['page_num'] : 1);
+if ($page_num < 1)
+    $page_num = 1;
 $offset = ($page_num - 1) * $content;
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <?php include "../header_contents.php" ?>
     <title><?php echo $APP_NAME; ?>: Casino Bet History</title>
     <link href='../style.css' rel='stylesheet'>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-    
-<style><?php include "../components/theme-variables.php"; ?></style>
-<style>
-/* Page specific variable overrides only if needed */
+
+    <style>
+        <?php include "../components/theme-variables.php"; ?>
+    </style>
+    <style>
+        /* Page specific variable overrides only if needed */
         body {
             font-family: var(--font-body) !important;
             background-color: var(--page-bg) !important;
-            min-height: 100vh; color: var(--text-main); margin: 0; padding: 0; overflow: hidden;
+            min-height: 100vh;
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
         }
 
         .dash-header {
-            display: flex; align-items: center; justify-content: space-between;
-            margin-bottom: 30px; border-bottom: 1px solid var(--border-dim);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-dim);
             padding-bottom: 20px;
         }
-        .dash-header-left  { display: flex; align-items: center; gap: 14px; }
-        .dash-header-right { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+
+        .dash-header-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .dash-header-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
 
 
         .dash-breadcrumb {
-            font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase;
-            background:linear-gradient(90deg, #3b82f6, #06b6d4);
-            -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
-            display: block; margin-bottom: 4px;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #3b82f6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            margin-bottom: 4px;
         }
+
         .dash-title {
-            font-size: 26px; font-weight: 700; letter-spacing: -0.5px;
-            color: var(--text-main); line-height: 1.2; display: block;
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: var(--text-main);
+            line-height: 1.2;
+            display: block;
         }
 
         .search-area {
@@ -77,9 +111,14 @@ $offset = ($page_num - 1) * $content;
             border-radius: 12px;
             padding: 12px 18px;
             margin-bottom: 16px;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
         }
-        .search-input-group { display: flex; gap: 12px; }
+
+        .search-input-group {
+            display: flex;
+            gap: 12px;
+        }
+
         .search-input {
             background: var(--input-bg);
             border: 1px solid var(--input-border);
@@ -89,230 +128,415 @@ $offset = ($page_num - 1) * $content;
             flex-grow: 1;
             transition: all 0.3s;
         }
+
         .search-input:focus {
-            background: rgba(255,255,255,0.08);
+            background: rgba(255, 255, 255, 0.08);
             border-color: var(--accent-blue);
             outline: none;
             box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
         }
-        .cus-inp:focus { border-color: var(--accent-blue) !important; box-shadow: none !important; }
-        .cus-inp::placeholder { color: #64748b !important; opacity: 1; }
+
+        .cus-inp:focus {
+            border-color: var(--accent-blue) !important;
+            box-shadow: none !important;
+        }
+
+        .cus-inp::placeholder {
+            color: #64748b !important;
+            opacity: 1;
+        }
 
         .btn-modern {
-            padding: 12px 24px; border-radius: 12px;
-            font-weight: 600; font-size: 14px;
-            display: inline-flex; align-items: center; gap: 8px;
-            transition: all 0.2s; cursor: pointer; border: none;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
         }
+
         .btn-primary-modern {
             background: linear-gradient(135deg, #3b82f6, #2563eb);
-            color: white; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+            color: white;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
         }
-        .btn-primary-modern:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4); }
+
+        .btn-primary-modern:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+        }
+
         .btn-outline-modern {
             background: var(--input-bg);
             border: 1px solid var(--border-dim);
             color: var(--text-dim);
         }
-        .btn-outline-modern:hover { background: var(--table-row-hover); color: var(--text-main); }
+
+        .btn-outline-modern:hover {
+            background: var(--table-row-hover);
+            color: var(--text-main);
+        }
 
         .section-title {
-            font-size: 14px; font-weight: 700; color: var(--text-main);
-            display: flex; align-items: center; gap: 10px; margin-bottom: 24px;
-            text-transform: uppercase; letter-spacing: 1px;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
+
         .title-bar {
-            width: 4px; height: 20px; border-radius: 4px;
-            background: linear-gradient(180deg, #3b82f6, #06b6d4); flex-shrink: 0;
+            width: 4px;
+            height: 20px;
+            border-radius: 4px;
+            background: linear-gradient(180deg, #3b82f6, #06b6d4);
+            flex-shrink: 0;
         }
 
         .record-section {
-            background: var(--panel-bg); border: 1px solid var(--border-dim); border-radius: 16px;
-            padding: 24px; box-shadow: 0 4px 24px rgba(0,0,0,0.3); margin-bottom: 32px;
+            background: var(--panel-bg);
+            border: 1px solid var(--border-dim);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+            margin-bottom: 32px;
         }
 
-        .r-table { width: 100%; border-collapse: separate; border-spacing: 0 8px; }
-        .r-table thead th {
-            font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
-            color: #94a3b8; padding: 0 16px 8px;
-            border-bottom: 1px solid rgba(255,255,255,0.07);
+        .r-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 8px;
         }
+
+        .r-table thead th {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #94a3b8;
+            padding: 0 16px 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
         .r-table tbody td {
-            padding: 14px 16px; font-size: 13px; font-weight: 500; color: var(--text-main);
+            padding: 14px 16px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-main);
             background: var(--table-header-bg);
             border-top: 1px solid var(--border-dim);
             border-bottom: 1px solid var(--border-dim);
         }
-        .r-table tbody td:first-child { border-radius: 12px 0 0 12px; border-left: 1px solid var(--border-dim); }
-        .r-table tbody td:last-child  { border-radius: 0 12px 12px 0; border-right: 1px solid var(--border-dim); }
-        .r-table tr:hover td { background: var(--table-row-hover); color: var(--text-main); border-color: var(--accent-blue); }
+
+        .r-table tbody td:first-child {
+            border-radius: 12px 0 0 12px;
+            border-left: 1px solid var(--border-dim);
+        }
+
+        .r-table tbody td:last-child {
+            border-radius: 0 12px 12px 0;
+            border-right: 1px solid var(--border-dim);
+        }
+
+        .r-table tr:hover td {
+            background: var(--table-row-hover);
+            color: var(--text-main);
+            border-color: var(--accent-blue);
+        }
 
         .status-badge {
-            padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 0.5px;
-            display: inline-flex; align-items: center; gap: 5px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
         }
-        .status-profit { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); }
-        .status-badge.status-loss { background: rgba(244, 63, 94, 0.1); color: var(--accent-rose); border: 1px solid rgba(244, 63, 94, 0.2); }
-        .status-badge.status-cashout { background: rgba(139, 92, 246, 0.1); color: #a78bfa; border: 1px solid rgba(139, 92, 246, 0.2); }
-        .type-debit { background: rgba(244, 63, 94, 0.1); color: var(--accent-rose); padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 700; }
+
+        .status-profit {
+            background: rgba(16, 185, 129, 0.15);
+            color: #10b981;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .status-badge.status-loss {
+            background: rgba(244, 63, 94, 0.1);
+            color: var(--accent-rose);
+            border: 1px solid rgba(244, 63, 94, 0.2);
+        }
+
+        .status-badge.status-cashout {
+            background: rgba(139, 92, 246, 0.1);
+            color: #a78bfa;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+
+        .type-debit {
+            background: rgba(244, 63, 94, 0.1);
+            color: var(--accent-rose);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 700;
+        }
 
         .advanced-filter-bar {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px;
-            background: rgba(255,255,255,0.02); padding: 12px 18px; border-radius: 12px;
-            border: 1px solid var(--border-dim); margin-bottom: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 12px 18px;
+            border-radius: 12px;
+            border: 1px solid var(--border-dim);
+            margin-bottom: 20px;
         }
-        .filter-grp { display: flex; flex-direction: column; gap: 4px; }
-        .filter-lbl { font-size: 8px; font-weight: 800; text-transform: uppercase; color: var(--text-dim); letter-spacing: 0.5px; margin-left: 2px; }
-        .filter-inp-box { position: relative; display: flex; align-items: center; }
-        .filter-inp-box i { position: absolute; left: 10px; font-size: 13px; color: var(--accent-blue); opacity: 0.6; }
+
+        .filter-grp {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .filter-lbl {
+            font-size: 8px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            letter-spacing: 0.5px;
+            margin-left: 2px;
+        }
+
+        .filter-inp-box {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .filter-inp-box i {
+            position: absolute;
+            left: 10px;
+            font-size: 13px;
+            color: var(--accent-blue);
+            opacity: 0.6;
+        }
+
         .f-inp {
-            width:100%; height:32px; background: rgba(0,0,0,0.2) !important; border: 1px solid rgba(255,255,255,0.1) !important;
-            border-radius:6px !important; padding: 0 8px 0 30px !important; color:#fff !important; font-size:11px !important;
+            width: 100%;
+            height: 32px;
+            background: rgba(0, 0, 0, 0.2) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            border-radius: 6px !important;
+            padding: 0 8px 0 30px !important;
+            color: #fff !important;
+            font-size: 11px !important;
         }
-        .pagination-container { display: flex; justify-content: flex-end; margin-top: 24px; gap: 8px; }
+
+        .pagination-container {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 24px;
+            gap: 8px;
+        }
+
         .page-btn {
-            width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;
-            background: rgba(255,255,255,0.05); border: 1px solid var(--border-dim);
-            border-radius: 10px; color: var(--text-dim); font-weight: 600; text-decoration: none;
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-dim);
+            border-radius: 10px;
+            color: var(--text-dim);
+            font-weight: 600;
+            text-decoration: none;
             transition: all 0.2s;
         }
-        .page-btn:hover { background: rgba(59, 130, 246, 0.1); color: #fff; border-color: var(--accent-blue); }
-        .page-btn.active { background: var(--accent-blue); color: #fff; border-color: var(--accent-blue); }
-        .page-btn.disabled { opacity: 0.3; pointer-events: none; }
 
-        .text-muted { color: #94a3b8 !important; }
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
+        .page-btn:hover {
+            background: rgba(59, 130, 246, 0.1);
+            color: #fff;
+            border-color: var(--accent-blue);
+        }
+
+        .page-btn.active {
+            background: var(--accent-blue);
+            color: #fff;
+            border-color: var(--accent-blue);
+        }
+
+        .page-btn.disabled {
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .text-muted {
+            color: #94a3b8 !important;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
     </style>
 </head>
 
 <body class="bg-light">
-<div class="admin-layout-wrapper">
-    <?php include "../components/side-menu.php"; ?>
-    <div class="admin-main-content hide-native-scrollbar">
-        
-        <div class="dash-header">
-            <div class="dash-header-left">
-                <div>
-                    <span class="dash-breadcrumb">History & Records > Casino Bet History</span>
-                    <span class="dash-title">Casino Transactions</span>
+    <div class="admin-layout-wrapper">
+        <?php include "../components/side-menu.php"; ?>
+        <div class="admin-main-content hide-native-scrollbar">
+
+            <div class="dash-header">
+                <div class="dash-header-left">
+                    <div>
+                        <span class="dash-breadcrumb">History & Records > Casino Bet History</span>
+                        <span class="dash-title">Casino Transactions</span>
+                    </div>
+                </div>
+                <div class="dash-header-right">
+                    <button class="btn-modern btn-outline-modern" type="button"
+                        onclick="exportExcel('table', 'Casino-Bet-History.xlsx')">
+                        <i class='bx bx-file'></i> Export Excel
+                    </button>
+                    <button class="btn-modern btn-outline-modern" type="button"
+                        onclick="exportPDF('casino-bet-history', 'table')">
+                        <i class='bx bxs-file-pdf'></i> Export PDF
+                    </button>
+                    <button class="btn-modern btn-outline-modern" onclick="window.location.href='index.php'">
+                        <i class='bx bx-refresh'></i> Refresh Data
+                    </button>
                 </div>
             </div>
-            <div class="dash-header-right">
-                <button class="btn-modern btn-outline-modern" type="button" onclick="exportExcel('table', 'Casino-Bet-History.xlsx')">
-                    <i class='bx bx-file'></i> Export Excel
-                </button>
-                <button class="btn-modern btn-outline-modern" type="button" onclick="exportPDF('casino-bet-history', 'table')">
-                    <i class='bx bxs-file-pdf'></i> Export PDF
-                </button>
-                <button class="btn-modern btn-outline-modern" onclick="window.location.href='index.php'">
-                    <i class='bx bx-refresh'></i> Refresh Data
-                </button>
-            </div>
-        </div>
 
-        <div style="padding: 10px 14px;">
-            
-            <div class="search-area">
+            <div style="padding: 10px 14px;">
 
-                <!-- Casino Filter Bar -->
-                <form method="POST" class="advanced-filter-bar">
-                    <div class="filter-grp">
-                        <label class="filter-lbl">Username / ID</label>
-                        <div class="filter-inp-box">
-                            <i class='bx bx-user'></i>
-                            <input type="text" name="f_username" value="<?php echo $f_username; ?>" class="f-inp" placeholder="Search User...">
-                        </div>
-                    </div>
-                    <div class="filter-grp">
-                        <label class="filter-lbl">From Date</label>
-                        <div class="filter-inp-box">
-                            <i class='bx bx-calendar'></i>
-                            <input type="date" name="f_date_from" value="<?php echo $f_date_from; ?>" class="f-inp">
-                        </div>
-                    </div>
-                    <div class="filter-grp">
-                        <label class="filter-lbl">To Date</label>
-                        <div class="filter-inp-box">
-                            <i class='bx bx-calendar-event'></i>
-                            <input type="date" name="f_date_to" value="<?php echo $f_date_to; ?>" class="f-inp">
-                        </div>
-                    </div>
-                    <div class="filter-grp">
-                        <label class="filter-lbl">Trans Status</label>
-                        <div class="filter-inp-box">
-                            <i class='bx bx-list-check'></i>
-                            <select name="f_status" class="f-inp" style="padding-left: 30px !important;">
-                                <option value="">All Status</option>
-                                <option value="WIN" <?php if($f_status == 'WIN') echo 'selected'; ?>>WIN Only</option>
-                                <option value="PENDING" <?php if($f_status == 'PENDING') echo 'selected'; ?>>PENDING Only</option>
-                                <option value="LOSS" <?php if($f_status == 'LOSS') echo 'selected'; ?>>LOSS Only</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-end">
-                        <button type="submit" class="btn-modern btn-primary-modern" style="height: 32px; width: 100%; justify-content: center; font-size: 11px;">
-                            <i class='bx bx-filter-alt'></i> Apply
-                        </button>
-                    </div>
-                </form>
-            </div>
+                <div class="search-area">
 
-            <div class="record-section">
-                <div class="section-title">
-                    <span class="title-bar"></span>
-                    Casino Bet History Logs
+                    <!-- Casino Filter Bar -->
+                    <form method="POST" class="advanced-filter-bar">
+                        <div class="filter-grp">
+                            <label class="filter-lbl">Username / ID</label>
+                            <div class="filter-inp-box">
+                                <i class='bx bx-user'></i>
+                                <input type="text" name="f_username" value="<?php echo $f_username; ?>" class="f-inp"
+                                    placeholder="Search User...">
+                            </div>
+                        </div>
+                        <div class="filter-grp">
+                            <label class="filter-lbl">From Date</label>
+                            <div class="filter-inp-box">
+                                <i class='bx bx-calendar'></i>
+                                <input type="date" name="f_date_from" value="<?php echo $f_date_from; ?>" class="f-inp">
+                            </div>
+                        </div>
+                        <div class="filter-grp">
+                            <label class="filter-lbl">To Date</label>
+                            <div class="filter-inp-box">
+                                <i class='bx bx-calendar-event'></i>
+                                <input type="date" name="f_date_to" value="<?php echo $f_date_to; ?>" class="f-inp">
+                            </div>
+                        </div>
+                        <div class="filter-grp">
+                            <label class="filter-lbl">Trans Status</label>
+                            <div class="filter-inp-box">
+                                <i class='bx bx-list-check'></i>
+                                <select name="f_status" class="f-inp" style="padding-left: 30px !important;">
+                                    <option value="">All Status</option>
+                                    <option value="WIN" <?php if ($f_status == 'WIN')
+                                        echo 'selected'; ?>>WIN Only</option>
+                                    <option value="PENDING" <?php if ($f_status == 'PENDING')
+                                        echo 'selected'; ?>>PENDING
+                                        Only</option>
+                                    <option value="LOSS" <?php if ($f_status == 'LOSS')
+                                        echo 'selected'; ?>>LOSS Only
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-end">
+                            <button type="submit" class="btn-modern btn-primary-modern"
+                                style="height: 32px; width: 100%; justify-content: center; font-size: 11px;">
+                                <i class='bx bx-filter-alt'></i> Apply
+                            </button>
+                        </div>
+                    </form>
                 </div>
-                
-                <div class="w-100 ovflw-x-scroll hide-native-scrollbar">
-                    <table id="table" class="r-table">
-                        <thead>
-                            <tr>
-                                <th width="60">No</th>
-                                <th>Provider</th>
-                                <th>Game</th>
-                                <th>username </th>
-                                <th>Transaction ID</th>
-                                <th>Date & Time</th>
-                                <th>Description</th>
-                                <th width="80">Type</th>
-                                <th>Bet Amount (Debit)</th>
-                                <th>Profit / Credit Amount</th>
-                                <th>Total Balance</th>
-                                <th>Profit/Loss</th>
-                                <th>Result</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            $indexVal = 1;
 
-                            $where_clauses = ["1=1"];
-                            
-                            // Category Filter
-                            $where_clauses[] = "t1.tbl_project_name IN ('Microgaming Lobby', 'Ezugi Lobby', 'Evolution Lobby', 'XXXtreme Lightning Roulette', 'Crazy Time', 'Lightning Roulette', 'MONOPOLY Live', 'Crazy Pachinko', 'Football Studio Dice', 'Fan Tan', 'Speed Roulette', 'Craps', 'Super Andar Bahar', 'Playtech Lobby', 'Power Blackjack', 'Infinite Blackjack', 'Dead or Alive Saloon', 'Caribbean Stud Poker', 'Blackjack B', 'Immersive Roulette', 'Baccarat B')";
+                <div class="record-section">
+                    <div class="section-title">
+                        <span class="title-bar"></span>
+                        Casino Bet History Logs
+                    </div>
 
-                            if ($f_username != "") {
-                                $where_clauses[] = "(t1.tbl_user_id LIKE '%$f_username%' OR t2.tbl_user_name LIKE '%$f_username%')";
-                            }
+                    <div class="w-100 ovflw-x-scroll hide-native-scrollbar">
+                        <table id="table" class="r-table">
+                            <thead>
+                                <tr>
+                                    <th width="60">No</th>
+                                    <!-- <th>Provider</th> -->
+                                    <th>Game</th>
+                                    <th>username </th>
+                                    <th>Transaction ID</th>
+                                    <th>Date & Time</th>
+                                    <th>Description</th>
+                                    <th width="80">Type</th>
+                                    <th>Bet Amount (Debit)</th>
+                                    <th>Profit / Credit Amount</th>
+                                    <th>Total Balance</th>
+                                    <th>Profit/Loss</th>
+                                    <th>Result</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                $indexVal = 1;
 
-                            if ($f_date_from != "" && $f_date_to != "") {
-                                $where_clauses[] = "STR_TO_DATE(LEFT(t1.tbl_time_stamp, 10), '%d-%m-%Y') BETWEEN '$f_date_from' AND '$f_date_to'";
-                            }
+                                $where_clauses = ["1=1"];
 
-                            if ($f_status != "") {
-                                if ($f_status == 'WIN') {
-                                    $where_clauses[] = "(t1.tbl_match_result = 'Win' OR t1.tbl_match_status = 'Profit')";
-                                } elseif ($f_status == 'PENDING') {
-                                    $where_clauses[] = "t1.tbl_match_status = 'Wait'";
-                                } elseif ($f_status == 'LOSS') {
-                                    $where_clauses[] = "(t1.tbl_match_status = 'Loss' OR t1.tbl_match_result = 'Loss')";
+                                // Category Filter: Exclude Sports (Saba, Luck Sports, 9 Wickets, Esports)
+                                $where_clauses[] = "NOT (
+                                LOWER(t1.tbl_project_name) LIKE '%saba%' OR 
+                                LOWER(t1.tbl_project_name) LIKE '%luck%sports%' OR 
+                                LOWER(t1.tbl_project_name) LIKE '%wickets%' OR 
+                                LOWER(t1.tbl_project_name) LIKE '%esports%' OR
+                                t1.tbl_period_id IN ('92b24e4c25107367a80e0fe1a97c24e4', '08ced9dd788aed11ff3c7f387ae0f063', '4ee8e0051a035b463b47c3c473ce317d', '48341a3bf62b6dd0814d7129e7e0834b')
+                            )";
+
+                                if ($f_username != "") {
+                                    $where_clauses[] = "(t1.tbl_user_id LIKE '%$f_username%' OR t2.tbl_user_name LIKE '%$f_username%')";
                                 }
-                            }
 
-                            $where_str = implode(" AND ", $where_clauses);
-                            $play_records_sql = "
+                                if ($f_date_from != "" && $f_date_to != "") {
+                                    $where_clauses[] = "STR_TO_DATE(LEFT(t1.tbl_time_stamp, 10), '%d-%m-%Y') BETWEEN '$f_date_from' AND '$f_date_to'";
+                                }
+
+                                if ($f_status != "") {
+                                    if ($f_status == 'WIN') {
+                                        $where_clauses[] = "(t1.tbl_match_result = 'Win' OR t1.tbl_match_status = 'Profit')";
+                                    } elseif ($f_status == 'PENDING') {
+                                        $where_clauses[] = "t1.tbl_match_status = 'Wait'";
+                                    } elseif ($f_status == 'LOSS') {
+                                        $where_clauses[] = "(t1.tbl_match_status = 'Loss' OR t1.tbl_match_result = 'Loss')";
+                                    }
+                                }
+
+                                $where_str = implode(" AND ", $where_clauses);
+                                $play_records_sql = "
                                 SELECT t1.*, t2.tbl_user_name 
                                 FROM tblmatchplayed t1
                                 LEFT JOIN tblusersdata t2 ON t1.tbl_user_id = t2.tbl_uniq_id
@@ -320,167 +544,194 @@ $offset = ($page_num - 1) * $content;
                                 ORDER BY t1.tbl_updated_at DESC 
                                 LIMIT {$offset}, {$content}";
 
-                            $play_records_result = mysqli_query($conn, $play_records_sql);
-                            $users_on_page = [];
-                            $total_balance = 0;
-                            $footer_profit_amount = 0;
-                            $footer_loss_amount = 0;
-                            
-                            if ($play_records_result && mysqli_num_rows($play_records_result) > 0){
-                                while ($row = mysqli_fetch_assoc($play_records_result)){
-                                    $total_balance += floatval($row['tbl_last_acbalance']);
-                                    $match_status_lower = strtolower($row['tbl_match_status'] ?? '');
-                                    $match_result_lower = strtolower($row['tbl_match_result'] ?? '');
-                                    
-                                    if ($match_status_lower === 'profit') {
-                                        $footer_profit_amount += floatval($row['tbl_match_profit']);
-                                    } elseif ($match_status_lower === 'loss' || $match_result_lower === 'loss') {
-                                        $footer_loss_amount += floatval($row['tbl_match_cost']);
-                                    }
-                                    
-                                    $users_on_page[] = $row;
-                                }
-                            }
-                            ?>
+                                $play_records_result = mysqli_query($conn, $play_records_sql);
+                                $users_on_page = [];
+                                $total_balance = 0;
+                                $footer_profit_amount = 0;
+                                $footer_loss_amount = 0;
 
-                            <?php
-                            if (count($users_on_page) > 0){
-                                foreach ($users_on_page as $row){
-                                    $match_status = $row['tbl_match_status'];
-                                    $bet_amount = floatval($row['tbl_match_cost']);
-                                    $profit_loss = floatval($row['tbl_match_profit']);
-                                    $bet_type = ($bet_amount > 0) ? "Debit" : "Credit";
-                                    $debit_amount = ($bet_amount > 0) ? $bet_amount : 0.00;
-                                    $credit_amount = ($profit_loss > 0) ? $profit_loss : 0.00;
-                                    $description = $row['tbl_project_name'] . " - " . ucfirst($match_status);
-                                    
-                                    $is_profit = (strtolower($match_status) === 'profit');
-                                    $is_loss = (strtolower($match_status) === 'loss' || strtolower($row['tbl_match_result'] ?? '') === 'loss');
-                                    $is_cashout = (strtolower($row['tbl_match_result'] ?? '') === 'cashout' || strtolower($match_status) === 'cashout');
-                                    $display_profit_loss = $is_profit ? $profit_loss : ($is_loss ? -($bet_amount) : 0);
-                                    ?>
-                                    <tr>
-                                        <td style="font-size: 11px; color: var(--text-dim);"><?php echo $indexVal + $offset; ?></td>
-                                        <td style="font-weight: 700; color: white;"><?php echo htmlspecialchars($row['tbl_match_details'] ?: $row['tbl_selection'] ?: 'N/A'); ?></td>
-                                        <td style="font-weight: 600; color: var(--text-dim);"><?php echo htmlspecialchars($row['tbl_project_name']); ?></td>
-                                        <td style="font-weight: 600; color: var(--accent-blue);">
-                                            <a href="../users-data/view-activities.php?user-id=<?php echo urlencode($row['tbl_user_id']); ?>#casino_section" style="color: inherit; text-decoration: none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
-                                                <?php echo htmlspecialchars($row['tbl_user_name'] ?? 'N/A'); ?>
-                                            </a>
-                                            <div style="font-size: 9px; color: var(--text-dim);"><?php echo htmlspecialchars($row['tbl_user_id']); ?></div>
-                                        </td>
-                                        <td style="font-family: monospace; font-size: 11px; color: var(--accent-blue); cursor: pointer; text-decoration: underline;" onclick="ShowRoundDetails('<?php echo $row['tbl_uniq_id']; ?>', 'casino')">
-                                            <?php echo htmlspecialchars($row['tbl_uniq_id']); ?>
-                                        </td>
-                                        <td style="white-space: nowrap; font-size: 12px;"><?php echo htmlspecialchars($row['tbl_time_stamp']); ?></td>
-                                        <td style="font-size: 12px;"><?php echo htmlspecialchars($description); ?></td>
-                                        <td>
-                                            <span class="<?php echo ($bet_type == 'Debit') ? 'type-debit' : 'type-credit'; ?>">
-                                                <?php echo $bet_type; ?>
-                                            </span>
-                                        </td>
-                                        <td style="font-weight: 600;">₹<?php echo number_format($debit_amount, 2); ?></td>
-                                        <td style="font-weight: 600;">₹<?php echo number_format($credit_amount, 2); ?></td>
-                                        <td style="font-weight: 800; color: white;">₹<?php echo number_format($row['tbl_last_acbalance'], 2); ?></td>
-                                        <td style="font-weight: 700; color: <?php echo $is_cashout ? '#a78bfa' : ($is_profit ? 'var(--accent-emerald)' : ($is_loss ? 'var(--accent-rose)' : 'var(--text-dim)')); ?>">
-                                            ₹<?php echo number_format($is_cashout ? $credit_amount : $display_profit_loss, 2); ?>
-                                            <?php if($is_cashout): ?>
-                                                <div style="font-size: 10px; opacity: 0.8;">(-₹<?php echo number_format(max(0, $debit_amount - $credit_amount), 2); ?>)</div>
-                                            <?php endif; ?>
-                                        </td>
-                                        <td>
-                                          <span class="status-badge <?php echo $is_cashout ? 'status-cashout' : ($is_profit ? 'status-profit' : 'status-loss'); ?>">
-                                            <i class='bx <?php echo $is_cashout ? 'bxs-wallet' : ($is_profit ? 'bx-trending-up' : 'bx-trending-down'); ?>'></i>
-                                            <?php echo $is_cashout ? 'CASHOUT' : htmlspecialchars($row['tbl_match_result']); ?>
-                                          </span>
+                                if ($play_records_result && mysqli_num_rows($play_records_result) > 0) {
+                                    while ($row = mysqli_fetch_assoc($play_records_result)) {
+                                        $total_balance += floatval($row['tbl_last_acbalance']);
+                                        $match_status_lower = strtolower($row['tbl_match_status'] ?? '');
+                                        $match_result_lower = strtolower($row['tbl_match_result'] ?? '');
+
+                                        if ($match_status_lower === 'profit') {
+                                            $footer_profit_amount += floatval($row['tbl_match_profit']);
+                                        } elseif ($match_status_lower === 'loss' || $match_result_lower === 'loss') {
+                                            $footer_loss_amount += floatval($row['tbl_match_cost']);
+                                        }
+
+                                        $users_on_page[] = $row;
+                                    }
+                                }
+                                ?>
+
+                                <?php
+                                if (count($users_on_page) > 0) {
+                                    foreach ($users_on_page as $row) {
+                                        $match_status = $row['tbl_match_status'];
+                                        $bet_amount = floatval($row['tbl_match_cost']);
+                                        $profit_loss = floatval($row['tbl_match_profit']);
+                                        $bet_type = ($bet_amount > 0) ? "Debit" : "Credit";
+                                        $debit_amount = ($bet_amount > 0) ? $bet_amount : 0.00;
+                                        $credit_amount = ($profit_loss > 0) ? $profit_loss : 0.00;
+                                        $description = $row['tbl_project_name'] . " - " . ucfirst($match_status);
+
+                                        $is_profit = (strtolower($match_status) === 'profit');
+                                        $is_loss = (strtolower($match_status) === 'loss' || strtolower($row['tbl_match_result'] ?? '') === 'loss');
+                                        $is_cashout = (strtolower($row['tbl_match_result'] ?? '') === 'cashout' || strtolower($match_status) === 'cashout');
+                                        $display_profit_loss = $is_profit ? $profit_loss : ($is_loss ? -($bet_amount) : 0);
+                                        ?>
+                                        <tr>
+                                            <td style="font-size: 11px; color: var(--text-dim);">
+                                                <?php echo $indexVal + $offset; ?></td>
+                                            <!-- <td style="font-weight: 700; color: white;">
+                                                <?php echo htmlspecialchars($row['tbl_match_details'] ?: $row['tbl_selection'] ?: 'N/A'); ?>
+                                            </td> -->
+                                            <td style="font-weight: 600; color: var(--text-dim);">
+                                                <?php echo htmlspecialchars($row['tbl_project_name']); ?></td>
+                                            <td style="font-weight: 600; color: var(--accent-blue);">
+                                                <a href="../users-data/view-activities.php?user-id=<?php echo urlencode($row['tbl_user_id']); ?>#casino_section"
+                                                    style="color: inherit; text-decoration: none;"
+                                                    onmouseover="this.style.textDecoration='underline'"
+                                                    onmouseout="this.style.textDecoration='none'">
+                                                    <?php echo htmlspecialchars($row['tbl_user_name'] ?? 'N/A'); ?>
+                                                </a>
+                                                <div style="font-size: 9px; color: var(--text-dim);">
+                                                    <?php echo htmlspecialchars($row['tbl_user_id']); ?></div>
+                                            </td>
+                                            <td style="font-family: monospace; font-size: 11px; color: var(--accent-blue); cursor: pointer; text-decoration: underline;"
+                                                onclick="ShowRoundDetails('<?php echo $row['tbl_uniq_id']; ?>', 'casino')">
+                                                <?php echo htmlspecialchars($row['tbl_uniq_id']); ?>
+                                            </td>
+                                            <td style="white-space: nowrap; font-size: 12px;">
+                                                <?php echo htmlspecialchars($row['tbl_time_stamp']); ?></td>
+                                            <td style="font-size: 12px;"><?php echo htmlspecialchars($description); ?></td>
+                                            <td>
+                                                <span
+                                                    class="<?php echo ($bet_type == 'Debit') ? 'type-debit' : 'type-credit'; ?>">
+                                                    <?php echo $bet_type; ?>
+                                                </span>
+                                            </td>
+                                            <td style="font-weight: 600;">₹<?php echo number_format($debit_amount, 2); ?></td>
+                                            <td style="font-weight: 600;">₹<?php echo number_format($credit_amount, 2); ?></td>
+                                            <td style="font-weight: 800; color: white;">
+                                                ₹<?php echo number_format($row['tbl_last_acbalance'], 2); ?></td>
+                                            <td
+                                                style="font-weight: 700; color: <?php echo $is_cashout ? '#a78bfa' : ($is_profit ? 'var(--accent-emerald)' : ($is_loss ? 'var(--accent-rose)' : 'var(--text-dim)')); ?>">
+                                                ₹<?php echo number_format($is_cashout ? $credit_amount : $display_profit_loss, 2); ?>
+                                                <?php if ($is_cashout): ?>
+                                                    <div style="font-size: 10px; opacity: 0.8;">
+                                                        (-₹<?php echo number_format(max(0, $debit_amount - $credit_amount), 2); ?>)
+                                                    </div>
+                                                <?php endif; ?>
+                                            </td>
+                                            <td>
+                                                <span
+                                                    class="status-badge <?php echo $is_cashout ? 'status-cashout' : ($is_profit ? 'status-profit' : 'status-loss'); ?>">
+                                                    <i
+                                                        class='bx <?php echo $is_cashout ? 'bxs-wallet' : ($is_profit ? 'bx-trending-up' : 'bx-trending-down'); ?>'></i>
+                                                    <?php echo $is_cashout ? 'CASHOUT' : htmlspecialchars($row['tbl_match_result']); ?>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <?php $indexVal++;
+                                    }
+                                } else {
+                                    echo "<tr><td colspan='12' class='text-center py-5 text-muted'>No transaction records found</td></tr>";
+                                } ?>
+                            </tbody>
+                            <?php if ($indexVal > 1) { ?>
+                                <tfoot style="background: var(--table-header-bg); border-top: 1px solid var(--border-dim);">
+                                    <tr style="font-weight: 700;">
+                                        <td colspan="12">
+                                            <div style="display: flex; align-items: center; gap: 30px; padding: 6px 0;">
+                                                <div
+                                                    style="font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px;">
+                                                    Page Summary:</div>
+                                                <div style="font-size: 13px; color: var(--text-main);">Balance:
+                                                    ₹<?php echo number_format($total_balance, 2); ?></div>
+                                                <div style="font-size: 13px; color: var(--accent-emerald);">Profits: +
+                                                    ₹<?php echo number_format($footer_profit_amount, 2); ?></div>
+                                                <div style="font-size: 13px; color: var(--accent-rose);">Losses: -
+                                                    ₹<?php echo number_format(abs($footer_loss_amount), 2); ?></div>
+                                            </div>
                                         </td>
                                     </tr>
-                                    <?php $indexVal++; 
-                                }
-                            } else {
-                                echo "<tr><td colspan='12' class='text-center py-5 text-muted'>No transaction records found</td></tr>";
-                            } ?>
-                        </tbody>
-                        <?php if ($indexVal > 1) { ?>
-                        <tfoot style="background: var(--table-header-bg); border-top: 1px solid var(--border-dim);">
-                            <tr style="font-weight: 700;">
-                                <td colspan="12">
-                                    <div style="display: flex; align-items: center; gap: 30px; padding: 6px 0;">
-                                        <div style="font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px;">Page Summary:</div>
-                                        <div style="font-size: 13px; color: var(--text-main);">Balance: ₹<?php echo number_format($total_balance, 2); ?></div>
-                                        <div style="font-size: 13px; color: var(--accent-emerald);">Profits: + ₹<?php echo number_format($footer_profit_amount, 2); ?></div>
-                                        <div style="font-size: 13px; color: var(--accent-rose);">Losses: - ₹<?php echo number_format(abs($footer_loss_amount), 2); ?></div>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tfoot>
-                        <?php } ?>
-                    </table>
-                </div>
+                                </tfoot>
+                            <?php } ?>
+                        </table>
+                    </div>
 
-                <?php
-                $count_sql = "
+                    <?php
+                    $count_sql = "
                     SELECT COUNT(*) as total 
                     FROM tblmatchplayed t1
                     LEFT JOIN tblusersdata t2 ON t1.tbl_user_id = t2.tbl_uniq_id
                     WHERE $where_str";
-                $count_result = mysqli_query($conn, $count_sql);
-                $count_row = mysqli_fetch_assoc($count_result);
-                $total_records = (int)$count_row['total'];
-                $total_page = ceil($total_records / $content);
+                    $count_result = mysqli_query($conn, $count_sql);
+                    $count_row = mysqli_fetch_assoc($count_result);
+                    $total_records = (int) $count_row['total'];
+                    $total_page = ceil($total_records / $content);
 
-                if ($total_records > 0) {
-                ?>
-                <div class="d-flex justify-content-between align-items-center mt-4">
-                    <div style="font-size: 12px; color: var(--text-dim); font-weight: 600;">
-                        Showing page <?php echo $page_num; ?> of <?php echo $total_page; ?> (<?php echo $total_records; ?> records)
-                    </div>
-                    <div class="pagination-container">
-                        <a href="?page_num=<?php echo max(1, $page_num - 1); ?>" class="page-btn <?php if ($page_num <= 1) echo 'disabled'; ?>">
-                            <i class='bx bx-chevron-left'></i>
-                        </a>
-                        <?php
-                        $sp = max(1, $page_num - 2);
-                        $ep = min($total_page, $page_num + 2);
-                        for($i=$sp; $i<=$ep; $i++){
-                            $act = ($page_num == $i) ? 'active' : '';
-                            echo "<a href='?page_num={$i}' class='page-btn {$act}'>{$i}</a>";
-                        }
+                    if ($total_records > 0) {
                         ?>
-                        <a href="?page_num=<?php echo min($total_page, $page_num + 1); ?>" class="page-btn <?php if ($page_num >= $total_page) echo 'disabled'; ?>">
-                            <i class='bx bx-chevron-right'></i>
-                        </a>
-                    </div>
+                        <div class="d-flex justify-content-between align-items-center mt-4">
+                            <div style="font-size: 12px; color: var(--text-dim); font-weight: 600;">
+                                Showing page <?php echo $page_num; ?> of <?php echo $total_page; ?>
+                                (<?php echo $total_records; ?> records)
+                            </div>
+                            <div class="pagination-container">
+                                <a href="?page_num=<?php echo max(1, $page_num - 1); ?>"
+                                    class="page-btn <?php if ($page_num <= 1)
+                                        echo 'disabled'; ?>">
+                                    <i class='bx bx-chevron-left'></i>
+                                </a>
+                                <?php
+                                $sp = max(1, $page_num - 2);
+                                $ep = min($total_page, $page_num + 2);
+                                for ($i = $sp; $i <= $ep; $i++) {
+                                    $act = ($page_num == $i) ? 'active' : '';
+                                    echo "<a href='?page_num={$i}' class='page-btn {$act}'>{$i}</a>";
+                                }
+                                ?>
+                                <a href="?page_num=<?php echo min($total_page, $page_num + 1); ?>"
+                                    class="page-btn <?php if ($page_num >= $total_page)
+                                        echo 'disabled'; ?>">
+                                    <i class='bx bx-chevron-right'></i>
+                                </a>
+                            </div>
+                        </div>
+                    <?php } ?>
                 </div>
-                <?php } ?>
+
             </div>
 
         </div>
-
     </div>
-</div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../script.js?v=05"></script>
-<script>
-function ShowRoundDetails(id, type) {
-    Swal.fire({
-        title: 'Fetching intelligence...',
-        didOpen: () => { Swal.showLoading(); }
-    });
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../script.js?v=05"></script>
+    <script>
+        function ShowRoundDetails(id, type) {
+            Swal.fire({
+                title: 'Fetching intelligence...',
+                didOpen: () => { Swal.showLoading(); }
+            });
 
-    fetch(`../reports/get-bet-details.php?id=${id}&type=${type}&t=${new Date().getTime()}`)
-        .then(response => response.json())
-        .then(data => {
-            if(data.error) return Swal.fire('Data Error', data.error, 'error');
+            fetch(`../reports/get-bet-details.php?id=${id}&type=${type}&t=${new Date().getTime()}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) return Swal.fire('Data Error', data.error, 'error');
 
-            const isProfit = (data.tbl_match_status.toLowerCase() === 'profit' || data.tbl_match_result.toLowerCase() === 'win' || data.tbl_match_result.toLowerCase() === 'won');
-            const isLoss = (data.tbl_match_status.toLowerCase() === 'loss' || data.tbl_match_result.toLowerCase() === 'loss' || data.tbl_match_result.toLowerCase() === 'lost');
-            const isPending = (data.tbl_match_status.toLowerCase() === 'wait' || data.tbl_match_result.toLowerCase() === 'pending');
-            const isCashout = (data.tbl_match_result.toLowerCase().includes('cashout') || data.tbl_match_status.toLowerCase().includes('cashout'));
-            const netAmount = parseFloat(data.tbl_match_profit) - parseFloat(data.tbl_match_cost);
-            
-            const statusColorClass = isProfit ? 'text-success' : (isPending ? 'text-warning' : (netAmount === 0 ? 'text-white' : 'text-danger'));
+                    const isProfit = (data.tbl_match_status.toLowerCase() === 'profit' || data.tbl_match_result.toLowerCase() === 'win' || data.tbl_match_result.toLowerCase() === 'won');
+                    const isLoss = (data.tbl_match_status.toLowerCase() === 'loss' || data.tbl_match_result.toLowerCase() === 'loss' || data.tbl_match_result.toLowerCase() === 'lost');
+                    const isPending = (data.tbl_match_status.toLowerCase() === 'wait' || data.tbl_match_result.toLowerCase() === 'pending');
+                    const isCashout = (data.tbl_match_result.toLowerCase().includes('cashout') || data.tbl_match_status.toLowerCase().includes('cashout'));
+                    const netAmount = parseFloat(data.tbl_match_profit) - parseFloat(data.tbl_match_cost);
+
+                    const statusColorClass = isProfit ? 'text-success' : (isPending ? 'text-warning' : (netAmount === 0 ? 'text-white' : 'text-danger'));
 
                     const html = `
                     <div class="round-details-v2" style="background: #121212; padding: 0px; font-family: 'DM Sans', sans-serif; color: #fff;">
@@ -612,20 +863,21 @@ function ShowRoundDetails(id, type) {
                         },
                         didOpen: () => {
                             const popup = Swal.getPopup();
-                            if(popup) popup.style.borderRadius = '24px';
+                            if (popup) popup.style.borderRadius = '24px';
                         }
                     });
-        })
-        .catch(err => {
-            Swal.fire('Fetch Error', 'Could not communicate with the server: ' + err.message, 'error');
-        });
-}
+                })
+                .catch(err => {
+                    Swal.fire('Fetch Error', 'Could not communicate with the server: ' + err.message, 'error');
+                });
+        }
 
-function exportExcel(tableID, filename = '') {
-    const table = document.getElementById(tableID);
-    const wb = XLSX.utils.table_to_book(table, { sheet: "Sheet 1" });
-    return XLSX.writeFile(wb, filename || 'Export.xlsx');
-}
-</script>
+        function exportExcel(tableID, filename = '') {
+            const table = document.getElementById(tableID);
+            const wb = XLSX.utils.table_to_book(table, { sheet: "Sheet 1" });
+            return XLSX.writeFile(wb, filename || 'Export.xlsx');
+        }
+    </script>
 </body>
+
 </html>

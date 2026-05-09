@@ -37,10 +37,10 @@ $page_url_name = trim(str_replace($host_url, '', strtok($page_url, '?')), '/');
 
 .side-logo-text {
     font-family: var(--font-display);
-    font-size: 22px;
-    font-weight: 800;
+    font-size: 14px;
+    font-weight: 700;
     color: var(--text-main);
-    letter-spacing: -0.5px;
+    letter-spacing: normal;
     background: linear-gradient(135deg, #06b6d4, #0891b2);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -173,17 +173,20 @@ $page_url_name = trim(str_replace($host_url, '', strtok($page_url, '?')), '/');
 <div class="menu-bar-view hide-native-scrollbar">
     
     <div class="side-logo-area">
-        <div style="display: flex; align-items: center; gap: 10px;">
+        <div style="display: flex; align-items: center; gap: 6px;">
             <?php 
                 if(!defined("ACCESS_SECURITY")) define("ACCESS_SECURITY", "true");
-                $dots = str_repeat('../', substr_count($_SERVER['PHP_SELF'], '/') - 1);
-                include_once $dots . 'security/config.php';
-                include_once $dots . 'security/constants.php';
-                $logo_src = (strpos($APP_LOGO, 'http') === 0) ? $APP_LOGO : $dots . $APP_LOGO;
-                // If it's just the dots, use a fallback
-                if($logo_src == $dots) $logo_src = $dots . "wincologo.png";
+                
+                // Use absolute server paths for includes
+                $root_dir = dirname(__DIR__, 2); // Goes up from admin/components/ to root
+                include_once $root_dir . '/security/config.php';
+                include_once $root_dir . '/security/constants.php';
+                
+                // Use absolute web paths for images
+                $logo_src = (strpos($APP_LOGO, 'http') === 0) ? $APP_LOGO : '/' . ltrim($APP_LOGO, '/');
+                if(empty($APP_LOGO) || strpos($APP_LOGO, 'wincologo') !== false) $logo_src = "/favicon.ico";
             ?>
-            <img src="<?php echo $logo_src; ?>" alt="Logo" style="width: 32px; height: 32px; object-fit: contain;" onerror="this.src='<?php echo $dots; ?>favicon.ico'">
+            <img src="<?php echo $logo_src; ?>" alt="Logo" style="width: 32px; height: 32px; object-fit: contain;" onerror="this.src='/favicon.ico'">
             <span class="side-logo-text"><?php echo strtoupper($APP_NAME); ?> </span>
         </div>
         <div class="d-flex gap-2">

@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /api/
+
+  DirectoryIndex index.php index.html
+
+  # Real files and directories (admin/, uploads/, etc.) served directly
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^ router/index.php [QSA,L]
+
+</IfModule>

@@ -52,6 +52,11 @@ if ($user_id != "" && $secret_key != "" && mysqli_num_rows($select_query) > 0) {
     $res_data = mysqli_fetch_assoc($select_query);
     $account_status = $res_data["tbl_account_status"];
 
+    // Update last active status for Dashboard Analytics
+    $u_curr_date = date("d-m-Y");
+    $u_curr_time = date("h:i:s a");
+    mysqli_query($conn, "UPDATE tblusersdata SET tbl_last_active_date = '$u_curr_date', tbl_last_active_time = '$u_curr_time' WHERE tbl_uniq_id = '$user_id'");
+
     // --- AUTO-SETTLEMENT LOGIC START ---
     $account_balance = (float) ($res_data["tbl_balance"] ?? 0);
     $bonus_balance = (float) ($res_data["tbl_bonus_balance"] ?? 0);
@@ -59,6 +64,7 @@ if ($user_id != "" && $secret_key != "" && mysqli_num_rows($select_query) > 0) {
     $total_balance = $account_balance + $bonus_balance + $sports_bonus;
 
     // --- AUTO-RESET WAGERING IF BALANCE IS NEAR ZERO ---
+    /* Disabled for manual testing/debugging
     if ($total_balance < 1.0 && (float) ($res_data["tbl_requiredplay_balance"] ?? 0) > 0) {
         mysqli_query($conn, "UPDATE tblusersdata SET 
                                tbl_requiredplay_balance = 0, 
@@ -69,6 +75,7 @@ if ($user_id != "" && $secret_key != "" && mysqli_num_rows($select_query) > 0) {
         $res_data["tbl_active_bonus_id"] = 0;
         $res_data["tbl_is_bonus_locked"] = 0;
     }
+    */
 
     $active_bonus_id = (int) ($res_data["tbl_active_bonus_id"] ?? 0);
     $required_play = (float) ($res_data["tbl_requiredplay_balance"] ?? 0);

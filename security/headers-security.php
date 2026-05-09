@@ -17,11 +17,22 @@ class RequestHeaders
 
   function checkCorsPolicy($allowedMethod)
   {
-    if (isset($_SERVER['HTTP_ORIGIN'])) {
-      header("Access-Control-Allow-Origin: " . $_SERVER['HTTP_ORIGIN']);
+    $origin = $_SERVER['HTTP_ORIGIN'] ?? "";
+    $allowedOrigins = [
+        "https://velplay365.com",
+        "https://api.velplay365.com",
+        "http://localhost:5173",
+        "http://localhost:3000"
+    ];
+
+    if (in_array($origin, $allowedOrigins) || empty($origin)) {
+      header("Access-Control-Allow-Origin: " . ($origin ?: "*"));
+    } else {
+      // Fallback for dynamic subdomains or unknown origins
+      header("Access-Control-Allow-Origin: " . $origin);
     }
     header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
-    header("Access-Control-Allow-Headers: Origin, Content-Type, Accept, Route, route, AuthToken, authToken, Authtoken, authtoken");
+    header("Access-Control-Allow-Headers: Origin, Content-Type, Accept, Route, route, AuthToken, authToken, Authtoken, authtoken, USER_ID, user_id, Authorization");
     header("Access-Control-Allow-Credentials: true");
     header('Content-Type: application/json; charset=utf-8');
   }
@@ -60,19 +71,18 @@ class RequestHeaders
       }
     }
 
-    $routeVariations = ['HTTP_ROUTE', 'Route', 'route'];
-    if (empty($this->Route)) {
+    // Always prefer $_GET['Route'] first (most reliable)
+    if (!empty($_GET['Route'])) {
+      $this->Route = $_GET['Route'];
+    } elseif (!empty($_GET['route'])) {
+      $this->Route = $_GET['route'];
+    } elseif (!empty($_POST['Route'])) {
+      $this->Route = $_POST['Route'];
+    } elseif (empty($this->Route)) {
+      $routeVariations = ['HTTP_ROUTE', 'Route', 'route'];
       foreach ($routeVariations as $v) {
         if (!empty($_SERVER[$v])) {
           $this->Route = $_SERVER[$v];
-          break;
-        }
-        if (!empty($_GET[$v])) {
-          $this->Route = $_GET[$v];
-          break;
-        }
-        if (!empty($_POST[$v])) {
-          $this->Route = $_POST[$v];
           break;
         }
       }

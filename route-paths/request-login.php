@@ -99,6 +99,11 @@ if ($const_login_id != "" && $const_login_password != "") {
                 $update_sql->bind_param("ss", $user_auth_secret, $user_uniq_id);
                 $update_sql->execute();
                 debug_log("Update executed");
+
+                // Update activity columns
+                $u_curr_date = date("d-m-Y");
+                $u_curr_time = date("h:i:s a");
+                mysqli_query($conn, "UPDATE tblusersdata SET tbl_last_active_date = '$u_curr_date', tbl_last_active_time = '$u_curr_time' WHERE tbl_uniq_id = '$user_uniq_id'");
                 
                 if ($update_sql->error == "") {
                     debug_log("Update successful");
@@ -184,6 +189,11 @@ if ($const_login_id != "" && $const_login_password != "") {
                 $update_sql = $conn->prepare("UPDATE tblusersdata SET tbl_auth_secret = ? WHERE tbl_uniq_id = ? ");
                 $update_sql->bind_param("ss", $user_auth_secret, $user_uniq_id);
                 $update_sql->execute();
+
+                // Update activity columns
+                $u_curr_date = date("d-m-Y");
+                $u_curr_time = date("h:i:s a");
+                mysqli_query($conn, "UPDATE tblusersdata SET tbl_last_active_date = '$u_curr_date', tbl_last_active_time = '$u_curr_time' WHERE tbl_uniq_id = '$user_uniq_id'");
 
                 if ($update_sql->error == "") {
                     $new_uniq_id = $headerObj->getRandomString(45);

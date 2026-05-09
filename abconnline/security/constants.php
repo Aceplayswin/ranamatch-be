@@ -2,8 +2,8 @@
 
 // api links =============
 
-$MAIN_DOMAIN_URL = "winco.cc";
-$API_TARGET_URL = "https://api.".$MAIN_DOMAIN_URL."/";
+$MAIN_DOMAIN_URL = "velplay365.com";
+$API_TARGET_URL = "https://".$MAIN_DOMAIN_URL."/api/router";
 $API_ACCESS_URL = "https://".$MAIN_DOMAIN_URL;
 $PAY_TARGET_URL = "https://pay.".$MAIN_DOMAIN_URL;
 $APP_DOWNLOAD_URL = $API_TARGET_URL.'services/download-file.php';

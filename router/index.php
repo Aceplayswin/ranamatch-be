@@ -1,15 +1,10 @@
 <?php
-if (function_exists('getallheaders')) {
-    file_put_contents(__DIR__ . "/router_hit.log", date('Y-m-d H:i:s') . " - HIT: " . $_SERVER['REQUEST_URI'] . " - Method: " . $_SERVER['REQUEST_METHOD'] . " - Headers: " . json_encode(getallheaders()) . "\n", FILE_APPEND);
-}
+error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
 /*
  Don't edit this file without developer permission.
  For any help please contact developer here: abcd@gmail.com
 */
 define("ACCESS_SECURITY", "true");
-if (function_exists('getallheaders')) {
-    file_put_contents(__DIR__ . "/router_debug.log", date('Y-m-d H:i:s') . " - REQ: " . $_SERVER['REQUEST_URI'] . " - Headers: " . json_encode(getallheaders()) . "\n", FILE_APPEND);
-}
 include '../security/headers-security.php';
 
 
@@ -20,6 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
   exit;
 }
 $headerObj->checkAllHeaders();
+
 
 
 // including required files
@@ -47,6 +43,15 @@ $curr_date_time = $curr_date . ' ' . $curr_time;
 
 // Debug all requests
 $route_path = $headerObj->getRoute();
+
+// Fallback: If no Route header/param, extract from URL path
+if (empty($route_path)) {
+  $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+  // Remove common base paths like /api/router/, /router/, or /api/
+  $uri = preg_replace('/^\/(api\/)?(router\/)?/', '', $uri);
+  $route_path = trim($uri, '/');
+}
+
 $request_uri = '/' . $route_path;
 $req_log = date('Y-m-d H:i:s') . " | ROUTER | URI: " . $_SERVER['REQUEST_URI'] . " | Route_Path: $route_path | Final_URI: $request_uri | User: " . ($_GET['USER_ID'] ?? 'N/A') . "\n";
 file_put_contents(__DIR__ . "/play_debug.txt", $req_log, FILE_APPEND);

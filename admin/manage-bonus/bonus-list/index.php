@@ -2,8 +2,8 @@
 session_cache_limiter(""); // Disable PHP's automatic session cache headers
 
 define("ACCESS_SECURITY","true");
-include '../../../security/config.php';
-include '../../../security/constants.php';
+include dirname(__DIR__, 3) . '/security/config.php';
+include dirname(__DIR__, 3) . '/security/constants.php';
 include '../../access_validate.php';
 
 session_start();

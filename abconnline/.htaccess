@@ -1,0 +1,51 @@
+Header always set Access-Control-Allow-Origin "http://localhost:5173"
+Header always set Access-Control-Allow-Methods "GET, POST, OPTIONS, DELETE, PUT"
+Header always set Access-Control-Allow-Headers "Origin, X-Requested-With, Content-Type, Accept, Route, AuthToken, USER_ID, Authorization"
+Header always set Access-Control-Allow-Credentials "true"
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Handle CORS preflight (OPTIONS)
+  RewriteCond %{REQUEST_METHOD} OPTIONS
+  RewriteRule ^(.*)$ $1 [R=200,L]
+
+  # FORCE ADMIN TO API SUBDOMAIN
+  RewriteCond %{HTTP_HOST} !^api\. [NC]
+  RewriteRule ^(?:api/)?admin(/.*)?$ https://api.ranamatch.com/api/admin$1 [NC,R=301,L]
+
+  # ==========================================
+  # 1. API SUBDOMAIN (api.ranamatch.com)
+  # ==========================================
+
+  # A) Internal Rewrite admin, security, uploads, storage to api/ folder
+  # This keeps the URL clean (/admin/) but loads files from api/admin/
+  RewriteCond %{HTTP_HOST} ^api\.ranamatch\.com$ [NC]
+  RewriteCond %{REQUEST_URI} ^/(admin|security|uploads|storage)(/.*)?$ [NC]
+  RewriteCond %{REQUEST_URI} !^/api/ [NC]
+  RewriteRule ^(.*)$ api/$1 [L]
+
+  # B) API ROUTER: Send everything else to router/index.php
+  # We exclude the /api/ prefix so admin/security/etc. can be served directly
+  RewriteCond %{HTTP_HOST} ^api\.ranamatch\.com$ [NC]
+  RewriteCond %{REQUEST_URI} !^/api/ [NC]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^(.*)$ router/index.php [QSA,L]
+
+
+  # ==========================================
+  # 2. MAIN DOMAIN FRONTEND (ranamatch.com)
+  # ==========================================
+  
+  # A) API Router on Main Domain
+  # This fixes the login error when called via ranamatch.com/api/...
+  RewriteRule ^api/(.*)$ router/index.php [QSA,L]
+
+  # B) Route non-existent files to the React SPA (index.html)
+  RewriteCond %{HTTP_HOST} !^api\.ranamatch\.com$ [NC]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^ index.html [L]
+
+</IfModule>

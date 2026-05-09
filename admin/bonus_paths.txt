@@ -1,0 +1,30 @@
+{
+    "standard": [
+        {
+            "id": "7",
+            "image_path": "uploads\/bonuses\/69de27b82d8f6.png"
+        },
+        {
+            "id": "12",
+            "image_path": "uploads\/bonuses\/69e34c0083794.png"
+        },
+        {
+            "id": "13",
+            "image_path": "uploads\/bonuses\/69e6246626a8a.png"
+        },
+        {
+            "id": "14",
+            "image_path": "uploads\/bonuses\/69f32edc7ac00.png"
+        },
+        {
+            "id": "16",
+            "image_path": "uploads\/bonuses\/69f3302b3c839.png"
+        }
+    ],
+    "cashback": [
+        {
+            "id": "5",
+            "image_path": "uploads\/promotions\/cb_1775462999_3507.jpeg"
+        }
+    ]
+}

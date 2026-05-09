@@ -4,6 +4,7 @@
 
 $routes = [
     '/' => 'default',
+    '/status' => 'status', 
     '/home' => 'admin/index.php',
     '/route-app-status' => 'route-paths/request-app-status.php',
     '/route-send-sms' => 'route-paths/services/sms/send-sms.php',
@@ -47,6 +48,7 @@ $routes = [
     '/route-get-user-tickets' => 'route-paths/load-user-tickets.php',
     '/route-get-games' => 'route-paths/request-get-games.php',
     '/route-mark-broadcast-seen' => 'route-paths/request-mark-broadcast-seen.php',
+    '/game' => 'game/index.php',
 ];
 
 ?>

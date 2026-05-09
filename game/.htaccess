@@ -1,0 +1,50 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # --- CORS HEADERS (FAIL-SAFE) ---
+    <IfModule mod_headers.c>
+        Header always set Access-Control-Allow-Origin "*"
+        Header always set Access-Control-Allow-Methods "GET, POST, OPTIONS, PUT, DELETE"
+        Header always set Access-Control-Allow-Headers "Origin, Content-Type, Accept, Route, route, AuthToken, authToken, Authtoken, authtoken, Authorization"
+        Header always set Access-Control-Allow-Credentials "true"
+    </IfModule>
+
+    # Handle OPTIONS preflight requests directly
+    RewriteCond %{REQUEST_METHOD} OPTIONS
+    RewriteRule ^(.*)$ - [R=200,L]
+
+    # ------------------------------------------------
+    # 1. GAME CALLBACK: Rewrite /game/ to api/game/index.php
+    #    This is the CRITICAL fix - the game server calls
+    #    https://api.velplay365.com/game/ but the actual file
+    #    is at api/game/index.php on the server
+    # ------------------------------------------------
+    RewriteRule ^game/?$ api/game/index.php [QSA,L]
+    RewriteRule ^game/(.*)$ api/game/index.php [QSA,L]
+
+    # ------------------------------------------------
+    # 2. Allow real files and directories
+    # ------------------------------------------------
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # ------------------------------------------------
+    # 3. Admin routing
+    # ------------------------------------------------
+    RewriteRule ^admin/(.*)$ api/admin/$1 [QSA,L]
+
+    # ------------------------------------------------
+    # 4. API Router (handles all frontend API calls)
+    # ------------------------------------------------
+    RewriteRule ^api/(.*)$ api/router/index.php [QSA,L]
+    RewriteRule ^router(.*)$ api/router/index.php [QSA,L]
+
+    # ------------------------------------------------
+    # 5. Fallback to Router
+    # ------------------------------------------------
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ api/router/index.php [QSA,L]
+</IfModule>
