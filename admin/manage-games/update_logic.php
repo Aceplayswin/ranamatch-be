@@ -66,6 +66,15 @@ switch ($action) {
         }
         break;
 
+    case 'toggle_roulette':
+        $sql = "UPDATE tbl_games SET is_roulette = 1 - is_roulette WHERE id = $id";
+        if (mysqli_query($conn, $sql)) {
+            $res = mysqli_query($conn, "SELECT is_roulette FROM tbl_games WHERE id = $id");
+            $row = mysqli_fetch_assoc($res);
+            echo json_encode(['success' => true, 'is_roulette' => $row['is_roulette']]);
+        }
+        break;
+
     case 'update_sort':
         $val = (int)$_POST['val'];
         $sql = "UPDATE tbl_games SET sort_order = $val WHERE id = $id";

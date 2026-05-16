@@ -1,10 +1,12 @@
 <?php
-define('ACCESS_SECURITY', 'true');
-include 'd:/xampp/htdocs/security/config.php';
+define("ACCESS_SECURITY", "true");
+include "security/config.php";
 
-echo "DETAILS FROM tbl_game_names:\n";
-$res = mysqli_query($conn, "SELECT * FROM tbl_game_names LIMIT 20");
-while($row = mysqli_fetch_assoc($res)) {
-    print_r($row);
+$query = "SELECT * FROM tbl_game_names WHERE tbl_game_name LIKE '%Sports%' LIMIT 10";
+$result = mysqli_query($conn, $query);
+if ($result) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        print_r($row);
+    }
 }
 ?>

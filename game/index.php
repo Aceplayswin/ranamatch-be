@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         return openssl_decrypt(base64_decode($data), "AES-256-ECB", $key, OPENSSL_RAW_DATA);
     }
 
-    function encrypt($data, $key)
+    function encrypt($d ata, $key)
     {
         return base64_encode(openssl_encrypt($data, "AES-256-ECB", $key, OPENSSL_RAW_DATA));
     }
@@ -144,42 +144,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $look_stmt->close();
     }
 
-    // 3. Static Mappings (Final hardcoded fallbacks for all providers)
-    $game_mappings = [
-        "8a87aae7a3624d284306e9c6fe1b3e9c" => "Dice",
-        "fb2a2ac51303c0a0801dbe6a72d936f7" => "Leprechaun Riches",
-        "1c47c7cc3fd4ffc3d31dc095bc5dddc8" => "Dragon Hatch",
-        "052442de87321dd97bb91b1a35fb8e65" => "Baccarat Deluxe",
-        "e794bf5717aca371152df192341fe68b" => "Royal Fishing",
-        "a04d1f3eb8ccec8a4823bdf18e3f0e84" => "Aviator",
-        "4a858d6b74c05260d3ea2762838798c7" => "Lightning Roulette",
-        "917c0c51d248c33eb058e3210a2e7371" => "Crazy Time",
-        "d496ac5fd91702331133e44b6bd12b26" => "MONOPOLY Live",
-        "8ef39602e589bf9f32fc351b1cbb338b" => "Evolution Lobby",
-        "d0e052b031dfcdb08d1803f4bcc618ef" => "Ezugi Lobby",
-        "56a42a03c0908cf807ba251fc52b0338" => "Hotline",
-        "911a32ad38d77f86baf29a2cdb95da05" => "Crazy Pachinko",
-        "f7b98e899461bdd49f92afc36b4c0db5" => "Super Andar Bahar",
-        "a4f4823bdf18e3f0e848a87aae7a3624" => "Fortune Tiger",
-        "61e84c53e079092b5a55e6001c60850c" => "Callbreak",
-        "31ee96e1cc0c8b6a3504fb4b732551bf" => "Mega Ball",
-        "ed1893c8d1979b00632fc351bcc618ef" => "Dream Catcher",
-        "394fe6a2cde24bc487767236cc6eccd6" => "XXXtreme Lightning Roulette",
-        "9c81b3e9c8a87aae7a3624d284306e9c" => "Mines",
-        "f7b2a2ac51303c0a0801dbe6a72d936f" => "Plinko",
-        "b3e9c8a87aae7a3624d284306e9c6fe1" => "Mahjong Ways",
-        "a0801dbe6a72d936f7fb2a2ac51303c0" => "Mahjong Ways 2",
-        "c0a0801dbe6a72d936f7fb2a2ac51303" => "Lucky Neko",
-        "7a3624d284306e9c6fe1b3e9c8a87aae" => "Golden Temple",
-        "92b24e4c25107367a80e0fe1a97c24e4" => "Luck Sports",
-        "08ced9dd788aed11ff3c7f387ae0f063" => "SABA Sports",
-        "4ee8e0051a035b463b47c3c473ce317d" => "Esports",
-        "48341a3bf62b6dd0814d7129e7e0834b" => "9 Wickets"
-
-    ];
-
-    if ($const_game_name == "" && isset($game_mappings[$const_game_uid])) {
-        $const_game_name = $game_mappings[$const_game_uid];
+    // 3. Smart Fallback: If name is still missing, use a generic descriptive name
+    if ($const_game_name == "") {
+        if (!empty($const_provider) && $const_provider != "Standard" && $const_provider != "N/A") {
+            $const_game_name = $const_provider . " Game";
+        } else {
+            $const_game_name = "Casino Game"; // Elegant fallback
+        }
     }
 
     // Enrich non-sports data for consistent logging (Satisfies user request for "all details")
@@ -683,21 +654,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Safety Fallback: If name is unknown, we MUST wait to be safe
             $is_unknown_game = ($const_game_name == "" || strpos($const_game_name, "Game ") === 0);
 
+            // Identify "Instant" providers (those that usually send bet and win in the same packet)
+            $is_instant_provider = (isset($data["provider"]) && (
+                stripos($data["provider"], "jili") !== false ||
+                stripos($data["provider"], "cq9") !== false ||
+                stripos($data["provider"], "jdb") !== false ||
+                stripos($data["provider"], "fc") !== false ||
+                stripos($data["provider"], "fa chai") !== false ||
+                stripos($data["provider"], "ka gaming") !== false ||
+                stripos($data["provider"], "kagaming") !== false
+            ));
+
             $lower_name = strtolower($const_game_name);
-            $is_delayed = ($is_unknown_game || $is_live_marker || $is_live_provider || $is_sports ||
-                in_array($const_game_uid, [
-                    "edef29b5eda8e2eaf721d7315491c51d",
-                    "a669c993b0e1f1b7da100fcf95516bdf",
-                    "8a87aae7a3624d284306e9c6fe1b3e9c",
-                    "5c4a12fb0a9b296d9b0d5f9e1cd41d65",
-                    "c68a515f0b3b10eec96cf6d33299f4e2",
-                    "052442de87321dd97bb91b1a35fb8e65",
-                    "4a858d6b74c05260d3ea2762838798c7", // Roulette
-                    "394fe6a2cde24bc487767236cc6eccd6", // Roulette
-                    "b4af506243cafae52908e8fa266f8ff6", // Speed Roulette
-                    "1c47c7cc3fd4ffc3d31dc095bc5dddc8", // Dragon Hatch
-                    "d7e5f6258dd0dfdd29b3798f124b6b9d"  // Unknown Live Game
-                ]) ||
+            $detected_action = strtolower($data["action"] ?? $sports_data["action"] ?? $data["operation"] ?? $sports_data["transaction"]["operation"] ?? "");
+            $is_bet_hint = in_array($detected_action, ["bet", "confirmbet", "placebet", "place_exchange_order", "place_order", "place-bet", "place", "debit"]);
+            $is_settle_hint = in_array($detected_action, ["settle", "settlement", "result", "credit", "won", "lost", "win", "draw"]);
+
+            $is_delayed = ($is_unknown_game || $is_live_marker || $is_live_provider || $is_sports || $is_bet_hint ||
+                !$is_instant_provider || 
                 (strpos($lower_name, "lobby") !== false) ||
                 (strpos($lower_name, "casino") !== false) ||
                 (strpos($lower_name, "roulette") !== false) ||
@@ -737,9 +711,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 (strpos($lower_name, "ak47") !== false) ||
                 (count(explode("-", $m_order_id)) > 1) ||
                 !empty($match_details)) &&
-                    // Exclude known slot providers (JILI, CQ9, JDB) ONLY for named games.
-                    // Unknown games (Game UID format) must ALWAYS wait for the result callback.
-                ($is_unknown_game || !(isset($data["provider"]) && (stripos($data["provider"], "jili") !== false || stripos($data["provider"], "cq9") !== false || stripos($data["provider"], "jdb") !== false)));
+                ($is_unknown_game || !$is_instant_provider || $is_bet_hint) && 
+                !$is_settle_hint;
 
             // Log decision for debugging
             $const_provider = $data["provider"] ?? "N/A";

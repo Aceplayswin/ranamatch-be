@@ -1,0 +1,25 @@
+id | int(11) | Null: NO | Default: 
+tbl_uniq_id | varchar(100) | Null: NO | Default: 
+tbl_user_id | varchar(100) | Null: NO | Default: 
+tbl_period_id | varchar(50) | Null: NO | Default: 
+tbl_invested_on | varchar(50) | Null: NO | Default: 
+tbl_match_cost | decimal(20,2) | Null: NO | Default: 
+tbl_lot_size | varchar(30) | Null: NO | Default: 
+tbl_match_invested | decimal(20,2) | Null: NO | Default: 
+tbl_match_fee | decimal(10,2) | Null: NO | Default: 
+tbl_match_profit | decimal(20,2) | Null: NO | Default: 
+tbl_match_result | varchar(30) | Null: NO | Default: 
+tbl_last_acbalance | decimal(20,2) | Null: NO | Default: 
+tbl_match_status | varchar(15) | Null: NO | Default: 
+tbl_project_name | varchar(30) | Null: NO | Default: 
+tbl_provider | varchar(255) | Null: YES | Default: Standard
+tbl_match_details | varchar(255) | Null: NO | Default: 
+tbl_bet_type | varchar(255) | Null: NO | Default: 
+tbl_selection | varchar(255) | Null: YES | Default: 
+tbl_odds | varchar(255) | Null: NO | Default: 
+tbl_time_stamp | varchar(50) | Null: NO | Default: 
+created_at | datetime | Null: YES | Default: current_timestamp()
+tbl_result_time | varchar(50) | Null: YES | Default: 
+tbl_updated_at | timestamp | Null: YES | Default: current_timestamp()
+tbl_notified | tinyint(1) | Null: NO | Default: 0
+tbl_notify_at | datetime | Null: YES | Default: 

@@ -1,10 +1,9 @@
 <?php
-define('ACCESS_SECURITY', 'true');
-include 'd:/xampp/htdocs/security/config.php';
+define("ACCESS_SECURITY", "true");
+include "security/config.php";
 
-echo "TABLES IN DATABASE:\n";
-$res = mysqli_query($conn, "SHOW TABLES");
-while($row = mysqli_fetch_array($res)) {
-    echo "- " . $row[0] . "\n";
+$result = mysqli_query($conn, "SHOW TABLES");
+while ($row = mysqli_fetch_row($result)) {
+    echo $row[0] . "\n";
 }
 ?>

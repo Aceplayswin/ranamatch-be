@@ -1,0 +1,22 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # 1. CORS AND SECURITY HEADERS
+  Header set Access-Control-Allow-Origin "*"
+  Header set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+  Header set Access-Control-Allow-Headers "Content-Type, Authorization"
+
+  # 2. HANDLE API CALLS
+  # This ensures any request to /api/ stays in the api folder
+  # and doesn't get redirected to the React index.html
+  RewriteCond %{REQUEST_URI} ^/api/ [NC]
+  RewriteRule ^ - [L]
+
+  # 3. REACT SPA ROUTING
+  # This handles the client-side routing for Aura.
+  # It sends all non-file/non-directory requests to index.html
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^ index.html [L]
+</IfModule>

@@ -3,10 +3,10 @@
 // api links =============
 
 $MAIN_DOMAIN_URL = "velplay365.com";
-$API_TARGET_URL = "https://api.".$MAIN_DOMAIN_URL."/"; // Game callback needs: $API_TARGET_URL . "game/"
-$API_ACCESS_URL = "https://".$MAIN_DOMAIN_URL;
-$PAY_TARGET_URL = "https://pay.".$MAIN_DOMAIN_URL;
-$APP_DOWNLOAD_URL = $API_TARGET_URL.'/services/download-file.php';
+$API_TARGET_URL = "https://api." . $MAIN_DOMAIN_URL . "/"; // Game callback needs: $API_TARGET_URL . "game/"
+$API_ACCESS_URL = "https://" . $MAIN_DOMAIN_URL;
+$PAY_TARGET_URL = "https://pay." . $MAIN_DOMAIN_URL;
+$APP_DOWNLOAD_URL = $API_TARGET_URL . '/services/download-file.php';
 
 
 $DEFAULT_ACCOUNT_ID = "1111111";
@@ -74,4 +74,9 @@ $PAYOUT_GUID = "AcWlbPwrI9E2SuH4LGF6xk1K3";
 
 // SABA SPORTS CONFIG
 $SABA_MAX_ODDS = 4.0;
+
+// INDIA LOTTERY (RUNNING10) CONFIG
+$INDIALOTTO_PLATFORM_CODE = "velplaytest";
+$INDIALOTTO_SECRET_KEY = "jFsu4i5ro8";
+$INDIALOTTO_API_URL = "https://server-test.running10.tv/api/"; // Added trailing slash back
 ?>

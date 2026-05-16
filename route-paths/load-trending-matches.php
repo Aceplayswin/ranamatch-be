@@ -3,17 +3,18 @@ $resArr = array();
 $resArr['status_code'] = "failed";
 error_reporting(0);
 
-// --- Strategy 1: Real-Time SABA Sports (Live matches from the last 2 hours) ---
-// We look for 'wait' status matches or very recent activity in sports
-$query_live_saba = "SELECT tbl_match_details, COUNT(*) as bet_count
-                    FROM tblmatchplayed
-                    WHERE (LOWER(tbl_project_name) LIKE '%saba%' OR LOWER(tbl_project_name) LIKE '%sports%')
-                      AND tbl_match_details != ''
-                      AND STR_TO_DATE(tbl_time_stamp, '%d-%m-%Y %h:%i %p') >= DATE_SUB(NOW(), INTERVAL 2 HOUR)
-                    GROUP BY tbl_match_details
-                    ORDER BY bet_count DESC
-                    LIMIT 5";
-$result = mysqli_query($conn, $query_live_saba);
+// --- Strategy 1: Real-Time Activity (Last 4 Hours) ---
+// We look for recent matches in tblmatchplayed. 
+// We use REPLACE to ensure 'am/pm' is 'AM/PM' for MySQL's STR_TO_DATE parser.
+$query_live = "SELECT tbl_match_details, COUNT(*) as bet_count
+                FROM tblmatchplayed
+                WHERE tbl_match_details != ''
+                  AND (LOWER(tbl_project_name) LIKE '%saba%' OR LOWER(tbl_project_name) LIKE '%sports%' OR tbl_match_details LIKE '% vs %')
+                  AND STR_TO_DATE(REPLACE(REPLACE(tbl_time_stamp, 'pm', 'PM'), 'am', 'AM'), '%d-%m-%Y %h:%i %p') >= DATE_SUB(NOW(), INTERVAL 4 HOUR)
+                GROUP BY tbl_match_details
+                ORDER BY bet_count DESC
+                LIMIT 10";
+$result = mysqli_query($conn, $query_live);
 
 $matches = array();
 if ($result && mysqli_num_rows($result) > 0) {
@@ -21,8 +22,8 @@ if ($result && mysqli_num_rows($result) > 0) {
         $detail = trim($row['tbl_match_details']);
         if (empty($detail)) continue;
 
-        // Realistic viewer count: Base (bets * 15) + Random (50-200)
-        $viewers = ((int)$row['bet_count'] * 15) + rand(50, 200);
+        // Realistic viewer count: Base (bets * 15) + Random (100-500)
+        $viewers = ((int)$row['bet_count'] * 15) + rand(100, 500);
 
         $matches[] = [
             'name'    => $detail,
@@ -32,15 +33,16 @@ if ($result && mysqli_num_rows($result) > 0) {
     }
 }
 
-// --- Strategy 2: Recent Activity (Last 24h) if SABA is empty ---
-if (count($matches) < 3) {
+// --- Strategy 2: Recent History (Last 24h) if live is low ---
+if (count($matches) < 5) {
     $query_24h = "SELECT tbl_match_details, COUNT(*) as bet_count
                   FROM tblmatchplayed
                   WHERE tbl_match_details != ''
-                    AND STR_TO_DATE(tbl_time_stamp, '%d-%m-%Y %h:%i %p') >= DATE_SUB(NOW(), INTERVAL 24 HOUR)
+                    AND (LOWER(tbl_project_name) LIKE '%saba%' OR LOWER(tbl_project_name) LIKE '%sports%' OR tbl_match_details LIKE '% vs %')
+                    AND STR_TO_DATE(REPLACE(REPLACE(tbl_time_stamp, 'pm', 'PM'), 'am', 'AM'), '%d-%m-%Y %h:%i %p') >= DATE_SUB(NOW(), INTERVAL 24 HOUR)
                   GROUP BY tbl_match_details
                   ORDER BY bet_count DESC
-                  LIMIT 5";
+                  LIMIT 10";
     $result24 = mysqli_query($conn, $query_24h);
     while ($row = mysqli_fetch_assoc($result24)) {
         $detail = trim($row['tbl_match_details']);
@@ -51,7 +53,7 @@ if (count($matches) < 3) {
         foreach($matches as $m) { if($m['name'] == $detail) { $exists = true; break; } }
         if($exists) continue;
 
-        $viewers = ((int)$row['bet_count'] * 8) + rand(20, 100);
+        $viewers = ((int)$row['bet_count'] * 10) + rand(50, 150);
         $matches[] = [
             'name'    => $detail,
             'viewers' => $viewers,
@@ -60,23 +62,23 @@ if (count($matches) < 3) {
     }
 }
 
-// --- Strategy 3: Fallbacks ---
-$fallbacks = [
-    ['name' => "IPL 2024 - Chennai Super Kings vs Gujarat Titans (Cricket)", 'viewers' => rand(1200, 1500), 'is_live' => true],
-    ['name' => "ITALY SERIE A - Lazio vs Udinese (Soccer)", 'viewers' => rand(800, 1100), 'is_live' => true],
-    ['name' => "E-SPORTS - CS:GO PGL Major Copenhagen (Live)", 'viewers' => rand(2500, 3200), 'is_live' => true],
-];
+// Per User Request: "no need hardcoded , need only live datas"
+// We do NOT add any fallbacks here. If the database is empty, the ticker will be empty.
 
-while (count($matches) < 5) {
-    $matches[] = $fallbacks[count($matches) % 3];
+// Filter out generic casino names just in case
+$rich_matches = [];
+foreach ($matches as $m) {
+    if (stripos($m['name'], "Casino") === false && 
+        stripos($m['name'], "JILI") === false && 
+        stripos($m['name'], "Game") === false &&
+        stripos($m['name'], "Lobby") === false) {
+        $rich_matches[] = $m;
+    }
 }
 
-$rich_matches = array_slice($matches, 0, 5);
-$simple_names = array_map(fn($m) => $m['name'], $rich_matches);
-
 $resArr['status_code'] = "success";
-$resArr['data']        = $simple_names;   // simple list for backward compatibility
-$resArr['matches']     = $rich_matches;   // rich list with realistic viewer counts
+$resArr['data']        = array_map(fn($m) => $m['name'], $rich_matches);
+$resArr['matches']     = $rich_matches;
 
 echo json_encode($resArr);
 exit();

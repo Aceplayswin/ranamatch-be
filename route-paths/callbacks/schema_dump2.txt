@@ -1,0 +1,7 @@
+id | int(11) | Null: NO | Default: 
+tbl_user_id | varchar(50) | Null: NO | Default: 
+tbl_received_from | varchar(50) | Null: NO | Default: 
+tbl_transaction_type | varchar(30) | Null: NO | Default: 
+tbl_transaction_amount | decimal(20,2) | Null: NO | Default: 
+tbl_transaction_note | varchar(150) | Null: NO | Default: 
+tbl_time_stamp | varchar(50) | Null: NO | Default: 

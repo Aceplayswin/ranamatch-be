@@ -1,0 +1,202 @@
+2026-05-16 12:59:37 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 12:59:37 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":25463720}"}
+2026-05-16 13:00:32 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 13:00:32 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":25463720}"}
+2026-05-16 13:00:38 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 13:00:38 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":25463720}"}
+2026-05-16 13:01:00 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 13:01:00 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":25463720}"}
+2026-05-16 13:01:00 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":3,"game_id":1,"order_id":"K001348461778916661","balance":"50000"} | Sign: c70314dfc3e64bbe67ef2cf19b5db090 | Platform: velplaytest
+2026-05-16 13:01:00 | CHANGE_POINT RESPONSE | User: velplaytest_8091921 | Type: 3 | Amount: 50 | Response: {"code":0,"msg":"success","data":"{\"balance\":25413720}"}
+2026-05-16 13:01:08 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 13:01:08 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":25413720}"}
+2026-05-16 13:08:48 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 13:08:48 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":25428720}"}
+2026-05-16 13:09:11 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 13:09:11 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":25428720}"}
+2026-05-16 13:09:11 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":3,"game_id":1,"order_id":"K001348841778917152","balance":"50000"} | Sign: 3944ff5aacdc73e3a50a03c9e63601fe | Platform: velplaytest
+2026-05-16 13:09:19 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 13:09:19 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":25378720}"}
+2026-05-16 13:09:19 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":3,"game_id":1,"order_id":"K001348891778917159","balance":"50000"} | Sign: 1727c4ab8c898276b96c1e86a362d5ff | Platform: velplaytest
+2026-05-16 13:09:30 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 13:09:30 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":25328720}"}
+2026-05-16 13:09:30 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":3,"game_id":1,"order_id":"K001348901778917171","balance":"50000"} | Sign: 014ff223aa9f60ffb67342a8f99a025f | Platform: velplaytest
+2026-05-16 13:10:26 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 13:10:26 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":25278720}"}
+2026-05-16 13:10:26 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":3,"game_id":1,"order_id":"K001348911778917226","balance":"50000"} | Sign: ee28977df7d176e75beb97a83057f605 | Platform: velplaytest
+2026-05-16 13:10:36 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 13:10:36 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":25228720}"}
+2026-05-16 13:10:37 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":3,"game_id":1,"order_id":"K001348921778917237","balance":"50000"} | Sign: 00e091cfd4549fdfd805343594711d38 | Platform: velplaytest
+2026-05-16 13:10:45 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 13:10:45 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":25178720}"}
+2026-05-16 13:10:49 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 13:10:49 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":25178720}"}
+2026-05-16 13:10:49 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":3,"game_id":1,"order_id":"K001348931778917249","balance":"50000"} | Sign: ed42668cfac5c737c19577b57fa23fad | Platform: velplaytest
+2026-05-16 13:13:15 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 13:13:15 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":25128720}"}
+2026-05-16 13:13:16 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":3,"game_id":1,"order_id":"K001349081778917396","balance":"50000"} | Sign: 2f0f5433ee5ca1e6066497722bee9d54 | Platform: velplaytest
+2026-05-16 13:23:42 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 13:23:42 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":25078720}"}
+2026-05-16 13:23:43 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 13:23:43 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":25078720}"}
+2026-05-16 13:23:43 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":3,"game_id":1,"order_id":"K001349531778918024","balance":"50000"} | Sign: 1ba3ac4b0f9349fc7725996057e055e0 | Platform: velplaytest
+2026-05-16 13:23:43 | DEBUG | Inserting transaction...
+2026-05-16 13:23:43 | DEBUG | Transaction inserted or failed: 
+2026-05-16 13:23:43 | CHANGE_POINT RESPONSE | User: velplaytest_8091921 | Type: 3 | Amount: 50 | Response: {"code":0,"msg":"success","data":"{\"balance\":25028720}"}
+2026-05-16 13:23:44 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":3,"game_id":1,"order_id":"K001349541778918024","balance":"50000"} | Sign: c2c268387c681a58b5ea757a0a10005d | Platform: velplaytest
+2026-05-16 13:23:44 | DEBUG | Inserting transaction...
+2026-05-16 13:23:44 | DEBUG | Transaction inserted or failed: 
+2026-05-16 13:23:44 | CHANGE_POINT RESPONSE | User: velplaytest_8091921 | Type: 3 | Amount: 50 | Response: {"code":0,"msg":"success","data":"{\"balance\":24978720}"}
+2026-05-16 13:23:44 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":3,"game_id":1,"order_id":"K001349551778918024","balance":"50000"} | Sign: efb7da330f98325de6969d4556a361da | Platform: velplaytest
+2026-05-16 13:23:44 | DEBUG | Inserting transaction...
+2026-05-16 13:23:44 | DEBUG | Transaction inserted or failed: 
+2026-05-16 13:23:44 | CHANGE_POINT RESPONSE | User: velplaytest_8091921 | Type: 3 | Amount: 50 | Response: {"code":0,"msg":"success","data":"{\"balance\":24928720}"}
+2026-05-16 13:23:44 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":3,"game_id":1,"order_id":"K001349561778918025","balance":"50000"} | Sign: 0644c1c96c89f27882623dc9a52e5247 | Platform: velplaytest
+2026-05-16 13:23:44 | DEBUG | Inserting transaction...
+2026-05-16 13:23:44 | DEBUG | Transaction inserted or failed: 
+2026-05-16 13:23:44 | CHANGE_POINT RESPONSE | User: velplaytest_8091921 | Type: 3 | Amount: 50 | Response: {"code":0,"msg":"success","data":"{\"balance\":24878720}"}
+2026-05-16 13:23:44 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":3,"game_id":1,"order_id":"K001349571778918025","balance":"50000"} | Sign: 7664463c6cbfe999588093f850722c60 | Platform: velplaytest
+2026-05-16 13:23:44 | DEBUG | Inserting transaction...
+2026-05-16 13:23:44 | DEBUG | Transaction inserted or failed: 
+2026-05-16 13:23:44 | CHANGE_POINT RESPONSE | User: velplaytest_8091921 | Type: 3 | Amount: 50 | Response: {"code":0,"msg":"success","data":"{\"balance\":24828720}"}
+2026-05-16 13:23:45 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":3,"game_id":1,"order_id":"K001349581778918025","balance":"50000"} | Sign: caadcc65505ccb19cfb596d19c4b5d76 | Platform: velplaytest
+2026-05-16 13:23:45 | DEBUG | Inserting transaction...
+2026-05-16 13:23:45 | DEBUG | Transaction inserted or failed: 
+2026-05-16 13:23:45 | CHANGE_POINT RESPONSE | User: velplaytest_8091921 | Type: 3 | Amount: 50 | Response: {"code":0,"msg":"success","data":"{\"balance\":24778720}"}
+2026-05-16 13:23:45 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":3,"game_id":1,"order_id":"K001349591778918025","balance":"50000"} | Sign: 8fb1b5bf3597a681fb8232af694acccd | Platform: velplaytest
+2026-05-16 13:23:45 | DEBUG | Inserting transaction...
+2026-05-16 13:23:45 | DEBUG | Transaction inserted or failed: 
+2026-05-16 13:23:45 | CHANGE_POINT RESPONSE | User: velplaytest_8091921 | Type: 3 | Amount: 50 | Response: {"code":0,"msg":"success","data":"{\"balance\":24728720}"}
+2026-05-16 13:23:45 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":3,"game_id":1,"order_id":"K001349601778918026","balance":"50000"} | Sign: 3b412aca84e78d5375113739957b61f4 | Platform: velplaytest
+2026-05-16 13:23:45 | DEBUG | Inserting transaction...
+2026-05-16 13:23:45 | DEBUG | Transaction inserted or failed: 
+2026-05-16 13:23:45 | CHANGE_POINT RESPONSE | User: velplaytest_8091921 | Type: 3 | Amount: 50 | Response: {"code":0,"msg":"success","data":"{\"balance\":24678720}"}
+2026-05-16 13:23:45 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":3,"game_id":1,"order_id":"K001349611778918026","balance":"50000"} | Sign: 1ebe4e53c1855cd9221ea777051c8a2a | Platform: velplaytest
+2026-05-16 13:23:45 | DEBUG | Inserting transaction...
+2026-05-16 13:23:45 | DEBUG | Transaction inserted or failed: 
+2026-05-16 13:23:45 | CHANGE_POINT RESPONSE | User: velplaytest_8091921 | Type: 3 | Amount: 50 | Response: {"code":0,"msg":"success","data":"{\"balance\":24628720}"}
+2026-05-16 13:23:46 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":3,"game_id":1,"order_id":"K001349621778918026","balance":"50000"} | Sign: 0b31a9a4edcea0b2e5c818c64468e1b9 | Platform: velplaytest
+2026-05-16 13:23:46 | DEBUG | Inserting transaction...
+2026-05-16 13:23:46 | DEBUG | Transaction inserted or failed: 
+2026-05-16 13:23:46 | CHANGE_POINT RESPONSE | User: velplaytest_8091921 | Type: 3 | Amount: 50 | Response: {"code":0,"msg":"success","data":"{\"balance\":24578720}"}
+2026-05-16 13:23:52 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 13:23:52 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":24578720}"}
+2026-05-16 13:30:15 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 13:30:15 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":24578720}"}
+2026-05-16 13:30:37 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 13:30:37 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":24578720}"}
+2026-05-16 13:30:38 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":3,"game_id":1,"order_id":"K001350051778918438","balance":"50000"} | Sign: b43ff580078b6358ab19280cb8af4d3d | Platform: velplaytest
+2026-05-16 13:33:55 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 13:33:55 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":24594720}"}
+2026-05-16 13:34:11 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 13:34:11 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":24594720}"}
+2026-05-16 13:34:11 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":3,"game_id":1,"order_id":"K001350221778918651","balance":"50000"} | Sign: 5915f33813351fe25423fd81014337b6 | Platform: velplaytest
+2026-05-16 13:34:16 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 13:34:16 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":24544720}"}
+2026-05-16 13:34:16 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":3,"game_id":1,"order_id":"K001350231778918657","balance":"50000"} | Sign: c9b5b506a6d485177c8bb43fd07ec6fb | Platform: velplaytest
+2026-05-16 13:36:33 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 13:36:33 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":24494720}"}
+2026-05-16 13:36:34 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 13:36:34 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":24494720}"}
+2026-05-16 13:36:34 | TRACE | Request Received. Platform: velplaytest
+2026-05-16 13:36:34 | TRACE | Data Parsed. Acc: velplaytest_8091921, Type: 3, Amount: 50000
+2026-05-16 13:36:34 | TRACE | User ID: 8091921, Amount INR: 50
+2026-05-16 13:36:34 | TRACE | Running Dup Check: SELECT id FROM tbl_india_lotto_transactions WHERE order_id = 'K001350391778918795' LIMIT 1
+2026-05-16 13:36:34 | TRACE | No duplicate. Getting user balance.
+2026-05-16 13:36:34 | TRACE | Current Balance: 24494.72. Proceeding to switch.
+2026-05-16 13:36:34 | TRACE | Update Success: YES
+2026-05-16 13:36:34 | TRACE | Recording History...
+2026-05-16 13:36:34 | TRACE | Final Response Sent.
+2026-05-16 13:36:35 | TRACE | Request Received. Platform: velplaytest
+2026-05-16 13:36:35 | TRACE | Data Parsed. Acc: velplaytest_8091921, Type: 3, Amount: 50000
+2026-05-16 13:36:35 | TRACE | User ID: 8091921, Amount INR: 50
+2026-05-16 13:36:35 | TRACE | Running Dup Check: SELECT id FROM tbl_india_lotto_transactions WHERE order_id = 'K001350401778918795' LIMIT 1
+2026-05-16 13:36:35 | TRACE | No duplicate. Getting user balance.
+2026-05-16 13:36:35 | TRACE | Current Balance: 24444.72. Proceeding to switch.
+2026-05-16 13:36:35 | TRACE | Update Success: YES
+2026-05-16 13:36:35 | TRACE | Recording History...
+2026-05-16 13:36:35 | TRACE | Final Response Sent.
+2026-05-16 13:36:35 | TRACE | Request Received. Platform: velplaytest
+2026-05-16 13:36:35 | TRACE | Data Parsed. Acc: velplaytest_8091921, Type: 3, Amount: 50000
+2026-05-16 13:36:35 | TRACE | User ID: 8091921, Amount INR: 50
+2026-05-16 13:36:35 | TRACE | Running Dup Check: SELECT id FROM tbl_india_lotto_transactions WHERE order_id = 'K001350411778918795' LIMIT 1
+2026-05-16 13:36:35 | TRACE | No duplicate. Getting user balance.
+2026-05-16 13:36:35 | TRACE | Current Balance: 24394.72. Proceeding to switch.
+2026-05-16 13:36:35 | TRACE | Update Success: YES
+2026-05-16 13:36:35 | TRACE | Recording History...
+2026-05-16 13:36:35 | TRACE | Final Response Sent.
+2026-05-16 13:36:35 | TRACE | Request Received. Platform: velplaytest
+2026-05-16 13:36:35 | TRACE | Data Parsed. Acc: velplaytest_8091921, Type: 3, Amount: 50000
+2026-05-16 13:36:35 | TRACE | User ID: 8091921, Amount INR: 50
+2026-05-16 13:36:35 | TRACE | Running Dup Check: SELECT id FROM tbl_india_lotto_transactions WHERE order_id = 'K001350421778918796' LIMIT 1
+2026-05-16 13:36:35 | TRACE | No duplicate. Getting user balance.
+2026-05-16 13:36:35 | TRACE | Current Balance: 24344.72. Proceeding to switch.
+2026-05-16 13:36:35 | TRACE | Update Success: YES
+2026-05-16 13:36:35 | TRACE | Recording History...
+2026-05-16 13:36:35 | TRACE | Final Response Sent.
+2026-05-16 13:36:36 | TRACE | Request Received. Platform: velplaytest
+2026-05-16 13:36:36 | TRACE | Data Parsed. Acc: velplaytest_8091921, Type: 3, Amount: 50000
+2026-05-16 13:36:36 | TRACE | User ID: 8091921, Amount INR: 50
+2026-05-16 13:36:36 | TRACE | Running Dup Check: SELECT id FROM tbl_india_lotto_transactions WHERE order_id = 'K001350431778918796' LIMIT 1
+2026-05-16 13:36:36 | TRACE | No duplicate. Getting user balance.
+2026-05-16 13:36:36 | TRACE | Current Balance: 24294.72. Proceeding to switch.
+2026-05-16 13:36:36 | TRACE | Update Success: YES
+2026-05-16 13:36:36 | TRACE | Recording History...
+2026-05-16 13:36:36 | TRACE | Final Response Sent.
+2026-05-16 13:36:36 | TRACE | Request Received. Platform: velplaytest
+2026-05-16 13:36:36 | TRACE | Data Parsed. Acc: velplaytest_8091921, Type: 3, Amount: 50000
+2026-05-16 13:36:36 | TRACE | User ID: 8091921, Amount INR: 50
+2026-05-16 13:36:36 | TRACE | Running Dup Check: SELECT id FROM tbl_india_lotto_transactions WHERE order_id = 'K001350441778918796' LIMIT 1
+2026-05-16 13:36:36 | TRACE | No duplicate. Getting user balance.
+2026-05-16 13:36:36 | TRACE | Current Balance: 24244.72. Proceeding to switch.
+2026-05-16 13:36:36 | TRACE | Update Success: YES
+2026-05-16 13:36:36 | TRACE | Recording History...
+2026-05-16 13:36:36 | TRACE | Final Response Sent.
+2026-05-16 13:36:36 | TRACE | Request Received. Platform: velplaytest
+2026-05-16 13:36:36 | TRACE | Data Parsed. Acc: velplaytest_8091921, Type: 3, Amount: 50000
+2026-05-16 13:36:36 | TRACE | User ID: 8091921, Amount INR: 50
+2026-05-16 13:36:36 | TRACE | Running Dup Check: SELECT id FROM tbl_india_lotto_transactions WHERE order_id = 'K001350451778918797' LIMIT 1
+2026-05-16 13:36:36 | TRACE | No duplicate. Getting user balance.
+2026-05-16 13:36:36 | TRACE | Current Balance: 24194.72. Proceeding to switch.
+2026-05-16 13:36:36 | TRACE | Update Success: YES
+2026-05-16 13:36:36 | TRACE | Recording History...
+2026-05-16 13:36:36 | TRACE | Final Response Sent.
+2026-05-16 13:36:36 | TRACE | Request Received. Platform: velplaytest
+2026-05-16 13:36:36 | TRACE | Data Parsed. Acc: velplaytest_8091921, Type: 3, Amount: 50000
+2026-05-16 13:36:36 | TRACE | User ID: 8091921, Amount INR: 50
+2026-05-16 13:36:36 | TRACE | Running Dup Check: SELECT id FROM tbl_india_lotto_transactions WHERE order_id = 'K001350461778918797' LIMIT 1
+2026-05-16 13:36:36 | TRACE | No duplicate. Getting user balance.
+2026-05-16 13:36:36 | TRACE | Current Balance: 24144.72. Proceeding to switch.
+2026-05-16 13:36:36 | TRACE | Update Success: YES
+2026-05-16 13:36:36 | TRACE | Recording History...
+2026-05-16 13:36:36 | TRACE | Final Response Sent.
+2026-05-16 13:36:37 | TRACE | Request Received. Platform: velplaytest
+2026-05-16 13:36:37 | TRACE | Data Parsed. Acc: velplaytest_8091921, Type: 3, Amount: 50000
+2026-05-16 13:36:37 | TRACE | User ID: 8091921, Amount INR: 50
+2026-05-16 13:36:37 | TRACE | Running Dup Check: SELECT id FROM tbl_india_lotto_transactions WHERE order_id = 'K001350471778918797' LIMIT 1
+2026-05-16 13:36:37 | TRACE | No duplicate. Getting user balance.
+2026-05-16 13:36:37 | TRACE | Current Balance: 24094.72. Proceeding to switch.
+2026-05-16 13:36:37 | TRACE | Update Success: YES
+2026-05-16 13:36:37 | TRACE | Recording History...
+2026-05-16 13:36:37 | TRACE | Final Response Sent.
+2026-05-16 13:36:37 | TRACE | Request Received. Platform: velplaytest
+2026-05-16 13:36:37 | TRACE | Data Parsed. Acc: velplaytest_8091921, Type: 3, Amount: 50000
+2026-05-16 13:36:37 | TRACE | User ID: 8091921, Amount INR: 50
+2026-05-16 13:36:37 | TRACE | Running Dup Check: SELECT id FROM tbl_india_lotto_transactions WHERE order_id = 'K001350481778918797' LIMIT 1
+2026-05-16 13:36:37 | TRACE | No duplicate. Getting user balance.
+2026-05-16 13:36:37 | TRACE | Current Balance: 24044.72. Proceeding to switch.
+2026-05-16 13:36:37 | TRACE | Update Success: YES
+2026-05-16 13:36:37 | TRACE | Recording History...
+2026-05-16 13:36:37 | TRACE | Final Response Sent.
+2026-05-16 13:36:45 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 13:36:45 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":23994720}"}
+2026-05-16 13:39:17 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 13:39:17 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":23994720}"}
+2026-05-16 13:39:28 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 13:39:28 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":23994720}"}
+2026-05-16 13:39:28 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":3,"game_id":1,"order_id":"K001350631778918969","balance":"50000"} | Sign: 950213774b7435bcbb6d2bbc0473e657 | Platform: velplaytest
+2026-05-16 13:39:28 | DEBUG | Inserting transaction...
+2026-05-16 13:39:28 | DEBUG | Transaction inserted or failed: 
+2026-05-16 13:39:28 | CHANGE_POINT RESPONSE | User: velplaytest_8091921 | Type: 3 | Amount: 50 | Response: {"code":0,"msg":"success","data":"{\"balance\":23944720}"}
+2026-05-16 13:39:32 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 13:39:32 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":23944720}"}

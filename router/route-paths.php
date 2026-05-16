@@ -49,6 +49,8 @@ $routes = [
     '/route-get-games' => 'route-paths/request-get-games.php',
     '/route-mark-broadcast-seen' => 'route-paths/request-mark-broadcast-seen.php',
     '/game' => 'game/index.php',
+    '/india-lotto-callback/get_point' => 'route-paths/callbacks/india-lotto-get-point.php',
+    '/india-lotto-callback/change_point' => 'route-paths/callbacks/india-lotto-change-point.php',
 ];
 
 ?>

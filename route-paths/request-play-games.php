@@ -101,52 +101,63 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $resArr["status_code"] = "balance_error";
                     returnRequest($resArr);
                 }
-                $updated_balance = (float) $res_data["tbl_balance"];
-                $timestamp = round(microtime(true) * 1000);
+                // Determine which provider to use
+                $game_check = mysqli_query($conn, "SELECT game_provider FROM tbl_games WHERE game_uid = '$const_game_uid' LIMIT 1");
+                $game_row = mysqli_fetch_assoc($game_check);
+                $game_provider = $game_row['game_provider'] ?? '';
 
-                $payloadData = json_encode([
-                    "agency_uid" => $AGENCY_UID,
-                    "timestamp" => $timestamp,
-                    "member_account" => $PLAYER_PREFIX . $const_user_id,
-                    "game_uid" => $const_game_uid,
-                    "credit_amount" => formatNumber($updated_balance),
-                    "currency_code" => "INR",
-                    "is_cashout" => 1,
-                    "language" => "en",
-                    "home_url" => $API_ACCESS_URL,
-                    "platform" => "web",
-                    "callback_url" => $API_TARGET_URL . "game/",
-                ]);
-                $payload = encrypt($payloadData, $AES_SECRET_KEY);
-                $headers = ["Content-Type: application/json"];
-                $data = json_encode([
-                    "agency_uid" => $AGENCY_UID,
-                    "timestamp" => $timestamp,
-                    "payload" => $payload,
-                ]);
+                if ($game_provider === 'India Lotto') {
+                    // --- INDIA LOTTO (MD5) PATH ---
+                    include __DIR__ . '/services/india-lotto.php';
+                } else {
+                    // --- ORIGINAL HUIDU (AES) PATH ---
+                    $updated_balance = (float) $res_data["tbl_balance"];
+                    $timestamp = round(microtime(true) * 1000);
 
-                $ch = curl_init($GAME_SERVER_URL . "/game/v1");
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-                curl_setopt($ch, CURLOPT_POST, true);
-                curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-                $response = curl_exec($ch);
-                curl_close($ch);
-                $json_data = json_decode($response, true);
+                    $payloadData = json_encode([
+                        "agency_uid" => $AGENCY_UID,
+                        "timestamp" => $timestamp,
+                        "member_account" => $PLAYER_PREFIX . $const_user_id,
+                        "game_uid" => $const_game_uid,
+                        "credit_amount" => formatNumber($updated_balance),
+                        "currency_code" => "INR",
+                        "is_cashout" => 1,
+                        "language" => "en",
+                        "home_url" => $API_ACCESS_URL,
+                        "platform" => "web",
+                        "callback_url" => $API_TARGET_URL . "game/",
+                    ]);
+                    $payload = encrypt($payloadData, $AES_SECRET_KEY);
+                    $headers = ["Content-Type: application/json"];
+                    $data = json_encode([
+                        "agency_uid" => $AGENCY_UID,
+                        "timestamp" => $timestamp,
+                        "payload" => $payload,
+                    ]);
 
-                // Log full API response for debugging
-                $api_log = date('Y-m-d H:i:s') . " - Game: $const_game_name | UID: $const_game_uid | API Response: " . $response . "\n";
-                file_put_contents(__DIR__ . "/launch_logs.txt", $api_log, FILE_APPEND);
+                    $ch = curl_init($GAME_SERVER_URL . "/game/v1");
+                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+                    curl_setopt($ch, CURLOPT_POST, true);
+                    curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+                    $response = curl_exec($ch);
+                    curl_close($ch);
+                    $json_data = json_decode($response, true);
 
-                if ($json_data["code"] != 0) {
-                    $resArr["status_code"] = "server_error";
-                    $resArr["message"] = $json_data["code"];
-                    $resArr["api_error"] = $json_data["message"] ?? "Unknown error";
-                    returnRequest($resArr);
+                    // Log full API response for debugging
+                    $api_log = date('Y-m-d H:i:s') . " - Game: $const_game_name | UID: $const_game_uid | API Response: " . $response . "\n";
+                    file_put_contents(__DIR__ . "/launch_logs.txt", $api_log, FILE_APPEND);
+
+                    if ($json_data["code"] != 0) {
+                        $resArr["status_code"] = "server_error";
+                        $resArr["message"] = $json_data["code"];
+                        $resArr["api_error"] = $json_data["message"] ?? "Unknown error";
+                        returnRequest($resArr);
+                    }
+                    $game_url = $json_data["payload"]["game_launch_url"];
+                    $resArr["data"]["game_url"] = $game_url;
+                    $resArr["status_code"] = "success";
                 }
-                $game_url = $json_data["payload"]["game_launch_url"];
-                $resArr["data"]["game_url"] = $game_url;
-                $resArr["status_code"] = "success";
             } else {
                 $resArr["status_code"] = "account_error";
             }
