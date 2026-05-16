@@ -666,7 +666,7 @@ $site_text_color = $settings['SITE_TEXT_COLOR'] ?? '#FFFFFF';
                 <div class="form-group">
                     <label class="form-label">Banner Image</label>
                     <input type="file" name="banner_img" id="slider_input" class="brand-input" style="padding:10px;"
-                        accept="image/*" onchange="initCropper(this, 'slider', 21/9)">
+                        accept="image/*" onchange="initCropper(this, 'slider', NaN)">
                     <input type="hidden" name="cropped_data" id="slider_cropped_data">
                 </div>
                 <div class="form-group">
@@ -691,7 +691,7 @@ $site_text_color = $settings['SITE_TEXT_COLOR'] ?? '#FFFFFF';
                 <div class="form-group">
                     <label class="form-label">Promo Image</label>
                     <input type="file" name="promo_img" id="promo_input" class="brand-input" style="padding:10px;"
-                        accept="image/*" onchange="initCropper(this, 'promo', 21/9)">
+                        accept="image/*" onchange="initCropper(this, 'promo', NaN)">
                     <input type="hidden" name="cropped_data" id="promo_cropped_data">
                 </div>
                 <div class="form-group">
@@ -776,8 +776,8 @@ $site_text_color = $settings['SITE_TEXT_COLOR'] ?? '#FFFFFF';
             if (currentTargetType === 'logo') {
                 canvasOptions.maxWidth = 800;
             } else {
-                canvasOptions.width = 1260;
-                canvasOptions.height = 540;
+                // Remove fixed width/height to allow free-form full take
+                canvasOptions.maxWidth = 1920; 
             }
 
             const canvas = cropper.getCroppedCanvas(canvasOptions);

@@ -302,16 +302,9 @@ if (true) {
         array_push($resArr['slideShowList'], $slideIndex);
     }
 
-    // Add default slides if none exist in the database
+    // Backend now sends empty list if no banners are in DB, allowing frontend to use its own defaults
     if (count($resArr['slideShowList']) == 0) {
-        array_push($resArr['slideShowList'], [
-            'slider_img' => 'https://images.unsplash.com/photo-1518173946687-a4c8a9833d8e?q=80&w=2000&auto=format&fit=crop',
-            'slider_action' => '#'
-        ]);
-        array_push($resArr['slideShowList'], [
-            'slider_img' => 'https://images.unsplash.com/photo-1540747737273-4629e0756eb9?q=80&w=2000&auto=format&fit=crop',
-            'slider_action' => '#'
-        ]);
+        // Left empty intentionally
     }
 
     $index = [];
