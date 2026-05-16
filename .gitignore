@@ -1,3 +1,12 @@
 *.log
 router/*.log
 User_admin_Dashboards/
+security/india_lotto_config.php
+security/auth-secret.php
+security/config.php
+security/constants.php
+security/constant2.php
+security/setup-database.php
+security/license.php
+.htaccess
+security/.htaccess
