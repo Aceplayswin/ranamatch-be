@@ -115,10 +115,11 @@ else if ($action == "update_social_links") {
 }
 
 else if ($action == "add_slider") {
-    $db_path = "";
     $upload_dir = "../uploads/branding/";
     $url = mysqli_real_escape_string($conn, $_POST['action_url'] ?? '');
+    $success_count = 0;
 
+    // Handle Cropped Single Upload (Priority)
     if (!empty($_POST['cropped_data'])) {
         $data = $_POST['cropped_data'];
         if (preg_match('/^data:image\/(\w+);base64,/', $data, $type)) {
@@ -127,34 +128,42 @@ else if ($action == "add_slider") {
             $filename = "slider_" . time() . ".jpg";
             if (file_put_contents($upload_dir . $filename, $data)) {
                 $db_path = "admin/uploads/branding/" . $filename;
+                mysqli_query($conn, "INSERT INTO tblsliders (tbl_slider_img, tbl_slider_action, tbl_slider_status) VALUES ('$db_path', '$url', 'true')");
+                $success_count++;
             }
         }
-    } else if (isset($_FILES['banner_img']) && $_FILES['banner_img']['error'] == 0) {
-        $allowed = ['jpg', 'jpeg', 'png', 'gif'];
-        $ext = strtolower(pathinfo($_FILES['banner_img']['name'], PATHINFO_EXTENSION));
-        if (in_array($ext, $allowed)) {
-            $filename = "slider_" . time() . "_" . mt_rand(1000, 9999) . "." . $ext;
-            if (move_uploaded_file($_FILES['banner_img']['tmp_name'], $upload_dir . $filename)) {
-                $db_path = "admin/uploads/branding/" . $filename;
+    } 
+    // Handle Bulk Upload
+    else if (isset($_FILES['banner_imgs'])) {
+        $files = $_FILES['banner_imgs'];
+        $allowed = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
+        
+        for ($i = 0; $i < count($files['name']); $i++) {
+            if ($files['error'][$i] == 0) {
+                $ext = strtolower(pathinfo($files['name'][$i], PATHINFO_EXTENSION));
+                if (in_array($ext, $allowed)) {
+                    $filename = "slider_" . time() . "_" . mt_rand(1000, 9999) . "." . $ext;
+                    if (move_uploaded_file($files['tmp_name'][$i], $upload_dir . $filename)) {
+                        $db_path = "admin/uploads/branding/" . $filename;
+                        mysqli_query($conn, "INSERT INTO tblsliders (tbl_slider_img, tbl_slider_action, tbl_slider_status) VALUES ('$db_path', '$url', 'true')");
+                        $success_count++;
+                    }
+                }
             }
         }
     }
 
-    if (!empty($db_path)) {
-        if (mysqli_query($conn, "INSERT INTO tblsliders (tbl_slider_img, tbl_slider_action, tbl_slider_status) VALUES ('$db_path', '$url', 'true')")) {
-            header("Location: site-branding.php?msg=Slider added&v=" . time());
-        } else {
-            header("Location: site-branding.php?err=DB Error: " . urlencode(mysqli_error($conn)) . "&v=" . time());
-        }
+    if ($success_count > 0) {
+        header("Location: site-branding.php?msg=$success_count Slider(s) added successfully&v=" . time());
     } else {
-        header("Location: site-branding.php?err=Slider upload failed&v=" . time());
+        header("Location: site-branding.php?err=Upload failed. No valid images selected.&v=" . time());
     }
 }
 
 else if ($action == "add_promo") {
-    $db_path = "";
     $upload_dir = "../uploads/branding/";
     $url = mysqli_real_escape_string($conn, $_POST['action_url'] ?? '');
+    $success_count = 0;
 
     if (!empty($_POST['cropped_data'])) {
         $data = $_POST['cropped_data'];
@@ -163,34 +172,35 @@ else if ($action == "add_promo") {
             $data = base64_decode($data);
             $filename = "promo_" . time() . ".jpg";
             if (file_put_contents($upload_dir . $filename, $data)) {
-                if (@getimagesize($upload_dir . $filename)) {
-                    $db_path = "admin/uploads/branding/" . $filename;
-                } else {
-                    unlink($upload_dir . $filename);
-                }
+                $db_path = "admin/uploads/branding/" . $filename;
+                mysqli_query($conn, "INSERT INTO tbl_promotions (image_path, action_url, status) VALUES ('$db_path', '$url', 'true')");
+                $success_count++;
             }
         }
-    } else if (isset($_FILES['promo_img']) && $_FILES['promo_img']['error'] == 0) {
-        $allowed = ['jpg', 'jpeg', 'png', 'gif'];
-        $ext = strtolower(pathinfo($_FILES['promo_img']['name'], PATHINFO_EXTENSION));
-        if (in_array($ext, $allowed)) {
-            if (@getimagesize($_FILES['promo_img']['tmp_name'])) {
-                $filename = "promo_" . time() . "_" . mt_rand(1000, 9999) . "." . $ext;
-                if (move_uploaded_file($_FILES['promo_img']['tmp_name'], $upload_dir . $filename)) {
-                    $db_path = "admin/uploads/branding/" . $filename;
+    } 
+    else if (isset($_FILES['promo_imgs'])) {
+        $files = $_FILES['promo_imgs'];
+        $allowed = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
+
+        for ($i = 0; $i < count($files['name']); $i++) {
+            if ($files['error'][$i] == 0) {
+                $ext = strtolower(pathinfo($files['name'][$i], PATHINFO_EXTENSION));
+                if (in_array($ext, $allowed)) {
+                    $filename = "promo_" . time() . "_" . mt_rand(1000, 9999) . "." . $ext;
+                    if (move_uploaded_file($files['tmp_name'][$i], $upload_dir . $filename)) {
+                        $db_path = "admin/uploads/branding/" . $filename;
+                        mysqli_query($conn, "INSERT INTO tbl_promotions (image_path, action_url, status) VALUES ('$db_path', '$url', 'true')");
+                        $success_count++;
+                    }
                 }
             }
         }
     }
 
-    if (!empty($db_path)) {
-        if (mysqli_query($conn, "INSERT INTO tbl_promotions (image_path, action_url, status) VALUES ('$db_path', '$url', 'true')")) {
-            header("Location: site-branding.php?msg=Promo added successfully&v=" . time());
-        } else {
-            header("Location: site-branding.php?err=Promo DB Error: " . urlencode(mysqli_error($conn)) . "&v=" . time());
-        }
+    if ($success_count > 0) {
+        header("Location: site-branding.php?msg=$success_count Promo(s) added successfully&v=" . time());
     } else {
-        header("Location: site-branding.php?err=Promo image upload failed&v=" . time());
+        header("Location: site-branding.php?err=Upload failed. No valid images selected.&v=" . time());
     }
 }
 
@@ -204,6 +214,22 @@ else if ($action == "delete_asset") {
         mysqli_query($conn, "DELETE FROM tbl_promotions WHERE id = $id");
     }
     header("Location: site-branding.php?msg=Asset deleted&v=" . time());
+}
+
+else if ($action == "bulk_delete_assets") {
+    $type = $_POST['type'];
+    $ids = mysqli_real_escape_string($conn, $_POST['ids']);
+    
+    if (!empty($ids)) {
+        if ($type == "slider") {
+            mysqli_query($conn, "DELETE FROM tblsliders WHERE id IN ($ids)");
+        } else if ($type == "promo") {
+            mysqli_query($conn, "DELETE FROM tbl_promotions WHERE id IN ($ids)");
+        }
+        header("Location: site-branding.php?msg=Selected assets deleted successfully&v=" . time());
+    } else {
+        header("Location: site-branding.php?err=No assets selected for deletion&v=" . time());
+    }
 }
 
 else if ($action == "update_theme") {

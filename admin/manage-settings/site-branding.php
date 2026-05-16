@@ -259,6 +259,17 @@ $site_text_color = $settings['SITE_TEXT_COLOR'] ?? '#FFFFFF';
             object-fit: contain;
         }
 
+        .banner-checkbox {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            z-index: 10;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: var(--brand);
+        }
+
         .banner-overlay {
             position: absolute;
             inset: 0;
@@ -295,6 +306,56 @@ $site_text_color = $settings['SITE_TEXT_COLOR'] ?? '#FFFFFF';
 
         .btn-delete:hover {
             transform: scale(1.1);
+        }
+
+        .btn-view {
+            background: var(--brand);
+            color: #000;
+        }
+
+        .btn-view:hover {
+            transform: scale(1.1);
+        }
+
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 12px;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
         }
 
         @media (max-width: 600px) {
@@ -607,18 +668,25 @@ $site_text_color = $settings['SITE_TEXT_COLOR'] ?? '#FFFFFF';
                 <div class="asset-card">
                     <div class="card-title" style="justify-content: space-between;">
                         <span><i class='bx bx-images'></i> Homepage Banners (Sliders)</span>
-                        <button class="btn-brand-save" style="padding: 8px 20px; font-size: 12px;"
-                            onclick="document.getElementById('addSliderModal').style.display='flex'">+ Add
-                            Slider</button>
+                        <div class="d-flex gap-3">
+                            <button class="btn-brand-save btn-bulk-delete" id="btn-delete-sliders" style="display:none; background: #FF2D2D; color: #fff;" onclick="BulkDelete('slider')">Delete Selected</button>
+                            <button class="btn-brand-save" style="padding: 8px 20px; font-size: 12px;"
+                                onclick="document.getElementById('addSliderModal').style.display='flex'">+ Add
+                                Slider</button>
+                        </div>
                     </div>
                     <div class="grid-asset">
                         <?php
                         $sliders = mysqli_query($conn, "SELECT * FROM tblsliders WHERE tbl_slider_status='true'");
                         while ($s = mysqli_fetch_assoc($sliders)) {
                             ?>
-                            <div class="banner-item">
+                            <div class="banner-item" id="slider-<?php echo $s['id']; ?>">
+                                <input type="checkbox" class="banner-checkbox slider-check" value="<?php echo $s['id']; ?>" onchange="ToggleBulkBtn('slider')">
                                 <img src="../../<?php echo $s['tbl_slider_img']; ?>" alt="Banner">
-                                <div class="banner-overlay">
+                                <div class="banner-overlay" style="gap: 10px;">
+                                    <button class="btn-circle-action btn-view"
+                                        onclick="ViewImage('../../<?php echo $s['tbl_slider_img']; ?>')"><i
+                                            class='bx bx-show'></i></button>
                                     <button class="btn-circle-action btn-delete"
                                         onclick="DeleteAsset('slider', <?php echo $s['id']; ?>)"><i
                                             class='bx bx-trash'></i></button>
@@ -632,17 +700,24 @@ $site_text_color = $settings['SITE_TEXT_COLOR'] ?? '#FFFFFF';
                 <div class="asset-card">
                     <div class="card-title" style="justify-content: space-between;">
                         <span><i class='bx bx-star'></i> Promotional Banners</span>
-                        <button class="btn-brand-save" style="padding: 8px 20px; font-size: 12px;"
-                            onclick="document.getElementById('addPromoModal').style.display='flex'">+ Add Promo</button>
+                        <div class="d-flex gap-3">
+                            <button class="btn-brand-save btn-bulk-delete" id="btn-delete-promos" style="display:none; background: #FF2D2D; color: #fff;" onclick="BulkDelete('promo')">Delete Selected</button>
+                            <button class="btn-brand-save" style="padding: 8px 20px; font-size: 12px;"
+                                onclick="document.getElementById('addPromoModal').style.display='flex'">+ Add Promo</button>
+                        </div>
                     </div>
                     <div class="grid-asset">
                         <?php
                         $promos = mysqli_query($conn, "SELECT * FROM tbl_promotions WHERE status='true'");
                         while ($p = mysqli_fetch_assoc($promos)) {
                             ?>
-                            <div class="banner-item">
+                            <div class="banner-item" id="promo-<?php echo $p['id']; ?>">
+                                <input type="checkbox" class="banner-checkbox promo-check" value="<?php echo $p['id']; ?>" onchange="ToggleBulkBtn('promo')">
                                 <img src="../../<?php echo $p['image_path']; ?>" alt="Promo">
-                                <div class="banner-overlay">
+                                <div class="banner-overlay" style="gap: 10px;">
+                                    <button class="btn-circle-action btn-view"
+                                        onclick="ViewImage('../../<?php echo $p['image_path']; ?>')"><i
+                                            class='bx bx-show'></i></button>
                                     <button class="btn-circle-action btn-delete"
                                         onclick="DeleteAsset('promo', <?php echo $p['id']; ?>)"><i
                                             class='bx bx-trash'></i></button>
@@ -664,10 +739,10 @@ $site_text_color = $settings['SITE_TEXT_COLOR'] ?? '#FFFFFF';
             <form action="manager-branding.php" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="action_type" value="add_slider">
                 <div class="form-group">
-                    <label class="form-label">Banner Image</label>
-                    <input type="file" name="banner_img" id="slider_input" class="brand-input" style="padding:10px;"
-                        accept="image/*" onchange="initCropper(this, 'slider', NaN)">
-                    <input type="hidden" name="cropped_data" id="slider_cropped_data">
+                    <label class="form-label">Banner Image(s)</label>
+                    <input type="file" name="banner_imgs[]" id="slider_input" class="brand-input" style="padding:10px;"
+                        accept="image/*" multiple>
+                    <p style="color: var(--text-muted); font-size: 10px; margin-top: 5px;">You can select multiple images for bulk upload. Note: Cropping is disabled for bulk upload.</p>
                 </div>
                 <div class="form-group">
                     <label class="form-label">Action Link (Optional)</label>
@@ -689,10 +764,10 @@ $site_text_color = $settings['SITE_TEXT_COLOR'] ?? '#FFFFFF';
             <form action="manager-branding.php" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="action_type" value="add_promo">
                 <div class="form-group">
-                    <label class="form-label">Promo Image</label>
-                    <input type="file" name="promo_img" id="promo_input" class="brand-input" style="padding:10px;"
-                        accept="image/*" onchange="initCropper(this, 'promo', NaN)">
-                    <input type="hidden" name="cropped_data" id="promo_cropped_data">
+                    <label class="form-label">Promo Image(s)</label>
+                    <input type="file" name="promo_imgs[]" id="promo_input" class="brand-input" style="padding:10px;"
+                        accept="image/*" multiple>
+                    <p style="color: var(--text-muted); font-size: 10px; margin-top: 5px;">You can select multiple images for bulk upload. Note: Cropping is disabled for bulk upload.</p>
                 </div>
                 <div class="form-group">
                     <label class="form-label">Action Link (Optional)</label>
@@ -722,6 +797,13 @@ $site_text_color = $settings['SITE_TEXT_COLOR'] ?? '#FFFFFF';
                 <button type="button" class="btn-brand-save" onclick="applyCrop()">Crop & Save</button>
             </div>
         </div>
+        </div>
+    </div>
+
+    <!-- Lightbox for Big View -->
+    <div id="lightboxModal" class="lightbox-modal" onclick="this.style.display='none'">
+        <div class="lightbox-close"><i class='bx bx-x'></i></div>
+        <img id="lightboxImg" class="lightbox-content" src="" alt="Full View">
     </div>
 
     <script>
@@ -810,6 +892,56 @@ $site_text_color = $settings['SITE_TEXT_COLOR'] ?? '#FFFFFF';
         function DeleteAsset(type, id) {
             if (confirm("Are you sure you want to delete this asset?")) {
                 window.location.href = `manager-branding.php?action_type=delete_asset&type=${type}&id=${id}`;
+            }
+        }
+
+        function ViewImage(src) {
+            const modal = document.getElementById('lightboxModal');
+            const img = document.getElementById('lightboxImg');
+            img.src = src;
+            modal.style.display = 'flex';
+        }
+
+        function ToggleBulkBtn(type) {
+            const checks = document.querySelectorAll(`.${type}-check:checked`);
+            const btn = document.getElementById(`btn-delete-${type}s`);
+            if (checks.length > 0) {
+                btn.style.display = 'block';
+            } else {
+                btn.style.display = 'none';
+            }
+        }
+
+        function BulkDelete(type) {
+            const checks = document.querySelectorAll(`.${type}-check:checked`);
+            if (checks.length === 0) return;
+            
+            if (confirm(`Are you sure you want to delete ${checks.length} selected ${type}s?`)) {
+                const ids = Array.from(checks).map(c => c.value);
+                const form = document.createElement('form');
+                form.method = 'POST';
+                form.action = 'manager-branding.php';
+                
+                const actionInput = document.createElement('input');
+                actionInput.type = 'hidden';
+                actionInput.name = 'action_type';
+                actionInput.value = 'bulk_delete_assets';
+                form.appendChild(actionInput);
+                
+                const typeInput = document.createElement('input');
+                typeInput.type = 'hidden';
+                typeInput.name = 'type';
+                typeInput.value = type;
+                form.appendChild(typeInput);
+                
+                const idsInput = document.createElement('input');
+                idsInput.type = 'hidden';
+                idsInput.name = 'ids';
+                idsInput.value = ids.join(',');
+                form.appendChild(idsInput);
+                
+                document.body.appendChild(form);
+                form.submit();
             }
         }
 
