@@ -674,7 +674,7 @@ $site_text_color = $settings['SITE_TEXT_COLOR'] ?? '#FFFFFF';
                     <input type="text" name="action_url" class="brand-input" placeholder="https://...">
                 </div>
                 <div class="d-flex gap-2">
-                    <button type="submit" class="btn-brand-save">Upload Now</button>
+                    <button type="submit" class="btn-brand-save">Upload N   ow</button>
                     <button type="button" class="btn-brand-save" style="background:var(--input-bg); color:#fff;"
                         onclick="this.closest('#addSliderModal').style.display='none'">Cancel</button>
                 </div>

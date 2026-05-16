@@ -10,6 +10,7 @@
 define("ACCESS_SECURITY", "true");
 include __DIR__ . '/../../security/config.php';
 include __DIR__ . '/../../security/constants.php';
+include __DIR__ . '/../../security/india_lotto_config.php';
 
 // 1. Get POST data
 $raw_data = $_POST['Data'] ?? '';
@@ -82,12 +83,7 @@ if (!$user_row = mysqli_fetch_assoc($user_res)) {
 $current_balance = (float)$user_row['tbl_balance'];
 
 // 8. Fetch Game Name for history
-$game_name = "India Lotto";
-$game_id_safe = mysqli_real_escape_string($conn, $game_id);
-$game_query = mysqli_query($conn, "SELECT game_name FROM tbl_games WHERE game_uid = '$game_id_safe' LIMIT 1");
-if ($game_query && $game_row = mysqli_fetch_assoc($game_query)) {
-    $game_name = $game_row['game_name'];
-}
+$game_name = getIndiaLottoGameName($game_id, $conn);
 $game_name_safe = mysqli_real_escape_string($conn, $game_name);
 
 // 8.1 Process based on type
