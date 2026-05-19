@@ -21,28 +21,38 @@ if ($page_num < 1) $page_num = 1;
 $offset = ($page_num - 1) * $content;
 
 $where_clauses = [];
-if ($f_username != "") $where_clauses[] = "UserID LIKE '%$f_username%'";
-if ($f_type != "") $where_clauses[] = "Type = '$f_type'";
+if ($f_type != "") $where_clauses[] = "t.Type = '$f_type'";
 if ($f_date_from != "" && $f_date_to != "") {
-    $where_clauses[] = "STR_TO_DATE(Time, '%d-%m-%Y') BETWEEN STR_TO_DATE('$f_date_from', '%Y-%m-%d') AND STR_TO_DATE('$f_date_to', '%Y-%m-%d')";
+    $where_clauses[] = "STR_TO_DATE(t.Time, '%d-%m-%Y') BETWEEN STR_TO_DATE('$f_date_from', '%Y-%m-%d') AND STR_TO_DATE('$f_date_to', '%Y-%m-%d')";
 }
 
-$where_sql = count($where_clauses) > 0 ? "WHERE " . implode(" AND ", $where_clauses) : "";
+$final_where_clauses = [];
+if ($f_username != "") {
+    $final_where_clauses[] = "(t.UserID LIKE '%$f_username%' OR u.tbl_user_name LIKE '%$f_username%' OR u.tbl_full_name LIKE '%$f_username%')";
+}
+if (count($where_clauses) > 0) {
+    $final_where_clauses = array_merge($final_where_clauses, $where_clauses);
+}
 
-$query_sql = "SELECT * FROM (
+$where_sql = count($final_where_clauses) > 0 ? "WHERE " . implode(" AND ", $final_where_clauses) : "";
+
+$query_sql = "SELECT t.*, COALESCE(u.tbl_user_name, u.tbl_full_name) as Username FROM (
                 SELECT tbl_user_id as UserID, 'Deposit' as Type, tbl_recharge_amount as Amount, tbl_time_stamp as Time, tbl_request_status as Status FROM tblusersrecharge
                 UNION ALL
                 SELECT tbl_user_id as UserID, 'Withdraw' as Type, tbl_withdraw_amount as Amount, tbl_time_stamp as Time, tbl_request_status as Status FROM tbluserswithdraw
-              ) as Transactions 
+              ) as t 
+              LEFT JOIN tblusersdata u ON t.UserID = u.tbl_uniq_id
               $where_sql 
-              ORDER BY STR_TO_DATE(Time, '%d-%m-%Y %h:%i %p') DESC 
+              ORDER BY STR_TO_DATE(t.Time, '%d-%m-%Y %h:%i %p') DESC 
               LIMIT $offset, $content";
 
 $total_sql = "SELECT COUNT(*) as total FROM (
                 SELECT tbl_user_id as UserID, 'Deposit' as Type, tbl_recharge_amount as Amount, tbl_time_stamp as Time, tbl_request_status as Status FROM tblusersrecharge
                 UNION ALL
                 SELECT tbl_user_id as UserID, 'Withdraw' as Type, tbl_withdraw_amount as Amount, tbl_time_stamp as Time, tbl_request_status as Status FROM tbluserswithdraw
-              ) as Transactions $where_sql";
+              ) as t 
+              LEFT JOIN tblusersdata u ON t.UserID = u.tbl_uniq_id
+              $where_sql";
 
 $total_res = mysqli_query($conn, $total_sql);
 $total_count = mysqli_fetch_assoc($total_res)['total'];
@@ -147,7 +157,7 @@ $total_pages = ceil($total_count / $content);
 
         <div class="table-responsive">
             <table class="r-table">
-                <thead><tr><th>No</th><th>Player</th><th>Action</th><th>Net Amount</th><th>Status</th><th>Timestamp</th></tr></thead>
+                <thead><tr><th>No</th><th>Player ID</th><th>Username</th><th>Action</th><th>Net Amount</th><th>Status</th><th>Timestamp</th></tr></thead>
                 <tbody>
                     <?php 
                     $res = mysqli_query($conn, $query_sql); 
@@ -157,6 +167,7 @@ $total_pages = ceil($total_count / $content);
                     <tr>
                         <td class="text-dim"><?php echo $no++; ?></td>
                         <td class="text-info fw-bold">#<?php echo $row['UserID']; ?></td>
+                        <td class="fw-bold text-white"><?php echo htmlspecialchars($row['Username'] ?? 'N/A'); ?></td>
                         <td><div class="fw-bold text-uppercase" style="font-size: 11px;"><?php echo $row['Type']; ?></div></td>
                         <td class="fw-bold <?php echo $row['Type']=='Deposit'?'text-success':'text-danger'; ?>">₹<?php echo number_format($row['Amount'], 2); ?></td>
                         <td><span class="tag-pill <?php echo $row['Status']=='success'?'tag-success':'tag-danger'; ?>"><?php echo $row['Status']; ?></span></td>
@@ -204,6 +215,7 @@ function exportData(format) {
                 const tableData = data.map((row, index) => [
                     index + 1,
                     row.UserID,
+                    row.Username || 'N/A',
                     row.Type,
                     row.Amount,
                     row.Status,
@@ -211,7 +223,7 @@ function exportData(format) {
                 ]);
 
                 doc.autoTable({
-                    head: [['No', 'User ID', 'Type', 'Amount', 'Status', 'Time']],
+                    head: [['No', 'User ID', 'Username', 'Type', 'Amount', 'Status', 'Time']],
                     body: tableData,
                     startY: 30,
                     theme: 'striped',

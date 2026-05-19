@@ -99,22 +99,36 @@ if (isset($_POST['submit'])){
   $update_result = mysqli_query($conn, $update_sql) or die('error');
   
   if ($update_result){
-    $request_status = ($update_balance_delta >= 0) ? "success" : "deducted";
-    
-    $recharge_mode = "Manual";
-    $recharge_details = "Manual-Method-Admin";
-    
-    $insert_sql = $conn->prepare("INSERT INTO tblusersrecharge(tbl_uniq_id,tbl_user_id,tbl_recharge_amount,tbl_recharge_mode,tbl_recharge_details,tbl_request_status,tbl_time_stamp) VALUES(?,?,?,?,?,?,?)");
-    $insert_sql->bind_param("sssssss", $uniqId,$user_uniq_id,$update_balance_delta,$recharge_mode, $recharge_details,$request_status,$curr_date_time);
-    $insert_sql->execute();
+    if ($update_balance_delta >= 0) {
+      $recharge_mode = "Manual";
+      $recharge_details = "Manual-Method-Admin";
+      $request_status = "success";
+      
+      $insert_sql = $conn->prepare("INSERT INTO tblusersrecharge(tbl_uniq_id,tbl_user_id,tbl_recharge_amount,tbl_recharge_mode,tbl_recharge_details,tbl_request_status,tbl_time_stamp) VALUES(?,?,?,?,?,?,?)");
+      $insert_sql->bind_param("sssssss", $uniqId,$user_uniq_id,$update_balance_delta,$recharge_mode, $recharge_details,$request_status,$curr_date_time);
+      $insert_sql->execute();
+      $insert_error = $insert_sql->error;
+    } else {
+      $withdraw_amount = abs($update_balance_delta);
+      $request_status = "success";
+      $remark = "Manual deduction by Admin";
+      $withdraw_uniq_id = 'WD0' . generateOrderID();
+      $withdraw_details = "Manual deduction by Admin";
+      $extra_details = "None";
+      
+      $insert_sql = $conn->prepare("INSERT INTO tbluserswithdraw(tbl_uniq_id,tbl_user_id,tbl_withdraw_request,tbl_withdraw_amount,tbl_withdraw_details,tbl_request_status,tbl_extra_details,tbl_remark,tbl_time_stamp) VALUES(?,?,?,?,?,?,?,?,?)");
+      $insert_sql->bind_param("ssddsssss", $withdraw_uniq_id,$user_uniq_id,$withdraw_amount,$withdraw_amount,$withdraw_details,$request_status,$extra_details,$remark,$curr_date_time);
+      $insert_sql->execute();
+      $insert_error = $insert_sql->error;
+    }
   
-    if ($insert_sql->error == "") { ?>
+    if ($insert_error == "") { ?>
       <script>
         alert('Account updated successfully!');
         window.location.href = 'manager.php?id=<?php echo $user_uniq_id; ?>';
       </script>
   <?php }else{ ?>
-    <script>alert('Failed to update recharge record!'); window.history.back();</script>
+    <script>alert('Failed to update ledger record!'); window.history.back();</script>
   <?php } }else{ ?>
     <script>alert('Failed to update account data!');</script>
 <?php } } ?>

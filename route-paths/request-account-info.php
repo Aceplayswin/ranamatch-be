@@ -42,6 +42,7 @@ $const_account_casino_bonus = "0.00";
 $const_account_sports_bonus = "0.00";
 $const_account_total_balance = "0.00";
 $const_account_bonus_balance = "0.00";
+$const_account_exposure = "0.00";
 $active_bonus_id = 0;
 $required_play = 0;
 
@@ -180,6 +181,11 @@ if ($user_id != "" && $secret_key != "" && mysqli_num_rows($select_query) > 0) {
     $const_account_withdrawl_balance = formatNumber($res_data["tbl_withdrawl_balance"]);
     $const_account_commission_balance = formatNumber($res_data["tbl_commission_balance"]);
     $const_account_last_active = $res_data["tbl_last_active_date"] . ' ' . $res_data["tbl_last_active_time"];
+
+    // Calculate exposure dynamically from active bets (where status = 'wait')
+    $exposure_res = mysqli_query($conn, "SELECT SUM(tbl_match_cost) AS total_exposure FROM tblmatchplayed WHERE tbl_user_id = '{$user_id}' AND tbl_match_status = 'wait'");
+    $exposure_row = mysqli_fetch_assoc($exposure_res);
+    $const_account_exposure = formatNumber($exposure_row['total_exposure'] ?? 0);
 
 
     $notices_sql = "SELECT * FROM tblallnotices WHERE tbl_user_id='{$user_id}' AND tbl_notice_status='true' ORDER BY id DESC LIMIT 1";
@@ -320,6 +326,7 @@ if (true) {
     $index["account_b_balance"] = $const_account_bonus_balance;
     $index["account_w_balance"] = $const_account_withdrawl_balance;
     $index["account_c_balance"] = $const_account_commission_balance;
+    $index["account_exposure"] = $const_account_exposure;
     $index["account_last_active"] = $const_account_last_active;
 
     $index["account_casino_bonus"] = $const_account_casino_bonus;

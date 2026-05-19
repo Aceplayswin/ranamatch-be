@@ -75,12 +75,17 @@ mysqli_query($conn, "UPDATE tblmatchplayed
 // STAGE 1.5: Dead 'Wait' Resolution
 // If a record has been in 'wait' for >30s (e.g. slot games that don't send a 0-win callback),
 // automatically transition it to a 'loss' so the user receives their loss notification.
+// EXCLUDE SPORTS GAMES: Sports bets can take hours or days to settle.
 // ---------------------------------------------------------------
 mysqli_query($conn, "UPDATE tblmatchplayed 
     SET tbl_match_status = 'loss', tbl_match_result = 'lost', tbl_notify_at = NOW() 
     WHERE tbl_user_id = '{$user_id}' 
     AND tbl_match_status = 'wait' 
-    AND tbl_notify_at < NOW() - INTERVAL 30 SECOND");
+    AND tbl_notify_at < NOW() - INTERVAL 30 SECOND
+    AND tbl_period_id NOT IN ('92b24e4c25107367a80e0fe1a97c24e4', '08ced9dd788aed11ff3c7f387ae0f063', '4ee8e0051a035b463b47c3c473ce317d', '48341a3bf62b6dd0814d7129e7e0834b')
+    AND LOWER(tbl_project_name) NOT LIKE '%sports%'
+    AND LOWER(tbl_project_name) NOT LIKE '%esports%'
+    AND LOWER(tbl_project_name) NOT LIKE '%wickets%'");
 
 // ---------------------------------------------------------------
 // STAGE 2: Fire

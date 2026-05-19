@@ -599,7 +599,10 @@ body { font-family: var(--font-body) !important; background-color: var(--page-bg
         <table id="sports_activities_table" class="r-table">
           <thead>
             <tr>
-              <th>Game Name</th>
+              <th>Game Name / Detail</th>
+              <th>Choice (Selection)</th>
+              <th>Bet Type</th>
+              <th>Odds</th>
               <th>P&L</th>
               <th>Bet Amount</th>
               <th>Result</th>
@@ -626,7 +629,17 @@ body { font-family: var(--font-body) !important; background-color: var(--page-bg
               }
           ?>
             <tr>
-              <td style="font-weight: 600;"><?php echo $row['tbl_project_name']; ?></td>
+              <td style="font-weight: 600;">
+                <div><?php echo htmlspecialchars($row['tbl_project_name']); ?></div>
+                <div style="font-size: 10px; color: var(--text-dim); font-weight: normal;"><?php echo htmlspecialchars($row['tbl_match_details'] ?? '—'); ?></div>
+              </td>
+              <td style="font-size: 11px; font-weight: 700; color: var(--accent-blue);">
+                <?php if(!empty($row['tbl_selection'])){ echo "<span class='badge bg-dark'>".htmlspecialchars($row['tbl_selection'])."</span>"; }else{ echo "—"; } ?>
+              </td>
+              <td style="font-size: 11px; font-weight: 700; color: <?php echo (($row['tbl_bet_type'] ?? '') == 'Lay') ? '#ef4444' : '#3b82f6'; ?>;">
+                <?php echo htmlspecialchars($row['tbl_bet_type'] ?? 'Back'); ?>
+              </td>
+              <td style="font-weight: 700; color: #fbbf24;"><?php echo htmlspecialchars($row['tbl_odds'] ?? '—'); ?></td>
               <td style="font-weight: 700; color: var(--text-main);">&#8377;<?php echo number_format($profit, 2); ?></td>
               <td style="color: var(--text-dim);">&#8377;<?php echo number_format($bet, 2); ?></td>
               <td><span class="<?php echo $result_badge; ?>"><?php echo $result_label; ?></span></td>
@@ -642,7 +655,7 @@ body { font-family: var(--font-body) !important; background-color: var(--page-bg
           $s_prof_all = $total_srow['s_prof'] ?? 0;
           ?>
             <tr style="background: var(--table-header-bg);">
-              <td colspan="5" class="text-end py-3">
+              <td colspan="8" class="text-end py-3">
                  <div class="row g-3 justify-content-end">
                     <div class="col-auto text-start">
                       <div style="font-size: 10px; color: var(--text-dim);">OVERALL SPORTS BET</div>
@@ -657,7 +670,7 @@ body { font-family: var(--font-body) !important; background-color: var(--page-bg
             </tr>
           <?php } else { ?>
             <tr>
-              <td colspan="5" class="text-center py-5" style="color: var(--text-dim);">No sports activity records found.</td>
+              <td colspan="8" class="text-center py-5" style="color: var(--text-dim);">No sports activity records found.</td>
             </tr>
           <?php } ?>
           </tbody>

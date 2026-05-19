@@ -1,7 +1,8 @@
 <?php
+define("ACCESS_SECURITY", "true");
 include '../../security/config.php';
-$res = mysqli_query($conn, "DESCRIBE tblusersrecharge");
+$res = mysqli_query($conn, "DESCRIBE tblmatchplayed");
 while($row = mysqli_fetch_assoc($res)) {
-    print_r($row);
+    echo $row['Field'] . ' | ' . $row['Type'] . "\n";
 }
 ?>

@@ -19,7 +19,7 @@ if ($json_body && isset($json_body['action'])) {
 }
 $id = (int)($_POST['id'] ?? 0);
 
-if (!$id && !in_array($action, ['save_game', 'bulk_import', 'reorder'])) {
+if (!$id && !in_array($action, ['save_game', 'bulk_import', 'reorder', 'search_providers'])) {
     echo json_encode(['success' => false, 'error' => 'Invalid ID']);
     die();
 }
@@ -187,6 +187,17 @@ switch ($action) {
         }
         
         echo json_encode(['status' => 'success', 'count' => $count]);
+        break;
+
+    case 'search_providers':
+        $query = isset($_POST['query']) ? mysqli_real_escape_string($conn, $_POST['query']) : '';
+        $sql = "SELECT DISTINCT game_provider FROM tbl_games WHERE game_provider LIKE '%$query%' ORDER BY game_provider ASC LIMIT 10";
+        $res = mysqli_query($conn, $sql);
+        $providers = [];
+        while ($row = mysqli_fetch_assoc($res)) {
+            $providers[] = $row['game_provider'];
+        }
+        echo json_encode(['success' => true, 'providers' => $providers]);
         break;
 
     default:

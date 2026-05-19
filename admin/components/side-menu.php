@@ -520,7 +520,7 @@ $page_url_name = trim(str_replace($host_url, '', strtok($page_url, '?')), '/');
     echo 'menu-active-btn';
 }?>">
             <i class='bx bx-trending-up' style='color:#22c55e;'></i>
-            Recharge Records
+            Deposit Records
         </a>
         <a href="<?php echo $host_url; ?>manual-withdraw-records" class="nav-link <?php if ($page_url_name == 'manual-withdraw-records') {
     echo 'menu-active-btn';

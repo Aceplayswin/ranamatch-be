@@ -21,7 +21,7 @@ if ($accessObj->validate() == "true") {
     exit;
 }
 
-// [SELF-HEALING] Database Migrations
+// [SELF-HEALINapi/admin/manage-games/G] Database Migrations
 mysqli_query($conn, "CREATE TABLE IF NOT EXISTS `tbl_promotions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `image_path` text DEFAULT NULL,

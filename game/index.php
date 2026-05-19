@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         return openssl_decrypt(base64_decode($data), "AES-256-ECB", $key, OPENSSL_RAW_DATA);
     }
 
-    function encrypt($d ata, $key)
+    function encrypt($data, $key)
     {
         return base64_encode(openssl_encrypt($data, "AES-256-ECB", $key, OPENSSL_RAW_DATA));
     }
@@ -80,6 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Standardized Parsing
     $match_details = "";
     $bet_type = "";
+    $selection = "";
     $odds = "";
     $const_game_name = $data["game_name"] ?? $data["gameName"] ?? $data["mGameName"] ?? $data["title"] ?? "";
     $const_game_uid = $data["game_uid"] ?? "N/A";
@@ -326,8 +327,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $b_row = mysqli_fetch_assoc($b_res);
                     $cur_bal = floatval($b_row["tbl_balance"] ?? 0) + floatval($b_row["tbl_bonus_balance"] ?? 0) + floatval($b_row["tbl_sports_bonus"] ?? 0);
 
-                    $istmt = $conn->prepare("INSERT INTO tblmatchplayed (tbl_user_id, tbl_uniq_id, tbl_period_id, tbl_invested_on, tbl_match_cost, tbl_match_invested, tbl_match_profit, tbl_match_result, tbl_last_acbalance, tbl_match_status, tbl_project_name, tbl_match_details, tbl_bet_type, tbl_odds, tbl_time_stamp, tbl_result_time, tbl_notified, tbl_notify_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, NOW())");
-                    $istmt->bind_param("ssssdddsssssssss", $const_user_id, $m_order_id, $const_game_uid, $const_game_name, $bet_amount, $bet_amount, $win_amount, $rejected_result, $cur_bal, $rejected_status, $const_game_name, $rejection_reason, $bet_type, $check_odds, $m_time, $m_time);
+                    $istmt = $conn->prepare("INSERT INTO tblmatchplayed (tbl_user_id, tbl_uniq_id, tbl_period_id, tbl_invested_on, tbl_match_cost, tbl_match_invested, tbl_match_profit, tbl_match_result, tbl_last_acbalance, tbl_match_status, tbl_project_name, tbl_match_details, tbl_bet_type, tbl_selection, tbl_odds, tbl_time_stamp, tbl_result_time, tbl_notified, tbl_notify_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, NOW())");
+                    $istmt->bind_param("ssssdddssssssssss", $const_user_id, $m_order_id, $const_game_uid, $const_game_name, $bet_amount, $bet_amount, $win_amount, $rejected_result, $cur_bal, $rejected_status, $const_game_name, $rejection_reason, $bet_type, $selection, $check_odds, $m_time, $m_time);
                     $istmt->execute();
                     $istmt->close();
 
@@ -461,6 +462,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     }
                 }
             }
+        }
+    }
+
+    // Sports-specific alignment for Back/Lay and Selection
+    if ($is_sports) {
+        // The parsed bet_type currently contains the market and outcome name (e.g. "Winner (incl. super over) - Peshawar Zalmi SRL")
+        // We set that as the choice selection, and then extract the backlay value to set the bet_type to "Back" or "Lay".
+        $selection = $bet_type;
+
+        // Safely extract backlay parameter
+        $backlay_val = "";
+        if (isset($sports_data["betslip"]["bets"][0]["backlay"])) {
+            $backlay_val = strtolower($sports_data["betslip"]["bets"][0]["backlay"]);
+        } elseif (isset($sports_data["backlay"])) {
+            $backlay_val = strtolower($sports_data["backlay"]);
+        } elseif (isset($data["backlay"])) {
+            $backlay_val = strtolower($data["backlay"]);
+        }
+
+        if ($backlay_val === "l" || $backlay_val === "lay") {
+            $bet_type = "Lay";
+        } else {
+            $bet_type = "Back";
         }
     }
 
@@ -797,8 +821,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // If it's an instant result (not wait), we store it as result time too
                 $r_time_val = (strtolower($m_status) == "wait") ? null : $m_time;
 
-                $istmt = $conn->prepare("INSERT IGNORE INTO tblmatchplayed (tbl_user_id, tbl_uniq_id, tbl_period_id, tbl_invested_on, tbl_match_cost, tbl_match_invested, tbl_match_profit, tbl_match_result, tbl_last_acbalance, tbl_match_status, tbl_project_name, tbl_match_details, tbl_bet_type, tbl_odds, tbl_time_stamp, tbl_result_time, tbl_notified, tbl_notify_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, NOW())");
-                $istmt->bind_param("ssssdddsssssssss", $const_user_id, $m_order_id, $const_game_uid, $const_game_name, $bet_amount, $bet_amount, $win_amount, $m_result, $real_bal, $m_status, $const_game_name, $match_details, $bet_type, $odds, $m_time, $r_time_val);
+                $istmt = $conn->prepare("INSERT IGNORE INTO tblmatchplayed (tbl_user_id, tbl_uniq_id, tbl_period_id, tbl_invested_on, tbl_match_cost, tbl_match_invested, tbl_match_profit, tbl_match_result, tbl_last_acbalance, tbl_match_status, tbl_project_name, tbl_match_details, tbl_bet_type, tbl_selection, tbl_odds, tbl_time_stamp, tbl_result_time, tbl_notified, tbl_notify_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, NOW())");
+                $istmt->bind_param("ssssdddssssssssss", $const_user_id, $m_order_id, $const_game_uid, $const_game_name, $bet_amount, $bet_amount, $win_amount, $m_result, $real_bal, $m_status, $const_game_name, $match_details, $bet_type, $selection, $odds, $m_time, $r_time_val);
                 if ($istmt->execute()) {
                     $log_ins = date("Y-m-d H:i:s") . " | INS | New Record Created | Status: $m_status | ID: $m_order_id\n";
                 } else {

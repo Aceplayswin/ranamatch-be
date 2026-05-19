@@ -82,21 +82,27 @@ switch ($type) {
 
     case 'deposits':
         setExcelHeaders("deposits_report_" . date('Y-m-d'));
-        if ($format === 'excel') echo "<table border='1'><tr style='background:#f4f4f4;'><th>User ID</th><th>Amount</th><th>Method</th><th>UTR/Details</th><th>Time</th><th>Status</th></tr>";
+        if ($format === 'excel') echo "<table border='1'><tr style='background:#f4f4f4;'><th>User ID</th><th>Username</th><th>Amount</th><th>Method</th><th>UTR/Details</th><th>Time</th><th>Status</th></tr>";
         
         $where = "WHERE 1=1";
-        if($f_status != "" && $f_status != "all") $where .= " AND tbl_request_status = '$f_status'";
-        if($f_username != "") $where .= " AND tbl_user_id LIKE '%$f_username%'";
+        if($f_status != "" && $f_status != "all") $where .= " AND r.tbl_request_status = '$f_status'";
+        if($f_username != "") $where .= " AND (r.tbl_user_id LIKE '%$f_username%' OR u.tbl_user_name LIKE '%$f_username%' OR u.tbl_full_name LIKE '%$f_username%')";
         if ($f_date_from != "" && $f_date_to != "") {
-            $where .= " AND STR_TO_DATE(tbl_time_stamp, '%d-%m-%Y') BETWEEN STR_TO_DATE('$f_date_from', '%Y-%m-%d') AND STR_TO_DATE('$f_date_to', '%Y-%m-%d')";
+            $where .= " AND STR_TO_DATE(r.tbl_time_stamp, '%d-%m-%Y') BETWEEN STR_TO_DATE('$f_date_from', '%Y-%m-%d') AND STR_TO_DATE('$f_date_to', '%Y-%m-%d')";
         }
 
-        $res = mysqli_query($conn, "SELECT tbl_user_id as UserID, tbl_recharge_amount as Amount, tbl_recharge_mode as Method, tbl_recharge_details as UTR, tbl_time_stamp as Time, tbl_request_status as Status FROM tblusersrecharge $where ORDER BY id DESC");
+        $res = mysqli_query($conn, "SELECT r.tbl_user_id as UserID, COALESCE(u.tbl_user_name, u.tbl_full_name) as Username, r.tbl_recharge_amount as Amount, r.tbl_recharge_mode as Method, r.tbl_recharge_details as UTR, r.tbl_time_stamp as Time, r.tbl_request_status as Status 
+                                    FROM tblusersrecharge r 
+                                    LEFT JOIN tblusersdata u ON r.tbl_user_id = u.tbl_uniq_id
+                                    $where 
+                                    ORDER BY r.id DESC");
         while ($row = mysqli_fetch_assoc($res)) {
             $status = ucfirst($row['Status']);
-            if ($format === 'excel') echo "<tr><td>{$row['UserID']}</td><td>{$row['Amount']}</td><td>{$row['Method']}</td><td>{$row['UTR']}</td><td>{$row['Time']}</td><td>{$status}</td></tr>";
+            $username = htmlspecialchars($row['Username'] ?? 'N/A');
+            if ($format === 'excel') echo "<tr><td>{$row['UserID']}</td><td>{$username}</td><td>{$row['Amount']}</td><td>{$row['Method']}</td><td>{$row['UTR']}</td><td>{$row['Time']}</td><td>{$status}</td></tr>";
             else {
                 $row['Status'] = $status;
+                $row['Username'] = $row['Username'] ?? 'N/A';
                 $data_array[] = $row;
             }
         }
@@ -200,27 +206,41 @@ switch ($type) {
 
     case 'transactions':
         setExcelHeaders("full_transaction_history_" . date('Y-m-d'));
-        if ($format === 'excel') echo "<table border='1'><tr style='background:#f4f4f4;'><th>User ID</th><th>Type</th><th>Amount</th><th>Time</th><th>Status</th></tr>";
+        if ($format === 'excel') echo "<table border='1'><tr style='background:#f4f4f4;'><th>User ID</th><th>Username</th><th>Type</th><th>Amount</th><th>Time</th><th>Status</th></tr>";
         
         $where_clauses = [];
-        if ($f_username != "") $where_clauses[] = "UserID LIKE '%$f_username%'";
+        if ($f_type != "") $where_clauses[] = "t.Type = '$f_type'";
         if ($f_date_from != "" && $f_date_to != "") {
-            $where_clauses[] = "STR_TO_DATE(Time, '%d-%m-%Y') BETWEEN STR_TO_DATE('$f_date_from', '%Y-%m-%d') AND STR_TO_DATE('$f_date_to', '%Y-%m-%d')";
+            $where_clauses[] = "STR_TO_DATE(t.Time, '%d-%m-%Y') BETWEEN STR_TO_DATE('$f_date_from', '%Y-%m-%d') AND STR_TO_DATE('$f_date_to', '%Y-%m-%d')";
         }
-        $where_sql = count($where_clauses) > 0 ? "WHERE " . implode(" AND ", $where_clauses) : "";
 
-        $sql = "SELECT * FROM (
+        $final_where_clauses = [];
+        if ($f_username != "") {
+            $final_where_clauses[] = "(t.UserID LIKE '%$f_username%' OR u.tbl_user_name LIKE '%$f_username%' OR u.tbl_full_name LIKE '%$f_username%')";
+        }
+        if (count($where_clauses) > 0) {
+            $final_where_clauses = array_merge($final_where_clauses, $where_clauses);
+        }
+
+        $where_sql = count($final_where_clauses) > 0 ? "WHERE " . implode(" AND ", $final_where_clauses) : "";
+
+        $sql = "SELECT t.*, COALESCE(u.tbl_user_name, u.tbl_full_name) as Username FROM (
                     SELECT tbl_user_id as UserID, 'Deposit' as Type, tbl_recharge_amount as Amount, tbl_time_stamp as Time, tbl_request_status as Status FROM tblusersrecharge
                     UNION ALL
                     SELECT tbl_user_id as UserID, 'Withdraw' as Type, tbl_withdraw_amount as Amount, tbl_time_stamp as Time, tbl_request_status as Status FROM tbluserswithdraw
-                ) as Transactions 
+                ) as t 
+                LEFT JOIN tblusersdata u ON t.UserID = u.tbl_uniq_id
                 $where_sql 
-                ORDER BY STR_TO_DATE(Time, '%d-%m-%Y %h:%i %p') DESC";
+                ORDER BY STR_TO_DATE(t.Time, '%d-%m-%Y %h:%i %p') DESC";
 
         $res = mysqli_query($conn, $sql);
         while ($row = mysqli_fetch_assoc($res)) {
-            if ($format === 'excel') echo "<tr><td>{$row['UserID']}</td><td>{$row['Type']}</td><td>{$row['Amount']}</td><td>{$row['Time']}</td><td>{$row['Status']}</td></tr>";
-            else $data_array[] = $row;
+            $username = htmlspecialchars($row['Username'] ?? 'N/A');
+            if ($format === 'excel') echo "<tr><td>{$row['UserID']}</td><td>{$username}</td><td>{$row['Type']}</td><td>{$row['Amount']}</td><td>{$row['Time']}</td><td>{$row['Status']}</td></tr>";
+            else {
+                $row['Username'] = $row['Username'] ?? 'N/A';
+                $data_array[] = $row;
+            }
         }
         if ($format === 'excel') echo "</table>";
         break;

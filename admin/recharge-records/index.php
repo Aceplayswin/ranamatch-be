@@ -321,6 +321,7 @@ $offset = ($page_num - 1) * $content;
                             <th>Date & Time</th>
                             <th style="text-align: center;">Status</th>
                             <th>Recharge Details</th>
+                            <th>Admin Remark</th>
                             <th style="text-align: right;">Mode</th>
                         </tr>
                     </thead>
@@ -378,6 +379,8 @@ $offset = ($page_num - 1) * $content;
                                     </td>
                                     <td style="font-size: 12px; color: var(--text-dim);">
                                         <?php echo $row['tbl_recharge_details']; ?></td>
+                                    <td style="font-size: 12px; color: var(--text-dim); max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="<?php echo htmlspecialchars($row['tbl_remark'] ?? ''); ?>">
+                                        <?php echo htmlspecialchars($row['tbl_remark'] ?? 'N/A'); ?></td>
                                     <td style="text-align: right; font-weight: 700; color: var(--accent-blue);">
                                         <?php echo $row['tbl_recharge_mode']; ?></td>
                                 </tr>
@@ -386,7 +389,7 @@ $offset = ($page_num - 1) * $content;
                             }
                         } else { ?>
                             <tr>
-                                <td colspan="7" style="text-align: center; padding: 60px; color: var(--text-dim);">
+                                <td colspan="8" style="text-align: center; padding: 60px; color: var(--text-dim);">
                                     <i class='bx bx-receipt'
                                         style="font-size: 48px; display: block; margin-bottom: 12px; opacity: 0.5;"></i>
                                     No recharge records found.

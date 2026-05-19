@@ -15,6 +15,7 @@ if ($access->validate() == "false") {
 $search = isset($_GET['search']) ? mysqli_real_escape_string($conn, $_GET['search']) : '';
 $category = isset($_GET['category']) ? mysqli_real_escape_string($conn, $_GET['category']) : '';
 $status = isset($_GET['status']) ? mysqli_real_escape_string($conn, $_GET['status']) : '';
+$provider = isset($_GET['provider']) ? mysqli_real_escape_string($conn, $_GET['provider']) : '';
 
 $where = "WHERE 1=1";
 if ($search) {
@@ -25,6 +26,9 @@ if ($category) {
 }
 if ($status !== '') {
     $where .= " AND game_status = '$status'";
+}
+if ($provider) {
+    $where .= " AND game_provider LIKE '%$provider%'";
 }
 
 $sql = "SELECT * FROM tbl_games $where ORDER BY sort_order ASC, id ASC";
@@ -280,6 +284,8 @@ $cat_result = mysqli_query($conn, $cat_sql);
             margin-bottom: 12px;
             animation: fadeInUp 0.6s ease both;
             box-shadow: var(--card-shadow);
+            position: relative;
+            z-index: 100;
         }
 
         .filter-input-group {
@@ -328,7 +334,7 @@ $cat_result = mysqli_query($conn, $cat_sql);
             align-items: center;
         }
 
-        .filter-input-wrapper i {
+        .filter-input-wrapper > i {
             position: absolute;
             left: 10px;
             font-size: 13px;
@@ -841,6 +847,61 @@ $cat_result = mysqli_query($conn, $cat_sql);
             text-align: center;
         }
 
+        /* Suggestions Dropdown System */
+        .suggestions-dropdown {
+            position: absolute;
+            top: calc(100% + 4px);
+            left: 0;
+            width: 100%;
+            max-height: 200px;
+            overflow-y: auto;
+            background: var(--panel-bg) !important;
+            border: 1px solid var(--border-dim);
+            border-radius: 6px;
+            z-index: 1000;
+            box-shadow: var(--card-shadow);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        /* Sleek scrollbar for suggestions */
+        .suggestions-dropdown::-webkit-scrollbar {
+            width: 5px;
+        }
+        .suggestions-dropdown::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .suggestions-dropdown::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        .suggestions-dropdown::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-blue);
+        }
+
+        .suggestion-item {
+            padding: 8px 12px;
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-main);
+            transition: all 0.2s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            text-align: left;
+        }
+
+        .suggestion-item:last-child {
+            border-bottom: none;
+        }
+
+        .suggestion-item:hover, .suggestion-item.active {
+            background: var(--table-row-hover);
+            color: var(--accent-blue);
+            padding-left: 16px;
+        }
+
         @media (max-width: 1024px) {
             .admin-main-content {
                 margin-left: 0 !important;
@@ -971,6 +1032,15 @@ $cat_result = mysqli_query($conn, $cat_sql);
                         <i class='bx bx-search'></i>
                         <input type="text" name="search" value="<?php echo htmlspecialchars($search); ?>"
                             class="filter-inp" placeholder="Name or UID...">
+                    </div>
+                </div>
+                <div class="filter-input-group">
+                    <label class="filter-label">Provider</label>
+                    <div class="filter-input-wrapper">
+                        <i class='bx bx-cube-alt'></i>
+                        <input type="text" name="provider" id="providerSearchInput" value="<?php echo htmlspecialchars($provider); ?>"
+                            class="filter-inp" placeholder="Provider..." autocomplete="off">
+                        <div id="providerSuggestions" class="suggestions-dropdown" style="display: none;"></div>
                     </div>
                 </div>
                 <div class="filter-input-group">
@@ -1164,7 +1234,10 @@ $cat_result = mysqli_query($conn, $cat_sql);
                     </div>
                     <div class="form-group">
                         <label>Provider</label>
-                        <input type="text" name="game_provider" class="cus-inp" required>
+                        <div style="position: relative;">
+                            <input type="text" name="game_provider" id="modalProviderInput" class="cus-inp" required autocomplete="off">
+                            <div id="modalProviderSuggestions" class="suggestions-dropdown" style="display: none;"></div>
+                        </div>
                     </div>
                 </div>
                 <div class="form-group">
@@ -1546,6 +1619,116 @@ $cat_result = mysqli_query($conn, $cat_sql);
 
             doc.save('game_library.pdf');
         }
+
+        // Provider Auto-Suggest Dropdown Logic (for Filters and Modals)
+        function initProviderAutoSuggest(inputId, dropdownId) {
+            const input = document.getElementById(inputId);
+            const dropdown = document.getElementById(dropdownId);
+            let currentFocus = -1;
+
+            if (!input || !dropdown) return;
+
+            input.addEventListener('input', function() {
+                const query = this.value.trim();
+                currentFocus = -1;
+
+                if (query.length === 0) {
+                    dropdown.innerHTML = '';
+                    dropdown.style.display = 'none';
+                    return;
+                }
+
+                const formData = new FormData();
+                formData.append('action', 'search_providers');
+                formData.append('query', query);
+
+                fetch('update_logic.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success && data.providers && data.providers.length > 0) {
+                        dropdown.innerHTML = '';
+                        data.providers.forEach((provider, index) => {
+                            const item = document.createElement('div');
+                            item.className = 'suggestion-item';
+                            item.dataset.index = index;
+                            item.innerHTML = `<i class='bx bx-cube-alt' style="opacity: 0.5; font-size: 12px;"></i> <span>${provider}</span>`;
+
+                            item.addEventListener('click', function() {
+                                input.value = provider;
+                                dropdown.innerHTML = '';
+                                dropdown.style.display = 'none';
+                            });
+                            dropdown.appendChild(item);
+                        });
+                        dropdown.style.display = 'block';
+                    } else {
+                        dropdown.innerHTML = '';
+                        dropdown.style.display = 'none';
+                    }
+                })
+                .catch(err => {
+                    console.error('Error fetching providers:', err);
+                });
+            });
+
+            input.addEventListener('keydown', function(e) {
+                const items = dropdown.getElementsByClassName('suggestion-item');
+                if (items.length === 0) return;
+
+                if (e.key === 'ArrowDown') {
+                    currentFocus++;
+                    addActive(items);
+                    e.preventDefault();
+                } else if (e.key === 'ArrowUp') {
+                    currentFocus--;
+                    addActive(items);
+                    e.preventDefault();
+                } else if (e.key === 'Enter') {
+                    if (currentFocus > -1 && items[currentFocus]) {
+                        items[currentFocus].click();
+                        e.preventDefault();
+                    }
+                } else if (e.key === 'Escape') {
+                    dropdown.style.display = 'none';
+                }
+            });
+
+            function addActive(items) {
+                if (!items) return false;
+                removeActive(items);
+                if (currentFocus >= items.length) currentFocus = 0;
+                if (currentFocus < 0) currentFocus = items.length - 1;
+
+                items[currentFocus].classList.add('active');
+                items[currentFocus].scrollIntoView({ block: 'nearest' });
+            }
+
+            function removeActive(items) {
+                for (let i = 0; i < items.length; i++) {
+                    items[i].classList.remove('active');
+                }
+            }
+
+            document.addEventListener('click', function(e) {
+                if (e.target !== input && e.target !== dropdown) {
+                    dropdown.style.display = 'none';
+                }
+            });
+
+            input.addEventListener('focus', function() {
+                if (this.value.trim().length > 0 && dropdown.children.length > 0) {
+                    dropdown.style.display = 'block';
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initProviderAutoSuggest('providerSearchInput', 'providerSuggestions');
+            initProviderAutoSuggest('modalProviderInput', 'modalProviderSuggestions');
+        });
 
         // Sidebar Toggle Logic
         document.querySelector('.menu-open-btn').addEventListener('click', () => {

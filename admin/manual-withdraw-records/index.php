@@ -23,7 +23,7 @@ if ($accessObj->validate() == "true") {
 $f_username = mysqli_real_escape_string($conn, $_POST['f_username'] ?? $_GET['f_username'] ?? '');
 $f_date_from = mysqli_real_escape_string($conn, $_POST['f_date_from'] ?? $_GET['f_date_from'] ?? '');
 $f_date_to = mysqli_real_escape_string($conn, $_POST['f_date_to'] ?? $_GET['f_date_to'] ?? '');
-$f_status = mysqli_real_escape_string($conn, $_POST['f_status'] ?? $_GET['f_status'] ?? 'pending');
+$f_status = mysqli_real_escape_string($conn, $_POST['f_status'] ?? $_GET['f_status'] ?? '');
 
 $content = 25;
 $page_num = (int) (isset($_GET['page_num']) ? $_GET['page_num'] : 1);
@@ -324,6 +324,7 @@ $offset = ($page_num - 1) * $content;
                             <th>Amount</th>
                             <th>Date & Time</th>
                             <th style="text-align: center;">Status</th>
+                            <th>Admin Remark</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -381,13 +382,15 @@ $offset = ($page_num - 1) * $content;
                                         else echo '<span class="tag tag-dark">'.ucfirst($status).'</span>';
                                         ?>
                                     </td>
+                                    <td style="font-size: 12px; color: var(--text-dim); max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="<?php echo htmlspecialchars($row['tbl_remark'] ?? ''); ?>">
+                                        <?php echo htmlspecialchars($row['tbl_remark'] ?? 'N/A'); ?></td>
                                 </tr>
                                 <?php
                                 $indexVal++;
                             }
                         } else { ?>
                             <tr>
-                                <td colspan="5" style="text-align: center; padding: 60px; color: var(--text-dim);">
+                                <td colspan="6" style="text-align: center; padding: 60px; color: var(--text-dim);">
                                     <i class='bx bx-receipt'
                                         style="font-size: 48px; display: block; margin-bottom: 12px; opacity: 0.5;"></i>
                                     No withdrawal records found.

@@ -21,14 +21,19 @@ if ($page_num < 1) $page_num = 1;
 $offset = ($page_num - 1) * $content;
 
 $where = "WHERE 1=1";
-if($f_status != "all") $where .= " AND tbl_request_status = '$f_status'";
-if($f_username != "") $where .= " AND tbl_user_id LIKE '%$f_username%'";
+if($f_status != "all") $where .= " AND r.tbl_request_status = '$f_status'";
+if($f_username != "") $where .= " AND (r.tbl_user_id LIKE '%$f_username%' OR u.tbl_user_name LIKE '%$f_username%' OR u.tbl_full_name LIKE '%$f_username%')";
 if ($f_date_from != "" && $f_date_to != "") {
-    $where .= " AND STR_TO_DATE(tbl_time_stamp, '%d-%m-%Y') BETWEEN STR_TO_DATE('$f_date_from', '%Y-%m-%d') AND STR_TO_DATE('$f_date_to', '%Y-%m-%d')";
+    $where .= " AND STR_TO_DATE(r.tbl_time_stamp, '%d-%m-%Y') BETWEEN STR_TO_DATE('$f_date_from', '%Y-%m-%d') AND STR_TO_DATE('$f_date_to', '%Y-%m-%d')";
 }
 
-$sql = "SELECT * FROM tblusersrecharge $where ORDER BY id DESC LIMIT $offset, $content";
-$total_count = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) as total FROM tblusersrecharge $where"))['total'];
+$sql = "SELECT r.*, COALESCE(u.tbl_user_name, u.tbl_full_name) as tbl_user_name 
+        FROM tblusersrecharge r 
+        LEFT JOIN tblusersdata u ON r.tbl_user_id = u.tbl_uniq_id 
+        $where 
+        ORDER BY r.id DESC 
+        LIMIT $offset, $content";
+$total_count = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) as total FROM tblusersrecharge r LEFT JOIN tblusersdata u ON r.tbl_user_id = u.tbl_uniq_id $where"))['total'];
 $total_pages = ceil($total_count / $content);
 ?>
 <!DOCTYPE html>
@@ -130,7 +135,7 @@ $total_pages = ceil($total_count / $content);
 
         <div class="table-responsive">
             <table class="r-table">
-                <thead><tr><th>No</th><th>User ID</th><th>Amount</th><th>Method</th><th>UTR Number</th><th>Status</th><th>Timestamp</th></tr></thead>
+                <thead><tr><th>No</th><th>User ID</th><th>Username</th><th>Amount</th><th>Method</th><th>UTR Number</th><th>Status</th><th>Timestamp</th></tr></thead>
                 <tbody>
                     <?php 
                     $res = mysqli_query($conn, $sql); 
@@ -140,6 +145,7 @@ $total_pages = ceil($total_count / $content);
                     <tr>
                         <td class="text-dim"><?php echo $no++; ?></td>
                         <td class="text-info fw-bold">#<?php echo $row['tbl_user_id']; ?></td>
+                        <td class="fw-bold text-white"><?php echo htmlspecialchars($row['tbl_user_name'] ?? 'N/A'); ?></td>
                         <td class="fw-bold text-success" style="font-size: 14px;">₹<?php echo number_format($row['tbl_recharge_amount'], 2); ?></td>
                         <td>
                             <div class="fw-bold"><?php echo strtoupper($row['tbl_recharge_mode'] ?? 'N/A'); ?></div>
@@ -196,6 +202,7 @@ function exportData(format) {
                 const tableData = data.map((row, index) => [
                     index + 1,
                     row.UserID,
+                    row.Username || 'N/A',
                     row.Amount,
                     row.Method,
                     row.UTR,
@@ -204,7 +211,7 @@ function exportData(format) {
                 ]);
 
                 doc.autoTable({
-                    head: [['No', 'User ID', 'Amount', 'Method', 'UTR', 'Time', 'Status']],
+                    head: [['No', 'User ID', 'Username', 'Amount', 'Method', 'UTR', 'Time', 'Status']],
                     body: tableData,
                     startY: 30,
                     theme: 'striped',

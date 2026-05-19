@@ -20,6 +20,61 @@ if($accessObj->validate()=="true"){
     header('location:../logout-account');
 }
 
+// Adjust Balance Handler
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'adjust_balance') {
+    header('Content-Type: application/json');
+    $user_id = mysqli_real_escape_string($conn, $_POST['user_id'] ?? '');
+    $type = mysqli_real_escape_string($conn, $_POST['type'] ?? '');
+    $amount = (float)($_POST['amount'] ?? 0);
+    $remark = mysqli_real_escape_string($conn, $_POST['remark'] ?? '');
+    
+    if (empty($user_id) || $amount <= 0 || !in_array($type, ['add', 'subtract'])) {
+        echo json_encode(['status' => 'error', 'message' => 'Invalid parameters provided.']);
+        exit;
+    }
+    
+    $user_check = mysqli_query($conn, "SELECT tbl_balance FROM tblusersdata WHERE tbl_uniq_id = '$user_id'");
+    if (mysqli_num_rows($user_check) === 0) {
+        echo json_encode(['status' => 'error', 'message' => 'User not found.']);
+        exit;
+    }
+    
+    $user_data = mysqli_fetch_assoc($user_check);
+    $current_balance = (float)$user_data['tbl_balance'];
+    
+    if ($type === 'subtract' && $current_balance < $amount) {
+        echo json_encode(['status' => 'error', 'message' => 'Insufficient user balance.']);
+        exit;
+    }
+    
+    $uniq_txn_id = "MAN-" . strtoupper(bin2hex(random_bytes(4)));
+    $time_stamp = date('d-m-Y h:i A');
+    
+    if ($type === 'add') {
+        $insert_sql = "INSERT INTO tblusersrecharge 
+                       (tbl_user_id, tbl_recharge_amount, tbl_recharge_mode, tbl_recharge_details, tbl_request_status, tbl_remark, tbl_time_stamp, tbl_uniq_id) 
+                       VALUES 
+                       ('$user_id', '$amount', 'Admin Adjustment', 'Credit by Admin', 'success', '$remark', '$time_stamp', '$uniq_txn_id')";
+        $update_balance_sql = "UPDATE tblusersdata 
+                               SET tbl_balance = tbl_balance + $amount 
+                               WHERE tbl_uniq_id = '$user_id'";
+    } else {
+        $insert_sql = "INSERT INTO tbluserswithdraw 
+                       (tbl_user_id, tbl_withdraw_request, tbl_withdraw_amount, tbl_withdraw_details, tbl_request_status, tbl_extra_details, tbl_remark, tbl_time_stamp, tbl_uniq_id) 
+                       VALUES 
+                       ('$user_id', '$amount', '$amount', 'Admin Adjustment', 'success', 'None', '$remark', '$time_stamp', '$uniq_txn_id')";
+        $update_balance_sql = "UPDATE tblusersdata 
+                               SET tbl_balance = tbl_balance - $amount 
+                               WHERE tbl_uniq_id = '$user_id'";
+    }
+    
+    if (mysqli_query($conn, $insert_sql) && mysqli_query($conn, $update_balance_sql)) {
+        echo json_encode(['status' => 'success', 'message' => 'Balance adjusted successfully!']);
+    } else {
+        echo json_encode(['status' => 'error', 'message' => 'Database update failed: ' . mysqli_error($conn)]);
+    }
+    exit;
+}
 
 $f_username = mysqli_real_escape_string($conn, $_POST['f_username'] ?? $_GET['f_username'] ?? '');
 $f_mobile = mysqli_real_escape_string($conn, $_POST['f_mobile'] ?? $_GET['f_mobile'] ?? '');
@@ -315,6 +370,7 @@ if (isset($_GET['download']) && $_GET['download'] === 'excel') {
                                 <th width="50">No</th>
                                 <th>User Info (Username)</th>
                                 <th>Balance</th>
+                                <th style="text-align: center;">Actions</th>
                                 <th>Deposits</th>
                                 <th>Bonus</th>
                                 <th>Withdraws</th>
@@ -428,6 +484,11 @@ if (isset($_GET['download']) && $_GET['download'] === 'excel') {
                                             </div>
                                         </td>
                                         <td style="font-weight: 800; color: var(--text-main);">₹<?php echo number_format($bal, 2); ?></td>
+                                        <td style="text-align: center;">
+                                            <button class="btn-modern btn-primary-modern py-1 px-2 text-xs" style="height: 28px; font-size: 11px;" onclick="event.stopPropagation(); openAdjustBalanceModal('<?php echo htmlspecialchars($uid); ?>', '<?php echo htmlspecialchars($uname); ?>', <?php echo (float)$bal; ?>)">
+                                                <i class='bx bx-wallet'></i> ±
+                                            </button>
+                                        </td>
                                         <td style="color: var(--accent-emerald);">₹<?php echo number_format($dep, 2); ?></td>
                                         <td>
                                             <div style="font-weight: 600; color: var(--accent-amber);">₹<?php echo number_format($bns_total, 2); ?></div>
@@ -457,13 +518,13 @@ if (isset($_GET['download']) && $_GET['download'] === 'excel') {
                                     <?php $indexVal++; 
                                 }
                             } else {
-                                echo "<tr><td colspan='12' class='text-center py-5 text-muted'>No user found matching criteria</td></tr>";
+                                echo "<tr><td colspan='14' class='text-center py-5 text-muted'>No user found matching criteria</td></tr>";
                             } ?>
                         </tbody>
                         <?php if ($indexVal > 1) { ?>
                         <tfoot style="background: var(--table-header-bg); border-top: 1px solid var(--border-dim);">
                             <tr style="font-weight: 700;">
-                                <td colspan="11">
+                                <td colspan="14">
                                     <div style="display: flex; align-items: center; gap: 30px; padding: 6px 0;">
                                         <div style="font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px;">Page Totals:</div>
                                         <div style="font-size: 13px; color: var(--text-main);">Balance: ₹<?php echo number_format($page_bal, 2); ?></div>
@@ -510,6 +571,75 @@ if (isset($_GET['download']) && $_GET['download'] === 'excel') {
         </div>
     </div>
 
+<!-- Adjust Balance Modal -->
+<div class="modal fade" id="adjustBalanceModal" tabindex="-1" aria-labelledby="adjustBalanceModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" style="background: var(--panel-bg); border: 1px solid var(--border-dim); border-radius: 16px; color: var(--text-main); font-family: var(--font-body);">
+            <div class="modal-header border-0 pb-0" style="padding: 20px 24px;">
+                <h5 class="modal-title" id="adjustBalanceModalLabel" style="font-weight: 700; font-size: 16px;">Adjust User Balance</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" style="font-size: 12px;"></button>
+            </div>
+            <div class="modal-body" style="padding: 20px 24px;">
+                <form id="adjustBalanceForm">
+                    <input type="hidden" id="adjust_user_id" name="user_id">
+                    
+                    <div class="mb-3">
+                        <label class="form-label" style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--text-dim);">Player Info</label>
+                        <div class="p-3 rounded-3" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-dim);">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span style="font-size: 12px; color: var(--text-dim);">Username:</span>
+                                <span id="adjust_username" style="font-size: 12px; font-weight: 700;">N/A</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span style="font-size: 12px; color: var(--text-dim);">Player ID:</span>
+                                <span id="adjust_userid_display" style="font-size: 12px; font-weight: 700; color: var(--accent-blue);">N/A</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span style="font-size: 12px; color: var(--text-dim);">Current Balance:</span>
+                                <span id="adjust_balance_display" style="font-size: 13px; font-weight: 800; color: var(--accent-emerald);">₹0.00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label" style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--text-dim);">Action Type</label>
+                        <div class="d-flex gap-2">
+                            <input type="radio" class="btn-check" name="adjust_type" id="type_add" value="add" checked autocomplete="off">
+                            <label class="btn btn-outline-success flex-grow-1 py-2" for="type_add" style="font-weight: 700; font-size: 13px; border-radius: 10px;" onclick="document.getElementById('type_add').checked = true;">
+                                <i class='bx bx-plus-circle'></i> Add Money (+)
+                            </label>
+
+                            <input type="radio" class="btn-check" name="adjust_type" id="type_subtract" value="subtract" autocomplete="off">
+                            <label class="btn btn-outline-danger flex-grow-1 py-2" for="type_subtract" style="font-weight: 700; font-size: 13px; border-radius: 10px;" onclick="document.getElementById('type_subtract').checked = true;">
+                                <i class='bx bx-minus-circle'></i> Subtract Money (-)
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="adjust_amount" class="form-label" style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--text-dim);">Amount (₹)</label>
+                        <div class="input-group">
+                            <span class="input-group-text" style="background: rgba(0,0,0,0.2); border: 1px solid var(--border-dim); color: var(--text-dim); border-radius: 10px 0 0 10px;">₹</span>
+                            <input type="number" step="0.01" min="0.01" class="form-control" id="adjust_amount" required placeholder="0.00" style="background: rgba(0,0,0,0.1); border: 1px solid var(--border-dim); color: var(--text-main); font-weight: 700; border-radius: 0 10px 10px 0; height: 42px;">
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="adjust_remark" class="form-label" style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--text-dim);">Comment / Remark</label>
+                        <textarea class="form-control" id="adjust_remark" required rows="3" placeholder="Explain why you are adjusting the balance..." style="background: rgba(0,0,0,0.1); border: 1px solid var(--border-dim); color: var(--text-main); border-radius: 10px; resize: none; font-size: 13px;"></textarea>
+                    </div>
+
+                    <div class="d-grid mt-4">
+                        <button type="submit" id="btnSubmitAdjust" class="btn-modern btn-primary-modern py-2.5 w-100 justify-content-center" style="border-radius: 10px; height: 44px; font-weight: 700;">
+                            Confirm Balance Adjustment
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../script.js?v=05"></script>
 <script>
@@ -522,6 +652,74 @@ if (isset($_GET['download']) && $_GET['download'] === 'excel') {
     filters.forEach(f => {
         f.addEventListener('click', function() {
             filters.forEach(other => { if (other !== this) other.checked = false; });
+        });
+    });
+
+    let adjustModal = null;
+
+    function openAdjustBalanceModal(uid, username, balance) {
+        document.getElementById('adjust_user_id').value = uid;
+        document.getElementById('adjust_username').textContent = username;
+        document.getElementById('adjust_userid_display').textContent = uid;
+        document.getElementById('adjust_balance_display').textContent = '₹' + parseFloat(balance).toLocaleString('en-IN', { minimumFractionDigits: 2 });
+        document.getElementById('adjust_amount').value = '';
+        document.getElementById('adjust_remark').value = '';
+        
+        // Select Add by default
+        document.getElementById('type_add').checked = true;
+        
+        if (!adjustModal) {
+            adjustModal = new bootstrap.Modal(document.getElementById('adjustBalanceModal'));
+        }
+        adjustModal.show();
+    }
+
+    document.getElementById('adjustBalanceForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const uid = document.getElementById('adjust_user_id').value;
+        const type = document.querySelector('input[name="adjust_type"]:checked').value;
+        const amount = parseFloat(document.getElementById('adjust_amount').value);
+        const remark = document.getElementById('adjust_remark').value;
+        
+        if (!uid || isNaN(amount) || amount <= 0 || !remark.trim()) {
+            alert('Please fill in all fields correctly.');
+            return;
+        }
+        
+        const btnSubmit = document.getElementById('btnSubmitAdjust');
+        btnSubmit.disabled = true;
+        btnSubmit.innerHTML = "<span class='spinner-border spinner-border-sm' role='status' aria-hidden='true'></span> Processing...";
+        
+        const formData = new FormData();
+        formData.append('action', 'adjust_balance');
+        formData.append('user_id', uid);
+        formData.append('type', type);
+        formData.append('amount', amount);
+        formData.append('remark', remark);
+        
+        fetch('index.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(res => res.json())
+        .then(data => {
+            btnSubmit.disabled = false;
+            btnSubmit.textContent = "Confirm Balance Adjustment";
+            
+            if (data.status === 'success') {
+                alert(data.message);
+                if (adjustModal) adjustModal.hide();
+                window.location.reload();
+            } else {
+                alert(data.message || 'Failed to adjust balance.');
+            }
+        })
+        .catch(err => {
+            btnSubmit.disabled = false;
+            btnSubmit.textContent = "Confirm Balance Adjustment";
+            console.error(err);
+            alert('An error occurred. Please try again.');
         });
     });
 </script>
