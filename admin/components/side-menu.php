@@ -439,6 +439,20 @@ $page_url_name = trim(str_replace($host_url, '', strtok($page_url, '?')), '/');
             Top User Balances
         </a>
 
+        <a href="<?php echo $host_url; ?>recharge-records" class="nav-link <?php if ($page_url_name == 'recharge-records') {
+    echo 'menu-active-btn';
+}?>">
+            <i class='bx bx-trending-up' style='color:#22c55e;'></i>
+            Deposit Records
+        </a>
+
+        <a href="<?php echo $host_url; ?>withdraw-records" class="nav-link <?php if ($page_url_name == 'withdraw-records') {
+    echo 'menu-active-btn';
+}?>">
+            <i class='bx bx-receipt' style='color:#8b5cf6;'></i>
+            Withdraw Records
+        </a>
+
         <div class="nav-section-label">Add Bonus</div>
         
         <a href="<?php echo $host_url; ?>manage-bonus/create-bonus" class="nav-link <?php if ($page_url_name == 'manage-bonus/create-bonus') {
@@ -516,24 +530,11 @@ $page_url_name = trim(str_replace($host_url, '', strtok($page_url, '?')), '/');
 
         <div class="nav-section-label">Finance & Stats</div>
             
-        <a href="<?php echo $host_url; ?>recharge-records" class="nav-link <?php if ($page_url_name == 'recharge-records') {
-    echo 'menu-active-btn';
-}?>">
-            <i class='bx bx-trending-up' style='color:#22c55e;'></i>
-            Deposit Records
-        </a>
         <a href="<?php echo $host_url; ?>manual-withdraw-records" class="nav-link <?php if ($page_url_name == 'manual-withdraw-records') {
     echo 'menu-active-btn';
 }?>">
             <i class='bx bx-wallet' style='color:#ef4444;'></i>
             Manual Withdraw
-        </a>
-        
-        <a href="<?php echo $host_url; ?>withdraw-records" class="nav-link <?php if ($page_url_name == 'withdraw-records') {
-    echo 'menu-active-btn';
-}?>">
-            <i class='bx bx-receipt' style='color:#8b5cf6;'></i>
-            Withdraw Records
         </a>
 
         <a href="<?php echo $host_url; ?>withdraw-statistics" class="nav-link <?php if ($page_url_name == 'withdraw-statistics') {
