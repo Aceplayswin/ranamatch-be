@@ -24,6 +24,9 @@ file_put_contents(__DIR__ . "/user_debug.log", date('Y-m-d H:i:s') . " | REQ | U
 
 if ($user_id != "") {
     $secret_key = $headerObj->getAuthorization();
+    if ($secret_key === "null" || $secret_key === "") {
+        $secret_key = $_GET['AuthToken'] ?? $_REQUEST['AuthToken'] ?? "";
+    }
 }
 
 
@@ -46,10 +49,46 @@ $const_account_exposure = "0.00";
 $active_bonus_id = 0;
 $required_play = 0;
 
-$select_sql = "SELECT * FROM tblusersdata WHERE tbl_uniq_id='{$user_id}' AND tbl_auth_secret ='{$secret_key}' ";
-$select_query = mysqli_query($conn, $select_sql);
+$is_guest = ($user_id === "guest" && $secret_key === "guest");
+if ($is_guest) {
+    $res_data = [
+        "tbl_is_bonus_locked" => 0,
+        "tbl_bonus_balance" => 0,
+        "tbl_sports_bonus" => 0,
+        "tbl_requiredplay_balance" => 0
+    ];
+    $const_account_level = "1";
+    $const_avatar_id = "1";
+    $const_fullname = "Demo Play";
+    $const_username = "Guest";
+    $const_mobile_num = "0000000000";
+    $const_email = "guest@demo.com";
+    $const_account_balance = "0.00";
+    $const_account_casino_bonus = "0.00";
+    $const_account_sports_bonus = "0.00";
+    $const_account_total_balance = "0.00";
+    $const_account_bonus_balance = "0.00";
+    $const_account_withdrawl_balance = "0.00";
+    $const_account_commission_balance = "0.00";
+    $const_account_last_active = date("d-m-Y h:i:s a");
+    $const_account_exposure = "0.00";
 
-if ($user_id != "" && $secret_key != "" && mysqli_num_rows($select_query) > 0) {
+    $notices_sql = "SELECT * FROM tblallnotices WHERE tbl_user_id='guest' AND tbl_notice_status='true' ORDER BY id DESC LIMIT 1";
+    $notices_query = mysqli_query($conn, $notices_sql);
+    if (mysqli_num_rows($notices_query) > 0) {
+        $noticeResp = mysqli_fetch_assoc($notices_query);
+        $noticeId = $noticeResp['id'];
+        $noticeTitle = $noticeResp['tbl_notice_title'];
+        $noticeNote = $noticeResp['tbl_notice_note'];
+        array_push($resArr['noticeArr'], $noticeTitle, $noticeNote);
+        mysqli_query($conn, "UPDATE tblallnotices SET tbl_notice_status = 'false' WHERE id = '{$noticeId}'");
+    }
+} else {
+    $select_sql = "SELECT * FROM tblusersdata WHERE tbl_uniq_id='{$user_id}' AND tbl_auth_secret ='{$secret_key}' ";
+    $select_query = mysqli_query($conn, $select_sql);
+}
+
+if (!$is_guest && $user_id != "" && $secret_key != "" && mysqli_num_rows($select_query) > 0) {
     $res_data = mysqli_fetch_assoc($select_query);
     $account_status = $res_data["tbl_account_status"];
 

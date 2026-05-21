@@ -10,6 +10,7 @@ $query_live = "SELECT tbl_match_details, COUNT(*) as bet_count
                 FROM tblmatchplayed
                 WHERE tbl_match_details != ''
                   AND (LOWER(tbl_project_name) LIKE '%saba%' OR LOWER(tbl_project_name) LIKE '%sports%' OR tbl_match_details LIKE '% vs %')
+                  AND tbl_match_status != 'rejected'
                   AND STR_TO_DATE(REPLACE(REPLACE(tbl_time_stamp, 'pm', 'PM'), 'am', 'AM'), '%d-%m-%Y %h:%i %p') >= DATE_SUB(NOW(), INTERVAL 4 HOUR)
                 GROUP BY tbl_match_details
                 ORDER BY bet_count DESC
@@ -39,6 +40,7 @@ if (count($matches) < 5) {
                   FROM tblmatchplayed
                   WHERE tbl_match_details != ''
                     AND (LOWER(tbl_project_name) LIKE '%saba%' OR LOWER(tbl_project_name) LIKE '%sports%' OR tbl_match_details LIKE '% vs %')
+                    AND tbl_match_status != 'rejected'
                     AND STR_TO_DATE(REPLACE(REPLACE(tbl_time_stamp, 'pm', 'PM'), 'am', 'AM'), '%d-%m-%Y %h:%i %p') >= DATE_SUB(NOW(), INTERVAL 24 HOUR)
                   GROUP BY tbl_match_details
                   ORDER BY bet_count DESC

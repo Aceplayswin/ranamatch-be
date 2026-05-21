@@ -77,6 +77,68 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $const_user_id = "N/A";
     }
 
+    if ($const_user_id === "guest") {
+        $bet_amount = floatval($data["bet_amount"]);
+        $win_amount = floatval($data["win_amount"]);
+        file_put_contents(__DIR__ . "/guest_debug.log", date('Y-m-d H:i:s') . " | GUEST-CALLBACK | Bet: $bet_amount | Win: $win_amount | Data: " . json_encode($data) . "\n", FILE_APPEND);
+
+        if ($bet_amount > 0) {
+            $reject_reason = "Demo Mode. Logged-in users can only place bets and play for real money. Please register or log in!";
+            $e_uid = mysqli_real_escape_string($conn, "guest");
+            $e_title = mysqli_real_escape_string($conn, "Bet Rejected");
+            $e_msg = mysqli_real_escape_string($conn, $reject_reason);
+            $e_time = mysqli_real_escape_string($conn, date("d-m-Y h:i:s a"));
+
+            mysqli_query($conn, "DELETE FROM tblallnotices WHERE tbl_user_id = 'guest'");
+            mysqli_query($conn, "INSERT INTO tblallnotices (tbl_user_id, tbl_notice_title, tbl_notice_note, tbl_notice_status, tbl_time_stamp) VALUES ('$e_uid', '$e_title', '$e_msg', 'true', '$e_time')");
+
+            // ALSO insert into tblmatchplayed for the game notifications!
+            $m_status = "rejected";
+            $m_result = "lost";
+            $r_time_val = $e_time;
+            
+            $dummy_bal = 100000.0;
+            $win_val = 0.0;
+            $const_game_name = $data["game_name"] ?? $data["gameName"] ?? $data["mGameName"] ?? $data["title"] ?? "Casino Game";
+            $const_game_uid = $data["game_uid"] ?? "N/A";
+            $bet_type = "Bet";
+            $selection = "Demo Play";
+            $odds = "1.0";
+
+            $istmt = $conn->prepare("INSERT IGNORE INTO tblmatchplayed (tbl_user_id, tbl_uniq_id, tbl_period_id, tbl_invested_on, tbl_match_cost, tbl_match_invested, tbl_match_profit, tbl_match_result, tbl_last_acbalance, tbl_match_status, tbl_project_name, tbl_match_details, tbl_bet_type, tbl_selection, tbl_odds, tbl_time_stamp, tbl_result_time, tbl_notified, tbl_notify_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, NOW())");
+            $istmt->bind_param("ssssdddssssssssss", 
+                $e_uid, 
+                $m_order_id, 
+                $const_game_uid, 
+                $const_game_name, 
+                $bet_amount, 
+                $bet_amount, 
+                $win_val, 
+                $m_result, 
+                $dummy_bal, 
+                $m_status, 
+                $const_game_name, 
+                $e_msg, 
+                $bet_type, 
+                $selection, 
+                $odds, 
+                $e_time, 
+                $r_time_val
+            );
+            $istmt->execute();
+            $istmt->close();
+
+            echo json_encode(["code" => 1, "msg" => $reject_reason]);
+            exit;
+        } else {
+            $credit_amount = 100000.0;
+            $payloadData = json_encode(["credit_amount" => $credit_amount, "timestamp" => round(microtime(true) * 1000)]);
+            $payload = encrypt($payloadData, $AES_KEY);
+            echo json_encode(["code" => 0, "msg" => "", "payload" => $payload]);
+            exit;
+        }
+    }
+
     // Standardized Parsing
     $match_details = "";
     $bet_type = "";
@@ -86,6 +148,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $const_game_uid = $data["game_uid"] ?? "N/A";
     $is_sports = false;
     $is_cashout_req = false;
+    $is_odds_limit_exceeded = false;
     $sports_data = [];
 
 
@@ -316,25 +379,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 file_put_contents(__DIR__ . "/sports_debug.log", date('Y-m-d H:i:s') . " | RESULT | User: $const_user_id | Placement: " . ($is_placement ? "YES" : "NO") . " | Odds: $check_odds | Limit: $limit_val\n", FILE_APPEND);
 
                 if ($is_placement && $check_odds > $limit_val) {
-                    // Trigger Frontend Notification via tblmatchplayed (Fastest & Most Reliable)
-                    $m_time = date("d-m-Y h:i a");
-                    $rejected_status = "rejected";
-                    $rejected_result = "lost";
-                    $rejection_reason = "Maximum odds limit for Sports is {$limit_val}x. Your bet with odds {$check_odds}x was rejected.";
+                    // STRATEGY: Process-then-Refund
+                    // The Luck Sports exchange client corrupts its session on ANY error code.
+                    // So we let the bet process normally (code 0), then immediately refund
+                    // the amount and mark the record as rejected. The exchange sees a clean
+                    // response with the FULL balance, keeping subsequent bets working.
+                    $is_odds_limit_exceeded = true;
+                    $odds_limit_reason = "Maximum odds limit for Sports is {$limit_val}x. Your bet with odds {$check_odds}x was rejected.";
 
-                    // Fetch latest balance for the record
-                    $b_res = mysqli_query($conn, "SELECT tbl_balance, tbl_bonus_balance, tbl_sports_bonus FROM tblusersdata WHERE tbl_uniq_id='$const_user_id' LIMIT 1");
-                    $b_row = mysqli_fetch_assoc($b_res);
-                    $cur_bal = floatval($b_row["tbl_balance"] ?? 0) + floatval($b_row["tbl_bonus_balance"] ?? 0) + floatval($b_row["tbl_sports_bonus"] ?? 0);
-
-                    $istmt = $conn->prepare("INSERT INTO tblmatchplayed (tbl_user_id, tbl_uniq_id, tbl_period_id, tbl_invested_on, tbl_match_cost, tbl_match_invested, tbl_match_profit, tbl_match_result, tbl_last_acbalance, tbl_match_status, tbl_project_name, tbl_match_details, tbl_bet_type, tbl_selection, tbl_odds, tbl_time_stamp, tbl_result_time, tbl_notified, tbl_notify_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, NOW())");
-                    $istmt->bind_param("ssssdddssssssssss", $const_user_id, $m_order_id, $const_game_uid, $const_game_name, $bet_amount, $bet_amount, $win_amount, $rejected_result, $cur_bal, $rejected_status, $const_game_name, $rejection_reason, $bet_type, $selection, $check_odds, $m_time, $m_time);
-                    $istmt->execute();
-                    $istmt->close();
-
-                    // Still insert into tblallnotices for backup/global visibility
+                    // Notify admin
                     $n_title = "Bet Rejected";
-                    $n_msg = "Maximum odds limit for Sports is {$limit_val}x. Your bet with odds {$check_odds}x was rejected. (Ref: {$m_order_id})";
+                    $n_msg = "User $const_user_id attempted Sports bet at odds {$check_odds}x (limit: {$limit_val}x). Bet was auto-refunded. Ref: {$m_order_id}";
                     $n_time = date("d-m-Y h:i:s a");
                     $e_uid = mysqli_real_escape_string($conn, $const_user_id);
                     $e_title = mysqli_real_escape_string($conn, $n_title);
@@ -342,15 +397,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $e_time = mysqli_real_escape_string($conn, $n_time);
                     mysqli_query($conn, "INSERT INTO tblallnotices (tbl_user_id, tbl_notice_title, tbl_notice_note, tbl_notice_status, tbl_time_stamp) VALUES ('$e_uid', '$e_title', '$e_msg', 'true', '$e_time')");
 
-                    $payloadData = json_encode(["credit_amount" => $cur_bal, "timestamp" => round(microtime(true) * 1000)]);
-                    $payload = encrypt($payloadData, $AES_KEY);
+                    file_put_contents(__DIR__ . "/sports_debug.log", date('Y-m-d H:i:s') . " | ODDS-REJECTED | User: $const_user_id | Odds: $check_odds | Limit: $limit_val | Ref: $m_order_id | Processing then refunding\n", FILE_APPEND);
 
-                    echo json_encode([
-                        "code" => 1, // Generic failure to prevent "Insufficient Funds" popup
-                        "msg" => "Max odds limit is {$limit_val}",
-                        "payload" => $payload
-                    ]);
-                    exit;
+                    // Let the bet fall through to normal processing — refund happens at the end
                 }
             }
             // --- END SPORTS LIMIT ---
@@ -507,7 +556,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     continue;
                 $e_uid = mysqli_real_escape_string($conn, $const_user_id);
                 $e_sid = mysqli_real_escape_string($conn, $sid);
-                $chk_res = mysqli_query($conn, "SELECT id, tbl_match_cost, tbl_match_profit, tbl_match_status, tbl_match_result, tbl_result_time FROM tblmatchplayed WHERE tbl_user_id='$e_uid' AND tbl_uniq_id='$e_sid' ORDER BY id DESC LIMIT 1");
+                $chk_res = mysqli_query($conn, "SELECT id, tbl_match_cost, tbl_match_profit, tbl_match_status, tbl_match_result, tbl_result_time FROM tblmatchplayed WHERE tbl_user_id='$e_uid' AND tbl_uniq_id='$e_sid' AND tbl_match_status != 'rejected' ORDER BY id DESC LIMIT 1");
                 if ($chk_record = mysqli_fetch_assoc($chk_res)) {
                     $merged_record = $chk_record;
                     break;
@@ -830,6 +879,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 }
                 file_put_contents("debug_log.txt", $log_ins, FILE_APPEND);
                 $istmt->close();
+            }
+
+            // --- ODDS LIMIT REFUND: If the bet exceeded odds limit, refund immediately ---
+            if ($is_odds_limit_exceeded && $net_bet_change > 0) {
+                // 1. Refund the deducted amount back to the database
+                $refund_stmt = $conn->prepare("UPDATE tblusersdata SET tbl_balance = tbl_balance + ? WHERE tbl_uniq_id = ?");
+                $refund_stmt->bind_param("ds", $net_bet_change, $const_user_id);
+                $refund_stmt->execute();
+                $refund_stmt->close();
+
+                // 2. Update the match record to rejected with zero cost
+                $e_oid = mysqli_real_escape_string($conn, $m_order_id);
+                $e_uid_ref = mysqli_real_escape_string($conn, $const_user_id);
+                $ref_reason = mysqli_real_escape_string($conn, $odds_limit_reason ?? 'Odds limit exceeded');
+                mysqli_query($conn, "UPDATE tblmatchplayed SET tbl_match_cost = 0, tbl_match_invested = 0, tbl_match_status = 'rejected', tbl_match_result = 'lost', tbl_match_details = '$ref_reason', tbl_notified = 1, tbl_notify_at = NOW() WHERE tbl_user_id = '$e_uid_ref' AND tbl_uniq_id = '$e_oid' ORDER BY id DESC LIMIT 1");
+
+                // 3. Set credit_amount to the REFUNDED balance (original pre-deduction balance)
+                $credit_amount = $credit_amount + $net_bet_change;
+
+                file_put_contents(__DIR__ . "/sports_debug.log", date('Y-m-d H:i:s') . " | REFUNDED | User: $const_user_id | Amount: $net_bet_change | New credit_amount: $credit_amount\n", FILE_APPEND);
             }
 
             $payloadData = json_encode(["credit_amount" => $credit_amount, "timestamp" => round(microtime(true) * 1000)]);

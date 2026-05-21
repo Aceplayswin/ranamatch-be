@@ -725,3 +725,21 @@ if (isset($_GET['download']) && $_GET['download'] === 'excel') {
 </script>
 </body>
 </html>
+            if (data.status === 'success') {
+                alert(data.message);
+                if (addUserModal) addUserModal.hide();
+                window.location.reload();
+            } else {
+                alert(data.message || 'Failed to add user.');
+            }
+        })
+        .catch(err => {
+            btnSubmit.disabled = false;
+            btnSubmit.textContent = "Create User";
+            console.error(err);
+            alert('Error: ' + err.message);
+        });
+    });
+</script>
+</body>
+</html>

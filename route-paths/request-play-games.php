@@ -56,6 +56,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $secret_key = $headerObj->getAuthorization();
 
         if ($secret_key == "null" || $secret_key == "") {
+            $secret_key = $_GET['AuthToken'] ?? $_REQUEST['AuthToken'] ?? "";
+        }
+
+        if ($secret_key == "null" || $secret_key == "") {
             $resArr["status_code"] = "authorization_error";
             echo json_encode($resArr);
             return;
@@ -76,17 +80,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sync_stmt->bind_param("sss", $const_game_uid, $const_game_name, $const_game_name);
     $sync_stmt->execute();
     $sync_stmt->close();
-    $select_sql = "SELECT * FROM tblusersdata WHERE tbl_uniq_id='{$const_user_id}' AND tbl_auth_secret ='{$secret_key}' ";
-    $select_query = mysqli_query($conn, $select_sql);
-    if (mysqli_num_rows($select_query) > 0) {
-        $select_sql = "SELECT tbl_balance, tbl_bonus_balance, tbl_sports_bonus, tbl_requiredplay_balance, tbl_withdrawl_balance, tbl_joined_under, tbl_account_status FROM tblusersdata WHERE tbl_uniq_id='$const_user_id'";
+    $is_guest = ($const_user_id === "guest" && $secret_key === "guest");
+    $res_data = null;
+    if ($is_guest) {
+        $res_data = [
+            "tbl_balance" => 100000.0,
+            "tbl_bonus_balance" => 0.0,
+            "tbl_sports_bonus" => 0.0,
+            "tbl_requiredplay_balance" => 0.0,
+            "tbl_withdrawl_balance" => 0.0,
+            "tbl_joined_under" => "",
+            "tbl_account_status" => "true"
+        ];
+        $const_user_id = "guest_" . bin2hex(random_bytes(4));
+    } else {
+        $select_sql = "SELECT * FROM tblusersdata WHERE tbl_uniq_id='{$const_user_id}' AND tbl_auth_secret ='{$secret_key}' ";
         $select_query = mysqli_query($conn, $select_sql);
-
         if (mysqli_num_rows($select_query) > 0) {
-            $res_data = mysqli_fetch_assoc($select_query);
-            $user_refered_by = $res_data["tbl_joined_under"];
+            $select_sql = "SELECT tbl_balance, tbl_bonus_balance, tbl_sports_bonus, tbl_requiredplay_balance, tbl_withdrawl_balance, tbl_joined_under, tbl_account_status FROM tblusersdata WHERE tbl_uniq_id='$const_user_id'";
+            $select_query = mysqli_query($conn, $select_sql);
+            if (mysqli_num_rows($select_query) > 0) {
+                $res_data = mysqli_fetch_assoc($select_query);
+            }
+        }
+    }
 
-            if ($res_data["tbl_account_status"] == "true") {
+    if ($res_data) {
+        $user_refered_by = $res_data["tbl_joined_under"];
+
+        if ($res_data["tbl_account_status"] == "true") {
                 $query = "SELECT tbl_service_value FROM tblservices WHERE tbl_service_name = 'GAME_STATUS'";
                 $result = mysqli_query($conn, $query);
                 if ($data = mysqli_fetch_assoc($result)) {
@@ -164,9 +186,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             $resArr["status_code"] = "auth_error";
         }
-    } else {
-        $resArr["status_code"] = "authorization_error";
-    }
     mysqli_close($conn);
     echo json_encode($resArr);
 }
