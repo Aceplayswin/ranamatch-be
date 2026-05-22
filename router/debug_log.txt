@@ -1,0 +1,74 @@
+2026-05-02 15:54:53 | INS | New Record Created | Status: wait | ID: 2937750443697451167
+2026-05-02 16:05:57 | INS | New Record Created | Status: wait | ID: 14456690053738608992
+2026-05-02 17:44:45 | INS | New Record Created | Status: loss | ID: 13788945481395354478
+2026-05-02 17:45:12 | INS | New Record Created | Status: wait | ID: 11338029249440593856
+2026-05-02 17:45:44 | INS | New Record Created | Status: wait | ID: 11153245856614461610
+2026-05-02 17:56:03 | INS | New Record Created | Status: wait | ID: 4198577922797615891
+2026-05-02 18:01:18 | INS | New Record Created | Status: wait | ID: 15850256872222047050
+2026-05-02 18:47:06 | INS | New Record Created | Status: wait | ID: 13150507622802996082
+2026-05-12 16:28:13 | UPD | Match Found ID: 940 | New Status: loss | Profit: 0 | Cost: 100
+2026-05-12 16:30:40 | UPD | Match Found ID: 940 | New Status: loss | Profit: 0 | Cost: 100
+2026-05-12 16:40:40 | UPD | Match Found ID: 940 | New Status: loss | Profit: 0 | Cost: 100
+2026-05-12 16:50:40 | UPD | Match Found ID: 940 | New Status: loss | Profit: 0 | Cost: 100
+2026-05-12 17:00:40 | UPD | Match Found ID: 940 | New Status: loss | Profit: 0 | Cost: 100
+2026-05-12 17:10:20 | UPD | Match Found ID: 940 | New Status: loss | Profit: 0 | Cost: 100
+2026-05-12 17:20:20 | UPD | Match Found ID: 940 | New Status: loss | Profit: 0 | Cost: 100
+2026-05-12 17:30:20 | UPD | Match Found ID: 940 | New Status: loss | Profit: 0 | Cost: 100
+2026-05-12 17:33:45 | INS | New Record Created | Status: loss | ID: 9522137751988484615
+2026-05-12 17:34:15 | INS | New Record Created | Status: loss | ID: 8055687383919770692
+2026-05-12 17:36:23 | INS | New Record Created | Status: wait | ID: 13325878292914125147
+2026-05-12 17:36:59 | INS | New Record Created | Status: loss | ID: 10615253392221879935
+2026-05-12 17:37:51 | INS | New Record Created | Status: wait | ID: 17797014037140747186
+2026-05-15 12:30:47 | INS | New Record Created | Status: wait | ID: 17921353375953465972
+2026-05-15 12:31:54 | INS | New Record Created | Status: wait | ID: 6932613990043169989
+2026-05-16 20:29:12 | INS | New Record Created | Status: wait | ID: 18390838910281593095
+2026-05-18 17:58:52 | INS | New Record Created | Status: wait | ID: 7052552600684345104
+2026-05-18 17:59:44 | INS | New Record Created | Status: wait | ID: 14404534916221582896
+2026-05-19 21:41:03 | INS | New Record Created | Status: wait | ID: 5744409352830532739
+2026-05-19 21:53:53 | INS | New Record Created | Status: wait | ID: 7400048171072633524
+2026-05-19 22:15:29 | UPD | Match Found ID: 1128 | New Status: profit | Profit: 195 | Cost: 100
+2026-05-19 22:19:59 | INS | New Record Created | Status: wait | ID: 10725767939384426234
+2026-05-19 22:20:41 | UPD | Match Found ID: 1128 | New Status: profit | Profit: 195 | Cost: 100
+2026-05-19 22:30:40 | UPD | Match Found ID: 1128 | New Status: profit | Profit: 195 | Cost: 100
+2026-05-19 22:40:40 | UPD | Match Found ID: 1128 | New Status: profit | Profit: 195 | Cost: 100
+2026-05-19 22:50:40 | UPD | Match Found ID: 1128 | New Status: profit | Profit: 195 | Cost: 100
+2026-05-19 23:00:20 | UPD | Match Found ID: 1128 | New Status: profit | Profit: 195 | Cost: 100
+2026-05-19 23:10:20 | UPD | Match Found ID: 1128 | New Status: profit | Profit: 195 | Cost: 100
+2026-05-19 23:20:20 | UPD | Match Found ID: 1128 | New Status: profit | Profit: 195 | Cost: 100
+2026-05-19 23:27:16 | UPD | Match Found ID: 1129 | New Status: tie | Profit: 48 | Cost: 48
+2026-05-19 23:30:20 | UPD | Match Found ID: 1128 | New Status: profit | Profit: 195 | Cost: 100
+2026-05-19 23:30:21 | UPD | Match Found ID: 1129 | New Status: tie | Profit: 48 | Cost: 48
+2026-05-19 23:40:20 | UPD | Match Found ID: 1128 | New Status: profit | Profit: 195 | Cost: 100
+2026-05-19 23:40:20 | UPD | Match Found ID: 1129 | New Status: tie | Profit: 48 | Cost: 48
+2026-05-19 23:50:00 | UPD | Match Found ID: 1128 | New Status: profit | Profit: 195 | Cost: 100
+2026-05-19 23:50:20 | UPD | Match Found ID: 1129 | New Status: tie | Profit: 48 | Cost: 48
+2026-05-20 00:00:00 | UPD | Match Found ID: 1128 | New Status: profit | Profit: 195 | Cost: 100
+2026-05-20 00:00:20 | UPD | Match Found ID: 1129 | New Status: tie | Profit: 48 | Cost: 48
+2026-05-20 00:10:00 | UPD | Match Found ID: 1128 | New Status: profit | Profit: 195 | Cost: 100
+2026-05-20 00:10:00 | UPD | Match Found ID: 1129 | New Status: tie | Profit: 48 | Cost: 48
+2026-05-20 00:20:00 | UPD | Match Found ID: 1128 | New Status: profit | Profit: 195 | Cost: 100
+2026-05-20 00:20:00 | UPD | Match Found ID: 1129 | New Status: tie | Profit: 48 | Cost: 48
+2026-05-20 00:30:00 | UPD | Match Found ID: 1128 | New Status: profit | Profit: 195 | Cost: 100
+2026-05-20 00:30:00 | UPD | Match Found ID: 1129 | New Status: tie | Profit: 48 | Cost: 48
+2026-05-20 00:40:00 | UPD | Match Found ID: 1128 | New Status: profit | Profit: 195 | Cost: 100
+2026-05-20 00:40:00 | UPD | Match Found ID: 1129 | New Status: tie | Profit: 48 | Cost: 48
+2026-05-20 00:50:00 | UPD | Match Found ID: 1128 | New Status: profit | Profit: 195 | Cost: 100
+2026-05-20 00:50:00 | UPD | Match Found ID: 1129 | New Status: tie | Profit: 48 | Cost: 48
+2026-05-20 01:00:00 | UPD | Match Found ID: 1128 | New Status: profit | Profit: 195 | Cost: 100
+2026-05-20 01:00:00 | UPD | Match Found ID: 1129 | New Status: tie | Profit: 48 | Cost: 48
+2026-05-20 01:10:00 | UPD | Match Found ID: 1129 | New Status: tie | Profit: 48 | Cost: 48
+2026-05-20 01:20:00 | UPD | Match Found ID: 1129 | New Status: tie | Profit: 48 | Cost: 48
+2026-05-20 01:30:00 | UPD | Match Found ID: 1129 | New Status: tie | Profit: 48 | Cost: 48
+2026-05-20 01:40:00 | UPD | Match Found ID: 1129 | New Status: tie | Profit: 48 | Cost: 48
+2026-05-20 01:50:00 | UPD | Match Found ID: 1129 | New Status: tie | Profit: 48 | Cost: 48
+2026-05-20 02:00:00 | UPD | Match Found ID: 1129 | New Status: tie | Profit: 48 | Cost: 48
+2026-05-20 02:10:00 | UPD | Match Found ID: 1129 | New Status: tie | Profit: 48 | Cost: 48
+2026-05-20 10:52:46 | UPD | Match Found ID: 1102 | New Status: profit | Profit: 123.52 | Cost: 100
+2026-05-20 11:00:20 | UPD | Match Found ID: 1102 | New Status: profit | Profit: 123.52 | Cost: 100
+2026-05-20 11:10:20 | UPD | Match Found ID: 1102 | New Status: profit | Profit: 123.52 | Cost: 100
+2026-05-20 11:20:20 | UPD | Match Found ID: 1102 | New Status: profit | Profit: 123.52 | Cost: 100
+2026-05-20 11:30:20 | UPD | Match Found ID: 1102 | New Status: profit | Profit: 123.52 | Cost: 100
+2026-05-20 11:40:20 | UPD | Match Found ID: 1102 | New Status: profit | Profit: 123.52 | Cost: 100
+2026-05-20 11:50:20 | UPD | Match Found ID: 1102 | New Status: profit | Profit: 123.52 | Cost: 100
+2026-05-20 12:00:20 | UPD | Match Found ID: 1102 | New Status: profit | Profit: 123.52 | Cost: 100
+2026-05-20 12:10:00 | UPD | Match Found ID: 1102 | New Status: profit | Profit: 123.52 | Cost: 100

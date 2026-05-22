@@ -204,7 +204,47 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 }
             }
 
-            if ($is_placement && $check_odds > $limit_val) {
+            // --- FANCY BET DETECTION ---
+            // Fancy bets are exempt from the max-odds restriction.
+            // SABA: Fields like betTypeName contain the word "fancy"
+            // Luck Sports: Bet IDs start with "f" and market_id contains "_f"
+            $fancy_fields = [
+                $sports_data["betTypeName"]    ?? "",
+                $sports_data["betTypeName_en"] ?? "",
+                $sports_data["marketName_en"]  ?? "",
+                $sports_data["marketName"]     ?? "",
+                $sports_data["market"]         ?? "",
+                $sports_data["betType"]        ?? "",
+            ];
+            if (isset($sports_data["txns"]) && is_array($sports_data["txns"])) {
+                foreach ($sports_data["txns"] as $_txn) {
+                    $fancy_fields[] = $_txn["betTypeName"]    ?? "";
+                    $fancy_fields[] = $_txn["betTypeName_en"] ?? "";
+                    $fancy_fields[] = $_txn["marketName_en"]  ?? "";
+                }
+            }
+            $is_fancy = false;
+            foreach ($fancy_fields as $_ff) {
+                if (!empty($_ff) && stripos($_ff, "fancy") !== false) {
+                    $is_fancy = true;
+                    break;
+                }
+            }
+            // Luck Sports: Check betslip.bets[]
+            if (!$is_fancy && isset($sports_data["betslip"]["bets"]) && is_array($sports_data["betslip"]["bets"])) {
+                foreach ($sports_data["betslip"]["bets"] as $_bet) {
+                    $bet_id_val = $_bet["id"] ?? "";
+                    $market_id_val = $_bet["market_id"] ?? "";
+                    if ((!empty($bet_id_val) && strpos($bet_id_val, "f") === 0) || (!empty($market_id_val) && strpos($market_id_val, "_f") !== false)) {
+                        $is_fancy = true;
+                        break;
+                    }
+                }
+            }
+
+            file_put_contents(__DIR__ . "/sports_debug.log", date('Y-m-d H:i:s') . " | RESULT | User: $const_user_id | Odds: $check_odds | Limit: $limit_val | Fancy: " . ($is_fancy ? "YES" : "NO") . "\n", FILE_APPEND);
+
+            if ($is_placement && !$is_fancy && $check_odds > $limit_val) {
                 // Trigger Frontend Notification via tblmatchplayed (Fastest & Most Reliable)
                 $m_time = date("d-m-Y h:i a");
                 $rejected_status = "rejected";

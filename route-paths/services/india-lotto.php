@@ -13,15 +13,20 @@ include __DIR__ . '/../../security/india_lotto_config.php';
 // Check if we have a valid game parameter for this Game UID
 // For Running10, the parameter is often the slug or ID
 // We use our shared map to validate the ID exists
-if (!isset($INDIA_LOTTO_GAME_MAP[$const_game_uid])) {
+$lotto_game_id_sql = "SELECT lotto_game_id FROM tbl_games WHERE game_uid = '$const_game_uid' LIMIT 1";
+$lotto_game_id_res = mysqli_query($conn, $lotto_game_id_sql);
+$lotto_game_row = mysqli_fetch_assoc($lotto_game_id_res);
+$lotto_game_id = $lotto_game_row['lotto_game_id'] ?? '';
+
+if (empty($lotto_game_id) || !isset($INDIA_LOTTO_GAME_MAP[$lotto_game_id])) {
     $resArr["status_code"] = "server_error";
-    $resArr["message"] = "Unknown India Lotto Game ID: $const_game_uid";
-    $il_log = date('Y-m-d H:i:s') . " - IndiaLotto ERROR | Unknown Game ID: $const_game_uid\n";
+    $resArr["message"] = "Unknown India Lotto Game ID: $lotto_game_id for UID: $const_game_uid";
+    $il_log = date('Y-m-d H:i:s') . " - IndiaLotto ERROR | Unknown Game ID: $lotto_game_id | UID: $const_game_uid\n";
     file_put_contents(__DIR__ . "/../launch_logs.txt", $il_log, FILE_APPEND);
 } else {
     // Get the parameter from the map value (it contains the slug in parentheses if applicable)
     // E.g. "Bhagyathara (kerala-ww)" -> "kerala-ww"
-    $val = $INDIA_LOTTO_GAME_MAP[$const_game_uid];
+    $val = $INDIA_LOTTO_GAME_MAP[$lotto_game_id];
     if (preg_match('/\(([^)]+)\)/', $val, $matches)) {
         $gameParam = $matches[1];
     } else {

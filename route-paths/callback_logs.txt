@@ -283,3 +283,527 @@
 2026-05-16 18:00:02 | CHANGE_POINT RESPONSE | User: velplaytest_8091921 | Type: 3 | Amount: 50 | Response: {"code":0,"msg":"success","data":"{\"balance\":23696320}"}
 2026-05-16 18:00:06 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
 2026-05-16 18:00:06 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":23696320}"}
+2026-05-16 18:06:47 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 18:06:47 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":23696320}"}
+2026-05-16 18:06:54 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 18:06:54 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":23696320}"}
+2026-05-16 18:06:54 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":3,"game_id":1,"order_id":"K001364761778935015","balance":"50000"} | Sign: 03e27e5743dfa105b9f5795253e2edb7 | Platform: velplaytest
+2026-05-16 18:06:54 | DEBUG | Inserting transaction...
+2026-05-16 18:06:54 | CHANGE_POINT RESPONSE | User: velplaytest_8091921 | Type: 3 | Amount: 50 | Response: {"code":0,"msg":"success","data":"{\"balance\":23646320}"}
+2026-05-16 18:06:58 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 18:06:58 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":23646320}"}
+2026-05-16 18:08:05 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 18:08:05 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":23646320}"}
+2026-05-16 18:08:10 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 18:08:10 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":23646320}"}
+2026-05-16 18:08:11 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":3,"game_id":3,"order_id":"K001364771778935091","balance":"50000"} | Sign: 31de1d42926fca81494b251bc3b0264c | Platform: velplaytest
+2026-05-16 18:08:11 | DEBUG | Inserting transaction...
+2026-05-16 18:08:11 | CHANGE_POINT RESPONSE | User: velplaytest_8091921 | Type: 3 | Amount: 50 | Response: {"code":0,"msg":"success","data":"{\"balance\":23596320}"}
+2026-05-16 18:08:14 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 18:08:14 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":23596320}"}
+2026-05-16 18:11:14 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 18:11:14 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":23596320}"}
+2026-05-16 18:11:20 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 18:11:20 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":23596320}"}
+2026-05-16 18:11:21 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":3,"game_id":7,"order_id":"K001364921778935281","balance":"50000"} | Sign: 1fede0c0ef409c3eb075bf545751d0df | Platform: velplaytest
+2026-05-16 18:11:21 | DEBUG | Inserting transaction...
+2026-05-16 18:11:21 | CHANGE_POINT RESPONSE | User: velplaytest_8091921 | Type: 3 | Amount: 50 | Response: {"code":0,"msg":"success","data":"{\"balance\":23546320}"}
+2026-05-16 18:11:24 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 18:11:24 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":23546320}"}
+2026-05-16 18:12:01 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 18:12:01 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":23546320}"}
+2026-05-16 18:12:23 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 18:12:23 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":23546320}"}
+2026-05-16 18:12:27 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 18:12:27 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":23546320}"}
+2026-05-16 18:12:47 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 18:12:47 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":23546320}"}
+2026-05-16 18:12:47 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":3,"game_id":91,"order_id":"L001365071778935367","balance":"10000"} | Sign: 54b13a9a23c870805aaeae31a267f127 | Platform: velplaytest
+2026-05-16 18:12:47 | DEBUG | Inserting transaction...
+2026-05-16 18:12:47 | CHANGE_POINT RESPONSE | User: velplaytest_8091921 | Type: 3 | Amount: 10 | Response: {"code":0,"msg":"success","data":"{\"balance\":23536320}"}
+2026-05-16 18:12:47 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 18:12:47 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":23536320}"}
+2026-05-16 18:12:50 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 18:12:50 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":23536320}"}
+2026-05-16 18:13:03 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 18:13:03 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":23536320}"}
+2026-05-16 20:40:22 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 20:40:22 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":23536920}"}
+2026-05-16 20:59:09 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 20:59:09 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":23536920}"}
+2026-05-16 20:59:18 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 20:59:18 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":23536920}"}
+2026-05-16 20:59:24 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 20:59:24 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":23536920}"}
+2026-05-16 20:59:24 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":3,"game_id":91,"order_id":"L001373421778945364","balance":"10000"} | Sign: 3ae68bd6bafd8b0d47084ec5d931a26a | Platform: velplaytest
+2026-05-16 20:59:24 | DEBUG | Inserting transaction...
+2026-05-16 20:59:24 | CHANGE_POINT RESPONSE | User: velplaytest_8091921 | Type: 3 | Amount: 10 | Response: {"code":0,"msg":"success","data":"{\"balance\":23526920}"}
+2026-05-16 20:59:25 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 20:59:25 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":23526920}"}
+2026-05-16 20:59:27 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-16 20:59:27 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":23526920}"}
+2026-05-18 17:30:08 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":4,"game_id":1,"buy_order_id":"K001348461778916661","order_id":"K000098021779105608","balance":"5000","gift":0} | Sign: 19f61d8bf4029e75d00b90e7ee2c4a21 | Platform: velplaytest
+2026-05-18 17:30:08 | DEBUG | Inserting transaction...
+2026-05-18 17:30:08 | CHANGE_POINT RESPONSE | User: velplaytest_8091921 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":23333720}"}
+2026-05-18 17:30:08 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":4,"game_id":1,"buy_order_id":"K001349541778918024","order_id":"K000098031779105608","balance":"5000","gift":0} | Sign: 5a3aaede3541d8df496c6654bc3a60c3 | Platform: velplaytest
+2026-05-18 17:30:08 | DEBUG | Inserting transaction...
+2026-05-18 17:30:08 | CHANGE_POINT RESPONSE | User: velplaytest_8091921 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":23338720}"}
+2026-05-18 17:30:09 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":4,"game_id":1,"buy_order_id":"K001349551778918024","order_id":"K000098041779105609","balance":"5000","gift":0} | Sign: 6906677523711e937698c0aa9855fd37 | Platform: velplaytest
+2026-05-18 17:30:09 | DEBUG | Inserting transaction...
+2026-05-18 17:30:09 | CHANGE_POINT RESPONSE | User: velplaytest_8091921 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":23343720}"}
+2026-05-18 17:30:09 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":4,"game_id":1,"buy_order_id":"K001349571778918025","order_id":"K000098051779105609","balance":"5000","gift":0} | Sign: 4462f8d73d03678ff91897772cb67dfc | Platform: velplaytest
+2026-05-18 17:30:09 | DEBUG | Inserting transaction...
+2026-05-18 17:30:09 | CHANGE_POINT RESPONSE | User: velplaytest_8091921 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":23348720}"}
+2026-05-18 17:30:09 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":4,"game_id":1,"buy_order_id":"K001349581778918025","order_id":"K000098061779105609","balance":"5000","gift":0} | Sign: d3cda36f72b0a1de8cdb8f76b130ba16 | Platform: velplaytest
+2026-05-18 17:30:09 | DEBUG | Inserting transaction...
+2026-05-18 17:30:09 | CHANGE_POINT RESPONSE | User: velplaytest_8091921 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":23353720}"}
+2026-05-18 17:30:09 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":4,"game_id":1,"buy_order_id":"K001349591778918025","order_id":"K000098071779105610","balance":"5000","gift":0} | Sign: 8a0da33264342833c4d58efb34d40ea2 | Platform: velplaytest
+2026-05-18 17:30:09 | DEBUG | Inserting transaction...
+2026-05-18 17:30:10 | CHANGE_POINT RESPONSE | User: velplaytest_8091921 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":23358720}"}
+2026-05-18 17:30:10 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":4,"game_id":1,"buy_order_id":"K001349601778918026","order_id":"K000098081779105610","balance":"5000","gift":0} | Sign: 7a1abcbbef69fb4489b558b173c49c82 | Platform: velplaytest
+2026-05-18 17:30:10 | DEBUG | Inserting transaction...
+2026-05-18 17:30:10 | CHANGE_POINT RESPONSE | User: velplaytest_8091921 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":23363720}"}
+2026-05-18 17:30:10 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":4,"game_id":1,"buy_order_id":"K001349611778918026","order_id":"K000098091779105610","balance":"5000","gift":0} | Sign: 4fc0ce07b1877d4e420a1f72341962aa | Platform: velplaytest
+2026-05-18 17:30:10 | DEBUG | Inserting transaction...
+2026-05-18 17:30:10 | CHANGE_POINT RESPONSE | User: velplaytest_8091921 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":23368720}"}
+2026-05-18 17:30:10 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":4,"game_id":1,"buy_order_id":"K001349621778918026","order_id":"K000098101779105611","balance":"5000","gift":0} | Sign: 85c67e859d4ada996a64f087ab80dda1 | Platform: velplaytest
+2026-05-18 17:30:10 | DEBUG | Inserting transaction...
+2026-05-18 17:30:10 | CHANGE_POINT RESPONSE | User: velplaytest_8091921 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":23373720}"}
+2026-05-18 17:30:10 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":4,"game_id":1,"buy_order_id":"K001350401778918795","order_id":"K000098111779105611","balance":"5000","gift":0} | Sign: 1fa3a1dbd0e2456d67d09ff91b10576d | Platform: velplaytest
+2026-05-18 17:30:10 | DEBUG | Inserting transaction...
+2026-05-18 17:30:10 | CHANGE_POINT RESPONSE | User: velplaytest_8091921 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":23378720}"}
+2026-05-18 17:30:11 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":4,"game_id":1,"buy_order_id":"K001350411778918795","order_id":"K000098121779105611","balance":"5000","gift":0} | Sign: 9d303f971f7e4a745c5b965187090ab9 | Platform: velplaytest
+2026-05-18 17:30:11 | DEBUG | Inserting transaction...
+2026-05-18 17:30:11 | CHANGE_POINT RESPONSE | User: velplaytest_8091921 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":23383720}"}
+2026-05-18 17:30:11 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":4,"game_id":1,"buy_order_id":"K001350421778918796","order_id":"K000098131779105611","balance":"5000","gift":0} | Sign: 0ba5266497622d2c91aa183b884b8426 | Platform: velplaytest
+2026-05-18 17:30:11 | DEBUG | Inserting transaction...
+2026-05-18 17:30:11 | CHANGE_POINT RESPONSE | User: velplaytest_8091921 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":23388720}"}
+2026-05-18 17:30:11 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":4,"game_id":1,"buy_order_id":"K001350431778918796","order_id":"K000098141779105611","balance":"5000","gift":0} | Sign: 56bb1838f90763762d06f110507dd7da | Platform: velplaytest
+2026-05-18 17:30:11 | DEBUG | Inserting transaction...
+2026-05-18 17:30:11 | CHANGE_POINT RESPONSE | User: velplaytest_8091921 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":23393720}"}
+2026-05-18 17:30:11 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":4,"game_id":1,"buy_order_id":"K001350451778918797","order_id":"K000098151779105612","balance":"5000","gift":0} | Sign: 28e51758a407afc4fa175e132bb23098 | Platform: velplaytest
+2026-05-18 17:30:11 | DEBUG | Inserting transaction...
+2026-05-18 17:30:11 | CHANGE_POINT RESPONSE | User: velplaytest_8091921 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":23398720}"}
+2026-05-18 17:30:11 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":4,"game_id":1,"buy_order_id":"K001350461778918797","order_id":"K000098161779105612","balance":"5000","gift":0} | Sign: 288dc35ebade6aafb87644831352d1f8 | Platform: velplaytest
+2026-05-18 17:30:11 | DEBUG | Inserting transaction...
+2026-05-18 17:30:11 | CHANGE_POINT RESPONSE | User: velplaytest_8091921 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":23403720}"}
+2026-05-18 17:30:11 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":4,"game_id":1,"buy_order_id":"K001350471778918797","order_id":"K000098171779105612","balance":"5000","gift":0} | Sign: c58bf98ed87b999cd8ccb8d498c40b02 | Platform: velplaytest
+2026-05-18 17:30:11 | DEBUG | Inserting transaction...
+2026-05-18 17:30:11 | CHANGE_POINT RESPONSE | User: velplaytest_8091921 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":23408720}"}
+2026-05-18 17:30:12 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":4,"game_id":1,"buy_order_id":"K001350481778918797","order_id":"K000098181779105612","balance":"5000","gift":0} | Sign: 277a39dea300233d811c0c6214b78cab | Platform: velplaytest
+2026-05-18 17:30:12 | DEBUG | Inserting transaction...
+2026-05-18 17:30:12 | CHANGE_POINT RESPONSE | User: velplaytest_8091921 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":23413720}"}
+2026-05-18 17:30:12 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":4,"game_id":1,"buy_order_id":"K001350631778918969","order_id":"K000098191779105612","balance":"5000","gift":0} | Sign: 4acc9a39810147c008c77d0b0424db75 | Platform: velplaytest
+2026-05-18 17:30:12 | DEBUG | Inserting transaction...
+2026-05-18 17:30:12 | CHANGE_POINT RESPONSE | User: velplaytest_8091921 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":23418720}"}
+2026-05-18 17:30:12 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":4,"game_id":1,"buy_order_id":"K001351031778919455","order_id":"K000098201779105612","balance":"5000","gift":0} | Sign: ce888a6acc36ee6e047ea2714a9585f0 | Platform: velplaytest
+2026-05-18 17:30:12 | DEBUG | Inserting transaction...
+2026-05-18 17:30:12 | CHANGE_POINT RESPONSE | User: velplaytest_8091921 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":23423720}"}
+2026-05-18 17:30:12 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":4,"game_id":1,"buy_order_id":"K001351751778919873","order_id":"K000098211779105613","balance":"5000","gift":0} | Sign: bbe96a05c9b48f7e9e0d11492fac0c33 | Platform: velplaytest
+2026-05-18 17:30:12 | DEBUG | Inserting transaction...
+2026-05-18 17:30:12 | CHANGE_POINT RESPONSE | User: velplaytest_8091921 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":23428720}"}
+2026-05-18 17:30:12 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":1,"buy_order_id":"K001363141778933141","order_id":"K000098221779105613","balance":"5000","gift":0} | Sign: d1484ec17a839ebf43d0e2c704680785 | Platform: velplaytest
+2026-05-18 17:30:12 | DEBUG | Inserting transaction...
+2026-05-18 17:30:12 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":156900}"}
+2026-05-18 17:30:12 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":1,"buy_order_id":"K001363151778933141","order_id":"K000098231779105613","balance":"100000","gift":0} | Sign: e273f980254af1252fe1c5f8b5dbec6e | Platform: velplaytest
+2026-05-18 17:30:12 | DEBUG | Inserting transaction...
+2026-05-18 17:30:12 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 100 | Response: {"code":0,"msg":"success","data":"{\"balance\":256900}"}
+2026-05-18 17:30:13 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":1,"buy_order_id":"K001363161778933141","order_id":"K000098241779105613","balance":"5000","gift":0} | Sign: 860da9301eb843a34372837ba86e3f14 | Platform: velplaytest
+2026-05-18 17:30:13 | DEBUG | Inserting transaction...
+2026-05-18 17:30:13 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":261900}"}
+2026-05-18 17:30:13 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":1,"buy_order_id":"K001363171778933142","order_id":"K000098251779105613","balance":"5000","gift":0} | Sign: f7cf246f87fea6135dfc847199dadf2b | Platform: velplaytest
+2026-05-18 17:30:13 | DEBUG | Inserting transaction...
+2026-05-18 17:30:13 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":266900}"}
+2026-05-18 17:30:13 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":1,"buy_order_id":"K001363191778933143","order_id":"K000098261779105614","balance":"5000","gift":0} | Sign: a9c7d64bcc6a714057607d33a482f3b1 | Platform: velplaytest
+2026-05-18 17:30:13 | DEBUG | Inserting transaction...
+2026-05-18 17:30:13 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":271900}"}
+2026-05-18 17:30:13 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":1,"buy_order_id":"K001363211778933143","order_id":"K000098271779105614","balance":"5000","gift":0} | Sign: 2d20f2205a42f39e2b798785799e3f8d | Platform: velplaytest
+2026-05-18 17:30:13 | DEBUG | Inserting transaction...
+2026-05-18 17:30:13 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":276900}"}
+2026-05-19 19:10:54 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-19 19:10:54 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":23150340}"}
+2026-05-19 21:38:04 | GET_POINT | Data: {"acc":"velplaytest_3252533"} | Sign: 005ffb30ee09dc137ab923a80b24a951 | Platform: velplaytest
+2026-05-19 21:38:04 | GET_POINT RESPONSE | User: velplaytest_3252533 | Response: {"code":0,"msg":"success","data":"{\"balance\":176900}"}
+2026-05-19 21:40:09 | GET_POINT | Data: {"acc":"velplaytest_3252533"} | Sign: 005ffb30ee09dc137ab923a80b24a951 | Platform: velplaytest
+2026-05-19 21:40:09 | GET_POINT RESPONSE | User: velplaytest_3252533 | Response: {"code":0,"msg":"success","data":"{\"balance\":176900}"}
+2026-05-20 17:30:07 | CHANGE_POINT | Data: {"acc":"velplaytest_8091921","type":4,"game_id":3,"buy_order_id":"K001364771778935091","order_id":"K000118261779278407","balance":"5000","gift":0} | Sign: 58a0e9978427137928d3f7b637e6c176 | Platform: velplaytest
+2026-05-20 17:30:07 | DEBUG | Inserting transaction...
+2026-05-20 17:30:07 | CHANGE_POINT RESPONSE | User: velplaytest_8091921 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":23305120}"}
+2026-05-20 18:09:50 | GET_POINT | Data: {"acc":"velplaytest_3252533"} | Sign: 005ffb30ee09dc137ab923a80b24a951 | Platform: velplaytest
+2026-05-20 18:09:50 | GET_POINT RESPONSE | User: velplaytest_3252533 | Response: {"code":0,"msg":"success","data":"{\"balance\":308900}"}
+2026-05-20 18:10:04 | GET_POINT | Data: {"acc":"velplaytest_3252533"} | Sign: 005ffb30ee09dc137ab923a80b24a951 | Platform: velplaytest
+2026-05-20 18:10:04 | GET_POINT RESPONSE | User: velplaytest_3252533 | Response: {"code":0,"msg":"success","data":"{\"balance\":308900}"}
+2026-05-20 18:10:28 | GET_POINT | Data: {"acc":"velplaytest_3252533"} | Sign: 005ffb30ee09dc137ab923a80b24a951 | Platform: velplaytest
+2026-05-20 18:10:28 | GET_POINT RESPONSE | User: velplaytest_3252533 | Response: {"code":0,"msg":"success","data":"{\"balance\":308900}"}
+2026-05-20 18:10:36 | GET_POINT | Data: {"acc":"velplaytest_3252533"} | Sign: 005ffb30ee09dc137ab923a80b24a951 | Platform: velplaytest
+2026-05-20 18:10:36 | GET_POINT RESPONSE | User: velplaytest_3252533 | Response: {"code":0,"msg":"success","data":"{\"balance\":308900}"}
+2026-05-20 18:11:21 | GET_POINT | Data: {"acc":"velplaytest_3252533"} | Sign: 005ffb30ee09dc137ab923a80b24a951 | Platform: velplaytest
+2026-05-20 18:11:21 | GET_POINT RESPONSE | User: velplaytest_3252533 | Response: {"code":0,"msg":"success","data":"{\"balance\":308900}"}
+2026-05-20 18:11:45 | GET_POINT | Data: {"acc":"velplaytest_3252533"} | Sign: 005ffb30ee09dc137ab923a80b24a951 | Platform: velplaytest
+2026-05-20 18:11:45 | GET_POINT RESPONSE | User: velplaytest_3252533 | Response: {"code":0,"msg":"success","data":"{\"balance\":308900}"}
+2026-05-20 18:11:45 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646071779280906","balance":"5000"} | Sign: 4423b859a102b98cd51165477db6bc1d | Platform: velplaytest
+2026-05-20 18:11:45 | DEBUG | Inserting transaction...
+2026-05-20 18:11:45 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":303900}"}
+2026-05-20 18:11:46 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646081779280906","balance":"5000"} | Sign: fec5edab51d0e32c99aee1a69bfb6e00 | Platform: velplaytest
+2026-05-20 18:11:46 | DEBUG | Inserting transaction...
+2026-05-20 18:11:46 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":298900}"}
+2026-05-20 18:11:46 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646091779280906","balance":"5000"} | Sign: 60772b4a16856f82d62e4a62f8b7a196 | Platform: velplaytest
+2026-05-20 18:11:46 | DEBUG | Inserting transaction...
+2026-05-20 18:11:46 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":293900}"}
+2026-05-20 18:11:46 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646101779280907","balance":"5000"} | Sign: 38fa4edcf644cd113d96d3205941c227 | Platform: velplaytest
+2026-05-20 18:11:46 | DEBUG | Inserting transaction...
+2026-05-20 18:11:46 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":288900}"}
+2026-05-20 18:11:47 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646111779280907","balance":"5000"} | Sign: f7a442c8b6358cfda3ea03d000087b2a | Platform: velplaytest
+2026-05-20 18:11:47 | DEBUG | Inserting transaction...
+2026-05-20 18:11:47 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":283900}"}
+2026-05-20 18:11:47 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646121779280907","balance":"5000"} | Sign: bc50e8041e5dcaa2a1a8a103cb0c1106 | Platform: velplaytest
+2026-05-20 18:11:47 | DEBUG | Inserting transaction...
+2026-05-20 18:11:47 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":278900}"}
+2026-05-20 18:11:47 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646131779280907","balance":"5000"} | Sign: a00443c235b81bf5b96b81b8adea1c76 | Platform: velplaytest
+2026-05-20 18:11:47 | DEBUG | Inserting transaction...
+2026-05-20 18:11:47 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":273900}"}
+2026-05-20 18:11:47 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646141779280907","balance":"5000"} | Sign: 7ad200db5a10c7e2baaf662f77b7aa8b | Platform: velplaytest
+2026-05-20 18:11:47 | DEBUG | Inserting transaction...
+2026-05-20 18:11:47 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":268900}"}
+2026-05-20 18:11:47 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646151779280908","balance":"5000"} | Sign: 62c272eb910cac9f69e98e2de6508b54 | Platform: velplaytest
+2026-05-20 18:11:47 | DEBUG | Inserting transaction...
+2026-05-20 18:11:47 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":263900}"}
+2026-05-20 18:11:47 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646161779280908","balance":"5000"} | Sign: 81bddd3301fc3317102f8c7f4814d9a4 | Platform: velplaytest
+2026-05-20 18:11:47 | DEBUG | Inserting transaction...
+2026-05-20 18:11:47 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":258900}"}
+2026-05-20 18:11:48 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646171779280908","balance":"5000"} | Sign: ca6227c712295bdbdba713cbc3f565d9 | Platform: velplaytest
+2026-05-20 18:11:48 | DEBUG | Inserting transaction...
+2026-05-20 18:11:48 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":253900}"}
+2026-05-20 18:11:48 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646181779280908","balance":"5000"} | Sign: 2c840c7f2af6474bb3e0ad7ab1e3802a | Platform: velplaytest
+2026-05-20 18:11:48 | DEBUG | Inserting transaction...
+2026-05-20 18:11:48 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":248900}"}
+2026-05-20 18:11:48 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646191779280908","balance":"5000"} | Sign: 53dbf2a4af6f95a1c11abc5bddc10ff1 | Platform: velplaytest
+2026-05-20 18:11:48 | DEBUG | Inserting transaction...
+2026-05-20 18:11:48 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":243900}"}
+2026-05-20 18:11:48 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646201779280909","balance":"5000"} | Sign: 44c577a7a0e1317a2254a08ae0f11ff2 | Platform: velplaytest
+2026-05-20 18:11:48 | DEBUG | Inserting transaction...
+2026-05-20 18:11:48 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":238900}"}
+2026-05-20 18:11:48 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646211779280909","balance":"5000"} | Sign: e8ec380ad9918751498b37fb292cb4f9 | Platform: velplaytest
+2026-05-20 18:11:48 | DEBUG | Inserting transaction...
+2026-05-20 18:11:48 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":233900}"}
+2026-05-20 18:11:49 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646221779280909","balance":"5000"} | Sign: 7770c3cba3aba94da3ab6a9ba1a37092 | Platform: velplaytest
+2026-05-20 18:11:49 | DEBUG | Inserting transaction...
+2026-05-20 18:11:49 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":228900}"}
+2026-05-20 18:11:49 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646231779280909","balance":"5000"} | Sign: aba568ca31e5493b0fdc50ec5a9e7193 | Platform: velplaytest
+2026-05-20 18:11:49 | DEBUG | Inserting transaction...
+2026-05-20 18:11:49 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":223900}"}
+2026-05-20 18:11:49 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646241779280910","balance":"5000"} | Sign: 96c9c94ab39c59bda5dcc640c181e652 | Platform: velplaytest
+2026-05-20 18:11:49 | DEBUG | Inserting transaction...
+2026-05-20 18:11:49 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":218900}"}
+2026-05-20 18:11:49 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646251779280910","balance":"5000"} | Sign: f3650b53be264ece1bf80f76ff99a3ad | Platform: velplaytest
+2026-05-20 18:11:49 | DEBUG | Inserting transaction...
+2026-05-20 18:11:49 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":213900}"}
+2026-05-20 18:11:49 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646261779280910","balance":"5000"} | Sign: 19a1cfb698d8e508cc65f10cd10493ca | Platform: velplaytest
+2026-05-20 18:11:49 | DEBUG | Inserting transaction...
+2026-05-20 18:11:49 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":208900}"}
+2026-05-20 18:11:50 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646271779280910","balance":"5000"} | Sign: a03243d4c3655d9e0656e925ebbb28f3 | Platform: velplaytest
+2026-05-20 18:11:50 | DEBUG | Inserting transaction...
+2026-05-20 18:11:50 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":203900}"}
+2026-05-20 18:11:50 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646281779280910","balance":"5000"} | Sign: 35da28a9e9eac97139e94e14b1581f1c | Platform: velplaytest
+2026-05-20 18:11:50 | DEBUG | Inserting transaction...
+2026-05-20 18:11:50 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":198900}"}
+2026-05-20 18:11:50 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646291779280910","balance":"5000"} | Sign: e60c018220face099fa91340b1237e89 | Platform: velplaytest
+2026-05-20 18:11:50 | DEBUG | Inserting transaction...
+2026-05-20 18:11:50 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":193900}"}
+2026-05-20 18:11:50 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646301779280910","balance":"5000"} | Sign: aef1cbb900c6f6620e79b4eb6642a285 | Platform: velplaytest
+2026-05-20 18:11:50 | DEBUG | Inserting transaction...
+2026-05-20 18:11:50 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":188900}"}
+2026-05-20 18:11:50 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646311779280911","balance":"5000"} | Sign: 03b494e03e0ae7f63b3638f7924e154b | Platform: velplaytest
+2026-05-20 18:11:50 | DEBUG | Inserting transaction...
+2026-05-20 18:11:50 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":183900}"}
+2026-05-20 18:11:50 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646321779280911","balance":"5000"} | Sign: 2a51a9e0b480dd4c7708e426d2d9c339 | Platform: velplaytest
+2026-05-20 18:11:50 | DEBUG | Inserting transaction...
+2026-05-20 18:11:50 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":178900}"}
+2026-05-20 18:11:50 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646331779280911","balance":"5000"} | Sign: 5a38244740a7778a9084378b0a223e6c | Platform: velplaytest
+2026-05-20 18:11:50 | DEBUG | Inserting transaction...
+2026-05-20 18:11:50 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":173900}"}
+2026-05-20 18:11:51 | GET_POINT | Data: {"acc":"velplaytest_3252533"} | Sign: 005ffb30ee09dc137ab923a80b24a951 | Platform: velplaytest
+2026-05-20 18:11:51 | GET_POINT RESPONSE | User: velplaytest_3252533 | Response: {"code":0,"msg":"success","data":"{\"balance\":173900}"}
+2026-05-20 18:11:51 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646341779280911","balance":"5000"} | Sign: ba1d5ff23f83329a803fe353ca6eca52 | Platform: velplaytest
+2026-05-20 18:11:51 | DEBUG | Inserting transaction...
+2026-05-20 18:11:51 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":168900}"}
+2026-05-20 18:11:51 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646351779280911","balance":"5000"} | Sign: d17c5e973fa3d9492316c939a3e993f8 | Platform: velplaytest
+2026-05-20 18:11:51 | DEBUG | Inserting transaction...
+2026-05-20 18:11:51 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":163900}"}
+2026-05-20 18:11:51 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646361779280911","balance":"5000"} | Sign: 904edc629edffe6c583c41a91c1d20d6 | Platform: velplaytest
+2026-05-20 18:11:51 | DEBUG | Inserting transaction...
+2026-05-20 18:11:51 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":158900}"}
+2026-05-20 18:11:51 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646371779280912","balance":"5000"} | Sign: 278bc2ba836209ecf36b99b8e162afd1 | Platform: velplaytest
+2026-05-20 18:11:51 | DEBUG | Inserting transaction...
+2026-05-20 18:11:51 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":153900}"}
+2026-05-20 18:11:51 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646381779280912","balance":"5000"} | Sign: 6a4dd39ca54eb1b18b8efe055c5f1963 | Platform: velplaytest
+2026-05-20 18:11:51 | DEBUG | Inserting transaction...
+2026-05-20 18:11:51 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":148900}"}
+2026-05-20 18:11:51 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646391779280912","balance":"5000"} | Sign: cff383b24ea36fe864aa9dd183f88788 | Platform: velplaytest
+2026-05-20 18:11:51 | DEBUG | Inserting transaction...
+2026-05-20 18:11:51 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":143900}"}
+2026-05-20 18:11:52 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646401779280912","balance":"5000"} | Sign: 76a7db2dce559ed8f1a052a5ffd0a23e | Platform: velplaytest
+2026-05-20 18:11:52 | DEBUG | Inserting transaction...
+2026-05-20 18:11:52 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":138900}"}
+2026-05-20 18:11:52 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646411779280912","balance":"5000"} | Sign: 7102d49edc5cc5abffce2dd647f781fe | Platform: velplaytest
+2026-05-20 18:11:52 | DEBUG | Inserting transaction...
+2026-05-20 18:11:52 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":133900}"}
+2026-05-20 18:11:52 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646421779280912","balance":"5000"} | Sign: 8274743909c23f56bcfa0645cc4d438d | Platform: velplaytest
+2026-05-20 18:11:52 | DEBUG | Inserting transaction...
+2026-05-20 18:11:52 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":128900}"}
+2026-05-20 18:11:52 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646441779280913","balance":"5000"} | Sign: e1a42d515828c95786e62720787ac298 | Platform: velplaytest
+2026-05-20 18:11:52 | DEBUG | Inserting transaction...
+2026-05-20 18:11:52 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":123900}"}
+2026-05-20 18:11:52 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646451779280913","balance":"5000"} | Sign: b13474894bb696b2450dac3b4cec1b34 | Platform: velplaytest
+2026-05-20 18:11:52 | DEBUG | Inserting transaction...
+2026-05-20 18:11:52 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":118900}"}
+2026-05-20 18:11:52 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646461779280913","balance":"5000"} | Sign: 79570ff7a97f9332bf91e12e6a8e0705 | Platform: velplaytest
+2026-05-20 18:11:52 | DEBUG | Inserting transaction...
+2026-05-20 18:11:52 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":113900}"}
+2026-05-20 18:11:53 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646471779280913","balance":"5000"} | Sign: 85496c18e03157364cdaf9f31e80b753 | Platform: velplaytest
+2026-05-20 18:11:53 | DEBUG | Inserting transaction...
+2026-05-20 18:11:53 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":108900}"}
+2026-05-20 18:11:53 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646481779280913","balance":"5000"} | Sign: 35701eb2ff894daffc16fb095c1b75d0 | Platform: velplaytest
+2026-05-20 18:11:53 | DEBUG | Inserting transaction...
+2026-05-20 18:11:53 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":103900}"}
+2026-05-20 18:11:53 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646491779280913","balance":"5000"} | Sign: 969e113fb6b096550ce3d0156509e6b1 | Platform: velplaytest
+2026-05-20 18:11:53 | DEBUG | Inserting transaction...
+2026-05-20 18:11:53 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":98900}"}
+2026-05-20 18:11:53 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646501779280913","balance":"5000"} | Sign: e46d5e1693a7ffe201bb4402f35a7f2e | Platform: velplaytest
+2026-05-20 18:11:53 | DEBUG | Inserting transaction...
+2026-05-20 18:11:53 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":93900}"}
+2026-05-20 18:11:53 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646511779280914","balance":"5000"} | Sign: 235816c9594d6fa3d8731d675856bf3c | Platform: velplaytest
+2026-05-20 18:11:53 | DEBUG | Inserting transaction...
+2026-05-20 18:11:53 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":88900}"}
+2026-05-20 18:11:53 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646521779280914","balance":"5000"} | Sign: 1c0e3ccff612ba187c3b7a575756c262 | Platform: velplaytest
+2026-05-20 18:11:53 | DEBUG | Inserting transaction...
+2026-05-20 18:11:53 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":83900}"}
+2026-05-20 18:11:53 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646531779280914","balance":"5000"} | Sign: 96493b34681156f6d7c2f1d4bd7b319f | Platform: velplaytest
+2026-05-20 18:11:53 | DEBUG | Inserting transaction...
+2026-05-20 18:11:53 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":78900}"}
+2026-05-20 18:11:54 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646541779280914","balance":"5000"} | Sign: aed78b928780d3eb44fcdd8d0f2a4a84 | Platform: velplaytest
+2026-05-20 18:11:54 | DEBUG | Inserting transaction...
+2026-05-20 18:11:54 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":73900}"}
+2026-05-20 18:11:54 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646551779280914","balance":"5000"} | Sign: ad88ebcc47a76a408dd152b5c80a7df8 | Platform: velplaytest
+2026-05-20 18:11:54 | DEBUG | Inserting transaction...
+2026-05-20 18:11:54 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":68900}"}
+2026-05-20 18:11:54 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646561779280914","balance":"5000"} | Sign: a7584e20bd038852f53490f6d7330b4e | Platform: velplaytest
+2026-05-20 18:11:54 | DEBUG | Inserting transaction...
+2026-05-20 18:11:54 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":63900}"}
+2026-05-20 18:11:54 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646571779280914","balance":"5000"} | Sign: 0ed148fdc6babe33fd716d8010838abc | Platform: velplaytest
+2026-05-20 18:11:54 | DEBUG | Inserting transaction...
+2026-05-20 18:11:54 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":58900}"}
+2026-05-20 18:11:54 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646581779280915","balance":"5000"} | Sign: bea079d35b184dc4a84964871a65597f | Platform: velplaytest
+2026-05-20 18:11:54 | DEBUG | Inserting transaction...
+2026-05-20 18:11:54 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":53900}"}
+2026-05-20 18:11:54 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646591779280915","balance":"5000"} | Sign: 0af2a06aabcd8782f35c5bcc2d79d43a | Platform: velplaytest
+2026-05-20 18:11:54 | DEBUG | Inserting transaction...
+2026-05-20 18:11:54 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":48900}"}
+2026-05-20 18:11:54 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646601779280915","balance":"5000"} | Sign: d8d8690124c03880f7905ec2fccbb756 | Platform: velplaytest
+2026-05-20 18:11:54 | DEBUG | Inserting transaction...
+2026-05-20 18:11:54 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":43900}"}
+2026-05-20 18:11:55 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646611779280915","balance":"5000"} | Sign: 4ffa8ac1a461a7447b30fa713314cb5c | Platform: velplaytest
+2026-05-20 18:11:55 | DEBUG | Inserting transaction...
+2026-05-20 18:11:55 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":38900}"}
+2026-05-20 18:11:55 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646621779280915","balance":"5000"} | Sign: 508049f5eb55a97cc2934d538d4f6cd4 | Platform: velplaytest
+2026-05-20 18:11:55 | DEBUG | Inserting transaction...
+2026-05-20 18:11:55 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":33900}"}
+2026-05-20 18:11:55 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646631779280915","balance":"5000"} | Sign: 92cb5f0494f0566605f4d77f78572772 | Platform: velplaytest
+2026-05-20 18:11:55 | DEBUG | Inserting transaction...
+2026-05-20 18:11:55 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":28900}"}
+2026-05-20 18:11:55 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646641779280915","balance":"5000"} | Sign: d557d5526226403bb8ba51c322459b4e | Platform: velplaytest
+2026-05-20 18:11:55 | DEBUG | Inserting transaction...
+2026-05-20 18:11:55 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":23900}"}
+2026-05-20 18:11:55 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646651779280916","balance":"5000"} | Sign: eacbf30efd88cf8e7b5f7331a75c864b | Platform: velplaytest
+2026-05-20 18:11:55 | DEBUG | Inserting transaction...
+2026-05-20 18:11:55 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":18900}"}
+2026-05-20 18:11:55 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646661779280916","balance":"5000"} | Sign: c1e6e689216f77bc75c75aa962d7171b | Platform: velplaytest
+2026-05-20 18:11:55 | DEBUG | Inserting transaction...
+2026-05-20 18:11:55 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":13900}"}
+2026-05-20 18:11:55 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":3,"game_id":74,"order_id":"P5-001646671779280916","balance":"5000"} | Sign: d400c82bd539aceba17ea2e6c4c0b47d | Platform: velplaytest
+2026-05-20 18:11:55 | DEBUG | Inserting transaction...
+2026-05-20 18:11:55 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 3 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":8900}"}
+2026-05-20 18:13:28 | GET_POINT | Data: {"acc":"velplaytest_3252533"} | Sign: 005ffb30ee09dc137ab923a80b24a951 | Platform: velplaytest
+2026-05-20 18:13:28 | GET_POINT RESPONSE | User: velplaytest_3252533 | Response: {"code":0,"msg":"success","data":"{\"balance\":8900}"}
+2026-05-21 17:30:19 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646071779280906","order_id":"P5-000130501779364819","balance":"4900","gift":0} | Sign: a34e926ca8fd4c1aec4f1a710be441e8 | Platform: velplaytest
+2026-05-21 17:30:19 | DEBUG | Inserting transaction...
+2026-05-21 17:30:19 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 4.9 | Response: {"code":0,"msg":"success","data":"{\"balance\":13800}"}
+2026-05-21 17:30:19 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646081779280906","order_id":"P5-000130511779364819","balance":"5000","gift":0} | Sign: 76fa4a7561fa29ed97f4aba748277232 | Platform: velplaytest
+2026-05-21 17:30:19 | DEBUG | Inserting transaction...
+2026-05-21 17:30:19 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":18800}"}
+2026-05-21 17:30:19 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646091779280906","order_id":"P5-000130521779364820","balance":"5000","gift":0} | Sign: 30d35ca97e9290a9fd746f1ece3afdf7 | Platform: velplaytest
+2026-05-21 17:30:19 | DEBUG | Inserting transaction...
+2026-05-21 17:30:19 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":23800}"}
+2026-05-21 17:30:19 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646101779280907","order_id":"P5-000130531779364820","balance":"4900","gift":0} | Sign: 73d889deb73799df56107209ac2e5af7 | Platform: velplaytest
+2026-05-21 17:30:19 | DEBUG | Inserting transaction...
+2026-05-21 17:30:19 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 4.9 | Response: {"code":0,"msg":"success","data":"{\"balance\":28700}"}
+2026-05-21 17:30:20 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646111779280907","order_id":"P5-000130541779364820","balance":"5000","gift":0} | Sign: e9a045746d38ddb6b2e21b3b105a0a3c | Platform: velplaytest
+2026-05-21 17:30:20 | DEBUG | Inserting transaction...
+2026-05-21 17:30:20 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":33700}"}
+2026-05-21 17:30:20 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646121779280907","order_id":"P5-000130551779364820","balance":"4900","gift":0} | Sign: 82ec38966c9201d57b001d883638b836 | Platform: velplaytest
+2026-05-21 17:30:20 | DEBUG | Inserting transaction...
+2026-05-21 17:30:20 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 4.9 | Response: {"code":0,"msg":"success","data":"{\"balance\":38600}"}
+2026-05-21 17:30:20 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646131779280907","order_id":"P5-000130561779364820","balance":"4900","gift":0} | Sign: cf5cf7f799c062e47cbb3b0c46be0849 | Platform: velplaytest
+2026-05-21 17:30:20 | DEBUG | Inserting transaction...
+2026-05-21 17:30:20 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 4.9 | Response: {"code":0,"msg":"success","data":"{\"balance\":43500}"}
+2026-05-21 17:30:21 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646141779280907","order_id":"P5-000130571779364821","balance":"5000","gift":0} | Sign: bc335956b8c5c80f9173b88577f75902 | Platform: velplaytest
+2026-05-21 17:30:21 | DEBUG | Inserting transaction...
+2026-05-21 17:30:21 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":48500}"}
+2026-05-21 17:30:21 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646151779280908","order_id":"P5-000130581779364821","balance":"4900","gift":0} | Sign: 3df181ce52850fd32de01eb022c70c3a | Platform: velplaytest
+2026-05-21 17:30:21 | DEBUG | Inserting transaction...
+2026-05-21 17:30:21 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 4.9 | Response: {"code":0,"msg":"success","data":"{\"balance\":53400}"}
+2026-05-21 17:30:21 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646161779280908","order_id":"P5-000130591779364821","balance":"5000","gift":0} | Sign: f70ea6fa7e46de67690eba2650ac351a | Platform: velplaytest
+2026-05-21 17:30:21 | DEBUG | Inserting transaction...
+2026-05-21 17:30:21 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":58400}"}
+2026-05-21 17:30:21 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646171779280908","order_id":"P5-000130601779364821","balance":"5000","gift":0} | Sign: b754971ef869e6d1e5601f997220af03 | Platform: velplaytest
+2026-05-21 17:30:21 | DEBUG | Inserting transaction...
+2026-05-21 17:30:21 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":63400}"}
+2026-05-21 17:30:21 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646181779280908","order_id":"P5-000130611779364822","balance":"4900","gift":0} | Sign: 81d190dd10b56706995e22595f909fc3 | Platform: velplaytest
+2026-05-21 17:30:21 | DEBUG | Inserting transaction...
+2026-05-21 17:30:21 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 4.9 | Response: {"code":0,"msg":"success","data":"{\"balance\":68300}"}
+2026-05-21 17:30:21 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646191779280908","order_id":"P5-000130621779364822","balance":"4900","gift":0} | Sign: 0cfa771978af953a573288c99be81ccb | Platform: velplaytest
+2026-05-21 17:30:21 | DEBUG | Inserting transaction...
+2026-05-21 17:30:21 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 4.9 | Response: {"code":0,"msg":"success","data":"{\"balance\":73200}"}
+2026-05-21 17:30:22 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646201779280909","order_id":"P5-000130631779364822","balance":"5000","gift":0} | Sign: a9791568c8d3e1b4977c50a55fb6b288 | Platform: velplaytest
+2026-05-21 17:30:22 | DEBUG | Inserting transaction...
+2026-05-21 17:30:22 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":78200}"}
+2026-05-21 17:30:22 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646211779280909","order_id":"P5-000130641779364822","balance":"5000","gift":0} | Sign: f0f3571d4d1a72d733366646a351c8fc | Platform: velplaytest
+2026-05-21 17:30:22 | DEBUG | Inserting transaction...
+2026-05-21 17:30:22 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":83200}"}
+2026-05-21 17:30:22 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646221779280909","order_id":"P5-000130651779364822","balance":"4900","gift":0} | Sign: 1eb7efb5dea88f550ab0f391e42cf1f6 | Platform: velplaytest
+2026-05-21 17:30:22 | DEBUG | Inserting transaction...
+2026-05-21 17:30:22 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 4.9 | Response: {"code":0,"msg":"success","data":"{\"balance\":88100}"}
+2026-05-21 17:30:22 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646231779280909","order_id":"P5-000130661779364823","balance":"5000","gift":0} | Sign: 6f22e0a38f9d3159fab62b72f4b97316 | Platform: velplaytest
+2026-05-21 17:30:22 | DEBUG | Inserting transaction...
+2026-05-21 17:30:22 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":93100}"}
+2026-05-21 17:30:23 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646241779280910","order_id":"P5-000130671779364823","balance":"4900","gift":0} | Sign: 8fd49e5b9c3116e05dd78dac5957474c | Platform: velplaytest
+2026-05-21 17:30:23 | DEBUG | Inserting transaction...
+2026-05-21 17:30:23 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 4.9 | Response: {"code":0,"msg":"success","data":"{\"balance\":98000}"}
+2026-05-21 17:30:23 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646251779280910","order_id":"P5-000130681779364823","balance":"4900","gift":0} | Sign: d67d0a034bcfefc24a91477172e3bdd0 | Platform: velplaytest
+2026-05-21 17:30:23 | DEBUG | Inserting transaction...
+2026-05-21 17:30:23 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 4.9 | Response: {"code":0,"msg":"success","data":"{\"balance\":102900}"}
+2026-05-21 17:30:23 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646261779280910","order_id":"P5-000130691779364823","balance":"5000","gift":0} | Sign: 4614c9724d8fdfc0a03d46c1afd0ba40 | Platform: velplaytest
+2026-05-21 17:30:23 | DEBUG | Inserting transaction...
+2026-05-21 17:30:23 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":107900}"}
+2026-05-21 17:30:23 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646271779280910","order_id":"P5-000130701779364824","balance":"4900","gift":0} | Sign: 166b06e39e908b6d40ecee10a608b67a | Platform: velplaytest
+2026-05-21 17:30:23 | DEBUG | Inserting transaction...
+2026-05-21 17:30:23 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 4.9 | Response: {"code":0,"msg":"success","data":"{\"balance\":112800}"}
+2026-05-21 17:30:24 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646281779280910","order_id":"P5-000130711779364824","balance":"5000","gift":0} | Sign: cd24ef1222b6b2021da3d7c9603a2196 | Platform: velplaytest
+2026-05-21 17:30:24 | DEBUG | Inserting transaction...
+2026-05-21 17:30:24 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":117800}"}
+2026-05-21 17:30:24 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646291779280910","order_id":"P5-000130721779364824","balance":"5000","gift":0} | Sign: 47a69021864649a73c9fbcd0efd5ab83 | Platform: velplaytest
+2026-05-21 17:30:24 | DEBUG | Inserting transaction...
+2026-05-21 17:30:24 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":122800}"}
+2026-05-21 17:30:24 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646301779280910","order_id":"P5-000130731779364824","balance":"4900","gift":0} | Sign: 43e149f28a87ec80c7e7ec6f40424153 | Platform: velplaytest
+2026-05-21 17:30:24 | DEBUG | Inserting transaction...
+2026-05-21 17:30:24 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 4.9 | Response: {"code":0,"msg":"success","data":"{\"balance\":127700}"}
+2026-05-21 17:30:24 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646311779280911","order_id":"P5-000130741779364825","balance":"4900","gift":0} | Sign: 51e0a83038fdf6d87806b87029638a8c | Platform: velplaytest
+2026-05-21 17:30:24 | DEBUG | Inserting transaction...
+2026-05-21 17:30:24 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 4.9 | Response: {"code":0,"msg":"success","data":"{\"balance\":132600}"}
+2026-05-21 17:30:25 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646321779280911","order_id":"P5-000130751779364825","balance":"5000","gift":0} | Sign: 13008cc7fcfc6c1a6f1eff8063e09492 | Platform: velplaytest
+2026-05-21 17:30:25 | DEBUG | Inserting transaction...
+2026-05-21 17:30:25 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":137600}"}
+2026-05-21 17:30:25 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646331779280911","order_id":"P5-000130761779364825","balance":"4900","gift":0} | Sign: a394dcac831ccb7fe7b948bd9beaf971 | Platform: velplaytest
+2026-05-21 17:30:25 | DEBUG | Inserting transaction...
+2026-05-21 17:30:25 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 4.9 | Response: {"code":0,"msg":"success","data":"{\"balance\":142500}"}
+2026-05-21 17:30:25 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646341779280911","order_id":"P5-000130771779364825","balance":"4900","gift":0} | Sign: 1dd6ea7bbfb4810d4ee4eb4f8a4f552d | Platform: velplaytest
+2026-05-21 17:30:25 | DEBUG | Inserting transaction...
+2026-05-21 17:30:25 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 4.9 | Response: {"code":0,"msg":"success","data":"{\"balance\":147400}"}
+2026-05-21 17:30:25 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646351779280911","order_id":"P5-000130781779364825","balance":"5000","gift":0} | Sign: 7e21f1813c09bacbec3539db3a71bfdc | Platform: velplaytest
+2026-05-21 17:30:25 | DEBUG | Inserting transaction...
+2026-05-21 17:30:25 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":152400}"}
+2026-05-21 17:30:25 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646361779280911","order_id":"P5-000130791779364826","balance":"4900","gift":0} | Sign: 8f5090724a780f2303de2c119aeb42d7 | Platform: velplaytest
+2026-05-21 17:30:25 | DEBUG | Inserting transaction...
+2026-05-21 17:30:25 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 4.9 | Response: {"code":0,"msg":"success","data":"{\"balance\":157300}"}
+2026-05-21 17:30:25 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646371779280912","order_id":"P5-000130801779364826","balance":"4900","gift":0} | Sign: d816a6568ddba43104b6b5963386162d | Platform: velplaytest
+2026-05-21 17:30:25 | DEBUG | Inserting transaction...
+2026-05-21 17:30:25 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 4.9 | Response: {"code":0,"msg":"success","data":"{\"balance\":162200}"}
+2026-05-21 17:30:26 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646381779280912","order_id":"P5-000130811779364826","balance":"5000","gift":0} | Sign: 1e3c23287c0a783e6450dbc233dbad76 | Platform: velplaytest
+2026-05-21 17:30:26 | DEBUG | Inserting transaction...
+2026-05-21 17:30:26 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":167200}"}
+2026-05-21 17:30:26 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646391779280912","order_id":"P5-000130821779364826","balance":"4900","gift":0} | Sign: ae5d104c69b5354b1be3164fc38ec690 | Platform: velplaytest
+2026-05-21 17:30:26 | DEBUG | Inserting transaction...
+2026-05-21 17:30:26 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 4.9 | Response: {"code":0,"msg":"success","data":"{\"balance\":172100}"}
+2026-05-21 17:30:26 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646401779280912","order_id":"P5-000130831779364826","balance":"4900","gift":0} | Sign: 5402168fcb287e8eb4f708f34f499fe9 | Platform: velplaytest
+2026-05-21 17:30:26 | DEBUG | Inserting transaction...
+2026-05-21 17:30:26 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 4.9 | Response: {"code":0,"msg":"success","data":"{\"balance\":177000}"}
+2026-05-21 17:30:26 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646411779280912","order_id":"P5-000130841779364827","balance":"5000","gift":0} | Sign: 94adae036802834541bf87fb85952c5c | Platform: velplaytest
+2026-05-21 17:30:26 | DEBUG | Inserting transaction...
+2026-05-21 17:30:26 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":182000}"}
+2026-05-21 17:30:26 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646421779280912","order_id":"P5-000130851779364827","balance":"4900","gift":0} | Sign: 71d65761e36490f6c4daf32e7ad8f979 | Platform: velplaytest
+2026-05-21 17:30:26 | DEBUG | Inserting transaction...
+2026-05-21 17:30:26 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 4.9 | Response: {"code":0,"msg":"success","data":"{\"balance\":186900}"}
+2026-05-21 17:30:27 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646441779280913","order_id":"P5-000130861779364827","balance":"4900","gift":0} | Sign: b3f7454687862ae420d3d1839892e554 | Platform: velplaytest
+2026-05-21 17:30:27 | DEBUG | Inserting transaction...
+2026-05-21 17:30:27 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 4.9 | Response: {"code":0,"msg":"success","data":"{\"balance\":191800}"}
+2026-05-21 17:30:27 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646451779280913","order_id":"P5-000130871779364827","balance":"4900","gift":0} | Sign: c85f0d9396486ff72820c020c4af9339 | Platform: velplaytest
+2026-05-21 17:30:27 | DEBUG | Inserting transaction...
+2026-05-21 17:30:27 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 4.9 | Response: {"code":0,"msg":"success","data":"{\"balance\":196700}"}
+2026-05-21 17:30:27 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646461779280913","order_id":"P5-000130881779364827","balance":"4900","gift":0} | Sign: 402648ffe956c7758f3662ec958836c9 | Platform: velplaytest
+2026-05-21 17:30:27 | DEBUG | Inserting transaction...
+2026-05-21 17:30:27 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 4.9 | Response: {"code":0,"msg":"success","data":"{\"balance\":201600}"}
+2026-05-21 17:30:27 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646471779280913","order_id":"P5-000130891779364827","balance":"4900","gift":0} | Sign: a02a268ff1fdc8c2bbefff68682b14fb | Platform: velplaytest
+2026-05-21 17:30:27 | DEBUG | Inserting transaction...
+2026-05-21 17:30:27 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 4.9 | Response: {"code":0,"msg":"success","data":"{\"balance\":206500}"}
+2026-05-21 17:30:27 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646481779280913","order_id":"P5-000130901779364828","balance":"4900","gift":0} | Sign: c7da363bd45ed550cebadfd460314a31 | Platform: velplaytest
+2026-05-21 17:30:27 | DEBUG | Inserting transaction...
+2026-05-21 17:30:27 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 4.9 | Response: {"code":0,"msg":"success","data":"{\"balance\":211400}"}
+2026-05-21 17:30:27 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646491779280913","order_id":"P5-000130911779364828","balance":"4900","gift":0} | Sign: 7b3cecb3011be253707374db9628fa33 | Platform: velplaytest
+2026-05-21 17:30:27 | DEBUG | Inserting transaction...
+2026-05-21 17:30:27 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 4.9 | Response: {"code":0,"msg":"success","data":"{\"balance\":216300}"}
+2026-05-21 17:30:28 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646501779280913","order_id":"P5-000130921779364828","balance":"5000","gift":0} | Sign: ac7a0ce7da1bdee2e676b12e5e2d797b | Platform: velplaytest
+2026-05-21 17:30:28 | DEBUG | Inserting transaction...
+2026-05-21 17:30:28 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":221300}"}
+2026-05-21 17:30:28 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646511779280914","order_id":"P5-000130931779364828","balance":"4900","gift":0} | Sign: 67352d3b386a837b42ab69ef73616b0e | Platform: velplaytest
+2026-05-21 17:30:28 | DEBUG | Inserting transaction...
+2026-05-21 17:30:28 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 4.9 | Response: {"code":0,"msg":"success","data":"{\"balance\":226200}"}
+2026-05-21 17:30:28 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646521779280914","order_id":"P5-000130941779364828","balance":"5000","gift":0} | Sign: 9ec7259b946b1d2cc21129912e51e935 | Platform: velplaytest
+2026-05-21 17:30:28 | DEBUG | Inserting transaction...
+2026-05-21 17:30:28 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":231200}"}
+2026-05-21 17:30:28 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646531779280914","order_id":"P5-000130951779364829","balance":"4900","gift":0} | Sign: 6e64f50fe28fbbd02be222dc09ef8cb5 | Platform: velplaytest
+2026-05-21 17:30:28 | DEBUG | Inserting transaction...
+2026-05-21 17:30:28 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 4.9 | Response: {"code":0,"msg":"success","data":"{\"balance\":236100}"}
+2026-05-21 17:30:28 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646541779280914","order_id":"P5-000130961779364829","balance":"4900","gift":0} | Sign: 887ff2d98c9db933556edc5a8c914958 | Platform: velplaytest
+2026-05-21 17:30:28 | DEBUG | Inserting transaction...
+2026-05-21 17:30:28 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 4.9 | Response: {"code":0,"msg":"success","data":"{\"balance\":241000}"}
+2026-05-21 17:30:29 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646551779280914","order_id":"P5-000130971779364829","balance":"4900","gift":0} | Sign: f3601d91994f1ec0a44ec8113d74e52c | Platform: velplaytest
+2026-05-21 17:30:29 | DEBUG | Inserting transaction...
+2026-05-21 17:30:29 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 4.9 | Response: {"code":0,"msg":"success","data":"{\"balance\":245900}"}
+2026-05-21 17:30:29 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646561779280914","order_id":"P5-000130981779364829","balance":"5000","gift":0} | Sign: aff16e5348253f6fec735e6b14f88345 | Platform: velplaytest
+2026-05-21 17:30:29 | DEBUG | Inserting transaction...
+2026-05-21 17:30:29 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":250900}"}
+2026-05-21 17:30:29 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646571779280914","order_id":"P5-000130991779364829","balance":"5000","gift":0} | Sign: 155c5145a083f5d3e23395afe20ead4c | Platform: velplaytest
+2026-05-21 17:30:29 | DEBUG | Inserting transaction...
+2026-05-21 17:30:29 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":255900}"}
+2026-05-21 17:30:29 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646581779280915","order_id":"P5-000131001779364829","balance":"4900","gift":0} | Sign: 7c5f8e0d62ab9d533a1c9794c04fb40f | Platform: velplaytest
+2026-05-21 17:30:29 | DEBUG | Inserting transaction...
+2026-05-21 17:30:29 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 4.9 | Response: {"code":0,"msg":"success","data":"{\"balance\":260800}"}
+2026-05-21 17:30:29 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646591779280915","order_id":"P5-000131011779364830","balance":"5000","gift":0} | Sign: d71701a669f7277db55ff6bd9c9078ce | Platform: velplaytest
+2026-05-21 17:30:29 | DEBUG | Inserting transaction...
+2026-05-21 17:30:29 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":265800}"}
+2026-05-21 17:30:29 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646601779280915","order_id":"P5-000131021779364830","balance":"5000","gift":0} | Sign: 253f03c555d4eb7473ea6fdab602770b | Platform: velplaytest
+2026-05-21 17:30:29 | DEBUG | Inserting transaction...
+2026-05-21 17:30:29 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":270800}"}
+2026-05-21 17:30:30 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646611779280915","order_id":"P5-000131031779364830","balance":"4900","gift":0} | Sign: 969785a4490679fb7d462afcf993fbd1 | Platform: velplaytest
+2026-05-21 17:30:30 | DEBUG | Inserting transaction...
+2026-05-21 17:30:30 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 4.9 | Response: {"code":0,"msg":"success","data":"{\"balance\":275700}"}
+2026-05-21 17:30:30 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646621779280915","order_id":"P5-000131041779364830","balance":"5000","gift":0} | Sign: 4fb9c3fd7ea14207e08f7e798f46b46a | Platform: velplaytest
+2026-05-21 17:30:30 | DEBUG | Inserting transaction...
+2026-05-21 17:30:30 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":280700}"}
+2026-05-21 17:30:30 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646631779280915","order_id":"P5-000131051779364830","balance":"4900","gift":0} | Sign: ccd7f165c3170056af3a7e85f4c9ca72 | Platform: velplaytest
+2026-05-21 17:30:30 | DEBUG | Inserting transaction...
+2026-05-21 17:30:30 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 4.9 | Response: {"code":0,"msg":"success","data":"{\"balance\":285600}"}
+2026-05-21 17:30:30 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646641779280915","order_id":"P5-000131061779364831","balance":"5000","gift":0} | Sign: f09f96a53a07fa79441ca3a359550cc4 | Platform: velplaytest
+2026-05-21 17:30:30 | DEBUG | Inserting transaction...
+2026-05-21 17:30:30 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 5 | Response: {"code":0,"msg":"success","data":"{\"balance\":290600}"}
+2026-05-21 17:30:30 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646651779280916","order_id":"P5-000131071779364831","balance":"4900","gift":0} | Sign: cc511170527e2e9eedb7c6bd16e45930 | Platform: velplaytest
+2026-05-21 17:30:30 | DEBUG | Inserting transaction...
+2026-05-21 17:30:30 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 4.9 | Response: {"code":0,"msg":"success","data":"{\"balance\":295500}"}
+2026-05-21 17:30:30 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646661779280916","order_id":"P5-000131081779364831","balance":"4900","gift":0} | Sign: 0e0eec967c1c80ba8340da5992a9fb96 | Platform: velplaytest
+2026-05-21 17:30:30 | DEBUG | Inserting transaction...
+2026-05-21 17:30:31 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 4.9 | Response: {"code":0,"msg":"success","data":"{\"balance\":300400}"}
+2026-05-21 17:30:31 | CHANGE_POINT | Data: {"acc":"velplaytest_3252533","type":4,"game_id":74,"buy_order_id":"P5-001646671779280916","order_id":"P5-000131091779364831","balance":"4900","gift":0} | Sign: 4e0e80b8baf80dd33520e8f773a81ac4 | Platform: velplaytest
+2026-05-21 17:30:31 | DEBUG | Inserting transaction...
+2026-05-21 17:30:31 | CHANGE_POINT RESPONSE | User: velplaytest_3252533 | Type: 4 | Amount: 4.9 | Response: {"code":0,"msg":"success","data":"{\"balance\":305300}"}
+2026-05-21 19:58:55 | GET_POINT | Data: {"acc":"velplaytest_8091921"} | Sign: 981c6c9a7c749126bf7cc704c1e11e86 | Platform: velplaytest
+2026-05-21 19:58:55 | GET_POINT RESPONSE | User: velplaytest_8091921 | Response: {"code":0,"msg":"success","data":"{\"balance\":25829420}"}

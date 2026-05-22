@@ -6423,3 +6423,1073 @@
 2026-05-15 19:52:28 - Launch Req: {"GAME_NAME":"Bhagyathara","GAME_UID":"1","USER_ID":"8091921"}
 2026-05-15 19:52:29 - IndiaLotto Login | URL: https://server-test.running10.tv/api/creat_or_default_player_login/ | User: velplaytest_8091921 | HTTP: 200 | Response: {"code":0,"msg":"success","data":"{\"acc\":\"velplaytest_8091921\",\"Token\":\"33616d73-03b6-4d7b-b292-3b5c21b22fd1\",\"URL\":\"https://test.running10.tv/?Token=33616d73-03b6-4d7b-b292-3b5c21b22fd1\",\"order_id\":0,\"platform_order_id\":\"\",\"balance\":0}"}
 2026-05-15 19:52:29 - IndiaLotto SUCCESS | Game URL: https://test.running10.tv/?Token=33616d73-03b6-4d7b-b292-3b5c21b22fd1&game=kerala-ww&homeurl=https%3A%2F%2Fvelplay365.com&backmode=0
+2026-05-16 00:29:25 - Launch Req: {"GAME_NAME":"Bhagyathara","GAME_UID":"1","USER_ID":"8091921"}
+2026-05-16 00:29:37 - Launch Req: {"GAME_NAME":"Bhagyathara","GAME_UID":"1","USER_ID":"8091921"}
+2026-05-16 00:29:38 - IndiaLotto Login | URL: https://server-test.running10.tv/api/creat_or_default_player_login/ | User: velplaytest_8091921 | HTTP: 200 | Response: {"code":0,"msg":"success","data":"{\"acc\":\"velplaytest_8091921\",\"Token\":\"5571d8e2-0ca4-4515-b1d4-1fb88329ee91\",\"URL\":\"https://test.running10.tv/?Token=5571d8e2-0ca4-4515-b1d4-1fb88329ee91\",\"order_id\":0,\"platform_order_id\":\"\",\"balance\":0}"}
+2026-05-16 00:29:38 - IndiaLotto SUCCESS | Game URL: https://test.running10.tv/?Token=5571d8e2-0ca4-4515-b1d4-1fb88329ee91&game=kerala-ww&homeurl=https%3A%2F%2Fvelplay365.com&backmode=0
+2026-05-16 00:30:54 - Launch Req: {"GAME_NAME":"DroneX","GAME_UID":"ffe900e717840fea46cdc2e98d44b51c","USER_ID":"8091921"}
+2026-05-16 00:30:54 - Game: DroneX | UID: ffe900e717840fea46cdc2e98d44b51c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=532b41b7-24a7-42b8-98d2-363c7b377cf7"}}
+2026-05-16 00:33:01 - Launch Req: {"USER_ID":"8091921","GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c"}
+2026-05-16 00:33:01 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=8af7659f-8b9f-4725-9434-7e02dd05442c"}}
+2026-05-16 12:30:51 - Launch Req: {"GAME_NAME":"Bhagyathara","GAME_UID":"1","USER_ID":"8091921"}
+2026-05-16 12:31:18 - Launch Req: {"GAME_NAME":"Bhagyathara","GAME_UID":"1","USER_ID":"8091921"}
+2026-05-16 12:31:18 - IndiaLotto Login | URL: https://server-test.running10.tv/api/creat_or_default_player_login/ | User: velplaytest_8091921 | HTTP: 200 | Response: {"code":0,"msg":"success","data":"{\"acc\":\"velplaytest_8091921\",\"Token\":\"6b30dc00-1d7d-47a4-8f13-3c738102211f\",\"URL\":\"https://test.running10.tv/?Token=6b30dc00-1d7d-47a4-8f13-3c738102211f\",\"order_id\":0,\"platform_order_id\":\"\",\"balance\":0}"}
+2026-05-16 12:31:18 - IndiaLotto SUCCESS | Game URL: https://test.running10.tv/?Token=6b30dc00-1d7d-47a4-8f13-3c738102211f&game=kerala-ww&homeurl=https%3A%2F%2Fvelplay365.com&backmode=0
+2026-05-16 12:59:23 - Launch Req: {"GAME_NAME":"Bhagyathara","GAME_UID":"1","USER_ID":"8091921"}
+2026-05-16 12:59:33 - Launch Req: {"GAME_NAME":"Bhagyathara","GAME_UID":"1","USER_ID":"8091921"}
+2026-05-16 12:59:33 - IndiaLotto Login | URL: https://server-test.running10.tv/api/creat_or_default_player_login/ | User: velplaytest_8091921 | HTTP: 200 | Response: {"code":0,"msg":"success","data":"{\"acc\":\"velplaytest_8091921\",\"Token\":\"bfc6303b-9e36-4542-98bd-51e8bf4f476b\",\"URL\":\"https://test.running10.tv/?Token=bfc6303b-9e36-4542-98bd-51e8bf4f476b\",\"order_id\":0,\"platform_order_id\":\"\",\"balance\":0}"}
+2026-05-16 12:59:33 - IndiaLotto SUCCESS | Game URL: https://test.running10.tv/?Token=bfc6303b-9e36-4542-98bd-51e8bf4f476b&game=kerala-ww&homeurl=https%3A%2F%2Fvelplay365.com&backmode=0
+2026-05-16 13:02:47 - Launch Req: {"USER_ID":"8091921","GAME_NAME":"Mines","GAME_UID":"b3d92fb446a2829a06f828ec83f432f4"}
+2026-05-16 13:02:48 - Game: Mines | UID: b3d92fb446a2829a06f828ec83f432f4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=5f5ca9dd-1174-4d41-8be8-1ef586b441ad"}}
+2026-05-16 13:08:45 - Launch Req: {"GAME_NAME":"Bhagyathara","GAME_UID":"1","USER_ID":"8091921"}
+2026-05-16 13:08:46 - IndiaLotto Login | URL: https://server-test.running10.tv/api/creat_or_default_player_login/ | User: velplaytest_8091921 | HTTP: 200 | Response: {"code":0,"msg":"success","data":"{\"acc\":\"velplaytest_8091921\",\"Token\":\"52c2b57c-3748-4a9c-b3f5-c37a02778845\",\"URL\":\"https://test.running10.tv/?Token=52c2b57c-3748-4a9c-b3f5-c37a02778845\",\"order_id\":0,\"platform_order_id\":\"\",\"balance\":0}"}
+2026-05-16 13:08:46 - IndiaLotto SUCCESS | Game URL: https://test.running10.tv/?Token=52c2b57c-3748-4a9c-b3f5-c37a02778845&game=kerala-ww&homeurl=https%3A%2F%2Fvelplay365.com&backmode=0
+2026-05-16 13:30:12 - Launch Req: {"GAME_NAME":"Bhagyathara","GAME_UID":"1","USER_ID":"8091921"}
+2026-05-16 13:30:13 - IndiaLotto Login | URL: https://server-test.running10.tv/api/creat_or_default_player_login/ | User: velplaytest_8091921 | HTTP: 200 | Response: {"code":0,"msg":"success","data":"{\"acc\":\"velplaytest_8091921\",\"Token\":\"d9da2fa4-e4ca-46fa-862b-bf8617f5549b\",\"URL\":\"https://test.running10.tv/?Token=d9da2fa4-e4ca-46fa-862b-bf8617f5549b\",\"order_id\":0,\"platform_order_id\":\"\",\"balance\":0}"}
+2026-05-16 13:30:13 - IndiaLotto SUCCESS | Game URL: https://test.running10.tv/?Token=d9da2fa4-e4ca-46fa-862b-bf8617f5549b&game=kerala-ww&homeurl=https%3A%2F%2Fvelplay365.com&backmode=0
+2026-05-16 13:32:02 - Launch Req: {"USER_ID":"8091921","GAME_NAME":"Mines","GAME_UID":"b3d92fb446a2829a06f828ec83f432f4"}
+2026-05-16 13:32:02 - Game: Mines | UID: b3d92fb446a2829a06f828ec83f432f4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=100e14ca-ab6e-4924-a9dd-041114326426"}}
+2026-05-16 13:33:51 - Launch Req: {"GAME_NAME":"Bhagyathara","GAME_UID":"1","USER_ID":"8091921"}
+2026-05-16 13:33:52 - IndiaLotto Login | URL: https://server-test.running10.tv/api/creat_or_default_player_login/ | User: velplaytest_8091921 | HTTP: 200 | Response: {"code":0,"msg":"success","data":"{\"acc\":\"velplaytest_8091921\",\"Token\":\"a972e272-a2c8-49ee-868d-c5e2ecd7ee38\",\"URL\":\"https://test.running10.tv/?Token=a972e272-a2c8-49ee-868d-c5e2ecd7ee38\",\"order_id\":0,\"platform_order_id\":\"\",\"balance\":0}"}
+2026-05-16 13:33:52 - IndiaLotto SUCCESS | Game URL: https://test.running10.tv/?Token=a972e272-a2c8-49ee-868d-c5e2ecd7ee38&game=kerala-ww&homeurl=https%3A%2F%2Fvelplay365.com&backmode=0
+2026-05-16 13:36:30 - Launch Req: {"GAME_NAME":"Bhagyathara","GAME_UID":"1","USER_ID":"8091921"}
+2026-05-16 13:36:31 - IndiaLotto Login | URL: https://server-test.running10.tv/api/creat_or_default_player_login/ | User: velplaytest_8091921 | HTTP: 200 | Response: {"code":0,"msg":"success","data":"{\"acc\":\"velplaytest_8091921\",\"Token\":\"5e48f6f5-8dd3-4cbb-877a-6e7eb3eece23\",\"URL\":\"https://test.running10.tv/?Token=5e48f6f5-8dd3-4cbb-877a-6e7eb3eece23\",\"order_id\":0,\"platform_order_id\":\"\",\"balance\":0}"}
+2026-05-16 13:36:31 - IndiaLotto SUCCESS | Game URL: https://test.running10.tv/?Token=5e48f6f5-8dd3-4cbb-877a-6e7eb3eece23&game=kerala-ww&homeurl=https%3A%2F%2Fvelplay365.com&backmode=0
+2026-05-16 13:39:15 - Launch Req: {"GAME_NAME":"Bhagyathara","GAME_UID":"1","USER_ID":"8091921"}
+2026-05-16 13:39:15 - IndiaLotto Login | URL: https://server-test.running10.tv/api/creat_or_default_player_login/ | User: velplaytest_8091921 | HTTP: 200 | Response: {"code":0,"msg":"success","data":"{\"acc\":\"velplaytest_8091921\",\"Token\":\"0e22d52e-fa2b-42fb-aa0c-e936c1e02d1f\",\"URL\":\"https://test.running10.tv/?Token=0e22d52e-fa2b-42fb-aa0c-e936c1e02d1f\",\"order_id\":0,\"platform_order_id\":\"\",\"balance\":0}"}
+2026-05-16 13:39:15 - IndiaLotto SUCCESS | Game URL: https://test.running10.tv/?Token=0e22d52e-fa2b-42fb-aa0c-e936c1e02d1f&game=kerala-ww&homeurl=https%3A%2F%2Fvelplay365.com&backmode=0
+2026-05-16 13:45:04 - Launch Req: {"USER_ID":"8091921","GAME_NAME":"Turbo Mines","GAME_UID":"2b84d70f6b637dabfc527515273fdd0f"}
+2026-05-16 13:45:04 - Game: Turbo Mines | UID: 2b84d70f6b637dabfc527515273fdd0f | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=3bee6019-0990-4cc3-b374-9845e52bbacf"}}
+2026-05-16 13:45:40 - Launch Req: {"GAME_NAME":"Bhagyathara","GAME_UID":"1","USER_ID":"8091921"}
+2026-05-16 13:45:40 - IndiaLotto Login | URL: https://server-test.running10.tv/api/creat_or_default_player_login/ | User: velplaytest_8091921 | HTTP: 200 | Response: {"code":0,"msg":"success","data":"{\"acc\":\"velplaytest_8091921\",\"Token\":\"3072c01d-ecc8-49c6-a449-c38a8559440d\",\"URL\":\"https://test.running10.tv/?Token=3072c01d-ecc8-49c6-a449-c38a8559440d\",\"order_id\":0,\"platform_order_id\":\"\",\"balance\":0}"}
+2026-05-16 13:45:40 - IndiaLotto SUCCESS | Game URL: https://test.running10.tv/?Token=3072c01d-ecc8-49c6-a449-c38a8559440d&game=kerala-ww&homeurl=https%3A%2F%2Fvelplay365.com&backmode=0
+2026-05-16 13:47:25 - Launch Req: {"GAME_NAME":"Bhagyathara","GAME_UID":"1","USER_ID":"8091921"}
+2026-05-16 13:47:25 - IndiaLotto Login | URL: https://server-test.running10.tv/api/creat_or_default_player_login/ | User: velplaytest_8091921 | HTTP: 200 | Response: {"code":0,"msg":"success","data":"{\"acc\":\"velplaytest_8091921\",\"Token\":\"8cb3acee-bf08-4299-b535-8358cba8fd7b\",\"URL\":\"https://test.running10.tv/?Token=8cb3acee-bf08-4299-b535-8358cba8fd7b\",\"order_id\":0,\"platform_order_id\":\"\",\"balance\":0}"}
+2026-05-16 13:47:25 - IndiaLotto SUCCESS | Game URL: https://test.running10.tv/?Token=8cb3acee-bf08-4299-b535-8358cba8fd7b&game=kerala-ww&homeurl=https%3A%2F%2Fvelplay365.com&backmode=0
+2026-05-16 13:50:08 - Launch Req: {"GAME_NAME":"Bhagyathara","GAME_UID":"1","USER_ID":"8091921"}
+2026-05-16 13:50:08 - IndiaLotto Login | URL: https://server-test.running10.tv/api/creat_or_default_player_login/ | User: velplaytest_8091921 | HTTP: 200 | Response: {"code":0,"msg":"success","data":"{\"acc\":\"velplaytest_8091921\",\"Token\":\"13c8c8fe-df8b-4d9c-881f-0a65be655578\",\"URL\":\"https://test.running10.tv/?Token=13c8c8fe-df8b-4d9c-881f-0a65be655578\",\"order_id\":0,\"platform_order_id\":\"\",\"balance\":0}"}
+2026-05-16 13:50:08 - IndiaLotto SUCCESS | Game URL: https://test.running10.tv/?Token=13c8c8fe-df8b-4d9c-881f-0a65be655578&game=kerala-ww&homeurl=https%3A%2F%2Fvelplay365.com&backmode=0
+2026-05-16 13:54:16 - Launch Req: {"GAME_NAME":"Bhagyathara","GAME_UID":"1","USER_ID":"8091921"}
+2026-05-16 13:54:17 - IndiaLotto Login | URL: https://server-test.running10.tv/api/creat_or_default_player_login/ | User: velplaytest_8091921 | HTTP: 200 | Response: {"code":0,"msg":"success","data":"{\"acc\":\"velplaytest_8091921\",\"Token\":\"57b13450-7956-4822-9dec-09c58ee4b130\",\"URL\":\"https://test.running10.tv/?Token=57b13450-7956-4822-9dec-09c58ee4b130\",\"order_id\":0,\"platform_order_id\":\"\",\"balance\":0}"}
+2026-05-16 13:54:17 - IndiaLotto SUCCESS | Game URL: https://test.running10.tv/?Token=57b13450-7956-4822-9dec-09c58ee4b130&game=kerala-ww&homeurl=https%3A%2F%2Fvelplay365.com&backmode=0
+2026-05-16 16:04:11 - Launch Req: {"GAME_NAME":"Naughty Button","GAME_UID":"e7fdcc9c3b60855acc8c1f0afc2f5a96","USER_ID":"3252533"}
+2026-05-16 16:04:11 - Game: Naughty Button | UID: e7fdcc9c3b60855acc8c1f0afc2f5a96 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=54cfaa94-3775-4150-83e8-51b88e29a432"}}
+2026-05-16 16:05:06 - Launch Req: {"GAME_NAME":"DragonTower","GAME_UID":"a9c1c5bec41c5cc8d49dd5e2e718b5c0","USER_ID":"3252533"}
+2026-05-16 16:05:06 - Game: DragonTower | UID: a9c1c5bec41c5cc8d49dd5e2e718b5c0 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=49a91a11-7e01-4214-aa85-62754fa5f25e"}}
+2026-05-16 16:05:24 - Launch Req: {"GAME_NAME":"Chicken Road 2.0","GAME_UID":"562b299961b0ec40f252a832453c67b0","USER_ID":"3252533"}
+2026-05-16 16:05:24 - Game: Chicken Road 2.0 | UID: 562b299961b0ec40f252a832453c67b0 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=6a66a0be-4ad6-4708-a0c7-516cc332d4fc"}}
+2026-05-16 16:05:37 - Launch Req: {"GAME_NAME":"Cockfight","GAME_UID":"7813255c532f0115a805739dac984ec8","USER_ID":"3252533"}
+2026-05-16 16:05:37 - Game: Cockfight | UID: 7813255c532f0115a805739dac984ec8 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=1ef7cc92-63a6-4931-ac54-fbde109167ab"}}
+2026-05-16 16:06:25 - Launch Req: {"GAME_NAME":"Cryptos","GAME_UID":"445289d56c9ee8fa590bf6b29b13dc37","USER_ID":"3252533"}
+2026-05-16 16:06:25 - Game: Cryptos | UID: 445289d56c9ee8fa590bf6b29b13dc37 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=b19b461a-0c92-4ff9-b0ab-95827283339a"}}
+2026-05-16 16:07:29 - Launch Req: {"GAME_NAME":"Towers","GAME_UID":"0ad7c4c8f9a1fe4ebec150c5b6606f54","USER_ID":"3252533"}
+2026-05-16 16:07:30 - Game: Towers | UID: 0ad7c4c8f9a1fe4ebec150c5b6606f54 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=dfa494c4-1385-4f92-ad7a-c269be5b5c6d"}}
+2026-05-16 17:11:23 - Launch Req: {"USER_ID":"3252533","GAME_NAME":"Jalwa Color Game","GAME_UID":"2d3eae979426701b1cd443636f24b6b4"}
+2026-05-16 17:11:24 - Game: Jalwa Color Game | UID: 2d3eae979426701b1cd443636f24b6b4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=ed8c5edc-1012-4571-abbc-782f684b638d"}}
+2026-05-16 17:18:40 - Launch Req: {"GAME_NAME":"Sthree Sakthi","GAME_UID":"2","USER_ID":"8091921"}
+2026-05-16 17:18:41 - IndiaLotto Login | URL: https://server-test.running10.tv/api/creat_or_default_player_login/ | User: velplaytest_8091921 | HTTP: 200 | Response: {"code":0,"msg":"success","data":"{\"acc\":\"velplaytest_8091921\",\"Token\":\"50cdf0d6-0f9a-471e-86f4-d3e0dd9d83e6\",\"URL\":\"https://test.running10.tv/?Token=50cdf0d6-0f9a-471e-86f4-d3e0dd9d83e6\",\"order_id\":0,\"platform_order_id\":\"\",\"balance\":0}"}
+2026-05-16 17:18:41 - IndiaLotto SUCCESS | Game URL: https://test.running10.tv/?Token=50cdf0d6-0f9a-471e-86f4-d3e0dd9d83e6&game=kerala-ss&homeurl=https%3A%2F%2Fvelplay365.com&backmode=0
+2026-05-16 17:22:34 - Launch Req: {"GAME_NAME":"DragonTower","GAME_UID":"a9c1c5bec41c5cc8d49dd5e2e718b5c0","USER_ID":"3252533"}
+2026-05-16 17:22:34 - Game: DragonTower | UID: a9c1c5bec41c5cc8d49dd5e2e718b5c0 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=3fe8ef93-bc81-4a36-ba43-306f6d204c9b"}}
+2026-05-16 17:31:08 - Launch Req: {"GAME_NAME":"Double","GAME_UID":"d773aaca0e40f36ae48d302aedeed3b3","USER_ID":"3252533"}
+2026-05-16 17:31:08 - Game: Double | UID: d773aaca0e40f36ae48d302aedeed3b3 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=8a326cb3-4e4f-4843-8ea9-a8632318fd46"}}
+2026-05-16 17:35:11 - Launch Req: {"GAME_NAME":"Bhagyathara","GAME_UID":"1","USER_ID":"3252533"}
+2026-05-16 17:35:11 - IndiaLotto Login | URL: https://server-test.running10.tv/api/creat_or_default_player_login/ | User: velplaytest_3252533 | HTTP: 200 | Response: {"code":0,"msg":"success","data":"{\"acc\":\"velplaytest_3252533\",\"Token\":\"f44eef39-7eab-4c8b-a881-85eab0a6d0fb\",\"URL\":\"https://test.running10.tv/?Token=f44eef39-7eab-4c8b-a881-85eab0a6d0fb\",\"order_id\":0,\"platform_order_id\":\"\",\"balance\":0}"}
+2026-05-16 17:35:11 - IndiaLotto SUCCESS | Game URL: https://test.running10.tv/?Token=f44eef39-7eab-4c8b-a881-85eab0a6d0fb&game=kerala-ww&homeurl=https%3A%2F%2Fvelplay365.com&backmode=0
+2026-05-16 17:36:40 - Launch Req: {"GAME_NAME":"ChickNRoll","GAME_UID":"135e4f1032eae33954c8fe7d8d95e847","USER_ID":"3252533"}
+2026-05-16 17:36:40 - Game: ChickNRoll | UID: 135e4f1032eae33954c8fe7d8d95e847 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=265cc640-9241-40d8-929e-854401e7dde7"}}
+2026-05-16 17:55:58 - Launch Req: {"GAME_NAME":"Christmax New Year Bumper","GAME_UID":"9","USER_ID":"8091921"}
+2026-05-16 17:55:58 - IndiaLotto Login | URL: https://server-test.running10.tv/api/creat_or_default_player_login/ | User: velplaytest_8091921 | HTTP: 200 | Response: {"code":0,"msg":"success","data":"{\"acc\":\"velplaytest_8091921\",\"Token\":\"11d63495-a6e0-4f35-b667-fb5df9651ab3\",\"URL\":\"https://test.running10.tv/?Token=11d63495-a6e0-4f35-b667-fb5df9651ab3\",\"order_id\":0,\"platform_order_id\":\"\",\"balance\":0}"}
+2026-05-16 17:55:58 - IndiaLotto SUCCESS | Game URL: https://test.running10.tv/?Token=11d63495-a6e0-4f35-b667-fb5df9651ab3&game=kerala-br&homeurl=https%3A%2F%2Fvelplay365.com&backmode=0
+2026-05-16 17:56:47 - Launch Req: {"GAME_NAME":"Online Only","GAME_UID":"8","USER_ID":"8091921"}
+2026-05-16 17:56:47 - IndiaLotto Login | URL: https://server-test.running10.tv/api/creat_or_default_player_login/ | User: velplaytest_8091921 | HTTP: 200 | Response: {"code":0,"msg":"success","data":"{\"acc\":\"velplaytest_8091921\",\"Token\":\"8c987163-97ab-491f-89ee-abe4689a8b0b\",\"URL\":\"https://test.running10.tv/?Token=8c987163-97ab-491f-89ee-abe4689a8b0b\",\"order_id\":0,\"platform_order_id\":\"\",\"balance\":0}"}
+2026-05-16 17:56:47 - IndiaLotto SUCCESS | Game URL: https://test.running10.tv/?Token=8c987163-97ab-491f-89ee-abe4689a8b0b&game=kerala-oa&homeurl=https%3A%2F%2Fvelplay365.com&backmode=0
+2026-05-16 17:59:44 - Launch Req: {"GAME_NAME":"Bhagyathara","GAME_UID":"1","USER_ID":"8091921"}
+2026-05-16 17:59:44 - IndiaLotto Login | URL: https://server-test.running10.tv/api/creat_or_default_player_login/ | User: velplaytest_8091921 | HTTP: 200 | Response: {"code":0,"msg":"success","data":"{\"acc\":\"velplaytest_8091921\",\"Token\":\"a1ca512e-062c-45f8-b5d8-8f3853066100\",\"URL\":\"https://test.running10.tv/?Token=a1ca512e-062c-45f8-b5d8-8f3853066100\",\"order_id\":0,\"platform_order_id\":\"\",\"balance\":0}"}
+2026-05-16 17:59:44 - IndiaLotto SUCCESS | Game URL: https://test.running10.tv/?Token=a1ca512e-062c-45f8-b5d8-8f3853066100&game=kerala-ww&homeurl=https%3A%2F%2Fvelplay365.com&backmode=0
+2026-05-16 18:08:02 - Launch Req: {"GAME_NAME":"Dhanalekshmi","GAME_UID":"3","USER_ID":"8091921"}
+2026-05-16 18:08:02 - IndiaLotto Login | URL: https://server-test.running10.tv/api/creat_or_default_player_login/ | User: velplaytest_8091921 | HTTP: 200 | Response: {"code":0,"msg":"success","data":"{\"acc\":\"velplaytest_8091921\",\"Token\":\"88fb6d49-9b42-4f23-ab2a-d2b2ab711e43\",\"URL\":\"https://test.running10.tv/?Token=88fb6d49-9b42-4f23-ab2a-d2b2ab711e43\",\"order_id\":0,\"platform_order_id\":\"\",\"balance\":0}"}
+2026-05-16 18:08:02 - IndiaLotto SUCCESS | Game URL: https://test.running10.tv/?Token=88fb6d49-9b42-4f23-ab2a-d2b2ab711e43&game=kerala-ff&homeurl=https%3A%2F%2Fvelplay365.com&backmode=0
+2026-05-16 18:11:11 - Launch Req: {"GAME_NAME":"Samrudhi","GAME_UID":"7","USER_ID":"8091921"}
+2026-05-16 18:11:11 - IndiaLotto Login | URL: https://server-test.running10.tv/api/creat_or_default_player_login/ | User: velplaytest_8091921 | HTTP: 200 | Response: {"code":0,"msg":"success","data":"{\"acc\":\"velplaytest_8091921\",\"Token\":\"f8f6a609-2dd1-4a39-ba49-d349e4693156\",\"URL\":\"https://test.running10.tv/?Token=f8f6a609-2dd1-4a39-ba49-d349e4693156\",\"order_id\":0,\"platform_order_id\":\"\",\"balance\":0}"}
+2026-05-16 18:11:11 - IndiaLotto SUCCESS | Game URL: https://test.running10.tv/?Token=f8f6a609-2dd1-4a39-ba49-d349e4693156&game=kerala-ak&homeurl=https%3A%2F%2Fvelplay365.com&backmode=0
+2026-05-16 18:11:59 - Launch Req: {"GAME_NAME":"Online Only","GAME_UID":"8","USER_ID":"8091921"}
+2026-05-16 18:11:59 - IndiaLotto Login | URL: https://server-test.running10.tv/api/creat_or_default_player_login/ | User: velplaytest_8091921 | HTTP: 200 | Response: {"code":0,"msg":"success","data":"{\"acc\":\"velplaytest_8091921\",\"Token\":\"eeec0e19-92f1-4fb4-9bb8-e096a88701d0\",\"URL\":\"https://test.running10.tv/?Token=eeec0e19-92f1-4fb4-9bb8-e096a88701d0\",\"order_id\":0,\"platform_order_id\":\"\",\"balance\":0}"}
+2026-05-16 18:11:59 - IndiaLotto SUCCESS | Game URL: https://test.running10.tv/?Token=eeec0e19-92f1-4fb4-9bb8-e096a88701d0&game=kerala-oa&homeurl=https%3A%2F%2Fvelplay365.com&backmode=0
+2026-05-16 18:12:21 - Launch Req: {"GAME_NAME":"Christmax New Year Bumper","GAME_UID":"9","USER_ID":"8091921"}
+2026-05-16 18:12:21 - IndiaLotto Login | URL: https://server-test.running10.tv/api/creat_or_default_player_login/ | User: velplaytest_8091921 | HTTP: 200 | Response: {"code":0,"msg":"success","data":"{\"acc\":\"velplaytest_8091921\",\"Token\":\"5c4cedae-c11a-4b79-8e12-d2bd3984f6da\",\"URL\":\"https://test.running10.tv/?Token=5c4cedae-c11a-4b79-8e12-d2bd3984f6da\",\"order_id\":0,\"platform_order_id\":\"\",\"balance\":0}"}
+2026-05-16 18:12:21 - IndiaLotto SUCCESS | Game URL: https://test.running10.tv/?Token=5c4cedae-c11a-4b79-8e12-d2bd3984f6da&game=kerala-br&homeurl=https%3A%2F%2Fvelplay365.com&backmode=0
+2026-05-16 18:33:03 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-16 18:33:03 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=6615d882-0934-4e4d-87c3-7afe5a330d30"}}
+2026-05-16 20:29:04 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-16 20:29:05 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=bbac0e79-846d-4a25-b4ce-570aea487740"}}
+2026-05-16 20:30:52 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-16 20:31:11 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-16 20:31:11 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=a4a5a162-9ab6-4d13-9ebc-a1fceb38dc2c"}}
+2026-05-16 20:33:55 - Launch Req: {"GAME_NAME":"SABA Sports","GAME_UID":"08ced9dd788aed11ff3c7f387ae0f063","USER_ID":"8091921"}
+2026-05-16 20:33:55 - Game: SABA Sports | UID: 08ced9dd788aed11ff3c7f387ae0f063 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=e64121e8-e069-4143-b58c-d4e2e9a0f4ff"}}
+2026-05-16 20:38:44 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-16 20:38:55 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-16 20:38:55 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=c045f063-93e1-4d87-9ac7-eeed1fde1afb"}}
+2026-05-16 20:40:11 - Launch Req: {"GAME_NAME":"Dhanalekshmi","GAME_UID":"3","USER_ID":"8091921"}
+2026-05-16 20:40:15 - IndiaLotto Login | URL: https://server-test.running10.tv/api/creat_or_default_player_login/ | User: velplaytest_8091921 | HTTP: 200 | Response: {"code":0,"msg":"success","data":"{\"acc\":\"velplaytest_8091921\",\"Token\":\"62ce50f7-63b5-45d4-bf05-e33979b001d3\",\"URL\":\"https://test.running10.tv/?Token=62ce50f7-63b5-45d4-bf05-e33979b001d3\",\"order_id\":0,\"platform_order_id\":\"\",\"balance\":0}"}
+2026-05-16 20:40:15 - IndiaLotto SUCCESS | Game URL: https://test.running10.tv/?Token=62ce50f7-63b5-45d4-bf05-e33979b001d3&game=kerala-ff&homeurl=https%3A%2F%2Fvelplay365.com&backmode=0
+2026-05-16 20:58:58 - Launch Req: {"GAME_NAME":"Summer Bumper","GAME_UID":"10","USER_ID":"8091921"}
+2026-05-16 20:58:58 - IndiaLotto Login | URL: https://server-test.running10.tv/api/creat_or_default_player_login/ | User: velplaytest_8091921 | HTTP: 200 | Response: {"code":0,"msg":"success","data":"{\"acc\":\"velplaytest_8091921\",\"Token\":\"ce081505-c7fa-4c5d-a936-ab89b566021e\",\"URL\":\"https://test.running10.tv/?Token=ce081505-c7fa-4c5d-a936-ab89b566021e\",\"order_id\":0,\"platform_order_id\":\"\",\"balance\":0}"}
+2026-05-16 20:58:58 - IndiaLotto SUCCESS | Game URL: https://test.running10.tv/?Token=ce081505-c7fa-4c5d-a936-ab89b566021e&game=kerala-br&homeurl=https%3A%2F%2Fvelplay365.com&backmode=0
+2026-05-16 20:59:37 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-16 20:59:38 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=1f1309c1-9f23-4b70-9687-cfb21cc113b1"}}
+2026-05-17 20:18:03 - Launch Req: {"USER_ID":"3252533","GAME_NAME":"Cockfight","GAME_UID":"7813255c532f0115a805739dac984ec8"}
+2026-05-17 20:18:04 - Game: Cockfight | UID: 7813255c532f0115a805739dac984ec8 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=80e6d672-460a-4233-8c21-ba602e15793d"}}
+2026-05-17 20:19:17 - Launch Req: {"USER_ID":"3252533","GAME_NAME":"Cockfight","GAME_UID":"7813255c532f0115a805739dac984ec8"}
+2026-05-17 20:19:17 - Game: Cockfight | UID: 7813255c532f0115a805739dac984ec8 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=00851c8f-e93a-4b5d-af77-e7b814072477"}}
+2026-05-17 20:20:13 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"3252533"}
+2026-05-17 20:21:04 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"3252533"}
+2026-05-17 20:21:04 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=04c0c97c-40ef-4118-af69-3477a575e16e"}}
+2026-05-17 20:21:27 - Launch Req: {"GAME_NAME":"SABA Sports","GAME_UID":"08ced9dd788aed11ff3c7f387ae0f063","USER_ID":"3252533"}
+2026-05-17 20:21:30 - Launch Req: {"GAME_NAME":"aviatrix","GAME_UID":"6f652ee587522116739db9ed5a8d529f","USER_ID":"3252533"}
+2026-05-17 20:21:30 - Game: aviatrix | UID: 6f652ee587522116739db9ed5a8d529f | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=b501775c-d572-43d7-99dc-45fd510e28c8"}}
+2026-05-17 20:21:52 - Launch Req: {"GAME_NAME":"SABA Sports","GAME_UID":"08ced9dd788aed11ff3c7f387ae0f063","USER_ID":"3252533"}
+2026-05-17 20:21:52 - Game: SABA Sports | UID: 08ced9dd788aed11ff3c7f387ae0f063 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=71311af7-1b29-4fda-b51a-6adb25d76f0e"}}
+2026-05-17 20:21:58 - Launch Req: {"USER_ID":"3252533","GAME_NAME":"Cockfight","GAME_UID":"7813255c532f0115a805739dac984ec8"}
+2026-05-18 12:48:49 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-18 14:03:01 - Launch Req: {"GAME_NAME":"WCC","GAME_UID":"475a85119e0133e7b790be265fa9358a","USER_ID":"8091921"}
+2026-05-18 14:03:11 - Launch Req: {"GAME_NAME":"WCC","GAME_UID":"475a85119e0133e7b790be265fa9358a","USER_ID":"8091921"}
+2026-05-18 14:03:12 - Game: WCC | UID: 475a85119e0133e7b790be265fa9358a | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=feccc0f0-4afa-463d-a930-000b498926fe"}}
+2026-05-18 14:03:41 - Launch Req: {"GAME_NAME":"WGC","GAME_UID":"304947ef77b76b16f2064932d72c78ee","USER_ID":"8091921"}
+2026-05-18 14:03:41 - Game: WGC | UID: 304947ef77b76b16f2064932d72c78ee | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=cc8a054e-6754-4a76-9a1b-b8622c4343da"}}
+2026-05-18 14:04:07 - Launch Req: {"GAME_NAME":"Cockfight","GAME_UID":"8cc99bed98c7adbe84bdaf7a8ad0c084","USER_ID":"8091921"}
+2026-05-18 14:04:07 - Game: Cockfight | UID: 8cc99bed98c7adbe84bdaf7a8ad0c084 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=814ef6f2-e81f-47a2-9e08-d34f1ae38cee"}}
+2026-05-18 14:04:35 - Launch Req: {"GAME_NAME":"SABA Sports","GAME_UID":"08ced9dd788aed11ff3c7f387ae0f063","USER_ID":"8091921"}
+2026-05-18 14:04:35 - Game: SABA Sports | UID: 08ced9dd788aed11ff3c7f387ae0f063 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=8a46db51-5e64-4d2c-ac97-d7453377d208"}}
+2026-05-18 14:06:09 - Launch Req: {"GAME_NAME":"Esports","GAME_UID":"4ee8e0051a035b463b47c3c473ce317d","USER_ID":"8091921"}
+2026-05-18 14:06:09 - Game: Esports | UID: 4ee8e0051a035b463b47c3c473ce317d | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=c0e12eff-da68-4f36-b4a9-ca7dddaf9270"}}
+2026-05-18 14:07:03 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"8091921"}
+2026-05-18 14:07:03 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=b576d6cf-f4f6-4967-afce-5735c2bc4390"}}
+2026-05-18 14:12:59 - Launch Req: {"GAME_NAME":"Cockfight","GAME_UID":"8cc99bed98c7adbe84bdaf7a8ad0c084","USER_ID":"8091921"}
+2026-05-18 14:12:59 - Game: Cockfight | UID: 8cc99bed98c7adbe84bdaf7a8ad0c084 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=b051d565-0da2-47c9-b94d-9a7aaecad136"}}
+2026-05-18 14:13:11 - Launch Req: {"GAME_NAME":"WGC","GAME_UID":"304947ef77b76b16f2064932d72c78ee","USER_ID":"8091921"}
+2026-05-18 14:13:11 - Game: WGC | UID: 304947ef77b76b16f2064932d72c78ee | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=cbbdf7cc-8e33-41bc-9170-20728d7508d6"}}
+2026-05-18 14:22:12 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-18 14:22:12 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=bef072d3-a4ee-4a64-87c7-0dfa49d9f235"}}
+2026-05-18 14:24:21 - Launch Req: {"GAME_NAME":"WCC","GAME_UID":"475a85119e0133e7b790be265fa9358a","USER_ID":"8091921"}
+2026-05-18 14:24:21 - Game: WCC | UID: 475a85119e0133e7b790be265fa9358a | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=70878054-46dc-4b0a-b9d5-8e5ae550f91b"}}
+2026-05-18 14:24:42 - Launch Req: {"GAME_NAME":"WGC","GAME_UID":"304947ef77b76b16f2064932d72c78ee","USER_ID":"8091921"}
+2026-05-18 14:24:42 - Game: WGC | UID: 304947ef77b76b16f2064932d72c78ee | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=f1480335-afa2-4c82-af15-5a4de637e74c"}}
+2026-05-18 14:32:06 - Launch Req: {"GAME_NAME":"WGC","GAME_UID":"304947ef77b76b16f2064932d72c78ee","USER_ID":"8091921"}
+2026-05-18 14:32:06 - Game: WGC | UID: 304947ef77b76b16f2064932d72c78ee | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=21e7f1fd-80e7-47b2-8d47-b60c51bf880a"}}
+2026-05-18 14:49:50 - Launch Req: {"GAME_NAME":"Cockfight","GAME_UID":"8cc99bed98c7adbe84bdaf7a8ad0c084","USER_ID":"8091921"}
+2026-05-18 14:49:50 - Game: Cockfight | UID: 8cc99bed98c7adbe84bdaf7a8ad0c084 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=270ce094-b65a-4350-885f-f4d73414e739"}}
+2026-05-18 15:34:24 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-18 15:34:24 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=fcab8165-80e0-4a3f-8017-97e7f4ddc5df"}}
+2026-05-18 15:35:13 - Launch Req: {"GAME_NAME":"WGC","GAME_UID":"304947ef77b76b16f2064932d72c78ee","USER_ID":"8091921"}
+2026-05-18 15:35:13 - Game: WGC | UID: 304947ef77b76b16f2064932d72c78ee | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=a3284ae8-1284-42b1-ac81-9b6c7a1d8434"}}
+2026-05-18 15:54:35 - Launch Req: {"GAME_NAME":"WGC","GAME_UID":"304947ef77b76b16f2064932d72c78ee","USER_ID":"8091921"}
+2026-05-18 15:54:55 - Launch Req: {"GAME_NAME":"WGC","GAME_UID":"304947ef77b76b16f2064932d72c78ee","USER_ID":"8091921"}
+2026-05-18 15:54:55 - Game: WGC | UID: 304947ef77b76b16f2064932d72c78ee | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=f0a3542d-c109-45fa-aaed-254129bd8807"}}
+2026-05-18 15:55:14 - Launch Req: {"GAME_NAME":"SABA Sports","GAME_UID":"08ced9dd788aed11ff3c7f387ae0f063","USER_ID":"8091921"}
+2026-05-18 15:55:14 - Game: SABA Sports | UID: 08ced9dd788aed11ff3c7f387ae0f063 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=f1c88736-58e1-4e73-b399-99bd5ef0b7d0"}}
+2026-05-18 15:55:26 - Launch Req: {"GAME_NAME":"Cockfight","GAME_UID":"8cc99bed98c7adbe84bdaf7a8ad0c084","USER_ID":"8091921"}
+2026-05-18 15:55:26 - Game: Cockfight | UID: 8cc99bed98c7adbe84bdaf7a8ad0c084 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=33950fdd-a373-4f07-9a1c-aadde41dae38"}}
+2026-05-18 16:07:29 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-18 16:07:29 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=445ff868-e32a-4955-a9cb-7541a51a5c23"}}
+2026-05-18 16:07:48 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-18 16:07:49 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=dc9566d8-43e1-49c8-8f87-734f9d6f5dd5"}}
+2026-05-18 16:08:20 - Launch Req: {"GAME_NAME":"SABA Sports","GAME_UID":"08ced9dd788aed11ff3c7f387ae0f063","USER_ID":"8091921"}
+2026-05-18 16:08:20 - Game: SABA Sports | UID: 08ced9dd788aed11ff3c7f387ae0f063 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=3d5c64e1-35c5-4050-bf2e-228ee22df61b"}}
+2026-05-18 16:08:46 - Launch Req: {"GAME_NAME":"SABA Sports","GAME_UID":"08ced9dd788aed11ff3c7f387ae0f063","USER_ID":"8091921"}
+2026-05-18 16:08:46 - Game: SABA Sports | UID: 08ced9dd788aed11ff3c7f387ae0f063 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=c36c7c59-d9cc-4704-b8e3-6075327d8989"}}
+2026-05-18 16:34:54 - Launch Req: {"GAME_NAME":"Karunya Plus","GAME_UID":"4","USER_ID":"3252533"}
+2026-05-18 16:43:42 - Launch Req: {"GAME_NAME":"Night Heist","GAME_UID":"a480479055bac01520025b0d0a8ac6a6","USER_ID":"3252533"}
+2026-05-18 16:43:42 - Game: Night Heist | UID: a480479055bac01520025b0d0a8ac6a6 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=cdb3d326-6db4-4e9d-8a59-0ee97984afdb"}}
+2026-05-18 16:45:51 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"3252533"}
+2026-05-18 16:45:51 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=be53fa45-377b-442b-9aa4-789bb19b54ef"}}
+2026-05-18 16:47:24 - Launch Req: {"GAME_NAME":"SABA Sports","GAME_UID":"08ced9dd788aed11ff3c7f387ae0f063","USER_ID":"3252533"}
+2026-05-18 16:47:24 - Game: SABA Sports | UID: 08ced9dd788aed11ff3c7f387ae0f063 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=53e72b13-2941-479b-b228-0c395bb4d991"}}
+2026-05-18 17:23:02 - Launch Req: {"GAME_NAME":"WCC","GAME_UID":"475a85119e0133e7b790be265fa9358a","USER_ID":"8091921"}
+2026-05-18 17:23:02 - Game: WCC | UID: 475a85119e0133e7b790be265fa9358a | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=0e15d71c-d460-4be8-9c2e-ace985cdc0f6"}}
+2026-05-18 17:53:09 - Launch Req: {"GAME_NAME":"Cockfight","GAME_UID":"8cc99bed98c7adbe84bdaf7a8ad0c084","USER_ID":"3252533"}
+2026-05-18 17:53:09 - Game: Cockfight | UID: 8cc99bed98c7adbe84bdaf7a8ad0c084 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=ebde86c8-a0b2-4a0e-9a7b-404fe831a071"}}
+2026-05-18 17:57:36 - Launch Req: {"GAME_NAME":"Cockfight","GAME_UID":"8cc99bed98c7adbe84bdaf7a8ad0c084","USER_ID":"3252533"}
+2026-05-18 17:58:08 - Launch Req: {"GAME_NAME":"Cockfight","GAME_UID":"8cc99bed98c7adbe84bdaf7a8ad0c084","USER_ID":"3252533"}
+2026-05-18 17:58:09 - Game: Cockfight | UID: 8cc99bed98c7adbe84bdaf7a8ad0c084 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=bbb39c39-1853-4181-ba4f-4940749d6ba7"}}
+2026-05-18 17:58:24 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"8091921"}
+2026-05-18 17:58:24 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=81cc015c-4f06-47c9-89f5-03802e341479"}}
+2026-05-18 17:59:37 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-18 17:59:38 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=22c7b810-e1e5-4fef-b952-cd6fa544885a"}}
+2026-05-18 18:00:22 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-18 18:00:22 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=c3b2b17e-4e1d-4430-83c0-48699cee050d"}}
+2026-05-18 18:04:13 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"8091921"}
+2026-05-18 18:04:13 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=47f787aa-5bdf-41b4-81a3-9cc3a80ec14e"}}
+2026-05-18 18:23:12 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"8091921"}
+2026-05-18 18:23:12 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=b9aab080-fcf2-447f-bddc-da4ed05656d4"}}
+2026-05-18 18:24:13 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-18 18:24:13 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=47e7aa11-bf1b-4d17-ad97-9ef7424ebe7d"}}
+2026-05-18 18:24:52 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-18 18:24:53 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=7b6a93fd-d4e0-48b4-8f96-9e902205f533"}}
+2026-05-18 18:29:05 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"8091921"}
+2026-05-18 18:29:05 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=898a35c5-87b4-4510-bde1-3b3e0ab03a04"}}
+2026-05-18 18:30:30 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"8091921"}
+2026-05-18 18:30:31 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=12b40d8e-b599-416a-b6f3-e675841e00a3"}}
+2026-05-18 18:32:31 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"8091921"}
+2026-05-18 18:32:31 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=466f7142-17d7-47c6-aa36-352df7e2fe58"}}
+2026-05-18 18:36:59 - Launch Req: {"GAME_NAME":"SABA Sports","GAME_UID":"08ced9dd788aed11ff3c7f387ae0f063","USER_ID":"8091921"}
+2026-05-18 18:36:59 - Game: SABA Sports | UID: 08ced9dd788aed11ff3c7f387ae0f063 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=e0ec7b57-2328-4e49-b2c3-a19f00f390ea"}}
+2026-05-18 18:46:22 - Launch Req: {"GAME_NAME":"SABA Sports","GAME_UID":"08ced9dd788aed11ff3c7f387ae0f063","USER_ID":"8091921"}
+2026-05-18 18:46:22 - Game: SABA Sports | UID: 08ced9dd788aed11ff3c7f387ae0f063 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=a3eed3a3-e4db-4ac3-9dde-507f2707b7df"}}
+2026-05-18 18:47:48 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"8091921"}
+2026-05-18 18:47:48 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=2959a2ae-0b8f-4459-993f-57e9b59053ce"}}
+2026-05-18 18:48:50 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"8091921"}
+2026-05-18 18:48:50 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=6667c773-f4c3-476e-ae9d-1f5b09844739"}}
+2026-05-18 18:52:00 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"8091921"}
+2026-05-18 18:52:00 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=73d50845-bbac-4ae3-a7aa-efc93ee778c4"}}
+2026-05-18 18:55:36 - Launch Req: {"GAME_NAME":"SABA Sports","GAME_UID":"08ced9dd788aed11ff3c7f387ae0f063","USER_ID":"8091921"}
+2026-05-18 18:55:36 - Game: SABA Sports | UID: 08ced9dd788aed11ff3c7f387ae0f063 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=00bce665-1ca8-4ce3-9600-a4a27f969566"}}
+2026-05-18 18:58:29 - Launch Req: {"GAME_NAME":"WCC","GAME_UID":"475a85119e0133e7b790be265fa9358a","USER_ID":"3252533"}
+2026-05-18 18:58:30 - Game: WCC | UID: 475a85119e0133e7b790be265fa9358a | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=9b5e341c-a980-472a-80d4-a10e741c48ac"}}
+2026-05-18 19:01:38 - Launch Req: {"GAME_NAME":"WGC","GAME_UID":"304947ef77b76b16f2064932d72c78ee","USER_ID":"3252533"}
+2026-05-18 19:01:38 - Game: WGC | UID: 304947ef77b76b16f2064932d72c78ee | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=e717fb37-51e6-4ccb-86a7-9ff8b52980eb"}}
+2026-05-18 19:01:45 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"8091921"}
+2026-05-18 19:01:46 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=f9bfada9-4abc-4d7a-9e85-8a7bdd22802c"}}
+2026-05-18 19:47:16 - Launch Req: {"GAME_NAME":"SABA Sports","GAME_UID":"08ced9dd788aed11ff3c7f387ae0f063","USER_ID":"8091921"}
+2026-05-18 19:47:16 - Game: SABA Sports | UID: 08ced9dd788aed11ff3c7f387ae0f063 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=4b400547-ac01-4282-b923-3562c7886e53"}}
+2026-05-18 19:54:29 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"8091921"}
+2026-05-18 19:54:29 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=f32420ec-e991-4d27-9f49-8ac7c04af1c1"}}
+2026-05-18 20:20:19 - Launch Req: {"GAME_NAME":"SABA Sports","GAME_UID":"08ced9dd788aed11ff3c7f387ae0f063","USER_ID":"8091921"}
+2026-05-18 20:20:20 - Game: SABA Sports | UID: 08ced9dd788aed11ff3c7f387ae0f063 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=091e0081-7e5e-4db4-80d6-54407815c778"}}
+2026-05-19 12:29:22 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-19 12:29:23 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=1c01d54a-cc45-4e46-9937-30299d0d4f13"}}
+2026-05-19 12:32:15 - Launch Req: {"GAME_NAME":"SABA Sports","GAME_UID":"08ced9dd788aed11ff3c7f387ae0f063","USER_ID":"8091921"}
+2026-05-19 12:32:15 - Game: SABA Sports | UID: 08ced9dd788aed11ff3c7f387ae0f063 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=fc49d685-3be9-4539-85ff-fd4e4e7b4dc1"}}
+2026-05-19 12:32:37 - Launch Req: {"GAME_NAME":"WCC","GAME_UID":"475a85119e0133e7b790be265fa9358a","USER_ID":"8091921"}
+2026-05-19 12:32:37 - Game: WCC | UID: 475a85119e0133e7b790be265fa9358a | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=a6313a0a-1547-41f5-a8ff-808afb05bf15"}}
+2026-05-19 13:23:47 - Launch Req: {"GAME_NAME":"WCC","GAME_UID":"475a85119e0133e7b790be265fa9358a","USER_ID":"8091921"}
+2026-05-19 13:23:47 - Game: WCC | UID: 475a85119e0133e7b790be265fa9358a | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=4cf596e6-5ba4-483b-a672-98cfdc2d2041"}}
+2026-05-19 14:06:56 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"8091921"}
+2026-05-19 14:06:57 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=7abf88ff-9234-4e43-b37a-0166ae7f8f0e"}}
+2026-05-19 14:08:20 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"8091921"}
+2026-05-19 14:08:20 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=151de2d8-ba97-46a6-80ae-052944a74f7e"}}
+2026-05-19 14:08:43 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"3252533"}
+2026-05-19 14:08:44 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=49c9f8e4-2c8d-4d0c-a066-9014f7a28b46"}}
+2026-05-19 14:13:44 - Launch Req: {"GAME_NAME":"SABA Sports","GAME_UID":"08ced9dd788aed11ff3c7f387ae0f063","USER_ID":"8091921"}
+2026-05-19 14:13:44 - Game: SABA Sports | UID: 08ced9dd788aed11ff3c7f387ae0f063 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=79195372-c87d-40e2-9eb7-905fa596dcf2"}}
+2026-05-19 15:06:50 - Launch Req: {"GAME_NAME":"Microgaming Lobby","GAME_UID":"4e58131adb95bb061a40e6e309116c19","USER_ID":"3252533"}
+2026-05-19 16:50:23 - Launch Req: {"GAME_NAME":"WGC","GAME_UID":"304947ef77b76b16f2064932d72c78ee","USER_ID":"3252533"}
+2026-05-19 16:50:49 - Launch Req: {"GAME_NAME":"WGC","GAME_UID":"304947ef77b76b16f2064932d72c78ee","USER_ID":"3252533"}
+2026-05-19 16:50:49 - Game: WGC | UID: 304947ef77b76b16f2064932d72c78ee | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=cb7e5bff-b870-44c6-a677-2cb1d3f3d57f"}}
+2026-05-19 16:52:18 - Launch Req: {"GAME_NAME":"WCC","GAME_UID":"475a85119e0133e7b790be265fa9358a","USER_ID":"3252533"}
+2026-05-19 16:52:19 - Game: WCC | UID: 475a85119e0133e7b790be265fa9358a | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=be0ae1e9-2843-430e-9b5b-f0141fe491d9"}}
+2026-05-19 16:55:57 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"3252533"}
+2026-05-19 16:55:57 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=0313da52-ece6-4bbc-83b1-81f91303111f"}}
+2026-05-19 16:56:23 - Launch Req: {"GAME_NAME":"SABA Sports","GAME_UID":"08ced9dd788aed11ff3c7f387ae0f063","USER_ID":"3252533"}
+2026-05-19 16:56:24 - Game: SABA Sports | UID: 08ced9dd788aed11ff3c7f387ae0f063 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=4bb2eb94-31d3-4ad1-ab19-382bf95f5438"}}
+2026-05-19 16:59:56 - Launch Req: {"GAME_NAME":"Esports","GAME_UID":"4ee8e0051a035b463b47c3c473ce317d","USER_ID":"3252533"}
+2026-05-19 16:59:57 - Game: Esports | UID: 4ee8e0051a035b463b47c3c473ce317d | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=50d0d258-a984-433d-94a3-9ecb750d9841"}}
+2026-05-19 17:00:24 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"3252533"}
+2026-05-19 17:00:24 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=a4ca3693-f8ae-46e7-b389-554ff344d2fe"}}
+2026-05-19 18:03:43 - Launch Req: {"USER_ID":"8091921","GAME_NAME":"Mahjong Ways","GAME_UID":"1189baca156e1bbbecc3b26651a63565"}
+2026-05-19 18:04:08 - Launch Req: {"USER_ID":"8091921","GAME_NAME":"Mahjong Ways","GAME_UID":"1189baca156e1bbbecc3b26651a63565"}
+2026-05-19 18:04:08 - Game: Mahjong Ways | UID: 1189baca156e1bbbecc3b26651a63565 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=06ef8a0d-c9a4-4a07-b0bf-165ee71bd90a"}}
+2026-05-19 18:04:57 - Launch Req: {"USER_ID":"8091921","GAME_NAME":"Cracker","GAME_UID":"b6668f2abcfff3f7f78ae92fe908f99f"}
+2026-05-19 18:04:57 - Game: Cracker | UID: b6668f2abcfff3f7f78ae92fe908f99f | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=800636d4-dd55-49c3-b650-5d1276bba13d"}}
+2026-05-19 18:10:27 - Launch Req: {"USER_ID":"8091921","GAME_NAME":"Treasures of Aztec","GAME_UID":"2fa9a84d096d6ff0bab53f81b79876c8"}
+2026-05-19 18:10:27 - Game: Treasures of Aztec | UID: 2fa9a84d096d6ff0bab53f81b79876c8 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=b02f9bba-6c55-4dc3-875d-c5ab292d84f7"}}
+2026-05-19 18:11:48 - Launch Req: {"GAME_NAME":"God Of Martial","GAME_UID":"21ef8a7ddd39836979170a2e7584e333","USER_ID":"8091921"}
+2026-05-19 18:11:49 - Game: God Of Martial | UID: 21ef8a7ddd39836979170a2e7584e333 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=e2c62174-faef-49c8-bac7-601ecc5a1589"}}
+2026-05-19 18:47:18 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"8091921"}
+2026-05-19 18:47:18 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=ca84a7f0-b164-4b42-bab2-200575dbe336"}}
+2026-05-19 18:56:51 - Launch Req: {"GAME_NAME":"Ezugi Lobby","GAME_UID":"d0e052b031dfcdb08d1803f4bcc618ef","USER_ID":"8091921"}
+2026-05-19 18:56:51 - Game: Ezugi Lobby | UID: d0e052b031dfcdb08d1803f4bcc618ef | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=f011ca0d-f144-412f-ad98-855853a017da"}}
+2026-05-19 18:57:08 - Launch Req: {"GAME_NAME":"Ezugi Lobby","GAME_UID":"d0e052b031dfcdb08d1803f4bcc618ef","USER_ID":"8091921"}
+2026-05-19 18:57:08 - Game: Ezugi Lobby | UID: d0e052b031dfcdb08d1803f4bcc618ef | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=070dd83c-47f7-415b-9f79-d9d8e51dd57d"}}
+2026-05-19 18:57:29 - Launch Req: {"GAME_NAME":"Aviator","GAME_UID":"a04d1f3eb8ccec8a4823bdf18e3f0e84","USER_ID":"8091921"}
+2026-05-19 18:57:30 - Game: Aviator | UID: a04d1f3eb8ccec8a4823bdf18e3f0e84 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=2e9b9feb-98be-413a-b51d-738b873d47d5"}}
+2026-05-19 18:58:14 - Launch Req: {"GAME_NAME":"Aviator","GAME_UID":"a04d1f3eb8ccec8a4823bdf18e3f0e84","USER_ID":"8091921"}
+2026-05-19 18:58:14 - Game: Aviator | UID: a04d1f3eb8ccec8a4823bdf18e3f0e84 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=3a3079f1-10cf-453a-836f-9c66a03410f7"}}
+2026-05-19 18:59:58 - Launch Req: {"GAME_NAME":"Microgaming Lobby","GAME_UID":"4e58131adb95bb061a40e6e309116c19","USER_ID":"8091921"}
+2026-05-19 18:59:58 - Game: Microgaming Lobby | UID: 4e58131adb95bb061a40e6e309116c19 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=3a7a3ee7-5f43-41a9-8fe0-d08e3b2d6df0"}}
+2026-05-19 19:00:23 - Launch Req: {"GAME_NAME":"Mines Raider ","GAME_UID":"f9f2a148f101e25c381c7259ae41d9da","USER_ID":"8091921"}
+2026-05-19 19:00:23 - Game: Mines Raider  | UID: f9f2a148f101e25c381c7259ae41d9da | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=02e82329-4549-41a9-bc96-4ce41bcff150"}}
+2026-05-19 19:00:37 - Launch Req: {"GAME_NAME":"WCC","GAME_UID":"475a85119e0133e7b790be265fa9358a","USER_ID":"8091921"}
+2026-05-19 19:00:38 - Game: WCC | UID: 475a85119e0133e7b790be265fa9358a | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=6acab1fb-828e-47ae-b360-13efbfe85446"}}
+2026-05-19 19:01:05 - Launch Req: {"GAME_NAME":"Mines Raider ","GAME_UID":"f9f2a148f101e25c381c7259ae41d9da","USER_ID":"8091921"}
+2026-05-19 19:01:05 - Game: Mines Raider  | UID: f9f2a148f101e25c381c7259ae41d9da | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=4e799a37-b11f-401b-a5e2-401a7a2f87cd"}}
+2026-05-19 19:02:05 - Launch Req: {"GAME_NAME":"Lucky mines","GAME_UID":"3a3affa176283107288f5da3698ffe7c","USER_ID":"8091921"}
+2026-05-19 19:02:05 - Game: Lucky mines | UID: 3a3affa176283107288f5da3698ffe7c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=8b2c6503-efa0-4e18-812b-e04374a6f6de"}}
+2026-05-19 19:02:15 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-19 19:02:15 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=13218185-0aae-433b-a08e-5a4c3d008eb8"}}
+2026-05-19 19:02:50 - Launch Req: {"GAME_NAME":"Mines Raider ","GAME_UID":"f9f2a148f101e25c381c7259ae41d9da","USER_ID":"8091921"}
+2026-05-19 19:02:50 - Game: Mines Raider  | UID: f9f2a148f101e25c381c7259ae41d9da | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=e04f910a-ddce-454f-b9aa-183f7a6a9282"}}
+2026-05-19 19:03:06 - Launch Req: {"GAME_NAME":"Evolution Lobby","GAME_UID":"8ef39602e589bf9f32fc351b1cbb338b","USER_ID":"8091921"}
+2026-05-19 19:03:07 - Game: Evolution Lobby | UID: 8ef39602e589bf9f32fc351b1cbb338b | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=975e874c-9f7b-493e-aa7b-958dae73e1e9"}}
+2026-05-19 19:03:17 - Launch Req: {"GAME_NAME":"Ezugi Lobby","GAME_UID":"d0e052b031dfcdb08d1803f4bcc618ef","USER_ID":"8091921"}
+2026-05-19 19:03:17 - Game: Ezugi Lobby | UID: d0e052b031dfcdb08d1803f4bcc618ef | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=908830f8-29fe-4549-9fca-c48aa0a32a18"}}
+2026-05-19 19:03:33 - Launch Req: {"GAME_NAME":"Esports","GAME_UID":"4ee8e0051a035b463b47c3c473ce317d","USER_ID":"8091921"}
+2026-05-19 19:03:33 - Game: Esports | UID: 4ee8e0051a035b463b47c3c473ce317d | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=e076f9cd-509c-4adc-a85b-3afa4d8ecf9a"}}
+2026-05-19 19:05:16 - Launch Req: {"GAME_NAME":"Mini Roulette","GAME_UID":"9dc7ac6155c5a19c1cc204853e426367","USER_ID":"8091921"}
+2026-05-19 19:05:16 - Game: Mini Roulette | UID: 9dc7ac6155c5a19c1cc204853e426367 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=68a4a235-4f52-4cc0-aa86-d7b1eaeef3ae"}}
+2026-05-19 19:05:30 - Launch Req: {"GAME_NAME":"Aviator","GAME_UID":"a04d1f3eb8ccec8a4823bdf18e3f0e84","USER_ID":"8091921"}
+2026-05-19 19:05:30 - Game: Aviator | UID: a04d1f3eb8ccec8a4823bdf18e3f0e84 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=0176cd8b-7978-46bb-b96d-db85a2d7bd8a"}}
+2026-05-19 19:06:35 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-19 19:06:35 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=479b1ee1-756f-4742-8b0c-058069c80097"}}
+2026-05-19 19:07:01 - Launch Req: {"GAME_NAME":"Esports","GAME_UID":"4ee8e0051a035b463b47c3c473ce317d","USER_ID":"8091921"}
+2026-05-19 19:07:01 - Game: Esports | UID: 4ee8e0051a035b463b47c3c473ce317d | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=95f4400b-818e-4a6d-9cab-0a66bb265e9a"}}
+2026-05-19 19:07:41 - Launch Req: {"GAME_NAME":"Esports","GAME_UID":"4ee8e0051a035b463b47c3c473ce317d","USER_ID":"8091921"}
+2026-05-19 19:07:42 - Game: Esports | UID: 4ee8e0051a035b463b47c3c473ce317d | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=cd374219-64b9-4993-a1a9-5c26bfa3218e"}}
+2026-05-19 19:07:57 - Launch Req: {"GAME_NAME":"Esports","GAME_UID":"4ee8e0051a035b463b47c3c473ce317d","USER_ID":"8091921"}
+2026-05-19 19:07:57 - Game: Esports | UID: 4ee8e0051a035b463b47c3c473ce317d | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=2f8d88fc-dbde-4dbf-b9b2-5a464443aa87"}}
+2026-05-19 19:08:09 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-19 19:08:09 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=e8d8c44b-44dd-451c-b2dd-de70bc750036"}}
+2026-05-19 19:09:14 - Launch Req: {"USER_ID":"8091921","GAME_NAME":"SABA Sports","GAME_UID":"08ced9dd788aed11ff3c7f387ae0f063"}
+2026-05-19 19:09:14 - Game: SABA Sports | UID: 08ced9dd788aed11ff3c7f387ae0f063 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=a96c9ed5-80fe-4710-b37d-715cb384fc1c"}}
+2026-05-19 19:10:44 - Launch Req: {"GAME_NAME":"Samrudhi","GAME_UID":"7","USER_ID":"8091921"}
+2026-05-19 19:10:45 - IndiaLotto Login | URL: https://server-test.running10.tv/api/creat_or_default_player_login/ | User: velplaytest_8091921 | HTTP: 200 | Response: {"code":0,"msg":"success","data":"{\"acc\":\"velplaytest_8091921\",\"Token\":\"95521211-9e90-462a-a1aa-bd991c22b77d\",\"URL\":\"https://test.running10.tv/?Token=95521211-9e90-462a-a1aa-bd991c22b77d\",\"order_id\":0,\"platform_order_id\":\"\",\"balance\":0}"}
+2026-05-19 19:10:45 - IndiaLotto SUCCESS | Game URL: https://test.running10.tv/?Token=95521211-9e90-462a-a1aa-bd991c22b77d&game=kerala-ak&homeurl=https%3A%2F%2Fvelplay365.com&backmode=0
+2026-05-19 19:11:36 - Launch Req: {"GAME_NAME":"WGC","GAME_UID":"304947ef77b76b16f2064932d72c78ee","USER_ID":"8091921"}
+2026-05-19 19:11:36 - Game: WGC | UID: 304947ef77b76b16f2064932d72c78ee | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=82602e5c-4cc1-4320-a0cc-604ca2c61044"}}
+2026-05-19 20:02:04 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"3252533"}
+2026-05-19 20:02:04 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=337e948d-a386-43cc-86df-bdf730fac09a"}}
+2026-05-19 20:04:35 - Launch Req: {"GAME_NAME":"Esports","GAME_UID":"4ee8e0051a035b463b47c3c473ce317d","USER_ID":"3252533"}
+2026-05-19 20:04:35 - Game: Esports | UID: 4ee8e0051a035b463b47c3c473ce317d | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=083e8a33-de4a-40c7-a5d7-3f1d5a1ac785"}}
+2026-05-19 20:04:53 - Launch Req: {"GAME_NAME":"SABA Sports","GAME_UID":"08ced9dd788aed11ff3c7f387ae0f063","USER_ID":"3252533"}
+2026-05-19 20:04:53 - Game: SABA Sports | UID: 08ced9dd788aed11ff3c7f387ae0f063 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=da448e6d-4e5b-4f22-972d-dbf41f0273a6"}}
+2026-05-19 20:10:10 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"3252533"}
+2026-05-19 20:10:10 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=9db6f0b9-b970-4f73-9e20-ad22c8d703ad"}}
+2026-05-19 21:22:49 - Launch Req: {"GAME_NAME":"Esports","GAME_UID":"4ee8e0051a035b463b47c3c473ce317d","USER_ID":"8091921"}
+2026-05-19 21:22:49 - Game: Esports | UID: 4ee8e0051a035b463b47c3c473ce317d | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=1ad72ee4-85ee-46d2-b193-7a76ecd3d9eb"}}
+2026-05-19 21:37:56 - Launch Req: {"GAME_NAME":"Bhagyathara","GAME_UID":"1","USER_ID":"3252533"}
+2026-05-19 21:37:57 - IndiaLotto Login | URL: https://server-test.running10.tv/api/creat_or_default_player_login/ | User: velplaytest_3252533 | HTTP: 200 | Response: {"code":0,"msg":"success","data":"{\"acc\":\"velplaytest_3252533\",\"Token\":\"6d2884d2-6ef0-4346-b406-66ade511eeac\",\"URL\":\"https://test.running10.tv/?Token=6d2884d2-6ef0-4346-b406-66ade511eeac\",\"order_id\":0,\"platform_order_id\":\"\",\"balance\":0}"}
+2026-05-19 21:37:57 - IndiaLotto SUCCESS | Game URL: https://test.running10.tv/?Token=6d2884d2-6ef0-4346-b406-66ade511eeac&game=kerala-ww&homeurl=https%3A%2F%2Fvelplay365.com&backmode=0
+2026-05-19 21:40:55 - Launch Req: {"GAME_NAME":"Plinko","GAME_UID":"6ab7a4fe5161936012d6b06143918223","USER_ID":"8091921"}
+2026-05-19 21:40:55 - Game: Plinko | UID: 6ab7a4fe5161936012d6b06143918223 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=25f515a2-c0ab-4dad-b942-98b7533d42ec"}}
+2026-05-19 21:42:20 - Launch Req: {"GAME_NAME":"CRASH MAN","GAME_UID":"29d3c28e7825e2324e683d1e2b4b2488","USER_ID":"3252533"}
+2026-05-19 21:42:20 - Game: CRASH MAN | UID: 29d3c28e7825e2324e683d1e2b4b2488 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=28a85904-53d7-4677-86b7-b0725135a4d4"}}
+2026-05-19 21:56:57 - Launch Req: {"GAME_NAME":"Karunya Plus","GAME_UID":"4","USER_ID":"3252533"}
+2026-05-19 21:56:57 - IndiaLotto Login | URL: https://server-test.running10.tv/api/creat_or_default_player_login/ | User: velplaytest_3252533 | HTTP: 200 | Response: {"code":0,"msg":"success","data":"{\"acc\":\"velplaytest_3252533\",\"Token\":\"a4df7116-0ecf-4b75-ad72-2ae04218d3bf\",\"URL\":\"https://test.running10.tv/?Token=a4df7116-0ecf-4b75-ad72-2ae04218d3bf\",\"order_id\":0,\"platform_order_id\":\"\",\"balance\":0}"}
+2026-05-19 21:56:57 - IndiaLotto SUCCESS | Game URL: https://test.running10.tv/?Token=a4df7116-0ecf-4b75-ad72-2ae04218d3bf&game=kerala-kn&homeurl=https%3A%2F%2Fvelplay365.com&backmode=0
+2026-05-19 22:06:04 - Launch Req: {"GAME_NAME":"Mayagoldcrazy","GAME_UID":"6c8009d165293759bb218b72ba3c380f","USER_ID":"3252533"}
+2026-05-19 22:06:04 - Game: Mayagoldcrazy | UID: 6c8009d165293759bb218b72ba3c380f | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=abb96e04-e2bf-428a-9464-09e55174b76c"}}
+2026-05-19 22:15:53 - Launch Req: {"GAME_NAME":"SABA Sports","GAME_UID":"08ced9dd788aed11ff3c7f387ae0f063","USER_ID":"3252533"}
+2026-05-19 22:15:53 - Game: SABA Sports | UID: 08ced9dd788aed11ff3c7f387ae0f063 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=256c2c34-034b-461f-ab7a-7559945ae544"}}
+2026-05-19 22:18:05 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"3252533"}
+2026-05-19 22:18:05 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=88735fff-bd46-4406-8309-ca38c700d5b3"}}
+2026-05-20 12:18:06 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-20 12:18:06 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=d77bf1dc-af77-42c9-866d-6c34fb6ccf57"}}
+2026-05-20 12:56:57 - Launch Req: {"GAME_NAME":"Roulette","GAME_UID":"c81286ce4034dcf5b71d44c106f968db","USER_ID":"8091921"}
+2026-05-20 12:56:57 - Game: Roulette | UID: c81286ce4034dcf5b71d44c106f968db | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=51c3a728-b95b-4b44-9de7-9797a1809d0e"}}
+2026-05-20 12:57:10 - Launch Req: {"GAME_NAME":"Aviator","GAME_UID":"a04d1f3eb8ccec8a4823bdf18e3f0e84","USER_ID":"8091921"}
+2026-05-20 12:57:10 - Game: Aviator | UID: a04d1f3eb8ccec8a4823bdf18e3f0e84 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=d2177bab-2e86-403d-8699-bd09b55b3428"}}
+2026-05-20 12:57:22 - Launch Req: {"GAME_NAME":"Mini Roulette","GAME_UID":"9dc7ac6155c5a19c1cc204853e426367","USER_ID":"8091921"}
+2026-05-20 12:57:23 - Game: Mini Roulette | UID: 9dc7ac6155c5a19c1cc204853e426367 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=ce252aac-7fa5-436d-93c6-71818c4bd928"}}
+2026-05-20 13:08:09 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"8091921"}
+2026-05-20 13:08:09 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=ba730b6c-6173-4f66-b36d-520159ecbaa3"}}
+2026-05-20 13:09:57 - Launch Req: {"GAME_NAME":"SABA Sports","GAME_UID":"08ced9dd788aed11ff3c7f387ae0f063","USER_ID":"8091921"}
+2026-05-20 13:09:58 - Game: SABA Sports | UID: 08ced9dd788aed11ff3c7f387ae0f063 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=1cbfe70a-32e8-4263-ab5b-d22c7f92d8be"}}
+2026-05-20 13:11:20 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"8091921"}
+2026-05-20 13:11:20 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=23a9c1ff-2352-4115-837c-e54e408cf29e"}}
+2026-05-20 13:13:17 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"8091921"}
+2026-05-20 13:13:17 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=d0abc374-7d49-4205-9629-478e4a1babac"}}
+2026-05-20 13:26:25 - Launch Req: {"GAME_NAME":"Mines","GAME_UID":"72ce7e04ce95ee94eef172c0dfd6dc17","USER_ID":"8091921"}
+2026-05-20 13:26:32 - Launch Req: {"GAME_NAME":"Stairs","GAME_UID":"a6212c1c462a2442a369a4ec25bf40d7","USER_ID":"8091921"}
+2026-05-20 14:15:36 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"8091921"}
+2026-05-20 14:15:47 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"8091921"}
+2026-05-20 14:15:47 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=8be4b61b-5d52-4ca4-ada2-099c053ad89c"}}
+2026-05-20 14:22:54 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"8091921"}
+2026-05-20 14:22:54 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=f3a2857f-dd7c-40de-9a3e-8bfac8e8b0d3"}}
+2026-05-20 14:27:29 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"8091921"}
+2026-05-20 14:27:29 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=5eb9647f-1670-4b5a-a1db-39265cf40cb0"}}
+2026-05-20 14:29:49 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"8091921"}
+2026-05-20 14:29:49 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=c099d18d-d2ea-4561-a220-a33c45e0b2aa"}}
+2026-05-20 14:35:30 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"8091921"}
+2026-05-20 14:35:31 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=6e60f325-5b77-4855-b803-a745a076a17e"}}
+2026-05-20 14:36:45 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"8091921"}
+2026-05-20 14:36:45 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=513cf347-42a2-4fb9-9455-d336f4d7231d"}}
+2026-05-20 14:50:16 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"8091921"}
+2026-05-20 14:50:16 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=e748ae63-c016-4a2b-890d-6cefa003a2ec"}}
+2026-05-20 14:59:28 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"8091921"}
+2026-05-20 14:59:28 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=8b6c6d3c-2182-4b1a-b122-d2d461a600f8"}}
+2026-05-20 15:30:51 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"8091921"}
+2026-05-20 15:30:52 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=5444f743-e013-4b14-9334-f0c017710ef8"}}
+2026-05-20 15:38:45 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"8091921"}
+2026-05-20 15:38:46 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=17def63b-1279-448f-a2f9-4d10d6243090"}}
+2026-05-20 15:47:22 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"8091921"}
+2026-05-20 15:47:23 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=91dfe3a2-ce54-4f51-80da-fc76c5a49d04"}}
+2026-05-20 16:15:45 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"8091921"}
+2026-05-20 16:15:46 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=945bef9d-829f-4cfe-abe8-1c5cdbd4b739"}}
+2026-05-20 17:28:54 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"guest"}
+2026-05-20 17:35:08 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"guest"}
+2026-05-20 17:35:08 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=24e3cae5-cdb4-4044-9c01-c5aba0e73dbd"}}
+2026-05-20 17:44:48 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"guest"}
+2026-05-20 17:44:49 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=3c15a267-d40c-40b4-b469-f933425c9ac7"}}
+2026-05-20 17:45:01 - Launch Req: {"GAME_NAME":"Aviator","GAME_UID":"a04d1f3eb8ccec8a4823bdf18e3f0e84","USER_ID":"guest"}
+2026-05-20 17:45:01 - Game: Aviator | UID: a04d1f3eb8ccec8a4823bdf18e3f0e84 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=9cdcc721-83a8-4e0f-905d-717a76d97d63"}}
+2026-05-20 17:50:33 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"guest"}
+2026-05-20 17:50:34 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=6bfbad9c-3734-4f69-9032-3d482e9dd139"}}
+2026-05-20 17:53:05 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-20 17:53:05 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=784f28fe-f0ff-44bc-85e5-75e808e94e48"}}
+2026-05-20 17:59:59 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"guest"}
+2026-05-20 18:00:00 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=8baff0c6-b29c-46e8-9811-9234d98e35dc"}}
+2026-05-20 18:04:33 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"guest"}
+2026-05-20 18:04:33 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=97b943ec-20a6-486d-bf41-14343ffe55b6"}}
+2026-05-20 18:09:39 - Launch Req: {"GAME_NAME":"Bhagyathara","GAME_UID":"1","USER_ID":"3252533"}
+2026-05-20 18:09:39 - IndiaLotto Login | URL: https://server-test.running10.tv/api/creat_or_default_player_login/ | User: velplaytest_3252533 | HTTP: 200 | Response: {"code":0,"msg":"success","data":"{\"acc\":\"velplaytest_3252533\",\"Token\":\"6b117467-7ef8-4093-8c4d-04c0a468c34e\",\"URL\":\"https://test.running10.tv/?Token=6b117467-7ef8-4093-8c4d-04c0a468c34e\",\"order_id\":0,\"platform_order_id\":\"\",\"balance\":0}"}
+2026-05-20 18:09:39 - IndiaLotto SUCCESS | Game URL: https://test.running10.tv/?Token=6b117467-7ef8-4093-8c4d-04c0a468c34e&game=kerala-ww&homeurl=https%3A%2F%2Fvelplay365.com&backmode=0
+2026-05-20 18:10:25 - Launch Req: {"GAME_NAME":"Sthree Sakthi","GAME_UID":"2","USER_ID":"3252533"}
+2026-05-20 18:10:25 - IndiaLotto Login | URL: https://server-test.running10.tv/api/creat_or_default_player_login/ | User: velplaytest_3252533 | HTTP: 200 | Response: {"code":0,"msg":"success","data":"{\"acc\":\"velplaytest_3252533\",\"Token\":\"1d72de8f-4870-466f-8607-681ddd0c5536\",\"URL\":\"https://test.running10.tv/?Token=1d72de8f-4870-466f-8607-681ddd0c5536\",\"order_id\":0,\"platform_order_id\":\"\",\"balance\":0}"}
+2026-05-20 18:10:25 - IndiaLotto SUCCESS | Game URL: https://test.running10.tv/?Token=1d72de8f-4870-466f-8607-681ddd0c5536&game=kerala-ss&homeurl=https%3A%2F%2Fvelplay365.com&backmode=0
+2026-05-20 18:13:22 - Launch Req: {"GAME_NAME":"Online Only","GAME_UID":"8","USER_ID":"3252533"}
+2026-05-20 18:13:22 - IndiaLotto Login | URL: https://server-test.running10.tv/api/creat_or_default_player_login/ | User: velplaytest_3252533 | HTTP: 200 | Response: {"code":0,"msg":"success","data":"{\"acc\":\"velplaytest_3252533\",\"Token\":\"070981eb-7fa8-4764-aa48-ba11f6c4195a\",\"URL\":\"https://test.running10.tv/?Token=070981eb-7fa8-4764-aa48-ba11f6c4195a\",\"order_id\":0,\"platform_order_id\":\"\",\"balance\":0}"}
+2026-05-20 18:13:22 - IndiaLotto SUCCESS | Game URL: https://test.running10.tv/?Token=070981eb-7fa8-4764-aa48-ba11f6c4195a&game=kerala-oa&homeurl=https%3A%2F%2Fvelplay365.com&backmode=0
+2026-05-20 18:14:49 - Launch Req: {"GAME_NAME":"Cockfight","GAME_UID":"8cc99bed98c7adbe84bdaf7a8ad0c084","USER_ID":"3252533"}
+2026-05-20 18:14:50 - Game: Cockfight | UID: 8cc99bed98c7adbe84bdaf7a8ad0c084 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=509c4802-bfdb-4b04-bd81-d0faf4ce9cc8"}}
+2026-05-20 18:48:13 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"guest"}
+2026-05-20 18:48:13 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=f9e5b6a3-fde4-4a6e-ab99-bcf126b61b29"}}
+2026-05-20 18:48:42 - Launch Req: {"GAME_NAME":"Goal","GAME_UID":"c68a515f0b3b10eec96cf6d33299f4e2","USER_ID":"guest"}
+2026-05-20 18:48:42 - Game: Goal | UID: c68a515f0b3b10eec96cf6d33299f4e2 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=70319147-76fc-4a26-b9cc-fa07ccb92506"}}
+2026-05-20 18:49:41 - Launch Req: {"GAME_NAME":"Plinko","GAME_UID":"6ab7a4fe5161936012d6b06143918223","USER_ID":"guest"}
+2026-05-20 18:49:41 - Game: Plinko | UID: 6ab7a4fe5161936012d6b06143918223 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=b8559713-fd3a-40da-a82b-757eb46ef937"}}
+2026-05-20 18:50:06 - Launch Req: {"GAME_NAME":"Ezugi Lobby","GAME_UID":"d0e052b031dfcdb08d1803f4bcc618ef","USER_ID":"guest"}
+2026-05-20 18:50:06 - Game: Ezugi Lobby | UID: d0e052b031dfcdb08d1803f4bcc618ef | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=105053e0-c628-4d96-ba3e-2d37d33ee725"}}
+2026-05-20 18:57:41 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"guest"}
+2026-05-20 18:57:42 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=905803f0-c007-434a-bd29-e7b9cc509b1f"}}
+2026-05-20 18:57:54 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"guest"}
+2026-05-20 18:57:55 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=7e1c2ec4-5f75-4800-bbbf-a49353a42a64"}}
+2026-05-20 18:58:38 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"guest"}
+2026-05-20 18:58:38 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=08a24e03-966f-4125-9640-a5add52f7e3d"}}
+2026-05-20 19:06:28 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"8091921"}
+2026-05-20 19:06:28 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=a71ed441-dfd7-452e-b274-fc9c86bb176a"}}
+2026-05-20 19:51:20 - Launch Req: {"USER_ID":"9578473","GAME_NAME":"9 Wickets","GAME_UID":"48341a3bf62b6dd0814d7129e7e0834b"}
+2026-05-20 19:51:20 - Game: 9 Wickets | UID: 48341a3bf62b6dd0814d7129e7e0834b | API Response: {"code":10022,"msg":"9wicket is not currently supported. Please contact customer service."}
+2026-05-20 20:13:25 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"9578473"}
+2026-05-20 20:13:25 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=17314e84-ab61-4cff-9a97-cd87621ac9ca"}}
+2026-05-20 20:15:59 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"9578473"}
+2026-05-20 20:15:59 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=bfaace8a-55ce-46c2-ac5f-1c7235bce097"}}
+2026-05-20 20:17:29 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"9578473"}
+2026-05-20 20:17:30 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=a4597370-bcfb-4692-9a4b-0ae547867bf0"}}
+2026-05-20 20:18:01 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"9578473"}
+2026-05-20 20:18:01 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=a2500ae1-9d6f-4fad-b948-4dc1d9843ec5"}}
+2026-05-20 20:21:00 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-20 20:21:01 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=04ab2975-b0b8-45e5-ba0a-348273daee46"}}
+2026-05-20 20:24:39 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"8091921"}
+2026-05-20 20:24:39 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=a8bac2c7-4b5b-4130-ba24-e2351d11cd4a"}}
+2026-05-20 20:27:50 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"8091921"}
+2026-05-20 20:27:50 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=0b317238-c9cd-4b58-afbd-dbfaffb8b7af"}}
+2026-05-20 20:33:34 - Launch Req: {"GAME_NAME":"Hi Lo","GAME_UID":"a669c993b0e1f1b7da100fcf95516bdf","USER_ID":"8091921"}
+2026-05-20 20:33:34 - Game: Hi Lo | UID: a669c993b0e1f1b7da100fcf95516bdf | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=50f291a9-9f00-4228-8aa9-3ced24cf0167"}}
+2026-05-20 20:34:03 - Launch Req: {"GAME_NAME":"SABA Sports","GAME_UID":"08ced9dd788aed11ff3c7f387ae0f063","USER_ID":"8091921"}
+2026-05-20 20:34:03 - Game: SABA Sports | UID: 08ced9dd788aed11ff3c7f387ae0f063 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=1dd52499-6a06-46ca-8472-01a220971909"}}
+2026-05-20 20:53:47 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"8091921"}
+2026-05-20 20:53:48 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=513f976e-9b4a-4657-9ef1-dcd8ec600359"}}
+2026-05-20 20:57:48 - Launch Req: {"GAME_NAME":"Goal","GAME_UID":"c68a515f0b3b10eec96cf6d33299f4e2","USER_ID":"guest"}
+2026-05-20 20:57:49 - Game: Goal | UID: c68a515f0b3b10eec96cf6d33299f4e2 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=b4d7a57d-8d16-406a-aa23-9ac612e5af62"}}
+2026-05-20 21:07:28 - Launch Req: {"GAME_NAME":"Ezugi Lobby","GAME_UID":"d0e052b031dfcdb08d1803f4bcc618ef","USER_ID":"8091921"}
+2026-05-20 21:07:29 - Game: Ezugi Lobby | UID: d0e052b031dfcdb08d1803f4bcc618ef | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=cbfde67d-20b5-4106-bc92-28c588618255"}}
+2026-05-20 21:11:29 - Launch Req: {"GAME_NAME":"Ezugi Lobby","GAME_UID":"d0e052b031dfcdb08d1803f4bcc618ef","USER_ID":"8091921"}
+2026-05-20 21:11:29 - Game: Ezugi Lobby | UID: d0e052b031dfcdb08d1803f4bcc618ef | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=7835412a-8d6c-4ebf-9321-82f444c0dcbe"}}
+2026-05-20 21:16:12 - Launch Req: {"GAME_NAME":"Evolution Lobby","GAME_UID":"8ef39602e589bf9f32fc351b1cbb338b","USER_ID":"8091921"}
+2026-05-20 21:16:13 - Game: Evolution Lobby | UID: 8ef39602e589bf9f32fc351b1cbb338b | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=2f8549aa-9dc9-4157-845b-bd76c8513b04"}}
+2026-05-20 21:16:36 - Launch Req: {"GAME_NAME":"Evolution Lobby","GAME_UID":"8ef39602e589bf9f32fc351b1cbb338b","USER_ID":"8091921"}
+2026-05-20 21:16:36 - Game: Evolution Lobby | UID: 8ef39602e589bf9f32fc351b1cbb338b | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=7d43b4c4-9c64-46a7-a1cb-4073e528bee0"}}
+2026-05-20 21:21:23 - Launch Req: {"GAME_NAME":"Playtech Lobby","GAME_UID":"c38efc51028bd65f42396fa079c125d6","USER_ID":"8091921"}
+2026-05-20 21:21:23 - Game: Playtech Lobby | UID: c38efc51028bd65f42396fa079c125d6 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=62035e55-f2cb-4ba4-9ddb-515fdf31d444"}}
+2026-05-20 21:22:49 - Launch Req: {"GAME_NAME":"Playtech Lobby","GAME_UID":"c38efc51028bd65f42396fa079c125d6","USER_ID":"8091921"}
+2026-05-20 21:22:49 - Game: Playtech Lobby | UID: c38efc51028bd65f42396fa079c125d6 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=ca1e0269-ff8e-47cb-a07f-fe69f1ddd6c4"}}
+2026-05-20 21:23:20 - Launch Req: {"GAME_NAME":"Ezugi Lobby","GAME_UID":"d0e052b031dfcdb08d1803f4bcc618ef","USER_ID":"8091921"}
+2026-05-20 21:23:20 - Game: Ezugi Lobby | UID: d0e052b031dfcdb08d1803f4bcc618ef | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=b7fdf898-d1ec-45f1-acb6-7feb363a7464"}}
+2026-05-21 12:31:52 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-21 12:31:53 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=c114a1d0-84f2-4bac-a10d-385742b7101c"}}
+2026-05-21 12:44:35 - Launch Req: {"USER_ID":"8091921","GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4"}
+2026-05-21 12:44:35 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=f84101c3-f708-4e5a-95b0-ef0b7d6d95d6"}}
+2026-05-21 12:45:53 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"guest"}
+2026-05-21 12:45:53 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=6c201f80-5c0d-4200-a4e1-7d20029225e1"}}
+2026-05-21 13:12:22 - Launch Req: {"USER_ID":"guest","GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4"}
+2026-05-21 13:12:22 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=ba5cd08c-961c-4cb0-9f89-86a7c91b078a"}}
+2026-05-21 13:14:12 - Launch Req: {"USER_ID":"guest","GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4"}
+2026-05-21 13:14:13 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=86298a50-3dfd-4262-8925-6611023f2cf9"}}
+2026-05-21 13:53:54 - Launch Req: {"USER_ID":"8091921","GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4"}
+2026-05-21 13:53:54 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=13ff1527-6332-4fdc-80b7-3c36a6f61ab4"}}
+2026-05-21 14:10:02 - Launch Req: {"USER_ID":"8091921","GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4"}
+2026-05-21 14:10:02 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=5dce54bb-320f-473b-a73c-9f965346e1ed"}}
+2026-05-21 17:47:13 - Launch Req: {"GAME_NAME":"Ezugi Lobby","GAME_UID":"d0e052b031dfcdb08d1803f4bcc618ef","USER_ID":"8091921"}
+2026-05-21 17:47:26 - Launch Req: {"GAME_NAME":"Ezugi Lobby","GAME_UID":"d0e052b031dfcdb08d1803f4bcc618ef","USER_ID":"8091921"}
+2026-05-21 17:47:26 - Game: Ezugi Lobby | UID: d0e052b031dfcdb08d1803f4bcc618ef | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=9c946b03-0641-4b4c-af9f-ea5e39dbfd13"}}
+2026-05-21 17:48:03 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"8091921"}
+2026-05-21 17:48:03 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=b6f8b9d8-ab1d-4809-a7cb-ebcc9a60b4be"}}
+2026-05-21 19:58:38 - Launch Req: {"GAME_NAME":"Sthree Sakthi","GAME_UID":"2","USER_ID":"8091921"}
+2026-05-21 19:58:50 - Launch Req: {"GAME_NAME":"Dhanalekshmi","GAME_UID":"3","USER_ID":"8091921"}
+2026-05-21 19:58:50 - IndiaLotto Login | URL: https://server-test.running10.tv/api/creat_or_default_player_login/ | User: velplaytest_8091921 | HTTP: 200 | Response: {"code":0,"msg":"success","data":"{\"acc\":\"velplaytest_8091921\",\"Token\":\"f849567c-40c8-4f31-a761-83a3a0117c6f\",\"URL\":\"https://test.running10.tv/?Token=f849567c-40c8-4f31-a761-83a3a0117c6f\",\"order_id\":0,\"platform_order_id\":\"\",\"balance\":0}"}
+2026-05-21 19:58:50 - IndiaLotto SUCCESS | Game URL: https://test.running10.tv/?Token=f849567c-40c8-4f31-a761-83a3a0117c6f&game=kerala-ff&homeurl=https%3A%2F%2Fvelplay365.com&backmode=0
+2026-05-21 19:59:04 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-21 19:59:04 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=c493f2a7-1f93-4de1-a44e-d529a95e06ff"}}
+2026-05-21 20:34:16 - Launch Req: {"USER_ID":"3252533","GAME_NAME":"SABA Sports","GAME_UID":"08ced9dd788aed11ff3c7f387ae0f063"}
+2026-05-21 20:34:16 - Game: SABA Sports | UID: 08ced9dd788aed11ff3c7f387ae0f063 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=8347e661-3809-448b-bf5d-a7e112fc5bc0"}}
+2026-05-21 20:35:02 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"3252533"}
+2026-05-21 20:35:02 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=214551f7-b584-4c5c-870e-e5b749a9b7b3"}}
+2026-05-21 20:39:27 - Launch Req: {"USER_ID":"8091921","GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4"}
+2026-05-21 20:39:27 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=d54cfc27-aa00-483d-b5fd-752a02f0fdb1"}}
+2026-05-21 20:40:03 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"8091921"}
+2026-05-21 20:40:03 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=8fbeb4da-e8cf-468a-9ff3-81faf97cdbce"}}
+2026-05-21 20:45:23 - Launch Req: {"USER_ID":"8091921","GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4"}
+2026-05-21 20:45:23 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=d8c0b563-5254-4815-9564-3b9b48b2ef58"}}
+2026-05-21 20:45:35 - Launch Req: {"USER_ID":"8091921","GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4"}
+2026-05-21 20:45:35 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=362388d6-2c44-4650-af0c-306f85979067"}}
+2026-05-21 20:52:58 - Launch Req: {"USER_ID":"8091921","GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4"}
+2026-05-21 20:52:58 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=e98ca05b-f915-4d61-8064-80d2a6288091"}}
+2026-05-21 20:55:05 - Launch Req: {"GAME_NAME":"SABA Sports","GAME_UID":"08ced9dd788aed11ff3c7f387ae0f063","USER_ID":"8091921"}
+2026-05-21 20:55:05 - Game: SABA Sports | UID: 08ced9dd788aed11ff3c7f387ae0f063 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=94624beb-4587-45c4-808a-b816c9710c79"}}
+2026-05-21 20:57:31 - Launch Req: {"GAME_NAME":"Go Rush","GAME_UID":"edef29b5eda8e2eaf721d7315491c51d","USER_ID":"8091921"}
+2026-05-21 20:57:32 - Game: Go Rush | UID: edef29b5eda8e2eaf721d7315491c51d | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=97515507-7f99-47ef-af4e-305af196e001"}}
+2026-05-22 13:03:13 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-22 13:03:14 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=77ad94d8-2843-4169-b564-5f196d3d147c"}}
+2026-05-22 13:05:46 - Launch Req: {"USER_ID":"8091921","GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4"}
+2026-05-22 13:05:47 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=b502fc72-82ca-4115-be73-2bad681440d6"}}
+2026-05-22 13:08:02 - Launch Req: {"GAME_NAME":"SABA Sports","GAME_UID":"08ced9dd788aed11ff3c7f387ae0f063","USER_ID":"8091921"}
+2026-05-22 13:08:02 - Game: SABA Sports | UID: 08ced9dd788aed11ff3c7f387ae0f063 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=fbbfff75-86d2-443f-8089-3f4c5455c099"}}
+2026-05-22 13:10:12 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-22 13:10:12 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=b55ce870-af44-45ec-a55a-2ab4d1db0227"}}
+2026-05-22 13:12:52 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-22 13:12:52 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=86b73d91-8e68-47a0-bcfc-de8cf9faec5b"}}
+2026-05-22 13:14:52 - Launch Req: {"GAME_NAME":"Evolution Lobby","GAME_UID":"8ef39602e589bf9f32fc351b1cbb338b","USER_ID":"8091921"}
+2026-05-22 13:14:52 - Game: Evolution Lobby | UID: 8ef39602e589bf9f32fc351b1cbb338b | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=83b425b0-25e1-40cd-a643-ad5bb99ac939"}}
+2026-05-22 13:15:16 - Launch Req: {"GAME_NAME":"Evolution Lobby","GAME_UID":"8ef39602e589bf9f32fc351b1cbb338b","USER_ID":"8091921"}
+2026-05-22 13:15:16 - Game: Evolution Lobby | UID: 8ef39602e589bf9f32fc351b1cbb338b | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=20fd6e93-6db0-44f1-b0a0-01c93d24f5fe"}}
+2026-05-22 13:22:45 - Launch Req: {"GAME_NAME":"Ezugi Lobby","GAME_UID":"d0e052b031dfcdb08d1803f4bcc618ef","USER_ID":"8091921"}
+2026-05-22 13:22:46 - Game: Ezugi Lobby | UID: d0e052b031dfcdb08d1803f4bcc618ef | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=369e2c95-3a93-427e-be41-0c350e1e42a4"}}
+2026-05-22 15:39:01 - Launch Req: {"GAME_NAME":"Trade88 SOLUSD","GAME_UID":"88dc93e15982d45f97aa5cd86ef53861","USER_ID":"3252533"}
+2026-05-22 15:40:01 - Launch Req: {"GAME_NAME":"Sexy High Low","GAME_UID":"6c6d9322e3a3e023b56216a11c3bd884","USER_ID":"3252533"}
+2026-05-22 15:40:02 - Game: Sexy High Low | UID: 6c6d9322e3a3e023b56216a11c3bd884 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=260fe472-2e81-4201-a07f-f31892a97bd5"}}
+2026-05-22 15:40:53 - Launch Req: {"GAME_NAME":"Sexy Lucky 7 -2","GAME_UID":"566495ad80dc35d8ebb504ffb50aa6d8","USER_ID":"3252533"}
+2026-05-22 15:40:53 - Game: Sexy Lucky 7 -2 | UID: 566495ad80dc35d8ebb504ffb50aa6d8 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=ee82ec50-c95f-43bb-a6bb-bef8327e3388"}}
+2026-05-22 15:41:22 - Launch Req: {"GAME_NAME":"Naughty Button","GAME_UID":"e7fdcc9c3b60855acc8c1f0afc2f5a96","USER_ID":"3252533"}
+2026-05-22 15:41:22 - Game: Naughty Button | UID: e7fdcc9c3b60855acc8c1f0afc2f5a96 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=994e89e1-57dc-4129-99cc-4609573a9d23"}}
+2026-05-22 15:42:47 - Launch Req: {"GAME_NAME":"Cricket Sah 75","GAME_UID":"6720a0ce1d06648ff390fbea832798a9","USER_ID":"3252533"}
+2026-05-22 15:42:48 - Game: Cricket Sah 75 | UID: 6720a0ce1d06648ff390fbea832798a9 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=31eef5cd-da2f-47f5-a4f8-b4d79486eafb"}}
+2026-05-22 15:44:12 - Launch Req: {"GAME_NAME":"Rabbit Road","GAME_UID":"efb14d01f5ec68e1cf49c53f30c4d476","USER_ID":"3252533"}
+2026-05-22 15:44:12 - Game: Rabbit Road | UID: efb14d01f5ec68e1cf49c53f30c4d476 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=a51070cb-bc46-4657-9d4a-f9ccb785f8cf"}}
+2026-05-22 15:49:49 - Launch Req: {"GAME_NAME":"WGC","GAME_UID":"304947ef77b76b16f2064932d72c78ee","USER_ID":"3252533"}
+2026-05-22 15:49:50 - Game: WGC | UID: 304947ef77b76b16f2064932d72c78ee | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=5eb6e63a-20b2-4837-9d61-826bd7941682"}}
+2026-05-22 15:56:23 - Launch Req: {"USER_ID":"8091921","GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4"}
+2026-05-22 15:56:48 - Launch Req: {"USER_ID":"8091921","GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4"}
+2026-05-22 15:56:49 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=c886ed82-4664-45ed-8c42-3721f7f87882"}}
+2026-05-22 15:57:14 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-22 15:57:14 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=ace64cbb-191a-468d-800e-7ced73d5ab17"}}
+2026-05-22 15:59:50 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-22 15:59:50 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=2f9eb6c9-6543-457b-af24-c9d2d54f2eef"}}
+2026-05-22 16:00:33 - Launch Req: {"USER_ID":"8091921","GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4"}
+2026-05-22 16:00:33 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=7177b9c7-6f69-4ead-9ce5-e35a12f18729"}}
+2026-05-22 16:19:01 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-22 16:19:12 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-22 16:19:13 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=e14dd177-d2ce-4ef2-837b-addaa85f4e74"}}
+2026-05-22 16:19:28 - Launch Req: {"USER_ID":"8091921","GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4"}
+2026-05-22 16:19:28 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=21d0bc12-40f4-408f-ac2b-633ed04f187a"}}
+2026-05-22 16:36:10 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-22 16:36:10 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=a0616bf2-f784-448c-900f-d3ddbf936b34"}}
+2026-05-22 16:39:19 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"8091921"}
+2026-05-22 16:39:19 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=7d951d65-a802-4bbd-9a5b-3ab239034b75"}}
+2026-05-22 18:00:52 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"8091921"}
+2026-05-22 18:01:00 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=2ada46be-0255-4a26-8986-fe837bf0eefd"}}
+2026-05-22 18:01:28 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-22 18:01:32 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=4d353806-3699-44af-94de-189955762fd4"}}
+2026-05-22 18:02:53 - Launch Req: {"GAME_NAME":"Goal","GAME_UID":"c68a515f0b3b10eec96cf6d33299f4e2","USER_ID":"8091921"}
+2026-05-22 18:02:59 - Game: Goal | UID: c68a515f0b3b10eec96cf6d33299f4e2 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=1e32eeef-53b6-488a-aa45-f70f1cfad96e"}}
+2026-05-22 18:03:12 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-22 18:03:28 - Launch Req: {"GAME_NAME":"Andar Bahar","GAME_UID":"6f48b3aa0b64c79a2dc320ea021148b5","USER_ID":"8091921"}
+2026-05-22 18:03:29 - Game: Andar Bahar | UID: 6f48b3aa0b64c79a2dc320ea021148b5 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=c98a31b7-faa6-4a4d-9c8c-bdeda9219f17"}}
+2026-05-22 18:03:48 - Launch Req: {"GAME_NAME":"AK47","GAME_UID":"488c377662cad37a551bde18e2fbe785","USER_ID":"8091921"}
+2026-05-22 18:03:48 - Game: AK47 | UID: 488c377662cad37a551bde18e2fbe785 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=f1956278-b1e7-409d-a255-d39478c306b3"}}
+2026-05-22 18:05:35 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-22 18:05:35 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=8a3b9655-fe7a-4e4a-8c07-00362441949a"}}
+2026-05-22 18:06:02 - Launch Req: {"GAME_NAME":"AK47","GAME_UID":"488c377662cad37a551bde18e2fbe785","USER_ID":"8091921"}
+2026-05-22 18:06:02 - Game: AK47 | UID: 488c377662cad37a551bde18e2fbe785 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=a20b1957-3006-429b-8c77-7ed212f8a160"}}
+2026-05-22 18:06:13 - Launch Req: {"GAME_NAME":"AK47","GAME_UID":"488c377662cad37a551bde18e2fbe785","USER_ID":"8091921"}
+2026-05-22 18:06:23 - Launch Req: {"GAME_NAME":"AK47","GAME_UID":"488c377662cad37a551bde18e2fbe785","USER_ID":"8091921"}
+2026-05-22 18:06:23 - Game: AK47 | UID: 488c377662cad37a551bde18e2fbe785 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=7d560112-7010-4a95-854b-fc7f0250be81"}}
+2026-05-22 18:06:38 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-22 18:07:00 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-22 18:07:33 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"3252533"}
+2026-05-22 18:07:34 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=8a6e8656-494b-486b-9b10-ea35c0103d80"}}
+2026-05-22 18:08:08 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=fded6210-fc9a-4f89-8565-96fff1e400bb"}}
+2026-05-22 18:08:31 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-22 18:08:36 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=ec112ca2-ee04-4b02-9598-bc542547b1fb"}}
+2026-05-22 18:09:19 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-22 18:09:24 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=b41ff973-08c9-444b-b6a5-3e91fc27a4e0"}}
+2026-05-22 18:10:15 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-22 18:10:15 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=f1e927ff-391a-4a15-aaf2-6d4ff6918a40"}}
+2026-05-22 18:11:17 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-22 18:11:18 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=43549ffa-9c86-4994-9588-e535d344bbc8"}}
+2026-05-22 18:11:33 - Launch Req: {"GAME_NAME":"Cockfight","GAME_UID":"8cc99bed98c7adbe84bdaf7a8ad0c084","USER_ID":"8091921"}
+2026-05-22 18:11:33 - Game: Cockfight | UID: 8cc99bed98c7adbe84bdaf7a8ad0c084 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=aaf4cd81-1e79-4963-a408-d9a90cca3cca"}}
+2026-05-22 18:11:58 - Launch Req: {"GAME_NAME":"WGC","GAME_UID":"304947ef77b76b16f2064932d72c78ee","USER_ID":"8091921"}
+2026-05-22 18:12:05 - Game: WGC | UID: 304947ef77b76b16f2064932d72c78ee | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=c3c60d78-efe0-409a-b7e6-1bc85adb474d"}}
+2026-05-22 18:13:59 - Launch Req: {"GAME_NAME":"WGC","GAME_UID":"304947ef77b76b16f2064932d72c78ee","USER_ID":"8091921"}
+2026-05-22 18:13:59 - Game: WGC | UID: 304947ef77b76b16f2064932d72c78ee | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=fa6358dd-0a4f-4452-bff0-34a9589b175a"}}
+2026-05-22 18:14:59 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-22 18:15:42 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=22d362a2-7b37-4a12-938c-26c7852092ff"}}
+2026-05-22 18:16:14 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-22 18:16:31 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-22 18:17:31 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: <html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+</body>
+</html>
+
+2026-05-22 18:17:34 - Launch Req: {"GAME_NAME":"Goal","GAME_UID":"c68a515f0b3b10eec96cf6d33299f4e2","USER_ID":"8091921"}
+2026-05-22 18:17:44 - Launch Req: {"GAME_NAME":"Hotline","GAME_UID":"b31720b3cd65d917a1a96ef61a72b672","USER_ID":"3252533"}
+2026-05-22 18:18:34 - Game: Goal | UID: c68a515f0b3b10eec96cf6d33299f4e2 | API Response: <html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+</body>
+</html>
+
+2026-05-22 18:18:44 - Game: Hotline | UID: b31720b3cd65d917a1a96ef61a72b672 | API Response: <html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+</body>
+</html>
+
+2026-05-22 18:19:07 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-22 18:19:30 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"3252533"}
+2026-05-22 18:20:08 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: <html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+</body>
+</html>
+
+2026-05-22 18:20:26 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"3252533"}
+2026-05-22 18:20:31 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: <html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+</body>
+</html>
+
+2026-05-22 18:21:04 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-22 18:21:27 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: <html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+</body>
+</html>
+
+2026-05-22 18:22:04 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: <html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+</body>
+</html>
+
+2026-05-22 18:23:03 - Launch Req: {"GAME_NAME":"Rummy","GAME_UID":"ae632f32c3a1e6803f9a6fbec16be28e","USER_ID":"8091921"}
+2026-05-22 18:23:15 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-22 18:23:50 - Launch Req: {"GAME_NAME":"Plinko","GAME_UID":"6ab7a4fe5161936012d6b06143918223","USER_ID":"8091921"}
+2026-05-22 18:24:03 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-22 18:24:15 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: <html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+</body>
+</html>
+
+2026-05-22 18:25:04 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: <html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+</body>
+</html>
+
+2026-05-22 18:26:15 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-22 18:26:28 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-22 18:26:50 - Launch Req: {"USER_ID":"3252533","GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4"}
+2026-05-22 18:26:53 - Launch Req: {"USER_ID":"3252533","GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4"}
+2026-05-22 18:26:56 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"3252533"}
+2026-05-22 18:27:07 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: <html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+</body>
+</html>
+
+2026-05-22 18:27:29 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: <html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+</body>
+</html>
+
+2026-05-22 18:27:32 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"3252533"}
+2026-05-22 18:27:51 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: <html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+</body>
+</html>
+
+2026-05-22 18:27:53 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: <html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+</body>
+</html>
+
+2026-05-22 18:28:33 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: <html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+</body>
+</html>
+
+2026-05-22 18:29:48 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"3252533"}
+2026-05-22 18:30:49 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: <html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+</body>
+</html>
+
+2026-05-22 18:31:50 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"3252533"}
+2026-05-22 18:32:00 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: <html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+</body>
+</html>
+
+2026-05-22 18:33:09 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"3252533"}
+2026-05-22 18:33:33 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-22 18:34:09 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: <html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+</body>
+</html>
+
+2026-05-22 18:34:34 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: <html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+</body>
+</html>
+
+2026-05-22 18:37:05 - Launch Req: {"USER_ID":"8091921","GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4"}
+2026-05-22 18:37:10 - Launch Req: {"USER_ID":"8091921","GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4"}
+2026-05-22 18:37:15 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: <html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+</body>
+</html>
+
+2026-05-22 18:37:20 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: <html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+</body>
+</html>
+
+2026-05-22 18:37:29 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-22 18:37:39 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: <html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+</body>
+</html>
+
+2026-05-22 18:38:31 - Launch Req: {
+  "USER_ID": "8091921",
+  "GAME_NAME": "Mines Raider",
+  "GAME_UID": "f9f2a148f101e25c381c7259ae41d9da"
+}
+2026-05-22 18:39:31 - Game: Mines Raider | UID: f9f2a148f101e25c381c7259ae41d9da | API Response: <html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+</body>
+</html>
+
+2026-05-22 18:42:34 - Launch Req: {
+  "USER_ID": "8091921",
+  "GAME_NAME": "Mines Raider",
+  "GAME_UID": "f9f2a148f101e25c381c7259ae41d9da"
+}
+2026-05-22 18:42:44 - Game: Mines Raider | UID: f9f2a148f101e25c381c7259ae41d9da | API Response: <html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+</body>
+</html>
+
+2026-05-22 18:44:19 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"3252533"}
+2026-05-22 18:44:19 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=46ae858d-1cf0-41c5-97ea-282cf9267674"}}
+2026-05-22 18:44:45 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"3252533"}
+2026-05-22 18:45:45 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: <html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+</body>
+</html>
+
+2026-05-22 18:46:32 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-22 18:46:32 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | HTTP: 200 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=54eebb3d-940d-4d0f-a64d-d28fda3f1829"}}
+2026-05-22 18:46:49 - Launch Req: {"USER_ID":"8091921","GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4"}
+2026-05-22 18:46:49 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | HTTP: 200 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=08c5902b-52f5-44e6-88bd-80ea937a5cc2"}}
+2026-05-22 18:47:02 - Launch Req: {"USER_ID":"8091921","GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4"}
+2026-05-22 18:47:10 - Launch Req: {"USER_ID":"8091921","GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4"}
+2026-05-22 18:47:12 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | HTTP: 200 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=06ab74fb-8db9-4286-9100-6e13c9c4f04f"}}
+2026-05-22 18:47:33 - Launch Req: {
+  "USER_ID": "8091921",
+  "GAME_NAME": "Mines Raider",
+  "GAME_UID": "f9f2a148f101e25c381c7259ae41d9da"
+}
+2026-05-22 18:47:44 - Launch Req: {"GAME_NAME":"Aviator","GAME_UID":"a04d1f3eb8ccec8a4823bdf18e3f0e84","USER_ID":"8091921"}
+2026-05-22 18:48:16 - Launch Req: {
+  "USER_ID": "8091921",
+  "GAME_NAME": "Mines Raider",
+  "GAME_UID": "vjf74vi431qjw55ycdll0wvlwbkcxa"
+}
+2026-05-22 18:48:31 - Launch Req: {
+  "USER_ID": "8091921",
+  "GAME_NAME": "Mines Raider",
+  "GAME_UID": "f9f2a148f101e25c381c7259ae41d9da"
+}
+2026-05-22 18:48:31 - Game: Mines Raider | UID: f9f2a148f101e25c381c7259ae41d9da | HTTP: 200 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=76cbaffc-e40f-41fc-8cb4-8b53632701d4"}}
+2026-05-22 18:48:57 - Launch Req: {"GAME_NAME":"Hotline","GAME_UID":"b31720b3cd65d917a1a96ef61a72b672","USER_ID":"3252533"}
+2026-05-22 18:48:58 - Game: Hotline | UID: b31720b3cd65d917a1a96ef61a72b672 | HTTP: 200 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=b2679b19-897c-4e98-8374-1cfe6274a39c"}}
+2026-05-22 18:52:17 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-22 18:52:17 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | HTTP: 200 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=fe795646-a570-453c-aaef-255f8fc898f1"}}
+2026-05-22 18:52:33 - Launch Req: {"GAME_NAME":"Andar Bahar","GAME_UID":"6f48b3aa0b64c79a2dc320ea021148b5","USER_ID":"8091921"}
+2026-05-22 18:52:33 - Game: Andar Bahar | UID: 6f48b3aa0b64c79a2dc320ea021148b5 | HTTP: 200 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=df941ffd-3d44-43e6-af68-42e70737bdd8"}}
+2026-05-22 18:53:37 - Launch Req: {"GAME_NAME":"Andar Bahar","GAME_UID":"6f48b3aa0b64c79a2dc320ea021148b5","USER_ID":"8091921"}
+2026-05-22 18:53:50 - Game: Andar Bahar | UID: 6f48b3aa0b64c79a2dc320ea021148b5 | HTTP: 200 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=330871f6-7427-4c6e-9fa6-c91660eccf8c"}}
+2026-05-22 18:54:00 - Launch Req: {
+  "USER_ID": "8091921",
+  "GAME_NAME": "Mines Raider",
+  "GAME_UID": "f9f2a148f101e25c381c7259ae41d9da"
+}
+2026-05-22 18:54:11 - Game: Mines Raider | UID: f9f2a148f101e25c381c7259ae41d9da | HTTP: 200 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=8fc8ba8d-a6cc-4caa-97c1-8c4c53165c6a"}}
+2026-05-22 18:54:14 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-22 18:54:25 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | HTTP: 200 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=cf6faab5-4927-498b-9969-2c8cfcd46b4d"}}
+2026-05-22 18:54:56 - Launch Req: {"GAME_NAME":"Ezugi Lobby","GAME_UID":"d0e052b031dfcdb08d1803f4bcc618ef","USER_ID":"8091921"}
+2026-05-22 18:54:57 - Game: Ezugi Lobby | UID: d0e052b031dfcdb08d1803f4bcc618ef | HTTP: 200 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=46f05ae1-510e-4cbf-9ebe-ba9bca185f15"}}
+2026-05-22 18:57:18 - Launch Req: {"GAME_NAME":"WGC","GAME_UID":"304947ef77b76b16f2064932d72c78ee","USER_ID":"8091921"}
+2026-05-22 18:57:19 - Game: WGC | UID: 304947ef77b76b16f2064932d72c78ee | HTTP: 200 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=118d0b2e-192f-4f35-8c46-b143d9fa86b2"}}
+2026-05-22 18:57:48 - Launch Req: {"GAME_NAME":"Sthree Sakthi","GAME_UID":"2","USER_ID":"8091921"}
+2026-05-22 18:57:48 - IndiaLotto Login | URL: https://server-test.running10.tv/api/creat_or_default_player_login/ | User: velplaytest_8091921 | HTTP: 200 | Response: {"code":0,"msg":"success","data":"{\"acc\":\"velplaytest_8091921\",\"Token\":\"c8adde6b-bebe-4b90-b6df-5374d5963209\",\"URL\":\"https://test.running10.tv/?Token=c8adde6b-bebe-4b90-b6df-5374d5963209\",\"order_id\":0,\"platform_order_id\":\"\",\"balance\":0}"}
+2026-05-22 18:57:48 - IndiaLotto SUCCESS | Game URL: https://test.running10.tv/?Token=c8adde6b-bebe-4b90-b6df-5374d5963209&game=kerala-ss&homeurl=https%3A%2F%2Fvelplay365.com&backmode=0
+2026-05-22 18:58:10 - Launch Req: {"GAME_NAME":"Bhagyathara","GAME_UID":"1","USER_ID":"8091921"}
+2026-05-22 18:58:10 - IndiaLotto Login | URL: https://server-test.running10.tv/api/creat_or_default_player_login/ | User: velplaytest_8091921 | HTTP: 200 | Response: {"code":0,"msg":"success","data":"{\"acc\":\"velplaytest_8091921\",\"Token\":\"51569d8b-42b0-4c87-8d66-635a6d115a59\",\"URL\":\"https://test.running10.tv/?Token=51569d8b-42b0-4c87-8d66-635a6d115a59\",\"order_id\":0,\"platform_order_id\":\"\",\"balance\":0}"}
+2026-05-22 18:58:10 - IndiaLotto SUCCESS | Game URL: https://test.running10.tv/?Token=51569d8b-42b0-4c87-8d66-635a6d115a59&game=kerala-ww&homeurl=https%3A%2F%2Fvelplay365.com&backmode=0
+2026-05-22 18:58:38 - Launch Req: {"GAME_NAME":"Bombing Fishing","GAME_UID":"e333695bcff28acdbecc641ae6ee2b23","USER_ID":"8091921"}
+2026-05-22 18:58:38 - Game: Bombing Fishing | UID: e333695bcff28acdbecc641ae6ee2b23 | HTTP: 200 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=bdbb970e-adb4-42f8-b0ba-d40c53bf8b27"}}
+2026-05-22 18:59:24 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-22 18:59:24 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | HTTP: 200 | API Response: {"code":0,"msg":"Success","payload":{"game_launch_url":"https://huidu.bet/game/gamesUrl?id=f3c7ddc5-785d-426c-ab06-f6e5d6875d7e"}}
+2026-05-22 19:03:03 - Launch Req: {"GAME_NAME":"Mines Raider ","GAME_UID":"f9f2a148f101e25c381c7259ae41d9da","USER_ID":"3252533"}
+2026-05-22 19:03:18 - Game: Mines Raider  | UID: f9f2a148f101e25c381c7259ae41d9da | HTTP: 0 | API Response: Operation timed out after 15001 milliseconds with 0 bytes received
+2026-05-22 19:03:24 - Launch Req: {"GAME_NAME":"Goal","GAME_UID":"c68a515f0b3b10eec96cf6d33299f4e2","USER_ID":"3252533"}
+2026-05-22 19:03:39 - Game: Goal | UID: c68a515f0b3b10eec96cf6d33299f4e2 | HTTP: 0 | API Response: Operation timed out after 15001 milliseconds with 0 bytes received
+2026-05-22 19:03:42 - Launch Req: {"GAME_NAME":"Goal","GAME_UID":"c68a515f0b3b10eec96cf6d33299f4e2","USER_ID":"8091921"}
+2026-05-22 19:03:57 - Game: Goal | UID: c68a515f0b3b10eec96cf6d33299f4e2 | HTTP: 0 | API Response: Operation timed out after 15001 milliseconds with 0 bytes received
+2026-05-22 19:04:18 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-22 19:04:33 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | HTTP: 0 | API Response: Operation timed out after 15001 milliseconds with 0 bytes received
+2026-05-22 19:04:59 - Launch Req: {"USER_ID":"8091921","GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4"}
+2026-05-22 19:05:07 - Launch Req: {"USER_ID":"8091921","GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4"}
+2026-05-22 19:05:22 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | HTTP: 0 | API Response: Operation timed out after 15001 milliseconds with 0 bytes received
+2026-05-22 19:05:23 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-22 19:05:38 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-22 19:05:48 - Launch Req: {
+  "USER_ID": "8091921",
+  "GAME_NAME": "Mines Raider",
+  "GAME_UID": "f9f2a148f101e25c381c7259ae41d9da"
+}
+2026-05-22 19:05:53 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | HTTP: 0 | API Response: Operation timed out after 15001 milliseconds with 0 bytes received
+2026-05-22 19:06:07 - Launch Req: {
+  "USER_ID": "8091921",
+  "GAME_NAME": "Mines Raider",
+  "GAME_UID": "f9f2a148f101e25c381c7259ae41d9da"
+}
+2026-05-22 19:06:22 - Game: Mines Raider | UID: f9f2a148f101e25c381c7259ae41d9da | HTTP: 0 | API Response: Operation timed out after 15001 milliseconds with 0 bytes received
+2026-05-22 19:06:41 - Launch Req: {
+  "USER_ID": "8091921",
+  "GAME_NAME": "Mines Raider",
+  "GAME_UID": "f9f2a148f101e25c381c7259ae41d9da"
+}
+2026-05-22 19:06:56 - Game: Mines Raider | UID: f9f2a148f101e25c381c7259ae41d9da | HTTP: 0 | API Response: Operation timed out after 15001 milliseconds with 0 bytes received
+2026-05-22 19:08:07 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-22 19:08:17 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | HTTP: 504 | API Response: <html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+</body>
+</html>
+
+2026-05-22 19:09:45 - Launch Req: {"USER_ID":"3252533","GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4"}
+2026-05-22 19:09:54 - Launch Req: {"USER_ID":"3252533","GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4"}
+2026-05-22 19:09:55 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | HTTP: 504 | API Response: <html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+</body>
+</html>
+
+2026-05-22 19:10:05 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | HTTP: 504 | API Response: <html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+</body>
+</html>
+
+2026-05-22 19:10:10 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"3252533"}
+2026-05-22 19:10:25 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | HTTP: 0 | API Response: Operation timed out after 15001 milliseconds with 0 bytes received
+2026-05-22 19:11:40 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"3252533"}
+2026-05-22 19:11:51 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | HTTP: 504 | API Response: <html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+</body>
+</html>
+
+2026-05-22 19:12:51 - Launch Req: {
+  "USER_ID": "8091921",
+  "GAME_NAME": "Dice",
+  "GAME_UID": "8a87aae7a3624d284306e9c6fe1b3e9c"
+}
+2026-05-22 19:13:06 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | HTTP: 0 | API Response: Operation timed out after 15001 milliseconds with 0 bytes received
+2026-05-22 19:15:27 - Launch Req: {
+  "USER_ID": "8091921",
+  "GAME_NAME": "Dice",
+  "GAME_UID": "8a87aae7a3624d284306e9c6fe1b3e9c"
+}
+2026-05-22 19:15:37 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | HTTP: 504 | API Response: <html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+</body>
+</html>
+
+2026-05-22 19:17:23 - Launch Req: {
+  "USER_ID": "8091921",
+  "GAME_NAME": "Dice",
+  "GAME_UID": "8a87aae7a3624d284306e9c6fe1b3e9c"
+}
+2026-05-22 19:17:33 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | HTTP: 504 | Error#: 0 | Response: <html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+</body>
+</html>
+
+2026-05-22 19:17:43 - Launch Req: {"GAME_NAME":"WCC","GAME_UID":"475a85119e0133e7b790be265fa9358a","USER_ID":"3252533"}
+2026-05-22 19:17:53 - Game: WCC | UID: 475a85119e0133e7b790be265fa9358a | HTTP: 504 | Error#: 0 | Response: <html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+</body>
+</html>
+
+2026-05-22 19:22:54 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"3252533"}
+2026-05-22 19:23:04 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | HTTP: 504 | Error#: 0 | Response: <html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+</body>
+</html>
+
+2026-05-22 19:23:06 - Launch Req: {
+  "USER_ID": "8091921",
+  "GAME_NAME": "Dice",
+  "GAME_UID": "8a87aae7a3624d284306e9c6fe1b3e9c"
+}
+2026-05-22 19:23:16 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | HTTP: 504 | Error#: 0 | Response: <html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+</body>
+</html>
+
+2026-05-22 19:25:46 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"3252533"}
+2026-05-22 19:25:56 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: <html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+</body>
+</html>
+
+2026-05-22 19:26:22 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"3252533"}
+2026-05-22 19:26:32 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: <html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+</body>
+</html>
+
+2026-05-22 19:28:27 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-22 19:28:37 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: <html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+</body>
+</html>
+
+2026-05-22 19:29:36 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-22 19:29:44 - Launch Req: {
+  "USER_ID": "8091921",
+  "GAME_NAME": "Dice",
+  "GAME_UID": "8a87aae7a3624d284306e9c6fe1b3e9c"
+}
+2026-05-22 19:29:47 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: <html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+</body>
+</html>
+
+2026-05-22 19:29:54 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: <html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+</body>
+</html>
+
+2026-05-22 19:30:09 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-22 19:30:19 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: <html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+</body>
+</html>
+
+2026-05-22 19:30:39 - Launch Req: {"GAME_NAME":"Esports","GAME_UID":"4ee8e0051a035b463b47c3c473ce317d","USER_ID":"8091921"}
+2026-05-22 19:30:49 - Game: Esports | UID: 4ee8e0051a035b463b47c3c473ce317d | API Response: <html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+</body>
+</html>
+
+2026-05-22 19:31:14 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"8091921"}
+2026-05-22 19:31:25 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: <html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+</body>
+</html>
+
+2026-05-22 19:38:49 - Launch Req: {
+  "USER_ID": "8091921",
+  "GAME_NAME": "Dice",
+  "GAME_UID": "8a87aae7a3624d284306e9c6fe1b3e9c"
+}
+2026-05-22 19:39:12 - Launch Req: {
+  "USER_ID": "8091921",
+  "GAME_NAME": "Dice",
+  "GAME_UID": "8a87aae7a3624d284306e9c6fe1b3e9c"
+}
+2026-05-22 19:39:22 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: <html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+</body>
+</html>
+
