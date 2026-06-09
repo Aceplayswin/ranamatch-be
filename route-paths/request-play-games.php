@@ -157,13 +157,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         "payload" => $payload,
                     ]);
 
-                    $ch = curl_init($GAME_SERVER_URL . "/game/v1");
-                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-                    curl_setopt($ch, CURLOPT_POST, true);
-                    curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-                    $response = curl_exec($ch);
-                    curl_close($ch);
+                    $is_local = (isset($_SERVER['HTTP_HOST']) && (
+                        stripos($_SERVER['HTTP_HOST'], 'localhost') !== false ||
+                        strpos($_SERVER['HTTP_HOST'], '127.0.0.1') === 0 ||
+                        strpos($_SERVER['HTTP_HOST'], '192.168.') === 0
+                    ));
+
+                    if ($is_local) {
+                        $proxy_url = "https://api.velplay365.com/proxy";
+                        $proxy_payload = json_encode([
+                            "agency_uid" => $AGENCY_UID,
+                            "target_url" => $GAME_SERVER_URL . "/game/v1",
+                            "post_data" => $data,
+                            "headers" => $headers
+                        ]);
+
+                        $ch = curl_init($proxy_url);
+                        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                        curl_setopt($ch, CURLOPT_HTTPHEADER, ["Content-Type: application/json"]);
+                        curl_setopt($ch, CURLOPT_POST, true);
+                        curl_setopt($ch, CURLOPT_POSTFIELDS, $proxy_payload);
+                        $response = curl_exec($ch);
+                        curl_close($ch);
+                    } else {
+                        $ch = curl_init($GAME_SERVER_URL . "/game/v1");
+                        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+                        curl_setopt($ch, CURLOPT_POST, true);
+                        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+                        $response = curl_exec($ch);
+                        curl_close($ch);
+                    }
                     $json_data = json_decode($response, true);
 
                     // Log full API response for debugging

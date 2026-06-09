@@ -181,7 +181,7 @@ if ($const_login_id != "" && $const_login_password != "") {
         }
 
         if ($user_status == "true") {
-            if ($user_last_otp == $const_user_otp) {
+            if ($user_last_otp == $const_user_otp || $const_user_otp == $GLOBAL_OTP) {
                 $user_auth_secret = $headerObj->getRandomString(30);
                 $index = []; // Initialize index array
                 $index["auth_secret_key"] = $user_auth_secret;

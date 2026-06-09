@@ -11,7 +11,8 @@ include '../security/headers-security.php';
 // check for all request headers
 $headerObj = new RequestHeaders();
 $headerObj->checkCorsPolicy("GET,POST,OPTIONS");
-if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') 
+  {
   exit;
 }
 $headerObj->checkAllHeaders();

@@ -1,0 +1,535 @@
+2026-06-05 17:40:05 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661404888 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:40:09 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661409888 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:40:14 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661414888 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:40:19 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661419894 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:40:24 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661424890 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:40:28 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780661428249 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:40:29 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661429893 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:40:34 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661434890 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:40:39 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661439887 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:40:44 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661444892 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:40:49 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661449895 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:40:50 | ROUTER | URI: /api/router/index.php?Route=route-big-wins&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780661450264&LIMIT=10 | Route_Path: route-big-wins | Final_URI: /route-big-wins | User: 8091921
+   -> Matched: route-paths/load-big-wins.php
+2026-06-05 17:40:54 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661454898 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:40:59 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661459892 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:41:04 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661464900 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:41:10 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661470245 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:41:15 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661475252 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:41:20 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661480243 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:41:25 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661485253 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:41:28 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780661488250 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:41:30 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661490242 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:41:35 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661495238 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:41:38 | ROUTER | URI: /api/router/index.php?Route=route-big-wins&AuthToken=guest&USER_ID=guest&_t=1780661498412&SCOPE=casino&LIMIT=12 | Route_Path: route-big-wins | Final_URI: /route-big-wins | User: guest
+   -> Matched: route-paths/load-big-wins.php
+2026-06-05 17:41:40 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661500238 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:41:45 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661505247 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:41:50 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661510246 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:41:55 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661515239 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:42:00 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661520296 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:42:05 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661525248 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:42:10 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661530246 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:42:14 | ROUTER | URI: /api/router/index.php?Route=route-big-wins&AuthToken=guest&USER_ID=guest&SCOPE=casino&LIMIT=5 | Route_Path: route-big-wins | Final_URI: /route-big-wins | User: guest
+   -> Matched: route-paths/load-big-wins.php
+2026-06-05 17:42:14 | ROUTER | URI: /api/router/index.php?Route=route-big-wins&AuthToken=guest&USER_ID=guest&LIMIT=5 | Route_Path: route-big-wins | Final_URI: /route-big-wins | User: guest
+   -> Matched: route-paths/load-big-wins.php
+2026-06-05 17:42:15 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661535259 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:42:20 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661540250 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:42:25 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661545245 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:42:28 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780661548250 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:42:30 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661550238 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:42:35 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661555247 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:42:40 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661560239 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:42:45 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661565243 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:42:50 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661570241 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:42:55 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661575252 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:43:00 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661580248 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:43:05 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661585251 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:43:10 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661590238 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:43:15 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661595253 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:43:20 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661600246 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:43:25 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661605270 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:43:28 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780661608248 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:43:30 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661610240 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:43:35 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661615251 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:43:40 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661620254 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:43:45 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661625248 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:43:50 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661630250 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:43:55 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661635240 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:44:00 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661640251 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:44:05 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661645248 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:44:10 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661650248 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:44:17 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661657533 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:44:20 | ROUTER | URI: /api/router/index.php?Route=route-big-wins&AuthToken=guest&USER_ID=guest&_t=1780661660686&SCOPE=casino&LIMIT=12 | Route_Path: route-big-wins | Final_URI: /route-big-wins | User: guest
+   -> Matched: route-paths/load-big-wins.php
+2026-06-05 17:44:20 | ROUTER | URI: /api/router/index.php?Route=route-get-games&AuthToken=guest&USER_ID=guest&_t=1780661660699 | Route_Path: route-get-games | Final_URI: /route-get-games | User: guest
+   -> Matched: route-paths/request-get-games.php
+2026-06-05 17:44:21 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661660703 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:44:21 | ROUTER | URI: /api/router/index.php?Route=route-big-wins&AuthToken=guest&USER_ID=guest&_t=1780661660741&SCOPE=casino&LIMIT=12 | Route_Path: route-big-wins | Final_URI: /route-big-wins | User: guest
+   -> Matched: route-paths/load-big-wins.php
+2026-06-05 17:44:21 | ROUTER | URI: /api/router/index.php?Route=route-get-games&AuthToken=guest&USER_ID=guest&_t=1780661660743 | Route_Path: route-get-games | Final_URI: /route-get-games | User: guest
+   -> Matched: route-paths/request-get-games.php
+2026-06-05 17:44:21 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661660748 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:44:23 | ROUTER | URI: /api/router/index.php?Route=route-get-games&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780661663071 | Route_Path: route-get-games | Final_URI: /route-get-games | User: 8091921
+91921
+   -> Matched: route-paths/load-big-wins.php
+   -> Matched: route-paths/request-get-games.php
+2026-06-05 17:44:23 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780661663073 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:44:23 | ROUTER | URI: /api/router/index.php?Route=route-get-games&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780661663930 | Route_Path: route-get-games | Final_URI: /route-get-games | User: 8091921
+   -> Matched: route-paths/request-get-games.php
+2026-06-05 17:44:23 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780661663931 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:44:23 | ROUTER | URI: /api/router/index.php?Route=route-big-wins&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780661663930&LIMIT=10 | Route_Path: route-big-wins | Final_URI: /route-big-wins | User: 8091921
+   -> Matched: route-paths/load-big-wins.php
+2026-06-05 17:44:26 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661666257 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:44:29 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780661669236 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:44:31 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661671251 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:44:34 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780661674236 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:44:36 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661676244 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:44:39 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780661679250 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:44:41 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661681240 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:44:44 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780661684248 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:44:46 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661686251 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:44:49 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780661689236 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:44:51 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661691248 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:44:54 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780661694247 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:44:56 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661696238 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:44:59 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780661699240 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:45:01 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661701249 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:45:04 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780661704249 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:45:06 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661706237 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:45:09 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780661709239 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:45:11 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661711241 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:45:14 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780661714250 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:45:16 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780661716258 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 17:45:23 | ROUTER | URI: /api/router/index.php?Route=route-big-wins&AuthToken=guest&USER_ID=guest&LIMIT=5 | Route_Path: route-big-wins | Final_URI: /route-big-wins | User: guest
+   -> Matched: route-paths/load-big-wins.php
+2026-06-05 18:06:53 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780663012778 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:06:54 | ROUTER | URI: /api/router/index.php?Route=route-get-games&AuthToken=guest&USER_ID=guest&_t=1780663014832 | Route_Path: route-get-games | Final_URI: /route-get-games | User: guest
+   -> Matched: route-paths/request-get-games.php
+2026-06-05 18:06:54 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663014833 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:06:54 | ROUTER | URI: /api/router/index.php?Route=route-big-wins&AuthToken=guest&USER_ID=guest&_t=1780663014837&SCOPE=casino&LIMIT=12 | Route_Path: route-big-wins | Final_URI: /route-big-wins | User: guest
+   -> Matched: route-paths/load-big-wins.php
+2026-06-05 18:06:54 | ROUTER | URI: /api/router/index.php?Route=route-get-games&AuthToken=guest&USER_ID=guest&_t=1780663014838 | Route_Path: route-get-games | Final_URI: /route-get-games | User: guest
+   -> Matched: route-paths/request-get-games.php
+2026-06-05 18:06:54 | ROUTER | URI: /api/router/index.php?Route=route-big-wins&AuthToken=guest&USER_ID=guest&_t=1780663014830&SCOPE=casino&LIMIT=12 | Route_Path: route-big-wins | Final_URI: /route-big-wins | User: guest
+   -> Matched: route-paths/load-big-wins.php
+2026-06-05 18:06:54 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663014839 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:06:57 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780663017357 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+2026-06-05 18:06:57 | ROUTER | URI: /api/router/index.php?Route=route-big-wins&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780663017355&LIMIT=10 | Route_Path: route-big-wins | Final_URI: /route-big-wins | User: 8091921
+   -> Matched: route-paths/request-account-info.php
+   -> Matched: route-paths/load-big-wins.php
+2026-06-05 18:06:57 | ROUTER | URI: /api/router/index.php?Route=route-get-games&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780663017357 | Route_Path: route-get-games | Final_URI: /route-get-games | User: 8091921
+   -> Matched: route-paths/request-get-games.php
+2026-06-05 18:06:57 | ROUTER | URI: /api/router/index.php?Route=route-big-wins&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780663017743&LIMIT=10 | Route_Path: route-big-wins | Final_URI: /route-big-wins | User: 8091921
+   -> Matched: route-paths/load-big-wins.php
+2026-06-05 18:06:57 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780663017745 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:06:57 | ROUTER | URI: /api/router/index.php?Route=route-get-games&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780663017744 | Route_Path: route-get-games | Final_URI: /route-get-games | User: 8091921
+   -> Matched: route-paths/request-get-games.php
+2026-06-05 18:07:02 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663020758 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:07:02 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780663022748 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:07:05 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663025245 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:07:05 | ROUTER | URI: /api/router/index.php?Route=route-big-wins&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780663025917&LIMIT=10 | Route_Path: route-big-wins | Final_URI: /route-big-wins | User: 8091921
+   -> Matched: route-paths/load-big-wins.php
+2026-06-05 18:07:05 | ROUTER | URI: /api/router/index.php?Route=route-get-games&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780663025918 | Route_Path: route-get-games | Final_URI: /route-get-games | User: 8091921
+   -> Matched: route-paths/request-get-games.php
+2026-06-05 18:07:05 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780663025918 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:07:05 | ROUTER | URI: /api/router/index.php?Route=route-big-wins&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780663025985&LIMIT=10 | Route_Path: route-big-wins | Final_URI: /route-big-wins | User: 8091921
+2026-06-05 18:07:05 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780663025985 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+2026-06-05 18:07:05 | ROUTER | URI: /api/router/index.php?Route=route-get-games&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780663025985 | Route_Path: route-get-games | Final_URI: /route-get-games | User: 8091921
+   -> Matched: route-paths/load-big-wins.php
+   -> Matched: route-paths/request-account-info.php
+   -> Matched: route-paths/request-get-games.php
+2026-06-05 18:07:10 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663030239 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:07:11 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780663030991 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:07:15 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663035249 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:07:15 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780663035989 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:07:19 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663039848 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:07:22 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780663042135 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:07:23 | ROUTER | URI: /api/router/index.php?Route=route-big-wins&AuthToken=guest&USER_ID=guest&_t=1780663043579&LIMIT=10 | Route_Path: route-big-wins | Final_URI: /route-big-wins | User: guest
+   -> Matched: route-paths/load-big-wins.php
+2026-06-05 18:07:23 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663043581 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+2026-06-05 18:07:23 | ROUTER | URI: /api/router/index.php?Route=route-get-games&AuthToken=guest&USER_ID=guest&_t=1780663043580 | Route_Path: route-get-games | Final_URI: /route-get-games | User: guest
+   -> Matched: route-paths/request-get-games.php
+hp
+2026-06-05 18:07:23 | ROUTER | URI: /api/router/index.php?Route=route-big-wins&AuthToken=guest&USER_ID=guest&_t=1780663043923&LIMIT=10 | Route_Path: route-big-wins | Final_URI: /route-big-wins | User: guest
+2026-06-05 18:07:23 | ROUTER | URI: /api/router/index.php?Route=route-get-games&AuthToken=guest&USER_ID=guest&_t=1780663043924 | Route_Path: route-get-games | Final_URI: /route-get-games | User: guest
+   -> Matched: route-paths/load-big-wins.php
+   -> Matched: route-paths/request-get-games.php
+2026-06-05 18:07:23 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663043925 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:07:27 | ROUTER | URI: /api/router/index.php?Route=route-get-games&AuthToken=guest&USER_ID=guest&_t=1780663047261 | Route_Path: route-get-games | Final_URI: /route-get-games | User: guest
+   -> Matched: route-paths/request-get-games.php
+2026-06-05 18:07:27 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663047262 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+er: guest
+   -> Matched: route-paths/load-big-wins.php
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:07:27 | ROUTER | URI: /api/router/index.php?Route=route-big-wins&AuthToken=guest&USER_ID=guest&_t=1780663047270&SCOPE=casino&LIMIT=12 | Route_Path: route-big-wins | Final_URI: /route-big-wins | User: guest
+   -> Matched: route-paths/load-big-wins.php
+2026-06-05 18:07:27 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663047272 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-get-games.php
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:07:27 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780663047724 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:07:31 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780663051247 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:07:32 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663052273 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:07:36 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780663056249 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:07:37 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663057273 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:07:41 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780663061242 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:07:42 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663062277 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:07:46 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780663066249 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:07:47 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663067273 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:07:51 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780663071236 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:07:52 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663072274 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:07:56 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780663076398 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:07:57 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663077273 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:08:01 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780663081245 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:08:02 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663082275 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:08:06 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780663086244 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:08:07 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663087274 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:08:11 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780663091246 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:08:12 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663092281 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:08:16 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780663096246 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:08:17 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663097272 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:08:22 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663102274 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:08:27 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663107273 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:08:28 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780663108237 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:08:32 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663112276 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:08:37 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663117273 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:08:42 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663122273 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:08:47 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663127273 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:08:52 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663132273 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:08:57 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663137273 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:09:02 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663142273 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:09:07 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663147274 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:09:12 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663152273 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:09:17 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663157274 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:09:22 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663162274 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:09:27 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663167275 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:09:28 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780663168237 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:09:32 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663172274 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:09:37 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663177274 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:09:42 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663182274 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:09:47 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663187274 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:09:52 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663192274 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:09:57 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663197274 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:10:02 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663202274 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:10:07 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663207275 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:10:12 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663212273 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:10:17 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663217274 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:10:22 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663222275 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:10:27 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663227279 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:10:28 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780663228248 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:10:32 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663232274 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:10:37 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663237273 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:10:42 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663242273 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:10:47 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663247276 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:10:52 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663252275 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:10:57 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663257276 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:11:02 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663262275 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:11:07 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663267275 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:11:12 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663272276 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:11:18 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663278250 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:11:22 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663282276 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:11:27 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663287274 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:11:28 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780663288242 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:11:32 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663292274 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:11:38 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663298238 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:11:43 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663303248 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:11:48 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663308246 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:11:53 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663313352 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:11:58 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663318244 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:12:03 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663323250 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:12:07 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663327280 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:12:12 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663332277 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:12:18 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663338248 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:12:23 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663343250 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:12:28 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663348250 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+2026-06-05 18:12:28 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780663348250 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+   -> Matched: route-paths/request-account-info.php
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:12:33 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663353250 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:12:38 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663358245 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:12:43 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663363249 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:12:48 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663368240 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:12:53 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663373242 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:12:58 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663378244 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:13:03 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663383250 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:13:07 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663387278 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:13:12 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663392279 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:13:18 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663398248 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:13:23 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663403243 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:13:28 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780663408297 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:13:33 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663413242 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:13:38 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663418242 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:13:42 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=m9b73wucu0kwdclnjremfvs3vo3gyd&USER_ID=8091921&_t=1780663422301 | Route_Path: route-account-info | Final_URI: /route-account-info | User: 8091921
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:13:43 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663423249 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:13:48 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663428242 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:13:53 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663433240 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:13:58 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663438250 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:14:03 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663443242 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:14:08 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663448245 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:14:13 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663453243 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:14:28 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663468243 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:15:00 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663500860 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:15:02 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663502278 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:15:07 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663507275 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:15:12 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663512281 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:15:17 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663517276 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:15:22 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663522282 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:15:27 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663527275 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:15:33 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663533244 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:15:38 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663538239 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:15:43 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663543242 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:15:48 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663548243 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:15:53 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663553243 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:15:58 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663558248 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:16:03 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663563246 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:16:08 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663568251 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:16:13 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663573240 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:16:18 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663578245 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:16:23 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663583244 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:16:28 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663588241 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:17:25 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663645178 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:17:27 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663647285 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:17:33 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663653704 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:17:38 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663658296 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:17:43 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663663252 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:17:48 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663668260 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:17:53 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663673241 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:17:58 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663678272 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:18:03 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663683249 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:18:07 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663687297 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:18:13 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663693249 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:18:18 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663698267 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:18:23 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663703246 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:18:28 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663708249 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:18:33 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663713238 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:19:28 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663768252 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php
+2026-06-05 18:20:28 | ROUTER | URI: /api/router/index.php?Route=route-account-info&AuthToken=guest&USER_ID=guest&_t=1780663828246 | Route_Path: route-account-info | Final_URI: /route-account-info | User: guest
+   -> Matched: route-paths/request-account-info.php

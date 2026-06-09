@@ -20,7 +20,7 @@ class RequestHeaders
     if (isset($_SERVER['HTTP_ORIGIN'])) {
       header("Access-Control-Allow-Origin: " . $_SERVER['HTTP_ORIGIN']);
     }
-    header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+    header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE"  );
     header("Access-Control-Allow-Headers: Origin, Content-Type, Accept, Route, route, AuthToken, authToken, Authtoken, authtoken");
     header("Access-Control-Allow-Credentials: true");
     header('Content-Type: application/json; charset=utf-8');

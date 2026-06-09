@@ -45,12 +45,15 @@ $routes = [
     '/route-active-bonus-details' => 'route-paths/request-active-bonus-details.php',
     '/route-offer-promotions' => 'route-paths/request-offers.php',
     '/route-trending-matches' => 'route-paths/load-trending-matches.php',
+    '/route-big-wins' => 'route-paths/load-big-wins.php',
     '/route-get-user-tickets' => 'route-paths/load-user-tickets.php',
     '/route-get-games' => 'route-paths/request-get-games.php',
     '/route-mark-broadcast-seen' => 'route-paths/request-mark-broadcast-seen.php',
     '/game' => 'game/index.php',
     '/india-lotto-callback/get_point' => 'route-paths/callbacks/india-lotto-get-point.php',
     '/india-lotto-callback/change_point' => 'route-paths/callbacks/india-lotto-change-point.php',
+    '/proxy.php' => 'proxy.php',
+    '/proxy' => 'proxy.php',
 ];
 
 ?>

@@ -29,14 +29,39 @@ $data = json_encode([
 $api_endpoint = $GAME_SERVER_URL . "/game/v1/games";
 echo "Connecting to Provider: $api_endpoint...\n";
 
-$ch = curl_init($api_endpoint);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_HTTPHEADER, ["Content-Type: application/json"]);
-curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-$response = curl_exec($ch);
-$http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-curl_close($ch);
+$is_local = (isset($_SERVER['HTTP_HOST']) && (
+    stripos($_SERVER['HTTP_HOST'], 'localhost') !== false ||
+    strpos($_SERVER['HTTP_HOST'], '127.0.0.1') === 0 ||
+    strpos($_SERVER['HTTP_HOST'], '192.168.') === 0
+)) || (php_sapi_name() === 'cli'); // CLI script on local developer PC is also local
+
+if ($is_local) {
+    $proxy_url = "https://api.velplay365.com/proxy";
+    $proxy_payload = json_encode([
+        "agency_uid" => $AGENCY_UID,
+        "target_url" => $api_endpoint,
+        "post_data" => $data,
+        "headers" => ["Content-Type: application/json"]
+    ]);
+
+    $ch = curl_init($proxy_url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, ["Content-Type: application/json"]);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $proxy_payload);
+    $response = curl_exec($ch);
+    $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+} else {
+    $ch = curl_init($api_endpoint);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, ["Content-Type: application/json"]);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+    $response = curl_exec($ch);
+    $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+}
 
 if ($http_code !== 200) {
     echo "ERROR: Server returned HTTP $http_code\n";

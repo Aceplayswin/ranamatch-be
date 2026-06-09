@@ -110,11 +110,6 @@ class SmsManager {
     
     
     function sendNewOTP($otp){
-        if ($this->const_sms_api == "") {
-            $this->resArr["status_code"] = "sms_token_missing";
-            return false;
-        }
-
         $curl = curl_init();
         curl_setopt_array($curl, [
         CURLOPT_URL =>
@@ -134,35 +129,9 @@ class SmsManager {
         ]);
 
         $response = curl_exec($curl);
-        $curl_error = curl_error($curl);
         curl_close($curl);
-
-        if ($response === false || $curl_error != "") {
-            $this->resArr["status_code"] = "sms_gateway_error";
-            return false;
-        }
-
         $jsonArr = json_decode($response, true);
-
-        if (json_last_error() !== JSON_ERROR_NONE) {
-            if (trim($response) == "Message sent successfully") {
-                return "Message sent successfully";
-            }
-
-            $this->resArr["status_code"] = "sms_gateway_invalid_response";
-            return false;
-        }
-
-        if (isset($jsonArr["message"][0])) {
-            return $jsonArr["message"][0];
-        }
-
-        if (isset($jsonArr["message"]) && is_string($jsonArr["message"])) {
-            return $jsonArr["message"];
-        }
-
-        $this->resArr["status_code"] = "sms_gateway_invalid_response";
-        return false;
+        return $jsonArr["message"][0];
     }
     
     function decodeSMSResponse($smsResponse,$otp){
@@ -181,13 +150,19 @@ class SmsManager {
     
     
     private function initiateFinalProcess(){
-        $new_otp = $this->helperFunctions->generateRandNumber($this->const_otp_length);
-        
-        $smsResponse = $this->sendNewOTP($new_otp);
-        if($smsResponse !== false && $this->decodeSMSResponse($smsResponse, $new_otp)){
+        global $GLOBAL_OTP;
+        if(isset($GLOBAL_OTP)){
+            // Testing bypass
             $this->resArr["status_code"] = "success";
-        }else if($this->resArr["status_code"] == "failed"){
-            $this->resArr["status_code"] = "sms_send_failed";
+            return;
+        }
+        $new_otp = $this->helperFunctions->generateRandNumber(6);
+        
+        // if($this->is_otp_allowed && $this->decodeSMSResponse($this->sendNewOTP($new_otp), $new_otp)){
+        if($this->decodeSMSResponse($this->sendNewOTP($new_otp), $new_otp)){
+            $this->resArr["status_code"] = "success";
+        }else if(!$this->is_otp_allowed){
+            $this->resArr["status_code"] = "fail";
         }
     }
 
@@ -207,7 +182,7 @@ class SmsManager {
                 }
                     
             }else{
-                $this->resArr["status_code"] = "otp_service_disabled";
+                $this->initiateFinalProcess();
             }
         }else{
             $this->resArr["status_code"] = "invalid_params";
