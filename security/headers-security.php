@@ -19,8 +19,8 @@ class RequestHeaders
   {
     $origin = $_SERVER['HTTP_ORIGIN'] ?? "";
     $allowedOrigins = [
-        "https://ranamatch.com",
-        "https://api.ranamatch.com",
+        "https://boldvelocity.com",
+        "https://api.boldvelocity.com",
         "http://localhost:5173",
         "http://localhost:3000"
     ];

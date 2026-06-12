@@ -1097,3 +1097,21 @@
 2026-05-22 16:35:30 - Attempting login for ID: 9072130225
 2026-05-22 16:35:30 - CRITICAL ERROR: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in D:\xampp\htdocs\route-paths\request-login.php on line 56
 2026-05-22 16:35:30 - Returning status: critical_error
+2026-06-09 20:41:07 - Attempting login for ID: 9072130225
+2026-06-09 20:41:07 - Returning status: user_not_exist
+2026-06-11 13:00:07 - Attempting login for ID: 9072130225
+2026-06-11 13:00:07 - User found in DB
+2026-06-11 13:00:07 - Password verified
+2026-06-11 13:00:07 - Uniq ID: 3416383
+2026-06-11 13:00:07 - Auth Secret Generated
+2026-06-11 13:00:07 - Update prepared
+2026-06-11 13:00:07 - Update executed
+2026-06-11 13:00:07 - Update successful
+2026-06-11 13:00:08 - New activity ID generated
+2026-06-11 13:00:08 - Insert activity prepared
+2026-06-11 13:00:08 - Insert activity executed
+2026-06-11 13:00:08 - Select activity prepared
+2026-06-11 13:00:08 - Select activity executed
+2026-06-11 13:00:08 - Finalizing result array
+2026-06-11 13:00:08 - Success status set
+2026-06-11 13:00:08 - Returning status: success

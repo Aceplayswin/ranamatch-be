@@ -23,7 +23,7 @@ if ($provider) {
     $where .= " AND game_provider = '$provider'";
 }
 
-$sql = "SELECT game_uid, game_name, game_category, game_provider, game_image as icon, is_featured, is_roulette, sort_order 
+$sql = "SELECT game_uid, game_name, game_category, game_provider, game_image as icon, is_featured, sort_order 
         FROM tbl_games 
         $where 
         ORDER BY sort_order ASC, id ASC";
@@ -45,7 +45,7 @@ if ($result) {
             "Game Provider" => $row['game_provider'],
             "icon" => $row['icon'],
             "is_featured" => (int)$row['is_featured'],
-            "is_roulette" => (int)$row['is_roulette']
+            "is_roulette" => 0
         ];
     }
     $resArr['data'] = $games;

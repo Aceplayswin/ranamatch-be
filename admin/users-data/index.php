@@ -76,6 +76,87 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     exit;
 }
 
+// Add New User Handler
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'add_user') {
+    header('Content-Type: application/json');
+    $username = mysqli_real_escape_string($conn, trim($_POST['username'] ?? ''));
+    $mobile = mysqli_real_escape_string($conn, trim($_POST['mobile'] ?? ''));
+    $password = $_POST['password'] ?? '';
+    
+    if (empty($username) || empty($mobile) || empty($password)) {
+        echo json_encode(['status' => 'error', 'message' => 'All fields are required.']);
+        exit;
+    }
+    
+    if (strlen($mobile) != 10 || !is_numeric($mobile)) {
+        echo json_encode(['status' => 'error', 'message' => 'Invalid mobile number. Must be 10 digits.']);
+        exit;
+    }
+
+    if (strlen($password) < 6) {
+        echo json_encode(['status' => 'error', 'message' => 'Password must be at least 6 characters.']);
+        exit;
+    }
+    
+    // Check duplicate
+    $check_dup = mysqli_query($conn, "SELECT id FROM tblusersdata WHERE tbl_mobile_num = '$mobile' OR tbl_user_name = '$username'");
+    if (mysqli_num_rows($check_dup) > 0) {
+        echo json_encode(['status' => 'error', 'message' => 'Username or mobile number already exists.']);
+        exit;
+    }
+    
+    // Generate unique ID
+    $uniq_id = "";
+    for ($i = 0; $i < 10; $i++) {
+        $temp_id = strval(rand(1000000, 9999999));
+        $check_id = mysqli_query($conn, "SELECT id FROM tblusersdata WHERE tbl_uniq_id = '$temp_id'");
+        if (mysqli_num_rows($check_id) == 0) {
+            $uniq_id = $temp_id;
+            break;
+        }
+    }
+    if (empty($uniq_id)) {
+        echo json_encode(['status' => 'error', 'message' => 'Failed to generate unique user ID.']);
+        exit;
+    }
+    
+    $auth_secret = bin2hex(random_bytes(15));
+    $avatar_id = rand(1, 9);
+    $full_name = "MEMBER" . rand(1000, 9999);
+    $hashed_pw = password_hash($password, PASSWORD_BCRYPT);
+    $joined = date('d-m-Y h:i A');
+    $curr_date = date('Y-m-d');
+    $curr_time = date('h:i:s A');
+    
+    // Fetch signup bonus
+    $signup_bonus = 0;
+    $bonus_query = mysqli_query($conn, "SELECT tbl_service_value FROM tblservices WHERE tbl_service_name = 'SIGNUP_BONUS'");
+    if ($bonus_row = mysqli_fetch_assoc($bonus_query)) {
+        $signup_bonus = (float)$bonus_row['tbl_service_value'];
+    }
+    
+    // Prepare the insert query
+    $stmt = $conn->prepare("INSERT INTO tblusersdata(tbl_uniq_id, tbl_user_name, tbl_auth_secret, tbl_avatar_id, tbl_mobile_num, tbl_email_id, tbl_full_name, tbl_password, tbl_balance, tbl_requiredplay_balance, tbl_withdrawl_balance, tbl_commission_balance, tbl_freezed_balance, tbl_joined_under, tbl_last_active_date, tbl_last_active_time, tbl_account_level, tbl_account_status, tbl_user_joined) VALUES (?, ?, ?, ?, ?, '', ?, ?, ?, 0, 0, 0, 0, '', ?, ?, '1', 'true', ?)");
+    
+    $stmt->bind_param("sssisssdsss", $uniq_id, $username, $auth_secret, $avatar_id, $mobile, $full_name, $hashed_pw, $signup_bonus, $curr_date, $curr_time, $joined);
+    
+    if ($stmt->execute()) {
+        if ($signup_bonus > 0) {
+            $receive_from = "app";
+            $transaction_type = "signupbonus";
+            $transaction_date_time = $curr_date . " " . $curr_time;
+            $transaction_note = "";
+            $bonus_stmt = $conn->prepare("INSERT INTO tblotherstransactions(tbl_user_id,tbl_received_from,tbl_transaction_type,tbl_transaction_amount,tbl_transaction_note,tbl_time_stamp) VALUES(?,?,?,?,?,?)");
+            $bonus_stmt->bind_param("ssssss", $uniq_id, $receive_from, $transaction_type, $signup_bonus, $transaction_note, $transaction_date_time);
+            $bonus_stmt->execute();
+        }
+        echo json_encode(['status' => 'success', 'message' => 'User created successfully!']);
+    } else {
+        echo json_encode(['status' => 'error', 'message' => 'Database update failed.']);
+    }
+    exit;
+}
+
 $f_username = mysqli_real_escape_string($conn, $_POST['f_username'] ?? $_GET['f_username'] ?? '');
 $f_mobile = mysqli_real_escape_string($conn, $_POST['f_mobile'] ?? $_GET['f_mobile'] ?? '');
 $f_userid = mysqli_real_escape_string($conn, $_POST['f_userid'] ?? $_GET['f_userid'] ?? '');
@@ -280,6 +361,9 @@ if (isset($_GET['download']) && $_GET['download'] === 'excel') {
                 </div>
             </div>
             <div class="dash-header-right">
+                <button class="btn-modern btn-primary-modern" type="button" onclick="openAddUserModal()">
+                    <i class='bx bx-user-plus'></i> Add New User
+                </button>
                 <button class="btn-modern btn-outline-modern filter-btn-toggle" type="button">
                     <i class='bx bx-filter-alt'></i> Filter Status
                 </button>
@@ -640,6 +724,42 @@ if (isset($_GET['download']) && $_GET['download'] === 'excel') {
     </div>
 </div>
 
+<!-- Add User Modal -->
+<div class="modal fade" id="addUserModal" tabindex="-1" aria-labelledby="addUserModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" style="background: var(--panel-bg); border: 1px solid var(--border-dim); border-radius: 16px; color: var(--text-main); font-family: var(--font-body);">
+            <div class="modal-header border-0 pb-0" style="padding: 20px 24px;">
+                <h5 class="modal-title" id="addUserModalLabel" style="font-weight: 700; font-size: 16px;">Add New User</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" style="font-size: 12px;"></button>
+            </div>
+            <div class="modal-body" style="padding: 20px 24px;">
+                <form id="addUserForm">
+                    <div class="mb-3">
+                        <label for="add_username" class="form-label" style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--text-dim);">Username</label>
+                        <input type="text" class="form-control" id="add_username" required placeholder="Enter username" style="background: rgba(0,0,0,0.1); border: 1px solid var(--border-dim); color: var(--text-main); font-weight: 700; border-radius: 10px; height: 42px;">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="add_mobile" class="form-label" style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--text-dim);">Mobile Number</label>
+                        <input type="text" class="form-control" id="add_mobile" required placeholder="10-digit mobile number" maxlength="10" style="background: rgba(0,0,0,0.1); border: 1px solid var(--border-dim); color: var(--text-main); font-weight: 700; border-radius: 10px; height: 42px;">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="add_password" class="form-label" style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--text-dim);">Password</label>
+                        <input type="password" class="form-control" id="add_password" required placeholder="Min 6 characters" minlength="6" style="background: rgba(0,0,0,0.1); border: 1px solid var(--border-dim); color: var(--text-main); font-weight: 700; border-radius: 10px; height: 42px;">
+                    </div>
+
+                    <div class="d-grid mt-4">
+                        <button type="submit" id="btnSubmitAddUser" class="btn-modern btn-primary-modern py-2.5 w-100 justify-content-center" style="border-radius: 10px; height: 44px; font-weight: 700;">
+                            Create User
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../script.js?v=05"></script>
 <script>
@@ -722,12 +842,54 @@ if (isset($_GET['download']) && $_GET['download'] === 'excel') {
             alert('An error occurred. Please try again.');
         });
     });
-</script>
-</body>
-</html>
+
+    let addUserModalInstance = null;
+
+    function openAddUserModal() {
+        document.getElementById('add_username').value = '';
+        document.getElementById('add_mobile').value = '';
+        document.getElementById('add_password').value = '';
+        
+        if (!addUserModalInstance) {
+            addUserModalInstance = new bootstrap.Modal(document.getElementById('addUserModal'));
+        }
+        addUserModalInstance.show();
+    }
+
+    document.getElementById('addUserForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const username = document.getElementById('add_username').value;
+        const mobile = document.getElementById('add_mobile').value;
+        const password = document.getElementById('add_password').value;
+        
+        if (!username || mobile.length !== 10 || password.length < 6) {
+            alert('Please fill all fields correctly. Mobile must be 10 digits and Password min 6 characters.');
+            return;
+        }
+        
+        const btnSubmit = document.getElementById('btnSubmitAddUser');
+        btnSubmit.disabled = true;
+        btnSubmit.innerHTML = "<span class='spinner-border spinner-border-sm' role='status' aria-hidden='true'></span> Processing...";
+        
+        const formData = new FormData();
+        formData.append('action', 'add_user');
+        formData.append('username', username);
+        formData.append('mobile', mobile);
+        formData.append('password', password);
+        
+        fetch('index.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(res => res.json())
+        .then(data => {
+            btnSubmit.disabled = false;
+            btnSubmit.textContent = "Create User";
+            
             if (data.status === 'success') {
                 alert(data.message);
-                if (addUserModal) addUserModal.hide();
+                if (addUserModalInstance) addUserModalInstance.hide();
                 window.location.reload();
             } else {
                 alert(data.message || 'Failed to add user.');
@@ -737,7 +899,7 @@ if (isset($_GET['download']) && $_GET['download'] === 'excel') {
             btnSubmit.disabled = false;
             btnSubmit.textContent = "Create User";
             console.error(err);
-            alert('Error: ' + err.message);
+            alert('An error occurred. Please try again.');
         });
     });
 </script>
