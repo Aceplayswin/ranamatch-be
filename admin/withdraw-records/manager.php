@@ -22,7 +22,11 @@ if(!isset($_GET['uniq-id'])){
   $uniq_id = mysqli_real_escape_string($conn,$_GET['uniq-id']);
 }
 
-$select_sql = "SELECT * FROM tbluserswithdraw WHERE tbl_uniq_id='$uniq_id'";
+$select_sql = "
+  SELECT w.*, u.tbl_user_name, u.tbl_joined_under 
+  FROM tbluserswithdraw w 
+  LEFT JOIN tblusersdata u ON (w.tbl_user_id = u.tbl_uniq_id OR w.tbl_user_id = CAST(u.id AS CHAR)) 
+  WHERE w.tbl_uniq_id='$uniq_id'";
 $select_result = mysqli_query($conn, $select_sql) or die('error');
 
 if(mysqli_num_rows($select_result) > 0){
@@ -156,7 +160,7 @@ if(mysqli_num_rows($select_result) > 0){
         
         <div class="dash-header">
             <div class="dash-header-left">
-                <div class="back-btn" onclick="window.history.back()"><i class='bx bx-left-arrow-alt'></i></div>
+                <div class="back-btn" onclick="if(document.referrer && document.referrer !== location.href){ history.back(); } else { window.location.href='index.php'; }" title="Go Back"><i class='bx bx-left-arrow-alt'></i></div>
                 <div>
                     <span style="font-size: 9px; font-weight: 800; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px;">Admin Console / Payouts</span>
                     <h1 style="font-size: 18px; font-weight: 800; color: var(--text-main); margin: 0;">Withdrawal Record Manager</h1>
@@ -193,6 +197,22 @@ if(mysqli_num_rows($select_result) > 0){
                     <div class="info-row">
                         <span class="info-label">Submission Date</span>
                         <span class="info-value"><?php echo htmlspecialchars($request_date_time); ?></span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">Referred Agent</span>
+                        <span class="info-value">
+                            <?php if (!empty($select_res_data['tbl_joined_under'])): ?>
+                                <a href="../agents/detail/index.php?code=<?php echo urlencode($select_res_data['tbl_joined_under']); ?>"
+                                   style="color: var(--accent-amber); text-decoration: none; font-weight: 700;"
+                                   onmouseover="this.style.textDecoration='underline'"
+                                   onmouseout="this.style.textDecoration='none'">
+                                    <i class='bx bx-user-pin'></i> <?php echo htmlspecialchars($select_res_data['tbl_joined_under']); ?>
+                                </a>
+                            <?php else: ?>
+                                <span style="color: var(--text-dim);">Direct Site Player</span>
+                            <?php endif; ?>
+                        </span>
                     </div>
 
                     <div class="mt-4">
@@ -235,14 +255,19 @@ if(mysqli_num_rows($select_result) > 0){
                     <?php endif; ?>
 
                     <div class="mt-4">
+                        <div class="remark-box mb-3">
+                            <label class="info-label" style="margin-bottom: 6px; display: block; font-size: 9px; font-weight: 800; color: var(--text-dim); text-transform: uppercase;">Administrative Remark / Reason</label>
+                            <textarea id="admin_remark" class="remark-area" style="width: 100%; height: 60px; background: rgba(0,0,0,0.3); border: 1px solid var(--border-dim); border-radius: 10px; padding: 10px; color: #f1f5f9; font-size: 11px; outline: none; resize: none;" placeholder="Add a reason for approval/rejection (e.g. Bank Transfer Processed)..."><?php echo htmlspecialchars($select_res_data['tbl_remark'] ?? ''); ?></textarea>
+                        </div>
+
                         <?php if ($request_status == "approve" || $request_status == "pending") { ?>
                             <div class="section-label"><i class='bx bx-cog'></i> Administrative Actions</div>
                             <div class="action-btns">
                                 <button class="btn-modern btn-success-gradient" onclick="SucessRequest('success')">
-                                    <i class='bx bx-check-shield'></i> API Approve
+                                    <i class='bx bx-check-shield'></i> Approve Request
                                 </button>
                                 <button class="btn-modern btn-danger-outline" onclick="RejectRequest()">
-                                    <i class='bx bx-block'></i> API Reject
+                                    <i class='bx bx-block'></i> Reject Request
                                 </button>
                             </div>
                         <?php } else { ?>
@@ -263,13 +288,26 @@ if(mysqli_num_rows($select_result) > 0){
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script>
   function RejectRequest(){
+    const remark = document.getElementById('admin_remark').value.trim();
+    if(!remark) {
+        Swal.fire({
+            title: 'Reason Required',
+            text: 'Please enter an administrative reason/remark before rejecting this withdrawal.',
+            icon: 'warning',
+            confirmButtonText: 'OK'
+        }).then(() => {
+            document.getElementById('admin_remark').focus();
+        });
+        return;
+    }
     Swal.fire({
-      title: 'Reject Withdrawal?',
-      text: "Cancel this transaction and refund the balance?",
+      title: 'Confirm Rejection',
+      html: `Are you sure you want to reject this withdrawal?<br><br><small class="text-warning">Reason: "${remark}"</small>`,
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonText: 'Yes, Reject',
-      cancelButtonText: 'No'
+      confirmButtonColor: '#f43f5e',
+      confirmButtonText: 'Confirm Rejection',
+      cancelButtonText: 'Cancel'
     }).then((result) => {
       if (result.isConfirmed) {
         processWithdrawal('rejected');
@@ -278,13 +316,26 @@ if(mysqli_num_rows($select_result) > 0){
   }
 
   function SucessRequest(status){
+    const remark = document.getElementById('admin_remark').value.trim();
+    if(!remark) {
+        Swal.fire({
+            title: 'Reason Required',
+            text: 'Please enter an administrative reason/remark (e.g. Disbursed via Bank) before approving this withdrawal.',
+            icon: 'warning',
+            confirmButtonText: 'OK'
+        }).then(() => {
+            document.getElementById('admin_remark').focus();
+        });
+        return;
+    }
     Swal.fire({
-      title: 'Approve Withdrawal?',
-      text: "Proceed with the payout API and mark as success?",
+      title: 'Confirm Approval',
+      html: `Are you sure you want to approve this withdrawal payout?<br><br><small class="text-success">Reason: "${remark}"</small>`,
       icon: 'question',
       showCancelButton: true,
-      confirmButtonText: 'Yes, Approve',
-      cancelButtonText: 'No'
+      confirmButtonColor: '#10b981',
+      confirmButtonText: 'Confirm Approval',
+      cancelButtonText: 'Cancel'
     }).then((result) => {
       if (result.isConfirmed) {
         processWithdrawal(status);
@@ -293,9 +344,10 @@ if(mysqli_num_rows($select_result) > 0){
   }
 
   function processWithdrawal(status) {
+    const remark = document.getElementById('admin_remark').value.trim();
     Swal.fire({
       title: 'Processing Payout...',
-      text: 'Please wait while we communicate with the API',
+      text: 'Please wait while we process the request',
       allowOutsideClick: false,
       didOpen: () => { Swal.showLoading(); }
     });
@@ -306,6 +358,7 @@ if(mysqli_num_rows($select_result) > 0){
       data: {
         'order-id': '<?php echo $uniq_id; ?>',
         'order-type': status,
+        'remark': remark,
         'ajax': 'true'
       },
       dataType: 'json',

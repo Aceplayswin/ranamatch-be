@@ -101,7 +101,7 @@ if (mysqli_num_rows($select_result) > 0) {
 
 }else{
     echo 'No eligible user found!';
-}
+} 
 
 mysqli_close($conn);
 ?>

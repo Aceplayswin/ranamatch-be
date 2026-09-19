@@ -144,7 +144,7 @@ $result = mysqli_query($conn, $query);
         .filter-group { display: flex; flex-direction: column; gap: 6px; }
         .filter-label { font-size: 9px; font-weight: 900; text-transform: uppercase; color: var(--brand); letter-spacing: 1.5px; opacity: 0.8; }
         
-        .filter-input {
+        .filter-input { color-scheme: dark; 
             background: rgba(15, 23, 42, 0.6) !important;
             border: 1px solid rgba(255, 255, 255, 0.08) !important;
             color: #fff !important;

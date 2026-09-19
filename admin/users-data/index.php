@@ -160,6 +160,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
 $f_username = mysqli_real_escape_string($conn, $_POST['f_username'] ?? $_GET['f_username'] ?? '');
 $f_mobile = mysqli_real_escape_string($conn, $_POST['f_mobile'] ?? $_GET['f_mobile'] ?? '');
 $f_userid = mysqli_real_escape_string($conn, $_POST['f_userid'] ?? $_GET['f_userid'] ?? '');
+$f_affiliate = mysqli_real_escape_string($conn, $_POST['f_affiliate'] ?? $_GET['f_affiliate'] ?? '');
 $f_date_from = mysqli_real_escape_string($conn, $_POST['f_date_from'] ?? $_GET['f_date_from'] ?? '');
 $f_date_to = mysqli_real_escape_string($conn, $_POST['f_date_to'] ?? $_GET['f_date_to'] ?? '');
 
@@ -179,8 +180,8 @@ if (isset($_GET['download']) && $_GET['download'] === 'excel') {
 
     echo "<table border='1'>";
     echo "<tr style='background: #f4f4f4;'>
-        <th>No</th><th>ID</th><th>Username</th><th>Balance</th><th>Total Deposit</th>
-        <th>Total Bonus</th><th>Total Withdraw</th><th>Total Bet Amount</th><th>Total Sports Bet</th>
+        <th>No</th><th>ID</th><th>Username</th><th>Affiliate / Sponsor</th><th>Balance</th><th>Total Deposit</th>
+        <th>Total Bonus</th><th>Total Withdraw</th><th>Total Bet Amount</th><th>Winning</th><th>Loss</th><th>Affiliate Earning</th><th>Total Sports Bet</th>
         <th>Sports P&L</th><th>Sports Profit</th><th>Sports Loss</th>
         <th>Mobile</th><th>User IP</th><th>Date & Time</th><th>Status</th>
     </tr>";
@@ -191,11 +192,24 @@ if (isset($_GET['download']) && $_GET['download'] === 'excel') {
 
     while ($row = mysqli_fetch_assoc($result)) {
         $uniq_id = $row['tbl_uniq_id'];
+        $row_id = $row['id'];
         $username = ($row['tbl_user_name'] ?? $row['tbl_full_name']) ?: "N/A";
         $balance = $row['tbl_balance'];
         $mobile = $row['tbl_mobile_num'];
         $joined = $row['tbl_user_joined'];
         $status_raw = $row['tbl_account_status'];
+
+        // Affiliate Info
+        $aff_label = "Direct";
+        $aff_q = mysqli_query($conn, "SELECT af.affiliate_code, af.full_name, paf.affiliate_code AS parent_code, paf.full_name AS parent_name FROM affiliate_referrals ar JOIN affiliates af ON af.id = ar.affiliate_id LEFT JOIN affiliates paf ON paf.id = af.parent_id WHERE ar.user_id = '{$row_id}' OR ar.user_id = '{$uniq_id}' LIMIT 1");
+        if ($aff_r = mysqli_fetch_assoc($aff_q)) {
+            $aff_label = $aff_r['full_name'] . " (" . $aff_r['affiliate_code'] . ")";
+            if (!empty($aff_r['parent_code'])) {
+                $aff_label .= " [Sub of: " . $aff_r['parent_name'] . "]";
+            }
+        } elseif (!empty($row['tbl_joined_under'])) {
+            $aff_label = $row['tbl_joined_under'];
+        }
 
         $ip = 'N/A';
         $ip_res = mysqli_query($conn, "SELECT tbl_device_ip FROM tblusersactivity WHERE tbl_user_id='$uniq_id' ORDER BY id ASC LIMIT 1");
@@ -217,6 +231,14 @@ if (isset($_GET['download']) && $_GET['download'] === 'excel') {
         $b_q = mysqli_query($conn, "SELECT SUM(tbl_match_cost) AS total FROM tblmatchplayed WHERE tbl_user_id='$uniq_id'");
         if ($b_r = mysqli_fetch_assoc($b_q)) $total_bet = $b_r['total'] ?? 0;
 
+        $wl_q = mysqli_query($conn, "SELECT COALESCE(SUM(tbl_match_profit), 0) AS total_win, COALESCE(SUM(CASE WHEN tbl_match_profit = 0 THEN tbl_match_cost WHEN tbl_match_profit < tbl_match_cost THEN (tbl_match_cost - tbl_match_profit) ELSE 0 END), 0) AS total_loss FROM tblmatchplayed WHERE tbl_user_id='$uniq_id'");
+        $wl_r = mysqli_fetch_assoc($wl_q);
+        $total_win = (float)($wl_r['total_win'] ?? 0);
+        $total_loss = (float)($wl_r['total_loss'] ?? 0);
+
+        $comm_q = mysqli_query($conn, "SELECT COALESCE(SUM(acl.amount), 0) AS total_comm FROM affiliate_commission_ledger acl JOIN affiliate_referrals ar ON ar.id = acl.referral_id WHERE ar.user_id = '{$row_id}' OR ar.user_id = '{$uniq_id}'");
+        $aff_earning = ($comm_r = mysqli_fetch_assoc($comm_q)) ? (float)$comm_r['total_comm'] : 0;
+
         $s_bet = 0; $s_p_total = 0; $s_p = 0; $s_l = 0;
         $s_q = mysqli_query($conn, "SELECT tbl_match_cost, tbl_match_profit FROM tblmatchplayed WHERE tbl_user_id='$uniq_id' AND LOWER(tbl_project_name) IN ('saba sports', 'lucksport', 'lucksportgaming')");
         while ($s_r = mysqli_fetch_assoc($s_q)) {
@@ -225,11 +247,11 @@ if (isset($_GET['download']) && $_GET['download'] === 'excel') {
             if ($n > 0) $s_p += $n; elseif ($n < 0) $s_l += abs($n);
         }
 
-        $st = ($status_raw == 'true') ? 'Active' : (($status_raw == 'ban') ? 'Banned' : 'Not Active');
+        $st = ($status_raw == 'true' || $status_raw == 'active' || $status_raw == '1') ? 'Active' : (($status_raw == 'ban' || $status_raw == 'blocked') ? 'Banned' : 'Not Active');
         echo "<tr>
-            <td>$index</td><td>$uniq_id</td><td>$username</td><td>$balance</td>
+            <td>$index</td><td>$uniq_id</td><td>$username</td><td>" . htmlspecialchars($aff_label) . "</td><td>$balance</td>
             <td>₹".number_format($deposit,2)."</td><td>₹".number_format($bonus_total,2)."</td><td>₹".number_format($withdraw,2)."</td>
-            <td>₹".number_format($total_bet,2)."</td><td>₹".number_format($s_bet,2)."</td>
+            <td>₹".number_format($total_bet,2)."</td><td>₹".number_format($total_win,2)."</td><td>₹".number_format($total_loss,2)."</td><td>₹".number_format($aff_earning,2)."</td><td>₹".number_format($s_bet,2)."</td>
             <td>₹".number_format($s_p_total,2)."</td><td>₹".number_format($s_p,2)."</td>
             <td>₹".number_format($s_l,2)."</td><td>$mobile</td><td>$ip</td>
             <td>$joined</td><td>$st</td>
@@ -423,6 +445,14 @@ if (isset($_GET['download']) && $_GET['download'] === 'excel') {
                     </div>
 
                     <div class="filter-input-group">
+                        <label class="filter-label">Affiliate / Sponsor</label>
+                        <div class="filter-input-wrapper">
+                            <i class='bx bx-network-chart'></i>
+                            <input type="text" name="f_affiliate" value="<?php echo htmlspecialchars($f_affiliate); ?>" class="filter-inp" placeholder="Affiliate Name, Code, ID...">
+                        </div>
+                    </div>
+
+                    <div class="filter-input-group">
                         <label class="filter-label">From Date</label>
                         <div class="filter-input-wrapper">
                             <i class='bx bx-calendar'></i>
@@ -451,14 +481,18 @@ if (isset($_GET['download']) && $_GET['download'] === 'excel') {
                     <table id="table" class="r-table">
                         <thead>
                             <tr>
-                                <th width="50">No</th>
+                                <th width="45">No</th>
                                 <th>User Info (Username)</th>
+                                <th>Affiliate / Sponsor</th>
                                 <th>Balance</th>
                                 <th style="text-align: center;">Actions</th>
                                 <th>Deposits</th>
                                 <th>Bonus</th>
                                 <th>Withdraws</th>
                                 <th>Total Bet</th>
+                                <th>Winning</th>
+                                <th>Loss</th>
+                                <th>Affiliate Earning</th>
                                 <th>Sports Bet</th>
                                 <th>Sports P&L</th>
                                 <th>Mobile</th>
@@ -473,21 +507,38 @@ if (isset($_GET['download']) && $_GET['download'] === 'excel') {
                             $grand_sports_total_bet = 0; $grand_sports_total_profit = 0;
                             $grand_sports_p_amt = 0; $grand_sports_l_amt = 0;
 
-                            $where_clauses = ["tbl_account_status='{$newRequestStatus}'"];
-                            if($f_username != "") $where_clauses[] = "(tbl_user_name LIKE '%$f_username%' OR tbl_full_name LIKE '%$f_username%')";
-                            if($f_mobile != "") $where_clauses[] = "tbl_mobile_num LIKE '%$f_mobile%'";
-                            if($f_userid != "") $where_clauses[] = "tbl_uniq_id LIKE '%$f_userid%'";
+                            if ($newRequestStatus == 'true' || $newRequestStatus == 'active') {
+                                $where_clauses = ["(u.tbl_account_status = 'true' OR u.tbl_account_status = 'active' OR u.tbl_account_status = '1')"];
+                            } else {
+                                $where_clauses = ["u.tbl_account_status = '{$newRequestStatus}'"];
+                            }
+                            if($f_username != "") $where_clauses[] = "(u.tbl_user_name LIKE '%$f_username%' OR u.tbl_full_name LIKE '%$f_username%')";
+                            if($f_mobile != "") $where_clauses[] = "u.tbl_mobile_num LIKE '%$f_mobile%'";
+                            if($f_userid != "") $where_clauses[] = "u.tbl_uniq_id LIKE '%$f_userid%'";
+                            if($f_affiliate != "") {
+                                $where_clauses[] = "(
+                                    u.tbl_joined_under LIKE '%$f_affiliate%' OR 
+                                    EXISTS (
+                                        SELECT 1 FROM affiliate_referrals ar 
+                                        JOIN affiliates af ON af.id = ar.affiliate_id 
+                                        LEFT JOIN affiliates paf ON paf.id = af.parent_id
+                                        WHERE (ar.user_id = u.id OR ar.user_id = u.tbl_uniq_id)
+                                          AND (af.affiliate_code LIKE '%$f_affiliate%' OR af.full_name LIKE '%$f_affiliate%' OR af.id = '$f_affiliate'
+                                               OR paf.affiliate_code LIKE '%$f_affiliate%' OR paf.full_name LIKE '%$f_affiliate%' OR paf.id = '$f_affiliate')
+                                    )
+                                )";
+                            }
                             
                             if($f_date_from != "" && $f_date_to != ""){
-                                $where_clauses[] = "STR_TO_DATE(LEFT(tbl_user_joined, 10), '%d-%m-%Y') BETWEEN '$f_date_from' AND '$f_date_to'";
+                                $where_clauses[] = "STR_TO_DATE(LEFT(u.tbl_user_joined, 10), '%d-%m-%Y') BETWEEN '$f_date_from' AND '$f_date_to'";
                             } elseif($f_date_from != "") {
-                                $where_clauses[] = "STR_TO_DATE(LEFT(tbl_user_joined, 10), '%d-%m-%Y') >= '$f_date_from'";
+                                $where_clauses[] = "STR_TO_DATE(LEFT(u.tbl_user_joined, 10), '%d-%m-%Y') >= '$f_date_from'";
                             } elseif($f_date_to != "") {
-                                $where_clauses[] = "STR_TO_DATE(LEFT(tbl_user_joined, 10), '%d-%m-%Y') <= '$f_date_to'";
+                                $where_clauses[] = "STR_TO_DATE(LEFT(u.tbl_user_joined, 10), '%d-%m-%Y') <= '$f_date_to'";
                             }
                             
                             $where_str = implode(" AND ", $where_clauses);
-                            $sql = "SELECT * FROM tblusersdata WHERE $where_str ORDER BY id DESC LIMIT {$offset},{$content}";
+                            $sql = "SELECT u.* FROM tblusersdata u WHERE $where_str ORDER BY u.id DESC LIMIT {$offset},{$content}";
                     
                             $res = mysqli_query($conn, $sql);
                             $users_on_page = [];
@@ -537,6 +588,76 @@ if (isset($_GET['download']) && $_GET['download'] === 'excel') {
                                     $b_q = mysqli_query($conn, "SELECT SUM(tbl_match_cost) AS total FROM tblmatchplayed WHERE tbl_user_id='{$uid}'");
                                     $t_bet = ($b_r = mysqli_fetch_assoc($b_q)) ? ($b_r['total'] ?? 0) : 0;
 
+                                    // Wins & Losses
+                                    $wl_q = mysqli_query($conn, "SELECT 
+                                                COALESCE(SUM(tbl_match_profit), 0) AS total_win, 
+                                                COALESCE(SUM(CASE WHEN tbl_match_profit = 0 THEN tbl_match_cost 
+                                                                  WHEN tbl_match_profit < tbl_match_cost THEN (tbl_match_cost - tbl_match_profit) 
+                                                                  ELSE 0 END), 0) AS total_loss 
+                                             FROM tblmatchplayed WHERE tbl_user_id='{$uid}'");
+                                    $wl_r = mysqli_fetch_assoc($wl_q);
+                                    $t_win = (float)($wl_r['total_win'] ?? 0);
+                                    $t_loss = (float)($wl_r['total_loss'] ?? 0);
+
+                                    // Affiliate Attribution
+                                    $aff_info_q = mysqli_query($conn, "
+                                        SELECT af.id AS aff_id, af.affiliate_code, af.full_name, af.parent_id,
+                                               paf.id AS parent_aff_id, paf.affiliate_code AS parent_aff_code, paf.full_name AS parent_aff_name
+                                        FROM affiliate_referrals ar
+                                        JOIN affiliates af ON af.id = ar.affiliate_id
+                                        LEFT JOIN affiliates paf ON paf.id = af.parent_id
+                                        WHERE ar.user_id = '{$row['id']}' OR ar.user_id = '{$uid}'
+                                        LIMIT 1
+                                    ");
+
+                                    if ($aff_info = mysqli_fetch_assoc($aff_info_q)) {
+                                        $aff_id = (int)$aff_info['aff_id'];
+                                        $aff_badge = "<div style='font-size: 11px; font-weight: 700; color: #38bdf8; display: flex; flex-direction: column; gap: 2px;'>";
+                                        $aff_badge .= "<a href='../affiliates/detail/index.php?id={$aff_id}' onclick='event.stopPropagation();' style='color: #38bdf8; text-decoration: none;' onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">";
+                                        $aff_badge .= "<span><i class='bx bx-link-alt'></i> " . htmlspecialchars($aff_info['full_name']) . " <span style='font-size: 9px; opacity: 0.8;'>(" . htmlspecialchars($aff_info['affiliate_code']) . ")</span></span></a>";
+                                        if (!empty($aff_info['parent_id'])) {
+                                            $parent_aff_id = (int)$aff_info['parent_aff_id'];
+                                            $aff_badge .= "<a href='../affiliates/detail/index.php?id={$parent_aff_id}' onclick='event.stopPropagation();' style='color: #a855f7; text-decoration: none;' onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">";
+                                            $aff_badge .= "<span style='font-size: 9.5px; color: #a855f7;'><i class='bx bx-git-repo-forked'></i> Sub-Aff (via " . htmlspecialchars($aff_info['parent_aff_name'] ?: $aff_info['parent_aff_code']) . ")</span></a>";
+                                        }
+                                        $aff_badge .= "</div>";
+                                    } elseif (!empty($row['tbl_joined_under'])) {
+                                        $j_code = mysqli_real_escape_string($conn, $row['tbl_joined_under']);
+                                        $af_direct = mysqli_query($conn, "SELECT id, affiliate_code, full_name, parent_id FROM affiliates WHERE affiliate_code = '$j_code' LIMIT 1");
+                                        if ($af_d = mysqli_fetch_assoc($af_direct)) {
+                                            $aff_id = (int)$af_d['id'];
+                                            $aff_badge = "<div style='font-size: 11px; font-weight: 700; color: #38bdf8;'>";
+                                            $aff_badge .= "<a href='../affiliates/detail/index.php?id={$aff_id}' onclick='event.stopPropagation();' style='color: #38bdf8; text-decoration: none;' onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">";
+                                            $aff_badge .= "<span><i class='bx bx-link-alt'></i> " . htmlspecialchars($af_d['full_name']) . " <span style='font-size: 9px; opacity: 0.8;'>(" . htmlspecialchars($af_d['affiliate_code']) . ")</span></span></a>";
+                                            $aff_badge .= "</div>";
+                                        } else {
+                                            $ag_direct = mysqli_query($conn, "SELECT id, agent_code, username FROM agents WHERE agent_code = '$j_code' OR id = '$j_code' LIMIT 1");
+                                            if ($ag_d = mysqli_fetch_assoc($ag_direct)) {
+                                                $ag_id = (int)$ag_d['id'];
+                                                $ag_code = urlencode($ag_d['agent_code'] ?: $j_code);
+                                                $aff_badge = "<div style='font-size: 11px; font-weight: 700; color: #34d399;'>";
+                                                $aff_badge .= "<a href='../agents/detail/index.php?id={$ag_id}&code={$ag_code}' onclick='event.stopPropagation();' style='color: #34d399; text-decoration: none;' onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">";
+                                                $aff_badge .= "<span><i class='bx bx-user-pin'></i> Agent: " . htmlspecialchars($ag_d['username'] ?: $ag_d['agent_code']) . "</span></a>";
+                                                $aff_badge .= "</div>";
+                                            } else {
+                                                $enc_code = urlencode($row['tbl_joined_under']);
+                                                $aff_badge = "<a href='../agents/detail/index.php?code={$enc_code}' onclick='event.stopPropagation();' style='color: #34d399; text-decoration: none;' onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">";
+                                                $aff_badge .= "<span style='font-size: 10px;'><i class='bx bx-user-pin'></i> " . htmlspecialchars($row['tbl_joined_under']) . "</span></a>";
+                                            }
+                                        }
+                                    } else {
+                                        $aff_badge = "<span style='font-size: 10px; color: var(--text-dim); opacity: 0.5;'>Direct / Organic</span>";
+                                    }
+
+                                    // Affiliate Earning from this player
+                                    $comm_q = mysqli_query($conn, "
+                                        SELECT COALESCE(SUM(acl.amount), 0) AS total_comm 
+                                        FROM affiliate_commission_ledger acl 
+                                        JOIN affiliate_referrals ar ON ar.id = acl.referral_id 
+                                        WHERE (ar.user_id = '{$row['id']}' OR ar.user_id = '{$uid}')
+                                    ");
+                                    $aff_earning = ($comm_r = mysqli_fetch_assoc($comm_q)) ? (float)$comm_r['total_comm'] : 0;
+
                                     // Sports specific
                                     $s_bet = 0; $s_p_tot = 0; $s_p_amt = 0; $s_l_amt = 0;
                                     $s_q = mysqli_query($conn, "SELECT tbl_match_cost, tbl_match_profit FROM tblmatchplayed WHERE tbl_user_id='{$uid}' AND LOWER(tbl_project_name) IN ('saba sports', 'lucksport', 'lucksportgaming')");
@@ -567,10 +688,13 @@ if (isset($_GET['download']) && $_GET['download'] === 'excel') {
                                                 <div style="font-size: 10px; color: var(--accent-blue); opacity: 0.8;">(<?php echo htmlspecialchars($uid); ?>)</div>
                                             </div>
                                         </td>
+                                        <td>
+                                            <?php echo $aff_badge; ?>
+                                        </td>
                                         <td style="font-weight: 800; color: var(--text-main);">₹<?php echo number_format($bal, 2); ?></td>
                                         <td style="text-align: center;">
                                             <button class="btn-modern btn-primary-modern py-1 px-2 text-xs" style="height: 28px; font-size: 11px;" onclick="event.stopPropagation(); openAdjustBalanceModal('<?php echo htmlspecialchars($uid); ?>', '<?php echo htmlspecialchars($uname); ?>', <?php echo (float)$bal; ?>)">
-                                                <i class='bx bx-wallet'></i> ±
+                                                 <i class='bx bx-wallet'></i> ±
                                             </button>
                                         </td>
                                         <td style="color: var(--accent-emerald);">₹<?php echo number_format($dep, 2); ?></td>
@@ -582,6 +706,9 @@ if (isset($_GET['download']) && $_GET['download'] === 'excel') {
                                         </td>
                                         <td style="color: var(--accent-rose);">₹<?php echo number_format($wit, 2); ?></td>
                                         <td style="font-weight: 600;">₹<?php echo number_format($t_bet, 2); ?></td>
+                                        <td style="font-weight: 600; color: var(--accent-emerald);">₹<?php echo number_format($t_win, 2); ?></td>
+                                        <td style="font-weight: 600; color: var(--accent-rose);">₹<?php echo number_format($t_loss, 2); ?></td>
+                                        <td style="font-weight: 700; color: #38bdf8;">₹<?php echo number_format($aff_earning, 2); ?></td>
                                         <td style="font-weight: 600; color: var(--accent-amber);">₹<?php echo number_format($s_bet, 2); ?></td>
                                         <td style="font-weight: 700; color: <?php echo ($s_p_tot >= $s_bet) ? 'var(--accent-emerald)' : 'var(--accent-rose)'; ?>">
                                             ₹<?php echo number_format($s_p_tot, 2); ?>
@@ -590,9 +717,9 @@ if (isset($_GET['download']) && $_GET['download'] === 'excel') {
                                         <td style="font-family: monospace; font-size: 11px; color: var(--text-dim);"><?php echo $ip; ?></td>
                                         <td style="font-size: 11px; white-space: nowrap;"><?php echo htmlspecialchars($row['tbl_user_joined']); ?></td>
                                         <td>
-                                            <?php if($st_raw == "true"): ?>
+                                            <?php if($st_raw == "true" || $st_raw == "active" || $st_raw == "1"): ?>
                                                 <span class="status-badge status-active">Active</span>
-                                            <?php elseif($st_raw == "ban"): ?>
+                                            <?php elseif($st_raw == "ban" || $st_raw == "blocked"): ?>
                                                 <span class="status-badge status-banned">Banned</span>
                                             <?php else: ?>
                                                 <span class="status-badge status-inactive">In-Active</span>
@@ -602,13 +729,13 @@ if (isset($_GET['download']) && $_GET['download'] === 'excel') {
                                     <?php $indexVal++; 
                                 }
                             } else {
-                                echo "<tr><td colspan='14' class='text-center py-5 text-muted'>No user found matching criteria</td></tr>";
+                                echo "<tr><td colspan='18' class='text-center py-5 text-muted'>No user found matching criteria</td></tr>";
                             } ?>
                         </tbody>
                         <?php if ($indexVal > 1) { ?>
                         <tfoot style="background: var(--table-header-bg); border-top: 1px solid var(--border-dim);">
                             <tr style="font-weight: 700;">
-                                <td colspan="14">
+                                <td colspan="18">
                                     <div style="display: flex; align-items: center; gap: 30px; padding: 6px 0;">
                                         <div style="font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px;">Page Totals:</div>
                                         <div style="font-size: 13px; color: var(--text-main);">Balance: ₹<?php echo number_format($page_bal, 2); ?></div>
@@ -623,7 +750,7 @@ if (isset($_GET['download']) && $_GET['download'] === 'excel') {
                 </div>
 
                 <?php
-                $c_sql = "SELECT COUNT(*) as total FROM tblusersdata WHERE tbl_account_status='{$newRequestStatus}'";
+                $c_sql = "SELECT COUNT(*) as total FROM tblusersdata u WHERE $where_str";
                 $c_res = mysqli_query($conn, $c_sql);
                 $total_recs = ($c_row = mysqli_fetch_assoc($c_res)) ? (int)$c_row['total'] : 0;
                 $total_p = ceil($total_recs / $content);

@@ -139,7 +139,7 @@ $offset = ($page_num - 1) * $content;
         .filter-lbl { font-size: 8px; font-weight: 800; text-transform: uppercase; color: var(--text-dim); letter-spacing: 0.5px; margin-left: 2px; }
         .filter-inp-box { position: relative; display: flex; align-items: center; }
         .filter-inp-box i { position: absolute; left: 10px; font-size: 13px; color: var(--accent-blue); opacity: 0.6; }
-        .f-inp {
+        .f-inp { color-scheme: dark; 
             width:100%; height:32px; background: rgba(0,0,0,0.2) !important; border: 1px solid rgba(255,255,255,0.1) !important;
             border-radius:6px !important; padding: 0 8px 0 30px !important; color:#fff !important; font-size:11px !important;
         }

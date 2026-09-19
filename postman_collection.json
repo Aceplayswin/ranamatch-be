@@ -1,0 +1,1236 @@
+{
+    "info": {
+        "_postman_id": "ranamatch-agent-affiliate-api-v1",
+        "name": "RanaMatch Agent & Affiliate Backend API Collection",
+        "description": "Complete Postman collection for Agent Portal, Affiliate Portal, Admin Console Management, and System endpoints.\n\n### Environment Variables\n- `base_url`: `http://localhost/` or `http://localhost:8080/`\n- `agent_jwt_token`: Bearer JWT token from `/agent/auth/login`\n- `affiliate_jwt_token`: Bearer JWT token from `/affiliate/auth/login`\n- `admin_jwt_token`: Admin session / JWT token",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "variable": [
+        {
+            "key": "base_url",
+            "value": "http://localhost",
+            "type": "string"
+        },
+        {
+            "key": "agent_jwt_token",
+            "value": "",
+            "type": "string"
+        },
+        {
+            "key": "affiliate_jwt_token",
+            "value": "",
+            "type": "string"
+        },
+        {
+            "key": "admin_jwt_token",
+            "value": "",
+            "type": "string"
+        }
+    ],
+    "item": [
+        {
+            "name": "01. Agent Portal APIs",
+            "item": [
+                {
+                    "name": "Agent Login",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"username\": \"agent01\",\n    \"password\": \"password123\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/agent/auth/login",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "agent",
+                                "auth",
+                                "login"
+                            ]
+                        },
+                        "description": "Authenticates an agent and returns a JWT token in the response."
+                    }
+                },
+                {
+                    "name": "Agent Dashboard",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{agent_jwt_token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/agent/dashboard",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "agent",
+                                "dashboard"
+                            ]
+                        },
+                        "description": "Returns dashboard stats (balance, total downlines, turnover, commission earned)."
+                    }
+                },
+                {
+                    "name": "Get Downlines",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{agent_jwt_token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/agent/downlines",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "agent",
+                                "downlines"
+                            ]
+                        },
+                        "description": "Retrieves list of downline agents and players under the logged-in agent."
+                    }
+                },
+                {
+                    "name": "Create Downline Account",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{agent_jwt_token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"username\": \"subagent02\",\n    \"password\": \"password123\",\n    \"full_name\": \"Sub Agent Two\",\n    \"role\": \"agent\",\n    \"commission_rate\": 5\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/agent/downlines/create",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "agent",
+                                "downlines",
+                                "create"
+                            ]
+                        },
+                        "description": "Creates a new sub-agent or player downline."
+                    }
+                },
+                {
+                    "name": "Credit Transfer / Adjustment",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{agent_jwt_token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"target_agent_id\": 2,\n    \"type\": \"deposit\",\n    \"amount\": 100,\n    \"remarks\": \"Weekly credit allocation\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/agent/credit/transfer",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "agent",
+                                "credit",
+                                "transfer"
+                            ]
+                        },
+                        "description": "Transfers credit to or withdraws credit from a downline account."
+                    }
+                },
+                {
+                    "name": "Credit Statement / Logs",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{agent_jwt_token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/agent/credit/statement",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "agent",
+                                "credit",
+                                "statement"
+                            ]
+                        },
+                        "description": "Returns audit history of all credit movements and balance changes."
+                    }
+                },
+                {
+                    "name": "Agent P&L Report",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{agent_jwt_token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/agent/reports/pnl?start_date=2026-09-01&end_date=2026-09-04",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "agent",
+                                "reports",
+                                "pnl"
+                            ],
+                            "query": [
+                                {
+                                    "key": "start_date",
+                                    "value": "2026-09-01"
+                                },
+                                {
+                                    "key": "end_date",
+                                    "value": "2026-09-04"
+                                }
+                            ]
+                        },
+                        "description": "Profit and Loss report broke down by downlines for the date range."
+                    }
+                },
+                {
+                    "name": "Exposure Report",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{agent_jwt_token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/agent/reports/exposure",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "agent",
+                                "reports",
+                                "exposure"
+                            ]
+                        },
+                        "description": "Live exposure report showing active market risks across downlines."
+                    }
+                },
+                {
+                    "name": "Agent Profile Details",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{agent_jwt_token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/agent/profile",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "agent",
+                                "profile"
+                            ]
+                        },
+                        "description": "Returns logged-in agent profile configuration and rates."
+                    }
+                },
+                {
+                    "name": "Update Agent Profile",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{agent_jwt_token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"full_name\": \"Agent Primary\",\n    \"password\": \"newPassword123\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/agent/profile",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "agent",
+                                "profile"
+                            ]
+                        },
+                        "description": "Updates profile information or password for agent."
+                    }
+                }
+            ]
+        },
+        {
+            "name": "02. Affiliate Portal APIs",
+            "item": [
+                {
+                    "name": "Affiliate Register",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"username\": \"affiliate_user\",\n    \"password\": \"securePassword123\",\n    \"email\": \"partner@example.com\",\n    \"full_name\": \"Affiliate Partner\",\n    \"payment_method\": \"Bank Wire\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/affiliate/auth/register",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "affiliate",
+                                "auth",
+                                "register"
+                            ]
+                        },
+                        "description": "Registers a new affiliate application."
+                    }
+                },
+                {
+                    "name": "Affiliate Login",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"username\": \"affiliate_user\",\n    \"password\": \"securePassword123\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/affiliate/auth/login",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "affiliate",
+                                "auth",
+                                "login"
+                            ]
+                        },
+                        "description": "Authenticates an affiliate and returns a JWT token."
+                    }
+                },
+                {
+                    "name": "Affiliate Dashboard",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{affiliate_jwt_token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/affiliate/dashboard",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "affiliate",
+                                "dashboard"
+                            ]
+                        },
+                        "description": "Returns dashboard statistics (total clicks, registrations, active referrals, total earnings, pending payouts)."
+                    }
+                },
+                {
+                    "name": "Get Tracking Links",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{affiliate_jwt_token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/affiliate/links",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "affiliate",
+                                "links"
+                            ]
+                        },
+                        "description": "Retrieves active referral links for the affiliate."
+                    }
+                },
+                {
+                    "name": "Generate New Tracking Link",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{affiliate_jwt_token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"campaign_name\": \"Summer Promo 2026\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/affiliate/links",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "affiliate",
+                                "links"
+                            ]
+                        },
+                        "description": "Generates a custom tracking link for campaigns."
+                    }
+                },
+                {
+                    "name": "Get Referred Players",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{affiliate_jwt_token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/affiliate/referrals",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "affiliate",
+                                "referrals"
+                            ]
+                        },
+                        "description": "Lists players who registered via affiliate's referral link."
+                    }
+                },
+                {
+                    "name": "Get Earnings Ledger",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{affiliate_jwt_token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/affiliate/earnings",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "affiliate",
+                                "earnings"
+                            ]
+                        },
+                        "description": "Detailed ledger of commission payouts and revenue shares."
+                    }
+                },
+                {
+                    "name": "Request Payout Withdrawal",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{affiliate_jwt_token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"amount\": 150,\n    \"payout_method\": \"Bank Transfer\",\n    \"payment_details\": \"IBAN: US1234567890\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/affiliate/payouts/request",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "affiliate",
+                                "payouts",
+                                "request"
+                            ]
+                        },
+                        "description": "Submits a request to withdraw earned affiliate commissions."
+                    }
+                },
+                {
+                    "name": "Get Payout History",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{affiliate_jwt_token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/affiliate/payouts/history",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "affiliate",
+                                "payouts",
+                                "history"
+                            ]
+                        },
+                        "description": "Lists previous withdrawal requests and their current approval status."
+                    }
+                },
+                {
+                    "name": "Get Payment Methods",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{affiliate_jwt_token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/affiliate/methods",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "affiliate",
+                                "methods"
+                            ]
+                        },
+                        "description": "Lists saved payment withdrawal methods."
+                    }
+                },
+                {
+                    "name": "Save Payment Method",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{affiliate_jwt_token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"type\": \"Bank Account\",\n    \"bank_name\": \"Global Bank\",\n    \"account_name\": \"John Doe\",\n    \"account_number\": \"9876543210\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/affiliate/methods",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "affiliate",
+                                "methods"
+                            ]
+                        },
+                        "description": "Adds or modifies receiving payment methods."
+                    }
+                }
+            ]
+        },
+        {
+            "name": "03. Admin Agent Management APIs",
+            "item": [
+                {
+                    "name": "Admin - List Agents",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{admin_jwt_token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/admin/agents/api_list",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "admin",
+                                "agents",
+                                "api_list"
+                            ]
+                        },
+                        "description": "Lists all agents in system with search/filter options."
+                    }
+                },
+                {
+                    "name": "Admin - Agent Detail",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{admin_jwt_token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/admin/agents/detail/api_detail?agent_id=1",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "admin",
+                                "agents",
+                                "detail",
+                                "api_detail"
+                            ],
+                            "query": [
+                                {
+                                    "key": "agent_id",
+                                    "value": "1"
+                                }
+                            ]
+                        },
+                        "description": "Returns full profile details and downlines of an agent."
+                    }
+                },
+                {
+                    "name": "Admin - Agent Credit Adjustment",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{admin_jwt_token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"agent_id\": 1,\n    \"amount\": 500,\n    \"type\": \"add\",\n    \"remarks\": \"System credit grant by Super Admin\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/admin/agents/credit/api_credit",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "admin",
+                                "agents",
+                                "credit",
+                                "api_credit"
+                            ]
+                        },
+                        "description": "Direct admin credit deposit/deduction for an agent."
+                    }
+                },
+                {
+                    "name": "Admin - Update Agent Status",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{admin_jwt_token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"agent_id\": 1,\n    \"status\": \"active\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/admin/agents/status/api_status",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "admin",
+                                "agents",
+                                "status",
+                                "api_status"
+                            ]
+                        },
+                        "description": "Changes agent status (active, suspended, blocked)."
+                    }
+                },
+                {
+                    "name": "Admin - Get Agent Applications",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{admin_jwt_token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/admin/agents/applications/api_applications",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "admin",
+                                "agents",
+                                "applications",
+                                "api_applications"
+                            ]
+                        },
+                        "description": "Lists pending agent registration applications."
+                    }
+                },
+                {
+                    "name": "Admin - Process Agent Application",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{admin_jwt_token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"application_id\": 5,\n    \"action\": \"approve\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/admin/agents/applications/api_applications",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "admin",
+                                "agents",
+                                "applications",
+                                "api_applications"
+                            ]
+                        },
+                        "description": "Approves or rejects a pending agent application."
+                    }
+                },
+                {
+                    "name": "Admin - Agent Global Settings",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{admin_jwt_token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/admin/agents/settings/api_settings",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "admin",
+                                "agents",
+                                "settings",
+                                "api_settings"
+                            ]
+                        },
+                        "description": "Retrieves global agent management configuration."
+                    }
+                },
+                {
+                    "name": "Admin - Save Agent Global Settings",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{admin_jwt_token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"max_tier_depth\": 5,\n    \"default_commission_rate\": 5\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/admin/agents/settings/api_settings",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "admin",
+                                "agents",
+                                "settings",
+                                "api_settings"
+                            ]
+                        },
+                        "description": "Updates global agent management rules."
+                    }
+                }
+            ]
+        },
+        {
+            "name": "04. Admin Affiliate Management APIs",
+            "item": [
+                {
+                    "name": "Admin - List Affiliates",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{admin_jwt_token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/admin/affiliates/api_list",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "admin",
+                                "affiliates",
+                                "api_list"
+                            ]
+                        },
+                        "description": "Lists all affiliates with search and status filtering."
+                    }
+                },
+                {
+                    "name": "Admin - Update Affiliate Tier / Status",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{admin_jwt_token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"affiliate_id\": 1,\n    \"tier_id\": 2,\n    \"status\": \"active\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/admin/affiliates/api_list",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "admin",
+                                "affiliates",
+                                "api_list"
+                            ]
+                        },
+                        "description": "Updates affiliate tier assignment or status."
+                    }
+                },
+                {
+                    "name": "Admin - Trigger Commission Worker",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{admin_jwt_token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"date\": \"2026-09-03\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/admin/affiliates/commissions/run",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "admin",
+                                "affiliates",
+                                "commissions",
+                                "run"
+                            ]
+                        },
+                        "description": "Manually triggers daily commission processing for a specific date."
+                    }
+                },
+                {
+                    "name": "Admin - List Affiliate Payout Requests",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{admin_jwt_token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/admin/affiliates/payouts/api_payouts",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "admin",
+                                "affiliates",
+                                "payouts",
+                                "api_payouts"
+                            ]
+                        },
+                        "description": "Lists pending and completed affiliate withdrawal requests."
+                    }
+                },
+                {
+                    "name": "Admin - Process Affiliate Payout Request",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{admin_jwt_token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"payout_id\": 1,\n    \"action\": \"approve\",\n    \"transaction_ref\": \"TXN-99887766\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/admin/affiliates/payouts/api_payouts",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "admin",
+                                "affiliates",
+                                "payouts",
+                                "api_payouts"
+                            ]
+                        },
+                        "description": "Approves or rejects an affiliate payout withdrawal request."
+                    }
+                },
+                {
+                    "name": "Admin - Affiliate Global Settings",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{admin_jwt_token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/admin/affiliates/settings/api_settings",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "admin",
+                                "affiliates",
+                                "settings",
+                                "api_settings"
+                            ]
+                        },
+                        "description": "Retrieves affiliate commission rates and minimum payout thresholds."
+                    }
+                },
+                {
+                    "name": "Admin - Save Affiliate Global Settings",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{admin_jwt_token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"min_payout_amount\": 50,\n    \"default_commission_rate\": 10\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/admin/affiliates/settings/api_settings",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "admin",
+                                "affiliates",
+                                "settings",
+                                "api_settings"
+                            ]
+                        },
+                        "description": "Updates affiliate commission rates and minimum payout rules."
+                    }
+                }
+            ]
+        }
+    ]
+}

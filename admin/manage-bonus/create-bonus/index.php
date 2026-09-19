@@ -167,7 +167,7 @@ if ($is_edit) {
             padding: 0 12px !important; color: var(--text-main) !important; font-size: 13px !important;
             transition: all 0.3s ease;
         }
-        .cus-sel option {
+        .cus-sel option { color-scheme: dark; background-color: #0f172a !important; color: #f8fafc !important; 
             background-color: var(--panel-bg) !important;
             color: var(--text-main) !important;
         }

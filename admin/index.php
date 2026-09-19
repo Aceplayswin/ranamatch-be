@@ -298,7 +298,7 @@ if (isset($_POST['submit'])){
         }
 
         /* Replaced .input-ctrl input styles with .cus-inp */
-        .cus-inp {
+        .cus-inp { color-scheme: dark; 
             width: 100%; height: 56px; background: var(--input-bg) !important;
             border: 1px solid var(--input-border) !important; border-radius: 16px !important;
             padding: 0 54px 0 24px !important; color: var(--text-main) !important; font-size: 15px !important;

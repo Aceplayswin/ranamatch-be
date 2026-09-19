@@ -55,6 +55,72 @@ if ($reward_res = mysqli_query($conn, $reward_sql)) {
     $reward_row = mysqli_fetch_assoc($reward_res);
     $user_reward_balance = $reward_row['total'] ?? 0;
 }
+
+// Affiliate / Sponsor Attribution
+$internal_uid = $select_res_data['id'];
+$aff_info_q = mysqli_query($conn, "
+    SELECT af.id AS aff_id, af.affiliate_code, af.full_name, af.parent_id,
+           paf.id AS parent_aff_id, paf.affiliate_code AS parent_aff_code, paf.full_name AS parent_aff_name
+    FROM affiliate_referrals ar
+    JOIN affiliates af ON af.id = ar.affiliate_id
+    LEFT JOIN affiliates paf ON paf.id = af.parent_id
+    WHERE ar.user_id = '{$internal_uid}' OR ar.user_id = '{$user_id}'
+    LIMIT 1
+");
+$aff_display = "<span style='color: var(--text-dim); opacity: 0.6;'>Direct / Organic</span>";
+if ($aff_info = mysqli_fetch_assoc($aff_info_q)) {
+    $aff_id = (int)$aff_info['aff_id'];
+    $aff_display = "<a href='../affiliates/detail/index.php?id={$aff_id}' style='color: #38bdf8; text-decoration: none;' onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">";
+    $aff_display .= "<i class='bx bx-link-alt'></i> " . htmlspecialchars($aff_info['full_name']) . " (" . htmlspecialchars($aff_info['affiliate_code']) . ")</a>";
+    if (!empty($aff_info['parent_id'])) {
+        $parent_aff_id = (int)$aff_info['parent_aff_id'];
+        $aff_display .= " <br><span style='font-size: 10px; color: #a855f7;'><i class='bx bx-git-repo-forked'></i> Sub-Aff via <a href='../affiliates/detail/index.php?id={$parent_aff_id}' style='color: #a855f7; text-decoration: none;' onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">" . htmlspecialchars($aff_info['parent_aff_name'] ?: $aff_info['parent_aff_code']) . "</a></span>";
+    }
+} elseif (!empty($user_refered_by)) {
+    $j_code = mysqli_real_escape_string($conn, $user_refered_by);
+    $af_d = mysqli_fetch_assoc(mysqli_query($conn, "SELECT id, affiliate_code, full_name FROM affiliates WHERE affiliate_code = '$j_code' LIMIT 1"));
+    if ($af_d) {
+        $aff_id = (int)$af_d['id'];
+        $aff_display = "<a href='../affiliates/detail/index.php?id={$aff_id}' style='color: #38bdf8; text-decoration: none;' onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">";
+        $aff_display .= "<i class='bx bx-link-alt'></i> " . htmlspecialchars($af_d['full_name']) . " (" . htmlspecialchars($af_d['affiliate_code']) . ")</a>";
+    } else {
+        $ag_d = mysqli_fetch_assoc(mysqli_query($conn, "SELECT id, agent_code, username FROM agents WHERE agent_code = '$j_code' OR id = '$j_code' LIMIT 1"));
+        if ($ag_d) {
+            $ag_id = (int)$ag_d['id'];
+            $ag_code = urlencode($ag_d['agent_code'] ?: $j_code);
+            $aff_display = "<a href='../agents/detail/index.php?id={$ag_id}&code={$ag_code}' style='color: #34d399; text-decoration: none;' onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">";
+            $aff_display .= "<i class='bx bx-user-pin'></i> Agent: " . htmlspecialchars($ag_d['username'] ?: $ag_d['agent_code']) . "</a>";
+        } else {
+            $enc_code = urlencode($user_refered_by);
+            $aff_display = "<a href='../agents/detail/index.php?code={$enc_code}' style='color: #34d399; text-decoration: none;' onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">";
+            $aff_display .= "<i class='bx bx-user-pin'></i> " . htmlspecialchars($user_refered_by) . "</a>";
+        }
+    }
+}
+
+// Financial Metrics
+$dep_res = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COALESCE(SUM(tbl_recharge_amount), 0) AS total FROM tblusersrecharge WHERE tbl_user_id='{$user_id}' AND tbl_request_status='success'"));
+$total_deposits = (float)($dep_res['total'] ?? 0);
+
+$wd_res = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COALESCE(SUM(tbl_withdraw_amount), 0) AS total FROM tbluserswithdraw WHERE tbl_user_id='{$user_id}' AND tbl_request_status='success'"));
+$total_withdrawals = (float)($wd_res['total'] ?? 0);
+
+$bet_res = mysqli_fetch_assoc(mysqli_query($conn, "SELECT 
+    COALESCE(SUM(tbl_match_cost), 0) AS total_bet,
+    COALESCE(SUM(tbl_match_profit), 0) AS total_win,
+    COALESCE(SUM(CASE WHEN tbl_match_profit = 0 THEN tbl_match_cost WHEN tbl_match_profit < tbl_match_cost THEN (tbl_match_cost - tbl_match_profit) ELSE 0 END), 0) AS total_loss
+FROM tblmatchplayed WHERE tbl_user_id='{$user_id}'"));
+$total_bets = (float)($bet_res['total_bet'] ?? 0);
+$total_wins = (float)($bet_res['total_win'] ?? 0);
+$total_losses = (float)($bet_res['total_loss'] ?? 0);
+
+$comm_res = mysqli_fetch_assoc(mysqli_query($conn, "
+    SELECT COALESCE(SUM(acl.amount), 0) AS total_comm 
+    FROM affiliate_commission_ledger acl 
+    JOIN affiliate_referrals ar ON ar.id = acl.referral_id 
+    WHERE ar.user_id = '{$internal_uid}' OR ar.user_id = '{$user_id}'
+"));
+$total_aff_earning = (float)($comm_res['total_comm'] ?? 0);
 ?>
 
 <!DOCTYPE html>
@@ -270,14 +336,14 @@ if ($reward_res = mysqli_query($conn, $reward_sql)) {
 
             <div class="dash-header">
                 <div class="dash-header-left">
-                    <div class="back-btn" onclick="window.history.back()"><i class='bx bx-left-arrow-alt'></i></div>
+                    <div class="back-btn" onclick="if(document.referrer && document.referrer !== location.href){ history.back(); } else { window.location.href='index.php'; }" title="Go Back"><i class='bx bx-left-arrow-alt'></i></div>
                     <div>
                         <span class="dash-breadcrumb">User Manager > Controls</span>
                         <span class="dash-title"><?php echo htmlspecialchars($user_full_name); ?></span>
                     </div>
                 </div>
                 <div class="dash-header-right">
-                    <?php if ($user_status == "true"): ?>
+                    <?php if ($user_status == "true" || $user_status == "active"): ?>
                         <span class="status-pill status-active">Account Active</span>
                     <?php else: ?>
                         <span class="status-pill status-banned">Account Restricted</span>
@@ -308,10 +374,14 @@ if ($reward_res = mysqli_query($conn, $reward_sql)) {
                     </div>
                     <div class="info-item"><span class="info-label">Rewards</span><span
                             class="info-value">₹<?php echo number_format($user_reward_balance, 2); ?></span></div>
-                    <div class="info-item"><span class="info-label">Account Level</span><span class="info-value">Lv.
-                            <?php echo $account_level; ?></span></div>
-                    <div class="info-item"><span class="info-label">Referrer</span><span
-                            class="info-value"><?php echo $user_refered_by ?: 'Organic'; ?></span></div>
+                    <div class="info-item"><span class="info-label">Account Level</span><span class="info-value">Lv. <?php echo $account_level; ?></span></div>
+                    <div class="info-item"><span class="info-label">Affiliate / Sponsor</span><span class="info-value" style="color: #38bdf8; font-weight: 700;"><?php echo $aff_display; ?></span></div>
+                    <div class="info-item"><span class="info-label">Total Deposits</span><span class="info-value" style="color: var(--status-success);">₹<?php echo number_format($total_deposits, 2); ?></span></div>
+                    <div class="info-item"><span class="info-label">Total Withdrawals</span><span class="info-value" style="color: var(--status-danger);">₹<?php echo number_format($total_withdrawals, 2); ?></span></div>
+                    <div class="info-item"><span class="info-label">Total Bets (Turnover)</span><span class="info-value">₹<?php echo number_format($total_bets, 2); ?></span></div>
+                    <div class="info-item"><span class="info-label">Winning</span><span class="info-value" style="color: var(--status-success);">₹<?php echo number_format($total_wins, 2); ?></span></div>
+                    <div class="info-item"><span class="info-label">Loss</span><span class="info-value" style="color: var(--status-danger);">₹<?php echo number_format($total_losses, 2); ?></span></div>
+                    <div class="info-item"><span class="info-label">Affiliate Earning</span><span class="info-value" style="color: #38bdf8; font-weight: 800;">₹<?php echo number_format($total_aff_earning, 2); ?></span></div>
                     <div class="info-item"><span class="info-label">Last Active</span><span
                             class="info-value"><?php echo $user_last_active_date . ' ' . $user_last_active_time; ?></span>
                     </div>
@@ -322,7 +392,7 @@ if ($reward_res = mysqli_query($conn, $reward_sql)) {
                 <div class="actions-panel">
                     <h4 style="font-weight: 800; margin-bottom: 15px; color: var(--accent-blue);">Management Tools</h4>
 
-                    <?php if ($user_status == "true"): ?>
+                    <?php if ($user_status == "true" || $user_status == "active"): ?>
                         <button class="btn-action btn-status-ban" onclick="BanAccount()">
                             <span>Restrict/Ban Account</span>
                             <i class='bx bx-block'></i>

@@ -80,6 +80,23 @@ else if ($action == "update_contacts") {
     header("Location: site-branding.php?msg=Contacts updated successfully&v=" . time());
 }
 
+else if ($action == "update_financial_limits") {
+    $min_rec = preg_replace('/[^0-9]/', '', $_POST['min_recharge'] ?? '500');
+    $min_wd = preg_replace('/[^0-9]/', '', $_POST['min_withdraw'] ?? '1000');
+    $rec_opt = preg_replace('/[^0-9,]/', '', $_POST['recharge_options'] ?? '500,1000,2000,5000,10000,25000,50000');
+
+    if (empty($min_rec)) $min_rec = "500";
+    if (empty($min_wd)) $min_wd = "1000";
+
+    upsert_service($conn, 'MIN_RECHARGE', $min_rec);
+    upsert_service($conn, 'MIN_WITHDRAW', $min_wd);
+    if (!empty($rec_opt)) {
+        upsert_service($conn, 'RECHARGE_OPTIONS', $rec_opt);
+    }
+
+    header("Location: site-branding.php?msg=Financial limits and deposit presets updated successfully&v=" . time());
+}
+
 else if ($action == "update_site_texts") {
     $address = mysqli_real_escape_string($conn, $_POST['site_address']);
     $tagline = mysqli_real_escape_string($conn, $_POST['site_tagline']);

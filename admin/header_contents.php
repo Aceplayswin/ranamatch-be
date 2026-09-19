@@ -1,7 +1,9 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width , initial-scale=1">
+<meta name="color-scheme" content="dark">
 <?php 
+    if (function_exists('opcache_reset')) { @opcache_reset(); }
     if(!defined("ACCESS_SECURITY")) define("ACCESS_SECURITY", "true");
     
     // Dynamically calculate the root path
@@ -35,6 +37,10 @@
     :root {
         --font-heading: 'Outfit', sans-serif;
         --font-body: 'Inter', sans-serif;
+        color-scheme: dark !important;
+    }
+    html, body {
+        color-scheme: dark !important;
     }
     body, html {
         font-family: var(--font-body) !important;
@@ -55,8 +61,19 @@
         font-size: 11px !important;
     }
     input, select, textarea, button, .cus-inp, .cus-sel {
+        color-scheme: dark !important; 
         font-family: var(--font-body) !important;
         font-size: 13px !important;
+    }
+    select {
+        color-scheme: dark !important;
+        background-color: #0f172a !important;
+        color: #ffffff !important;
+    }
+    option, optgroup {
+        background-color: #ffffff !important;
+        color: #0f172a !important;
+        font-weight: 600 !important;
     }
 </style>
 
@@ -69,6 +86,7 @@
         },
         setTheme: function (theme) {
             document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-bs-theme', theme);
             localStorage.setItem('admin-theme', theme);
             const updateIcons = () => {
                 const darkIcons = document.querySelectorAll('.theme-icon-dark');

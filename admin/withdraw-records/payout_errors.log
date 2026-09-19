@@ -1,2 +1,28 @@
 2026-04-11 16:11:53 - Payout Failed - Order: 901218506769278, User: 1111111, Response: 
 {"status":"failed","message":"Your mid,mkey and guid is invalid","code":"PPT_400"}
+2026-08-17 15:14:35 - Payout Failed - Order: 043696408611639, User: 7947785, Response: 
+{"status":"failed","message":"Your mid,mkey and guid is invalid","code":"PPT_400"}
+2026-08-17 15:14:47 - Payout Failed - Order: 043696408611639, User: 7947785, Response: 
+{"status":"failed","message":"Your mid,mkey and guid is invalid","code":"PPT_400"}
+2026-08-17 15:22:04 - Payout Failed - Order: 043696408611639, User: 7947785, cURL Error: , Response: 
+{"status":"failed","message":"Your mid,mkey and guid is invalid","code":"PPT_400"}
+2026-08-17 15:23:08 - Payout Failed - Order: 740654472776461, User: 7947785, cURL Error: , Response: 
+{"status":"failed","message":"Your mid,mkey and guid is invalid","code":"PPT_400"}
+2026-08-17 15:23:11 - Payout Failed - Order: 740654472776461, User: 7947785, cURL Error: , Response: 
+{"status":"failed","message":"Your mid,mkey and guid is invalid","code":"PPT_400"}
+2026-08-17 15:23:21 - Payout Failed - Order: 740654472776461, User: 7947785, cURL Error: , Response: 
+{"status":"failed","message":"Your mid,mkey and guid is invalid","code":"PPT_400"}
+2026-09-10 15:42:36 - Payout Failed - Order: 137432787837818, User: 5522975, cURL Error: , Response: 
+{"status":"failed","message":"Your mid,mkey and guid is invalid","code":"PPT_400"}
+2026-09-10 15:50:25 - Payout Failed - Order: 137432787837818, User: 5522975, HTTP Code: 200, cURL Error: , Response: 
+{"status":"failed","message":"Your mid,mkey and guid is invalid","code":"PPT_400"}
+2026-09-10 15:50:31 - Payout Failed - Order: 137432787837818, User: 5522975, HTTP Code: 200, cURL Error: , Response: 
+{"status":"failed","message":"Your mid,mkey and guid is invalid","code":"PPT_400"}
+2026-09-10 15:51:37 - Payout Failed - Order: 137432787837818, User: 5522975, HTTP Code: 200, cURL Error: , Response: 
+{"status":"failed","message":"Your mid,mkey and guid is invalid","code":"PPT_400"}
+2026-09-10 15:51:47 - Payout Failed - Order: 137432787837818, User: 5522975, HTTP Code: 200, cURL Error: , Response: 
+{"status":"failed","message":"Your mid,mkey and guid is invalid","code":"PPT_400"}
+2026-09-10 15:53:26 - Payout Failed - Order: 255981947603236, User: 5522975, HTTP Code: 200, cURL Error: , Response: 
+{"status":"failed","message":"Your mid,mkey and guid is invalid","code":"PPT_400"}
+2026-09-10 15:53:39 - Payout Failed - Order: 255981947603236, User: 5522975, HTTP Code: 200, cURL Error: , Response: 
+{"status":"failed","message":"Your mid,mkey and guid is invalid","code":"PPT_400"}

@@ -128,7 +128,7 @@ if ($is_edit) {
             padding: 0 12px !important; color: var(--text-main) !important; font-size: 13px !important;
             transition: all 0.3s ease;
         }
-        .cus-sel option { background-color: var(--panel-bg) !important; color: var(--text-main) !important; }
+        .cus-sel option { color-scheme: dark; background-color: #0f172a !important; color: #f8fafc !important;  background-color: var(--panel-bg) !important; color: var(--text-main) !important; }
         .cus-inp:focus, .cus-sel:focus, .cus-txt:focus { border-color: var(--accent-blue) !important; background: var(--input-bg) !important; box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1) !important; outline: none; }
         .cus-txt { height: 80px !important; padding: 12px !important; resize: none; }
 

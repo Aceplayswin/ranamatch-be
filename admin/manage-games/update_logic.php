@@ -10,6 +10,12 @@ if ($access->validate() == "false") {
     die();
 }
 
+// Self-healing migration for navbar_category
+$checkCol = mysqli_query($conn, "SHOW COLUMNS FROM tbl_games LIKE 'navbar_category'");
+if ($checkCol && mysqli_num_rows($checkCol) == 0) {
+    mysqli_query($conn, "ALTER TABLE tbl_games ADD COLUMN navbar_category VARCHAR(50) DEFAULT NULL");
+}
+
 // Handle JSON body (for reorder drag-drop)
 $json_body = json_decode(file_get_contents('php://input'), true);
 if ($json_body && isset($json_body['action'])) {
@@ -89,6 +95,7 @@ switch ($action) {
         $game_category = mysqli_real_escape_string($conn, $_POST['game_category']);
         $game_provider = mysqli_real_escape_string($conn, $_POST['game_provider']);
         $game_image = mysqli_real_escape_string($conn, $_POST['game_image']);
+        $navbar_category = isset($_POST['navbar_category']) && $_POST['navbar_category'] !== '' ? "'" . mysqli_real_escape_string($conn, $_POST['navbar_category']) . "'" : "NULL";
         
         if ($id > 0) {
             // Update
@@ -97,17 +104,17 @@ switch ($action) {
                     game_uid = '$game_uid', 
                     game_category = '$game_category', 
                     game_provider = '$game_provider', 
-                    game_image = '$game_image' 
+                    game_image = '$game_image', navbar_category = $navbar_category 
                     WHERE id = $id";
         } else {
             // Insert or Update on Duplicate Key
-            $sql = "INSERT INTO tbl_games (game_name, game_uid, game_category, game_provider, game_image, game_status, sort_order) 
-                    VALUES ('$game_name', '$game_uid', '$game_category', '$game_provider', '$game_image', 1, 0)
+            $sql = "INSERT INTO tbl_games (game_name, game_uid, game_category, game_provider, game_image, game_status, sort_order, navbar_category) 
+                    VALUES ('$game_name', '$game_uid', '$game_category', '$game_provider', '$game_image', 1, 0, $navbar_category)
                     ON DUPLICATE KEY UPDATE 
                     game_name = VALUES(game_name),
                     game_category = VALUES(game_category),
                     game_provider = VALUES(game_provider),
-                    game_image = VALUES(game_image)";
+                    game_image = VALUES(game_image), navbar_category = VALUES(navbar_category)";
         }
 
         if (mysqli_query($conn, $sql)) {
@@ -173,13 +180,13 @@ switch ($action) {
             
             if (!$name || !$uid) continue;
             
-            $sql = "INSERT INTO tbl_games (game_name, game_uid, game_category, game_provider, game_image, game_status, sort_order) 
+            $sql = "INSERT INTO tbl_games (game_name, game_uid, game_category, game_provider, game_image, game_status, sort_order, navbar_category) 
                     VALUES ('$name', '$uid', '$category', '$provider', '$image', 1, 0)
                     ON DUPLICATE KEY UPDATE 
                     game_name = VALUES(game_name),
                     game_category = VALUES(game_category),
                     game_provider = VALUES(game_provider),
-                    game_image = VALUES(game_image)";
+                    game_image = VALUES(game_image), navbar_category = VALUES(navbar_category)";
             
             if (mysqli_query($conn, $sql)) {
                 $count++;

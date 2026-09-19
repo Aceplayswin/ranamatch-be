@@ -8,12 +8,10 @@ $resArr = array();
 $resArr['status_code'] = "success";
 $resArr['data'] = array();
 
-// Optional: Filter by category or provider if passed
+// Optional: Filter by category, provider, or navbar_category if passed
 $category = isset($_GET['category']) ? mysqli_real_escape_string($conn, $_GET['category']) : '';
 $provider = isset($_GET['provider']) ? mysqli_real_escape_string($conn, $_GET['provider']) : '';
-
-// Add this for debugging so you can see if the filter is received
-$resArr['active_filter'] = $provider ? $provider : ($category ? $category : 'none');
+$navbar_category = isset($_GET['navbar_category']) ? mysqli_real_escape_string($conn, $_GET['navbar_category']) : '';
 
 $where = "WHERE game_status = 1";
 if ($category) {
@@ -22,8 +20,11 @@ if ($category) {
 if ($provider) {
     $where .= " AND game_provider = '$provider'";
 }
+if ($navbar_category) {
+    $where .= " AND navbar_category = '$navbar_category'";
+}
 
-$sql = "SELECT game_uid, game_name, game_category, game_provider, game_image as icon, is_featured, sort_order 
+$sql = "SELECT game_uid, game_name, game_category, navbar_category, game_provider, game_image as icon, is_featured, sort_order 
         FROM tbl_games 
         $where 
         ORDER BY sort_order ASC, id ASC";
@@ -42,6 +43,8 @@ if ($result) {
             "Game Name" => $row['game_name'],
             "Game UID" => $row['game_uid'],
             "Game Type" => $row['game_category'],
+            "navbar_category" => $row['navbar_category'] ?: "",
+            "Navbar Category" => $row['navbar_category'] ?: "",
             "Game Provider" => $row['game_provider'],
             "icon" => $row['icon'],
             "is_featured" => (int)$row['is_featured'],

@@ -104,8 +104,6 @@ if (mysqli_num_rows($select_query) > 0) {
     } elseif ($const_withdraw_amount < $service_min_withdraw) {
         $resArr['status_code'] = "minimum_withdraw_error";
         $resArr['minimum_withdraw'] = $service_min_withdraw;
-    } elseif ($account_level < 2) {
-        $resArr['status_code'] = "no_premium";
     } else {
         $decoded_password = 1;
 

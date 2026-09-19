@@ -107,3 +107,13 @@
     --status-danger: #dc2626;
     --status-info: #2563eb;
 }
+
+
+/* Universal Select Dropdown Dark Mode Fix */
+select, option {
+    color-scheme: dark !important;
+}
+select option, option {
+    background-color: #0f172a !important;
+    color: #f8fafc !important;
+}

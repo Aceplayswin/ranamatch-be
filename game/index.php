@@ -6,6 +6,7 @@ define("ACCESS_SECURITY", "true");
 
 include "../security/config.php";
 include "../security/constants.php";
+require_once __DIR__ . "/../services/BetSettlementService.php";
 date_default_timezone_set("Asia/Kolkata");
 
 
@@ -197,7 +198,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // 2. Dynamic Database Lookup (Recover names for requests that are missing them)
-    if ($const_game_name == "" && $const_game_uid != "N/A") {
+    if (    $const_game_name == "" && $const_game_uid != "N/A") {
         $look_stmt = $conn->prepare("SELECT tbl_game_name FROM tbl_game_names WHERE tbl_game_id = ?");
         $look_stmt->bind_param("s", $const_game_uid);
         $look_stmt->execute();
@@ -246,8 +247,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (in_array($const_game_uid, $sports_game_uids) || 
         stripos($const_provider, "SABA") !== false || 
         stripos($const_provider, "Luck") !== false ||
-        stripos($const_game_name, "Sports") !== false) {
-        $is_sports = true;
+        stripos($const_game_name, "Sports") !== false)
+    {
+        $is_sports = true;  
     }
 
     // SABA/Sports Advanced Extraction
@@ -797,6 +799,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($merged_record) {
                 $rid = intval($merged_record["id"]);
                 $existing_profit = floatval($merged_record["tbl_match_profit"]);
+                $was_pending = strtolower($merged_record["tbl_match_status"] ?? '') === 'wait';
                 $new_profit = max($existing_profit, $win_amount);
                 $new_cost = $previous_cost + $net_bet_change;
 
@@ -834,9 +837,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 $ustmt = $conn->prepare("UPDATE tblmatchplayed SET tbl_match_cost = ?, tbl_match_invested = ?, tbl_match_profit = ?, tbl_last_acbalance = ?, tbl_match_status = ?, tbl_match_result = ?, tbl_result_time = ?, tbl_notified = 0, tbl_notify_at = NOW() WHERE id = ?");
                 $ustmt->bind_param("ddddsssi", $new_cost, $new_cost, $new_profit, $e_bal, $new_status, $new_result, $final_res_time, $rid);
-                $ustmt->execute();
+                $updated = $ustmt->execute();
                 $ustmt->close();
                 $merged = true;
+
+                if ($updated && $was_pending && in_array($new_result, ['won', 'lost'], true)) {
+                    $settlementService = new BetSettlementService($conn);
+                    $settlementService->onBetSettled($const_user_id, $rid, $new_cost, $new_profit, $new_result, [
+                        'event_name' => $merged_record['tbl_project_name'] ?? 'Game Fixture',
+                        'market_name' => $merged_record['tbl_bet_type'] ?? 'Match Odds',
+                        'selection_name' => $merged_record['tbl_selection'] ?? 'Selection',
+                        'odds' => (float)($merged_record['tbl_odds'] ?? 1.95),
+                        'game_type' => ($is_sports ? 'sports' : 'casino')
+                    ]);
+                }
 
                 // DIAGNOSTIC LOGGING
                 $log_upd = date("Y-m-d H:i:s") . " | UPD | Match Found ID: $rid | New Status: $new_status | Profit: $new_profit | Cost: $new_cost\n";
@@ -873,6 +887,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $istmt = $conn->prepare("INSERT IGNORE INTO tblmatchplayed (tbl_user_id, tbl_uniq_id, tbl_period_id, tbl_invested_on, tbl_match_cost, tbl_match_invested, tbl_match_profit, tbl_match_result, tbl_last_acbalance, tbl_match_status, tbl_project_name, tbl_match_details, tbl_bet_type, tbl_selection, tbl_odds, tbl_time_stamp, tbl_result_time, tbl_notified, tbl_notify_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, NOW())");
                 $istmt->bind_param("ssssdddssssssssss", $const_user_id, $m_order_id, $const_game_uid, $const_game_name, $bet_amount, $bet_amount, $win_amount, $m_result, $real_bal, $m_status, $const_game_name, $match_details, $bet_type, $selection, $odds, $m_time, $r_time_val);
                 if ($istmt->execute()) {
+                    $newBetId = mysqli_insert_id($conn);
+                    $betService = new BetSettlementService($conn);
+                    $betMeta = [
+                        'event_name' => $const_game_name ?: 'Game Fixture',
+                        'market_name' => $bet_type ?: 'Main Market',
+                        'selection_name' => $selection ?: 'Selection',
+                        'odds' => (float)($odds ?: 1.95),
+                        'game_type' => ($is_sports ? 'sports' : 'casino')
+                    ];
+                    if (strtolower($m_status) === 'wait' && $net_bet_change > 0) {
+                        $betService->onBetPlaced($const_user_id, $net_bet_change, $newBetId, $betMeta);
+                    } elseif (in_array($m_result, ['won', 'lost'], true)) {
+                        $betService->onBetSettled($const_user_id, $newBetId, $bet_amount, $win_amount, $m_result, $betMeta);
+                    }
                     $log_ins = date("Y-m-d H:i:s") . " | INS | New Record Created | Status: $m_status | ID: $m_order_id\n";
                 } else {
                     $log_ins = date("Y-m-d H:i:s") . " | ERR | Insert Failed: " . $istmt->error . "\n";

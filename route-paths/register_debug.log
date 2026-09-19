@@ -34,3 +34,43 @@
 2026-05-09 18:40:52 - Checking account info for: 9072130225 / irshad
 2026-05-09 18:40:52 - Creating new account session
 2026-05-09 18:40:52 - Account entry inserted for: 5496998
+2026-09-10 14:07:25 - Checking OTP: 798404 for 9495890154
+2026-09-10 14:07:25 - OTP found in DB
+2026-09-10 14:07:25 - Checking account info for: 9495890154 / irshad mm
+2026-09-10 14:07:25 - Creating new account session
+2026-09-10 14:07:26 - Account entry inserted for: 5522975
+2026-09-10 14:07:26 - Affiliate referral linked: affId=14, linkId=5, userId=39
+2026-09-10 17:22:17 - Checking OTP: 123456 for 9844011619
+2026-09-10 17:22:17 - Admin master OTP accepted: 123456
+2026-09-10 17:22:17 - Checking account info for: 9844011619 / admin_test_908
+2026-09-10 17:22:17 - Creating new account session
+2026-09-10 17:22:17 - Account entry inserted for: 8684850
+2026-09-10 17:23:06 - Checking OTP: 988502 for 9763239561
+2026-09-10 17:23:06 - OTP found in DB
+2026-09-10 17:23:06 - Checking account info for: 9763239561 / normal_test_670
+2026-09-10 17:23:06 - Creating new account session
+2026-09-10 17:23:07 - Account entry inserted for: 9737746
+2026-09-10 17:24:24 - Checking OTP: 123456 for 5555555555
+2026-09-10 17:24:24 - Admin master OTP accepted: 123456
+2026-09-10 17:24:24 - Checking account info for: 5555555555 / test 22
+2026-09-10 17:24:24 - Creating new account session
+2026-09-10 17:24:25 - Account entry inserted for: 0863135
+2026-09-10 17:24:25 - Affiliate referral linked: affId=16, linkId=9, userId=42
+2026-09-10 17:55:11 - Checking OTP: 123456 for 5687987456
+2026-09-10 17:55:11 - Admin master OTP accepted: 123456
+2026-09-10 17:55:11 - Checking account info for: 5687987456 / test33
+2026-09-10 17:55:11 - Creating new account session
+2026-09-10 17:55:11 - Account entry inserted for: 9627598
+2026-09-10 17:55:11 - Affiliate referral linked: affId=16, linkId=9, userId=43
+2026-09-10 19:12:38 - Checking OTP: 123456 for 9874563874
+2026-09-10 19:12:38 - Admin master OTP accepted: 123456
+2026-09-10 19:12:38 - Checking account info for: 9874563874 / test55
+2026-09-10 19:12:38 - Creating new account session
+2026-09-10 19:12:39 - Account entry inserted for: 1892654
+2026-09-10 19:12:39 - Affiliate referral linked: affId=16, linkId=9, userId=44
+2026-09-10 20:38:33 - Checking OTP: 123456 for 8789654123
+2026-09-10 20:38:33 - Admin master OTP accepted: 123456
+2026-09-10 20:38:33 - Checking account info for: 8789654123 / test test affl
+2026-09-10 20:38:33 - Creating new account session
+2026-09-10 20:38:33 - Account entry inserted for: 0954351
+2026-09-10 20:38:33 - Affiliate referral linked: affId=17, linkId=14, userId=45

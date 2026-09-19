@@ -114,6 +114,10 @@ if (mysqli_num_rows($select_result) > 0) {
         if ($update_account_sql != null) {
             mysqli_query($conn, $update_account_sql) or die('error');
         }
+        if ($order_type == "success") {
+            require_once __DIR__ . '/../../services/AffiliateDepositService.php';
+            AffiliateDepositService::checkAndUpdateFTD($conn, $user_id, $recharge_amount);
+        }
         if ($deposit_bonus > 0) {
             $insert_transaction_sql = "INSERT INTO tblotherstransactions 
                                        (tbl_user_id, tbl_received_from, tbl_transaction_type, tbl_transaction_amount, tbl_transaction_note, tbl_time_stamp) 

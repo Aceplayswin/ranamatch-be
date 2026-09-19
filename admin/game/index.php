@@ -189,12 +189,27 @@ body {
         </div>
            
         <div class="game-section">
-            <div class="section-title">
-                <span class="title-bar"></span>
-                All Games List
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 12px;">
+                <div class="section-title" style="margin-bottom: 0;">
+                    <span class="title-bar"></span>
+                    All Games List
+                </div>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
+                    <div style="position: relative;">
+                        <input type="text" id="gameSearchInput" placeholder="Search game name..." onkeyup="filterControlGames()"
+                            style="background: var(--input-bg); border: 1px solid var(--border-dim); color: var(--text-main); padding: 6px 12px 6px 30px; border-radius: 8px; font-size: 12px; outline: none; width: 220px;">
+                        <i class='bx bx-search' style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--text-dim); font-size: 14px;"></i>
+                    </div>
+                    <select id="gameStatusFilter" onchange="filterControlGames()"
+                        style="background: var(--input-bg); border: 1px solid var(--border-dim); color: var(--text-main); padding: 6px 12px; border-radius: 8px; font-size: 12px; outline: none;">
+                        <option value="all">All Status</option>
+                        <option value="active">Active Only</option>
+                        <option value="inactive">Inactive Only</option>
+                    </select>
+                </div>
             </div>
             
-            <table class="r-table">
+            <table class="r-table" id="controlGamesTable">
                 <thead>
                     <tr>
                         <th style="width:8%">No</th>
@@ -206,7 +221,7 @@ body {
                 <tbody>
                 <?php
                   $indexVal = 1;
-                  $games_sql = "SELECT * FROM tblgamecontrols WHERE tbl_service_status='true'";
+                  $games_sql = "SELECT * FROM tblgamecontrols";
                   $games_result = mysqli_query($conn, $games_sql) or die('search failed');
               
                   if (mysqli_num_rows($games_result) > 0){
@@ -216,8 +231,9 @@ body {
                      $service_time = $row['tbl_service_times'];
                      $service_status = $row['tbl_service_status'];
                      $service_time_arr = explode(",", $service_time);
+                     $is_active = ($service_status == "true");
                     ?>
-                     <tr onclick="window.location.href='control-game.php?game=<?php echo $service_name; ?>'">
+                     <tr class="control-game-row" data-name="<?php echo strtolower(htmlspecialchars($service_name)); ?>" data-status="<?php echo $is_active ? 'active' : 'inactive'; ?>" onclick="window.location.href='control-game.php?game=<?php echo $service_name; ?>'">
                         <td><span class="rn"><?php echo $indexVal; ?></span></td>
                         <td style="font-weight: 700; color: var(--text-main);"><?php echo htmlspecialchars($service_name); ?></td>
                         <td>
@@ -236,6 +252,25 @@ body {
                 </tbody>
             </table>
         </div>
+
+        <script>
+        function filterControlGames() {
+            var search = document.getElementById('gameSearchInput').value.toLowerCase().trim();
+            var status = document.getElementById('gameStatusFilter').value;
+            var rows = document.querySelectorAll('.control-game-row');
+            rows.forEach(function(row) {
+                var name = row.getAttribute('data-name') || '';
+                var rowStatus = row.getAttribute('data-status') || '';
+                var matchesSearch = !search || name.includes(search);
+                var matchesStatus = (status === 'all') || (rowStatus === status);
+                if (matchesSearch && matchesStatus) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+        </script>
 
         <div class="advanced-section">
             <div class="advanced-text">

@@ -82,7 +82,7 @@ if ($accessObj->validate() == "true") {
             margin-left: 2px;
         }
 
-        .cus-inp {
+        .cus-inp { color-scheme: dark; 
             width: 100%;
             height: 40px;
             background: var(--input-bg) !important;

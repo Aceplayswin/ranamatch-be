@@ -331,7 +331,7 @@ $offset = ($page_num - 1) * $content;
             opacity: 0.6;
         }
 
-        .f-inp {
+        .f-inp { color-scheme: dark; 
             width: 100%;
             height: 32px;
             background: rgba(0, 0, 0, 0.2) !important;

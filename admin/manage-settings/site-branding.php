@@ -65,6 +65,11 @@ $site_brand_gradient_end = $settings['SITE_BRAND_GRADIENT_END'] ?? '#CC5A00';
 $site_bg_color = $settings['SITE_BG_COLOR'] ?? '#0D0D0D';
 $site_text_color = $settings['SITE_TEXT_COLOR'] ?? '#FFFFFF';
 
+// Financial Limits
+$min_recharge = $settings['MIN_RECHARGE'] ?? '500';
+$min_withdraw = $settings['MIN_WITHDRAW'] ?? '1000';
+$recharge_options = $settings['RECHARGE_OPTIONS'] ?? '500,1000,2000,5000,10000,25000,50000';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -402,7 +407,7 @@ $site_text_color = $settings['SITE_TEXT_COLOR'] ?? '#FFFFFF';
         }
 
         /* Unified Input Styling */
-        .brand-input {
+        .brand-input { color-scheme: dark; 
             width: 100%;
             height: 40px;
             background: var(--input-bg) !important;
@@ -529,35 +534,40 @@ $site_text_color = $settings['SITE_TEXT_COLOR'] ?? '#FFFFFF';
                     </div>
                 </form>
 
-                <!-- CONTACT DETAILS -->
+
+
+                <!-- FINANCIAL LIMITS -->
                 <form action="manager-branding.php" method="POST">
-                    <input type="hidden" name="action_type" value="update_contacts">
+                    <input type="hidden" name="action_type" value="update_financial_limits">
                     <div class="asset-card">
-                        <div class="card-title"><i class='bx bx-support'></i> Support & Social Channels</div>
+                        <div class="card-title"><i class='bx bx-wallet'></i> Financial Limits & Deposit Presets</div>
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label class="form-label">Telegram URL</label>
-                                    <input type="text" name="telegram_url" class="brand-input"
-                                        value="<?php echo $telegram_url; ?>" placeholder="https://t.me/...">
+                                    <label class="form-label">Minimum Deposit Limit (₹)</label>
+                                    <input type="number" name="min_recharge" class="brand-input"
+                                        value="<?php echo htmlspecialchars($min_recharge); ?>" placeholder="e.g. 500" required min="1">
+                                    <p style="color: var(--text-muted); font-size: 11px; margin-top: 5px;">Enforced on Deposit page & APIs.</p>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label class="form-label">WhatsApp Number</label>
-                                    <input type="text" name="whatsapp_num" class="brand-input"
-                                        value="<?php echo $whatsapp_num; ?>" placeholder="+91 0000 000000">
+                                    <label class="form-label">Minimum Withdrawal Limit (₹)</label>
+                                    <input type="number" name="min_withdraw" class="brand-input"
+                                        value="<?php echo htmlspecialchars($min_withdraw); ?>" placeholder="e.g. 1000" required min="1">
+                                    <p style="color: var(--text-muted); font-size: 11px; margin-top: 5px;">Enforced on Withdraw page & APIs.</p>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label class="form-label">Direct Support Link</label>
-                                    <input type="text" name="support_url" class="brand-input"
-                                        value="<?php echo $support_url; ?>" placeholder="https://...">
+                                    <label class="form-label">Deposit Quick Amount Presets</label>
+                                    <input type="text" name="recharge_options" class="brand-input"
+                                        value="<?php echo htmlspecialchars($recharge_options); ?>" placeholder="500,1000,2000,5000,10000">
+                                    <p style="color: var(--text-muted); font-size: 11px; margin-top: 5px;">Comma separated amount buttons on Deposit page.</p>
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn-brand-save">Save Contact Info</button>
+                        <button type="submit" class="btn-brand-save">Save Financial Limits</button>
                     </div>
                 </form>
 
@@ -620,6 +630,7 @@ $site_text_color = $settings['SITE_TEXT_COLOR'] ?? '#FFFFFF';
                             <div class="row social-row mb-3" style="align-items: center;">
                                 <div class="col-md-3">
                                     <select name="platforms[]" class="brand-input">
+                                        <option value="Direct Support">Direct Support</option>
                                         <option value="WhatsApp">WhatsApp</option>
                                         <option value="Telegram">Telegram</option>
                                         <option value="Instagram">Instagram</option>
@@ -628,7 +639,7 @@ $site_text_color = $settings['SITE_TEXT_COLOR'] ?? '#FFFFFF';
                                     </select>
                                 </div>
                                 <div class="col-md-7">
-                                    <input type="text" name="urls[]" class="brand-input" placeholder="Number or URL...">
+                                    <input type="text" name="urls[]" class="brand-input" placeholder="URL or Number...">
                                 </div>
                                 <div class="col-md-2">
                                     <button type="button" class="btn-circle-action btn-delete" onclick="this.closest(\'.social-row\').remove()"><i class=\'bx bx-x\'></i></button>
@@ -638,11 +649,13 @@ $site_text_color = $settings['SITE_TEXT_COLOR'] ?? '#FFFFFF';
                                 foreach ($social_links as $link) {
                                     $plat = htmlspecialchars($link['platform']);
                                     $val = htmlspecialchars($link['value']);
-                                    $selectOpts = ['WhatsApp', 'Telegram', 'Instagram', 'Facebook', 'Twitter'];
+                                    $selectOpts = ['Direct Support', 'WhatsApp', 'Direct Support WhatsApp', 'Telegram', 'Instagram', 'Facebook', 'Twitter'];
+
                                     $optsHtml = '';
                                     foreach ($selectOpts as $opt) {
                                         $sel = ($opt === $plat) ? 'selected' : '';
-                                        $optsHtml .= "<option value='$opt' $sel>$opt</option>";
+                                        $label = ($opt === 'Direct Support WhatsApp') ? 'Direct Support' : $opt;
+                                        $optsHtml .= "<option value='$opt' $sel>$label</option>";
                                     }
                                     echo '
                                 <div class="row social-row mb-3" style="align-items: center;">
@@ -650,7 +663,7 @@ $site_text_color = $settings['SITE_TEXT_COLOR'] ?? '#FFFFFF';
                                         <select name="platforms[]" class="brand-input">' . $optsHtml . '</select>
                                     </div>
                                     <div class="col-md-7">
-                                        <input type="text" name="urls[]" class="brand-input" value="' . $val . '" placeholder="Number or URL...">
+                                        <input type="text" name="urls[]" class="brand-input" value="' . $val . '" placeholder="URL or Number...">
                                     </div>
                                     <div class="col-md-2">
                                         <button type="button" class="btn-circle-action btn-delete" onclick="this.closest(\'.social-row\').remove()"><i class=\'bx bx-x\'></i></button>
@@ -953,6 +966,7 @@ $site_text_color = $settings['SITE_TEXT_COLOR'] ?? '#FFFFFF';
             row.innerHTML = `
             <div class="col-md-3">
                 <select name="platforms[]" class="brand-input">
+                    <option value="Direct Support">Direct Support</option>
                     <option value="WhatsApp">WhatsApp</option>
                     <option value="Telegram">Telegram</option>
                     <option value="Instagram">Instagram</option>
@@ -961,7 +975,7 @@ $site_text_color = $settings['SITE_TEXT_COLOR'] ?? '#FFFFFF';
                 </select>
             </div>
             <div class="col-md-7">
-                <input type="text" name="urls[]" class="brand-input" placeholder="Number or URL...">
+                <input type="text" name="urls[]" class="brand-input" placeholder="URL or Number...">
             </div>
             <div class="col-md-2">
                 <button type="button" class="btn-circle-action btn-delete" onclick="this.closest('.social-row').remove()"><i class='bx bx-x'></i></button>

@@ -107,7 +107,7 @@ if (isset($_POST['submit'])){
         .input-wrapper { position: relative; display: flex; align-items: center; }
         .input-wrapper i { position: absolute; left: 16px; color: var(--text-dim); font-size: 18px; }
         
-        .cus-inp {
+        .cus-inp { color-scheme: dark; 
             width: 100%; height: 52px; background: var(--input-bg) !important;
             border: 1px solid var(--border-dim) !important; border-radius: 14px !important;
             padding: 0 16px 0 46px !important; color: var(--text-main) !important; font-size: 14px !important;

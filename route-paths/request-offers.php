@@ -6,7 +6,10 @@ $resArr['status'] = "success";
 $resArr['promotions'] = [];
 
 $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http";
-$current_host = $protocol . "://" . $_SERVER['HTTP_HOST'] . "/";
+// Detect base path from script location (e.g. /api/router/index.php → base is /api/)
+$_script_dir = dirname(dirname($_SERVER['SCRIPT_NAME']));
+$_base_path = ($_script_dir === '/' || $_script_dir === '') ? '/' : rtrim($_script_dir, '/') . '/';
+$current_host = $protocol . "://" . $_SERVER['HTTP_HOST'] . $_base_path;
 
 // Fetch ONLY from tbl_promotions (Site Branding > Promotional Banners)
 $sql = "SELECT id, image_path, action_url FROM tbl_promotions WHERE status = 'true' ORDER BY id DESC";

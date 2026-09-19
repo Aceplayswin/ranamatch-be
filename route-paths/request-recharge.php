@@ -62,7 +62,17 @@ if(mysqli_num_rows($select_query) > 0){
     $res_data = mysqli_fetch_assoc($select_query);
   
     if($res_data['tbl_account_status']=="true"){
-        if(checkUTRCodeExist($conn,$const_recharge_details)=="true"){
+        // Fetch dynamic minimum recharge limit
+        $min_rec_query = mysqli_query($conn, "SELECT tbl_service_value FROM tblservices WHERE tbl_service_name='MIN_RECHARGE'");
+        $min_recharge_limit = 500;
+        if ($min_rec_row = mysqli_fetch_assoc($min_rec_query)) {
+            $min_recharge_limit = (float) $min_rec_row['tbl_service_value'];
+        }
+
+        if ((float)$const_recharge_amount < $min_recharge_limit) {
+            $resArr['status_code'] = "minimum_recharge_error";
+            $resArr['minimum_recharge'] = $min_recharge_limit;
+        } else if(checkUTRCodeExist($conn,$const_recharge_details)=="true"){
             $resArr['status_code'] = "utr_exit";
         }else{
             

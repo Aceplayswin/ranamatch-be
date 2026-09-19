@@ -61,7 +61,7 @@ $total_pages = ceil($total_count / $content);
         .filter-label { font-size: 8px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-dim); margin-left: 2px; opacity: 0.8; }
         .filter-input-wrapper { position: relative; display: flex; align-items: center; }
         .filter-input-wrapper i { position: absolute; left: 10px; font-size: 14px; color: var(--accent-blue); opacity: 0.7; }
-        .filter-inp {
+        .filter-inp { color-scheme: dark; 
             width: 100%; height: 36px; background: rgba(0, 0, 0, 0.2) !important;
             border: 1px solid rgba(255, 255, 255, 0.08) !important; border-radius: 8px !important;
             padding: 0 10px 0 32px !important; color: #fff !important; font-size: 11px !important; font-weight: 500 !important;

@@ -64,7 +64,7 @@ if (isset($_POST['submit'])) {
     .dash-title { font-size: 22px; font-weight: 700; color: var(--text-main); }
     .dash-breadcrumb { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--status-info); }
     
-    .cus-inp {
+    .cus-inp { color-scheme: dark; 
         background: var(--input-bg); border: 1px solid var(--border-dim);
         border-radius: 10px; padding: 10px 15px; color: var(--text-main); width: 100%;
     }

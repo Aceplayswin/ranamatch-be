@@ -25,11 +25,22 @@ class AppStatusManager {
     
         if (mysqli_num_rows($sql_query) > 0) {
           while($resp_data = mysqli_fetch_array($sql_query)){
-            if($resp_data['tbl_service_name']=="APP_STATUS"){
-              $this->resArr['status_code'] = $resp_data['tbl_service_value'];
+            $name = $resp_data['tbl_service_name'];
+            $val = $resp_data['tbl_service_value'];
+            if($name == "APP_STATUS"){
+              $this->resArr['status_code'] = $val;
+            } else if ($name == "TELEGRAM_URL") {
+              $this->resArr['telegram_url'] = $val;
+            } else if ($name == "CONTACT_WHATSAPP") {
+              $this->resArr['whatsapp_num'] = $val;
+            } else if ($name == "CONTACT_SUPPORT_URL") {
+              $this->resArr['support_url'] = $val;
+            } else if ($name == "SITE_SOCIAL_LINKS") {
+              $this->resArr['site_social_links'] = json_decode($val, true) ?: [];
             }
           }
         }
+
         
         $this->returnRequest();
     }

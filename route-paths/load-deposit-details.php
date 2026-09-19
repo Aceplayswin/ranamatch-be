@@ -19,9 +19,17 @@ if (mysqli_num_rows($select_query) > 0) {
         // Fetch Dynamic Recharge Options from tblservices
         $options_sql = "SELECT tbl_service_value FROM tblservices WHERE tbl_service_name='RECHARGE_OPTIONS'";
         $options_query = mysqli_query($conn, $options_sql);
-        $deposit_options = "100,500,1000,2000,5000"; // Fallback
+        $deposit_options = "500,1000,2000,5000,10000,25000,50000"; // Fallback
         if ($opt_row = mysqli_fetch_assoc($options_query)) {
             $deposit_options = $opt_row['tbl_service_value'];
+        }
+
+        // Fetch Dynamic Minimum Deposit (MIN_RECHARGE) from tblservices
+        $min_sql = "SELECT tbl_service_value FROM tblservices WHERE tbl_service_name='MIN_RECHARGE'";
+        $min_query = mysqli_query($conn, $min_sql);
+        $min_deposit = "500"; // Fallback
+        if ($min_row = mysqli_fetch_assoc($min_query)) {
+            $min_deposit = $min_row['tbl_service_value'];
         }
 
         $resArr['status_code'] = "success";
@@ -31,6 +39,8 @@ if (mysqli_num_rows($select_query) > 0) {
         ];
         $resArr['BANK_DETAILS'] = $bankDetails['BANK_DETAILS'];
         $resArr['deposit_options'] = $deposit_options;
+        $resArr['min_deposit'] = $min_deposit;
+        $resArr['minimum_deposit'] = $min_deposit;
     }
 } else {
     $resArr['status_code'] = "authorization_error";

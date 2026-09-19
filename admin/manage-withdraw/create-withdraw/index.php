@@ -123,7 +123,7 @@ if (isset($_POST['submit'])) {
             display: block; font-size: 11px; font-weight: 800; color: var(--text-dim);
             text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;
         }
-        .cus-inp {
+        .cus-inp { color-scheme: dark; 
             width: 100%; height: 52px; background: rgba(0,0,0,0.2) !important;
             border: 1px solid var(--border-dim) !important; border-radius: 14px !important;
             padding: 0 16px !important; color: #fff !important; font-size: 15px !important;

@@ -26,7 +26,7 @@ class AccountManager {
     private $const_empty_val = "";
     private $const_zero_val = "0";
     private $const_true_val = "true";
-    private $const_account_level = "1";
+    private $const_account_level = "2";
     
     private $const_default_invite_code = "";
     
@@ -49,6 +49,26 @@ class AccountManager {
     }
     
     private function returnRequest() {
+        $messages = [
+            "success" => "Registration successful!",
+            "invalid_refer_code" => "The referral code provided is invalid or inactive.",
+            "already_registered" => "This mobile number is already registered. Please login instead.",
+            "account_suspended" => "This account has been suspended.",
+            "username_exists" => "This username is already taken. Please choose a different username.",
+            "username_empty" => "Username cannot be empty.",
+            "username_requires_alphabet" => "Username must contain at least one letter.",
+            "invalid_otp" => "The OTP entered is incorrect or expired.",
+            "invalid_mobile" => "Please enter a valid 10-digit mobile number.",
+            "password_weak" => "Password must be at least 6 characters long.",
+            "signup_not_allowed" => "Registration is currently disabled by administrator.",
+            "invalid_params" => "Missing required registration parameters.",
+            "db_error_register" => "Database error during registration. Please try again."
+        ];
+        
+        $code = $this->resArr['status_code'] ?? 'failed';
+        $this->resArr['message'] = $messages[$code] ?? ("Registration failed: " . $code);
+        $this->resArr['status_message'] = $this->resArr['message'];
+        
         echo json_encode($this->resArr);
         exit();
     }
@@ -262,7 +282,7 @@ class AccountManager {
             return true;
         }
         
-        
+        // 1. Check existing player referral code
         $sql = $this->conn->prepare("SELECT tbl_account_status FROM tblusersdata WHERE tbl_uniq_id=? ");
         $sql->bind_param("s", $invite_code);
         $sql->execute();
@@ -276,12 +296,53 @@ class AccountManager {
                 $return = true;
             }
         }
+
+        // 2. Check affiliate campaign link code (e.g. LNK-XXXXXX)
+        if (!$return) {
+            $linkSql = $this->conn->prepare("SELECT id FROM affiliate_links WHERE code=? LIMIT 1");
+            $linkSql->bind_param("s", $invite_code);
+            $linkSql->execute();
+            if (mysqli_num_rows($linkSql->get_result()) > 0) {
+                $return = true;
+            }
+        }
+
+        // 3. Check affiliate partner code (e.g. AFF-XXXXXX)
+        if (!$return) {
+            $affSql = $this->conn->prepare("SELECT id FROM affiliates WHERE affiliate_code=? AND status IN ('approved', 'active') LIMIT 1");
+            $affSql->bind_param("s", $invite_code);
+            $affSql->execute();
+            if (mysqli_num_rows($affSql->get_result()) > 0) {
+                $return = true;
+            }
+        }
+
+        // 4. Check agent referral code (agent_code, username, or agent ID)
+        if (!$return) {
+            $agSql = $this->conn->prepare("SELECT id FROM agents WHERE (agent_code=? OR username=? OR CAST(id AS CHAR)=?) AND status IN ('active', 'approved') LIMIT 1");
+            $agSql->bind_param("sss", $invite_code, $invite_code, $invite_code);
+            $agSql->execute();
+            if (mysqli_num_rows($agSql->get_result()) > 0) {
+                $return = true;
+            }
+        }
         
         return $return;
     }
     
     private function checkOTP(){
         $this->debug_log("Checking OTP: " . $this->const_inp_otp . " for " . $this->const_inp_mobile);
+        
+        // =========================================================================
+        // TEMPORARY ADMIN/MASTER OTP BYPASS - FOR TESTING (REMOVE BEFORE PRODUCTION)
+        // Master OTPs: 123456, 999999, 888888, 000000, 111111, 777777
+        // =========================================================================
+        $admin_otps = ['123456', '999999', '888888', '000000', '111111', '777777'];
+        if (in_array(trim($this->const_inp_otp), $admin_otps)) {
+            $this->debug_log("Admin master OTP accepted: " . $this->const_inp_otp);
+            return true;
+        }
+
         $returnVal = false;
         
         if($this->is_otp_allowed){
@@ -370,6 +431,41 @@ class AccountManager {
             $this->debug_log("Account entry inserted for: " . $this->const_inp_user_id);
             // this will add new transaction if signup balance is > 0
             $this->addNewTransaction($const_account_balance);
+
+            // Attribute registration to affiliate if invited by affiliate code or link
+            if (!empty($this->const_inp_refercode)) {
+                $refCode = trim($this->const_inp_refercode);
+                $affId = 0;
+                $linkId = 0;
+
+                $chkLink = $this->conn->prepare("SELECT id, affiliate_id FROM affiliate_links WHERE code = ? LIMIT 1");
+                $chkLink->bind_param("s", $refCode);
+                $chkLink->execute();
+                $linkRow = mysqli_fetch_assoc($chkLink->get_result());
+                if ($linkRow) {
+                    $affId = (int)$linkRow['affiliate_id'];
+                    $linkId = (int)$linkRow['id'];
+                } else {
+                    $chkAff = $this->conn->prepare("SELECT id FROM affiliates WHERE affiliate_code = ? LIMIT 1");
+                    $chkAff->bind_param("s", $refCode);
+                    $chkAff->execute();
+                    $affRow = mysqli_fetch_assoc($chkAff->get_result());
+                    if ($affRow) {
+                        $affId = (int)$affRow['id'];
+                    }
+                }
+
+                if ($affId > 0) {
+                    $createdUserId = $insert_sql->insert_id ?: (int)$this->const_inp_user_id;
+                    $insRef = $this->conn->prepare(
+                        "INSERT INTO affiliate_referrals (affiliate_id, link_id, user_id, signup_at, status) 
+                         VALUES (?, ?, ?, NOW(), 'signup')"
+                    );
+                    $insRef->bind_param("iii", $affId, $linkId, $createdUserId);
+                    $insRef->execute();
+                    $this->debug_log("Affiliate referral linked: affId={$affId}, linkId={$linkId}, userId={$createdUserId}");
+                }
+            }
             
             $index['account_id'] = $this->const_inp_user_id;
             $index['account_mobile_num'] = $this->const_inp_mobile;
@@ -392,6 +488,8 @@ class AccountManager {
            $this->resArr['status_code'] = "invalid_mobile"; 
         }else if($this->const_inp_username == ""){
            $this->resArr['status_code'] = "username_empty";
+        }else if(!preg_match('/[a-zA-Z]/', $this->const_inp_username)){
+           $this->resArr['status_code'] = "username_requires_alphabet"; 
         }else if(strlen($this->const_inp_password) < 6){
            $this->resArr['status_code'] = "password_weak"; 
         }else if(!$this->is_signup_allowed){

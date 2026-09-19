@@ -196,7 +196,7 @@ body { font-family: var(--font-body) !important; background-color: var(--page-bg
 
     <div class="dash-header">
       <div class="d-flex align-items-center gap-3">
-        <div class="back-btn" onclick="window.location.href='manager.php?id=<?php echo $user_id; ?>'"><i class='bx bx-left-arrow-alt'></i></div>
+        <div class="back-btn" onclick="if(document.referrer && document.referrer !== location.href){ history.back(); } else { window.location.href='manager.php?id=<?php echo $user_id; ?>'; }" title="Go Back"><i class='bx bx-left-arrow-alt'></i></div>
         <div>
           <span class="dash-breadcrumb">Admin Panel</span>
           <h1 class="dash-title">User Activity Records</h1>

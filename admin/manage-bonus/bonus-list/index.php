@@ -57,13 +57,13 @@ if($accessObj->validate()=="true"){
             text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;
         }
 
-        .cus-inp, .cus-sel {
+        .cus-inp, .cus-sel { color-scheme: dark; 
             width: 100%; height: 40px; background: var(--input-bg) !important;
             border: 1px solid var(--border-dim) !important; border-radius: 8px !important;
             padding: 0 12px !important; color: #fff !important; font-size: 14px !important;
             transition: all 0.3s ease;
         }
-        .cus-sel option { background-color: #161b22; color: #fff; }
+        .cus-sel option { color-scheme: dark; background-color: #0f172a !important; color: #f8fafc !important;  background-color: #161b22; color: #fff; }
         .cus-inp:focus, .cus-sel:focus {
             border-color: var(--accent-blue) !important; outline: none;
             background: rgba(0,0,0,0.3) !important;

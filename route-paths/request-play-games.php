@@ -116,7 +116,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         returnRequest(["status_code" => "game_off"]);
                     }
                 }
-                $total_bal = (float) $res_data["tbl_balance"] + (float) $res_data["tbl_bonus_balance"] + (float) $res_data["tbl_sports_bonus"];
+                $clean_bal = (float) str_replace(',', '', $res_data["tbl_balance"]);
+                $clean_bonus = (float) str_replace(',', '', $res_data["tbl_bonus_balance"]);
+                $clean_sports_bonus = (float) str_replace(',', '', $res_data["tbl_sports_bonus"]);
+                $total_bal = $clean_bal + $clean_bonus + $clean_sports_bonus;
+                
                 if ($total_bal < 0.01) {
                     $fail_log = date('Y-m-d H:i:s') . " - Balance Failure: User $const_user_id - Total: $total_bal\n";
                     file_put_contents(__DIR__ . "/launch_logs.txt", $fail_log, FILE_APPEND);
@@ -133,7 +137,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     include __DIR__ . '/services/india-lotto.php';
                 } else {
                     // --- ORIGINAL HUIDU (AES) PATH ---
-                    $updated_balance = (float) $res_data["tbl_balance"];
+                    $updated_balance = $clean_bal;
                     $timestamp = round(microtime(true) * 1000);
 
                     $payloadData = json_encode([

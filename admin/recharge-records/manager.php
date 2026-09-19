@@ -24,9 +24,9 @@ if(!isset($_GET['uniq-id'])){
 }
 
 $select_sql = "
-  SELECT r.*, u.tbl_user_name, u.tbl_balance 
+  SELECT r.*, u.tbl_user_name, u.tbl_balance, u.tbl_joined_under 
   FROM tblusersrecharge r
-  LEFT JOIN tblusersdata u ON r.tbl_user_id = u.tbl_uniq_id 
+  LEFT JOIN tblusersdata u ON (r.tbl_user_id = u.tbl_uniq_id OR r.tbl_user_id = CAST(u.id AS CHAR)) 
   WHERE r.tbl_uniq_id='$uniq_id'";
 $select_result = mysqli_query($conn, $select_sql) or die('error');
 
@@ -163,7 +163,7 @@ if(mysqli_num_rows($select_result) > 0){
     <div class="admin-main-content hide-native-scrollbar">
         <div class="dash-header">
             <div class="dash-title">
-                <div class="back-link" onclick="window.history.back()">
+                <div class="back-link" onclick="if(document.referrer && document.referrer !== location.href){ history.back(); } else { window.location.href='index.php'; }" title="Go Back">
                     <i class='bx bx-left-arrow-alt ft-sz-18'></i> Back
                 </div><br>
                 <span class="dash-breadcrumb">Recharge Verification</span>
@@ -211,6 +211,21 @@ if(mysqli_num_rows($select_result) > 0){
                         <div class="info-label">Request Date & Time</div>
                         <div class="info-value"><?php echo $request_date_time; ?></div>
                     </div>
+                    <div class="info-item">
+                        <div class="info-label">Referred Agent</div>
+                        <div class="info-value">
+                            <?php if (!empty($select_res_data['tbl_joined_under'])): ?>
+                                <a href="../agents/detail/index.php?code=<?php echo urlencode($select_res_data['tbl_joined_under']); ?>"
+                                   style="color: var(--accent-amber); text-decoration: none; font-weight: 700;"
+                                   onmouseover="this.style.textDecoration='underline'"
+                                   onmouseout="this.style.textDecoration='none'">
+                                    <i class='bx bx-user-pin'></i> <?php echo htmlspecialchars($select_res_data['tbl_joined_under']); ?>
+                                </a>
+                            <?php else: ?>
+                                <span style="color: var(--text-dim);">Direct Site Player</span>
+                            <?php endif; ?>
+                        </div>
+                    </div>
                 </div>
 
                 <?php if($recharge_details!=""){ ?>
@@ -254,12 +269,26 @@ if(mysqli_num_rows($select_result) > 0){
 
 <script>
   function RejectRequest(){
+    const remark = document.getElementById('admin_remark').value.trim();
+    if(!remark) {
+        Swal.fire({
+            title: 'Reason Required',
+            text: 'Please enter an administrative reason/remark before rejecting this recharge.',
+            icon: 'warning',
+            confirmButtonText: 'OK'
+        }).then(() => {
+            document.getElementById('admin_remark').focus();
+        });
+        return;
+    }
     Swal.fire({
-        title: 'Reject Recharge?',
-        text: "Cancel this transaction?",
+        title: 'Confirm Rejection',
+        html: `Are you sure you want to reject this recharge?<br><br><small class="text-warning">Reason: "${remark}"</small>`,
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonText: 'Yes, Reject'
+        confirmButtonColor: '#f43f5e',
+        confirmButtonText: 'Confirm Rejection',
+        cancelButtonText: 'Cancel'
     }).then((result) => {
         if (result.isConfirmed) {
             processRecharge('rejected');
@@ -268,12 +297,26 @@ if(mysqli_num_rows($select_result) > 0){
   }
 
   function SucessRequest(){
+    const remark = document.getElementById('admin_remark').value.trim();
+    if(!remark) {
+        Swal.fire({
+            title: 'Reason Required',
+            text: 'Please enter an administrative reason/remark (e.g. UTR Verified) before approving this recharge.',
+            icon: 'warning',
+            confirmButtonText: 'OK'
+        }).then(() => {
+            document.getElementById('admin_remark').focus();
+        });
+        return;
+    }
     Swal.fire({
-        title: 'Approve Recharge?',
-        text: "Proceed with approval?",
+        title: 'Confirm Approval',
+        html: `Are you sure you want to approve this recharge and credit funds?<br><br><small class="text-success">Reason: "${remark}"</small>`,
         icon: 'question',
         showCancelButton: true,
-        confirmButtonText: 'Yes, Approve'
+        confirmButtonColor: '#10b981',
+        confirmButtonText: 'Confirm Approval',
+        cancelButtonText: 'Cancel'
     }).then((result) => {
         if (result.isConfirmed) {
             processRecharge('success');

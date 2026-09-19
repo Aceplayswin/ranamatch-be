@@ -11,11 +11,18 @@ if ($access->validate() == "false") {
     die();
 }
 
+// Self-healing migration for navbar_category
+$checkCol = mysqli_query($conn, "SHOW COLUMNS FROM tbl_games LIKE 'navbar_category'");
+if ($checkCol && mysqli_num_rows($checkCol) == 0) {
+    mysqli_query($conn, "ALTER TABLE tbl_games ADD COLUMN navbar_category VARCHAR(50) DEFAULT NULL");
+}
+
 // Search and Filter logic
 $search = isset($_GET['search']) ? mysqli_real_escape_string($conn, $_GET['search']) : '';
 $category = isset($_GET['category']) ? mysqli_real_escape_string($conn, $_GET['category']) : '';
 $status = isset($_GET['status']) ? mysqli_real_escape_string($conn, $_GET['status']) : '';
 $provider = isset($_GET['provider']) ? mysqli_real_escape_string($conn, $_GET['provider']) : '';
+$nav_cat = isset($_GET['nav_cat']) ? mysqli_real_escape_string($conn, $_GET['nav_cat']) : '';
 
 $where = "WHERE 1=1";
 if ($search) {
@@ -27,6 +34,7 @@ if ($category) {
 if ($status !== '') {
     $where .= " AND game_status = '$status'";
 }
+if ($nav_cat) { $where .= " AND navbar_category = '$nav_cat'"; }
 if ($provider) {
     $where .= " AND game_provider LIKE '%$provider%'";
 }
@@ -37,6 +45,10 @@ $result = mysqli_query($conn, $sql);
 // Get unique categories for filter
 $cat_sql = "SELECT DISTINCT game_category FROM tbl_games";
 $cat_result = mysqli_query($conn, $cat_sql);
+
+// Get unique navbar categories for filter
+$nav_cat_sql = "SELECT DISTINCT navbar_category FROM tbl_games WHERE navbar_category IS NOT NULL AND navbar_category != '' ORDER BY navbar_category ASC";
+$nav_cat_result = mysqli_query($conn, $nav_cat_sql);
 ?>
 
 <!DOCTYPE html>
@@ -304,7 +316,7 @@ $cat_result = mysqli_query($conn, $cat_sql);
             opacity: 0.8;
         }
 
-        .filter-inp {
+        .filter-inp { color-scheme: dark; 
             width: 100% !important;
             height: 32px !important;
             background: var(--panel-bg) !important;
@@ -323,7 +335,7 @@ $cat_result = mysqli_query($conn, $cat_sql);
             box-shadow: 0 0 0 2px rgba(6, 182, 212, 0.05);
         }
 
-        .filter-inp option {
+        .filter-inp option { color-scheme: dark; background-color: #0f172a !important; color: #f8fafc !important; 
             background: var(--panel-bg);
             color: var(--text-main);
         }
@@ -691,7 +703,7 @@ $cat_result = mysqli_query($conn, $cat_sql);
         }
 
         .cus-inp,
-        .cus-sel {
+        .cus-sel { color-scheme: dark; 
             width: 100%;
             height: 38px !important;
             background: var(--panel-bg) !important;
@@ -710,7 +722,7 @@ $cat_result = mysqli_query($conn, $cat_sql);
             box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.08), 0 0 16px rgba(59, 130, 246, 0.08);
         }
 
-        .cus-sel option {
+        .cus-sel option { color-scheme: dark; background-color: #0f172a !important; color: #f8fafc !important; 
             background: var(--panel-bg);
             color: var(--text-main);
         }
@@ -1059,6 +1071,24 @@ $cat_result = mysqli_query($conn, $cat_sql);
                         </select>
                     </div>
                 </div>
+                                <div class="filter-input-group">
+                    <label class="filter-label">Navbar Category</label>
+                    <div class="filter-input-wrapper">
+                        <i class='bx bx-navigation'></i>
+                        <select name="nav_cat" class="filter-inp">
+                            <option value="">All Navbar Categories</option>
+                            <?php
+                            if ($nav_cat_result) {
+                                mysqli_data_seek($nav_cat_result, 0);
+                                while ($ncat = mysqli_fetch_assoc($nav_cat_result)): ?>
+                                    <option value="<?php echo htmlspecialchars($ncat['navbar_category']); ?>" <?php echo ($nav_cat ?? '') === $ncat['navbar_category'] ? 'selected' : ''; ?>>
+                                        <?php echo htmlspecialchars($ncat['navbar_category']); ?>
+                                    </option>
+                                <?php endwhile;
+                            } ?>
+                        </select>
+                    </div>
+                </div>
                 <div class="filter-input-group">
                     <label class="filter-label">Status</label>
                     <div class="filter-input-wrapper">
@@ -1109,10 +1139,9 @@ $cat_result = mysqli_query($conn, $cat_sql);
                             <th style="width: 40px;">No</th>
                             <th>Game Info</th>
                             <th>Category</th>
+                            <th>Navbar Category</th>
                             <th>Provider</th>
                             <th style="text-align: center;">Status</th>
-                            <th style="text-align: center;">Featured</th>
-                            <th style="text-align: center;">Roulette</th>
                             <th style="width: 50px; text-align: center;">Order</th>
                             <th style="width: 100px; text-align: center;">Actions</th>
                         </tr>
@@ -1150,6 +1179,15 @@ $cat_result = mysqli_query($conn, $cat_sql);
                                         class="premium-badge <?php echo $cat_class; ?>"><?php echo $row['game_category']; ?></span>
                                 </td>
                                 <td>
+                                    <?php if (!empty($row['navbar_category'])): ?>
+                                        <span class="premium-badge" style="background: rgba(59, 130, 246, 0.12); color: #3b82f6; border: 1px solid rgba(59, 130, 246, 0.25); font-weight: 800; font-size: 10px; display: inline-flex; align-items: center; gap: 4px;">
+                                            <i class='bx bx-navigation'></i> <?php echo htmlspecialchars($row['navbar_category']); ?>
+                                        </span>
+                                    <?php else: ?>
+                                        <span style="color: var(--text-dim); font-size: 10px; opacity: 0.5;">—</span>
+                                    <?php endif; ?>
+                                </td>
+                                <td>
                                     <div
                                         style="display: flex; align-items: center; gap: 4px; color: var(--text-dim); font-size: 10px;">
                                         <i class='bx bx-cube-alt' style="opacity: 0.5;"></i>
@@ -1162,19 +1200,6 @@ $cat_result = mysqli_query($conn, $cat_sql);
                                             onclick="toggleStatus(<?php echo $row['id']; ?>, this)">
                                             <div class="toggle-knob"></div>
                                         </div>
-                                    </div>
-                                </td>
-                                <td style="text-align: center;">
-                                    <div style="display: flex; justify-content: center;">
-                                        <i class='bx bxs-star feature-star <?php echo $row['is_featured'] == 1 ? 'active' : ''; ?>'
-                                            onclick="toggleFeatured(<?php echo $row['id']; ?>, this)"></i>
-                                    </div>
-                                </td>
-                                <td style="text-align: center;">
-                                    <div style="display: flex; justify-content: center;">
-                                        <i class='bx bx-target-lock feature-star <?php echo $row['is_roulette'] == 1 ? 'active' : ''; ?>'
-                                            onclick="toggleRoulette(<?php echo $row['id']; ?>, this)"
-                                            title="Add to Roulette Page" style="color: #ef4444;"></i>
                                     </div>
                                 </td>
                                 <td style="text-align: center;">
@@ -1223,21 +1248,40 @@ $cat_result = mysqli_query($conn, $cat_sql);
                     <div class="form-group">
                         <label>Category</label>
                         <select name="game_category" class="cus-sel" required>
-                            <option value="slots">Slots</option>
-                            <option value="casino">Casino</option>
-                            <option value="turbo">Turbo</option>
-                            <option value="fishing">Fishing</option>
-                            <option value="poker">Poker</option>
-                            <option value="live">Live</option>
-                            <option value="casino_lobby">Casino Lobby</option>
+                            <option value="slots">Trending Slots</option>
+                            <option value="casino_lobby">Live Casino</option>
+                            <option value="casino">Trending Games</option>
+                            <option value="fantasy">Fantasy Games</option>
+                            <option value="turbo">Turbo Games</option>
+                            <option value="poker">Indian Poker Games</option>
+                            <option value="fishing">Fishing Games</option>
+                            <option value="live">Live Sports</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Provider</label>
-                        <div style="position: relative;">
-                            <input type="text" name="game_provider" id="modalProviderInput" class="cus-inp" required autocomplete="off">
-                            <div id="modalProviderSuggestions" class="suggestions-dropdown" style="display: none;"></div>
-                        </div>
+                        <label>Navbar Category (Optional)</label>
+                        <select name="navbar_category" class="cus-sel">
+                            <option value="">None (Don't show in Navbar)</option>
+                            <option value="Fantasy Games">Fantasy Games</option>
+                            <option value="Lottery">Lottery</option>
+                            <option value="Crash Games">Crash Games</option>
+                            <option value="Roulette">Roulette</option>
+                            <option value="Blackjack">Blackjack</option>
+                            <option value="Baccarat">Baccarat</option>
+                            <option value="Dragon Tiger">Dragon Tiger</option>
+                            <option value="Teen Patti">Teen Patti</option>
+                            <option value="Poker">Poker</option>
+                            <option value="Game Shows">Game Shows</option>
+                            <option value="Andar Bahar">Andar Bahar</option>
+                            <option value="Cockfight">Cockfight</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Provider</label>
+                    <div style="position: relative;">
+                        <input type="text" name="game_provider" id="modalProviderInput" class="cus-inp" required autocomplete="off">
+                        <div id="modalProviderSuggestions" class="suggestions-dropdown" style="display: none;"></div>
                     </div>
                 </div>
                 <div class="form-group">
@@ -1320,6 +1364,7 @@ $cat_result = mysqli_query($conn, $cat_sql);
             form.querySelector('input[name="game_name"]').value = data.game_name;
             form.querySelector('input[name="game_uid"]').value = data.game_uid;
             form.querySelector('select[name="game_category"]').value = data.game_category;
+            if (form.querySelector('select[name="navbar_category"]')) { form.querySelector('select[name="navbar_category"]').value = data.navbar_category || ""; }
             form.querySelector('input[name="game_provider"]').value = data.game_provider;
             form.querySelector('input[name="game_image"]').value = data.game_image;
 

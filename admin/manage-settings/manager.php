@@ -97,8 +97,12 @@ if(mysqli_num_rows($select_result) > 0){
     $service_description = "Comma separated (Level 1, Level 2, Level 3) or One value for all"; 
   }else if($service_name=="SALLARY_PERCENT"){
     $service_description = "Comma separated (Level 1, Level 2, Level 3) or One value for all";
+  }else if($service_name=="MIN_RECHARGE"){
+    $service_description = "Minimum Deposit (Recharge) Limit in INR (e.g. 500)";
+  }else if($service_name=="MIN_WITHDRAW"){
+    $service_description = "Minimum Withdrawal Limit in INR (e.g. 1000)";
   }else if($service_name=="RECHARGE_OPTIONS"){
-    $service_description = "Add values with comma separated.";  
+    $service_description = "Quick deposit amount presets, comma separated (e.g. 500,1000,2000,5000,10000,25000,50000)";  
   }else if($service_name=="WITHDRAW_TAX"){
     $service_value = $service_value*100;
     $service_description = "Tax in percentage";
@@ -155,7 +159,7 @@ if(mysqli_num_rows($select_result) > 0){
             display: block; font-size: 11px; font-weight: 800; color: var(--text-dim);
             text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;
         }
-        .cus-inp {
+        .cus-inp { color-scheme: dark; 
             width: 100%; height: 52px; background: rgba(0,0,0,0.2) !important;
             border: 1px solid var(--border-dim) !important; border-radius: 14px !important;
             padding: 0 16px !important; color: #fff !important; font-size: 15px !important;
@@ -167,8 +171,8 @@ if(mysqli_num_rows($select_result) > 0){
         }
         .cus-inp:disabled { opacity: 0.5; cursor: not-allowed; background: rgba(255,255,255,0.05) !important; }
         
-        textarea.cus-inp { height: 120px !important; padding: 16px !important; resize: none; }
-        select.cus-inp { cursor: pointer; -webkit-appearance: none; appearance: none; }
+        textarea.cus-inp { color-scheme: dark;  height: 120px !important; padding: 16px !important; resize: none; }
+        select.cus-inp { color-scheme: dark;  cursor: pointer; -webkit-appearance: none; appearance: none; }
 
         .action-btn {
             width: 100%; height: 52px; background: var(--accent-blue);

@@ -236,10 +236,11 @@ if(isset($_POST['order_type'])){
               $indexVal = 1;
               $paginationAvailable = false;
               
+              $statusFilterSql = ($newRequestStatus === "true") ? "(tbl_account_status='true' OR tbl_account_status='active')" : "tbl_account_status='{$newRequestStatus}'";
               if($searched!=""){
-                $user_records_sql = "SELECT * FROM tblusersdata WHERE tbl_account_status='{$newRequestStatus}' AND (tbl_uniq_id like '%$searched%' or tbl_mobile_num like '%$searched%' or tbl_full_name like '%$searched%' or tbl_email_id like '%$searched%' or tbl_user_joined LIKE '%$searched%') LIMIT 100";
+                $user_records_sql = "SELECT * FROM tblusersdata WHERE {$statusFilterSql} AND (tbl_uniq_id like '%$searched%' or tbl_mobile_num like '%$searched%' or tbl_full_name like '%$searched%' or tbl_email_id like '%$searched%' or tbl_user_joined LIKE '%$searched%') LIMIT 100";
               }else{
-                $user_records_sql = "SELECT * FROM tblusersdata WHERE tbl_account_status='{$newRequestStatus}' ORDER BY id DESC LIMIT {$offset},{$content}";
+                $user_records_sql = "SELECT * FROM tblusersdata WHERE {$statusFilterSql} ORDER BY id DESC LIMIT {$offset},{$content}";
               }
       
               $user_records_result = mysqli_query($conn, $user_records_sql) or die('search failed');
@@ -360,7 +361,7 @@ $grand_sports_loss_amount += $sports_loss_amount;
 	        </div>
 	        
 	        <?php
-	         $user_records_sql = "SELECT * FROM tblusersdata WHERE tbl_account_status='{$newRequestStatus}'";
+	         $user_records_sql = "SELECT * FROM tblusersdata WHERE {$statusFilterSql}";
              $user_records_result = mysqli_query($conn, $user_records_sql) or die('fetch failed');
 
              if (mysqli_num_rows($user_records_result) > 0) {

@@ -217,7 +217,7 @@ $replies_res = mysqli_query($conn, "SELECT * FROM tbl_ticket_replies WHERE ticke
         .attachment-info { flex: 1; min-width: 0; }
         .attachment-name { display: block; font-size: 10px; font-weight: 800; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         
-        .status-select {
+        .status-select { color-scheme: dark; 
             background: rgba(15, 23, 42, 0.6) !important;
             border: 1px solid rgba(255,255,255,0.05) !important;
             color: #fff !important;

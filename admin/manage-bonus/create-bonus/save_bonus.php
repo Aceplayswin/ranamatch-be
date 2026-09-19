@@ -134,12 +134,12 @@ try {
     
     $image_url = getPost('existing_image', '');
     if (isset($_FILES['bonus_image']) && $_FILES['bonus_image']['error'] === UPLOAD_ERR_OK) {
-        $upload_dir = $_SERVER['DOCUMENT_ROOT'] . '/uploads/bonuses/';
+        $upload_dir = $_SERVER['DOCUMENT_ROOT'] . '/images/promotions/';
         if (!is_dir($upload_dir)) mkdir($upload_dir, 0777, true);
         $file_ext = pathinfo($_FILES['bonus_image']['name'], PATHINFO_EXTENSION);
         $file_name = uniqid() . '.' . $file_ext;
         if (move_uploaded_file($_FILES['bonus_image']['tmp_name'], $upload_dir . $file_name)) {
-            $image_url = 'uploads/bonuses/' . $file_name;
+            $image_url = '/images/promotions/' . $file_name;
         }
     }
 

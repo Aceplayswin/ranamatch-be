@@ -32,6 +32,7 @@ $f_username = mysqli_real_escape_string($conn, $_POST['f_username'] ?? $_GET['f_
 $f_date_from = mysqli_real_escape_string($conn, $_POST['f_date_from'] ?? $_GET['f_date_from'] ?? '');
 $f_date_to = mysqli_real_escape_string($conn, $_POST['f_date_to'] ?? $_GET['f_date_to'] ?? '');
 $f_status = mysqli_real_escape_string($conn, $_POST['f_status'] ?? $_GET['f_status'] ?? '');
+$f_category = mysqli_real_escape_string($conn, $_POST['f_category'] ?? $_GET['f_category'] ?? 'direct');
 
 $content = 25;
 $page_num = (int) (isset($_GET['page_num']) ? $_GET['page_num'] : 1);
@@ -66,6 +67,30 @@ $offset = ($page_num - 1) * $content;
             margin: 0;
             padding: 0;
             overflow: hidden;
+        }
+
+        .category-tab-btn {
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: 700;
+            border: 1px solid var(--border-dim);
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--text-dim);
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .category-tab-btn.active {
+            background: rgba(59, 130, 246, 0.15);
+            border-color: var(--accent-blue);
+            color: #3b82f6;
+        }
+        .category-tab-btn:hover {
+            color: #fff;
         }
 
         .cus-checkbox-group {
@@ -207,7 +232,7 @@ $offset = ($page_num - 1) * $content;
             opacity: 0.6;
         }
 
-        .f-inp {
+        .f-inp { color-scheme: dark; 
             width: 100%;
             height: 32px;
             background: rgba(0, 0, 0, 0.2) !important;
@@ -234,12 +259,9 @@ $offset = ($page_num - 1) * $content;
         <div class="admin-main-content hide-native-scrollbar">
 
             <div class="dash-header">
-                <div class="dash-header-left">
-                    <div class="back-btn" onclick="window.history.back()"><i class='bx bx-left-arrow-alt'></i></div>
-                    <div>
-                        <span class="dash-breadcrumb">Dashboard > Payments</span>
-                        <h1 class="dash-title">Recharge Records</h1>
-                    </div>
+                <div class="dash-title">
+                    <span class="dash-breadcrumb">Dashboard > Payments</span>
+                    <h1 class="dash-title">Recharge Records</h1>
                 </div>
                 <div class="dash-header-right">
                     <button class="btn-modern btn-outline-modern" onclick="exportPDF('recharge-records', 'recharge')"><i
@@ -249,10 +271,28 @@ $offset = ($page_num - 1) * $content;
                 </div>
             </div>
 
+            <div style="padding: 10px 14px 0;">
+                <div class="d-flex align-items-center gap-2 mb-2 flex-wrap">
+                    <a href="?f_category=direct&f_username=<?php echo urlencode($f_username); ?>&f_date_from=<?php echo urlencode($f_date_from); ?>&f_date_to=<?php echo urlencode($f_date_to); ?>&f_status=<?php echo urlencode($f_status); ?>" class="category-tab-btn <?php echo ($f_category === 'direct') ? 'active' : ''; ?>">
+                        <i class='bx bx-user-check'></i> Direct Site Players
+                    </a>
+                    <a href="?f_category=agent&f_username=<?php echo urlencode($f_username); ?>&f_date_from=<?php echo urlencode($f_date_from); ?>&f_date_to=<?php echo urlencode($f_date_to); ?>&f_status=<?php echo urlencode($f_status); ?>" class="category-tab-btn <?php echo ($f_category === 'agent') ? 'active' : ''; ?>">
+                        <i class='bx bx-sitemap'></i> Agent Downline Requests
+                    </a>
+                    <a href="?f_category=affiliate&f_username=<?php echo urlencode($f_username); ?>&f_date_from=<?php echo urlencode($f_date_from); ?>&f_date_to=<?php echo urlencode($f_date_to); ?>&f_status=<?php echo urlencode($f_status); ?>" class="category-tab-btn <?php echo ($f_category === 'affiliate') ? 'active' : ''; ?>">
+                        <i class='bx bx-link'></i> Affiliate Players
+                    </a>
+                    <a href="?f_category=all&f_username=<?php echo urlencode($f_username); ?>&f_date_from=<?php echo urlencode($f_date_from); ?>&f_date_to=<?php echo urlencode($f_date_to); ?>&f_status=<?php echo urlencode($f_status); ?>" class="category-tab-btn <?php echo ($f_category === 'all') ? 'active' : ''; ?>">
+                        <i class='bx bx-layer'></i> All Records
+                    </a>
+                </div>
+            </div>
+
             <div style="padding: 10px 14px;">
                 <div class="search-area">
                     <!-- Recharge Filter Bar -->
                     <form method="POST" class="advanced-filter-bar">
+                        <input type="hidden" name="f_category" value="<?php echo htmlspecialchars($f_category); ?>">
                         <div class="filter-grp">
                             <label class="filter-lbl">Username / ID</label>
                             <div class="filter-inp-box">
@@ -308,7 +348,7 @@ $offset = ($page_num - 1) * $content;
             <div style="padding: 0 14px;">
                 <div class="d-flex align-items-center justify-content-between mb-2 mt-0">
                     <p style="font-size: 14px; font-weight: 700; color: var(--text-main); margin: 0;">
-                        Recharge History
+                        Recharge History (<?php echo ucfirst($f_category); ?> View)
                     </p>
                 </div>
 
@@ -330,6 +370,17 @@ $offset = ($page_num - 1) * $content;
                         $indexVal = $offset + 1;
 
                         $where_clauses = ["1=1"];
+                        if ($f_category === 'direct') {
+                            // Direct site players: no referral code at all
+                            $where_clauses[] = "(u.tbl_joined_under IS NULL OR u.tbl_joined_under = '')";
+                        } elseif ($f_category === 'agent') {
+                            // Agent downline: only players joined under an agent code (AGT-*)
+                            $where_clauses[] = "(u.tbl_joined_under IS NOT NULL AND u.tbl_joined_under != '' AND u.tbl_joined_under LIKE 'AGT-%')";
+                        } elseif ($f_category === 'affiliate') {
+                            // Affiliate players: joined via affiliate code (AFF-*) or affiliate link (LNK-*)
+                            $where_clauses[] = "(u.tbl_joined_under IS NOT NULL AND u.tbl_joined_under != '' AND (u.tbl_joined_under LIKE 'AFF-%' OR u.tbl_joined_under LIKE 'LNK-%'))";
+                        }
+
                         if ($f_username != "") {
                             $where_clauses[] = "(r.tbl_user_id LIKE '%$f_username%' OR u.tbl_user_name LIKE '%$f_username%')";
                         }
@@ -343,9 +394,9 @@ $offset = ($page_num - 1) * $content;
                         $where_str = implode(" AND ", $where_clauses);
 
                         $recharge_records_sql = "
-    SELECT r.*, u.tbl_user_name 
+    SELECT r.*, u.tbl_user_name, u.tbl_joined_under 
     FROM tblusersrecharge r
-    LEFT JOIN tblusersdata u ON r.tbl_user_id = u.tbl_uniq_id
+    LEFT JOIN tblusersdata u ON (r.tbl_user_id = u.tbl_uniq_id OR r.tbl_user_id = CAST(u.id AS CHAR))
     WHERE $where_str 
     ORDER BY r.id DESC 
     LIMIT {$offset}, {$content}";
@@ -359,13 +410,36 @@ $offset = ($page_num - 1) * $content;
                                     <td style="color: var(--text-dim);"><?php echo $indexVal; ?></td>
                                     <td style="font-weight: 600; color: var(--accent-blue);">
                                         <a href="../users-data/view-activities.php?user-id=<?php echo urlencode($row['tbl_user_id']); ?>"
+                                            onclick="event.stopPropagation();"
                                             style="color: inherit; text-decoration: none;"
                                             onmouseover="this.style.textDecoration='underline'"
                                             onmouseout="this.style.textDecoration='none'">
                                             <?php echo htmlspecialchars($row['tbl_user_name'] ?? 'N/A'); ?>
                                         </a>
-                                        <div style="font-size: 9px; color: var(--text-dim);">
-                                            <?php echo htmlspecialchars($row['tbl_user_id']); ?></div>
+                                        <div style="font-size: 9px; color: var(--text-dim); display: flex; align-items: center; gap: 4px; margin-top: 2px;">
+                                            <span><?php echo htmlspecialchars($row['tbl_user_id']); ?></span>
+                                            <?php 
+                                            $joinedCode = $row['tbl_joined_under'] ?? '';
+                                            if (!empty($joinedCode) && strpos($joinedCode, 'AGT-') === 0): ?>
+                                                <a href="../agents/detail/index.php?code=<?php echo urlencode($joinedCode); ?>"
+                                                   onclick="event.stopPropagation();"
+                                                   class="badge bg-warning text-dark text-decoration-none"
+                                                   style="font-size: 8px; font-weight: 700; cursor: pointer;"
+                                                   title="View Agent Details">
+                                                    <i class='bx bx-user-pin' style="font-size: 9px;"></i> Agent: <?php echo htmlspecialchars($joinedCode); ?>
+                                                </a>
+                                            <?php elseif (!empty($joinedCode) && (strpos($joinedCode, 'AFF-') === 0 || strpos($joinedCode, 'LNK-') === 0)): ?>
+                                                <span class="badge text-decoration-none" style="font-size: 8px; font-weight: 700; background: rgba(139, 92, 246, 0.25); color: #a78bfa;">
+                                                    <i class='bx bx-link' style="font-size: 9px;"></i> Affiliate: <?php echo htmlspecialchars($joinedCode); ?>
+                                                </span>
+                                            <?php elseif (!empty($joinedCode)): ?>
+                                                <span class="badge bg-secondary text-light" style="font-size: 8px; font-weight: 700;">
+                                                    Ref: <?php echo htmlspecialchars($joinedCode); ?>
+                                                </span>
+                                            <?php else: ?>
+                                                <span class="badge bg-info text-dark" style="font-size: 8px; font-weight: 700;">Direct</span>
+                                            <?php endif; ?>
+                                        </div>
                                     </td>
                                     <td style="color: var(--accent-emerald); font-weight: 800;">
                                         ₹<?php echo number_format($row['tbl_recharge_amount'], 2); ?></td>
@@ -413,17 +487,20 @@ $offset = ($page_num - 1) * $content;
                     $total_page = ceil($total_records / $content);
                     ?>
                     <div class="pagination-container">
-                        <div class="d-flex gap-2">
-                            <?php if ($page_num > 1): ?>
-                                <a href="?page_num=<?php echo $page_num - 1; ?>" class="btn-modern btn-outline-modern">
-                                    <i class='bx bx-chevron-left'></i> Previous
-                                </a>
-                            <?php endif; ?>
-                            <?php if ($page_num < $total_page): ?>
-                                <a href="?page_num=<?php echo $page_num + 1; ?>" class="btn-modern btn-outline-modern">
-                                    Next <i class='bx bx-chevron-right'></i>
-                                </a>
-                            <?php endif; ?>
+                        <div class="d-flex align-items-center gap-3">
+                            <span style="font-size: 12px; font-weight: 700; color: var(--text-dim); text-transform: uppercase;">Page <?php echo $page_num; ?> / <?php echo $total_page; ?></span>
+                            <div class="d-flex gap-2">
+                                <?php if ($page_num > 1): ?>
+                                    <a href="?page_num=<?php echo $page_num - 1; ?>&f_category=<?php echo urlencode($f_category); ?>&f_username=<?php echo urlencode($f_username); ?>&f_date_from=<?php echo urlencode($f_date_from); ?>&f_date_to=<?php echo urlencode($f_date_to); ?>&f_status=<?php echo urlencode($f_status); ?>" class="btn-modern btn-outline-modern">
+                                        <i class='bx bx-chevron-left'></i> Previous
+                                    </a>
+                                <?php endif; ?>
+                                <?php if ($page_num < $total_page): ?>
+                                    <a href="?page_num=<?php echo $page_num + 1; ?>&f_category=<?php echo urlencode($f_category); ?>&f_username=<?php echo urlencode($f_username); ?>&f_date_from=<?php echo urlencode($f_date_from); ?>&f_date_to=<?php echo urlencode($f_date_to); ?>&f_status=<?php echo urlencode($f_status); ?>" class="btn-modern btn-outline-modern">
+                                        Next <i class='bx bx-chevron-right'></i>
+                                    </a>
+                                <?php endif; ?>
+                            </div>
                         </div>
                     </div>
                     <?php

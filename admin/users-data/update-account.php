@@ -108,6 +108,9 @@ if (isset($_POST['submit'])){
       $insert_sql->bind_param("sssssss", $uniqId,$user_uniq_id,$update_balance_delta,$recharge_mode, $recharge_details,$request_status,$curr_date_time);
       $insert_sql->execute();
       $insert_error = $insert_sql->error;
+
+      require_once __DIR__ . '/../../services/AffiliateDepositService.php';
+      AffiliateDepositService::checkAndUpdateFTD($conn, $user_uniq_id, $update_balance_delta);
     } else {
       $withdraw_amount = abs($update_balance_delta);
       $request_status = "success";
@@ -187,13 +190,13 @@ if (isset($_POST['submit'])){
         .input-wrapper { position: relative; display: flex; align-items: center; }
         .input-wrapper i { position: absolute; left: 14px; color: var(--text-dim); font-size: 16px; top: 50%; transform: translateY(-50%); z-index: 5; }
         
-        .cus-inp {
+        .cus-inp { color-scheme: dark; 
             width: 100%; height: 42px; background: var(--input-bg) !important;
             border: 1px solid var(--border-dim) !important; border-radius: 10px !important;
             padding: 0 12px 0 38px !important; color: var(--text-main) !important; font-size: 13px !important;
             font-weight: 600 !important; transition: all 0.2s !important;
         }
-        .cus-inp option { background: var(--panel-bg); color: var(--text-main); }
+        .cus-inp option { color-scheme: dark; background-color: #0f172a !important; color: #f8fafc !important;  background: var(--panel-bg); color: var(--text-main); }
         .cus-inp:focus {
             border-color: var(--accent-blue) !important; background: var(--input-bg) !important;
             box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important; outline: none;
@@ -217,7 +220,7 @@ if (isset($_POST['submit'])){
         .btn-submit:hover { transform: translateY(-1px); box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3); }
         .btn-submit:active { transform: translateY(0); }
 
-        select.cus-inp { appearance: none; cursor: pointer; }
+        select.cus-inp { color-scheme: dark;  appearance: none; cursor: pointer; }
     </style>
 </head>
 

@@ -7519,3 +7519,148 @@
 </body>
 
 </html>
+2026-08-20 14:01:16 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"guest"}
+2026-08-20 14:01:19 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>500 Internal Server Error</title>
+</head><body><a href="https://api.velplay365.com/cdn-cgi/content?id=H40_eB6bbvCPEA2kx554MOq6wThmc2jc0C9E.FlLML0-1787214679.6945438-1.2.1.1-Od1tqKLITfIwH4Kz3R228wmGMT9G3UiiVonYfY3.1G42eQPCmhfAE61VsV8ce74k" aria-hidden="true" rel="nofollow noopener" style="display: none !important; visibility: hidden !important"></a>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error or
+misconfiguration and was unable to complete
+your request.</p>
+<p>Please contact the server administrator at 
+ <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c0b7a5a2ada1b3b4a5b280a5b8a1adb0aca5eea3afad">[email&#160;protected]</a> to inform them of the time this error occurred,
+ and the actions you performed just before this error.</p>
+<p>More information about this error may be available
+in the server error log.</p>
+<hr>
+<address>Apache Server at api.velplay365.com Port 443</address>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body></html>
+
+2026-08-20 18:01:07 - Launch Req: {"USER_ID":"3416383","GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4"}
+2026-08-20 18:01:10 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>500 Internal Server Error</title>
+</head><body><a href="https://api.velplay365.com/cdn-cgi/content?id=UF.h1iqf8v9lxBGaoReWr4m0Cb2scTGjg1ywMVKqP_Y-1787229069.7701547-1.2.1.1-cuaz5F0h7F9yEbYZ1mpNOAgTsTgYblPSNU8viIs2DoB9cBbutC5OdpzAjy.hJjmT" aria-hidden="true" rel="nofollow noopener" style="display: none !important; visibility: hidden !important"></a>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error or
+misconfiguration and was unable to complete
+your request.</p>
+<p>Please contact the server administrator at 
+ <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dcabb9beb1bdafa8b9ae9cb9a4bdb1acb0b9f2bfb3b1">[email&#160;protected]</a> to inform them of the time this error occurred,
+ and the actions you performed just before this error.</p>
+<p>More information about this error may be available
+in the server error log.</p>
+<hr>
+<address>Apache Server at api.velplay365.com Port 443</address>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body></html>
+
+2026-08-20 19:11:07 - Launch Req: {"GAME_NAME":"Esports","GAME_UID":"4ee8e0051a035b463b47c3c473ce317d","USER_ID":"3416383"}
+2026-08-20 19:11:12 - Game: Esports | UID: 4ee8e0051a035b463b47c3c473ce317d | API Response: <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>500 Internal Server Error</title>
+</head><body><a href="https://api.velplay365.com/cdn-cgi/content?id=lVRrl..oFXjPO__AAqN4tRltvecNeSahfhqyddP3bfw-1787233270.5817235-1.2.1.1-2_dzUeA24PbDLY9SwDLW6UqmAeXzfGlKJprdO1Vp9XjBbfF5GIoSiFum__vt74wK" aria-hidden="true" rel="nofollow noopener" style="display: none !important; visibility: hidden !important"></a>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error or
+misconfiguration and was unable to complete
+your request.</p>
+<p>Please contact the server administrator at 
+ <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="166173747b776562736456736e777b667a733875797b">[email&#160;protected]</a> to inform them of the time this error occurred,
+ and the actions you performed just before this error.</p>
+<p>More information about this error may be available
+in the server error log.</p>
+<hr>
+<address>Apache Server at api.velplay365.com Port 443</address>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body></html>
+
+2026-08-21 17:02:21 - Launch Req: {"USER_ID":"3416383","GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4"}
+2026-08-21 17:02:22 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>500 Internal Server Error</title>
+</head><body><a href="https://api.velplay365.com/cdn-cgi/content?id=k_Diq8_BKJBMX8ZIbVPc19mOZK0g9WeeymRMDhJWbKE-1787311941.8693461-1.2.1.1-JgNqxSicQVoyyqCm1HYhW_cypCW1z4LszwkyoLzwg_s6notfzR7VOqgH5W0TBDt1" aria-hidden="true" rel="nofollow noopener" style="display: none !important; visibility: hidden !important"></a>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error or
+misconfiguration and was unable to complete
+your request.</p>
+<p>Please contact the server administrator at 
+ <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b3c4d6d1ded2c0c7d6c1f3d6cbd2dec3dfd69dd0dcde">[email&#160;protected]</a> to inform them of the time this error occurred,
+ and the actions you performed just before this error.</p>
+<p>More information about this error may be available
+in the server error log.</p>
+<hr>
+<address>Apache Server at api.velplay365.com Port 443</address>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body></html>
+
+2026-08-21 17:02:22 - Launch Req: {"USER_ID":"3416383","GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4"}
+2026-08-21 17:02:23 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>500 Internal Server Error</title>
+</head><body><a href="https://api.velplay365.com/cdn-cgi/content?id=fqcucigitKkwBi_T4QtL4RV6iCOgZYnwC26rM.MuNec-1787311942.9258633-1.2.1.1-KeHn5ShcEj1aqqdCf34Sz6bLLhh8jEWlg1LJ9Vn6.NZICAz3GP9jAt7g09FVFeI6" aria-hidden="true" rel="nofollow noopener" style="display: none !important; visibility: hidden !important"></a>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error or
+misconfiguration and was unable to complete
+your request.</p>
+<p>Please contact the server administrator at 
+ <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8cfbe9eee1edfff8e9fecce9f4ede1fce0e9a2efe3e1">[email&#160;protected]</a> to inform them of the time this error occurred,
+ and the actions you performed just before this error.</p>
+<p>More information about this error may be available
+in the server error log.</p>
+<hr>
+<address>Apache Server at api.velplay365.com Port 443</address>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body></html>
+
+2026-08-21 17:48:56 - Launch Req: {"GAME_NAME":"Dice","GAME_UID":"8a87aae7a3624d284306e9c6fe1b3e9c","USER_ID":"3416383"}
+2026-08-21 17:48:58 - Game: Dice | UID: 8a87aae7a3624d284306e9c6fe1b3e9c | API Response: <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>500 Internal Server Error</title>
+</head><body><a href="https://api.velplay365.com/cdn-cgi/content?id=_ubt8K7pM5mZxGk9qiQybXsv01Urgh.FM3LPbsVM_B8-1787314737.7200449-1.2.1.1-yW1zT8NehF2NJRNa.Tq04fmXgM0x1U1Aq3xPPWfBkmZlbZ98HurPjhJCPiVg9jLE" aria-hidden="true" rel="nofollow noopener" style="display: none !important; visibility: hidden !important"></a>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error or
+misconfiguration and was unable to complete
+your request.</p>
+<p>Please contact the server administrator at 
+ <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1d6a787f707c6e69786f5d78657c706d7178337e7270">[email&#160;protected]</a> to inform them of the time this error occurred,
+ and the actions you performed just before this error.</p>
+<p>More information about this error may be available
+in the server error log.</p>
+<hr>
+<address>Apache Server at api.velplay365.com Port 443</address>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body></html>
+
+2026-09-10 14:47:31 - Launch Req: {"GAME_NAME":"SABA Sports","GAME_UID":"08ced9dd788aed11ff3c7f387ae0f063","USER_ID":"3416383"}
+2026-09-10 14:47:38 - Launch Req: {"GAME_NAME":"SABA Sports","GAME_UID":"08ced9dd788aed11ff3c7f387ae0f063","USER_ID":"5522975"}
+2026-09-10 14:47:40 - Game: SABA Sports | UID: 08ced9dd788aed11ff3c7f387ae0f063 | API Response: <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>500 Internal Server Error</title>
+</head><body><a href="https://api.velplay365.com/cdn-cgi/content?id=DVowqTcg821hQHHFXb.8FD5dQ7PBbiy..rbc7.lJRvQ-1789031860.3834348-1.2.1.1-H_gDecEQqwUTdjR1GZFUXUqrqIA2A6Iz_kd4b0SJoY8CRHnluhWp8mMoKQi7_Fd5" aria-hidden="true" rel="nofollow noopener" style="display: none !important; visibility: hidden !important"></a>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error or
+misconfiguration and was unable to complete
+your request.</p>
+<p>Please contact the server administrator at 
+ <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="88ffedeae5e9fbfcedfac8edf0e9e5f8e4eda6ebe7e5">[email&#160;protected]</a> to inform them of the time this error occurred,
+ and the actions you performed just before this error.</p>
+<p>More information about this error may be available
+in the server error log.</p>
+<hr>
+<address>Apache Server at api.velplay365.com Port 443</address>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body></html>
+
+2026-09-11 15:41:02 - Launch Req: {"GAME_NAME":"Luck Sports","GAME_UID":"92b24e4c25107367a80e0fe1a97c24e4","USER_ID":"5522975"}
+2026-09-11 15:41:03 - Game: Luck Sports | UID: 92b24e4c25107367a80e0fe1a97c24e4 | API Response: <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>500 Internal Server Error</title>
+</head><body><a href="https://api.velplay365.com/cdn-cgi/content?id=ZwpPe52hj.KzM7JgGz9TniaPde9tkH5eTnsnG8EwBLU-1789121463.1654947-1.2.1.1-GM7sLn1_SPAMhZi7xS546f6AlEBHNqW6.Xclx48jJJgH81jSDa18TS4m9n1ylFin" aria-hidden="true" rel="nofollow noopener" style="display: none !important; visibility: hidden !important"></a>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error or
+misconfiguration and was unable to complete
+your request.</p>
+<p>Please contact the server administrator at 
+ <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="077062656a667473627547627f666a776b622964686a">[email&#160;protected]</a> to inform them of the time this error occurred,
+ and the actions you performed just before this error.</p>
+<p>More information about this error may be available
+in the server error log.</p>
+<hr>
+<address>Apache Server at api.velplay365.com Port 443</address>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body></html>
+

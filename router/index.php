@@ -5,14 +5,13 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
  For any help please contact developer here: abcd@gmail.com
 */
 define("ACCESS_SECURITY", "true");
-include '../security/headers-security.php';
+require_once '../security/headers-security.php';
 
 
 // check for all request headers
 $headerObj = new RequestHeaders();
 $headerObj->checkCorsPolicy("GET,POST,OPTIONS");
-if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') 
-  {
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
   exit;
 }
 $headerObj->checkAllHeaders();
@@ -47,13 +46,27 @@ $route_path = $headerObj->getRoute();
 
 // Fallback: If no Route header/param, extract from URL path
 if (empty($route_path)) {
-  $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-  // Remove common base paths like /api/router/, /router/, or /api/
-  $uri = preg_replace('/^\/(api\/)?(router\/)?/', '', $uri);
-  $route_path = trim($uri, '/');
+  $raw_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+  
+  if (array_key_exists($raw_path, $routes)) {
+    $request_uri = $raw_path;
+    $route_path = trim($raw_path, '/');
+  } else {
+    $cleaned = preg_replace('/^\/(api\/)?(router\/)?/', '', $raw_path);
+    $cleaned_uri = '/' . trim($cleaned, '/');
+    
+    if (array_key_exists($cleaned_uri, $routes)) {
+      $request_uri = $cleaned_uri;
+      $route_path = trim($cleaned, '/');
+    } else {
+      $request_uri = $raw_path;
+      $route_path = trim($raw_path, '/');
+    }
+  }
+} else {
+  $request_uri = '/' . trim($route_path, '/');
 }
 
-$request_uri = '/' . $route_path;
 $req_log = date('Y-m-d H:i:s') . " | ROUTER | URI: " . $_SERVER['REQUEST_URI'] . " | Route_Path: $route_path | Final_URI: $request_uri | User: " . ($_GET['USER_ID'] ?? 'N/A') . "\n";
 file_put_contents(__DIR__ . "/play_debug.txt", $req_log, FILE_APPEND);
 
@@ -90,6 +103,27 @@ if (array_key_exists($request_uri, $routes)) {
       break;
   }
 } else {
+  // Dynamic fallback for API endpoints (/api/v1/agent/*, /agent/*, /api/v1/affiliate/*, /affiliate/*)
+  $cleanUri = preg_replace('/^\/api\/v1\//', '/', $request_uri);
+  $cleanUri = preg_replace('/^\/api\//', '/', $cleanUri);
+  
+  if (strpos($cleanUri, '/agent/players/transfer') === 0 || strpos($cleanUri, '/agent/players/deposit') === 0) {
+    $cleanUri = '/agent/players/credit';
+  }
+  
+  $targetFile = __DIR__ . '/..' . $cleanUri;
+  if (!str_ends_with($targetFile, '.php') && !file_exists($targetFile)) {
+    $targetFile .= '.php';
+  }
+  
+  if (file_exists($targetFile)) {
+    file_put_contents(__DIR__ . "/router_final.log", date('Y-m-d H:i:s') . " - Dynamic Fallback Including: $targetFile\n", FILE_APPEND);
+    ob_start();
+    include $targetFile;
+    echo ob_get_clean();
+    return;
+  }
+
   // Handle other routes or show a 404 page
   echo "invalid_route_request_1";
 }

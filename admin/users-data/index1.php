@@ -395,7 +395,8 @@ if (isset($_POST['order_type'])) {
                         $indexVal = $offset + 1;
                         $paginationAvailable = false;
 
-                        $user_records_sql = "SELECT * FROM tblusersdata WHERE tbl_account_status='{$accountStatus}' ORDER BY tbl_balance DESC LIMIT {$offset},{$content}";
+                        $statusFilterSql = ($accountStatus === "true") ? "(tbl_account_status='true' OR tbl_account_status='active')" : "tbl_account_status='{$accountStatus}'";
+                        $user_records_sql = "SELECT * FROM tblusersdata WHERE {$statusFilterSql} ORDER BY tbl_balance DESC LIMIT {$offset},{$content}";
                         $user_records_result = mysqli_query($conn, $user_records_sql) or die('query failed');
 
                         if (mysqli_num_rows($user_records_result) > 0) {
@@ -475,7 +476,7 @@ if (isset($_POST['order_type'])) {
 
                 <!-- Pagination -->
                 <?php
-                $count_sql = "SELECT id FROM tblusersdata WHERE tbl_account_status='{$accountStatus}'";
+                $count_sql = "SELECT id FROM tblusersdata WHERE {$statusFilterSql}";
                 $count_result = mysqli_query($conn, $count_sql);
                 if (mysqli_num_rows($count_result) > 0) {
                     $total_records = mysqli_num_rows($count_result);

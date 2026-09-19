@@ -628,18 +628,26 @@ $page_url_name = trim(str_replace($host_url, '', strtok($page_url, '?')), '/');
         </a>
 
 
-        <?php /*
-        <a href="http://api.<?php echo strtolower($APP_NAME); ?>.site/payments/bharatpe/manager/?mode=prod-9874-mode" class="nav-link" target="_blank">
-            <i class='bx bx-credit-card' style='color:#3b82f6;'></i>
-            Manage Payments
+        <a href="<?php echo $host_url; ?>manage-payment-methods" class="nav-link <?php if (strpos($page_url_name, 'manage-payment-methods') !== false) {
+    echo 'menu-active-btn';
+}?>">
+            <i class='bx bx-credit-card' style='color:#10b981;'></i>
+            Payment Methods
         </a>
-        */ ?>
+
         
         <a href="<?php echo $host_url; ?>manage-settings/site-branding.php" class="nav-link <?php if ($page_url_name == 'manage-settings/site-branding.php') {
     echo 'menu-active-btn';
 }?>">
             <i class='bx bx-paint-roll' style='color:#E6A000;'></i>
             Site Branding
+        </a>
+
+        <a href="<?php echo $host_url; ?>manage-settings/agent-control.php" class="nav-link <?php if (strpos($page_url_name, 'agent-control.php') !== false) {
+    echo 'menu-active-btn';
+}?>">
+            <i class='bx bx-user-check' style='color:#06b6d4;'></i>
+            Agent & Affiliate Control
         </a>
 
         <a href="<?php echo $host_url; ?>manage-settings" class="nav-link <?php if ($page_url_name == 'manage-settings') {

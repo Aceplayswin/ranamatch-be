@@ -73,7 +73,7 @@ else {
         display: block; font-size: 11px; font-weight: 800; color: var(--text-dim);
         text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;
     }
-    .cus-inp {
+    .cus-inp { color-scheme: dark; 
         width: 100%; height: 48px; background: var(--input-bg) !important;
         border: 1px solid var(--input-border) !important; border-radius: 12px !important;
         padding: 0 15px !important; color: var(--text-main) !important; font-size: 14px !important;
@@ -84,12 +84,12 @@ else {
         box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1) !important;
     }
     
-    select.cus-inp option {
+    select.cus-inp option { color-scheme: dark; background-color: #0f172a !important; color: #f8fafc !important; 
         background-color: var(--panel-bg) !important;
         color: var(--text-main) !important;
     }
 
-    textarea.cus-inp { height: 120px !important; padding: 12px !important; resize: none; }
+    textarea.cus-inp { color-scheme: dark;  height: 120px !important; padding: 12px !important; resize: none; }
 
     .action-btn {
         width: 100%; height: 50px; background: var(--accent-blue);

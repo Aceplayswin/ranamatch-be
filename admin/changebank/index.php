@@ -86,7 +86,7 @@ if (!empty($search_input)) {
             border-radius: 16px; padding: 16px; margin: 0 20px 16px;
             box-shadow: var(--card-shadow);
         }
-        .cus-inp {
+        .cus-inp { color-scheme: dark; 
             height: 38px; background: var(--input-bg) !important;
             border: 1px solid var(--border-dim) !important; border-radius: 10px !important;
             padding: 0 12px !important; color: var(--text-main) !important; font-size: 12px !important;

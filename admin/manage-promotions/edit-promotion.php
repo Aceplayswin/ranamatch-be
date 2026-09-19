@@ -138,7 +138,7 @@ if (isset($_POST['submit'])){
         
         .cus-select option { background: var(--panel-bg); color: var(--text-main); }
 
-        textarea.cus-inp { height: 100px !important; padding: 16px !important; resize: none; }
+        textarea.cus-inp { color-scheme: dark;  height: 100px !important; padding: 16px !important; resize: none; }
 
         .action-btn {
             width: 100%; height: 52px; background: var(--accent-blue);

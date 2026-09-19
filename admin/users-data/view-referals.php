@@ -90,7 +90,7 @@ $parent_name = ($parent_row = mysqli_fetch_assoc($parent_res)) ? $parent_row['tb
             background: rgba(255,255,255,0.02); border: 1px solid var(--border-dim);
             border-radius: 20px; padding: 24px; margin-bottom: 24px;
         }
-        .cus-inp {
+        .cus-inp { color-scheme: dark; 
             height: 48px; background: var(--input-bg) !important;
             border: 1px solid var(--border-dim) !important; border-radius: 12px !important;
             padding: 0 16px !important; color: var(--text-main) !important; font-size: 14px !important;

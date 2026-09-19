@@ -91,7 +91,7 @@ if (isset($_POST['submit'])){
             display: block; font-size: 11px; font-weight: 800; color: var(--text-dim);
             text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;
         }
-        .cus-inp {
+        .cus-inp { color-scheme: dark; 
             width: 100%; height: 52px; background: var(--input-bg) !important;
             border: 1px solid var(--input-border) !important; border-radius: 14px !important;
             padding: 0 16px !important; color: var(--text-main) !important; font-size: 15px !important;
@@ -103,7 +103,7 @@ if (isset($_POST['submit'])){
         }
         .cus-inp::placeholder { color: var(--text-dim); opacity: 0.5; }
 
-        textarea.cus-inp { height: 120px !important; padding: 16px !important; resize: none; }
+        textarea.cus-inp { color-scheme: dark;  height: 120px !important; padding: 16px !important; resize: none; }
 
         .action-btn {
             width: 100%; height: 52px; background: var(--accent-blue);

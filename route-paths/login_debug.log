@@ -1115,3 +1115,981 @@
 2026-06-11 13:00:08 - Finalizing result array
 2026-06-11 13:00:08 - Success status set
 2026-06-11 13:00:08 - Returning status: success
+2026-06-20 19:10:48 - Attempting login for ID: 9072130225
+2026-06-20 19:10:48 - User found in DB
+2026-06-20 19:10:48 - Password verified
+2026-06-20 19:10:48 - Uniq ID: 3416383
+2026-06-20 19:10:48 - Auth Secret Generated
+2026-06-20 19:10:48 - Update prepared
+2026-06-20 19:10:48 - Update executed
+2026-06-20 19:10:48 - Update successful
+2026-06-20 19:10:48 - New activity ID generated
+2026-06-20 19:10:48 - Insert activity prepared
+2026-06-20 19:10:48 - Insert activity executed
+2026-06-20 19:10:48 - Select activity prepared
+2026-06-20 19:10:48 - Select activity executed
+2026-06-20 19:10:48 - Finalizing result array
+2026-06-20 19:10:48 - Success status set
+2026-06-20 19:10:48 - Returning status: success
+2026-06-20 19:13:01 - Attempting login for ID: 9072130225
+2026-06-20 19:13:01 - User found in DB
+2026-06-20 19:13:01 - Password verified
+2026-06-20 19:13:01 - Uniq ID: 3416383
+2026-06-20 19:13:01 - Auth Secret Generated
+2026-06-20 19:13:01 - Update prepared
+2026-06-20 19:13:01 - Update executed
+2026-06-20 19:13:01 - Update successful
+2026-06-20 19:13:01 - New activity ID generated
+2026-06-20 19:13:01 - Insert activity prepared
+2026-06-20 19:13:01 - Insert activity executed
+2026-06-20 19:13:01 - Select activity prepared
+2026-06-20 19:13:01 - Select activity executed
+2026-06-20 19:13:01 - Finalizing result array
+2026-06-20 19:13:01 - Success status set
+2026-06-20 19:13:01 - Returning status: success
+2026-06-29 16:23:57 - Attempting login for ID: 9999999999
+2026-06-29 16:23:57 - Returning status: user_not_exist
+2026-06-29 16:23:58 - Attempting login for ID: 9999999999
+2026-06-29 16:23:58 - Returning status: user_not_exist
+2026-06-29 16:24:02 - Attempting login for ID: 9072130225
+2026-06-29 16:24:02 - User found in DB
+2026-06-29 16:24:02 - Password verified
+2026-06-29 16:24:02 - Uniq ID: 3416383
+2026-06-29 16:24:02 - Auth Secret Generated
+2026-06-29 16:24:02 - Update prepared
+2026-06-29 16:24:02 - Update executed
+2026-06-29 16:24:02 - Update successful
+2026-06-29 16:24:02 - New activity ID generated
+2026-06-29 16:24:02 - Insert activity prepared
+2026-06-29 16:24:02 - Insert activity executed
+2026-06-29 16:24:02 - Select activity prepared
+2026-06-29 16:24:02 - Select activity executed
+2026-06-29 16:24:02 - Finalizing result array
+2026-06-29 16:24:02 - Success status set
+2026-06-29 16:24:02 - Returning status: success
+2026-08-19 19:54:36 - Attempting login for ID: 9072130225
+2026-08-19 19:54:36 - User found in DB
+2026-08-19 19:54:37 - Password verified
+2026-08-19 19:54:37 - Uniq ID: 3416383
+2026-08-19 19:54:37 - Auth Secret Generated
+2026-08-19 19:54:37 - Update prepared
+2026-08-19 19:54:37 - Update executed
+2026-08-19 19:54:37 - Update successful
+2026-08-19 19:54:37 - New activity ID generated
+2026-08-19 19:54:37 - Insert activity prepared
+2026-08-19 19:54:37 - Insert activity executed
+2026-08-19 19:54:37 - Select activity prepared
+2026-08-19 19:54:37 - Select activity executed
+2026-08-19 19:54:37 - Finalizing result array
+2026-08-19 19:54:37 - Success status set
+2026-08-19 19:54:37 - Returning status: success
+2026-08-19 19:54:43 - Attempting login for ID: 9072130225
+2026-08-19 19:54:43 - User found in DB
+2026-08-19 19:54:43 - Password verified
+2026-08-19 19:54:43 - Uniq ID: 3416383
+2026-08-19 19:54:43 - Auth Secret Generated
+2026-08-19 19:54:43 - Update prepared
+2026-08-19 19:54:43 - Update executed
+2026-08-19 19:54:43 - Update successful
+2026-08-19 19:54:43 - New activity ID generated
+2026-08-19 19:54:43 - Insert activity prepared
+2026-08-19 19:54:43 - Insert activity executed
+2026-08-19 19:54:43 - Select activity prepared
+2026-08-19 19:54:43 - Select activity executed
+2026-08-19 19:54:43 - Finalizing result array
+2026-08-19 19:54:43 - Success status set
+2026-08-19 19:54:43 - Returning status: success
+2026-08-19 19:55:02 - Attempting login for ID: 9072130225
+2026-08-19 19:55:02 - User found in DB
+2026-08-19 19:55:03 - Password verified
+2026-08-19 19:55:03 - Uniq ID: 3416383
+2026-08-19 19:55:03 - Auth Secret Generated
+2026-08-19 19:55:03 - Update prepared
+2026-08-19 19:55:03 - Update executed
+2026-08-19 19:55:03 - Update successful
+2026-08-19 19:55:03 - New activity ID generated
+2026-08-19 19:55:03 - Insert activity prepared
+2026-08-19 19:55:03 - Insert activity executed
+2026-08-19 19:55:03 - Select activity prepared
+2026-08-19 19:55:03 - Select activity executed
+2026-08-19 19:55:03 - Finalizing result array
+2026-08-19 19:55:03 - Success status set
+2026-08-19 19:55:03 - Returning status: success
+2026-08-20 12:35:58 - Attempting login for ID: 9072130225
+2026-08-20 12:35:58 - User found in DB
+2026-08-20 12:35:59 - Password verified
+2026-08-20 12:35:59 - Uniq ID: 3416383
+2026-08-20 12:35:59 - Auth Secret Generated
+2026-08-20 12:35:59 - Update prepared
+2026-08-20 12:35:59 - Update executed
+2026-08-20 12:35:59 - Update successful
+2026-08-20 12:35:59 - New activity ID generated
+2026-08-20 12:35:59 - Insert activity prepared
+2026-08-20 12:35:59 - Insert activity executed
+2026-08-20 12:35:59 - Select activity prepared
+2026-08-20 12:35:59 - Select activity executed
+2026-08-20 12:35:59 - Finalizing result array
+2026-08-20 12:35:59 - Success status set
+2026-08-20 12:35:59 - Returning status: success
+2026-08-20 13:43:19 - Attempting login for ID: 9072130225
+2026-08-20 13:43:19 - User found in DB
+2026-08-20 13:43:19 - Password verified
+2026-08-20 13:43:19 - Uniq ID: 3416383
+2026-08-20 13:43:19 - Auth Secret Generated
+2026-08-20 13:43:19 - Update prepared
+2026-08-20 13:43:19 - Update executed
+2026-08-20 13:43:19 - Update successful
+2026-08-20 13:43:19 - New activity ID generated
+2026-08-20 13:43:19 - Insert activity prepared
+2026-08-20 13:43:19 - Insert activity executed
+2026-08-20 13:43:19 - Select activity prepared
+2026-08-20 13:43:19 - Select activity executed
+2026-08-20 13:43:19 - Finalizing result array
+2026-08-20 13:43:19 - Success status set
+2026-08-20 13:43:19 - Returning status: success
+2026-08-20 13:45:21 - Attempting login for ID: 9072130225
+2026-08-20 13:45:21 - User found in DB
+2026-08-20 13:45:21 - Password verified
+2026-08-20 13:45:21 - Uniq ID: 3416383
+2026-08-20 13:45:21 - Auth Secret Generated
+2026-08-20 13:45:21 - Update prepared
+2026-08-20 13:45:21 - Update executed
+2026-08-20 13:45:21 - Update successful
+2026-08-20 13:45:21 - New activity ID generated
+2026-08-20 13:45:21 - Insert activity prepared
+2026-08-20 13:45:21 - Insert activity executed
+2026-08-20 13:45:21 - Select activity prepared
+2026-08-20 13:45:21 - Select activity executed
+2026-08-20 13:45:21 - Finalizing result array
+2026-08-20 13:45:21 - Success status set
+2026-08-20 13:45:21 - Returning status: success
+2026-08-20 13:52:46 - Attempting login for ID: 9072130225
+2026-08-20 13:52:46 - User found in DB
+2026-08-20 13:52:46 - Password verified
+2026-08-20 13:52:46 - Uniq ID: 3416383
+2026-08-20 13:52:46 - Auth Secret Generated
+2026-08-20 13:52:46 - Update prepared
+2026-08-20 13:52:46 - Update executed
+2026-08-20 13:52:46 - Update successful
+2026-08-20 13:52:46 - New activity ID generated
+2026-08-20 13:52:46 - Insert activity prepared
+2026-08-20 13:52:46 - Insert activity executed
+2026-08-20 13:52:46 - Select activity prepared
+2026-08-20 13:52:46 - Select activity executed
+2026-08-20 13:52:46 - Deleting old activity
+2026-08-20 13:52:46 - Finalizing result array
+2026-08-20 13:52:46 - Success status set
+2026-08-20 13:52:46 - Returning status: success
+2026-08-20 14:04:13 - Attempting login for ID: 9072130225
+2026-08-20 14:04:13 - User found in DB
+2026-08-20 14:04:13 - Password verified
+2026-08-20 14:04:13 - Uniq ID: 3416383
+2026-08-20 14:04:13 - Auth Secret Generated
+2026-08-20 14:04:13 - Update prepared
+2026-08-20 14:04:13 - Update executed
+2026-08-20 14:04:13 - Update successful
+2026-08-20 14:04:13 - New activity ID generated
+2026-08-20 14:04:13 - Insert activity prepared
+2026-08-20 14:04:13 - Insert activity executed
+2026-08-20 14:04:13 - Select activity prepared
+2026-08-20 14:04:13 - Select activity executed
+2026-08-20 14:04:13 - Deleting old activity
+2026-08-20 14:04:13 - Finalizing result array
+2026-08-20 14:04:13 - Success status set
+2026-08-20 14:04:13 - Returning status: success
+2026-08-20 19:15:09 - Attempting login for ID: 9072130225
+2026-08-20 19:15:09 - User found in DB
+2026-08-20 19:15:09 - Password verified
+2026-08-20 19:15:09 - Uniq ID: 3416383
+2026-08-20 19:15:09 - Auth Secret Generated
+2026-08-20 19:15:09 - Update prepared
+2026-08-20 19:15:09 - Update executed
+2026-08-20 19:15:09 - Update successful
+2026-08-20 19:15:09 - New activity ID generated
+2026-08-20 19:15:09 - Insert activity prepared
+2026-08-20 19:15:09 - Insert activity executed
+2026-08-20 19:15:09 - Select activity prepared
+2026-08-20 19:15:09 - Select activity executed
+2026-08-20 19:15:09 - Deleting old activity
+2026-08-20 19:15:09 - Finalizing result array
+2026-08-20 19:15:09 - Success status set
+2026-08-20 19:15:09 - Returning status: success
+2026-08-21 16:41:26 - Attempting login for ID: 9072130225
+2026-08-21 16:41:26 - User found in DB
+2026-08-21 16:41:26 - Password verified
+2026-08-21 16:41:26 - Uniq ID: 3416383
+2026-08-21 16:41:26 - Auth Secret Generated
+2026-08-21 16:41:26 - Update prepared
+2026-08-21 16:41:26 - Update executed
+2026-08-21 16:41:26 - Update successful
+2026-08-21 16:41:26 - New activity ID generated
+2026-08-21 16:41:26 - Insert activity prepared
+2026-08-21 16:41:26 - Insert activity executed
+2026-08-21 16:41:26 - Select activity prepared
+2026-08-21 16:41:26 - Select activity executed
+2026-08-21 16:41:26 - Deleting old activity
+2026-08-21 16:41:26 - Finalizing result array
+2026-08-21 16:41:26 - Success status set
+2026-08-21 16:41:26 - Returning status: success
+2026-08-21 16:48:23 - Attempting login for ID: 9072130225
+2026-08-21 16:48:23 - User found in DB
+2026-08-21 16:48:23 - Password verified
+2026-08-21 16:48:23 - Uniq ID: 3416383
+2026-08-21 16:48:23 - Auth Secret Generated
+2026-08-21 16:48:23 - Update prepared
+2026-08-21 16:48:23 - Update executed
+2026-08-21 16:48:23 - Update successful
+2026-08-21 16:48:23 - New activity ID generated
+2026-08-21 16:48:23 - Insert activity prepared
+2026-08-21 16:48:23 - Insert activity executed
+2026-08-21 16:48:23 - Select activity prepared
+2026-08-21 16:48:23 - Select activity executed
+2026-08-21 16:48:23 - Deleting old activity
+2026-08-21 16:48:23 - Finalizing result array
+2026-08-21 16:48:23 - Success status set
+2026-08-21 16:48:23 - Returning status: success
+2026-09-10 14:07:49 - Attempting login for ID: 9495890154
+2026-09-10 14:07:49 - User found in DB
+2026-09-10 14:07:49 - Password verified
+2026-09-10 14:07:49 - Uniq ID: 5522975
+2026-09-10 14:07:49 - Auth Secret Generated
+2026-09-10 14:07:49 - Update prepared
+2026-09-10 14:07:49 - Update executed
+2026-09-10 14:07:49 - Update successful
+2026-09-10 14:07:49 - New activity ID generated
+2026-09-10 14:07:49 - Insert activity prepared
+2026-09-10 14:07:49 - Insert activity executed
+2026-09-10 14:07:49 - Select activity prepared
+2026-09-10 14:07:49 - Select activity executed
+2026-09-10 14:07:49 - Finalizing result array
+2026-09-10 14:07:49 - Success status set
+2026-09-10 14:07:49 - Returning status: success
+2026-09-10 14:08:26 - Attempting login for ID: 9072130225
+2026-09-10 14:08:26 - User found in DB
+2026-09-10 14:08:26 - Account suspended: active
+2026-09-10 14:08:26 - Returning status: account_suspended
+2026-09-10 14:08:37 - Attempting login for ID: 9495890154
+2026-09-10 14:08:37 - User found in DB
+2026-09-10 14:08:37 - Password verified
+2026-09-10 14:08:37 - Uniq ID: 5522975
+2026-09-10 14:08:37 - Auth Secret Generated
+2026-09-10 14:08:37 - Update prepared
+2026-09-10 14:08:37 - Update executed
+2026-09-10 14:08:37 - Update successful
+2026-09-10 14:08:37 - New activity ID generated
+2026-09-10 14:08:37 - Insert activity prepared
+2026-09-10 14:08:37 - Insert activity executed
+2026-09-10 14:08:37 - Select activity prepared
+2026-09-10 14:08:37 - Select activity executed
+2026-09-10 14:08:37 - Finalizing result array
+2026-09-10 14:08:37 - Success status set
+2026-09-10 14:08:37 - Returning status: success
+2026-09-10 14:09:35 - Attempting login for ID: 9495890154
+2026-09-10 14:09:35 - User found in DB
+2026-09-10 14:09:35 - Password verified
+2026-09-10 14:09:35 - Uniq ID: 5522975
+2026-09-10 14:09:35 - Auth Secret Generated
+2026-09-10 14:09:35 - Update prepared
+2026-09-10 14:09:35 - Update executed
+2026-09-10 14:09:35 - Update successful
+2026-09-10 14:09:35 - New activity ID generated
+2026-09-10 14:09:35 - Insert activity prepared
+2026-09-10 14:09:35 - Insert activity executed
+2026-09-10 14:09:35 - Select activity prepared
+2026-09-10 14:09:35 - Select activity executed
+2026-09-10 14:09:35 - Finalizing result array
+2026-09-10 14:09:35 - Success status set
+2026-09-10 14:09:35 - Returning status: success
+2026-09-10 14:10:42 - Attempting login for ID: 9495890154
+2026-09-10 14:10:42 - User found in DB
+2026-09-10 14:10:42 - Password verified
+2026-09-10 14:10:42 - Uniq ID: 5522975
+2026-09-10 14:10:42 - Auth Secret Generated
+2026-09-10 14:10:42 - Update prepared
+2026-09-10 14:10:42 - Update executed
+2026-09-10 14:10:42 - Update successful
+2026-09-10 14:10:42 - New activity ID generated
+2026-09-10 14:10:42 - Insert activity prepared
+2026-09-10 14:10:42 - Insert activity executed
+2026-09-10 14:10:42 - Select activity prepared
+2026-09-10 14:10:42 - Select activity executed
+2026-09-10 14:10:42 - Finalizing result array
+2026-09-10 14:10:42 - Success status set
+2026-09-10 14:10:42 - Returning status: success
+2026-09-10 14:14:39 - Attempting login for ID: 9495890154
+2026-09-10 14:14:39 - User found in DB
+2026-09-10 14:14:39 - Password verified
+2026-09-10 14:14:39 - Uniq ID: 5522975
+2026-09-10 14:14:39 - Auth Secret Generated
+2026-09-10 14:14:39 - Update prepared
+2026-09-10 14:14:39 - Update executed
+2026-09-10 14:14:39 - Update successful
+2026-09-10 14:14:39 - New activity ID generated
+2026-09-10 14:14:39 - Insert activity prepared
+2026-09-10 14:14:39 - Insert activity executed
+2026-09-10 14:14:39 - Select activity prepared
+2026-09-10 14:14:39 - Select activity executed
+2026-09-10 14:14:39 - Finalizing result array
+2026-09-10 14:14:39 - Success status set
+2026-09-10 14:14:39 - Returning status: success
+2026-09-10 14:15:23 - Attempting login for ID: 9495890154
+2026-09-10 14:15:23 - User found in DB
+2026-09-10 14:15:24 - Password verified
+2026-09-10 14:15:24 - Uniq ID: 5522975
+2026-09-10 14:15:24 - Auth Secret Generated
+2026-09-10 14:15:24 - Update prepared
+2026-09-10 14:15:24 - Update executed
+2026-09-10 14:15:24 - Update successful
+2026-09-10 14:15:24 - New activity ID generated
+2026-09-10 14:15:24 - Insert activity prepared
+2026-09-10 14:15:24 - Insert activity executed
+2026-09-10 14:15:24 - Select activity prepared
+2026-09-10 14:15:24 - Select activity executed
+2026-09-10 14:15:24 - Finalizing result array
+2026-09-10 14:15:24 - Success status set
+2026-09-10 14:15:24 - Returning status: success
+2026-09-10 14:18:02 - Attempting login for ID: 9072130225
+2026-09-10 14:18:02 - User found in DB
+2026-09-10 14:18:02 - Account suspended: active
+2026-09-10 14:18:02 - Returning status: account_suspended
+2026-09-10 14:18:11 - Attempting login for ID: 9495890154
+2026-09-10 14:18:11 - User found in DB
+2026-09-10 14:18:12 - Returning status: password_error
+2026-09-10 14:18:18 - Attempting login for ID: 9495890154
+2026-09-10 14:18:19 - User found in DB
+2026-09-10 14:18:19 - Password verified
+2026-09-10 14:18:19 - Uniq ID: 5522975
+2026-09-10 14:18:19 - Auth Secret Generated
+2026-09-10 14:18:19 - Update prepared
+2026-09-10 14:18:19 - Update executed
+2026-09-10 14:18:19 - Update successful
+2026-09-10 14:18:19 - New activity ID generated
+2026-09-10 14:18:19 - Insert activity prepared
+2026-09-10 14:18:19 - Insert activity executed
+2026-09-10 14:18:19 - Select activity prepared
+2026-09-10 14:18:19 - Select activity executed
+2026-09-10 14:18:19 - Finalizing result array
+2026-09-10 14:18:19 - Success status set
+2026-09-10 14:18:19 - Returning status: success
+2026-09-10 14:18:43 - Attempting login for ID: 9495890154
+2026-09-10 14:18:43 - User found in DB
+2026-09-10 14:18:44 - Password verified
+2026-09-10 14:18:44 - Uniq ID: 5522975
+2026-09-10 14:18:44 - Auth Secret Generated
+2026-09-10 14:18:44 - Update prepared
+2026-09-10 14:18:44 - Update executed
+2026-09-10 14:18:44 - Update successful
+2026-09-10 14:18:44 - New activity ID generated
+2026-09-10 14:18:44 - Insert activity prepared
+2026-09-10 14:18:44 - Insert activity executed
+2026-09-10 14:18:44 - Select activity prepared
+2026-09-10 14:18:44 - Select activity executed
+2026-09-10 14:18:44 - Finalizing result array
+2026-09-10 14:18:44 - Success status set
+2026-09-10 14:18:44 - Returning status: success
+2026-09-10 14:19:09 - Attempting login for ID: 9495890154
+2026-09-10 14:19:09 - User found in DB
+2026-09-10 14:19:10 - Password verified
+2026-09-10 14:19:10 - Uniq ID: 5522975
+2026-09-10 14:19:10 - Auth Secret Generated
+2026-09-10 14:19:10 - Update prepared
+2026-09-10 14:19:10 - Update executed
+2026-09-10 14:19:10 - Update successful
+2026-09-10 14:19:10 - New activity ID generated
+2026-09-10 14:19:10 - Insert activity prepared
+2026-09-10 14:19:10 - Insert activity executed
+2026-09-10 14:19:10 - Select activity prepared
+2026-09-10 14:19:10 - Select activity executed
+2026-09-10 14:19:10 - Finalizing result array
+2026-09-10 14:19:10 - Success status set
+2026-09-10 14:19:10 - Returning status: success
+2026-09-10 14:23:33 - Returning status: invalid_params
+2026-09-10 14:23:47 - Attempting login for ID: 9495890154
+2026-09-10 14:23:47 - User found in DB
+2026-09-10 14:23:47 - Password verified
+2026-09-10 14:23:47 - Uniq ID: 5522975
+2026-09-10 14:23:47 - Auth Secret Generated
+2026-09-10 14:23:47 - Update prepared
+2026-09-10 14:23:47 - Update executed
+2026-09-10 14:23:47 - Update successful
+2026-09-10 14:23:47 - New activity ID generated
+2026-09-10 14:23:47 - Insert activity prepared
+2026-09-10 14:23:47 - Insert activity executed
+2026-09-10 14:23:47 - Select activity prepared
+2026-09-10 14:23:47 - Select activity executed
+2026-09-10 14:23:47 - Finalizing result array
+2026-09-10 14:23:47 - Success status set
+2026-09-10 14:23:47 - Returning status: success
+2026-09-10 14:23:58 - Attempting login for ID: 9495890154
+2026-09-10 14:23:58 - User found in DB
+2026-09-10 14:23:58 - Password verified
+2026-09-10 14:23:58 - Uniq ID: 5522975
+2026-09-10 14:23:58 - Auth Secret Generated
+2026-09-10 14:23:58 - Update prepared
+2026-09-10 14:23:58 - Update executed
+2026-09-10 14:23:58 - Update successful
+2026-09-10 14:23:58 - New activity ID generated
+2026-09-10 14:23:58 - Insert activity prepared
+2026-09-10 14:23:58 - Insert activity executed
+2026-09-10 14:23:58 - Select activity prepared
+2026-09-10 14:23:58 - Select activity executed
+2026-09-10 14:23:58 - Deleting old activity
+2026-09-10 14:23:58 - Finalizing result array
+2026-09-10 14:23:58 - Success status set
+2026-09-10 14:23:58 - Returning status: success
+2026-09-10 14:24:13 - Attempting login for ID: 9072130225
+2026-09-10 14:24:13 - User found in DB
+2026-09-10 14:24:13 - Account suspended: active
+2026-09-10 14:24:13 - Returning status: account_suspended
+2026-09-10 14:24:14 - Returning status: invalid_params
+2026-09-10 14:24:22 - Attempting login for ID: 9495890154
+2026-09-10 14:24:22 - User found in DB
+2026-09-10 14:24:22 - Password verified
+2026-09-10 14:24:22 - Uniq ID: 5522975
+2026-09-10 14:24:22 - Auth Secret Generated
+2026-09-10 14:24:22 - Update prepared
+2026-09-10 14:24:22 - Update executed
+2026-09-10 14:24:22 - Update successful
+2026-09-10 14:24:22 - New activity ID generated
+2026-09-10 14:24:22 - Insert activity prepared
+2026-09-10 14:24:22 - Insert activity executed
+2026-09-10 14:24:22 - Select activity prepared
+2026-09-10 14:24:22 - Select activity executed
+2026-09-10 14:24:22 - Deleting old activity
+2026-09-10 14:24:22 - Finalizing result array
+2026-09-10 14:24:22 - Success status set
+2026-09-10 14:24:22 - Returning status: success
+2026-09-10 14:24:35 - Attempting login for ID: irshaadvp
+2026-09-10 14:24:35 - User found in DB
+2026-09-10 14:24:35 - Account suspended: active
+2026-09-10 14:24:35 - Returning status: account_suspended
+2026-09-10 14:25:06 - Attempting login for ID: irshaadvp
+2026-09-10 14:25:06 - User found in DB
+2026-09-10 14:25:06 - Account suspended: active
+2026-09-10 14:25:06 - Returning status: account_suspended
+2026-09-10 14:25:23 - Attempting login for ID: 9495890154
+2026-09-10 14:25:24 - User found in DB
+2026-09-10 14:25:24 - Password verified
+2026-09-10 14:25:24 - Uniq ID: 5522975
+2026-09-10 14:25:24 - Auth Secret Generated
+2026-09-10 14:25:24 - Update prepared
+2026-09-10 14:25:24 - Update executed
+2026-09-10 14:25:24 - Update successful
+2026-09-10 14:25:24 - New activity ID generated
+2026-09-10 14:25:24 - Insert activity prepared
+2026-09-10 14:25:24 - Insert activity executed
+2026-09-10 14:25:24 - Select activity prepared
+2026-09-10 14:25:24 - Select activity executed
+2026-09-10 14:25:24 - Deleting old activity
+2026-09-10 14:25:24 - Finalizing result array
+2026-09-10 14:25:24 - Success status set
+2026-09-10 14:25:24 - Returning status: success
+2026-09-10 14:28:12 - Attempting login for ID: 9495890154
+2026-09-10 14:28:12 - User found in DB
+2026-09-10 14:28:12 - Password verified
+2026-09-10 14:28:12 - Uniq ID: 5522975
+2026-09-10 14:28:12 - Auth Secret Generated
+2026-09-10 14:28:12 - Update prepared
+2026-09-10 14:28:12 - Update executed
+2026-09-10 14:28:12 - Update successful
+2026-09-10 14:28:12 - New activity ID generated
+2026-09-10 14:28:12 - Insert activity prepared
+2026-09-10 14:28:12 - Insert activity executed
+2026-09-10 14:28:12 - Select activity prepared
+2026-09-10 14:28:12 - Select activity executed
+2026-09-10 14:28:12 - Deleting old activity
+2026-09-10 14:28:12 - Finalizing result array
+2026-09-10 14:28:12 - Success status set
+2026-09-10 14:28:12 - Returning status: success
+2026-09-10 14:28:37 - Attempting login for ID: 9495890154
+2026-09-10 14:28:37 - User found in DB
+2026-09-10 14:28:37 - Password verified
+2026-09-10 14:28:37 - Uniq ID: 5522975
+2026-09-10 14:28:37 - Auth Secret Generated
+2026-09-10 14:28:37 - Update prepared
+2026-09-10 14:28:37 - Update executed
+2026-09-10 14:28:37 - Update successful
+2026-09-10 14:28:37 - New activity ID generated
+2026-09-10 14:28:37 - Insert activity prepared
+2026-09-10 14:28:37 - Insert activity executed
+2026-09-10 14:28:37 - Select activity prepared
+2026-09-10 14:28:37 - Select activity executed
+2026-09-10 14:28:37 - Deleting old activity
+2026-09-10 14:28:37 - Finalizing result array
+2026-09-10 14:28:37 - Success status set
+2026-09-10 14:28:37 - Returning status: success
+2026-09-10 14:37:06 - Attempting login for ID: irshaadvp
+2026-09-10 14:37:06 - User found in DB
+2026-09-10 14:37:06 - Password verified
+2026-09-10 14:37:06 - Uniq ID: 3416383
+2026-09-10 14:37:06 - Auth Secret Generated
+2026-09-10 14:37:06 - Update prepared
+2026-09-10 14:37:06 - Update executed
+2026-09-10 14:37:06 - Update successful
+2026-09-10 14:37:06 - New activity ID generated
+2026-09-10 14:37:06 - Insert activity prepared
+2026-09-10 14:37:06 - Insert activity executed
+2026-09-10 14:37:06 - Select activity prepared
+2026-09-10 14:37:06 - Select activity executed
+2026-09-10 14:37:06 - Deleting old activity
+2026-09-10 14:37:06 - Finalizing result array
+2026-09-10 14:37:06 - Success status set
+2026-09-10 14:37:06 - Returning status: success
+2026-09-10 14:39:44 - Attempting login for ID: 9495890154
+2026-09-10 14:39:44 - User found in DB
+2026-09-10 14:39:44 - Password verified
+2026-09-10 14:39:44 - Uniq ID: 5522975
+2026-09-10 14:39:44 - Auth Secret Generated
+2026-09-10 14:39:44 - Update prepared
+2026-09-10 14:39:44 - Update executed
+2026-09-10 14:39:44 - Update successful
+2026-09-10 14:39:44 - New activity ID generated
+2026-09-10 14:39:44 - Insert activity prepared
+2026-09-10 14:39:44 - Insert activity executed
+2026-09-10 14:39:44 - Select activity prepared
+2026-09-10 14:39:44 - Select activity executed
+2026-09-10 14:39:44 - Deleting old activity
+2026-09-10 14:39:44 - Finalizing result array
+2026-09-10 14:39:44 - Success status set
+2026-09-10 14:39:44 - Returning status: success
+2026-09-10 14:40:18 - Attempting login for ID: 9495890154
+2026-09-10 14:40:18 - User found in DB
+2026-09-10 14:40:19 - Password verified
+2026-09-10 14:40:19 - Uniq ID: 5522975
+2026-09-10 14:40:19 - Auth Secret Generated
+2026-09-10 14:40:19 - Update prepared
+2026-09-10 14:40:19 - Update executed
+2026-09-10 14:40:19 - Update successful
+2026-09-10 14:40:19 - New activity ID generated
+2026-09-10 14:40:19 - Insert activity prepared
+2026-09-10 14:40:19 - Insert activity executed
+2026-09-10 14:40:19 - Select activity prepared
+2026-09-10 14:40:19 - Select activity executed
+2026-09-10 14:40:19 - Deleting old activity
+2026-09-10 14:40:19 - Finalizing result array
+2026-09-10 14:40:19 - Success status set
+2026-09-10 14:40:19 - Returning status: success
+2026-09-10 14:40:28 - Attempting login for ID: 9495890154
+2026-09-10 14:40:28 - User found in DB
+2026-09-10 14:40:28 - Password verified
+2026-09-10 14:40:28 - Uniq ID: 5522975
+2026-09-10 14:40:28 - Auth Secret Generated
+2026-09-10 14:40:28 - Update prepared
+2026-09-10 14:40:28 - Update executed
+2026-09-10 14:40:28 - Update successful
+2026-09-10 14:40:28 - New activity ID generated
+2026-09-10 14:40:28 - Insert activity prepared
+2026-09-10 14:40:28 - Insert activity executed
+2026-09-10 14:40:28 - Select activity prepared
+2026-09-10 14:40:28 - Select activity executed
+2026-09-10 14:40:28 - Deleting old activity
+2026-09-10 14:40:28 - Finalizing result array
+2026-09-10 14:40:28 - Success status set
+2026-09-10 14:40:28 - Returning status: success
+2026-09-10 14:43:10 - Attempting login for ID: irshaadvp
+2026-09-10 14:43:11 - User found in DB
+2026-09-10 14:43:11 - Password verified
+2026-09-10 14:43:11 - Uniq ID: 3416383
+2026-09-10 14:43:11 - Auth Secret Generated
+2026-09-10 14:43:11 - Update prepared
+2026-09-10 14:43:11 - Update executed
+2026-09-10 14:43:11 - Update successful
+2026-09-10 14:43:11 - New activity ID generated
+2026-09-10 14:43:11 - Insert activity prepared
+2026-09-10 14:43:11 - Insert activity executed
+2026-09-10 14:43:11 - Select activity prepared
+2026-09-10 14:43:11 - Select activity executed
+2026-09-10 14:43:11 - Deleting old activity
+2026-09-10 14:43:11 - Finalizing result array
+2026-09-10 14:43:11 - Success status set
+2026-09-10 14:43:11 - Returning status: success
+2026-09-10 14:43:59 - Attempting login for ID: 9495890154
+2026-09-10 14:44:00 - User found in DB
+2026-09-10 14:44:00 - Password verified
+2026-09-10 14:44:00 - Uniq ID: 5522975
+2026-09-10 14:44:00 - Auth Secret Generated
+2026-09-10 14:44:00 - Update prepared
+2026-09-10 14:44:00 - Update executed
+2026-09-10 14:44:00 - Update successful
+2026-09-10 14:44:00 - New activity ID generated
+2026-09-10 14:44:00 - Insert activity prepared
+2026-09-10 14:44:00 - Insert activity executed
+2026-09-10 14:44:00 - Select activity prepared
+2026-09-10 14:44:00 - Select activity executed
+2026-09-10 14:44:00 - Deleting old activity
+2026-09-10 14:44:00 - Finalizing result array
+2026-09-10 14:44:00 - Success status set
+2026-09-10 14:44:00 - Returning status: success
+2026-09-10 14:44:13 - Attempting login for ID: 9495890154
+2026-09-10 14:44:13 - User found in DB
+2026-09-10 14:44:13 - Password verified
+2026-09-10 14:44:13 - Uniq ID: 5522975
+2026-09-10 14:44:13 - Auth Secret Generated
+2026-09-10 14:44:13 - Update prepared
+2026-09-10 14:44:13 - Update executed
+2026-09-10 14:44:13 - Update successful
+2026-09-10 14:44:13 - New activity ID generated
+2026-09-10 14:44:13 - Insert activity prepared
+2026-09-10 14:44:13 - Insert activity executed
+2026-09-10 14:44:13 - Select activity prepared
+2026-09-10 14:44:13 - Select activity executed
+2026-09-10 14:44:13 - Deleting old activity
+2026-09-10 14:44:13 - Finalizing result array
+2026-09-10 14:44:13 - Success status set
+2026-09-10 14:44:13 - Returning status: success
+2026-09-10 14:44:52 - Attempting login for ID: 9495890154
+2026-09-10 14:44:52 - User found in DB
+2026-09-10 14:44:53 - Password verified
+2026-09-10 14:44:53 - Uniq ID: 5522975
+2026-09-10 14:44:53 - Auth Secret Generated
+2026-09-10 14:44:53 - Update prepared
+2026-09-10 14:44:53 - Update executed
+2026-09-10 14:44:53 - Update successful
+2026-09-10 14:44:53 - New activity ID generated
+2026-09-10 14:44:53 - Insert activity prepared
+2026-09-10 14:44:53 - Insert activity executed
+2026-09-10 14:44:53 - Select activity prepared
+2026-09-10 14:44:53 - Select activity executed
+2026-09-10 14:44:53 - Deleting old activity
+2026-09-10 14:44:53 - Finalizing result array
+2026-09-10 14:44:53 - Success status set
+2026-09-10 14:44:53 - Returning status: success
+2026-09-10 14:45:27 - Attempting login for ID: 9072130225
+2026-09-10 14:45:28 - User found in DB
+2026-09-10 14:45:28 - Password verified
+2026-09-10 14:45:28 - Uniq ID: 3416383
+2026-09-10 14:45:28 - Auth Secret Generated
+2026-09-10 14:45:28 - Update prepared
+2026-09-10 14:45:28 - Update executed
+2026-09-10 14:45:28 - Update successful
+2026-09-10 14:45:28 - New activity ID generated
+2026-09-10 14:45:28 - Insert activity prepared
+2026-09-10 14:45:28 - Insert activity executed
+2026-09-10 14:45:28 - Select activity prepared
+2026-09-10 14:45:28 - Select activity executed
+2026-09-10 14:45:28 - Deleting old activity
+2026-09-10 14:45:28 - Finalizing result array
+2026-09-10 14:45:28 - Success status set
+2026-09-10 14:45:28 - Returning status: success
+2026-09-10 14:47:03 - Attempting login for ID: 9495890154
+2026-09-10 14:47:04 - User found in DB
+2026-09-10 14:47:04 - Password verified
+2026-09-10 14:47:04 - Uniq ID: 5522975
+2026-09-10 14:47:04 - Auth Secret Generated
+2026-09-10 14:47:04 - Update prepared
+2026-09-10 14:47:04 - Update executed
+2026-09-10 14:47:04 - Update successful
+2026-09-10 14:47:04 - New activity ID generated
+2026-09-10 14:47:04 - Insert activity prepared
+2026-09-10 14:47:04 - Insert activity executed
+2026-09-10 14:47:04 - Select activity prepared
+2026-09-10 14:47:04 - Select activity executed
+2026-09-10 14:47:04 - Deleting old activity
+2026-09-10 14:47:04 - Finalizing result array
+2026-09-10 14:47:04 - Success status set
+2026-09-10 14:47:04 - Returning status: success
+2026-09-10 14:49:53 - Attempting login for ID: 9495890154
+2026-09-10 14:49:54 - User found in DB
+2026-09-10 14:49:54 - Returning status: password_error
+2026-09-10 14:49:58 - Attempting login for ID: 9495890154
+2026-09-10 14:49:58 - User found in DB
+2026-09-10 14:49:59 - Password verified
+2026-09-10 14:49:59 - Uniq ID: 5522975
+2026-09-10 14:49:59 - Auth Secret Generated
+2026-09-10 14:49:59 - Update prepared
+2026-09-10 14:49:59 - Update executed
+2026-09-10 14:49:59 - Update successful
+2026-09-10 14:49:59 - New activity ID generated
+2026-09-10 14:49:59 - Insert activity prepared
+2026-09-10 14:49:59 - Insert activity executed
+2026-09-10 14:49:59 - Select activity prepared
+2026-09-10 14:49:59 - Select activity executed
+2026-09-10 14:49:59 - Deleting old activity
+2026-09-10 14:49:59 - Finalizing result array
+2026-09-10 14:49:59 - Success status set
+2026-09-10 14:49:59 - Returning status: success
+2026-09-10 14:50:16 - Attempting login for ID: 9495890154
+2026-09-10 14:50:17 - User found in DB
+2026-09-10 14:50:17 - Password verified
+2026-09-10 14:50:17 - Uniq ID: 5522975
+2026-09-10 14:50:17 - Auth Secret Generated
+2026-09-10 14:50:17 - Update prepared
+2026-09-10 14:50:17 - Update executed
+2026-09-10 14:50:17 - Update successful
+2026-09-10 14:50:17 - New activity ID generated
+2026-09-10 14:50:17 - Insert activity prepared
+2026-09-10 14:50:17 - Insert activity executed
+2026-09-10 14:50:17 - Select activity prepared
+2026-09-10 14:50:17 - Select activity executed
+2026-09-10 14:50:17 - Deleting old activity
+2026-09-10 14:50:17 - Finalizing result array
+2026-09-10 14:50:17 - Success status set
+2026-09-10 14:50:17 - Returning status: success
+2026-09-10 14:50:20 - Attempting login for ID: irshaadvp
+2026-09-10 14:50:20 - User found in DB
+2026-09-10 14:50:21 - Password verified
+2026-09-10 14:50:21 - Uniq ID: 3416383
+2026-09-10 14:50:21 - Auth Secret Generated
+2026-09-10 14:50:21 - Update prepared
+2026-09-10 14:50:21 - Update executed
+2026-09-10 14:50:21 - Update successful
+2026-09-10 14:50:21 - New activity ID generated
+2026-09-10 14:50:21 - Insert activity prepared
+2026-09-10 14:50:21 - Insert activity executed
+2026-09-10 14:50:21 - Select activity prepared
+2026-09-10 14:50:21 - Select activity executed
+2026-09-10 14:50:21 - Deleting old activity
+2026-09-10 14:50:21 - Finalizing result array
+2026-09-10 14:50:21 - Success status set
+2026-09-10 14:50:21 - Returning status: success
+2026-09-10 14:50:33 - Attempting login for ID: irshaadvp
+2026-09-10 14:50:33 - User found in DB
+2026-09-10 14:50:33 - Password verified
+2026-09-10 14:50:33 - Uniq ID: 3416383
+2026-09-10 14:50:33 - Auth Secret Generated
+2026-09-10 14:50:33 - Update prepared
+2026-09-10 14:50:33 - Update executed
+2026-09-10 14:50:33 - Update successful
+2026-09-10 14:50:33 - New activity ID generated
+2026-09-10 14:50:33 - Insert activity prepared
+2026-09-10 14:50:33 - Insert activity executed
+2026-09-10 14:50:33 - Select activity prepared
+2026-09-10 14:50:33 - Select activity executed
+2026-09-10 14:50:33 - Deleting old activity
+2026-09-10 14:50:33 - Finalizing result array
+2026-09-10 14:50:33 - Success status set
+2026-09-10 14:50:33 - Returning status: success
+2026-09-10 15:52:16 - Attempting login for ID: 9495890154
+2026-09-10 15:52:16 - User found in DB
+2026-09-10 15:52:16 - Password verified
+2026-09-10 15:52:16 - Uniq ID: 5522975
+2026-09-10 15:52:16 - Auth Secret Generated
+2026-09-10 15:52:16 - Update prepared
+2026-09-10 15:52:16 - Update executed
+2026-09-10 15:52:16 - Update successful
+2026-09-10 15:52:16 - New activity ID generated
+2026-09-10 15:52:16 - Insert activity prepared
+2026-09-10 15:52:16 - Insert activity executed
+2026-09-10 15:52:16 - Select activity prepared
+2026-09-10 15:52:16 - Select activity executed
+2026-09-10 15:52:16 - Deleting old activity
+2026-09-10 15:52:16 - Finalizing result array
+2026-09-10 15:52:16 - Success status set
+2026-09-10 15:52:16 - Returning status: success
+2026-09-10 15:52:23 - Attempting login for ID: 9495890154
+2026-09-10 15:52:23 - User found in DB
+2026-09-10 15:52:25 - Password verified
+2026-09-10 15:52:25 - Uniq ID: 5522975
+2026-09-10 15:52:25 - Auth Secret Generated
+2026-09-10 15:52:25 - Update prepared
+2026-09-10 15:52:25 - Update executed
+2026-09-10 15:52:25 - Update successful
+2026-09-10 15:52:25 - New activity ID generated
+2026-09-10 15:52:25 - Insert activity prepared
+2026-09-10 15:52:25 - Insert activity executed
+2026-09-10 15:52:25 - Select activity prepared
+2026-09-10 15:52:25 - Select activity executed
+2026-09-10 15:52:25 - Deleting old activity
+2026-09-10 15:52:25 - Finalizing result array
+2026-09-10 15:52:25 - Success status set
+2026-09-10 15:52:25 - Returning status: success
+2026-09-10 15:52:45 - Attempting login for ID: 9495890154
+2026-09-10 15:52:45 - User found in DB
+2026-09-10 15:52:46 - Password verified
+2026-09-10 15:52:46 - Uniq ID: 5522975
+2026-09-10 15:52:46 - Auth Secret Generated
+2026-09-10 15:52:46 - Update prepared
+2026-09-10 15:52:46 - Update executed
+2026-09-10 15:52:46 - Update successful
+2026-09-10 15:52:46 - New activity ID generated
+2026-09-10 15:52:46 - Insert activity prepared
+2026-09-10 15:52:46 - Insert activity executed
+2026-09-10 15:52:46 - Select activity prepared
+2026-09-10 15:52:46 - Select activity executed
+2026-09-10 15:52:46 - Deleting old activity
+2026-09-10 15:52:46 - Finalizing result array
+2026-09-10 15:52:46 - Success status set
+2026-09-10 15:52:46 - Returning status: success
+2026-09-10 17:24:59 - Attempting login for ID: 5555555555
+2026-09-10 17:24:59 - User found in DB
+2026-09-10 17:24:59 - Password verified
+2026-09-10 17:24:59 - Uniq ID: 0863135
+2026-09-10 17:24:59 - Auth Secret Generated
+2026-09-10 17:24:59 - Update prepared
+2026-09-10 17:24:59 - Update executed
+2026-09-10 17:24:59 - Update successful
+2026-09-10 17:24:59 - New activity ID generated
+2026-09-10 17:24:59 - Insert activity prepared
+2026-09-10 17:24:59 - Insert activity executed
+2026-09-10 17:24:59 - Select activity prepared
+2026-09-10 17:24:59 - Select activity executed
+2026-09-10 17:24:59 - Finalizing result array
+2026-09-10 17:24:59 - Success status set
+2026-09-10 17:24:59 - Returning status: success
+2026-09-10 17:55:41 - Attempting login for ID: 5687987456
+2026-09-10 17:55:41 - User found in DB
+2026-09-10 17:55:41 - Password verified
+2026-09-10 17:55:41 - Uniq ID: 9627598
+2026-09-10 17:55:41 - Auth Secret Generated
+2026-09-10 17:55:41 - Update prepared
+2026-09-10 17:55:41 - Update executed
+2026-09-10 17:55:41 - Update successful
+2026-09-10 17:55:41 - New activity ID generated
+2026-09-10 17:55:41 - Insert activity prepared
+2026-09-10 17:55:41 - Insert activity executed
+2026-09-10 17:55:41 - Select activity prepared
+2026-09-10 17:55:41 - Select activity executed
+2026-09-10 17:55:41 - Finalizing result array
+2026-09-10 17:55:41 - Success status set
+2026-09-10 17:55:41 - Returning status: success
+2026-09-10 17:56:06 - Attempting login for ID: 5687987456
+2026-09-10 17:56:06 - User found in DB
+2026-09-10 17:56:06 - Password verified
+2026-09-10 17:56:06 - Uniq ID: 9627598
+2026-09-10 17:56:06 - Auth Secret Generated
+2026-09-10 17:56:06 - Update prepared
+2026-09-10 17:56:06 - Update executed
+2026-09-10 17:56:06 - Update successful
+2026-09-10 17:56:06 - New activity ID generated
+2026-09-10 17:56:06 - Insert activity prepared
+2026-09-10 17:56:06 - Insert activity executed
+2026-09-10 17:56:06 - Select activity prepared
+2026-09-10 17:56:06 - Select activity executed
+2026-09-10 17:56:06 - Finalizing result array
+2026-09-10 17:56:06 - Success status set
+2026-09-10 17:56:06 - Returning status: success
+2026-09-10 20:39:19 - Attempting login for ID: test test affl
+2026-09-10 20:39:19 - User found in DB
+2026-09-10 20:39:19 - Password verified
+2026-09-10 20:39:19 - Uniq ID: 0954351
+2026-09-10 20:39:19 - Auth Secret Generated
+2026-09-10 20:39:19 - Update prepared
+2026-09-10 20:39:19 - Update executed
+2026-09-10 20:39:19 - Update successful
+2026-09-10 20:39:19 - New activity ID generated
+2026-09-10 20:39:19 - Insert activity prepared
+2026-09-10 20:39:19 - Insert activity executed
+2026-09-10 20:39:19 - Select activity prepared
+2026-09-10 20:39:19 - Select activity executed
+2026-09-10 20:39:19 - Finalizing result array
+2026-09-10 20:39:19 - Success status set
+2026-09-10 20:39:19 - Returning status: success
+2026-09-10 20:39:34 - Attempting login for ID: test test affl
+2026-09-10 20:39:34 - User found in DB
+2026-09-10 20:39:35 - Password verified
+2026-09-10 20:39:35 - Uniq ID: 0954351
+2026-09-10 20:39:35 - Auth Secret Generated
+2026-09-10 20:39:35 - Update prepared
+2026-09-10 20:39:35 - Update executed
+2026-09-10 20:39:35 - Update successful
+2026-09-10 20:39:35 - New activity ID generated
+2026-09-10 20:39:35 - Insert activity prepared
+2026-09-10 20:39:35 - Insert activity executed
+2026-09-10 20:39:35 - Select activity prepared
+2026-09-10 20:39:35 - Select activity executed
+2026-09-10 20:39:35 - Finalizing result array
+2026-09-10 20:39:35 - Success status set
+2026-09-10 20:39:35 - Returning status: success
+2026-09-11 15:39:57 - Attempting login for ID: 9495890154
+2026-09-11 15:39:57 - User found in DB
+2026-09-11 15:39:57 - Password verified
+2026-09-11 15:39:57 - Uniq ID: 5522975
+2026-09-11 15:39:57 - Auth Secret Generated
+2026-09-11 15:39:57 - Update prepared
+2026-09-11 15:39:57 - Update executed
+2026-09-11 15:39:57 - Update successful
+2026-09-11 15:39:57 - New activity ID generated
+2026-09-11 15:39:57 - Insert activity prepared
+2026-09-11 15:39:57 - Insert activity executed
+2026-09-11 15:39:57 - Select activity prepared
+2026-09-11 15:39:57 - Select activity executed
+2026-09-11 15:39:57 - Deleting old activity
+2026-09-11 15:39:57 - Finalizing result array
+2026-09-11 15:39:57 - Success status set
+2026-09-11 15:39:57 - Returning status: success
+2026-09-11 15:40:15 - Attempting login for ID: 9495890154
+2026-09-11 15:40:15 - User found in DB
+2026-09-11 15:40:16 - Password verified
+2026-09-11 15:40:16 - Uniq ID: 5522975
+2026-09-11 15:40:16 - Auth Secret Generated
+2026-09-11 15:40:16 - Update prepared
+2026-09-11 15:40:16 - Update executed
+2026-09-11 15:40:16 - Update successful
+2026-09-11 15:40:16 - New activity ID generated
+2026-09-11 15:40:16 - Insert activity prepared
+2026-09-11 15:40:16 - Insert activity executed
+2026-09-11 15:40:16 - Select activity prepared
+2026-09-11 15:40:16 - Select activity executed
+2026-09-11 15:40:16 - Deleting old activity
+2026-09-11 15:40:16 - Finalizing result array
+2026-09-11 15:40:16 - Success status set
+2026-09-11 15:40:16 - Returning status: success
+2026-09-11 15:40:29 - Attempting login for ID: 9495890154
+2026-09-11 15:40:29 - User found in DB
+2026-09-11 15:40:29 - Password verified
+2026-09-11 15:40:29 - Uniq ID: 5522975
+2026-09-11 15:40:29 - Auth Secret Generated
+2026-09-11 15:40:29 - Update prepared
+2026-09-11 15:40:29 - Update executed
+2026-09-11 15:40:29 - Update successful
+2026-09-11 15:40:29 - New activity ID generated
+2026-09-11 15:40:29 - Insert activity prepared
+2026-09-11 15:40:29 - Insert activity executed
+2026-09-11 15:40:29 - Select activity prepared
+2026-09-11 15:40:29 - Select activity executed
+2026-09-11 15:40:29 - Deleting old activity
+2026-09-11 15:40:29 - Finalizing result array
+2026-09-11 15:40:29 - Success status set
+2026-09-11 15:40:29 - Returning status: success
+2026-09-11 15:40:51 - Attempting login for ID: 9495890154
+2026-09-11 15:40:51 - User found in DB
+2026-09-11 15:40:51 - Password verified
+2026-09-11 15:40:51 - Uniq ID: 5522975
+2026-09-11 15:40:51 - Auth Secret Generated
+2026-09-11 15:40:51 - Update prepared
+2026-09-11 15:40:51 - Update executed
+2026-09-11 15:40:51 - Update successful
+2026-09-11 15:40:51 - New activity ID generated
+2026-09-11 15:40:51 - Insert activity prepared
+2026-09-11 15:40:51 - Insert activity executed
+2026-09-11 15:40:51 - Select activity prepared
+2026-09-11 15:40:51 - Select activity executed
+2026-09-11 15:40:51 - Deleting old activity
+2026-09-11 15:40:51 - Finalizing result array
+2026-09-11 15:40:51 - Success status set
+2026-09-11 15:40:51 - Returning status: success
+2026-09-16 14:44:54 - Attempting login for ID: player11@test.com
+2026-09-16 14:44:55 - User found in DB
+2026-09-16 14:44:55 - Password verified
+2026-09-16 14:44:55 - Uniq ID: USR-5701E781
+2026-09-16 14:44:55 - Auth Secret Generated
+2026-09-16 14:44:55 - Update prepared
+2026-09-16 14:44:55 - Update executed
+2026-09-16 14:44:55 - Update successful
+2026-09-16 14:44:55 - New activity ID generated
+2026-09-16 14:44:55 - Insert activity prepared
+2026-09-16 14:44:55 - Insert activity executed
+2026-09-16 14:44:55 - Select activity prepared
+2026-09-16 14:44:55 - Select activity executed
+2026-09-16 14:44:55 - Finalizing result array
+2026-09-16 14:44:55 - Success status set
+2026-09-16 14:44:55 - Returning status: success
+2026-09-16 17:41:02 - Attempting login for ID: irshad54545454
+2026-09-16 17:41:02 - User found in DB
+2026-09-16 17:41:02 - Returning status: password_error
+2026-09-16 17:41:08 - Attempting login for ID: irshad54545454
+2026-09-16 17:41:08 - User found in DB
+2026-09-16 17:41:08 - Password verified
+2026-09-16 17:41:08 - Uniq ID: USR-35CED9E2
+2026-09-16 17:41:08 - Auth Secret Generated
+2026-09-16 17:41:08 - Update prepared
+2026-09-16 17:41:08 - Update executed
+2026-09-16 17:41:08 - Update successful
+2026-09-16 17:41:08 - New activity ID generated
+2026-09-16 17:41:08 - Insert activity prepared
+2026-09-16 17:41:08 - Insert activity executed
+2026-09-16 17:41:08 - Select activity prepared
+2026-09-16 17:41:08 - Select activity executed
+2026-09-16 17:41:08 - Finalizing result array
+2026-09-16 17:41:08 - Success status set
+2026-09-16 17:41:08 - Returning status: success

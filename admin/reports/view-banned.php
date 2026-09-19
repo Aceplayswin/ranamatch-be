@@ -48,7 +48,7 @@ $total_pages = ceil($total_count / $content);
         .filter-label { font-size: 8px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-dim); margin-left: 2px; opacity: 0.8; }
         .filter-input-wrapper { position: relative; display: flex; align-items: center; }
         .filter-input-wrapper i { position: absolute; left: 10px; font-size: 14px; color: var(--accent-blue); opacity: 0.7; }
-        .filter-inp { width: 100%; height: 36px; background: rgba(0, 0, 0, 0.2) !important; border: 1px solid rgba(255, 255, 255, 0.08) !important; border-radius: 8px !important; padding: 0 10px 0 32px !important; color: #fff !important; font-size: 11px !important; font-weight: 500 !important; }
+        .filter-inp { color-scheme: dark;  width: 100%; height: 36px; background: rgba(0, 0, 0, 0.2) !important; border: 1px solid rgba(255, 255, 255, 0.08) !important; border-radius: 8px !important; padding: 0 10px 0 32px !important; color: #fff !important; font-size: 11px !important; font-weight: 500 !important; }
         .btn-filter-submit { width: 100%; height: 36px; background: linear-gradient(135deg, #06b6d4, #3b82f6); border: none; border-radius: 8px; color: #fff; font-weight: 800; font-size: 11px; display: flex; align-items: center; justify-content: center; gap: 6px; text-transform: uppercase; letter-spacing: 0.5px; cursor: pointer; }
         .r-table { width: 100%; border-collapse: separate; border-spacing: 0 6px; }
         .r-table thead th { font-size: 9px; font-weight: 700; text-transform: uppercase; color: #94a3b8; padding: 0 12px 6px; letter-spacing: 1px; }

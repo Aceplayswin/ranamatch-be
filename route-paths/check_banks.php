@@ -1,5 +1,9 @@
 <?php
-$c = mysqli_connect('127.0.0.1', 'root', '', 'winco');
+$server_db = "localhost";
+$username_db = "root";
+$password_db = "";
+$hostname_db = "winco";
+$c = mysqli_connect($server_db, $username_db, $password_db, $hostname_db);
 $res = mysqli_query($c, 'DESCRIBE tblallbankcards');
 while($row = mysqli_fetch_assoc($res)) {
     print_r($row);
