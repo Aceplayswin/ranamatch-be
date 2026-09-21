@@ -16,8 +16,8 @@ if ($accessObj->validate() != "true") {
     exit;
 }
 
-$user_id = mysqli_real_escape_string($conn, $_REQUEST['user-id'] ?? $_REQUEST['user_id'] ?? '');
-$request_type = mysqli_real_escape_string($conn, $_REQUEST['request-type'] ?? $_REQUEST['request_type'] ?? '');
+$user_id = mysqli_real_escape_string($conn, $_REQUEST['user-id'] ?? $_REQUEST['user_id'] ?? $_REQUEST['id'] ?? '');
+$request_type = mysqli_real_escape_string($conn, $_REQUEST['request-type'] ?? $_REQUEST['request_type'] ?? $_REQUEST['type'] ?? '');
 $is_ajax = isset($_REQUEST['ajax']) || (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] === 'XMLHttpRequest');
 
 if (empty($user_id) || empty($request_type)) {

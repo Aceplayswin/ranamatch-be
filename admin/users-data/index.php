@@ -737,10 +737,25 @@ if (isset($_GET['download']) && $_GET['download'] === 'excel') {
                                             <?php echo $aff_badge; ?>
                                         </td>
                                         <td style="font-weight: 800; color: var(--text-main);">₹<?php echo number_format($bal, 2); ?></td>
-                                        <td style="text-align: center;">
-                                            <button class="btn-modern btn-primary-modern py-1 px-2 text-xs" style="height: 28px; font-size: 11px;" onclick="event.stopPropagation(); openAdjustBalanceModal('<?php echo htmlspecialchars($uid); ?>', '<?php echo htmlspecialchars($uname); ?>', <?php echo (float)$bal; ?>)">
-                                                 <i class='bx bx-wallet'></i> ±
-                                            </button>
+                                        <td style="text-align: center; white-space: nowrap;">
+                                            <div style="display: flex; align-items: center; justify-content: center; gap: 4px;">
+                                                <button class="btn-modern btn-primary-modern py-1 px-2 text-xs" style="height: 28px; font-size: 11px;" title="Adjust Balance" onclick="event.stopPropagation(); openAdjustBalanceModal('<?php echo htmlspecialchars($uid); ?>', '<?php echo htmlspecialchars($uname); ?>', <?php echo (float)$bal; ?>)">
+                                                     <i class='bx bx-wallet'></i> ±
+                                                </button>
+                                                <?php if($st_raw == "true" || $st_raw == "active" || $st_raw == "1"): ?>
+                                                    <button class="btn btn-xs btn-outline-danger" style="height: 28px; font-size: 10px; padding: 2px 6px; border-radius: 6px;" title="Ban Account" onclick="event.stopPropagation(); toggleUserStatus('<?php echo $uid; ?>', 'ban');">
+                                                        <i class='bx bx-block'></i> Ban
+                                                    </button>
+                                                <?php elseif($st_raw == "ban" || $st_raw == "blocked"): ?>
+                                                    <button class="btn btn-xs btn-outline-success" style="height: 28px; font-size: 10px; padding: 2px 6px; border-radius: 6px;" title="Restore Account" onclick="event.stopPropagation(); toggleUserStatus('<?php echo $uid; ?>', 'true');">
+                                                        <i class='bx bx-check-circle'></i> Restore
+                                                    </button>
+                                                <?php else: ?>
+                                                    <button class="btn btn-xs btn-outline-success" style="height: 28px; font-size: 10px; padding: 2px 6px; border-radius: 6px;" title="Activate Account" onclick="event.stopPropagation(); toggleUserStatus('<?php echo $uid; ?>', 'true');">
+                                                        <i class='bx bx-check-circle'></i> Activate
+                                                    </button>
+                                                <?php endif; ?>
+                                            </div>
                                         </td>
                                         <td style="color: var(--accent-emerald);">₹<?php echo number_format($dep, 2); ?></td>
                                         <td>
@@ -778,19 +793,10 @@ if (isset($_GET['download']) && $_GET['download'] === 'excel') {
                                                 <span class="status-badge status-banned"><i class='bx bx-block me-1'></i> IP Blocked</span>
                                             <?php elseif($st_raw == "true" || $st_raw == "active" || $st_raw == "1"): ?>
                                                 <span class="status-badge status-active">Active</span>
-                                                <button class="btn btn-xs btn-outline-danger mt-1 d-block" style="font-size: 9px; padding: 2px 6px;" onclick="event.stopPropagation(); toggleUserStatus('<?php echo $uid; ?>', 'ban');">
-                                                    Ban Account
-                                                </button>
                                             <?php elseif($st_raw == "ban" || $st_raw == "blocked"): ?>
                                                 <span class="status-badge status-banned">Banned</span>
-                                                <button class="btn btn-xs btn-outline-success mt-1 d-block" style="font-size: 9px; padding: 2px 6px;" onclick="event.stopPropagation(); toggleUserStatus('<?php echo $uid; ?>', 'true');">
-                                                    Restore
-                                                </button>
                                             <?php else: ?>
                                                 <span class="status-badge status-inactive">In-Active</span>
-                                                <button class="btn btn-xs btn-outline-success mt-1 d-block" style="font-size: 9px; padding: 2px 6px;" onclick="event.stopPropagation(); toggleUserStatus('<?php echo $uid; ?>', 'true');">
-                                                    Activate
-                                                </button>
                                             <?php endif; ?>
                                         </td>
                                     </tr>
@@ -1097,6 +1103,27 @@ if (isset($_GET['download']) && $_GET['download'] === 'excel') {
             alert('An error occurred. Please try again.');
         });
     });
+
+    function toggleUserStatus(uid, status) {
+        const actionName = (status === 'ban') ? 'Ban' : 'Activate/Restore';
+        if (!confirm(`Are you sure you want to ${actionName} user (${uid})?`)) return;
+
+        fetch(`update-request.php?type=${status}&id=${encodeURIComponent(uid)}&ajax=1`)
+            .then(res => res.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    alert(data.message);
+                    window.location.reload();
+                } else {
+                    alert(data.message || 'Failed to update user status.');
+                }
+            })
+            .catch(err => {
+                console.error(err);
+                alert('Account status request completed.');
+                window.location.reload();
+            });
+    }
 </script>
 </body>
 </html>
