@@ -213,6 +213,66 @@ while ($row = mysqli_fetch_assoc($search_result)) {
 
 $today_percentage = ($today_total_profit > 0) ? number_format($today_total_profit, 2, ".", "") . " / ₹" . number_format($today_total_cost, 2, ".", "") . " (" . calculatePercentage($today_total_profit, $today_total_cost) . ")" : number_format($today_total_loss, 2, ".", "") . " / ₹" . number_format($today_total_cost, 2, ".", "") . " (" . calculatePercentage($today_total_loss, $today_total_cost) . ")";
 $yesterday_percentage = ($yesterday_total_profit > 0) ? number_format($yesterday_total_profit, 2, ".", "") . " / ₹" . number_format($yesterday_total_cost, 2, ".", "") . " (" . calculatePercentage($yesterday_total_profit, $yesterday_total_cost) . ")" : number_format($yesterday_total_loss, 2, ".", "") . " / ₹" . number_format($yesterday_total_cost, 2, ".", "") . " (" . calculatePercentage($yesterday_total_loss, $yesterday_total_cost) . ")";
+
+// --- OVERALL & FILTERED BET STATISTICS ---
+$overall_total_bet = 0;
+$overall_total_win = 0;
+$overall_total_loss = 0;
+$overall_bet_count = 0;
+
+$filtered_total_bet = 0;
+$filtered_total_win = 0;
+$filtered_total_loss = 0;
+$filtered_bet_count = 0;
+
+$bet_date_from = isset($_REQUEST['bet_date_from']) && !empty($_REQUEST['bet_date_from']) ? $_REQUEST['bet_date_from'] : date('Y-m-d');
+$bet_date_to = isset($_REQUEST['bet_date_to']) && !empty($_REQUEST['bet_date_to']) ? $_REQUEST['bet_date_to'] : date('Y-m-d');
+
+$all_bets_sql = "SELECT tbl_match_cost, tbl_match_profit, tbl_match_status, tbl_match_result, tbl_time_stamp FROM tblmatchplayed";
+$all_bets_result = mysqli_query($conn, $all_bets_sql);
+
+if ($all_bets_result) {
+  while ($b_row = mysqli_fetch_assoc($all_bets_result)) {
+    $cost = floatval($b_row['tbl_match_cost'] ?? 0);
+    $profit = floatval($b_row['tbl_match_profit'] ?? 0);
+    $m_status = strtolower(trim($b_row['tbl_match_status'] ?? ''));
+    $m_result = strtolower(trim($b_row['tbl_match_result'] ?? ''));
+
+    $is_win = (in_array($m_status, ['profit', 'win', 'won', 'cashout']) || in_array($m_result, ['profit', 'win', 'won', 'cashout']));
+    $is_loss = (in_array($m_status, ['loss', 'lost']) || in_array($m_result, ['loss', 'lost']));
+
+    // Overall totals
+    $overall_total_bet += $cost;
+    $overall_bet_count++;
+    if ($is_win) {
+      $overall_total_win += $profit;
+    } elseif ($is_loss) {
+      $overall_total_loss += $cost;
+    }
+
+    // Date filtering
+    if (!empty($b_row['tbl_time_stamp'])) {
+      $ts = strtotime($b_row['tbl_time_stamp']);
+      if ($ts !== false) {
+        $record_date = date('Y-m-d', $ts);
+        if ($record_date >= $bet_date_from && $record_date <= $bet_date_to) {
+          $filtered_total_bet += $cost;
+          $filtered_bet_count++;
+          if ($is_win) {
+            $filtered_total_win += $profit;
+          } elseif ($is_loss) {
+            $filtered_total_loss += $cost;
+          }
+        }
+      }
+    }
+  }
+}
+
+$filtered_house_net = $filtered_total_loss - $filtered_total_win;
+$overall_total_bet_display = formatAmount($overall_total_bet);
+$overall_total_win_display = formatAmount($overall_total_win);
+$overall_total_loss_display = formatAmount($overall_total_loss);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -381,6 +441,27 @@ $yesterday_percentage = ($yesterday_total_profit > 0) ? number_format($yesterday
           <i class='bx bx-trophy card-icon'></i>
         </div>
 
+        <div class="stat-card-premium c12" style="border-left: 3px solid #3b82f6;">
+          <div class="card-label">Overall Total Bets</div>
+          <div class="card-value">&#8377;<?php echo $overall_total_bet_display; ?></div>
+          <div class="card-sub">Total Bets Placed: <strong><?php echo number_format($overall_bet_count); ?></strong></div>
+          <i class='bx bx-cube-alt card-icon'></i>
+        </div>
+
+        <div class="stat-card-premium c1" style="border-left: 3px solid #10b981;">
+          <div class="card-label">Overall User Win</div>
+          <div class="card-value">&#8377;<?php echo $overall_total_win_display; ?></div>
+          <div class="card-sub">All-Time Winning Payouts</div>
+          <i class='bx bx-party card-icon'></i>
+        </div>
+
+        <div class="stat-card-premium c5" style="border-left: 3px solid #ef4444;">
+          <div class="card-label">Overall User Loss</div>
+          <div class="card-value">&#8377;<?php echo $overall_total_loss_display; ?></div>
+          <div class="card-sub">All-Time Lost Stakes</div>
+          <i class='bx bx-trending-down card-icon'></i>
+        </div>
+
         <div class="stat-card-premium c9">
           <div class="card-label"><i
               class='bx bx-calendar'></i>&nbsp;<?php echo date('M j, Y', strtotime($selected_date)); ?></div>
@@ -397,6 +478,76 @@ $yesterday_percentage = ($yesterday_total_profit > 0) ? number_format($yesterday
           <i class='bx bx-filter-alt card-icon'></i>
         </div>
 
+      </div>
+
+      <!-- Bet Analytics & Date Filter Section -->
+      <div class="recent-section" style="margin-top: 24px; padding: 20px; background: var(--panel-bg); border: 1px solid var(--border-dim); border-radius: 14px; box-shadow: var(--card-shadow); margin-bottom: 24px;">
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 mb-3">
+          <div class="section-title mb-0" style="font-size: 14px; font-weight: 700;">
+            <span class="title-bar"></span>
+            <i class='bx bx-filter-alt me-1' style="color: var(--accent-blue);"></i> Bet Analytics & Filter Options
+          </div>
+          
+          <form method="GET" action="index.php" class="d-flex align-items-center flex-wrap gap-2">
+            <div class="d-flex align-items-center gap-1">
+              <span class="text-muted" style="font-size: 11px; font-weight: 600;">FROM:</span>
+              <input type="date" name="bet_date_from" value="<?php echo htmlspecialchars($bet_date_from); ?>" class="form-control form-control-sm" style="width: 140px; background: var(--input-bg); color: var(--text-main); border: 1px solid var(--border-dim); border-radius: 6px;">
+            </div>
+            <div class="d-flex align-items-center gap-1">
+              <span class="text-muted" style="font-size: 11px; font-weight: 600;">TO:</span>
+              <input type="date" name="bet_date_to" value="<?php echo htmlspecialchars($bet_date_to); ?>" class="form-control form-control-sm" style="width: 140px; background: var(--input-bg); color: var(--text-main); border: 1px solid var(--border-dim); border-radius: 6px;">
+            </div>
+            <button type="submit" class="btn btn-primary btn-sm" style="background: linear-gradient(135deg, #3b82f6, #2563eb); border: none; border-radius: 6px; padding: 5px 14px; font-weight: 600;">
+              <i class='bx bx-search-alt-2'></i> Apply Filter
+            </button>
+            <a href="index.php" class="btn btn-outline-secondary btn-sm" style="border-radius: 6px; padding: 5px 10px; font-size: 12px;">Reset</a>
+          </form>
+        </div>
+
+        <!-- Quick Filter Presets -->
+        <div class="d-flex align-items-center gap-2 mb-3 flex-wrap">
+          <span class="text-muted" style="font-size: 11px; font-weight: 600;">Quick Presets:</span>
+          <a href="?bet_date_from=<?php echo date('Y-m-d'); ?>&bet_date_to=<?php echo date('Y-m-d'); ?>" class="btn btn-sm btn-outline-primary <?php if ($bet_date_from == date('Y-m-d') && $bet_date_to == date('Y-m-d')) echo 'active'; ?>" style="font-size: 11px; padding: 2px 10px; border-radius: 4px;">Today</a>
+          <a href="?bet_date_from=<?php echo date('Y-m-d', strtotime('-1 day')); ?>&bet_date_to=<?php echo date('Y-m-d', strtotime('-1 day')); ?>" class="btn btn-sm btn-outline-primary <?php if ($bet_date_from == date('Y-m-d', strtotime('-1 day')) && $bet_date_to == date('Y-m-d', strtotime('-1 day'))) echo 'active'; ?>" style="font-size: 11px; padding: 2px 10px; border-radius: 4px;">Yesterday</a>
+          <a href="?bet_date_from=<?php echo date('Y-m-01'); ?>&bet_date_to=<?php echo date('Y-m-d'); ?>" class="btn btn-sm btn-outline-primary <?php if ($bet_date_from == date('Y-m-01') && $bet_date_to == date('Y-m-d')) echo 'active'; ?>" style="font-size: 11px; padding: 2px 10px; border-radius: 4px;">This Month</a>
+          <a href="?bet_date_from=1970-01-01&bet_date_to=2099-12-31" class="btn btn-sm btn-outline-primary <?php if ($bet_date_from == '1970-01-01') echo 'active'; ?>" style="font-size: 11px; padding: 2px 10px; border-radius: 4px;">All Time</a>
+        </div>
+
+        <!-- Filter Results Stat Cards Grid -->
+        <div class="row g-3">
+          <div class="col-md-4 col-sm-6">
+            <div class="p-3 border rounded-3 text-start" style="background: rgba(59, 130, 246, 0.07); border-color: rgba(59, 130, 246, 0.2) !important;">
+              <div class="d-flex align-items-center justify-content-between mb-1">
+                <span class="text-uppercase text-muted fw-bold" style="font-size: 10px; letter-spacing: 0.5px;">Filtered Total Bet Done</span>
+                <i class='bx bx-money-withdraw' style="font-size: 18px; color: #3b82f6;"></i>
+              </div>
+              <div class="h3 mb-1 fw-bold" style="color: #3b82f6;">&#8377;<?php echo number_format($filtered_total_bet, 2); ?></div>
+              <div class="small text-muted" style="font-size: 11px;"><?php echo number_format($filtered_bet_count); ?> Bets Placed in Filter Range</div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6">
+            <div class="p-3 border rounded-3 text-start" style="background: rgba(16, 185, 129, 0.07); border-color: rgba(16, 185, 129, 0.2) !important;">
+              <div class="d-flex align-items-center justify-content-between mb-1">
+                <span class="text-uppercase text-muted fw-bold" style="font-size: 10px; letter-spacing: 0.5px;">Filtered Total User Win</span>
+                <i class='bx bx-trophy' style="font-size: 18px; color: #10b981;"></i>
+              </div>
+              <div class="h3 mb-1 fw-bold" style="color: #10b981;">&#8377;<?php echo number_format($filtered_total_win, 2); ?></div>
+              <div class="small text-muted" style="font-size: 11px;">Total Winning Payouts in Range</div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6">
+            <div class="p-3 border rounded-3 text-start" style="background: rgba(239, 68, 68, 0.07); border-color: rgba(239, 68, 68, 0.2) !important;">
+              <div class="d-flex align-items-center justify-content-between mb-1">
+                <span class="text-uppercase text-muted fw-bold" style="font-size: 10px; letter-spacing: 0.5px;">Filtered Total User Loss</span>
+                <i class='bx bx-trending-down' style="font-size: 18px; color: #ef4444;"></i>
+              </div>
+              <div class="h3 mb-1 fw-bold" style="color: #ef4444;">&#8377;<?php echo number_format($filtered_total_loss, 2); ?></div>
+              <div class="small text-muted" style="font-size: 11px;">Total Lost Stakes in Range</div>
+            </div>
+          </div>
+        </div>
       </div>
 
 
