@@ -431,12 +431,28 @@ $page_url_name = trim(str_replace($host_url, '', strtok($page_url, '?')), '/');
             <i class='bx bx-group' style='color:#6366f1;'></i>
             Users Data
         </a>
+
+        <a href="<?php echo $host_url; ?>players-online" class="nav-link <?php if ($page_url_name == 'players-online' || strpos($page_url_name, 'players-online') !== false) {
+    echo 'menu-active-btn';
+}?>">
+            <i class='bx bx-user-check' style='color:#10b981;'></i>
+            Players Online
+        </a>
         
         <a href="<?php echo $host_url; ?>users-data/index1.php" class="nav-link <?php if ($page_url_name == 'users-data/index1.php') {
     echo 'menu-active-btn';
 }?>">
             <i class='bx bx-list-ol' style='color:#f59e0b;'></i>
             Top User Balances
+        </a>
+
+        <div class="nav-section-label">Risk Management</div>
+
+        <a href="<?php echo $host_url; ?>blocked-ip" class="nav-link <?php if ($page_url_name == 'blocked-ip' || strpos($page_url_name, 'blocked-ip') !== false) {
+    echo 'menu-active-btn';
+}?>">
+            <i class='bx bx-shield-x' style='color:#ef4444;'></i>
+            Blocked IP
         </a>
 
         <a href="<?php echo $host_url; ?>recharge-records" class="nav-link <?php if ($page_url_name == 'recharge-records') {
