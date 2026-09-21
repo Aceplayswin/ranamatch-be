@@ -778,10 +778,19 @@ if (isset($_GET['download']) && $_GET['download'] === 'excel') {
                                                 <span class="status-badge status-banned"><i class='bx bx-block me-1'></i> IP Blocked</span>
                                             <?php elseif($st_raw == "true" || $st_raw == "active" || $st_raw == "1"): ?>
                                                 <span class="status-badge status-active">Active</span>
+                                                <button class="btn btn-xs btn-outline-danger mt-1 d-block" style="font-size: 9px; padding: 2px 6px;" onclick="event.stopPropagation(); toggleUserStatus('<?php echo $uid; ?>', 'ban');">
+                                                    Ban Account
+                                                </button>
                                             <?php elseif($st_raw == "ban" || $st_raw == "blocked"): ?>
                                                 <span class="status-badge status-banned">Banned</span>
+                                                <button class="btn btn-xs btn-outline-success mt-1 d-block" style="font-size: 9px; padding: 2px 6px;" onclick="event.stopPropagation(); toggleUserStatus('<?php echo $uid; ?>', 'true');">
+                                                    Restore
+                                                </button>
                                             <?php else: ?>
                                                 <span class="status-badge status-inactive">In-Active</span>
+                                                <button class="btn btn-xs btn-outline-success mt-1 d-block" style="font-size: 9px; padding: 2px 6px;" onclick="event.stopPropagation(); toggleUserStatus('<?php echo $uid; ?>', 'true');">
+                                                    Activate
+                                                </button>
                                             <?php endif; ?>
                                         </td>
                                     </tr>

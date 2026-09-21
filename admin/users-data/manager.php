@@ -432,16 +432,40 @@ $total_aff_earning = (float)($comm_res['total_comm'] ?? 0);
 
     <script>
         function BanAccount() {
-            if (confirm("Are you sure you want to restrict this account? Access will be revoked immediately.")) {
-                window.open("update-request.php?request-type=ban&user-id=<?php echo $user_id; ?>");
-                setTimeout(() => window.location.reload(), 1000);
+            if (confirm("Are you sure you want to restrict/ban this account? Access will be revoked immediately.")) {
+                fetch("update-request.php?ajax=1&request-type=ban&user-id=<?php echo $user_id; ?>")
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.status === 'success') {
+                            alert(data.message);
+                            window.location.reload();
+                        } else {
+                            alert("Error: " + data.message);
+                        }
+                    })
+                    .catch(err => {
+                        console.error("Status Update Error:", err);
+                        window.location.href = "update-request.php?request-type=ban&user-id=<?php echo $user_id; ?>";
+                    });
             }
         }
 
         function ActiveAccount() {
             if (confirm("Are you sure you want to activate this account? All privileges will be restored.")) {
-                window.open("update-request.php?request-type=true&user-id=<?php echo $user_id; ?>");
-                setTimeout(() => window.location.reload(), 1000);
+                fetch("update-request.php?ajax=1&request-type=true&user-id=<?php echo $user_id; ?>")
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.status === 'success') {
+                            alert(data.message);
+                            window.location.reload();
+                        } else {
+                            alert("Error: " + data.message);
+                        }
+                    })
+                    .catch(err => {
+                        console.error("Status Update Error:", err);
+                        window.location.href = "update-request.php?request-type=true&user-id=<?php echo $user_id; ?>";
+                    });
             }
         }
     </script>
