@@ -16,86 +16,95 @@ if ($accessObj->validate() != "true") {
     exit;
 }
 
-// Fetch filter parameters
+// Fetch filter parameters (Default to empty/all-time so all records show immediately)
 $f_provider = isset($_GET['f_provider']) ? trim(mysqli_real_escape_string($conn, $_GET['f_provider'])) : '';
 $f_game = isset($_GET['f_game']) ? trim(mysqli_real_escape_string($conn, $_GET['f_game'])) : '';
-$f_date_from = isset($_GET['f_date_from']) && !empty($_GET['f_date_from']) ? $_GET['f_date_from'] : date('Y-m-d');
-$f_date_to = isset($_GET['f_date_to']) && !empty($_GET['f_date_to']) ? $_GET['f_date_to'] : date('Y-m-d');
+$f_date_from = isset($_GET['f_date_from']) ? trim(mysqli_real_escape_string($conn, $_GET['f_date_from'])) : '';
+$f_date_to = isset($_GET['f_date_to']) ? trim(mysqli_real_escape_string($conn, $_GET['f_date_to'])) : '';
 
-// Get all unique providers from tbl_games and tblmatchplayed
-$all_providers = [];
+// 1. Initialize Catalogs from tbl_games so ALL 545+ Games and ALL Providers are loaded
+$game_catalog = [];      // game_key => ['name', 'provider', 'category', 'image', 'bet', 'win', 'loss', 'count']
+$provider_catalog = [];  // provider_name => ['bet', 'win', 'loss', 'count', 'game_count']
 
-$p_res1 = mysqli_query($conn, "SELECT DISTINCT game_provider FROM tbl_games WHERE game_provider IS NOT NULL AND game_provider != '' ORDER BY game_provider ASC");
-if ($p_res1) {
-    while ($r = mysqli_fetch_assoc($p_res1)) {
-        $all_providers[] = $r['game_provider'];
-    }
-}
-
-$p_res2 = mysqli_query($conn, "SELECT DISTINCT tbl_provider FROM tblmatchplayed WHERE tbl_provider IS NOT NULL AND tbl_provider != '' AND tbl_provider != 'Standard'");
-if ($p_res2) {
-    while ($r = mysqli_fetch_assoc($p_res2)) {
-        if (!in_array($r['tbl_provider'], $all_providers)) {
-            $all_providers[] = $r['tbl_provider'];
-        }
-    }
-}
-sort($all_providers);
-
-// Build map of Game Name -> Provider & Image from tbl_games
-$game_meta_map = [];
-$g_res = mysqli_query($conn, "SELECT game_name, game_provider, game_image, game_category FROM tbl_games");
+$g_res = mysqli_query($conn, "SELECT game_name, game_provider, game_category, game_image, game_uid FROM tbl_games ORDER BY sort_order ASC, game_name ASC");
 if ($g_res) {
     while ($grow = mysqli_fetch_assoc($g_res)) {
-        $game_meta_map[strtolower(trim($grow['game_name']))] = [
-            'provider' => $grow['game_provider'],
-            'image' => $grow['game_image'],
-            'category' => $grow['game_category']
+        $g_name = trim($grow['game_name']);
+        $g_prov = trim($grow['game_provider'] ?? 'Standard');
+        if (empty($g_prov)) $g_prov = 'Standard';
+        $g_cat = trim($grow['game_category'] ?? 'Game');
+        $g_img = trim($grow['game_image'] ?? '');
+        $g_key = strtolower($g_name);
+
+        $game_catalog[$g_key] = [
+            'name' => $g_name,
+            'provider' => $g_prov,
+            'category' => $g_cat,
+            'image' => $g_img,
+            'bet' => 0.0,
+            'win' => 0.0,
+            'loss' => 0.0,
+            'count' => 0
         ];
+
+        if (!isset($provider_catalog[$g_prov])) {
+            $provider_catalog[$g_prov] = [
+                'bet' => 0.0, 'win' => 0.0, 'loss' => 0.0, 'count' => 0, 'game_count' => 0
+            ];
+        }
+        $provider_catalog[$g_prov]['game_count']++;
     }
 }
 
-// Data aggregation structures
-$provider_stats = []; // provider_name => [bet, win, loss, count]
-$game_stats = [];     // game_name => [provider, bet, win, loss, count, image]
+// Extract sorted list of all unique providers
+$all_providers_list = array_keys($provider_catalog);
+sort($all_providers_list);
 
-$selected_game_info = null;
-$selected_game_logs = [];
-
+// 2. Fetch match records from tblmatchplayed and aggregate statistics
 $grand_filtered_bet = 0;
 $grand_filtered_win = 0;
 $grand_filtered_loss = 0;
 $grand_filtered_count = 0;
 
-// Fetch match records from tblmatchplayed
-$all_matches_sql = "SELECT m.*, u.tbl_full_name, u.tbl_user_name 
-                    FROM tblmatchplayed m 
-                    LEFT JOIN tblusersdata u ON m.tbl_user_id = u.tbl_uniq_id";
-$all_matches_res = mysqli_query($conn, $all_matches_sql);
+$selected_game_logs = [];
+$selected_game_info = null;
 
-if ($all_matches_res) {
-    while ($m = mysqli_fetch_assoc($all_matches_res)) {
+$m_res = mysqli_query($conn, "SELECT m.*, u.tbl_full_name, u.tbl_user_name FROM tblmatchplayed m LEFT JOIN tblusersdata u ON m.tbl_user_id = u.tbl_uniq_id ORDER BY m.id DESC");
+
+if ($m_res) {
+    while ($m = mysqli_fetch_assoc($m_res)) {
         $cost = floatval($m['tbl_match_cost'] ?? 0);
         $profit = floatval($m['tbl_match_profit'] ?? 0);
         $m_status = strtolower(trim($m['tbl_match_status'] ?? ''));
         $m_result = strtolower(trim($m['tbl_match_result'] ?? ''));
         $game_name = trim($m['tbl_project_name'] ?? 'Unknown');
         $raw_provider = trim($m['tbl_provider'] ?? '');
+        $g_key = strtolower($game_name);
 
-        // Resolve provider name
-        $game_key = strtolower($game_name);
-        $resolved_provider = 'Standard / Uncategorized';
-        $game_img = '';
+        // Date filter check
+        $rec_date = '';
+        if (!empty($m['tbl_time_stamp'])) {
+            $ts = strtotime($m['tbl_time_stamp']);
+            if ($ts !== false) {
+                $rec_date = date('Y-m-d', $ts);
+            }
+        }
 
-        if (isset($game_meta_map[$game_key])) {
-            $resolved_provider = $game_meta_map[$game_key]['provider'];
-            $game_img = $game_meta_map[$game_key]['image'];
+        $date_pass = true;
+        if (!empty($f_date_from) && !empty($rec_date) && $rec_date < $f_date_from) $date_pass = false;
+        if (!empty($f_date_to) && !empty($rec_date) && $rec_date > $f_date_to) $date_pass = false;
+
+        if (!$date_pass) continue;
+
+        // Determine Provider
+        $resolved_provider = 'Standard';
+        if (isset($game_catalog[$g_key])) {
+            $resolved_provider = $game_catalog[$g_key]['provider'];
         } elseif (!empty($raw_provider) && $raw_provider !== 'Standard') {
             $resolved_provider = $raw_provider;
         } else {
-            // Infer provider from project name if standard
             if (preg_match('/(saba|lucksport|9wickets|esports)/i', $game_name)) {
-                $resolved_provider = 'Saba Sports';
+                $resolved_provider = 'SportsGame';
             } elseif (preg_match('/aviator|spribe|mines|dice|goal|plinko|hilo|keno|hotline|scratch/i', $game_name)) {
                 $resolved_provider = 'Spribe';
             } elseif (preg_match('/roulette|baccarat|blackjack|dragon|teenpatti|crazy|monopoly|dream|lightning/i', $game_name)) {
@@ -105,85 +114,107 @@ if ($all_matches_res) {
             }
         }
 
+        // Apply Provider Filter if set
+        if (!empty($f_provider) && strtolower($resolved_provider) !== strtolower($f_provider)) {
+            continue;
+        }
+
+        // Apply Game Filter if set
+        if (!empty($f_game) && strpos(strtolower($game_name), strtolower($f_game)) === false) {
+            continue;
+        }
+
         $is_win = (in_array($m_status, ['profit', 'win', 'won', 'cashout']) || in_array($m_result, ['profit', 'win', 'won', 'cashout']));
         $is_loss = (in_array($m_status, ['loss', 'lost']) || in_array($m_result, ['loss', 'lost']));
 
-        // Check date range filter
-        $rec_date = '';
-        if (!empty($m['tbl_time_stamp'])) {
-            $ts = strtotime($m['tbl_time_stamp']);
-            if ($ts !== false) {
-                $rec_date = date('Y-m-d', $ts);
-            }
+        // Aggregate grand totals
+        $grand_filtered_bet += $cost;
+        $grand_filtered_count++;
+        if ($is_win) $grand_filtered_win += $profit;
+        elseif ($is_loss) $grand_filtered_loss += $cost;
+
+        // Aggregate to Game Catalog
+        if (!isset($game_catalog[$g_key])) {
+            $game_catalog[$g_key] = [
+                'name' => $game_name,
+                'provider' => $resolved_provider,
+                'category' => 'Live Bet',
+                'image' => '',
+                'bet' => 0.0, 'win' => 0.0, 'loss' => 0.0, 'count' => 0
+            ];
         }
+        $game_catalog[$g_key]['bet'] += $cost;
+        $game_catalog[$g_key]['count']++;
+        if ($is_win) $game_catalog[$g_key]['win'] += $profit;
+        elseif ($is_loss) $game_catalog[$g_key]['loss'] += $cost;
 
-        if (empty($rec_date) || ($rec_date >= $f_date_from && $rec_date <= $f_date_to)) {
-            // Provider Filter
-            if (!empty($f_provider) && strtolower($resolved_provider) !== strtolower($f_provider)) {
-                continue;
-            }
+        // Aggregate to Provider Catalog
+        if (!isset($provider_catalog[$resolved_provider])) {
+            $provider_catalog[$resolved_provider] = [
+                'bet' => 0.0, 'win' => 0.0, 'loss' => 0.0, 'count' => 0, 'game_count' => 0
+            ];
+        }
+        $provider_catalog[$resolved_provider]['bet'] += $cost;
+        $provider_catalog[$resolved_provider]['count']++;
+        if ($is_win) $provider_catalog[$resolved_provider]['win'] += $profit;
+        elseif ($is_loss) $provider_catalog[$resolved_provider]['loss'] += $cost;
 
-            // Game Filter
-            if (!empty($f_game) && strpos(strtolower($game_name), strtolower($f_game)) === false) {
-                continue;
-            }
-
-            // Global totals
-            $grand_filtered_bet += $cost;
-            $grand_filtered_count++;
-            if ($is_win) {
-                $grand_filtered_win += $profit;
-            } elseif ($is_loss) {
-                $grand_filtered_loss += $cost;
-            }
-
-            // Aggregate by Provider
-            if (!isset($provider_stats[$resolved_provider])) {
-                $provider_stats[$resolved_provider] = [
-                    'bet' => 0, 'win' => 0, 'loss' => 0, 'count' => 0
-                ];
-            }
-            $provider_stats[$resolved_provider]['bet'] += $cost;
-            $provider_stats[$resolved_provider]['count']++;
-            if ($is_win) {
-                $provider_stats[$resolved_provider]['win'] += $profit;
-            } elseif ($is_loss) {
-                $provider_stats[$resolved_provider]['loss'] += $cost;
-            }
-
-            // Aggregate by Game
-            if (!isset($game_stats[$game_name])) {
-                $game_stats[$game_name] = [
+        // Collect Single Game Logs if single game is filtered
+        if (!empty($f_game) && strpos(strtolower($game_name), strtolower($f_game)) !== false) {
+            if ($selected_game_info === null) {
+                $selected_game_info = [
+                    'name' => $game_name,
                     'provider' => $resolved_provider,
-                    'bet' => 0, 'win' => 0, 'loss' => 0, 'count' => 0,
-                    'image' => $game_img
+                    'image' => $game_catalog[$g_key]['image'] ?? ''
                 ];
             }
-            $game_stats[$game_name]['bet'] += $cost;
-            $game_stats[$game_name]['count']++;
-            if ($is_win) {
-                $game_stats[$game_name]['win'] += $profit;
-            } elseif ($is_loss) {
-                $game_stats[$game_name]['loss'] += $cost;
-            }
-
-            // If a single game filter is active, collect logs
-            if (!empty($f_game) && strpos(strtolower($game_name), strtolower($f_game)) !== false) {
-                if ($selected_game_info === null) {
-                    $selected_game_info = [
-                        'name' => $game_name,
-                        'provider' => $resolved_provider,
-                        'image' => $game_img
-                    ];
-                }
-                $selected_game_logs[] = $m;
-            }
+            $selected_game_logs[] = $m;
         }
     }
 }
 
 // Calculate House Net GGR
 $grand_filtered_ggr = $grand_filtered_loss - $grand_filtered_win;
+
+// Filter provider_catalog & game_catalog if provider or game filter active
+if (!empty($f_provider)) {
+    $filtered_providers = [];
+    foreach ($provider_catalog as $p_name => $p_val) {
+        if (strtolower($p_name) === strtolower($f_provider)) {
+            $filtered_providers[$p_name] = $p_val;
+        }
+    }
+    $provider_catalog = $filtered_providers;
+
+    $filtered_games = [];
+    foreach ($game_catalog as $g_k => $g_v) {
+        if (strtolower($g_v['provider']) === strtolower($f_provider)) {
+            $filtered_games[$g_k] = $g_v;
+        }
+    }
+    $game_catalog = $filtered_games;
+}
+
+if (!empty($f_game)) {
+    $filtered_games = [];
+    foreach ($game_catalog as $g_k => $g_v) {
+        if (strpos(strtolower($g_v['name']), strtolower($f_game)) !== false) {
+            $filtered_games[$g_k] = $g_v;
+        }
+    }
+    $game_catalog = $filtered_games;
+}
+
+// Sort Catalogs so active games/providers (bet > 0) appear first
+uasort($provider_catalog, function ($a, $b) {
+    if ($a['bet'] == $b['bet']) return $b['count'] <=> $a['count'];
+    return $b['bet'] <=> $a['bet'];
+});
+
+uasort($game_catalog, function ($a, $b) {
+    if ($a['bet'] == $b['bet']) return $b['count'] <=> $a['count'];
+    return $b['bet'] <=> $a['bet'];
+});
 ?>
 
 <!DOCTYPE html>
@@ -196,7 +227,6 @@ $grand_filtered_ggr = $grand_filtered_loss - $grand_filtered_win;
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 
     <style>
         <?php include "../components/theme-variables.php"; ?>
@@ -229,7 +259,7 @@ $grand_filtered_ggr = $grand_filtered_loss - $grand_filtered_win;
             position: absolute; top: calc(100% + 6px); left: 0; right: 0;
             background: rgba(22, 27, 34, 0.98); backdrop-filter: blur(12px);
             border: 1px solid var(--border-dim); border-radius: 12px;
-            max-height: 320px; overflow-y: auto; z-index: 9999; display: none;
+            max-height: 340px; overflow-y: auto; z-index: 9999; display: none;
             box-shadow: 0 12px 32px rgba(0,0,0,0.5); padding: 6px;
         }
 
@@ -257,7 +287,7 @@ $grand_filtered_ggr = $grand_filtered_loss - $grand_filtered_win;
         .r-table { width: 100%; border-collapse: separate; border-spacing: 0 6px; }
         .r-table thead th {
             font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--text-dim);
-            padding: 8px 12px; border-bottom: 1px solid var(--border-dim);
+            padding: 10px 12px; border-bottom: 1px solid var(--border-dim);
         }
         .r-table tbody td {
             padding: 12px; font-size: 13px; color: var(--text-main);
@@ -267,15 +297,6 @@ $grand_filtered_ggr = $grand_filtered_loss - $grand_filtered_win;
         .r-table tbody td:first-child { border-radius: 10px 0 0 10px; border-left: 1px solid var(--border-dim); }
         .r-table tbody td:last-child { border-radius: 0 10px 10px 0; border-right: 1px solid var(--border-dim); }
         .r-table tbody tr:hover td { background: var(--table-row-hover); }
-
-        .btn-modern {
-            padding: 8px 16px; border-radius: 8px; font-weight: 600; font-size: 12px;
-            display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s; border: none; cursor: pointer;
-        }
-        .btn-primary-modern {
-            background: linear-gradient(135deg, #3b82f6, #2563eb); color: white;
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-        }
     </style>
 </head>
 
@@ -295,7 +316,7 @@ $grand_filtered_ggr = $grand_filtered_loss - $grand_filtered_win;
                         <i class='bx bx-printer me-1'></i> Print Report
                     </button>
                     <a href="index.php" class="btn btn-primary btn-sm" style="background: linear-gradient(135deg, #3b82f6, #2563eb); border: none;">
-                        <i class='bx bx-refresh me-1'></i> Refresh Data
+                        <i class='bx bx-refresh me-1'></i> Reset All Filters
                     </a>
                 </div>
             </div>
@@ -305,12 +326,12 @@ $grand_filtered_ggr = $grand_filtered_loss - $grand_filtered_win;
                 <form method="GET" action="index.php" id="analyticsFilterForm">
                     <div class="row g-3 align-items-end">
 
-                        <!-- Provider Filter -->
+                        <!-- Provider Filter Dropdown (All 30+ Providers) -->
                         <div class="col-md-3">
                             <label class="form-label text-uppercase fw-bold text-muted" style="font-size: 10px; letter-spacing: 0.5px;">Provider Filter</label>
                             <select name="f_provider" class="form-select form-select-sm" style="background: var(--input-bg); color: var(--text-main); border: 1px solid var(--border-dim); height: 38px; border-radius: 8px;">
-                                <option value="">All Providers (<?php echo count($all_providers); ?>)</option>
-                                <?php foreach ($all_providers as $prov): ?>
+                                <option value="">All Providers (<?php echo count($all_providers_list); ?> Available)</option>
+                                <?php foreach ($all_providers_list as $prov): ?>
                                     <option value="<?php echo htmlspecialchars($prov); ?>" <?php if (strtolower($f_provider) === strtolower($prov)) echo 'selected'; ?>>
                                         <?php echo htmlspecialchars($prov); ?>
                                     </option>
@@ -336,7 +357,7 @@ $grand_filtered_ggr = $grand_filtered_loss - $grand_filtered_win;
                             <div class="game-autocomplete-wrapper">
                                 <div class="input-group input-group-sm">
                                     <span class="input-group-text" style="background: var(--input-bg); border-color: var(--border-dim); color: var(--text-dim);"><i class='bx bx-search'></i></span>
-                                    <input type="text" id="gameSearchInput" name="f_game" value="<?php echo htmlspecialchars($f_game); ?>" placeholder="Type game name (e.g. Aviator, Mines...)" class="form-control" style="background: var(--input-bg); color: var(--text-main); border-color: var(--border-dim); height: 38px; border-radius: 0 8px 8px 0;" autocomplete="off">
+                                    <input type="text" id="gameSearchInput" name="f_game" value="<?php echo htmlspecialchars($f_game); ?>" placeholder="Type game name (e.g. Aviator, Mines, PG Soft...)" class="form-control" style="background: var(--input-bg); color: var(--text-main); border-color: var(--border-dim); height: 38px; border-radius: 0 8px 8px 0;" autocomplete="off">
                                 </div>
                                 <div class="game-suggestions-box" id="gameSuggestionsBox"></div>
                             </div>
@@ -359,7 +380,7 @@ $grand_filtered_ggr = $grand_filtered_loss - $grand_filtered_win;
                         <a href="?f_provider=<?php echo urlencode($f_provider); ?>&f_game=<?php echo urlencode($f_game); ?>&f_date_from=<?php echo date('Y-m-d'); ?>&f_date_to=<?php echo date('Y-m-d'); ?>" class="btn btn-sm btn-outline-primary <?php if ($f_date_from == date('Y-m-d') && $f_date_to == date('Y-m-d')) echo 'active'; ?>" style="font-size: 11px; padding: 2px 10px; border-radius: 6px;">Today</a>
                         <a href="?f_provider=<?php echo urlencode($f_provider); ?>&f_game=<?php echo urlencode($f_game); ?>&f_date_from=<?php echo date('Y-m-d', strtotime('-1 day')); ?>&f_date_to=<?php echo date('Y-m-d', strtotime('-1 day')); ?>" class="btn btn-sm btn-outline-primary <?php if ($f_date_from == date('Y-m-d', strtotime('-1 day')) && $f_date_to == date('Y-m-d', strtotime('-1 day'))) echo 'active'; ?>" style="font-size: 11px; padding: 2px 10px; border-radius: 6px;">Yesterday</a>
                         <a href="?f_provider=<?php echo urlencode($f_provider); ?>&f_game=<?php echo urlencode($f_game); ?>&f_date_from=<?php echo date('Y-m-01'); ?>&f_date_to=<?php echo date('Y-m-d'); ?>" class="btn btn-sm btn-outline-primary <?php if ($f_date_from == date('Y-m-01') && $f_date_to == date('Y-m-d')) echo 'active'; ?>" style="font-size: 11px; padding: 2px 10px; border-radius: 6px;">This Month</a>
-                        <a href="?f_provider=<?php echo urlencode($f_provider); ?>&f_game=<?php echo urlencode($f_game); ?>&f_date_from=1970-01-01&f_date_to=2099-12-31" class="btn btn-sm btn-outline-primary <?php if ($f_date_from == '1970-01-01') echo 'active'; ?>" style="font-size: 11px; padding: 2px 10px; border-radius: 6px;">All Time</a>
+                        <a href="index.php" class="btn btn-sm btn-outline-primary <?php if (empty($f_date_from)) echo 'active'; ?>" style="font-size: 11px; padding: 2px 10px; border-radius: 6px;">All Time</a>
                     </div>
                 </form>
             </div>
@@ -405,7 +426,7 @@ $grand_filtered_ggr = $grand_filtered_loss - $grand_filtered_win;
 
             <!-- Single Game Active Result View (If Single Game Searched) -->
             <?php if (!empty($f_game)): ?>
-                <div class="filter-panel mb-4" style="border-color: rgba(59, 130, 246, 0.3);">
+                <div class="filter-panel mb-4" style="border-color: rgba(59, 130, 246, 0.4);">
                     <div class="d-flex align-items-center justify-content-between mb-3">
                         <div class="d-flex align-items-center gap-3">
                             <?php if (!empty($selected_game_info['image'])): ?>
@@ -417,8 +438,8 @@ $grand_filtered_ggr = $grand_filtered_loss - $grand_filtered_win;
                             <?php endif; ?>
                             <div>
                                 <span class="badge bg-primary text-uppercase" style="font-size: 9px;"><?php echo htmlspecialchars($selected_game_info['provider'] ?? 'Game'); ?></span>
-                                <h4 class="mb-0 fw-bold" style="color: var(--text-main);"><?php echo htmlspecialchars($f_game); ?> Analytics</h4>
-                                <span class="text-muted small">Single Game Performance Breakdown</span>
+                                <h4 class="mb-0 fw-bold" style="color: var(--text-main);"><?php echo htmlspecialchars($f_game); ?> Performance Report</h4>
+                                <span class="text-muted small">Single Game Detailed Financial & Round Breakdown</span>
                             </div>
                         </div>
                         <a href="index.php" class="btn btn-outline-secondary btn-sm"><i class='bx bx-x me-1'></i>Clear Single Game Filter</a>
@@ -469,7 +490,7 @@ $grand_filtered_ggr = $grand_filtered_loss - $grand_filtered_win;
                                     </tr>
                                 <?php endforeach; else: ?>
                                     <tr>
-                                        <td colspan="7" class="text-center py-4 text-muted">No bet logs recorded for this game in selected date range.</td>
+                                        <td colspan="7" class="text-center py-4 text-muted">No bet logs recorded for this single game in selected date range.</td>
                                     </tr>
                                 <?php endif; ?>
                             </tbody>
@@ -478,13 +499,13 @@ $grand_filtered_ggr = $grand_filtered_loss - $grand_filtered_win;
                 </div>
             <?php endif; ?>
 
-            <!-- Provider Performance Table -->
+            <!-- Provider Performance Table (ALL Providers) -->
             <div class="filter-panel">
                 <div class="d-flex align-items-center justify-content-between mb-3">
                     <div class="fw-bold text-uppercase" style="font-size: 13px; letter-spacing: 1px; color: var(--text-main);">
-                        <i class='bx bx-list-ol me-1' style="color: #3b82f6;"></i> Provider Breakdown Summary
+                        <i class='bx bx-list-ol me-1' style="color: #3b82f6;"></i> All Providers Breakdown Summary
                     </div>
-                    <span class="badge bg-dark text-muted"><?php echo count($provider_stats); ?> Providers Listed</span>
+                    <span class="badge bg-dark text-muted"><?php echo count($provider_catalog); ?> Providers Listed</span>
                 </div>
 
                 <div class="table-responsive">
@@ -493,6 +514,7 @@ $grand_filtered_ggr = $grand_filtered_loss - $grand_filtered_win;
                             <tr>
                                 <th>No</th>
                                 <th>Provider Name</th>
+                                <th>Games Catalog</th>
                                 <th>Total Bet Done</th>
                                 <th>Total User Win</th>
                                 <th>Total User Loss</th>
@@ -502,10 +524,9 @@ $grand_filtered_ggr = $grand_filtered_loss - $grand_filtered_win;
                             </tr>
                         </thead>
                         <tbody>
-                            <?php if (!empty($provider_stats)): 
+                            <?php if (!empty($provider_catalog)): 
                                 $p_no = 1;
-                                uasort($provider_stats, function($a, $b) { return $b['bet'] <=> $a['bet']; });
-                                foreach ($provider_stats as $prov_name => $stats):
+                                foreach ($provider_catalog as $prov_name => $stats):
                                     $p_ggr = $stats['loss'] - $stats['win'];
                             ?>
                                 <tr>
@@ -515,6 +536,7 @@ $grand_filtered_ggr = $grand_filtered_loss - $grand_filtered_win;
                                             <i class='bx bx-chip me-1' style="color: #3b82f6;"></i> <?php echo htmlspecialchars($prov_name); ?>
                                         </div>
                                     </td>
+                                    <td><span class="badge bg-secondary"><?php echo number_format($stats['game_count'] ?? 0); ?> Games</span></td>
                                     <td class="fw-bold" style="color: #3b82f6;">&#8377;<?php echo number_format($stats['bet'], 2); ?></td>
                                     <td class="fw-bold" style="color: #10b981;">&#8377;<?php echo number_format($stats['win'], 2); ?></td>
                                     <td class="fw-bold" style="color: #ef4444;">&#8377;<?php echo number_format($stats['loss'], 2); ?></td>
@@ -526,13 +548,13 @@ $grand_filtered_ggr = $grand_filtered_loss - $grand_filtered_win;
                                     <td><span class="badge bg-dark"><?php echo number_format($stats['count']); ?> Bets</span></td>
                                     <td>
                                         <a href="?f_provider=<?php echo urlencode($prov_name); ?>&f_date_from=<?php echo $f_date_from; ?>&f_date_to=<?php echo $f_date_to; ?>" class="btn btn-xs btn-outline-primary" style="font-size: 11px; border-radius: 6px;">
-                                            <i class='bx bx-filter'></i> Filter Provider
+                                            <i class='bx bx-filter'></i> Filter Games
                                         </a>
                                     </td>
                                 </tr>
                             <?php endforeach; else: ?>
                                 <tr>
-                                    <td colspan="8" class="text-center py-4 text-muted">No provider betting data found for selected criteria.</td>
+                                    <td colspan="9" class="text-center py-4 text-muted">No provider data found.</td>
                                 </tr>
                             <?php endif; ?>
                         </tbody>
@@ -540,22 +562,25 @@ $grand_filtered_ggr = $grand_filtered_loss - $grand_filtered_win;
                 </div>
             </div>
 
-            <!-- Single Games List Table -->
+            <!-- Single Games List Table (ALL 545+ Games) -->
             <div class="filter-panel mt-4">
                 <div class="d-flex align-items-center justify-content-between mb-3">
                     <div class="fw-bold text-uppercase" style="font-size: 13px; letter-spacing: 1px; color: var(--text-main);">
-                        <i class='bx bx-joystick me-1' style="color: #06b6d4;"></i> All Games Financial Breakdown
+                        <i class='bx bx-joystick me-1' style="color: #06b6d4;"></i> All Games Financial Breakdown (Catalog of <?php echo count($game_catalog); ?> Games)
                     </div>
-                    <span class="badge bg-dark text-muted"><?php echo count($game_stats); ?> Games Active</span>
+                    <div class="d-flex align-items-center gap-2">
+                        <input type="text" id="tableFilterInput" class="form-control form-control-sm" placeholder="Quick filter games..." style="width: 200px; background: var(--input-bg); color: var(--text-main); border: 1px solid var(--border-dim);">
+                    </div>
                 </div>
 
-                <div class="table-responsive">
+                <div class="table-responsive" style="max-height: 700px; overflow-y: auto;">
                     <table class="r-table" id="gamesTable">
                         <thead>
                             <tr>
                                 <th>No</th>
                                 <th>Game Title</th>
                                 <th>Provider</th>
+                                <th>Category</th>
                                 <th>Total Bet Done</th>
                                 <th>User Win</th>
                                 <th>User Loss</th>
@@ -564,28 +589,28 @@ $grand_filtered_ggr = $grand_filtered_loss - $grand_filtered_win;
                                 <th>Action</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <?php if (!empty($game_stats)):
+                        <tbody id="gamesTableBody">
+                            <?php if (!empty($game_catalog)):
                                 $g_no = 1;
-                                uasort($game_stats, function($a, $b) { return $b['bet'] <=> $a['bet']; });
-                                foreach ($game_stats as $g_title => $g_data):
+                                foreach ($game_catalog as $g_k => $g_data):
                                     $g_ggr = $g_data['loss'] - $g_data['win'];
                             ?>
-                                <tr>
+                                <tr class="game-row" data-name="<?php echo strtolower($g_data['name'] . ' ' . $g_data['provider']); ?>">
                                     <td><span class="fw-bold text-muted"><?php echo $g_no++; ?></span></td>
                                     <td>
                                         <div class="d-flex align-items-center gap-2">
                                             <?php if (!empty($g_data['image'])): ?>
-                                                <img src="<?php echo htmlspecialchars($g_data['image']); ?>" class="rounded-2" style="width: 28px; height: 28px; object-fit: cover;" onerror="this.src='https://placehold.co/60x60?text=G';">
+                                                <img src="<?php echo htmlspecialchars($g_data['image']); ?>" class="rounded-2" style="width: 32px; height: 32px; object-fit: cover; border: 1px solid var(--border-dim);" onerror="this.src='https://placehold.co/60x60?text=G';">
                                             <?php else: ?>
-                                                <div class="rounded-2 d-flex align-items-center justify-content-center" style="width: 28px; height: 28px; background: rgba(6, 182, 212, 0.15); color: #06b6d4; font-size: 14px;">
+                                                <div class="rounded-2 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background: rgba(6, 182, 212, 0.15); color: #06b6d4; font-size: 16px;">
                                                     <i class='bx bx-game'></i>
                                                 </div>
                                             <?php endif; ?>
-                                            <span class="fw-bold" style="color: var(--text-main);"><?php echo htmlspecialchars($g_title); ?></span>
+                                            <span class="fw-bold" style="color: var(--text-main);"><?php echo htmlspecialchars($g_data['name']); ?></span>
                                         </div>
                                     </td>
                                     <td><span class="badge bg-dark text-info"><?php echo htmlspecialchars($g_data['provider']); ?></span></td>
+                                    <td><span class="badge bg-secondary" style="font-size: 10px;"><?php echo htmlspecialchars($g_data['category']); ?></span></td>
                                     <td class="fw-bold" style="color: #3b82f6;">&#8377;<?php echo number_format($g_data['bet'], 2); ?></td>
                                     <td class="fw-bold" style="color: #10b981;">&#8377;<?php echo number_format($g_data['win'], 2); ?></td>
                                     <td class="fw-bold" style="color: #ef4444;">&#8377;<?php echo number_format($g_data['loss'], 2); ?></td>
@@ -596,14 +621,14 @@ $grand_filtered_ggr = $grand_filtered_loss - $grand_filtered_win;
                                     </td>
                                     <td><span class="badge bg-dark"><?php echo number_format($g_data['count']); ?></span></td>
                                     <td>
-                                        <a href="?f_game=<?php echo urlencode($g_title); ?>&f_date_from=<?php echo $f_date_from; ?>&f_date_to=<?php echo $f_date_to; ?>" class="btn btn-xs btn-outline-info" style="font-size: 11px; border-radius: 6px;">
-                                            <i class='bx bx-show'></i> Single Game Report
+                                        <a href="?f_game=<?php echo urlencode($g_data['name']); ?>&f_date_from=<?php echo $f_date_from; ?>&f_date_to=<?php echo $f_date_to; ?>" class="btn btn-xs btn-outline-info" style="font-size: 11px; border-radius: 6px;">
+                                            <i class='bx bx-show'></i> View Details
                                         </a>
                                     </td>
                                 </tr>
                             <?php endforeach; else: ?>
                                 <tr>
-                                    <td colspan="9" class="text-center py-4 text-muted">No individual game records found.</td>
+                                    <td colspan="10" class="text-center py-4 text-muted">No individual game records found.</td>
                                 </tr>
                             <?php endif; ?>
                         </tbody>
@@ -685,6 +710,19 @@ $grand_filtered_ggr = $grand_filtered_loss - $grand_filtered_win;
                 suggestionsBox.style.display = "none";
             }
         });
+
+        // Instant Table Filter
+        const tableFilterInput = document.getElementById("tableFilterInput");
+        if (tableFilterInput) {
+            tableFilterInput.addEventListener("keyup", function () {
+                const q = this.value.toLowerCase();
+                const rows = document.querySelectorAll("#gamesTableBody .game-row");
+                rows.forEach(r => {
+                    const txt = r.getAttribute("data-name");
+                    r.style.display = txt.includes(q) ? "" : "none";
+                });
+            });
+        }
     });
     </script>
 </body>
