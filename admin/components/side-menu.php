@@ -527,6 +527,13 @@ $page_url_name = trim(str_replace($host_url, '', strtok($page_url, '?')), '/');
             Sports History
         </a>
 
+        <a href="<?php echo $host_url; ?>provider-bet-history" class="nav-link <?php if (strpos($page_url_name, 'provider-bet-history') !== false) {
+    echo 'menu-active-btn';
+}?>">
+            <i class='bx bx-layer' style='color:#3b82f6;'></i>
+            Provider Bet Records
+        </a>
+
 
         <div class="nav-section-label">Finance & Stats</div>
             
