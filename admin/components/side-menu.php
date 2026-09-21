@@ -527,11 +527,11 @@ $page_url_name = trim(str_replace($host_url, '', strtok($page_url, '?')), '/');
             Sports History
         </a>
 
-        <a href="<?php echo $host_url; ?>provider-bet-history" class="nav-link <?php if (strpos($page_url_name, 'provider-bet-history') !== false) {
+        <a href="<?php echo $host_url; ?>provider-reports" class="nav-link <?php if ($page_url_name == 'provider-reports' || strpos($page_url_name, 'provider-reports') !== false) {
     echo 'menu-active-btn';
 }?>">
-            <i class='bx bx-layer' style='color:#3b82f6;'></i>
-            Provider Bet Records
+            <i class='bx bx-pie-chart-alt-2' style='color:#06b6d4;'></i>
+            Provider & Game Reports
         </a>
 
 
