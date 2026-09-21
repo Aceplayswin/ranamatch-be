@@ -546,22 +546,18 @@ if (isset($_GET['download']) && $_GET['download'] === 'excel') {
                                 $where_clauses[] = "(
                                     EXISTS (
                                         SELECT 1 FROM tbl_blocked_ips bi 
+                                        JOIN tblusersactivity ua ON (ua.tbl_user_id = u.tbl_uniq_id OR ua.tbl_user_id = u.id)
                                         WHERE bi.status = 'active' 
-                                        AND (
-                                            bi.ip_address = u.tbl_user_ip 
-                                            OR EXISTS (SELECT 1 FROM tblusersactivity ua WHERE ua.tbl_user_id = u.tbl_uniq_id AND ua.tbl_device_ip = bi.ip_address)
-                                        )
+                                        AND ua.tbl_device_ip = bi.ip_address
                                     )
                                 )";
                             } elseif ($f_blocked_ip == 'allowed') {
                                 $where_clauses[] = "(
                                     NOT EXISTS (
                                         SELECT 1 FROM tbl_blocked_ips bi 
+                                        JOIN tblusersactivity ua ON (ua.tbl_user_id = u.tbl_uniq_id OR ua.tbl_user_id = u.id)
                                         WHERE bi.status = 'active' 
-                                        AND (
-                                            bi.ip_address = u.tbl_user_ip 
-                                            OR EXISTS (SELECT 1 FROM tblusersactivity ua WHERE ua.tbl_user_id = u.tbl_uniq_id AND ua.tbl_device_ip = bi.ip_address)
-                                        )
+                                        AND ua.tbl_device_ip = bi.ip_address
                                     )
                                 )";
                             }
@@ -778,7 +774,9 @@ if (isset($_GET['download']) && $_GET['download'] === 'excel') {
                                         </td>
                                         <td style="font-size: 11px; white-space: nowrap;"><?php echo htmlspecialchars($row['tbl_user_joined']); ?></td>
                                         <td>
-                                            <?php if($st_raw == "true" || $st_raw == "active" || $st_raw == "1"): ?>
+                                            <?php if ($is_ip_blocked): ?>
+                                                <span class="status-badge status-banned"><i class='bx bx-block me-1'></i> IP Blocked</span>
+                                            <?php elseif($st_raw == "true" || $st_raw == "active" || $st_raw == "1"): ?>
                                                 <span class="status-badge status-active">Active</span>
                                             <?php elseif($st_raw == "ban" || $st_raw == "blocked"): ?>
                                                 <span class="status-badge status-banned">Banned</span>
