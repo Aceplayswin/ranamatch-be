@@ -163,6 +163,7 @@ $f_userid = mysqli_real_escape_string($conn, $_POST['f_userid'] ?? $_GET['f_user
 $f_affiliate = mysqli_real_escape_string($conn, $_POST['f_affiliate'] ?? $_GET['f_affiliate'] ?? '');
 $f_date_from = mysqli_real_escape_string($conn, $_POST['f_date_from'] ?? $_GET['f_date_from'] ?? '');
 $f_date_to = mysqli_real_escape_string($conn, $_POST['f_date_to'] ?? $_GET['f_date_to'] ?? '');
+$f_blocked_ip = mysqli_real_escape_string($conn, $_POST['f_blocked_ip'] ?? $_GET['f_blocked_ip'] ?? '');
 
 $content = 15;
 $page_num = (int)(isset($_GET['page_num']) ? $_GET['page_num'] : 1);
@@ -468,6 +469,18 @@ if (isset($_GET['download']) && $_GET['download'] === 'excel') {
                         </div>
                     </div>
 
+                    <div class="filter-input-group">
+                        <label class="filter-label">Blocked IP Filter</label>
+                        <div class="filter-input-wrapper">
+                            <i class='bx bx-shield-x'></i>
+                            <select name="f_blocked_ip" class="filter-inp" style="padding-left: 30px !important;">
+                                <option value="">All IP Statuses</option>
+                                <option value="blocked" <?php if ($f_blocked_ip == 'blocked') echo 'selected'; ?>>Blocked IP Users Only</option>
+                                <option value="allowed" <?php if ($f_blocked_ip == 'allowed') echo 'selected'; ?>>Clean / Allowed IP Only</option>
+                            </select>
+                        </div>
+                    </div>
+
                     <div class="filter-action-area">
                         <button type="submit" class="btn-filter-submit">
                             <i class='bx bx-search-alt'></i> Apply Filters
@@ -525,6 +538,30 @@ if (isset($_GET['download']) && $_GET['download'] === 'excel') {
                                         WHERE (ar.user_id = u.id OR ar.user_id = u.tbl_uniq_id)
                                           AND (af.affiliate_code LIKE '%$f_affiliate%' OR af.full_name LIKE '%$f_affiliate%' OR af.id = '$f_affiliate'
                                                OR paf.affiliate_code LIKE '%$f_affiliate%' OR paf.full_name LIKE '%$f_affiliate%' OR paf.id = '$f_affiliate')
+                                    )
+                                )";
+                            }
+
+                            if ($f_blocked_ip == 'blocked') {
+                                $where_clauses[] = "(
+                                    EXISTS (
+                                        SELECT 1 FROM tbl_blocked_ips bi 
+                                        WHERE bi.status = 'active' 
+                                        AND (
+                                            bi.ip_address = u.tbl_user_ip 
+                                            OR EXISTS (SELECT 1 FROM tblusersactivity ua WHERE ua.tbl_user_id = u.tbl_uniq_id AND ua.tbl_device_ip = bi.ip_address)
+                                        )
+                                    )
+                                )";
+                            } elseif ($f_blocked_ip == 'allowed') {
+                                $where_clauses[] = "(
+                                    NOT EXISTS (
+                                        SELECT 1 FROM tbl_blocked_ips bi 
+                                        WHERE bi.status = 'active' 
+                                        AND (
+                                            bi.ip_address = u.tbl_user_ip 
+                                            OR EXISTS (SELECT 1 FROM tblusersactivity ua WHERE ua.tbl_user_id = u.tbl_uniq_id AND ua.tbl_device_ip = bi.ip_address)
+                                        )
                                     )
                                 )";
                             }
@@ -671,8 +708,20 @@ if (isset($_GET['download']) && $_GET['download'] === 'excel') {
                                     $grand_sports_p_amt += $s_p_amt; $grand_sports_l_amt += $s_l_amt;
 
                                     $ip = "N/A";
-                                    $i_q = mysqli_query($conn, "SELECT tbl_device_ip FROM tblusersactivity WHERE tbl_user_id='{$uid}' ORDER BY id ASC LIMIT 1");
-                                    if ($i_r = mysqli_fetch_assoc($i_q)) $ip = $i_r['tbl_device_ip'];
+                                    if (!empty($row['tbl_user_ip'])) {
+                                        $ip = $row['tbl_user_ip'];
+                                    } else {
+                                        $i_q = mysqli_query($conn, "SELECT tbl_device_ip FROM tblusersactivity WHERE tbl_user_id='{$uid}' ORDER BY id DESC LIMIT 1");
+                                        if ($i_r = mysqli_fetch_assoc($i_q)) $ip = $i_r['tbl_device_ip'];
+                                    }
+
+                                    $is_ip_blocked = false;
+                                    if ($ip !== 'N/A') {
+                                        $chk_b = mysqli_query($conn, "SELECT id FROM tbl_blocked_ips WHERE ip_address = '$ip' AND status = 'active' LIMIT 1");
+                                        if ($chk_b && mysqli_num_rows($chk_b) > 0) {
+                                            $is_ip_blocked = true;
+                                        }
+                                    }
 
                                     // Bonus Stats
                                     $bnt_q = mysqli_query($conn, "SELECT SUM(bonus_amount) AS total FROM tbl_bonus_redemptions WHERE user_id='{$uid}'");
@@ -714,7 +763,19 @@ if (isset($_GET['download']) && $_GET['download'] === 'excel') {
                                             ₹<?php echo number_format($s_p_tot, 2); ?>
                                         </td>
                                         <td style="font-size: 11px; font-weight: 600;"><?php echo $row['tbl_mobile_num']; ?></td>
-                                        <td style="font-family: monospace; font-size: 11px; color: var(--text-dim);"><?php echo $ip; ?></td>
+                                        <td style="font-family: monospace; font-size: 11px; color: var(--text-dim);">
+                                            <div style="font-weight: 600; color: var(--text-main);"><?php echo htmlspecialchars($ip); ?></div>
+                                            <?php if ($is_ip_blocked): ?>
+                                                <span class="badge bg-danger" style="font-size: 8px; padding: 2px 6px; display: inline-block; margin-top: 2px;">
+                                                    <i class='bx bx-block me-1'></i> Blocked IP
+                                                </span>
+                                                <a href="../blocked-ip/index.php?ip=<?php echo urlencode($ip); ?>" onclick="event.stopPropagation();" class="text-danger small text-decoration-underline d-block mt-1" style="font-size: 9px;">Manage Block</a>
+                                            <?php else: ?>
+                                                <?php if ($ip !== 'N/A'): ?>
+                                                    <a href="../blocked-ip/index.php?ip=<?php echo urlencode($ip); ?>" onclick="event.stopPropagation();" class="text-muted small d-block mt-1" style="font-size: 9px;"><i class='bx bx-shield-x me-1'></i>Block IP</a>
+                                                <?php endif; ?>
+                                            <?php endif; ?>
+                                        </td>
                                         <td style="font-size: 11px; white-space: nowrap;"><?php echo htmlspecialchars($row['tbl_user_joined']); ?></td>
                                         <td>
                                             <?php if($st_raw == "true" || $st_raw == "active" || $st_raw == "1"): ?>
