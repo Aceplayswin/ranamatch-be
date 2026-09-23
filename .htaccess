@@ -1,0 +1,66 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # ==========================================
+  # CORS Headers (Allowing velplay365.com & Subdomains & Local Dev Ports)
+  # ==========================================
+  <IfModule mod_headers.c>
+    SetEnvIf Origin "^(https?://(localhost|127\.0\.0\.1)(:[0-9]+)?|https://(api\.|agent\.|affiliate\.)?velplay365\.com)$" CORS_ORIGIN=$0
+    Header set Access-Control-Allow-Origin "%{CORS_ORIGIN}e" env=CORS_ORIGIN
+    Header set Access-Control-Allow-Methods "GET, POST, OPTIONS, PUT, DELETE" env=CORS_ORIGIN
+    Header set Access-Control-Allow-Headers "Origin, Content-Type, Accept, Route, route, AuthToken, authToken, Authtoken, authtoken, USER_ID, user_id, Authorization" env=CORS_ORIGIN
+    Header set Access-Control-Allow-Credentials "true" env=CORS_ORIGIN
+    Header set Access-Control-Max-Age "3600" env=CORS_ORIGIN
+  </IfModule>
+
+  # ==========================================
+  # 1. Static Asset Exclusions for Agent & Affiliate Frontend
+  # Ensure JS, CSS, Images, Fonts are served directly by Apache
+  # ==========================================
+  RewriteCond %{REQUEST_FILENAME} -f
+  RewriteRule \.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot|webmanifest|json|zip)$ - [L]
+
+  # ==========================================
+  # 2. API & Router Requests (/api/*, /agent/*, /affiliate/*, /admin/*)
+  # High Priority: Route API endpoints to router/index.php BEFORE directory matching
+  # ==========================================
+  RewriteRule ^api/(.*)$ router/index.php [QSA,L]
+  RewriteRule ^agent/(.*)$ router/index.php [QSA,L]
+  RewriteRule ^agent$ router/index.php [QSA,L]
+  RewriteRule ^affiliate/(.*)$ router/index.php [QSA,L]
+  RewriteRule ^affiliate$ router/index.php [QSA,L]
+  RewriteRule ^admin/agents/(.*)$ router/index.php [QSA,L]
+  RewriteRule ^admin/affiliates/(.*)$ router/index.php [QSA,L]
+  RewriteRule ^game/?$ router/index.php [QSA,L]
+  RewriteRule ^game/(.*)$ router/index.php [QSA,L]
+  RewriteRule ^route-(.*)$ router/index.php [QSA,L]
+
+  # ==========================================
+  # 3. Subdomain SPA Rules (agent.velplay365.com & affiliate.velplay365.com)
+  # ==========================================
+  RewriteCond %{HTTP_HOST} ^agent\.velplay365\.com$ [NC]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.*)$ agent/index.html [L]
+
+  RewriteCond %{HTTP_HOST} ^affiliate\.velplay365\.com$ [NC]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.*)$ affiliate/index.html [L]
+
+  # ==========================================
+  # 4. Direct File / Directory Access (for Admin panel, uploads, etc.)
+  # ==========================================
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # ==========================================
+  # 5. Main React Single Page App (index.html fallback)
+  # ==========================================
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^ index.html [L]
+
+</IfModule>
