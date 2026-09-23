@@ -15,29 +15,26 @@
   </IfModule>
 
   # ==========================================
-  # 1. Static Asset Exclusions for Agent & Affiliate Frontend
-  # Ensure JS, CSS, Images, Fonts are served directly by Apache
+  # 1. Do Not Rewrite Real Static Files
+  # (JS, CSS, Images, Fonts, Zips, Webmanifest)
   # ==========================================
   RewriteCond %{REQUEST_FILENAME} -f
   RewriteRule \.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot|webmanifest|json|zip)$ - [L]
 
   # ==========================================
-  # 2. API & Router Requests (/api/*, /agent/*, /affiliate/*, /admin/*)
-  # High Priority: Route API endpoints to router/index.php BEFORE directory matching
+  # 2. API & Router Requests (FORCE ROUTE TO router/index.php)
+  # Overrides physical directory checks for /agent/*, /affiliate/*, /api/*, /game/*
   # ==========================================
-  RewriteRule ^api/(.*)$ router/index.php [QSA,L]
-  RewriteRule ^agent/(.*)$ router/index.php [QSA,L]
-  RewriteRule ^agent$ router/index.php [QSA,L]
-  RewriteRule ^affiliate/(.*)$ router/index.php [QSA,L]
-  RewriteRule ^affiliate$ router/index.php [QSA,L]
-  RewriteRule ^admin/agents/(.*)$ router/index.php [QSA,L]
-  RewriteRule ^admin/affiliates/(.*)$ router/index.php [QSA,L]
-  RewriteRule ^game/?$ router/index.php [QSA,L]
-  RewriteRule ^game/(.*)$ router/index.php [QSA,L]
-  RewriteRule ^route-(.*)$ router/index.php [QSA,L]
+  RewriteRule ^api/ router/index.php [QSA,L]
+  RewriteRule ^agent/ router/index.php [QSA,L]
+  RewriteRule ^affiliate/ router/index.php [QSA,L]
+  RewriteRule ^admin/agents/ router/index.php [QSA,L]
+  RewriteRule ^admin/affiliates/ router/index.php [QSA,L]
+  RewriteRule ^game/ router/index.php [QSA,L]
+  RewriteRule ^route- router/index.php [QSA,L]
 
   # ==========================================
-  # 3. Subdomain SPA Rules (agent.velplay365.com & affiliate.velplay365.com)
+  # 3. Subdomain SPA Handling (agent.velplay365.com & affiliate.velplay365.com)
   # ==========================================
   RewriteCond %{HTTP_HOST} ^agent\.velplay365\.com$ [NC]
   RewriteCond %{REQUEST_FILENAME} !-f
@@ -50,14 +47,14 @@
   RewriteRule ^(.*)$ affiliate/index.html [L]
 
   # ==========================================
-  # 4. Direct File / Directory Access (for Admin panel, uploads, etc.)
+  # 4. Direct Access to Real PHP Files & Directories (Admin, Uploads, Security)
   # ==========================================
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
 
   # ==========================================
-  # 5. Main React Single Page App (index.html fallback)
+  # 5. Main Single Page App (index.html fallback)
   # ==========================================
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
