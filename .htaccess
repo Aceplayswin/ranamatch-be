@@ -24,14 +24,28 @@
   # ==========================================
   # 2. API & Router Requests (FORCE ROUTE TO router/index.php)
   # Overrides physical directory checks for /agent/*, /affiliate/*, /api/*, /game/*
+  # Supports both direct domain and /api1/ subfolder paths on live server
   # ==========================================
-  RewriteRule ^api/ router/index.php [QSA,L]
-  RewriteRule ^agent/ router/index.php [QSA,L]
-  RewriteRule ^affiliate/ router/index.php [QSA,L]
-  RewriteRule ^admin/agents/ router/index.php [QSA,L]
-  RewriteRule ^admin/affiliates/ router/index.php [QSA,L]
-  RewriteRule ^game/ router/index.php [QSA,L]
-  RewriteRule ^route- router/index.php [QSA,L]
+  RewriteRule ^api1/agent/(.*)$ router/index.php [QSA,L]
+  RewriteRule ^api1/agent$ router/index.php [QSA,L]
+  RewriteRule ^api1/affiliate/(.*)$ router/index.php [QSA,L]
+  RewriteRule ^api1/affiliate$ router/index.php [QSA,L]
+  RewriteRule ^api1/v1/(.*)$ router/index.php [QSA,L]
+  RewriteRule ^api1/api/(.*)$ router/index.php [QSA,L]
+  RewriteRule ^api1/game/(.*)$ router/index.php [QSA,L]
+  RewriteRule ^api1/admin/agents/(.*)$ router/index.php [QSA,L]
+  RewriteRule ^api1/admin/affiliates/(.*)$ router/index.php [QSA,L]
+  RewriteRule ^api1/route-(.*)$ router/index.php [QSA,L]
+
+  RewriteRule ^api/(.*)$ router/index.php [QSA,L]
+  RewriteRule ^agent/(.*)$ router/index.php [QSA,L]
+  RewriteRule ^agent$ router/index.php [QSA,L]
+  RewriteRule ^affiliate/(.*)$ router/index.php [QSA,L]
+  RewriteRule ^affiliate$ router/index.php [QSA,L]
+  RewriteRule ^admin/agents/(.*)$ router/index.php [QSA,L]
+  RewriteRule ^admin/affiliates/(.*)$ router/index.php [QSA,L]
+  RewriteRule ^game/(.*)$ router/index.php [QSA,L]
+  RewriteRule ^route-(.*)$ router/index.php [QSA,L]
 
   # ==========================================
   # 3. Subdomain SPA Handling (agent.velplay365.com & affiliate.velplay365.com)
